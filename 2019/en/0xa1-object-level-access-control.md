@@ -23,6 +23,11 @@ access to sales data of thousands of e-commerce stores.
 
 ### Scenario #2
 
+While monitoring a wearable network traffic, the following HTTP `PATCH` request
+got attacker’s attention due to the presence of a custom HTTP request header
+`X-User-Id: 54796`. Replacing the `X-User-Id` value by `54795`, the attacker got
+a successful HTTP response, being able to modify others' account data.
+
 ## How To Prevent
 
 ## References
