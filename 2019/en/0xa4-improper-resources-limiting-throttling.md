@@ -12,6 +12,11 @@ A4:2019 Improper Resources Limiting or Throttling
 
 ### Scenario #1
 
+An attacker uploads a large image, issuing a `POST` request to `/api/v1/images`.
+When the upload is complete, the API creates multiple thumbnails with different
+sizes. Due to the size of the uploaded image, available memory is exhausted
+during the thumbnails creation and the API becomes unresponsive.
+
 ### Scenario #2
 
 An attacker starts the password recovery workflow, issuing a `POST` request to
