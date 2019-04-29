@@ -12,7 +12,7 @@ A3:2019 Improper Data Filtering
 
 ### Scenario #1
 
-The mobile team uses the `/api/articles/[ARTICLE-ID]/comments/[COMMENT-ID]`
+The mobile team uses the `/api/articles/{articleId}/comments/{commendId}`
 endpoint in the articles view to render some comments metadata. Sniffing the
 mobile app traffic an attacker finds out that other sensitive data is also
 returned. The endpoint implementation uses a generic `toJSON()` method on the
