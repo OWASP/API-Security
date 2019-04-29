@@ -20,6 +20,13 @@ returned. The endpoint implementation uses a generic `toJSON()` method on the
 
 ### Scenario #2
 
+An open source team chat solution provides the endpoint `/api/v1/users.list`
+which supports two parameters: `query` and `fields`. Using a regular user
+account and manipulating both parameters an attacker can enumerate `admin`
+accounts, exposing sensitive information such as the password reset token: `GET
+/api/v1/users.list?query={“roles”:{$in:“admin”}}&fields={“services.password.reset”:1, “username”:1”, “email.0”:1}`.
+Via password reset, the attacker can takeover one of the `admin` accounts.
+
 ## How To Prevent
 
 ## References
