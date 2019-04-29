@@ -12,14 +12,11 @@ A3:2019 Improper Data Filtering
 
 ### Scenario #1
 
-The User model implements a `toJSON()` method to serialize a user object. While
-implementing the `GET /v1/articles/{article_id}/comments/{comment_id}` endpoint
-that returns details about a specific comment in an article and basic details
-about its author, the developer finds the toJSON() method and decides to use it
-(without thinking about the sensitive details it may expose). The mobile team is
-using the endpoint in the articles view, rendering only relevant data. An
-attacker sniffs the mobile app traffic and finds about the sensitive data
-exposure.
+The mobile team uses the `/api/articles/[ARTICLE-ID]/comments/[COMMENT-ID]`
+endpoint in the articles view to render some comments metadata. Sniffing the
+mobile app traffic an attacker finds out that other sensitive data is also
+returned. The endpoint implementation uses a generic `toJSON()` method on the
+`User` model to serialize the object.
 
 ### Scenario #2
 
