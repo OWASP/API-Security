@@ -16,4 +16,11 @@ A8:2019 Injection
 
 ### OWASP
 
+* [Command Injection][1]
+
 ### External
+
+* [HOW TO: Command Injection, HackerOne][2]
+
+[1]: https://www.owasp.org/index.php/Command_Injection
+[2]: https://www.hackerone.com/blog/how-to-command-injections
