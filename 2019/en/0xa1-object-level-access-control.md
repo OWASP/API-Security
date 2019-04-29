@@ -16,9 +16,9 @@ An e-commerce platform for online stores provides a listing page with some
 revenue charts about their hosted shops.
 Inspecting browser requests, an attacker identifies the endpoints used as data
 source for those charts and their pattern
-`/shops/[SHOP-NAME]/revenue_data.json`. Using another API endpoint, the attacker
+`/shops/{shopName}/revenue_data.json`. Using another API endpoint, the attacker
 gets the list of all hosted shops names. With a simple script to iterate over
-the names in the list, replacing `[SHOP-NAME]` in the URL, the attacker got
+the names in the list, replacing `{shopName}` in the URL, the attacker got
 access to sales data of thousands of e-commerce stores.
 
 ### Scenario #2
