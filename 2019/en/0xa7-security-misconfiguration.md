@@ -12,6 +12,12 @@ A7:2019 Security Misconfiguration
 
 ### Scenario #1
 
+An attacker finds .bash_history file under the root of the server which has in
+its content commands used by DevOps to access the API:
+`$ curl -X GET 'https://api.server/endpoint/' -H 'authorization: Basic Zm9vOmJhcg=='`.
+An attacker could also find new endpoints on the API that are not documented and
+used only by DevOps.
+
 ### Scenario #2
 
 To target a specific service, an attacker searches the API hostname on a popular
