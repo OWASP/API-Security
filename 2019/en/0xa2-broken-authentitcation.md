@@ -16,7 +16,7 @@ A2:2019 Broken Authentication
 
 An attacker with access to a cloud-based team collaboration tool creates a
 private channel with himself in it. Then he starts a call, sharing it in the
-private channel: the HTTP request is recorded of later use. Two different users
+private channel: the HTTP request is recorded for later use. Two different users
 start a call on a different channel. The attacker grabs the channel id,
 replacing it in the previously captured HTTP request. Resending the request
 enables attacker to eavesdrop the private call.
