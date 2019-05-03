@@ -12,6 +12,12 @@ A2:2019 Broken Authentication
 
 ## Scenario #1
 
+An attacker using brute-force to find hidden directories, finds a specific
+endpoint called `/backoffice` with hardcoded credentials. When accessing this
+specific endpoint it would automatically call the API admin which provides the
+attacker with all the endpoints, logged in user tokens, load balancer
+configurations and much more.
+
 ## Scenario #2
 
 An attacker with access to a cloud-based team collaboration tool creates a
