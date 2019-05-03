@@ -1,5 +1,5 @@
-A1:2019 Object Level Access Control
-===================================
+A1:2019 Broken Object Level Access Control
+==========================================
 
 | Threat agents/Attack vectors | Security Weakness | Impacts |
 | -- | -- | -- |
