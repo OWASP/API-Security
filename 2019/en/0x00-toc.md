@@ -13,6 +13,7 @@ Table of Contents
 * [A3:2019 Improper Data Filtering](0xa3-improper-data-filtering.md)
 * [A4:2019 Lack of Resources & Rate Limiting](0xa4-lack-of-resources-and-rate-limiting.md)
 * [A5:2019 Missing Function/Resource Level Access Control](0xa5-missing-function-resource-level-access-control.md)
+* [A6:2019 Mass Assignment](0xa6-mass-assignment.md)
 * [A7:2019 Security Misconfiguration](0xa7-security-misconfiguration.md)
 * [A8:2019 Injection](0xa8-injection.md)
 * [A9:2019 Improper Assets Management](0xa9-improper-assets-management.md)
