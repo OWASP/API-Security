@@ -11,7 +11,7 @@ Table of Contents
 * [A1:2019 Broken Object Level Access Control](0xa1-broken-object-level-access-control.md)
 * [A2:2019 Broken Authentication](0xa2-broken-authentication.md)
 * [A3:2019 Improper Data Filtering](0xa3-improper-data-filtering.md)
-* [A4:2019 Improper Resources Limiting or Throttling](0xa4-improper-resources-limiting-throttling.md)
+* [A4:2019 Lack of Resources & Rate Limiting](0xa4-lack-of-resources-and-rate-limiting.md)
 * [A5:2019 Sensitive Data Exposure](0xa5-sensitive-data-exposure.md)
 * [A6:2019 Missing Function/Resource Level Access Control](0xa6-missing-function-resource-level-access-control.md)
 * [A7:2019 Security Misconfiguration](0xa7-security-misconfiguration.md)
