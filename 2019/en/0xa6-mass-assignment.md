@@ -3,7 +3,7 @@ A6:2019 - Mass Assignment
 
 | Threat agents/Attack vectors | Security Weakness | Impacts |
 | - | - | - |
-| API Specific : Exploitability **?** | Prevalence **?** : Detectability **?** | Technical **?** : Business Specific |
+| API Specific : Exploitability **2** | Prevalence **2** : Detectability **2** | Technical **2** : Business Specific |
 | Exploitation usually requires an understanding of the business logic, objects’ relations, and the API structure. Exploitation of mass assignment is easier in APIs since by design they expose the underlying implementation of the application along with the properties’ names. | Modern frameworks encourage developers to use functions that automatically bind input from the client into code variables and internal objects. Attackers can use this methodology to update or overwrite sensitive object’s properties that the developers never intended to expose. | Exploitation may lead to privilege escalation, data tampering, bypass of security mechanisms and more. |
 
 ## Is the API Vulnerable?
