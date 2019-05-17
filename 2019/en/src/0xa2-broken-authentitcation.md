@@ -4,7 +4,7 @@ A2:2019 Broken Authentication
 | Threat agents/Attack vectors | Security Weakness | Impacts |
 | - | - | - |
 | API Specific : Exploitability **3** | Prevalence **2** : Detectability **2** | Technical **3** : Business Specific |
-| Keys are the most popular API authentication mechanism but managing them correctly is not an easy task. Attackers have automattic tools to search for API keys on public repositories or mobile applications. | When authentication is based simply on keys, once the attacker gets access to valid tokens they can perform legitimate API requests. Although access can be logged and monitored, the ability to investigate and identify malicious activity is not a simple task. | The impact greatly depends on access tokens grants and can range from the exposure of sensitive data for a single user to full data access or even control over multiple systems and services. |
+| Keys are the most popular API authentication mechanism but managing them correctly is not an easy task. Attackers have automatic tools to search for API keys on public repositories or mobile applications. | When authentication is based simply on keys, once the attacker gets access to valid tokens they can perform legitimate API requests. Although access can be logged and monitored, the ability to investigate and identify malicious activity is not a simple task. | The impact greatly depends on access tokens grants and can range from the exposure of sensitive data for a single user to full data access or even control over multiple systems and services. |
 
 ## Is the API Vulnerable?
 
