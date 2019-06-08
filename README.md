@@ -1,3 +1,11 @@
+:warning: **OWASP API Security Top 10 2019 RC is waiting for comments and
+contributions.** :warning:
+
+Please check the [PDF][2] and [how to contribute][4]. The working draft is in
+branch [develop][3].
+
+---
+
 OWASP API Security Top 10
 =========================
 
@@ -48,3 +56,6 @@ one.
 
 [0]: https://www.owasp.org/index.php/User:ErezYalon
 [1]: http://creativecommons.org/licenses/by-sa/3.0/
+[2]: https://github.com/OWASP/API-Security/blob/develop/2019/en/dist/owasp-api-security-top-10.pdf
+[3]: https://github.com/OWASP/API-Security/tree/develop/
+[4]: https://github.com/OWASP/API-Security/blob/master/CONTRIBUTING.md
