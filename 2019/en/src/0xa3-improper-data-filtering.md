@@ -18,6 +18,12 @@ There are two types of Improper Data Filtering:
   based on filters from the client. An attacker can send malicious filters
   causing the API to return sensitive data they should not be exposed to.
 
+One more issue is Improper Query String Parameters validation. It could lead to
+DDoS attacks against the server. Widely spread problem is validation of such
+query string parameters as `size`, `page`, .etc. Absence of limitation for max,
+min values of these parameters might cause performance issues, Internal Server
+Errors.
+
 ## Example Attack Scenarios
 
 ### Scenario #1
@@ -38,12 +44,24 @@ accounts, exposing sensitive information such as the password reset token:
 `GET /api/v1/users.list?query={“roles”:{$in:“admin”}}&fields={“services.password.reset”:1, “username”:1”, “email.0”:1}`.
 Via password reset, the attacker can takeover one of the admin accounts.
 
+### Scenario #3
+
+We have a MEAN stack application that contains the users list on a UI. List of
+users can be retrieved from the server using a following query:
+`/dashboard/users?page=1&size=100`. There are limitation on maximum number of
+users per page (on UI side) - 200 users. An attacker changes the size parameter
+in order to retrieve large number of users, for example 200 000 or more and it
+causes performance issues. The same scenario might be used to provoke `Integer Overflow`
+or `Buffer Overflow` errors.
+
 ## How To Prevent
 
 * Never rely on the client side to perform sensitive data filtering.
 * Review the responses from the API to make sure they contain only legitimate
   data.
 * Be careful when performing data filtering based on filters from the client.
+* Add proper validation for query string parameters and request body on the server
+  side.
 
 ## References
 
