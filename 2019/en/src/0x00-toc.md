@@ -10,7 +10,7 @@ Table of Contents
 * [OWASP Top 10 API Security Risks – 2019](0x11-t10.md)
 * [A1:2019 Missing Object Level Access Control](0xa1-missing-object-level-access-control.md)
 * [A2:2019 Broken Authentication](0xa2-broken-authentication.md)
-* [A3:2019 Improper Data Filtering](0xa3-improper-data-filtering.md)
+* [A3:2019 Excessive Data Exposure](0xa3-excessive-data-exposure.md)
 * [A4:2019 Lack of Resources & Rate Limiting](0xa4-lack-of-resources-and-rate-limiting.md)
 * [A5:2019 Missing Function/Resource Level Access Control](0xa5-missing-function-resource-level-access-control.md)
 * [A6:2019 Mass Assignment](0xa6-mass-assignment.md)
