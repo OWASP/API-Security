@@ -27,7 +27,6 @@ query string parameters as `size`, `page`, .etc. Absence of limitation for max,
 min values of these parameters might cause performance issues, Internal Server
 Errors.
 
-
 ## Example Attack Scenarios
 
 ### Scenario #1
