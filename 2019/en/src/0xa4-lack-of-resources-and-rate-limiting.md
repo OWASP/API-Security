@@ -20,12 +20,7 @@ following limits is missing or set inappropriately (i.e. too low/high)
 * Number of processes
 * Request payload size (e.g. uploads)
 * Number of requests per client/resource
-
-One more issue is Improper Query String Parameters validation. It could lead to
-DDoS attacks against the server. Widely spread problem is validation of such
-query string parameters as `size`, `page`, .etc. Absence of limitation for max,
-min values of these parameters might cause performance issues, Internal Server
-Errors.
+* Number of records per page to return in a single request response
 
 ## Example Attack Scenarios
 
@@ -48,15 +43,15 @@ within a few minutes.
 
 ### Scenario #3
 
-We have a MEAN stack application that contains the users list on a UI. List of
-users can be retrieved from the server using a following query:
-`/dashboard/users?page=1&size=100`. There are limitation on maximum number of
-users per page (on UI side) - 200 users. An attacker changes the size parameter
-in order to retrieve large number of users, for example 200 000 or more and it
-causes performance issues. For example, load on database increases and it isn't
-able to handle other requests; on UI side all functionality take more time to
-proceed because server doesn't return required information from the DB. The same
-scenario might be used to provoke `Integer Overflow` or `Buffer Overflow` errors.
+We have an application that contains the users' list on a UI with a limit of
+`200` users per page. The users' list is retrieved from the server using the
+following query: `/api/users?page=1&size=100`. An attacker changes the `size`
+parameter to `200 000`, causing performance issues on the database. Meanwhile,
+the API becomes unresponsive and unable to handle further requests from this or
+any other clients (aka DoS).
+
+The same scenario might be used to provoke Integer Overflow or Buffer Overflow
+errors.
 
 ## How To Prevent
 
@@ -66,8 +61,9 @@ scenario might be used to provoke `Integer Overflow` or `Buffer Overflow` errors
   timeframe.
 * Notify the client when the limit is exceeded by providing the limit number and
   the time at which the limit will be reset.
-* Add proper validation for query string parameters and request body on the server
-  side.
+* Add proper server side validation for query string and request body
+  parameters, specifically the one that control the number of records to be
+  returned in the response.
 
 ## References
 
