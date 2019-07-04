@@ -20,6 +20,7 @@ following limits is missing or set inappropriately (i.e. too low/high)
 * Number of processes
 * Request payload size (e.g. uploads)
 * Number of requests per client/resource
+* Number of records per page to return in a single request response
 
 ## Example Attack Scenarios
 
@@ -40,6 +41,18 @@ combinations using a multi-thread script, against the
 `/api/system/verification-codes/{smsToken}` endpoint to discover the right token
 within a few minutes.
 
+### Scenario #3
+
+We have an application that contains the users' list on a UI with a limit of
+`200` users per page. The users' list is retrieved from the server using the
+following query: `/api/users?page=1&size=100`. An attacker changes the `size`
+parameter to `200 000`, causing performance issues on the database. Meanwhile,
+the API becomes unresponsive and unable to handle further requests from this or
+any other clients (aka DoS).
+
+The same scenario might be used to provoke Integer Overflow or Buffer Overflow
+errors.
+
 ## How To Prevent
 
 * Docker makes it easy to limit [memory][1], [CPU][2], [number of restarts][3],
@@ -48,6 +61,9 @@ within a few minutes.
   timeframe.
 * Notify the client when the limit is exceeded by providing the limit number and
   the time at which the limit will be reset.
+* Add proper server side validation for query string and request body
+  parameters, specifically the one that control the number of records to be
+  returned in the response.
 
 ## References
 
