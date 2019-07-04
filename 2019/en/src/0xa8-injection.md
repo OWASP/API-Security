@@ -62,15 +62,14 @@ $ curl -k "https://${deviceIP}:4567/api/CONFIG/restore" -F 'appid=$(/etc/pod/pow
 
 ### Scenario #3
 
-We have MEAN stack application with basic CRUD functionality for operations with
-bookings. Attacker managed to identify that NoSQL injection might be possible
-through `bookingId` query string parameter in delete booking request.
-Request looks like:
-`DELETE /bookings?bookingId=678`
+We have an application with basic CRUD functionality for operations with
+bookings. An attacker managed to identify that NoSQL injection might be possible
+through `bookingId` query string parameter in the delete booking request. This
+is how the request looks like: `DELETE /api/bookings?bookingId=678`.
 
-On server side, application uses the following function to handle a request:
+The API server uses the following function to handle delete requests:
 
-```
+```javascript
 router.delete('/bookings', async function (req, res, next) {
   try {
       const deletedBooking = await Bookings.findOneAndRemove({'_id' : req.query.bookingId});
@@ -80,9 +79,14 @@ router.delete('/bookings', async function (req, res, next) {
   };
 ```
 
-Attacker intercepted the request and changed bookingId query string parameter as below:
-`DELETE /bookings?bookingId[$ne]=678`
-As a result, an attacker managed to delete another user booking.
+Attacker intercepted the request and changed `bookingId` query string parameter
+as below:
+
+```
+DELETE /api/bookings?bookingId[$ne]=678
+```
+
+As a result, the attacker managed to delete another user booking.
 
 ## How To Prevent
 
