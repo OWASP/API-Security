@@ -25,13 +25,18 @@ object.
 
 ### Scenario #2
 
-An IOT-based surveillance system allows administrators to create users with different permissions.
-An admin created a user for a new security guard that should have access only to specific buildings in the site.
+An IOT-based surveillance system allows administrators to create users with
+different permissions.
+An admin created a user for a new security guard that should have access only to
+specific buildings in the site.
 Once the security guard uses his mobile app, an API call is triggered to:
-`"/api/sites/111/cameras"` in order to receive data about the available cameras and show them on the dashboard.
+`"/api/sites/111/cameras"` in order to receive data about the available cameras
+and show them on the dashboard.
 The response contains a list with details about cameras in the following format:
 `{"id":"xxx","live_access_token":"xxxx-bbbbb","building_id":"yyy"}`
-While the client GUI shows only cameras which the security guard should have access to, the actual API response contains a full list of all the cameras in the site.
+While the client GUI shows only cameras which the security guard should have
+access to, the actual API response contains a full list of all the cameras in
+the site.
 
 ## How To Prevent
 
