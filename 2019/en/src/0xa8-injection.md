@@ -101,6 +101,8 @@ Preventing injection requires keeping data separate from commands and queries.
 * Prefer a safe API which provides a parameterized interface.
 * Always limit the number of returned records to prevent mass disclosure in case
   of injection.
+* Validate incoming data using sufficient filters to only allow valid values for
+  each input parameter.
 
 ## References
 
