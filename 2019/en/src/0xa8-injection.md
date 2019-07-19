@@ -76,17 +76,16 @@ router.delete('/bookings', async function (req, res, next) {
       res.status(200);
   } catch (err) {
      res.status(400).json({error: 'Unexpected error occured while processing a request'});
-  };
+  }
+});
 ```
 
 Attacker intercepted the request and changed `bookingId` query string parameter
-as below:
+as below, the attacker managed to delete another user booking:
 
 ```
 DELETE /api/bookings?bookingId[$ne]=678
 ```
-
-As a result, the attacker managed to delete another user booking.
 
 ## How To Prevent
 
