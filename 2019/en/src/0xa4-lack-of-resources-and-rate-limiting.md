@@ -33,16 +33,6 @@ during the creation of thumbnails and the API becomes unresponsive.
 
 ### Scenario #2
 
-An attacker starts the password recovery workflow by issuing a POST request to
-`/api/system/verification-codes` and by providing the username in the request
-body. Next an SMS token with 6 digits is sent to the victim’s phone. Because the
-API does not implement a rate limiting policy the attacker can test all possible
-combinations using a multi-thread script, against the
-`/api/system/verification-codes/{smsToken}` endpoint to discover the right token
-within a few minutes.
-
-### Scenario #3
-
 We have an application that contains the users' list on a UI with a limit of
 `200` users per page. The users' list is retrieved from the server using the
 following query: `/api/users?page=1&size=100`. An attacker changes the `size`
