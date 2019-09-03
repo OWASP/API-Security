@@ -58,8 +58,8 @@ The API lifecycle should include:
 * A repeatable hardening process leading to fast and easy deployment of a
   properly locked down environment.
 * A task to review and update configurations across the entire API stack. The
-  review should include API components and cloud services (e.g. S3 bucket
-  permissions).
+  review should include, orchestration files, API components and cloud services
+  (e.g. S3 bucket permissions).
 * A secure communication channel for all API interactions access to static
   assets (e.g. images).
 * An automated process to continuously assess the effectiveness of the

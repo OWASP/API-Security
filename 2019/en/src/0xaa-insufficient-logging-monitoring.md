@@ -10,7 +10,8 @@ A10:2019 Insufficient Logging & Monitoring
 
 The API is vulnerable if:
 
-* It does not produce any logs, tha logging level is not set correctly or log messages do not include enough detail.
+* It does not produce any logs, the logging level is not set correctly or log
+  messages do not include enough detail.
 * Log integrity is not guaranteed (e.g. [Log Injection][1]).
 * Logs are not continuously monitored.
 * API infrastructure is not continuously monitored.
@@ -29,7 +30,7 @@ assess what data was accessed by malicious actors.
 
 A video-sharing platform was hit by a “large-scale” credential stuffing attack.
 Despite failed logins being logged, no alerts were triggered during the timespan
-of the attack. As a reaction to user complaints, API logs were analysed and the
+of the attack. As a reaction to user complaints, API logs were analyzed and the
 attack was detected. The company had to make a public announcement asking users
 to reset their passwords and report the incident to regulatory authorities.
 

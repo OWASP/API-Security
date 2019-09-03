@@ -1,16 +1,16 @@
 A5:2019 Broken Function Level Authorization
-=======================================================
+===========================================
 
 | Threat agents/Attack vectors | Security Weakness | Impacts |
 | - | - | - |
 | API Specific : Exploitability **3** | Prevalence **2** : Detectability **1** | Technical **2** : Business Specific |
-| Exploitation requires the attacker to send legitimate API calls to the API endpoint they should not have access to. These endpoints might be exposed to anonymous users or regular, non-privileged users. It is easier to discover these flaws in APIs since APIs are more structured, and the way to access certain functions is more predictable (e.g. replacing the HTTP method from `GET` to `PUT`, or changing the “users” string in the URL to "admins") | Authorization checks for a function or resource are usually managed via configuration, and sometimes at the code level. Implementing proper checks can be a confusing task since modern applications can contain many types of roles or groups and complex user hierarchy (e.g. sub-users, users with more than one role) | Such flaws allow attackers to access unauthorized functionality. Administrative functions are key targets for this type of attack |
+| Exploitation requires the attacker to send legitimate API calls to the API endpoint he should not have access to. These endpoints might be exposed to anonymous users or regular, non-privileged users. It is easier to discover these flaws in APIs since APIs are more structured, and the way to access certain functions is more predictable (e.g. replacing the HTTP method from `GET` to `PUT`, or changing the “users” string in the URL to "admins") | Authorization checks for a function or resource are usually managed via configuration, and sometimes at the code level. Implementing proper checks can be a confusing task since modern applications can contain many types of roles or groups and complex user hierarchy (e.g. sub-users, users with more than one role) | Such flaws allow attackers to access unauthorized functionality. Administrative functions are key targets for this type of attack |
 
 ## Is the API Vulnerable?
 
-The best way to find broken function level authorization issues is to
-perform deep analysis of the authorization mechanism while keeping in mind the
-user hierarchy, different roles or groups in the application, and asking the
+The best way to find broken function level authorization issues is to perform
+deep analysis of the authorization mechanism while keeping in mind the user
+hierarchy, different roles or groups in the application, and asking the
 following questions:
 
 * Can a regular user access administrative endpoints?
