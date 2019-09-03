@@ -1,5 +1,5 @@
-A1:2019 Missing Object Level Access Control
-===========================================
+A1:2019 Broken Object Level Authorization
+=========================================
 
 | Threat agents/Attack vectors | Security Weakness | Impacts |
 | - | - | - |
@@ -8,9 +8,9 @@ A1:2019 Missing Object Level Access Control
 
 ## Is the API Vulnerable?
 
-Object access control is a mechanism that is usually implemented at the code
-level to validate that one user can access only objects that they should have
-access to.
+Object Authorization is an access control mechanism that is usually implemented
+at the code level to validate that one user can access only objects that he
+should have access to.
 
 Every API endpoint that receives an ID of an object and performs any type of
 action on the object should implement object level access control checks. The
