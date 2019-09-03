@@ -1,14 +1,14 @@
-A5:2019 Missing Function/Resources Level Access Control
+A5:2019 Broken Function Level Authorization
 =======================================================
 
 | Threat agents/Attack vectors | Security Weakness | Impacts |
 | - | - | - |
 | API Specific : Exploitability **3** | Prevalence **2** : Detectability **1** | Technical **2** : Business Specific |
-| Exploitation requires the attacker to send legitimate API calls to the API endpoint they should not have access to. These endpoints might be exposed to anonymous users or regular, non-privileged users. It is easier to discover these flaws in APIs since APIs are more structured, and the way to access certain functions is more predictable (e.g. replacing the HTTP method from `GET` to `PUT`, or changing the “users” string in the URL to "admins") | Access control checks for a function or resource are usually managed via configuration, and sometimes at the code level. Implementing proper checks can be a confusing task since modern applications can contain many types of roles or groups and complex user hierarchy (e.g. sub-users, users with more than one role) | Such flaws allow attackers to access unauthorized functionality. Administrative functions are key targets for this type of attack |
+| Exploitation requires the attacker to send legitimate API calls to the API endpoint they should not have access to. These endpoints might be exposed to anonymous users or regular, non-privileged users. It is easier to discover these flaws in APIs since APIs are more structured, and the way to access certain functions is more predictable (e.g. replacing the HTTP method from `GET` to `PUT`, or changing the “users” string in the URL to "admins") | Authorization checks for a function or resource are usually managed via configuration, and sometimes at the code level. Implementing proper checks can be a confusing task since modern applications can contain many types of roles or groups and complex user hierarchy (e.g. sub-users, users with more than one role) | Such flaws allow attackers to access unauthorized functionality. Administrative functions are key targets for this type of attack |
 
 ## Is the API Vulnerable?
 
-The best way to find missing function or resource level access control is to
+The best way to find broken function level authorization issues is to
 perform deep analysis of the authorization mechanism while keeping in mind the
 user hierarchy, different roles or groups in the application, and asking the
 following questions:
@@ -41,7 +41,7 @@ about the invite including the user’s role and the user’s email.
 An attacker duplicated the request and manipulated the HTTP method and endpoint
 to `POST /api/invites/new`. This endpoint should only be accessed by
 administrators using the admin console which does not implement function level
-access control checks.
+authorization checks.
 
 The attacker exploits the issue and sends himself an invite to create an
 admin account:
@@ -56,7 +56,7 @@ POST /api/invites/new
 
 An API contains an endpoint that should be exposed only administrators -
 `GET /api/admin/v1/users/all`. This endpoint returns the details of all the
-users on the application and does not implement function level access control
+users on the application and does not implement function level authorization
 checks. An attacker who learned the API structure takes an educated guess and
 manages to access this endpoint which exposes sensitive details of the users of
 the application.
@@ -70,13 +70,13 @@ code.
 
 * The enforcement mechanism(s) should deny all access by default, requiring
   explicit grants to specific roles for access to every function.
-* Review your API endpoints against function level access control flaws, while
+* Review your API endpoints against function level authorization flaws, while
   keeping in mind the business logic of the application and groups hierarchy.
 * Make sure that all of your administrative controllers inherit from an
-  administrative abstract controller that implements access control checks based
+  administrative abstract controller that implements authorization checks based
   on the user’s group/role.
 * Make sure that administrative functions inside a regular controller implements
-  access control checks based on the user’s group and role.
+  authorization checks based on the user’s group and role.
 
 ## References
 
