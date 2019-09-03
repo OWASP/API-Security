@@ -8,7 +8,7 @@ Table of Contents
 * [Release Notes](0x04-release-notes.md)
 * [API Security Risks](0x10-api-security-risks.md)
 * [OWASP Top 10 API Security Risks – 2019](0x11-t10.md)
-* [A1:2019 Missing Object Level Access Control](0xa1-missing-object-level-access-control.md)
+* [A1:2019 Broken Object Level Authorization](0xa1-broken-object-level-authorization.md)
 * [A2:2019 Broken Authentication](0xa2-broken-authentication.md)
 * [A3:2019 Excessive Data Exposure](0xa3-excessive-data-exposure.md)
 * [A4:2019 Lack of Resources & Rate Limiting](0xa4-lack-of-resources-and-rate-limiting.md)
