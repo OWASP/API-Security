@@ -12,7 +12,7 @@ Table of Contents
 * [A2:2019 Broken Authentication](0xa2-broken-authentication.md)
 * [A3:2019 Excessive Data Exposure](0xa3-excessive-data-exposure.md)
 * [A4:2019 Lack of Resources & Rate Limiting](0xa4-lack-of-resources-and-rate-limiting.md)
-* [A5:2019 Missing Function/Resource Level Access Control](0xa5-missing-function-resource-level-access-control.md)
+* [A5:2019 Broken Function/Resource Level Authorization](0xa5-broken-function-resource-level-authorization.md)
 * [A6:2019 Mass Assignment](0xa6-mass-assignment.md)
 * [A7:2019 Security Misconfiguration](0xa7-security-misconfiguration.md)
 * [A8:2019 Injection](0xa8-injection.md)
