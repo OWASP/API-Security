@@ -1,5 +1,5 @@
 A1:2019 Broken Object Level Authorization
-===========================================
+=========================================
 
 | Threat agents/Attack vectors | Security Weakness | Impacts |
 | - | - | - |
@@ -8,9 +8,9 @@ A1:2019 Broken Object Level Authorization
 
 ## Is the API Vulnerable?
 
-Object level authorization is a mechanism that is usually implemented at the code
-level to validate that one user can access only objects that they should have
-access to.
+Object level authorization is an access control mechanism that is usually
+implemented at the code level to validate that one user can access only objects
+that he should have access to.
 
 Every API endpoint that receives an ID of an object and performs any type of
 action on the object should implement object level authorization checks. The
@@ -52,7 +52,7 @@ other user account data.
   input from the client to access a record in the database.
 * Prefer to use random and unpredictable values as GUIDs for records’ IDs.
 * Write tests to evaluate the authorization mechanism. Do not deploy vulnerable
-changes that break the tests.
+  changes that break the tests.
 
 ## References
 
