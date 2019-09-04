@@ -78,8 +78,6 @@ shell command injection once the attacker downloads the video as MP4.
 
 ## References
 
-### OWASP
-
 ### External
 
 * [CWE-915: Improperly Controlled Modification of Dynamically-Determined Object Attributes][1]
