@@ -64,8 +64,6 @@ user by using a simple brute-force to guess the 6 digits token.
 
 ## References
 
-### OWASP
-
 ### External
 
 * [CWE-1059: Incomplete Documentation][1]
