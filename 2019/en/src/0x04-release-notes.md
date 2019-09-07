@@ -10,13 +10,13 @@ section, you'll find more details about how this version was built. For more
 details about the security risks, please refer to the [API Security Risks][2]
 section.
 
-It is important to realize that over the last few years, applications
-architecture has changed a lot. Nowadays, APIs play a very important role in
-this new architecture of microservices, Single Page Applications (SPAs), mobile
-apps, IoT, etc.
+It is important to realize that over the last few years, applications'
+architecture has significantly changed. Currently, APIs play a very important
+role in this new architecture of microservices, Single Page Applications (SPAs),
+mobile apps, IoT, etc.
 
-The OWASP API Security Top 10 was a required piece to create awareness about
-modern APIs security issues. It was only possible thanks to a great effort of
+The OWASP API Security Top 10 was a required effort to create awareness about
+modern APIs security issues. It was only possible due to a great effort of
 several volunteers, all of them listed in the [Acknowledgments][3] section.
 Thank you!
 

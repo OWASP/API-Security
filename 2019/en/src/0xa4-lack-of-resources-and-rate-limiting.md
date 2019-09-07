@@ -8,11 +8,11 @@ A4:2019 Lack of Resources & Rate Limiting
 
 ## Is the API Vulnerable?
 
-API requests consume resources such as network, CPU, memory and storage and the
+API requests consume resources such as network, CPU, memory, and storage. The
 amount of resources required to satisfy a request greatly depends on the user
-input and endpoint business logic. Also consider that requests from multiple API
-clients compete for resources. An API is vulnerable if at least one of the
-following limits is missing or set inappropriately (i.e. too low/high)
+input and endpoint business logic. Also, consider the fact that requests from
+multiple API clients compete for resources. An API is vulnerable if at least one
+of the following limits is missing or set inappropriately (e.g., too low/high).
 
 * Execution timeouts
 * Max allocable memory
@@ -37,8 +37,8 @@ We have an application that contains the users' list on a UI with a limit of
 `200` users per page. The users' list is retrieved from the server using the
 following query: `/api/users?page=1&size=100`. An attacker changes the `size`
 parameter to `200 000`, causing performance issues on the database. Meanwhile,
-the API becomes unresponsive and unable to handle further requests from this or
-any other clients (aka DoS).
+the API becomes unresponsive and is unable to handle further requests from this
+or any other clients (aka DoS).
 
 The same scenario might be used to provoke Integer Overflow or Buffer Overflow
 errors.
@@ -46,13 +46,13 @@ errors.
 ## How To Prevent
 
 * Docker makes it easy to limit [memory][1], [CPU][2], [number of restarts][3],
-  [file descriptors and processes][4].
+  [file descriptors, and processes][4].
 * Implement a limit on how often a client can call the API within a defined
   timeframe.
 * Notify the client when the limit is exceeded by providing the limit number and
   the time at which the limit will be reset.
-* Add proper server side validation for query string and request body
-  parameters, specifically the one that control the number of records to be
+* Add proper server-side validation for query string and request body
+  parameters, specifically the one that controls the number of records to be
   returned in the response.
 
 ## References

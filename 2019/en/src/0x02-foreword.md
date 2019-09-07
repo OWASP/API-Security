@@ -1,25 +1,25 @@
 Foreword
 ========
 
-A foundational element of innovation in today’s app-driven world is the API.
-From banks, retail and transportation to IoT, autonomous vehicles and smart
-cities, APIs are a critical part of modern mobile, SaaS and web applications and
-can be found in customer-facing, partner-facing, and internal applications.
+A foundational element of innovation in today’s app-driven world is the
+Application Programming Interface (API). From banks, retail, and transportation
+to IoT, autonomous vehicles, and smart cities, APIs are a critical part of
+modern mobile, SaaS and web applications and can be found in customer-facing,
+partner-facing, and internal applications.
 
 By nature, APIs expose application logic and sensitive data such as Personally
-Identifiable Information (PII) and because of this, they have increasingly
+Identifiable Information (PII) and because of this, APIs have increasingly
 become a target for attackers. Without secure APIs, rapid innovation would be
 impossible.
 
-Although a broader web application security risks top 10 still makes sense, due
-to their particular nature, an API specific security risks list is mandatory.
+Although a broader web application security risks Top 10 still makes sense, due
+to their particular nature, an API specific security risks list is required.
 API security focuses on strategies and solutions to understand and mitigate the
-unique vulnerabilities and security risks of Application Programming Interfaces
-(APIs).
+unique vulnerabilities and security risks associated with APIs.
 
 If you're familiar with the [OWASP Top 10 Project][1], then you'll notice the
 similarities between both documents: they are intended for readability and
-adoption. If you're new to the OWASP Top 10 series, maybe you'll be better
+adoption. If you're new to the OWASP Top 10 series, you may be better off
 reading the [API Security Risks][2] and [Methodology and Data][3] sections
 before jumping into the Top 10 list.
 

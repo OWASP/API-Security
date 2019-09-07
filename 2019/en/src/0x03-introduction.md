@@ -3,21 +3,21 @@ Introduction
 
 ## Welcome to the OWASP API Security Top 10 - 2019!
 
-Welcome to the OWASP API Security Top 10 first edition. If you're familiar with
-the  OWASP Top 10 series, you'll notice the similarities: they are intended for
-readability and adoption. Otherwise, consider visiting the [OWASP API Security
-Project wiki page][1], before digging deeper into the then most critical API
-security risks.
+Welcome to the first edition of the OWASP API Security Top 10. If you're
+familiar with the  OWASP Top 10 series, you'll notice the similarities: they are
+intended for readability and adoption. Otherwise, consider visiting the [OWASP
+API Security Project wiki page][1], before digging deeper into the most critical
+API security risks.
 
-APIs play a very important role in modern applications architecture.
-Because creating security awareness and innovation have different paces, it
-urges to focus on common API security weaknesses.
+APIs play a very important role in modern applications' architecture. Since
+creating security awareness and innovation have different paces, it's important
+to focus on common API security weaknesses.
 
-The primary aim of the OWASP API Security Top 10 is to educate those involved
-in API development and maintenance being them developers, designers, architects,
-managers, or organizations.
+The primary goal of the OWASP API Security Top 10 is to educate those involved
+in API development and maintenance, for example, developers, designers,
+architects, managers, or organizations.
 
-In the [Methodology and Data][2] section you can read more about how this first
+In the [Methodology and Data][2] section, you can read more about how this first
 edition was created. In future versions, we want to involve the security
 industry, with a public call for data. For now, we encourage everyone to
 contribute with questions, comments and ideas at our [GitHub repository][3] or

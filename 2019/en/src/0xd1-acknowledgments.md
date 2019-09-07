@@ -3,8 +3,8 @@ Acknowledgments
 
 ## Acknowledgments to Contributors
 
-We’d like to thank contributors who contribute publicly on GitHub or via other
-means:
+We’d like to thank the following contributors who contributed publicly on GitHub
+or via other means:
 
 * 007divyachawla
 * anotherik
@@ -26,5 +26,6 @@ means:
 * philippederyck
 * pleothaud
 * Sagar Popat
+* Stephen Gates
 * thomaskonrad
 * xycloops123
