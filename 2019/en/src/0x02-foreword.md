@@ -4,7 +4,7 @@ Foreword
 A foundational element of innovation in today’s app-driven world is the
 Application Programming Interface (API). From banks, retail, and transportation
 to IoT, autonomous vehicles, and smart cities, APIs are a critical part of
-modern mobile, SaaS and web applications and can be found in customer-facing,
+modern mobile, SaaS, and web applications and can be found in customer-facing,
 partner-facing, and internal applications.
 
 By nature, APIs expose application logic and sensitive data such as Personally

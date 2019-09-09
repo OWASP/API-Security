@@ -4,7 +4,7 @@ A10:2019 Insufficient Logging & Monitoring
 | Threat agents/Attack vectors | Security Weakness | Impacts |
 | - | - | - |
 | API Specific : Exploitability **2** | Prevalence **3** : Detectability **1** | Technical **2** : Business Specific |
-| Attackers take advantage of lack of logging and monitoring to abuse systems without being noticed. | Without logging and monitoring, or with insufficient logging and monitoring, it is almost impossible to track suspicious activities and respond to them in a timely fashion. | Without visibility over on going malicious activities, attackers have plenty of time to fully compromise systems. |
+| Attackers take advantage of lack of logging and monitoring to abuse systems without being noticed. | Without logging and monitoring, or with insufficient logging and monitoring, it is almost impossible to track suspicious activities and respond to them in a timely fashion. | Without visibility over on-going malicious activities, attackers have plenty of time to fully compromise systems. |
 
 ## Is the API Vulnerable?
 
