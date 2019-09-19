@@ -76,6 +76,12 @@ shell command injection once the attacker downloads the video as MP4.
 * Use built-in features to blacklist properties that should not be accessed by
   clients.
 
+## How to Detect
+
+Mass assignment is detectable by manual means. **Code review** will help to
+identify the source code pattern. **Scanners** may help to look for it
+automatically.
+
 ## References
 
 ### External

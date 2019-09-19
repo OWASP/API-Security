@@ -55,6 +55,12 @@ errors.
   parameters, specifically the one that controls the number of records to be
   returned in the response.
 
+## How to Detect
+
+Typically it requires **automated tools** to simulate high workloads.
+**Scanners** usually provide such features, highlighting the lack of resources
+and rate limiting. Scanners are commonly used during **pentesting**.
+
 ## References
 
 ### OWASP

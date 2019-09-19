@@ -66,6 +66,11 @@ The API life cycle should include:
 * An automated process to continuously assess the effectiveness of the
   configuration and settings in all environments.
 
+## How to Detect
+
+When you have Infrastructure as code (IaC), **code review** will help to detect
+misconfiguration. **Scanners** are usually useful.
+
 ## References
 
 ### OWASP

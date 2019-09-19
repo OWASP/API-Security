@@ -78,6 +78,12 @@ code.
 * Make sure that administrative functions inside a regular controller implements
   authorization checks based on the user’s group and role.
 
+## How to Detect
+
+Access control weaknesses are best detected by **manual** means. **Code review**
+and **pentesting** are a great way to detect these issues. Some automation may
+be used to detect the absence of access controls.
+
 ## References
 
 ### OWASP

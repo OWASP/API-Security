@@ -43,6 +43,11 @@ the site.
 * Review the responses from the API to make sure they contain only legitimate
   data.
 
+## How to Detect
+
+Excessive data exposure is better detected by **manual** means. Mock data can be
+used to automate some testing.
+
 ## References
 
 ### External

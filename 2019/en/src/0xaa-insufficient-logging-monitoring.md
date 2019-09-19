@@ -50,6 +50,12 @@ to reset their passwords, and report the incident to regulatory authorities.
 * Configure custom dashboards and alerts, enabling suspicious activities to be
   detected and responded to earlier.
 
+## How to Detect
+
+In general, automated tools don't work because they will not trigger alerts.
+**Code review** allows detecting the absence or lack of logging throughout the
+source code.
+
 ## References
 
 ### OWASP

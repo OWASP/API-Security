@@ -62,6 +62,11 @@ user by using a simple brute-force to guess the 6 digits token.
   documentation build in your CI/CD pipeline.
 * Make API documentation available to those authorized to use the API.
 
+## How to Detect
+
+The effort to detect improper assets management is essentially **manual**. Some
+tasks might be automated if you manage Infrastructure as Code (IaC).
+
 ## References
 
 ### External

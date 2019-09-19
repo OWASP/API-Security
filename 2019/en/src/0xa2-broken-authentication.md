@@ -68,6 +68,12 @@ within a few minutes.
 * API keys should not be used for user authentication, but for [client app /
   project authentication][5].
 
+## How to Detect
+
+**Code review** will help to identify authentication issues. **Automated tests**
+are useful to test the implementation against automated attacks such as
+brute-force and credential stuffing.
+
 ## References
 
 ### OWASP

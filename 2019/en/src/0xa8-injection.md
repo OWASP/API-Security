@@ -104,6 +104,12 @@ Preventing injection requires keeping data separate from commands and queries.
 * Validate incoming data using sufficient filters to only allow valid values for
   each input parameter.
 
+## How to Detect
+
+Injections can be detected during **code review**. **Scanners** usually do a
+good job, but **pentesting** is valuable for more complex scenarios. **WAF**s
+and **RASP** solutions may help to detect these issues on live systems.
+
 ## References
 
 ### OWASP
