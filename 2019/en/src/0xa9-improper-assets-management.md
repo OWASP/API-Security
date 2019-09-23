@@ -61,6 +61,9 @@ user by using a simple brute-force to guess the 6 digits token.
 * Generate documentation automatically by adopting open standards. Include the
   documentation build in your CI/CD pipeline.
 * Make API documentation available to those authorized to use the API.
+* Use external protection measures such as API security firewalls for all exposed versions of your APIs, not just for the current production version.
+* Avoid using production data with non-production API deployments. If this is unavoidable, these endpoints should get the same security treatment as the production ones.
+* When newer versions of APIs include security improvements, perform risk analysis to make the decision of the mitigation actions required for the older version: for example, whether it is possible to backport the improvements without breaking API compatibility or you need to take the older version out quickly and force all clients to move to the latest version.
 
 ## References
 

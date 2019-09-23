@@ -75,6 +75,7 @@ shell command injection once the attacker downloads the video as MP4.
 * Whitelist only the properties that should be updated by the client.
 * Use built-in features to blacklist properties that should not be accessed by
   clients.
+* In API contracts, explicitly define and enforce schemas for all JSON payloads.
 
 ## References
 

@@ -49,11 +49,14 @@ errors.
   [file descriptors, and processes][4].
 * Implement a limit on how often a client can call the API within a defined
   timeframe.
+* For sensitive operations such as login or password reset, consider rate limits by API method (for example, authentication), client (for example, IP address), property (for example, username).
 * Notify the client when the limit is exceeded by providing the limit number and
   the time at which the limit will be reset.
 * Add proper server-side validation for query string and request body
   parameters, specifically the one that controls the number of records to be
   returned in the response.
+* Define and enforce maximum size of data on all incoming parameters and payloads such as maximum length for strings and maximum number of elements in arrays.
+* If your API accepts zip files check compression ratios before expanding the files to protect yourself against "zip bombs".
 
 ## References
 
