@@ -117,7 +117,6 @@ Preventing injection requires keeping data separate from commands and queries.
 
 * [CWE-77: Command Injection][5]
 * [CWE-89: SQL Injection][6]
-* [HOW TO: Command Injection, HackerOne][7]
 
 [1]: https://www.owasp.org/index.php/Injection_Flaws
 [2]: https://www.owasp.org/index.php/SQL_Injection
@@ -125,4 +124,3 @@ Preventing injection requires keeping data separate from commands and queries.
 [4]: https://www.owasp.org/index.php/Command_Injection
 [5]: https://cwe.mitre.org/data/definitions/77.html
 [6]: https://cwe.mitre.org/data/definitions/89.html
-[7]: https://www.hackerone.com/blog/how-to-command-injections
