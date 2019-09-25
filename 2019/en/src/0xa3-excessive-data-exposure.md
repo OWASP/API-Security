@@ -42,8 +42,12 @@ the site.
 * Never rely on the client side to perform sensitive data filtering.
 * Review the responses from the API to make sure they contain only legitimate
   data.
-* Explicitly define and enforce data returned by all API methods including errors: give all JSON objects schemas, all string objects patterns, use clear field names.
-* Define all sensitive and personally identifiable information (PII) that your application stores and works with and review all API calls returning such information to see if these responses can be a security issue.
+* Explicitly define and enforce data returned by all API methods, including
+  errors. Whenever possible: use schemas for responses, patterns for all strings
+  and clear field names.
+* Define all sensitive and personally identifiable information (PII) that your
+  application stores and works with and review all API calls returning such
+  information to see if these responses can be a security issue.
 
 ## References
 
