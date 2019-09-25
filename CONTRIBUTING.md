@@ -24,7 +24,7 @@ follow the steps below:
 1. Fork this repository to your account
 2. Clone your copy of this repository, locally
    ```
-   git clone git@github.com:YOU/API-Security-Top-10.git
+   git clone https://github.com/YOU/API-Security.git
    ```
 3. Create a new branch based on `develop` (e.g. `fix/foreword-section`)
    ```

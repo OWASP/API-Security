@@ -33,7 +33,7 @@ The attacker replays the request with a different payload
 
 ```
 POST /api/account/recovery
-{"email": "john@somehost.com';WAITFOR DELAY '0:0:5'--"}
+{"username": "john@somehost.com';WAITFOR DELAY '0:0:5'--"}
 ```
 
 This time, the response took ~5 seconds confirming the API is vulnerable to SQL
@@ -103,6 +103,8 @@ Preventing injection requires keeping data separate from commands and queries.
   of injection.
 * Validate incoming data using sufficient filters to only allow valid values for
   each input parameter.
+* To prevent data leaks, define and enforce schemas for all API responses.
+* Define data types and strict patterns for all string parameters.
 
 ## References
 
@@ -117,7 +119,6 @@ Preventing injection requires keeping data separate from commands and queries.
 
 * [CWE-77: Command Injection][5]
 * [CWE-89: SQL Injection][6]
-* [HOW TO: Command Injection, HackerOne][7]
 
 [1]: https://www.owasp.org/index.php/Injection_Flaws
 [2]: https://www.owasp.org/index.php/SQL_Injection
@@ -125,4 +126,3 @@ Preventing injection requires keeping data separate from commands and queries.
 [4]: https://www.owasp.org/index.php/Command_Injection
 [5]: https://cwe.mitre.org/data/definitions/77.html
 [6]: https://cwe.mitre.org/data/definitions/89.html
-[7]: https://www.hackerone.com/blog/how-to-command-injections

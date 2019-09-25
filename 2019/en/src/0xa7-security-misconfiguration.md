@@ -4,7 +4,7 @@ A7:2019 Security Misconfiguration
 | Threat agents/Attack vectors | Security Weakness | Impacts |
 | - | - | - |
 | API Specific : Exploitability **3** | Prevalence **3** : Detectability **3** | Technical **2** : Business Specific |
-| Attackers will often attempt to find unpatched flaws, common endpoints, or unprotected files and directories to gain unauthorized access or knowledge of the system. | Security misconfiguration can happen at any level of the API stack, from the network level to the application level. Automated tools are available to detect and exploit misconfigurations such as unnecessary services or legacy options. | Security misconfigurations can no only expose sensitive user data, but also system details that may lead to full server compromise. |
+| Attackers will often attempt to find unpatched flaws, common endpoints, or unprotected files and directories to gain unauthorized access or knowledge of the system. | Security misconfiguration can happen at any level of the API stack, from the network level to the application level. Automated tools are available to detect and exploit misconfigurations such as unnecessary services or legacy options. | Security misconfigurations can not only expose sensitive user data, but also system details that may lead to full server compromise. |
 
 ## Is the API Vulnerable?
 
@@ -65,6 +65,9 @@ The API life cycle should include:
   assets (e.g., images).
 * An automated process to continuously assess the effectiveness of the
   configuration and settings in all environments.
+* To prevent exception traces and other valuable information from being sent
+  back to attackers, if applicable, define and enforce all API response payload
+  schemas including error responses.
 
 ## References
 

@@ -11,6 +11,7 @@ or via other means:
 * caseysoftware
 * Chris Westphal
 * dsopas
+* DSotnikov
 * emilva
 * ErezYalon
 * flascelles
