@@ -56,7 +56,7 @@ modify other users' account data.
 
 ## How to Detect
 
-Access control weaknesses are best detected by **manual** means. **Code review**
+Access control weaknesses are best detected by **manual** means. By simply searching for variables such as UserID's and account numbers that could possibly be ennumerated or URL paths that can be manipulated. **Code review**
 and **pentesting** are a great way to detect these issues. Some automation may
 be used to detect the absence of access controls.
 
