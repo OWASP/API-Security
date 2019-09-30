@@ -65,9 +65,6 @@ The API life cycle should include:
   assets (e.g., images).
 * An automated process to continuously assess the effectiveness of the
   configuration and settings in all environments.
-* To prevent exception traces and other valuable information from being sent
-  back to attackers, if applicable, define and enforce all API response payload
-  schemas including error responses.
 
 ## References
 
