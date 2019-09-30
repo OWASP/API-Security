@@ -103,7 +103,6 @@ Preventing injection requires keeping data separate from commands and queries.
   of injection.
 * Validate incoming data using sufficient filters to only allow valid values for
   each input parameter.
-* To prevent data leaks, define and enforce schemas for all API responses.
 * Define data types and strict patterns for all string parameters.
 
 ## References
