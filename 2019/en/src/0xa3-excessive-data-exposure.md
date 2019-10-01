@@ -45,7 +45,7 @@ the site.
 
 ## How to Detect
 
-Excessive data exposure is better detected by **manual** means. Mock data can be
+Excessive data exposure is best detected by **manual** means, by simply scanning the responses from the API and looking for any sensitive information or variables that can be enumerated. Mock data can be
 used to automate some testing.
 
 ## References
