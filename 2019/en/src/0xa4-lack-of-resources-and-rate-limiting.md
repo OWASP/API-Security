@@ -57,9 +57,8 @@ errors.
 
 ## How to Detect
 
-Typically it requires **automated tools** to simulate high workloads.
-**Scanners** usually provide such features, highlighting the lack of resources
-and rate limiting. Scanners are commonly used during **pentesting**.
+**Scanners** usually provide features to simulate large workloads, highlighting the lack of resources
+and rate limiting built in, but this can also be found through automated tools that, similar to scanners, lest the pentester generate large customs workloads to overwhelm the API. Scanners are commonly used during **pentesting**.
 
 ## References
 
