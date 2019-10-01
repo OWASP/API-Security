@@ -72,7 +72,7 @@ within a few minutes.
 
 **Code review** will help to identify authentication issues. **Automated tests**
 are useful to test the implementation against automated attacks such as
-brute-force and credential stuffing.
+brute-force and credential stuffing. **Manual tests** will help to identify this issue, by sniffing the traffic and understanding the authentication/authorization workflows. Another method is checking for tokens which can be used to authenticate into the API, JWT tokens are commonly used but can also be easily decrypted, so in reverse we can encypt a JWT token with enumerated information to access the API.
 
 ## References
 
