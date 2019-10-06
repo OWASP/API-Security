@@ -1,5 +1,5 @@
-A7:2019 Security Misconfiguration
-=================================
+API7:2019 Security Misconfiguration
+===================================
 
 | Threat agents/Attack vectors | Security Weakness | Impacts |
 | - | - | - |
