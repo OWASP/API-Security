@@ -8,6 +8,7 @@ or via other means:
 
 * 007divyachawla
 * anotherik
+* bkimminich
 * caseysoftware
 * Chris Westphal
 * dsopas
