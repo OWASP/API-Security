@@ -44,9 +44,6 @@ modify other users' account data.
 
 * Implement a proper authorization mechanism that relies on the user policies
   and hierarchy.
-* Prefer not to use an ID that has been sent from the client, but instead use an
-  ID that is stored in the session object when accessing a database record by
-  the record ID.
 * Use an authorization mechanism to check if the logged-in user has access to
   perform the requested action on the record in every function that uses an
   input from the client to access a record in the database.
