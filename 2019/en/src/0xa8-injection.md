@@ -21,27 +21,6 @@ The API is vulnerable to injection flaws if:
 
 ### Scenario #1
 
-Inspecting the web browser network traffic, an attacker identifies the following
-API request responsible to start the recovery password workflow:
-
-```
-POST /api/accounts/recovery
-{"username": "john@somehost.com"}
-```
-
-The attacker replays the request with a different payload
-
-```
-POST /api/account/recovery
-{"username": "john@somehost.com';WAITFOR DELAY '0:0:5'--"}
-```
-
-This time, the response took ~5 seconds confirming the API is vulnerable to SQL
-injection. Exploiting this vulnerability, the attacker was able to gain
-unauthorized access to the system.
-
-### Scenario #2
-
 Firmware of a parental control device provides the endpoint
 `/api/CONFIG/restore` which expects an appId to be sent as a multipart
 parameter. Using a decompiler, an attacker finds out that the appId is passed
@@ -60,7 +39,7 @@ vulnerable firmware:
 $ curl -k "https://${deviceIP}:4567/api/CONFIG/restore" -F 'appid=$(/etc/pod/power_down.sh)'
 ```
 
-### Scenario #3
+### Scenario #2
 
 We have an application with basic CRUD functionality for operations with
 bookings. An attacker managed to identify that NoSQL injection might be possible
