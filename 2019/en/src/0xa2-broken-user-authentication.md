@@ -24,6 +24,7 @@ An API is vulnerable if it:
 * Accepts unsigned / weakly signed JWT tokens (`"alg":"none"`) / doesn’t
   validate their expiration date.
 * Uses plain text, encrypted, or weakly hashed passwords.
+* Uses weak encryption keys.
 
 ## Example Attack Scenarios
 
