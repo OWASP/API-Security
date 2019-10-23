@@ -39,14 +39,19 @@ the site.
 
 ## How To Prevent
 
-* Never rely on the client side to perform sensitive data filtering.
+* Never rely on the client side to filter sensitive data.
 * Review the responses from the API to make sure they contain only legitimate
   data.
-* Use generis methods like "to_json" and "to_string" from the ORM / Model level 
-  carefully. Backend engineers should always ask themselves "who is the consumer
-  of the returned data?"
+* Backend engineers should always ask themselves "who is the 
+  consumer of the data?" before exposing a new API endpoint.
+* Use generic methods like "to_json" and "to_string" from the ORM / Model level 
+  very carefully.
 * Classify sensitive and personally identifiable information (PII) that your
   application stores and works.
+* Implement a schema-based response validation mechanism as an extra layer of 
+  security. As part of this mechanism define and enforce data returned by all API 
+  methods.
+  
 
 ## References
 
