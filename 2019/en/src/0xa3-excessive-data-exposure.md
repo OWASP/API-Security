@@ -44,13 +44,14 @@ the site.
   data.
 * Backend engineers should always ask themselves "who is the 
   consumer of the data?" before exposing a new API endpoint.
-* Use generic methods like "to_json" and "to_string" from the ORM / Model level 
-  very carefully.
-* Classify sensitive and personally identifiable information (PII) that your
-  application stores and works.
+* Avoid using generic methods such as to_json() and to_string(). 
+  Instead, cherry-pick specific properties you really want to return
+* Classify sensitive and personally identifiable information (PII) that 
+  your application stores and works with, reviewing all API calls returning such
+  information to see if these responses pose a security issue.
 * Implement a schema-based response validation mechanism as an extra layer of 
   security. As part of this mechanism define and enforce data returned by all API 
-  methods.
+  methods, including errors.
   
 
 ## References
