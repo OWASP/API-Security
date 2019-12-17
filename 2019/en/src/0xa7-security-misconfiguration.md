@@ -68,6 +68,8 @@ The API life cycle should include:
 * To prevent exception traces and other valuable information from being sent
   back to attackers, if applicable, define and enforce all API response payload
   schemas including error responses.
+* Ensure API can only be accessed by the specified HTTP verbs. All other HTTP
+  verbs should be disabled (e.g. `HEAD`).
 
 ## References
 
