@@ -65,11 +65,17 @@ The API life cycle should include:
   assets (e.g., images).
 * An automated process to continuously assess the effectiveness of the
   configuration and settings in all environments.
+
+Furthermore:
+
 * To prevent exception traces and other valuable information from being sent
   back to attackers, if applicable, define and enforce all API response payload
   schemas including error responses.
 * Ensure API can only be accessed by the specified HTTP verbs. All other HTTP
   verbs should be disabled (e.g. `HEAD`).
+* APIs expecting to be accessed from browser-based clients (e.g. WebApp
+  front-end) should implement a proper Cross-Origin Resource Sharing (CORS)
+  policy.
 
 ## References
 
@@ -78,6 +84,7 @@ The API life cycle should include:
 * [OWASP Secure Headers Project][1]
 * [OWASP Testing Guide: Configuration Management][2]
 * [OWASP Testing Guide: Testing for Error Codes][3]
+* [OWASP Testing Guide: Test Cross Origin Resource Sharing][9]
 
 ### External
 
@@ -95,3 +102,4 @@ The API life cycle should include:
 [6]: https://cwe.mitre.org/data/definitions/388.html
 [7]: https://csrc.nist.gov/publications/detail/sp/800-123/final
 [8]: https://letsencrypt.org/
+[9]: https://www.owasp.org/index.php/Test_Cross_Origin_Resource_Sharing_(OTG-CLIENT-007)
