@@ -1,7 +1,7 @@
 What's Next For Developers
 ==========================
 
-The task to create and maintain secure software, or fixing existing ones, can be
+The task to create and maintain secure software, or fixing existing sofware, can be
 difficult. APIs are no different.
 
 We believe that education and awareness are key factors to write secure
@@ -19,7 +19,7 @@ comprehensive list of available projects.
 | **Security Requirements** | Security should be part of every project from the beginning. When doing requirements elicitation, it is important to define what "secure" means for that project. OWASP recommends you use the [OWASP Application Security Verification Standard (ASVS)][7] as a guide for setting the security requirements. If you're outsourcing, consider the [OWASP Secure Software Contract Annex][8], which should be adapted according to local law and regulations. |
 | **Security Architecture** | Security should remain a concern during all the project stages. The [OWASP Prevention Cheat Sheets][9] are a good starting point for guidance on how to design security in during the architecture phase. Among many others, you'll find the [REST Security Cheat Sheet][10] and the [REST Assessment Cheat Sheet][11]. |
 | **Standard Security Controls** | Adopting Standard Security Controls reduces the risk of introducing security weaknesses while writing your own logic. Despite the fact that many modern frameworks now come with built-in standard effective controls, [OWASP Proactive Controls][12] gives you a good overview of what security controls you should look to include in your project. OWASP also provides some libraries and tools you may find valuable, such as validation controls. |
-| **Secure Software Development Life Cycle** | You can use the [OWASP Software Assurance Maturity Model (SAMM)][13] to improve the process when building APIs. Several other OWASP projects are available to help you during the different API development phase,s e.g., the [OWASP Code Review Project][14]. |
+| **Secure Software Development Life Cycle** | You can use the [OWASP Software Assurance Maturity Model (SAMM)][13] to improve the process when building APIs. Several other OWASP projects are available to help you during the different API development phases e.g., the [OWASP Code Review Project][14]. |
 
 [1]: https://www.owasp.org/index.php/Category:OWASP_Project
 [2]: https://www.owasp.org/index.php/OWASP_Education_Material_Categorized

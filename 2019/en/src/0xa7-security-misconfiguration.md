@@ -47,7 +47,7 @@ personal preferences, and authentication data.
 
 Inspecting traffic of a mobile application an attacker finds out that not all
 HTTP traffic is performed on a secure protocol (e.g., TLS). The attacker finds
-this to be true, specifically for the download of  profile images. As user
+this to be true, specifically for the download of profile images. As user
 interaction is binary, despite the fact that API traffic is performed on a
 secure protocol, the attacker finds a pattern on API responses size, which he
 uses to track user preferences over the rendered content (e.g., profile images).
@@ -73,7 +73,7 @@ Furthermore:
   schemas including error responses.
 * Ensure API can only be accessed by the specified HTTP verbs. All other HTTP
   verbs should be disabled (e.g. `HEAD`).
-* APIs expecting to be accessed from browser-based clients (e.g. WebApp
+* APIs expecting to be accessed from browser-based clients (e.g., WebApp
   front-end) should implement a proper Cross-Origin Resource Sharing (CORS)
   policy.
 

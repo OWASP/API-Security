@@ -4,11 +4,11 @@ Methodology and Data
 ## Overview
 
 Since the AppSec industry has not been specifically focused on the most recent
-applications architectures, in which APIs play an important role, compiling a
+architecture of applications, in which APIs play an important role, compiling a
 list of the ten most critical API security risks, based on a public call for
 data, would have been a hard task. Despite there being no public data call, the
 resulting Top 10 list is still based on publicly available data, security
-experts contributions, and open discussion with the security community.
+experts' contributions, and open discussion with the security community.
 
 ## Methodology
 
@@ -22,7 +22,7 @@ were asked to compile their own Top 10 list.
 
 The [OWASP Risk Rating Methodology][1] was used to perform he Risk Analysis. The
 scores were discussed and reviewed between the security practitioners. For
-considerations on this matters, please refer to the [API Security Risks][2]
+considerations on these matters, please refer to the [API Security Risks][2]
 section.
 
 The first draft of the OWASP API Security Top 10 2019 resulted from a consensus

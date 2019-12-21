@@ -18,7 +18,7 @@ of the following limits is missing or set inappropriately (e.g., too low/high).
 * Max allocable memory
 * Number of file descriptors
 * Number of processes
-* Request payload size (e.g. uploads)
+* Request payload size (e.g., uploads)
 * Number of requests per client/resource
 * Number of records per page to return in a single request response
 

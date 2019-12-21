@@ -20,7 +20,7 @@ architects, managers, or organizations.
 In the [Methodology and Data][2] section, you can read more about how this first
 edition was created. In future versions, we want to involve the security
 industry, with a public call for data. For now, we encourage everyone to
-contribute with questions, comments and ideas at our [GitHub repository][3] or
+contribute with questions, comments, and ideas at our [GitHub repository][3] or
 [Mailing list][4].
 
 [1]: https://www.owasp.org/index.php/OWASP_API_Security_Project

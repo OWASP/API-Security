@@ -15,13 +15,13 @@ mechanisms.
 An API is vulnerable if it:
 * Permits [credential stuffing][1] whereby the attacker has a list of valid
   usernames and passwords.
-* Permits attackers to perform a brute force attack on the same user, without
-  presenting captcha / account lockout mechanism.
+* Permits attackers to perform a brute force attack on the same user account, without
+  presenting captcha/account lockout mechanism.
 * Permits weak passwords.
-* Sends sensitive authentication details, such as auth tokens and password in
+* Sends sensitive authentication details, such as auth tokens and passwords in
   the URL.
 * Doesn’t validate the authenticity of tokens.
-* Accepts unsigned / weakly signed JWT tokens (`"alg":"none"`) / doesn’t
+* Accepts unsigned/weakly signed JWT tokens (`"alg":"none"`)/doesn’t
   validate their expiration date.
 * Uses plain text, encrypted, or weakly hashed passwords.
 * Uses weak encryption keys.
@@ -48,23 +48,23 @@ within a few minutes.
 ## How To Prevent
 
 * Make sure you know all the possible flows to authenticate to the API (mobile/
-  web/deep links that implement one-click authentication/etc)
+  web/deep links that implement one-click authentication/etc.)
 * Ask your engineers what flows you missed.
 * Read about your authentication mechanisms. Make sure you understand what and
-  how they are used. OAuth is not authentication, and neither API keys .
+  how they are used. OAuth is not authentication, and neither is API keys.
 * Don't reinvent the wheel in authentication, token generation, password
   storage. Use the standards.
-* Credential recovery / forget password endpoints should be treated as login
-  endpoints in terms of brute force, rate limiting and lockout protections.
+* Credential recovery/forget password endpoints should be treated as login
+  endpoints in terms of brute force, rate limiting, and lockout protections.
 * Use the [OWASP Authentication Cheatsheet][3]
 * Where possible, implement multi-factor authentication.
 * Implement anti brute force mechanisms to mitigate credential stuffing,
-  dictionary attack and brute force attacks on your authentication endpoints.
-  This mechanism should be  stricter than the regular rate limiting mechanism on
+  dictionary attack, and brute force attacks on your authentication endpoints.
+  This mechanism should be stricter than the regular rate limiting mechanism on
   your API.
 * Implement [account lockout][4] / captcha mechanism to prevent brute force
   against specific users. Implement weak-password checks.
-* API keys should not be used for user authentication, but for [client app /
+* API keys should not be used for user authentication, but for [client app/
   project authentication][5].
 
 ## References
