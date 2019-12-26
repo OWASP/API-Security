@@ -56,7 +56,7 @@ within a few minutes.
   storage. Use the standards.
 * Credential recovery/forget password endpoints should be treated as login
   endpoints in terms of brute force, rate limiting, and lockout protections.
-* Use the [OWASP Authentication Cheatsheet][3]
+* Use the [OWASP Authentication Cheatsheet][3].
 * Where possible, implement multi-factor authentication.
 * Implement anti brute force mechanisms to mitigate credential stuffing,
   dictionary attack, and brute force attacks on your authentication endpoints.

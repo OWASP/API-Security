@@ -1,11 +1,3 @@
-:warning: **OWASP API Security Top 10 2019 RC is waiting for comments and
-contributions.** :warning:
-
-Please check the [PDF][2] and [how to contribute][4]. The working draft is in
-branch [develop][3].
-
----
-
 OWASP API Security Top 10
 =========================
 
@@ -32,24 +24,24 @@ builders, breakers, and defenders in the community.
 
 This project aims to:
 
-* Create the OWASP Top Ten API Security Risks document, which can easily underscore the
-  most common risks in the area.
+* Create the OWASP Top Ten API Security Risks document, which can easily
+  underscore the most common risks in the area.
 * Create a documentation portal for developers to build APIs in a secure manner.
-* Work closely with the security community to maintain living documents that evolve with
-  security trends.
+* Work closely with the security community to maintain living documents that
+  evolve with security trends.
 
 ## Project Leaders
 
 * [Erez Yalon][0]
-* Inon Shkedy
+* [Inon Shkedy][5]
 
 ## Licensing
 
 **The OWASP API Security Project documents are free to use!**
 
 The OWASP API Security Project is licensed under the [Creative Commons
-Attribution-ShareAlike 3.0 license][1], so you can copy, distribute, and transmit
-the work. You can also adapt it, and use it commercially, as long as
+Attribution-ShareAlike 3.0 license][1], so you can copy, distribute, and
+transmit the work. You can also adapt it, and use it commercially, as long as
 you attribute the work. If you alter, transform, or build upon this work, you
 may distribute the resulting work only under the same or similar license to this
 one.
@@ -59,3 +51,4 @@ one.
 [2]: https://github.com/OWASP/API-Security/blob/develop/2019/en/dist/owasp-api-security-top-10.pdf
 [3]: https://github.com/OWASP/API-Security/tree/develop/
 [4]: https://github.com/OWASP/API-Security/blob/master/CONTRIBUTING.md
+[5]: https://www.owasp.org/index.php/User:Inon

@@ -2,8 +2,9 @@ How to Contribute
 =================
 
 When contributing to this repository, please first discuss the change you wish
-to make via submitting an issue with the owners of this repository before making a change.
-Fixing typos or rephrasing for better understanding DO NOT require discussion.
+to make via submitting an issue with the owners of this repository before making
+a change. Fixing typos or rephrasing for better understanding DO NOT require
+discussion.
 
 ## Branching Model
 
@@ -38,14 +39,15 @@ follow the steps below:
    Although there's an [`.editorconfig` file][1] on repository's root, your
    editor may not support it. To learn more about [EditorConfig][2] and text
    editors/IDEs support, check the website: https://editorconfig.org/.
-   
+
 5. Commit your changes.
 
    1. Check modified files and add only required ones (e.g., build artifacts
       SHOULD NOT be tracked).
-   2. The first line of the commit message should provide a brief description of your
-      changes. You can go into more details on the optional commit message body.
-	  
+   2. The first line of the commit message should provide a brief description of
+      your changes. You can go into more details on the optional commit message
+      body.
+
 6. Push changes to your public repository.
    ```
    git push origin fix/foreword-section
