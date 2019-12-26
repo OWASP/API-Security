@@ -22,7 +22,9 @@ or via other means:
 * jmanico
 * jmdx
 * kozmic
+* LauraRosePorter
 * Matthieu Estrade
+* nathanawmk
 * PauloASilva
 * pentagramz
 * philippederyck

@@ -12,13 +12,13 @@ API requests consume resources such as network, CPU, memory, and storage. The
 amount of resources required to satisfy a request greatly depends on the user
 input and endpoint business logic. Also, consider the fact that requests from
 multiple API clients compete for resources. An API is vulnerable if at least one
-of the following limits is missing or set inappropriately (e.g., too low/high).
+of the following limits is missing or set inappropriately (e.g., too low/high):
 
 * Execution timeouts
 * Max allocable memory
 * Number of file descriptors
 * Number of processes
-* Request payload size (e.g. uploads)
+* Request payload size (e.g., uploads)
 * Number of requests per client/resource
 * Number of records per page to return in a single request response
 
@@ -49,9 +49,6 @@ errors.
   [file descriptors, and processes][4].
 * Implement a limit on how often a client can call the API within a defined
   timeframe.
-* For sensitive operations such as login or password reset, consider rate limits
-  by API method (e.g., authentication), client (e.g., IP address), property
-  (e.g., username).
 * Notify the client when the limit is exceeded by providing the limit number and
   the time at which the limit will be reset.
 * Add proper server-side validation for query string and request body
@@ -60,8 +57,7 @@ errors.
 * Define and enforce maximum size of data on all incoming parameters and
   payloads such as maximum length for strings and maximum number of elements in
   arrays.
-* If your API accepts compressed files check compression ratios before expanding
-  the files to protect yourself against "zip bombs".
+
 
 ## References
 

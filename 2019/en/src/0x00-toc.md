@@ -9,7 +9,7 @@ Table of Contents
 * [API Security Risks](0x10-api-security-risks.md)
 * [OWASP Top 10 API Security Risks – 2019](0x11-t10.md)
 * [API1:2019 Broken Object Level Authorization](0xa1-broken-object-level-authorization.md)
-* [API2:2019 Broken Authentication](0xa2-broken-authentication.md)
+* [API2:2019 Broken User Authentication](0xa2-broken-user-authentication.md)
 * [API3:2019 Excessive Data Exposure](0xa3-excessive-data-exposure.md)
 * [API4:2019 Lack of Resources & Rate Limiting](0xa4-lack-of-resources-and-rate-limiting.md)
 * [API5:2019 Broken Function Level Authorization](0xa5-broken-function-level-authorization.md)

@@ -30,7 +30,7 @@ The API might be vulnerable if:
 ### Scenario #1
 
 After redesigning their applications, a local search service left an old API
-version (`api.someservice.com/v1`) running, unprotected and with access to the
+version (`api.someservice.com/v1`) running, unprotected, and with access to the
 user database. While targeting one of the latest released applications, an
 attacker found the API address (`api.someservice.com/v2`). Replacing `v2` with
 `v1` in the URL gave the attacker access to the old, unprotected API,

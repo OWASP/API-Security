@@ -13,7 +13,7 @@ become a target for attackers. Without secure APIs, rapid innovation would be
 impossible.
 
 Although a broader web application security risks Top 10 still makes sense, due
-to their particular nature, an API specific security risks list is required.
+to their particular nature, an API-specific security risks list is required.
 API security focuses on strategies and solutions to understand and mitigate the
 unique vulnerabilities and security risks associated with APIs.
 
