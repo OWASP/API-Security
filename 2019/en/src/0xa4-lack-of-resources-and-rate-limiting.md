@@ -12,7 +12,7 @@ API requests consume resources such as network, CPU, memory, and storage. The
 amount of resources required to satisfy a request greatly depends on the user
 input and endpoint business logic. Also, consider the fact that requests from
 multiple API clients compete for resources. An API is vulnerable if at least one
-of the following limits is missing or set inappropriately (e.g., too low/high).
+of the following limits is missing or set inappropriately (e.g., too low/high):
 
 * Execution timeouts
 * Max allocable memory

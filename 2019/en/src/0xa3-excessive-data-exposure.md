@@ -44,7 +44,7 @@ the site.
   data.
 * Backend engineers should always ask themselves "who is the
   consumer of the data?" before exposing a new API endpoint.
-* Avoid using generic methods such as to_json() and to_string().
+* Avoid using generic methods such as `to_json()` and `to_string()`.
   Instead, cherry-pick specific properties you really want to return
 * Classify sensitive and personally identifiable information (PII) that
   your application stores and works with, reviewing all API calls returning such
