@@ -1,7 +1,7 @@
 Aviso
 =====
 
-Esta es la versión de texto de Seguridad API OWASP Top 10 2019, usado como fuenta para
+Esta es la versión de texto de Seguridad API OWASP Top 10 2019, usado como fuente para
 la versión oficial distribuída como Portable Document Format (PDF).
 
 Las contribuciones al proyecto como comentarios, correcciones o traducciones 
