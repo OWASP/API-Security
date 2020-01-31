@@ -10,7 +10,7 @@ Los Diez Riesgos de Seguridad API Más Críticos
 
 | | | |
 | - | - | - |
-| https://owasp.org | Este trabajo se encuentra bajo la licencia [Creative Commons Attribution-ShareAlike 4.0 International License][1] | ![Creative Commons License Logo](images/front-cc.png) |
+| https://owasp.org | Este trabajo está licenciado bajo la [Licencia Internacional 4.0 de Creative Commons Attribution-ShareAlike][1] | ![Creative Commons License Logo](images/front-cc.png) |
 
 [1]: http://creativecommons.org/licenses/by-sa/4.0/
 
