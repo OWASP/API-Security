@@ -8,7 +8,7 @@ API1:2019 Broken Object Level Authorization
 
 ## A API está vulnerável?
 
-O nível de autorização de objetivo é um mecanismo de controle de acesso que usualmente é implementado ao nível de código para validar que um usuário pode apenas acessar objetos aos quais deve realmente tem permissão.
+O nível de autorização de objeto é um mecanismo de controle de acesso que usualmente é implementado ao nível de código para validar que um usuário pode apenas acessar objetos aos quais deve realmente tem permissão.
 
 Todo *endpoint* de API que recebe um ID de objeto, e executa qualquer tipo de ação sobre este objeto, deve implementar verificações de autorização de acesso ao nível deste objeto. A verificação deve validar que o usuário tem acesso para executar aquela ação no objeto requisitado.
 
