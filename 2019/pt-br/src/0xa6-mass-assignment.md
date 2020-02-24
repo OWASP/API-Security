@@ -55,7 +55,7 @@ Este mesmo atacante encontrou o *endpoint* `POST /api/v1/videos/new` que está v
 
 ## Referências
 
-### External
+### Externas
 
 * [CWE-915: Improperly Controlled Modification of Dynamically-Determined Object Attributes][1]
 
