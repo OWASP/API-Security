@@ -19,7 +19,7 @@ Você encontra o OWASP API Security Top 10 aqui:
 * https://www.owasp.org/index.php/OWASP_API_Security_Project
 * https://github.com/OWASP/API-Security
 
-Nós gostaríamos de agradecer a todos contribuidores que fizeram este projeto possível com seus esforços e contribuições. Todos que participaram estão listados na seção [Agradecimentos][4]. Obrigado!
+Nós gostaríamos de agradecer a todos colaboradores que fizeram este projeto possível com seus esforços e contribuições. Todos que participaram estão listados na seção [Agradecimentos][4]. Obrigado!
 
 [1]: https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project
 [2]: ./0x10-api-security-risks.md
