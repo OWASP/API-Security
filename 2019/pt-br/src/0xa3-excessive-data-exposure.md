@@ -28,8 +28,7 @@ Um sistema de vigilância baseado em IoT permite aos administradores a criação
 * Engenheiros e arquitetos de *endpoints* sempre devem ser perguntar: Quem irá utilizar esta informação? Antes de expor um novo *endpoint* de API.
 * Tenha cuidado ao utilizar métodos genéricos como `to_json()` e `to_string()`. Ao contrário, seja criterioso com cada propriedade que seja necessário retornar.
 * Classifique dados sensíveis e dados pessoais que sua aplicação armazena, revise todas as chamadas de API se estas chamadas podem significar um problema de segurança.
-* Implement a schema-based response validation mechanism as an extra layer of security. As part of this mechanism define and enforce data returned by all API methods, including errors.
-
+* Implemente respostas com mecanismos baseados em *schema* como uma camada extra de segurança. Aplique o mecanismo e o imponha a todos os dados retornados pela API, inclusive erros.
 
 ## Referências
 

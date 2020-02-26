@@ -14,7 +14,7 @@ A melhor maneira de encontrar quebras de função e autorização é executar um
 * Pode um usuário executar ações sensíveis (ex.: criação, modificação ou exclusão), mesmo apenas alterando o método HTTP (ex.: trocando `GET` para `DELETE`)?
 * Pode um usuário do grupo de acesso X acessar uma função que deve ser acessível apenas para usuários do grupo Y apenas adivinhando a URL (ex.:  `/api/v1/users/export_all`)?
 
-Nunca considere apenas a URL como separação de *endpoints* regulares e administraitvas.
+Nunca considere apenas a URL como separação de *endpoints* regulares e administrativas.
 
 Uma vez que desenvolvedores podem optar pela exposição de *endpoints* administrativos por um determinado caminho como `api/admins`, também é muito comum encontrar endpoints administrativos em caminhos similares como `api/users`.
 

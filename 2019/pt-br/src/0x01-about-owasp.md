@@ -15,13 +15,13 @@ No OWASP, você irá encontrar de forma gratuita e aberta:
 * Extensivas [conferências ao redor do mundo][4].
 * [Listas de e-mail][5].
 
-Saiba mais sobre o OWASP: [https://www.owasp.org][6].
+Saiba mais em: [https://www.owasp.org][6].
 
 No OWASP, todas as ferramentas, documentações, vídeos, apresentações e capítulos são gratuitos e abertos para qualquer a interessado em melhorar a segurança de aplicações
 
 Nós advogamos a abordagem da segurança das aplicações como um problema de pessoas, processos e tecnologia, uma vez que as abordagens mais efetivas na segurança de aplicações necessitam de melhorias nestas áreas.
 
-O OWASP é um novo tipo de organização. Nossa independência de pressão comercial permite-nos prover informações e práticas livres de viéses e de efetivo custo benefício sobre segurança de aplicações.
+O OWASP é um novo tipo de organização. Nossa independência de pressão comercial permite-nos prover informações e práticas livres de vieses e de efetivo custo benefício sobre segurança de aplicações.
 
 O OWASP não é afiliado a qualquer empresa de tecnologia, embora nosso suporte ao uso de tecnologias comercias. O OWASP produz diversos materiais de forma colaborativa, transparente e aberta.
 

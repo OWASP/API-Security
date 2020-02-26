@@ -3,7 +3,7 @@ Introdução
 
 ## Seja bem-vindo ao OWASP API Security Top 10 - 2019!
 
-Seja bem-vindo a primeira edição do projeto OWASP API Security Top 10. Se você está familiarizado com a série Top 10 do OWASP, irá perceber certas similaridades: Elas são intencionais para melhor leitura a adoção. Se não é o seu caso, considere visitar a [wiki][1] do projeto antes de mergulhar mais profundamente nos mais críticos riscos de segurança de APIs.
+Seja bem-vindo à primeira edição do projeto OWASP API Security Top 10. Se você está familiarizado com a série Top 10 do OWASP, irá perceber certas similaridades: Elas são intencionais para melhor leitura a adoção. Se não é o seu caso, considere visitar a [wiki][1] do projeto antes de mergulhar mais profundamente nos mais críticos riscos de segurança de APIs.
 
 As APIs possuem papel fundamental na arquitetura de aplicações modernas. Inovação e consciência de segurança possuem ritmos diferentes. É importante ter foco nas mais fraquezas mais comuns na segurança de APIs.
 
