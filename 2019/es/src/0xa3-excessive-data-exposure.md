@@ -6,7 +6,7 @@ API3:2019 Exposición de Datos Excesiva
 | Específico de la API : Explotabilidad **3** | Frecuencia **2** : Detectabilidad **2** | Técnico **2** : Específico del Negocio |
 | La explotación de la Exposición de Datos Excesiva es simple, y usualmente es realizada inspeccionando el tráfico para analizar las respuestas de la API, buscando exposiciones de datos sensibles que no deberían ser devueltos al usuario. | Las APIs delegan en los clientes la realización de filtrado de datos. Como las APIs son usadas como fuentes de datos, a veces los desarrolladores intentan implementarlas de una manera genérica sin pensar sobre la sensibilidad de los datos expuestos. Las herramientas automáticas usualmente no pueden detectar este tipo de vulnerabilidad, ya que is difícil diferenciar entre datos legítimos devueltos por la API y datos sensibles que no deberían ser devueltos, sin un profundo conocimiento de la aplicación. | La Exposición de Datos Excesiva comunmente deriva en la exposición de datos sensibles. |
 
-## ¿Es la API Vulnerable?
+## Es Vulnerable la API?
 
 La API devuelve datos sensibles al cliente por ser diseñada de esta manera. 
 Estos datos son usualmente filtrados del lado del cliente antes de ser presentados al usuario.
