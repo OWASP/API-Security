@@ -18,8 +18,7 @@ Falhas nesse mecanismo geralmente levam ao acesso não autorizado de informaçõ
 
 ### Cenário #1
 
-Uma plataforma de *e-commerce* para lojas de compras online entrega uma listagem com
-os gráficos de receita de suas lojas hospedadas. Inspecionando as requisições do navegador, o atacante pode identificar que os *endpoints* utilizado como fonte de dados para os gráficos utiliza um padrão como `/shops/{shopName}/revenue_data.json`. Utilizando outro *endpoint* da API, o atacante consegue uma lista de todos os nomes das lojas hospedadas na plataforma. Com um simples *script* o atacante pode agora, manipulando o nome substituindo o parâmetro `{shopName}` na URL, ganhar acesso aos dados das vendas de milhares de lojas que utilizam a plataforma de *e-commerce*.
+Uma plataforma de *e-commerce* para lojas de compras online entrega uma listagem com os gráficos de receita de suas lojas hospedadas. Inspecionando as requisições do navegador, o atacante pode identificar que os *endpoints* utilizado como fonte de dados para os gráficos utiliza um padrão como `/shops/{shopName}/revenue_data.json`. Utilizando outro *endpoint* da API, o atacante consegue uma lista de todos os nomes das lojas hospedadas na plataforma. Com um simples *script* o atacante pode agora, manipulando o nome substituindo o parâmetro `{shopName}` na URL, ganhar acesso aos dados das vendas de milhares de lojas que utilizam a plataforma de *e-commerce*.
 
 ### Cenário #2
 

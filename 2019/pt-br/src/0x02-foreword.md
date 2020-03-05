@@ -7,7 +7,7 @@ Por natureza, as APIs expõem a lógica dos aplicativos e dados sensíveis, incl
 
 Embora uma ampla avaliação de Top 10 a respeito da segurança de aplicações fala sentido, em razão de suas particularidades, uma lista de riscos de segurança específica para APIs também é um requisito. A segurança de APIs tem foco em estratégias e soluções para a compreensão de mitigação de vulnerabilidades únicas associadas às APIs.
 
-Se você é familiarizado com o projeto [OWASP Top 10 Project][1], irá perceber similaridades entre os dois documentos: Isto é intencional para facilitar a compreensão e adoção. Se você é um novato nas séries Top 10 do OWASP, talvez você ler atentamente as seções [Riscos de Segurança de API][2] e [Metodologia e Dados][3]
+Se você é familiarizado com o projeto [OWASP Top 10][1], irá perceber similaridades entre os dois documentos: Isto é intencional para facilitar a compreensão e adoção. Se você é um novato nas séries Top 10 do OWASP, talvez seja melhor você ler atentamente as seções [Riscos de Segurança de API][2] e [Metodologia e Dados][3] antes.
 
 Você pode contribuir com o projeto OWASP API Security Top 10 com questionamentos, comentários e ideias por meio do repositório do projeto no GitHub:
 

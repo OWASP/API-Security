@@ -13,7 +13,7 @@ Os *endpoints* e fluxos de autorização são ativos que devem ser protegidos. "
 Uma API está vulnerável se:
 * Permite a prática de *[credential stuffing][1]* o qual o atacante tem uma lista de
   nomes de usuário e senhas.
-* Permite que atacantes executem força bruta contra uma mesma conta de usuário sem exibir captcha ou mecanismo de bloqueio da conta.
+* Permite que atacantes executem força bruta contra uma mesma conta de usuário sem exibir CAPTCHA ou mecanismo de bloqueio da conta.
 * Permite o uso de senhas fracas.
 * Envia detalhes sensíveis da autenticação como *tokens* e senhas na URL.
 * Não executa a validação de autenticidade de *tokens*.

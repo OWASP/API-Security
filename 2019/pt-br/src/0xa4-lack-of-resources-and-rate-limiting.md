@@ -32,7 +32,7 @@ Este mesmo cenário pode ser utilizado para provocar erros de *Integer Overflow*
 
 ## Como prevenir
 
-* Docker torna mais fácil limitar [memória][1], [CPU][2], [quantidade de *restart*][3], [*file descriptors*, e processadores][4].
+* Docker torna mais fácil limitar [memória][1], [CPU][2], [quantidade de *restart*][3], [*file descriptors*, e processos][4].
 * Implemente um limite de frequência para um cliente chamar a API em um determinado espaço de tempo.
 * Notifique o cliente quando o limite for excedido, informando o limite e quando o limite alcançado será reiniciado.
 * Adicione validações do lado do servidor para validação de parâmetros, principalmente controles de quantidade de registros a serem retornados.

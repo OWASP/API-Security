@@ -22,7 +22,7 @@ Uma vez que desenvolvedores podem optar pela exposição de *endpoints* administ
 
 ### Cenário #1
 
-Durante o processo de registro de uma aplicação que permite apenas usuários convidados se cadastrarem, o aplicativo móvel realiza uma chamada de API para `GET /api/invites/{invite_guid}`. A resposta no formato JSON contém os detelhes sobre o convite, incluindo o papel e endereço de e-mail do usuário.
+Durante o processo de registro de uma aplicação que permite apenas usuários convidados se cadastrarem, o aplicativo móvel realiza uma chamada de API para `GET /api/invites/{invite_guid}`. A resposta no formato JSON contém os detalhes sobre o convite, incluindo o papel e endereço de e-mail do usuário.
 
 Um atacante duplica a requisição e, modifica o método HTTP e o *endpoint* para `POST /api/invites/new`. Este *endpoint* deveria ser acessível apenas por administradores utilizando a console administrativa, que não implementa uma autorização de nível de função.
 
@@ -43,7 +43,7 @@ Uma API contém um *endpoint* que deveria estar exposta apenas para administrado
 Sua aplicação deve possuir um consistente módulo de autorização a ser invocado por todas suas funções. Frequentemente este tipo de proteção é provida por um ou mais componentes externos ao código da aplicação.
 
 * O mecanismo de verificação deve negar tudo por padrão, requerendo permissões explícitas para papéis de cada função.
-* Revise seus *endpoints* de API para validar falhas de autoriação, enquanto mantém em mente a lógica de negócio da aplicação e hierarquia de grupos.
+* Revise seus *endpoints* de API para validar falhas de autorização, enquanto mantém em mente a lógica de negócio da aplicação e hierarquia de grupos.
 * Certifique-se que todos seus controles administrativos sejam herdados por um *controller* de abstração que implemente as verificações de autorização.
 * Tenha certeza que funções administrativas dentro de *controllers* regulares implementem verificação de autorização baseado no usuário, grupos e papéis.
 

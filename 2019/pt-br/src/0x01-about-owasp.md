@@ -1,13 +1,13 @@
 Sobre o OWASP
 ===========
 
-OWASP é o acrônimo em inglês para "Open Web Application Security Project", o OWASP é uma comunidade aberta, dedicada a habilitar as organizações a desenvolver, comprar e manter aplicações e APIs que podem ser confiáveis.
+OWASP é o acrônimo em inglês para "Open Web Application Security Project", é uma comunidade aberta, dedicada a habilitar as organizações a desenvolver, comprar e manter aplicações e APIs que podem ser confiáveis.
 
 No OWASP, você irá encontrar de forma gratuita e aberta:
 
 *  Ferramentas e padrões de segurança de aplicativos.
 * Livros completos sobre testes de segurança de aplicativos, desenvolvimento seguro de código e revisão de código seguro.
-* Apresentações e [videos][1].
+* Apresentações e [vídeos][1].
 * [Cheat sheets][2] em diversos tópicos.
 * Padrões de controles de segurança e bibliotecas.
 * [Capítulos locais em todo o mundo][3].
@@ -29,13 +29,11 @@ A Fundação OWASP é uma entidade não comercial, que encoraja projetos de suce
 
 Venha conosco!
 
-## Copyright and License
+## Licença e Copyright
 
 ![license](images/license.png)
 
-Copyright © 2003-2017 The OWASP Foundation. This document is released under the
-[Creative Commons Attribution Share-Alike 4.0 license][7]. For any reuse or
-distribution, you must make it clear to others the license terms of this work.
+Copyright © 2003-2017 The OWASP Foundation. Este documento é liberado sob a [Atribuição-CompartilhaIgual 4.0 Internacional (CC BY-SA 4.0)][7]. Para qualquer reuso ou distribuição, tenha certeza à terceiros os termos deste trabalho.
 
 [1]: https://www.youtube.com/user/OWASPGLOBAL
 [2]: https://www.owasp.org/index.php/OWASP_Cheat_Sheet_Series
@@ -43,4 +41,4 @@ distribution, you must make it clear to others the license terms of this work.
 [4]: https://www.owasp.org/index.php/Category:OWASP_AppSec_Conference
 [5]: https://lists.owasp.org/mailman/listinfo
 [6]: https://www.owasp.org
-[7]: http://creativecommons.org/licenses/by-sa/4.0/
+[7]: https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR
