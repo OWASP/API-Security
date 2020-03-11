@@ -4,22 +4,23 @@ API9:2019 Improper Assets Management
 | Agentes/Vetores | Fraquezas de Segurança | Impactos |
 | - | - | - |
 | Específico da API : Explorabilidade **3** | Prevalência **3** : Detecção **2** | Técnico **2** : Específico do negócio |
-| Versões desatualizadas de APIs geralmente carecem de *patches* e são um meio fácil de comprometer sistemas sem a presença de mecanismos de segurança no estado-da-arte, e que podem existir também para proteger versões atualizadas de APIs. | Documentação desatualizada torna mais difícil encontrar e/ou corrigir vulnerabilidades. Falta de um inventário de ativos e estratégias de retirada levam ao cenário de sistemas sem atualização permanecerem em execução, podendo resultado no vazamento de dados sensíveis. É bastante comum encontrar APIs expostas sem necessidade em razão de conceitos modernos como os de microsserviços, que permite que aplicativos sejam lançados independentemente (ex.: computação em nuvem, kubernetes). | Atacantes ter acesso a dados sensíveis e até tomar o controle de servidores por meio de uma velha e desatualizada API conectada ao mesmo banco de dados |
+| Versões desatualizadas de APIs geralmente carecem de *patches* e são um meio fácil de comprometer sistemas sem a presença de mecanismos de segurança no estado-da-arte, e que podem existir também para proteger versões atualizadas de APIs. | Documentação desatualizada torna mais difícil encontrar e/ou corrigir vulnerabilidades. Falta de um inventário de ativos e estratégias de retirada levam ao cenário de sistemas sem atualização permanecerem em execução, podendo resultado no vazamento de dados sensíveis. É bastante comum encontrar APIs expostas sem necessidade em razão de conceitos modernos como os de microsserviços, que permite que aplicativos sejam lançados independentemente (ex.: computação em nuvem, kubernetes). | Atacantes ter acesso a dados sensíveis e até tomar o controle de servidores por meio de uma velha e desatualizada API conectada ao mesmo banco de dados. |
 
 ## A API está vulnerável?
 
-A API está vulnerável se:
+A API pode estar vulnerável se:
 
 * O propósito do *host* da API não for claro, e se não há respostas explícitas para as seguintes questões:
   * Em qual ambiente está rodando à API? (Ex.: produção, *staging*, teste, desenvolvimento)?
   * Quem deve ter acesso via rede à API (Ex.: pública, interna, parceiros)?
   * Em qual versão está a API em execução?
   * Que tipo de informação acessa a API (Ex.: Dados pessoais sensíveis)?
-  * Não existe documentação, ou a documentação existente está desatualizada.
-  * Não há um plano de retirada para cada versão da API.
-  * Inventário de *hosts* não existe ou está desatualizado.
-  * Inventário de serviços de integração, seja interna ou de parceiros, não existe ou está desatualizado.
-  * Versões antigas da API continuam rodando sem *patches*.
+  * Qual é o fluxo da informação?
+* Não existe documentação, ou a documentação existente está desatualizada.
+* Não há um plano de retirada para cada versão da API.
+* Inventário de *hosts* não existe ou está desatualizado.
+* Inventário de serviços de integração, seja interna ou de parceiros, não existe ou está desatualizado.
+* Versões antigas da API continuam rodando sem *patches*.
 
 ## Cenários de exemplo de ataques
 
@@ -29,7 +30,7 @@ Após um redesenho de sua aplicações, um serviço de pesquisa local deixou uma
 
 ### Cenário #2
 
-Uma rede social implementou um nível de classificação mínimo que bloqueia atancantes do uso de força bruta para conseguir acesso por meio de adivinhação de *tokens* de redefinição de senhas de acesso. Este mecanismo não foi implementado no código próprio da API, mas em um componente separado entre o cliente e a API oficial (`www.socialnetwork.com`). Um pesquisador encontrou a versão beta da API (`www.mbasic.beta.socialnetwork.com`) que executa a mesma API, incluindo o mecanismo de redefinição de senha, onde o nível de classificação mínimo não está ativado. Dessa maneira ele pode redefinir a senha de qualquer usuário com um mecanismo simples de força bruta para adivinhar o *token* de seis dígitos.
+Uma rede social implementou um nível de classificação mínimo que bloqueia atacantes do uso de força bruta para conseguir acesso por meio de adivinhação de *tokens* de redefinição de senhas de acesso. Este mecanismo não foi implementado no código próprio da API, mas em um componente separado entre o cliente e a API oficial (`www.socialnetwork.com`). Um pesquisador encontrou a versão beta da API (`www.mbasic.beta.socialnetwork.com`) que executa a mesma API, incluindo o mecanismo de redefinição de senha, onde o nível de classificação mínimo não está ativado. Dessa maneira ele pode redefinir a senha de qualquer usuário com um mecanismo simples de força bruta para adivinhar o *token* de seis dígitos.
 
 ## Como prevenir
 

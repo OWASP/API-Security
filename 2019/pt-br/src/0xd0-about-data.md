@@ -1,13 +1,13 @@
-Dados e Metodoligia
+Dados e Metodologia
 ===================
 
 ## Visão Geral
 
 Como o setor de segurança de aplicação não se concentrou especificamente em mais recentes arquiteturas de aplicativos, na qual as API possuem um papel importante, compilar uma lista dos dez mais críticos riscos de segurança de API, baseados em uma chamada pública por informações, teria sido uma árdua tarefa. Apesar de não ter havido esta chamada por dados, a lista dos dez mais críticos ainda é baseada em dados públicos e com contribuições de *experts* em segurança, além de discussões abertas da comunidade.
 
-## Metodologia
+## Metodologia e Dados
 
-Na primeira fase, dados disponíveis publicamente sobre incidentes de segurança envolvendo APIs, os quais foram coletados por *experts* em segurança, e então foram revisados e categorizados. Estas informaões foram coletadas de plataformas de *bug bounty* e bancos de dados de vulnerabilidades durante um ano inteiro, como propósito estatístico.
+Na primeira fase, dados disponíveis publicamente sobre incidentes de segurança envolvendo APIs, os quais foram coletados por *experts* em segurança, e então foram revisados e categorizados. Estas informações foram coletadas de plataformas de *bug bounty* e bancos de dados de vulnerabilidades durante um ano inteiro, como propósito estatístico.
 
 Na fase seguinte profissionais de segurança com experiência em testes de penetração foram questionados a colaborar com suas listas de dez maiores ameaças à segurança de API.
 

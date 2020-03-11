@@ -4,7 +4,7 @@ API6:2019 - Mass Assignment
 | Agentes/Vetores | Fraquezas de Segurança | Impactos |
 | - | - | - |
 | Específico da API : Explorabilidade **2** | Prevalência **2** : Detecção **2** | Técnico **2** : Específico do negócio |
-| A exploração usualmente requer compreensão da lógica de negócio, relação entre objetivos e estrutura da API. Este tipo de exploração é mais fácil em APIs, uma vez que por *design* elas expõem implementações internas do aplicativo junto de suas propriedades. | Frameworks modernos encorajam desenvolvedores a utilizar funções que automaticamente conectam a entrada do cliente em vairáveis de código e objetos internos. Atacantes podem utilizar esta metodologia para atualizar ou sobreescrever propriedades em objetos sensíveis que os desenvolvedores nunca tiveram intenção de expor. | A exploração pode levar a escalação de privilégios, adulteração de dados, desvio de mecanismos de segurança, entre outros. |
+| A exploração usualmente requer compreensão da lógica de negócio, relação entre objetivos e estrutura da API. Este tipo de exploração é mais fácil em APIs, uma vez que por *design* elas expõem implementações internas do aplicativo junto de suas propriedades. | *Frameworks* modernos encorajam desenvolvedores a utilizar funções que automaticamente conectam a entrada do cliente em variáveis de código e objetos internos. Atacantes podem utilizar esta metodologia para atualizar ou sobrescrever propriedades em objetos sensíveis que os desenvolvedores nunca tiveram intenção de expor. | A exploração pode levar a escalação de privilégios, adulteração de dados, desvio de mecanismos de segurança, entre outros. |
 
 ## A API está vulnerável?
 
@@ -22,7 +22,7 @@ Exemplos de propriedades sensíveis:
 
 ### Cenário #1
 
-Um aplicativo de compartilhamento de corridas premite ao usuário a opção de editar informações e dados básicos do seu perfil. Durante este processo, uma chamada à API é enviada para `PUT /api/v1/users/me` com o seguinte, e legítimo, objeto JSON:
+Um aplicativo de compartilhamento de corridas permite ao usuário a opção de editar informações e dados básicos do seu perfil. Durante este processo, uma chamada à API é enviada para `PUT /api/v1/users/me` com o seguinte, e legítimo, objeto JSON:
 
 ```json
 {"user_name":"inons","age":24}
@@ -42,9 +42,10 @@ Uma vez que o *endpoint* está vulnerável, o atacante recebe créditos sem paga
 
 ### Cenário #2
 
-Um portal de compartilhamento de vídeos permite aos usuários o envio de conteúdo e *download* de conteúdo em diferentes formatos. Um atacante explora a API no *endpoint* `GET /api/v1/videos/{video_id}/meta_data` que retorna um objeto com pripriedades do vídeo. Uma das propriedades é `"mp4_conversion_params":"-v codec h264"`, que indica que a aplicação usa um comando *shell* para converter o vídeo.
+Um portal de compartilhamento de vídeos permite aos usuários o envio de conteúdo e *download* de conteúdo em diferentes formatos. Um atacante explora a API no *endpoint* `GET /api/v1/videos/{video_id}/meta_data` que retorna um objeto com Um portal de compartilhamento de vídeos permite aos usuários o envio de conteúdo e *download* de conteúdo em diferentes formatos. Um atacante explora a API no *endpoint* `GET /api/v1/videos/{video_id}/meta_data` que retorna um objeto com pripriedades do vídeo. Uma das propriedades é `"mp4_conversion_params":"-v codec h264"`, que indica que a aplicação usa um comando *shell* para converter o vídeo.
+ do vídeo. Uma das propriedades é `"mp4_conversion_params":"-v codec h264"`, que indica que a aplicação usa um comando *shell* para converter o vídeo.
 
-Este mesmo atacante encontrou o *endpoint* `POST /api/v1/videos/new` que está vulnerável e permite ao cliente atribuir qualquer propriedade ao objeto vídeo, então o atacante atribui um valor malicioso como o exemplo a seguir: `"mp4_conversion_params":"-v codec h264 && format C:/"`. Este valor poderá causar a execução de um comando *shell* quando o atacante pedir o download do vídeo no formato mp4.
+Este mesmo atacante encontrou o *endpoint* `POST /api/v1/videos/new` que está vulnerável e permite ao cliente atribuir qualquer propriedade ao objeto vídeo, então o atacante atribui um valor malicioso como o exemplo a seguir: `"mp4_conversion_params":"-v codec h264 && format C:/"`. Este valor poderá causar a execução de um comando *shell* quando o atacante pedir o *download* do vídeo no formato mp4.
 
 ## Como prevenir
 

@@ -14,7 +14,7 @@ A API retorna dados sensíveis ao cliente por padrão. Este dado então é filtr
 
 ### Cenário #1
 
-O time de desenvolvimento móvel utiliza o *endpoint* `/api/articles/{articleId}/comments/{commentId}` para exibir metadados dos comentários em artigos. Investigando o tráfego do aplicativo móvel, um atacante encontra outros dados sensíveis relacionados ao autores de comentários que também são entregues. Isto acontece por uma implementação genérica do *enpoint* utilizando o método de serialização `toJson()` ao modelo `User`, que também inclui dados sensíveis.
+O time de desenvolvimento móvel utiliza o *endpoint* `/api/articles/{articleId}/comments/{commentId}` para exibir metadados dos comentários em artigos. Investigando o tráfego do aplicativo móvel, um atacante encontra outros dados sensíveis relacionados ao autores de comentários que também são entregues. Isto acontece por uma implementação genérica do *endpoint* utilizando o método de serialização `toJson()` ao modelo `User`, que também inclui dados sensíveis.
 
 ### Cenário #2
 

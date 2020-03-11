@@ -4,22 +4,21 @@ API8:2019 Injection
 | Agentes/Vetores | Fraquezas de Segurança | Impactos |
 | - | - | - |
 | Específico da API : Explorabilidade **3** | Prevalência **2** : Detecção **3** | Técnico **3** : Específico do negócio |
-| Atacantes vão entregar à API dados maliciosos a quaisquer vetores de injeção disponíveis (ex.: dados, parâmetros, integrações e etc.), esperando que estes dados sejam entregues a um interpretador. | Falhas por injeção são muito comunso e geralmente encontrados em consultas SQL, LDAP ou noSQL, comando em SO, *parsers* de XML e ORM. São falhar simples de encontrar ao revisar código fonte, e atacantes podem utilizar *scanners* e *fuzzers*. | Injeção pode levar ao vazamento de informação e perda de dados. Também podem levar à DoS ou a perda completa de um *host*. |
+| Atacantes vão entregar à API dados maliciosos a quaisquer vetores de injeção disponíveis (ex.: dados, parâmetros, integrações e etc.), esperando que estes dados sejam entregues a um interpretador. | Falhas por injeção são muito comuns e geralmente encontrados em consultas SQL, LDAP ou noSQL, comando em SO, *parsers* de XML e ORM. São falhar simples de encontrar ao revisar código fonte, e atacantes podem utilizar *scanners* e *fuzzers*. | Injeção pode levar ao vazamento de informação e perda de dados. Também podem levar à DoS ou a perda completa de um *host*. |
 
 ## A API está vulnerável?
 
 A API está vulnerável às falhas de injeção se:
 
 * Dados enviados pelo cliente não são validados, filtrados ou sanitizados pela API.
-* Dados enviados pelo cliente são utilizados diretamente ou concatenados para consultas SQL/NoSQL/LDAP, comandos de sistema operacional, *parsers* XML, ORM (Object Relational Mapping) ou ODM (Object
-  Document Mapper).
+* Dados enviados pelo cliente são utilizados diretamente ou concatenados para consultas SQL/NoSQL/LDAP, comandos de sistema operacional, *parsers* XML, ORM (*Object Relational Mapping*) ou ODM (*Object Document Mapper*).
 * Dados vindos de sistemas externos (ex.: sistemas de integração) não são validados, filtrados ou sanitizados pela API.
 
 ## Cenários de exemplo de ataques
 
 ### Cenário #1
 
-O firmware de um dispositivo de controle parental provê o *endpoint* `/api/CONFIG/restore` o qual espera um appId a ser enviado como um parâmetro *multipart*. Utilizando um decompilador, o atacante encontra que o parâmetro appId é repassado diretamente para uma chamada de sistema sem qualquer sanitização:
+O *firmware* de um dispositivo de controle parental provê o *endpoint* `/api/CONFIG/restore` o qual espera um appId a ser enviado como um parâmetro *multipart*. Utilizando um descompilador, o atacante encontra que o parâmetro appId é repassado diretamente para uma chamada de sistema sem qualquer sanitização:
 
 ```c
 snprintf(cmd, 128, "%srestore_backup.sh /tmp/postfile.bin %s %d",
@@ -49,7 +48,7 @@ router.delete('/bookings', async function (req, res, next) {
 });
 ```
 
-O atacante intecepta a requisição de modifica o valor da *querystring* `bookingId` como demonstrado abaixo. Neste caso, o atacante consegue excluir tpdos os demais agendamentos de usuários:
+O atacante intercepta a requisição de modifica o valor da *querystring* `bookingId` como demonstrado abaixo. Neste caso, o atacante consegue excluir todos os demais agendamentos de usuários:
 
 ```
 DELETE /api/bookings?bookingId[$ne]=678
@@ -61,9 +60,9 @@ Prevenir injeção requer manter os dados separados de comandos e consultas.
 
 * Execute validação de dados utilizando uma biblioteca única, confiável e de ativa manutenção.
 * Valide, filtre e sanitize todos os dados providos pelo cliente, e também dados vindos de sistemas integradores.
-* Caracteres especiais devem ser avaliados utlizando a sintaxe específica do interpretador dos comandos.
+* Caracteres especiais devem ser avaliados utilizando a sintaxe específica do interpretador dos comandos.
 * Prefira APIs seguras, que entreguem interfaces seguras e parametrizadas.
-* Sempre limite o número de registros retornados para prevenir vazamento de dados em massa em caso de injeção.
+* Sempre limite o número de registros retornados para prevenir vazamento em massa em caso de injeção.
 * Valide os dados recebidos utilizando filtros suficientes para permitir que apenas valores válidos cheguem aos interpretadores.
 * Defina tipos de dados de padrões *strict* em todos os parâmetros do tipo *string*.
 

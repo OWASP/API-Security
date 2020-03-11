@@ -22,7 +22,7 @@ Uma plataforma de *e-commerce* para lojas de compras online entrega uma listagem
 
 ### Cenário #2
 
-Enquanto monitora o tráfego de rede um um *wearable device*, o atacante tem sua atenção despertada ao perceber o verbo HTTP `PATCH` possui o cabeçalho customizado `X-User-Id: 54796`. Substituindo o valor do cabeçalho o atacante recebe uma resposta HTTP válida, sendo possível portando modificar os dados de outros usuários.
+Enquanto monitora o tráfego de rede um um *wearable device*, o atacante tem sua atenção despertada ao perceber o verbo HTTP `PATCH` possui o cabeçalho customizado `X-User-Id: 54796`. Substituindo o valor do cabeçalho o atacante recebe uma resposta HTTP válida, sendo possível portanto modificar os dados de outros usuários.
 
 ## Como prevenir
 

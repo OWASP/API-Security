@@ -19,7 +19,7 @@ Uma API está vulnerável se:
 * Não executa a validação de autenticidade de *tokens*.
 * Aceita *tokens* JWT não assinados/fracos (`"alg":"none"`)/não valida data de expiração.
 * Utiliza senhas em texto plano, não criptografadas ou com hash fraco de criptografia.
-* Usa chaves de criptogrfia fracas.
+* Usa chaves de criptografias fracas.
 
 ## Cenários de exemplo de ataques
 
@@ -41,7 +41,7 @@ Um atacante inicia um processo de recuperação de senha enviando uma requisiç�
 * Use as informações do projeto [OWASP Authentication Cheatsheet][3].
 * Sempre que possível, implemente autenticação multi-fator.
 * Implemente mecanismos anti força bruta para mitigar *credential stuffing*, ataque por dicionário em seus *endpoints* de autenticação. A taxa de confiança da proteção desse mecanismo deve ser mais restrito que os demais mecanismos na sua API.
-* Implemente [bloqueio de conta][4] / mecanismos de CAPTCHA a fim de previnir o uso de força bruta contra usuários específicos. Implemente verificação de senhas fracas.
+* Implemente [bloqueio de conta][4] / mecanismos de CAPTCHA a fim de prevenir o uso de força bruta contra usuários específicos. Implemente verificação de senhas fracas.
 * Chaves de API não devem ser utilizadas para autenticação de usuários, mas para [aplicativos clientes e autenticação de projetos][5].
 
 ## Referências

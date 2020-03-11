@@ -14,8 +14,8 @@ Sua API pode estar vulnerável se:
 * Os últimos *patches* de segurança não estão aplicados ou o sistemas estão desatualizados.
 * Recursos não necessários estão habilitados (ex.: certos verbos HTTP).
 * Transporte criptografado (TLS) não configurado.
-* Diretivas de segurança não enviados aos clientes (ex.: [Cabeçalhos de Segurança][1]).
-* Configurações de política CORS (Cross-Origin Resource Sharing) não configuradas ou configuradas inadequadamente.
+* Diretivas de segurança não enviadas aos clientes (ex.: [Cabeçalhos de Segurança][1]).
+* Configurações de política CORS (*Cross-Origin Resource Sharing*) não configuradas ou configuradas inadequadamente.
 * Mensagens de erro incluindo *stack trace* ou informações sensíveis.
 
 ## Cenários de exemplo de ataques
@@ -31,7 +31,7 @@ Um atacante pode também encontrar novos *endpoints* da API que são utilizados 
 
 ### Cenário #2
 
-Para mirar um serviço em específico, um atancate utiliza uma popular ferramenta de pesquisa na web para encontrar servidores que estão diretamente acessíveis na internet. Este atacante encontra um *host* executando um popular serviço de gerenciamento de banco de dados, o qual está ouvindo na porta padrão. Este mesmo *host* utiliza configurações padrão do sistema de gerenciamento de banco de dados, o qual a autenticação de acesso é desabilitada por padrão, então o atacante consegue acesso à milhares de registros com dados pessoais sensíveis e dados de autenticação.
+Para mirar um serviço em específico, um atacante utiliza uma popular ferramenta de pesquisa na web para encontrar servidores que estão diretamente acessíveis na internet. Este atacante encontra um *host* executando um popular serviço de gerenciamento de banco de dados, o qual está ouvindo na porta padrão. Este mesmo *host* utiliza configurações padrão do sistema de gerenciamento de banco de dados, o qual a autenticação de acesso é desabilitada por padrão, então o atacante consegue acesso à milhares de registros com dados pessoais sensíveis e dados de autenticação.
 
 ### Cenário #3
 
@@ -42,7 +42,7 @@ Inspecionando o tráfego de um aplicativo móvel, um atacante encontra que nem t
 O ciclo de vida da API deve incluir:
 
 * Um processo de *hardening* contínuo levando a um rápido e fácil modelo de entrega a um ambiente apropriadamente protegido.
-* Uma tarefa de revisão e atualização de configurações em todo o *stack* da API, essa revisão deve incluir: Arquivos de orquestração, componentes de API, serviços de núvem (ex.: permissões de *buckets*).
+* Uma tarefa de revisão e atualização de configurações em todo o *stack* da API, essa revisão deve incluir: Arquivos de orquestração, componentes de API, serviços de nuvem (ex.: permissões de *buckets*).
 * Um canal de comunicação segura para todos os pontos de interação da API, inclusive objetos estáticos (Ex.: Imagens).
 * Processo automatizado para continuamente avaliar a efetividade das configurações e preferências em todos os ambientes.
 
