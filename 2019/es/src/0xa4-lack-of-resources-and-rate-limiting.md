@@ -6,7 +6,7 @@ API4:2019 Falta de Recursos & Límite de Velocidad
 | Específico de la API : Explotabilidad **2** | Frecuencia **3** : Detectabilidad **3** | Técnico **2** : Específico del Negocio |
 | La explotación requiere peticiones API simples. La autenticación no es requerida. Múltiples peticiones concurrentes pueden ser realizadas desde una sola computadora local o usando recursos computacionales en la nube. | Es común encontrar APIs que no implementan límites de velocidad o APIs donde los límites no están configurados correctamente. | La explotación puede derivar en Denegación de Servicio, haciendo que la API no responda o que se inhabilite. |
 
-## Es Vulnerable la API?
+## ¿Es vulnerable la API?
 
 Las peticiones API consumen recursos como red, CPU, memoria y almacenamiento. La
 cantidad de recursos requeridos para satisfacer una petición depende en mayor medida
@@ -34,7 +34,7 @@ la creación de las muestras y la API no responde otras peticiones.
 
 ### Escenario #2
 
-Tenemos una aplicación que contiene la lista de usuarios en una IU con un límite
+Tenemos una aplicación que contiene la lista de usuarios en una interfaz con un límite
 de `200` usuarios por página. La lista de usuarios se obtiene del servidor usando
 la siguiente consulta: `/api/users?page=1&size=100`. Un atacante cambia el parámetro
 `size` a `200 000`, causando problemas de performance en la base de datos. Mientras
