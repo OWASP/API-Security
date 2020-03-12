@@ -6,7 +6,7 @@ API2:2019 Autenticación de Usuario Rota
 | Específico de la API : Explotabilidad **3** | Frecuencia **2** : Detectabilidad **2** | Técnico **3** : Específico del Negocio |
 | La autenticación en APIs es un mecanismo complejo y confuso. Ingenieros de software y seguridad pueden tener ideas equivocadas sobre cuáles son los límites de autenticación y cómo implementarla correctamente. Agregado a esto, el mecanismo de autenticación es un objetivo fácil para los atacantes, ya que está expuesto a todo el mundo. Estos dos puntos hacen al componente de autenticación potencialmente vulnerable a muchos exploits. | Existen 2 subproblemas: 1. Falta de mecanismos de protección: Los recursos de APIs que son responsables de la autenticación deben ser tratados de forma diferente a los recursos regulares e implementar capas extra de protección 2. Implementación incorrecta del mecanismo: El mecanismo es usado / implementado sin considerar los vercores de ataque, o es el caso de uso equivocado (p.e., un mecanismo de autenticación diseñado para clientes IoT puede no ser la elección correcta para aplicaciones web). | Atacantes pueden obtener control a cuentas de otros usuarios en el sistema, leer sus datos personales y realizar acciones sensibles en su nombre, como transacciones monetarias y enviar mensajes personales. |
 
-## Es Vulnerable la API?
+## ¿Es vulnerable la API?
 
 Los recursos y flujos de autenticación son activos que deben ser protegidos. "Olvidé mi contraseña / recuperar contraseña" debe ser tratado de la misma forma que los mecanismos de autenticación.
 
