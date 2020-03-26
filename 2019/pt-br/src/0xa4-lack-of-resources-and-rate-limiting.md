@@ -1,5 +1,5 @@
-API4:2019 Lack of Resources & Rate Limiting
-===========================================
+API4:2019 Escassez de Recursos e Limite de Reputação
+====================================================
 
 | Agentes/Vetores | Fraquezas de Segurança | Impactos |
 | - | - | - |

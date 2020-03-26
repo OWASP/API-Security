@@ -1,5 +1,5 @@
-API3:2019 Excessive Data Exposure
-=================================
+API3:2019 Exposição Excessiva de Dados
+======================================
 
 | Agentes/Vetores | Fraquezas de Segurança | Impactos |
 | - | - | - |

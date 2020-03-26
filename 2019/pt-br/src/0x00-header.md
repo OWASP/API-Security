@@ -2,7 +2,7 @@
 
 ## Os dez mais críticos riscos de segurança de API
 
-Uma tradução para o português do projeto original "The Ten Most Critical API Security Risks"
+Uma tradução para o português do Brasil do projeto original "The Ten Most Critical API Security Risks"
 
 March 10th, 2020
 

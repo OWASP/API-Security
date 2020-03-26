@@ -1,5 +1,5 @@
-API10:2019 Insufficient Logging & Monitoring
-============================================
+API10:2019 Logging ou Monitoramento Insuficiente
+================================================
 
 | Agentes/Vetores | Fraquezas de Segurança | Impactos |
 | - | - | - |

@@ -1,5 +1,5 @@
-API9:2019 Improper Assets Management
-====================================
+API9:2019 Gerenciamento de Ativos Inapropriado
+==============================================
 
 | Agentes/Vetores | Fraquezas de Segurança | Impactos |
 | - | - | - |

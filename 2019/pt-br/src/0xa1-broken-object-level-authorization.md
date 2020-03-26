@@ -1,5 +1,5 @@
-API1:2019 Broken Object Level Authorization
-===========================================
+API1:2019 Quebra de Autorização ao Nível de Objeto
+==================================================
 
 | Agentes/Vetores | Fraquezas de Segurança | Impactos |
 | - | - | - |

@@ -1,5 +1,5 @@
-API5:2019 Broken Function Level Authorization
-=============================================
+API5:2019 Quebra de Autorização a Nível de Função
+=================================================
 
 | Agentes/Vetores | Fraquezas de Segurança | Impactos |
 | - | - | - |

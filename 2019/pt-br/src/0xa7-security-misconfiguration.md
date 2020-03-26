@@ -1,5 +1,5 @@
-API7:2019 Security Misconfiguration
-===================================
+API7:2019 Má Configuração de Segurança
+======================================
 
 | Agentes/Vetores | Fraquezas de Segurança | Impactos |
 | - | - | - |

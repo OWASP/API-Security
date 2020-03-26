@@ -1,5 +1,5 @@
-API2:2019 Broken User Authentication
-====================================
+API2:2019 Quebra de Autenticação do Usuário
+===========================================
 
 | Agentes/Vetores | Fraquezas de Segurança | Impactos |
 | - | - | - |

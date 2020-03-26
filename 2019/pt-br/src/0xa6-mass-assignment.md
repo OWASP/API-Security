@@ -1,5 +1,5 @@
-API6:2019 - Mass Assignment
-===========================
+API6:2019 - Atribuição em Massa
+===============================
 
 | Agentes/Vetores | Fraquezas de Segurança | Impactos |
 | - | - | - |
