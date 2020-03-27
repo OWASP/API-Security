@@ -1,10 +1,10 @@
-API8:2019 Injeção
-=================
+API8:2019 Injection
+===================
 
 | Agentes/Vetores | Fraquezas de Segurança | Impactos |
 | - | - | - |
 | Específico da API : Explorabilidade **3** | Prevalência **2** : Detecção **3** | Técnico **3** : Específico do negócio |
-| Atacantes vão entregar à API dados maliciosos a quaisquer vetores de injeção disponíveis (ex.: dados, parâmetros, integrações e etc.), esperando que estes dados sejam entregues a um interpretador. | Falhas por injeção são muito comuns e geralmente encontrados em consultas SQL, LDAP ou noSQL, comando em SO, *parsers* de XML e ORM. São falhar simples de encontrar ao revisar código fonte, e atacantes podem utilizar *scanners* e *fuzzers*. | Injeção pode levar ao vazamento de informação e perda de dados. Também podem levar à DoS ou a perda completa de um *host*. |
+| Atacantes vão entregar à API dados maliciosos a quaisquer vetores de injeção disponíveis (ex.: dados, parâmetros, integrações e etc.), esperando que estes dados sejam entregues a um interpretador. | Falhas por injeção são muito comuns e geralmente encontrados em consultas SQL, LDAP ou noSQL, comando em SO, *parsers* de XML e ORM. São falhas simples de encontrar ao revisar código fonte, e atacantes podem utilizar *scanners* e *fuzzers*. | Injeção pode levar ao vazamento de informação e perda de dados. Também podem levar à DoS ou a perda completa de um *host*. |
 
 ## A API está vulnerável?
 
@@ -25,7 +25,7 @@ snprintf(cmd, 128, "%srestore_backup.sh /tmp/postfile.bin %s %d",
          "/mnt/shares/usr/bin/scripts/", appid, 66);
 system(cmd);
 ```
-Com o seguinte comando o atacante consegue desligar qualquer dispositivo que estiverem com o *firmware* vulnerável:
+Com o seguinte comando o atacante consegue desligar qualquer dispositivo que estiver com o *firmware* vulnerável:
 
 ```
 $ curl -k "https://${deviceIP}:4567/api/CONFIG/restore" -F 'appid=$(/etc/pod/power_down.sh)'
@@ -80,9 +80,9 @@ Prevenir injeção requer manter os dados separados de comandos e consultas.
 * [CWE-77: Command Injection][5]
 * [CWE-89: SQL Injection][6]
 
-[1]: https://www.owasp.org/index.php/Injection_Flaws
-[2]: https://www.owasp.org/index.php/SQL_Injection
+[1]: https://owasp.org/www-community/Injection_Flaws
+[2]: https://owasp.org/www-community/attacks/SQL_Injection
 [3]: https://www.owasp.org/images/e/ed/GOD16-NOSQL.pdf
-[4]: https://www.owasp.org/index.php/Command_Injection
+[4]: https://owasp.org/www-community/attacks/Command_Injection
 [5]: https://cwe.mitre.org/data/definitions/77.html
 [6]: https://cwe.mitre.org/data/definitions/89.html

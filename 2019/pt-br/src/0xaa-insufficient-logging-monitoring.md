@@ -1,5 +1,5 @@
-API10:2019 Logging ou Monitoramento Insuficiente
-================================================
+API10:2019 Insufficient Logging & Monitoring
+============================================
 
 | Agentes/Vetores | Fraquezas de Segurança | Impactos |
 | - | - | - |
@@ -48,9 +48,9 @@ Uma plataforma de compartilhamento de vídeos foi atingida por um ataque de *cre
 * [CWE-223: Omission of Security-relevant Information][5]
 * [CWE-778: Insufficient Logging][6]
 
-[1]: https://www.owasp.org/index.php/Log_Injection
-[2]: https://www.owasp.org/index.php/Logging_Cheat_Sheet
-[3]: https://www.owasp.org/index.php/OWASP_Proactive_Controls
+[1]: https://owasp.org/www-community/attacks/Log_Injection
+[2]: https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html
+[3]: https://owasp.org/www-project-proactive-controls/
 [4]: https://github.com/OWASP/ASVS/blob/master/4.0/en/0x15-V7-Error-Logging.md
 [5]: https://cwe.mitre.org/data/definitions/223.html
 [6]: https://cwe.mitre.org/data/definitions/778.html

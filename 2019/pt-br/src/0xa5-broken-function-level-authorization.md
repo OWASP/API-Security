@@ -1,5 +1,5 @@
-API5:2019 Quebra de Autorização a Nível de Função
-=================================================
+API5:2019 Broken Function Level Authorization
+=============================================
 
 | Agentes/Vetores | Fraquezas de Segurança | Impactos |
 | - | - | - |
@@ -61,5 +61,5 @@ Sua aplicação deve possuir um consistente módulo de autorização a ser invoc
 
 [1]: https://www.owasp.org/index.php/Forced_browsing
 [2]: https://www.owasp.org/index.php/Top_10_2013-A7-Missing_Function_Level_Access_Control
-[3]: https://www.owasp.org/index.php/Category:Access_Control
+[3]: https://cheatsheetseries.owasp.org/cheatsheets/Access_Control_Cheat_Sheet.html
 [4]: https://cwe.mitre.org/data/definitions/285.html

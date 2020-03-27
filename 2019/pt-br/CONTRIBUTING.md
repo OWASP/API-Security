@@ -1,7 +1,7 @@
 Como contribuir
 ===============
 
-Quando quiser contribuir com este repositório, por favor, antes discuta a mudança que deseja fazer enviando a questão com o proprietários do repositório antes de efetivar a mudança. Correções de digitação ou de refraseamento para melhor compreensão NÃO requerem discussão com os proprietários.
+Quando quiser contribuir com este repositório, por favor, antes discuta a mudança que deseja fazer enviando a questão com o proprietário do repositório antes de efetivar a mudança. Correções de digitação ou de refraseamento para melhor compreensão NÃO requerem discussão com o proprietário.
 
 ## Modelo de *branching*
 
@@ -9,7 +9,7 @@ Este repositório mantém dois *branches* principais com um tempo de vida indefi
 * `master` é o *branch* padrão e que portanto reflete a última *release*.
 * `develop` é o *branch* padrão refletindo as últimas modificações para o próximo *release*. Quando o *branch* `develop` alcança um estágio estável e está pronto para liberação de uma versão nova e final, todas as modificações desde são unificadas de volta no *branch* `master`.
 
-Uma variadade de *branches* de suporte são utilizadas para cuidar de desenvolvimentos paralelos. Estes tipos de *branches* possuem um tempo de vida limitado, até que serem entualmente e definitivamente removidos.
+Uma variadade de *branches* de suporte são utilizadas para cuidar de desenvolvimentos paralelos. Estes tipos de *branches* possuem um tempo de vida limitado, até serem eventualmente e definitivamente removidos.
 
 ## Contribuindo
 

@@ -1,18 +1,17 @@
-API2:2019 Quebra de Autenticação do Usuário
-===========================================
+API2:2019 Broken User Authentication
+====================================
 
 | Agentes/Vetores | Fraquezas de Segurança | Impactos |
 | - | - | - |
 | Específico da API : Explorabilidade **3** | Prevalência **2** : Detecção **2** | Técnico **3** : Específico do negócio |
-| Autenticação em APIs é um mecanismo complexo e confuso. Engenheiros e arquitetos de software e segurança podem ter conceitos equivocados a respeito de quais são os limites da autenticação e na forma como devem ser implementados corretamente. Adicionalmente, mecanismos de autenticação são alvo de atacantes pois estão expostos a todos. Estes dois pontos fazem da autenticação um componente vulnerável a muitos tipos de *exploits*. | Existem dois tipos de sub-problemas: 1. Falta de mecanismo de proteção: Os *endpoints* da API que geralmente são responsáveis pela autenticação devem ser tratados diferentemente dos *endpoints* regulares e implementam camadas extras de proteção. 2. Má implementação do mecanismo: O mecanismo é usado ou implementado sem considerar vetores de ataque ou com casos de uso inadequados (ex.: um mecanismo de autenticação desenvolvidos para dispositivos IoT pode não ser a melhor opção para aplicativos web). | Atacantes podem tomar controle de outras contas de usuários no sistema, acessar seus dados pessoais e executar ações sensíveis em seu nome, como transações financeiras e enviar mensagens pessoais. |
+| Autenticação em APIs é um mecanismo complexo e confuso. Engenheiros e arquitetos de software e segurança podem ter conceitos equivocados a respeito de quais são os limites da autenticação e na forma como devem ser implementados corretamente. Adicionalmente, mecanismos de autenticação são alvo de atacantes pois estão expostos a todos. Estes dois pontos fazem da autenticação um componente vulnerável a muitos tipos de *exploits*. | Existem dois tipos de sub-problemas: 1. Falta de mecanismo de proteção: Os *endpoints* da API que geralmente são responsáveis pela autenticação devem ser tratados diferentemente dos *endpoints* regulares e implementam camadas extras de proteção. 2. Má implementação do mecanismo: O mecanismo é usado ou implementado sem considerar vetores de ataque ou com casos de uso inadequados (ex.: um mecanismo de autenticação desenvolvido para dispositivos IoT pode não ser a melhor opção para aplicativos web). | Atacantes podem tomar controle de outras contas de usuários no sistema, acessar seus dados pessoais e executar ações sensíveis em seu nome, como transações financeiras e enviar mensagens pessoais. |
 
 ## A API está vulnerável?
 
-Os *endpoints* e fluxos de autorização são ativos que devem ser protegidos. "Esqueci minha senha/Redefinição de senha" devem ser tratados com os mesmos mecanismos de autenticação.
+Os *endpoints* e fluxos de autorização são ativos que devem ser protegidos. "Esqueci minha senha/Redefinição de senha" devem ser tratados da mesma forma que outros mecanismos de autenticação.
 
 Uma API está vulnerável se:
-* Permite a prática de *[credential stuffing][1]* o qual o atacante tem uma lista de
-  nomes de usuário e senhas.
+* Permite a prática de *[credential stuffing][1]* o qual o atacante tem uma lista de nomes de usuário e senhas.
 * Permite que atacantes executem força bruta contra uma mesma conta de usuário sem exibir CAPTCHA ou mecanismo de bloqueio da conta.
 * Permite o uso de senhas fracas.
 * Envia detalhes sensíveis da autenticação como *tokens* e senhas na URL.
@@ -56,10 +55,10 @@ Um atacante inicia um processo de recuperação de senha enviando uma requisiç�
 
 * [CWE-798: Use of Hard-coded Credentials][7]
 
-[1]: https://www.owasp.org/index.php/Credential_stuffing
+[1]: https://owasp.org/www-community/attacks/Credential_stuffing
 [2]: https://github.com/danielmiessler/SecLists
 [3]: https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html
 [4]: https://www.owasp.org/index.php/Testing_for_Weak_lock_out_mechanism_(OTG-AUTHN-003)
 [5]: https://cloud.google.com/endpoints/docs/openapi/when-why-api-key
-[6]: https://www.owasp.org/index.php/Key_Management_Cheat_Sheet
+[6]: https://cheatsheetseries.owasp.org/cheatsheets/Key_Management_Cheat_Sheet.html
 [7]: https://cwe.mitre.org/data/definitions/798.html

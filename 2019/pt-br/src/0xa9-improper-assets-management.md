@@ -1,10 +1,10 @@
-API9:2019 Gerenciamento de Ativos Inapropriado
-==============================================
+API9:2019 Improper Assets Management
+====================================
 
 | Agentes/Vetores | Fraquezas de Segurança | Impactos |
 | - | - | - |
 | Específico da API : Explorabilidade **3** | Prevalência **3** : Detecção **2** | Técnico **2** : Específico do negócio |
-| Versões desatualizadas de APIs geralmente carecem de *patches* e são um meio fácil de comprometer sistemas sem a presença de mecanismos de segurança no estado-da-arte, e que podem existir também para proteger versões atualizadas de APIs. | Documentação desatualizada torna mais difícil encontrar e/ou corrigir vulnerabilidades. Falta de um inventário de ativos e estratégias de retirada levam ao cenário de sistemas sem atualização permanecerem em execução, podendo resultado no vazamento de dados sensíveis. É bastante comum encontrar APIs expostas sem necessidade em razão de conceitos modernos como os de microsserviços, que permite que aplicativos sejam lançados independentemente (ex.: computação em nuvem, kubernetes). | Atacantes ter acesso a dados sensíveis e até tomar o controle de servidores por meio de uma velha e desatualizada API conectada ao mesmo banco de dados. |
+| Versões desatualizadas de APIs geralmente carecem de *patches* e são um meio fácil de comprometer sistemas sem a presença de mecanismos de segurança no estado-da-arte, e que podem existir também para proteger versões atualizadas de APIs. | Documentação desatualizada torna mais difícil encontrar e/ou corrigir vulnerabilidades. Falta de um inventário de ativos e estratégias de retirada levam ao cenário de sistemas sem atualização permanecerem em execução, podendo resultar no vazamento de dados sensíveis. É bastante comum encontrar APIs expostas sem necessidade em razão de conceitos modernos como os de microsserviços, que permite que aplicativos sejam lançados independentemente (ex.: computação em nuvem, kubernetes). | Atacantes têm acesso a dados sensíveis e até tomar o controle de servidores por meio de uma velha e desatualizada API conectada ao mesmo banco de dados. |
 
 ## A API está vulnerável?
 
@@ -26,7 +26,7 @@ A API pode estar vulnerável se:
 
 ### Cenário #1
 
-Após um redesenho de sua aplicações, um serviço de pesquisa local deixou uma versão antiga da API (`api.someservice.com/v1`) em execução, não protegida, e com acesso ao banco de dados. Enquanto buscava como alvo a última versão do aplicativo, um atacante percebeu o endereço da API (`api.someservice.com/v2`). Substituindo `v2` por  `v1` na URL, o atacante acessou a versão antiga e não protegida, a qual expões dados pessoais sensíveis de mais de 100 milhões de usuários.
+Após um redesenho de suas aplicações, um serviço de pesquisa local deixou uma versão antiga da API (`api.someservice.com/v1`) em execução, não protegida, e com acesso ao banco de dados. Enquanto buscava como alvo a última versão do aplicativo, um atacante percebeu o endereço da API (`api.someservice.com/v2`). Substituindo `v2` por  `v1` na URL, o atacante acessou a versão antiga e não protegida, a qual expõe dados pessoais sensíveis de mais de 100 milhões de usuários.
 
 ### Cenário #2
 
@@ -41,7 +41,7 @@ Uma rede social implementou um nível de classificação mínimo que bloqueia at
 * Faça a documentação disponível para aqueles autorizados à utilizá-la.
 * Utilize métricas de proteção como *firewalls* de APIs para todas as versões expostas e não apenas para a versão em produção.
 * Evite utilizar dados de produção em *deployments* de API em ambientes de não produção. Caso seja impossível, estes *endpoints* devem possuir o mesmo tratamento de segurança daqueles que estão em produção.
-* Quando novas versões da API incluir melhorias de segurança, faça uma análise de risco para auxiliar a decisão de mitigação de ações necessárias para a versão antiga da API. Por exemplo: Sempre que for possível utilizar versões antigas sem quebrar compartibilidade, você precisa trabalhar para que todos os clientes façam o movimento para a última versão.
+* Quando novas versões da API incluir melhorias de segurança, faça uma análise de risco para auxiliar a decisão de mitigação de ações necessárias para a versão antiga da API. Por exemplo: sempre que for possível utilizar versões antigas sem quebrar compartibilidade, você precisa trabalhar para que todos os clientes façam o movimento para a última versão.
 
 ## Referências
 

@@ -5,7 +5,7 @@ Elemento fundamental na inovação nas soluções *app-driven* nos dias de hoje 
 
 Por natureza, as APIs expõem a lógica dos aplicativos e dados sensíveis, inclusive, dados pessoais sensíveis, e por esta razão, as APIs vem se tornando cada vez mais alvo de atacantes. Sem APIs seguras, inovações podem se tornar impossíveis.
 
-Embora uma ampla avaliação de Top 10 a respeito da segurança de aplicações fala sentido, em razão de suas particularidades, uma lista de riscos de segurança específica para APIs também é um requisito. A segurança de APIs tem foco em estratégias e soluções para a compreensão de mitigação de vulnerabilidades únicas associadas às APIs.
+Embora uma ampla avaliação de Top 10 a respeito da segurança de aplicações fala sentido, em razão de suas particularidades, uma lista de riscos de segurança específica para APIs também é um requisito. A segurança de APIs tem foco em estratégias e soluções para a compreensão e mitigação de vulnerabilidades únicas associadas às APIs.
 
 Se você é familiarizado com o projeto [OWASP Top 10][1], irá perceber similaridades entre os dois documentos: Isto é intencional para facilitar a compreensão e adoção. Se você é um novato nas séries Top 10 do OWASP, talvez seja melhor você ler atentamente as seções [Riscos de Segurança de API][2] e [Metodologia e Dados][3] antes.
 
@@ -16,12 +16,12 @@ Você pode contribuir com o projeto OWASP API Security Top 10 com questionamento
 
 Você encontra o OWASP API Security Top 10 aqui:
 
-* https://www.owasp.org/index.php/OWASP_API_Security_Project
+* https://owasp.org/www-project-api-security/
 * https://github.com/OWASP/API-Security
 
 Nós gostaríamos de agradecer a todos colaboradores que fizeram este projeto possível com seus esforços e contribuições. Todos que participaram estão listados na seção [Agradecimentos][4]. Obrigado!
 
-[1]: https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project
+[1]: https://owasp.org/www-project-top-ten/
 [2]: ./0x10-api-security-risks.md
 [3]: ./0xd0-about-data.md
 [4]: ./0xd1-acknowledgments.md

@@ -13,9 +13,9 @@ Equanto trabalhávamos com desenvolvedores ou consultores da segurança da infor
 
 Este projeto tem como alvo:
 
-* Criar o documento OWASP Top Ten API Security Risks, o qual pode ser facilmente apoiar na análise dos mais comuns riscos de segurança na área das APIs.
+* Criar o documento OWASP Top Ten API Security Risks, o qual destacará de forma fácil os riscos mais comuns de segurança na área das APIs.
 * Criar um portal de documentação para desenvolvedores a construírem APIs de forma segura.
-* Trabalhar próximo à comunidade de segurança para manter vivos os documentos que se envolvem com as tendências de segurança.
+* Trabalhar próximo à comunidade de segurança para manter vivos os documentos acompanhando as tendências de segurança.
 
 ## Líderes do Projeto
 
@@ -35,7 +35,7 @@ Este projeto tem como alvo:
 
 **Os documentos do OWASP API Security Project são livres para uso!**
 
-O projeto OWASP API Security Project é licenciado sob Atribuição-CompartilhaIgual 4.0 Internacional (CC BY-SA 4.0)][1], então você pode copiar, distribuir e transmitir este trabalho. Você também pode adaptá-lo e usá-lo comercialmente, desde que dê os créditos ao trabalho. Se você alterar, transformar o construir algo a partir deste trabalho, você pode distribuir o fruto desse trabalho apenas sob as mesma licença deste ou licença similar.
+O projeto OWASP API Security Project é licenciado sob Atribuição-CompartilhaIgual 4.0 Internacional (CC BY-SA 4.0)][1], então você pode copiar, distribuir e transmitir este trabalho. Você também pode adaptá-lo e usá-lo comercialmente, desde que dê os créditos ao trabalho. Se você alterar, transformar ou construir algo a partir deste trabalho, você pode distribuir o fruto desse trabalho apenas sob a mesma licença deste ou licença similar.
 
 [0]: https://www.owasp.org/index.php/User:ErezYalon
 [1]: https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR

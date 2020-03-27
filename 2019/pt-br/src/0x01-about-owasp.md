@@ -1,5 +1,5 @@
 Sobre o OWASP
-===========
+=============
 
 OWASP é o acrônimo em inglês para "Open Web Application Security Project", é uma comunidade aberta, dedicada a habilitar as organizações a desenvolver, comprar e manter aplicações e APIs que podem ser confiáveis.
 
@@ -17,7 +17,7 @@ No OWASP, você irá encontrar de forma gratuita e aberta:
 
 Saiba mais em: [https://www.owasp.org][6].
 
-No OWASP, todas as ferramentas, documentações, vídeos, apresentações e capítulos são gratuitos e abertos para qualquer a interessado em melhorar a segurança de aplicações
+No OWASP, todas as ferramentas, documentações, vídeos, apresentações e capítulos são gratuitos e abertos para qualquer um interessado em melhorar a segurança de aplicações
 
 Nós advogamos a abordagem da segurança das aplicações como um problema de pessoas, processos e tecnologia, uma vez que as abordagens mais efetivas na segurança de aplicações necessitam de melhorias nestas áreas.
 
@@ -33,12 +33,12 @@ Venha conosco!
 
 ![license](images/license.png)
 
-Copyright © 2003-2017 The OWASP Foundation. Este documento é liberado sob a [Atribuição-CompartilhaIgual 4.0 Internacional (CC BY-SA 4.0)][7]. Para qualquer reuso ou distribuição, tenha certeza à terceiros os termos deste trabalho.
+Copyright © 2003-2019 The OWASP Foundation. Este documento é liberado sob a [Atribuição-CompartilhaIgual 4.0 Internacional (CC BY-SA 4.0)][7]. Para qualquer reuso ou distribuição, tenha certeza à terceiros os termos deste trabalho.
 
 [1]: https://www.youtube.com/user/OWASPGLOBAL
-[2]: https://www.owasp.org/index.php/OWASP_Cheat_Sheet_Series
-[3]: https://www.owasp.org/index.php/OWASP_Chapter
-[4]: https://www.owasp.org/index.php/Category:OWASP_AppSec_Conference
+[2]: https://owasp.org/www-project-cheat-sheets/
+[3]: https://owasp.org/chapters/
+[4]: https://wiki.owasp.org/index.php/Category:OWASP_AppSec_Conference
 [5]: https://lists.owasp.org/mailman/listinfo
-[6]: https://www.owasp.org
+[6]: https://owasp.org/
 [7]: https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR

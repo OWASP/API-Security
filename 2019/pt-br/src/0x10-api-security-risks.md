@@ -29,8 +29,8 @@ A tabela abaixo resume a terminologia associada à pontuação de risco.
 * [NIST CVSS 3.0][7]
 * [Microsoft Threat Modeling Tool][8]
 
-[1]: https://www.owasp.org/index.php/OWASP_Risk_Rating_Methodology
-[2]: https://www.owasp.org/index.php/Threat_Risk_Modeling
+[1]: https://owasp.org/www-project-risk-assessment-framework/
+[2]: https://owasp.org/www-community/Application_Threat_Modeling
 [3]: https://www.iso.org/iso-31000-risk-management.html
 [4]: https://www.iso.org/isoiec-27001-information-security.html
 [5]: https://www.nist.gov/cyberframework

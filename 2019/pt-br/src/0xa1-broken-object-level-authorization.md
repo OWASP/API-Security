@@ -1,5 +1,5 @@
-API1:2019 Quebra de Autorização ao Nível de Objeto
-==================================================
+API1:2019 Broken Object Level Authorization
+===========================================
 
 | Agentes/Vetores | Fraquezas de Segurança | Impactos |
 | - | - | - |
@@ -8,7 +8,7 @@ API1:2019 Quebra de Autorização ao Nível de Objeto
 
 ## A API está vulnerável?
 
-O nível de autorização de objeto é um mecanismo de controle de acesso que usualmente é implementado ao nível de código para validar que um usuário pode apenas acessar objetos aos quais deve realmente tem permissão.
+O nível de autorização de objeto é um mecanismo de controle de acesso que usualmente é implementado ao nível de código para validar que um usuário pode apenas acessar objetos aos quais realmente tem permissão.
 
 Todo *endpoint* de API que recebe um ID de objeto, e executa qualquer tipo de ação sobre este objeto, deve implementar verificações de autorização de acesso ao nível deste objeto. A verificação deve validar que o usuário tem acesso para executar aquela ação no objeto requisitado.
 
@@ -18,11 +18,11 @@ Falhas nesse mecanismo geralmente levam ao acesso não autorizado de informaçõ
 
 ### Cenário #1
 
-Uma plataforma de *e-commerce* para lojas de compras online entrega uma listagem com os gráficos de receita de suas lojas hospedadas. Inspecionando as requisições do navegador, o atacante pode identificar que os *endpoints* utilizado como fonte de dados para os gráficos utiliza um padrão como `/shops/{shopName}/revenue_data.json`. Utilizando outro *endpoint* da API, o atacante consegue uma lista de todos os nomes das lojas hospedadas na plataforma. Com um simples *script* o atacante pode agora, manipulando o nome substituindo o parâmetro `{shopName}` na URL, ganhar acesso aos dados das vendas de milhares de lojas que utilizam a plataforma de *e-commerce*.
+Uma plataforma de *e-commerce* para lojas de compras online entrega uma listagem com os gráficos de receita de suas lojas hospedadas. Inspecionando as requisições do navegador, o atacante pode identificar que os *endpoints* utilizados como fonte de dados para os gráficos utiliza um padrão como `/shops/{shopName}/revenue_data.json`. Utilizando outro *endpoint* da API, o atacante consegue uma lista de todos os nomes das lojas hospedadas na plataforma. Com um simples *script* o atacante pode agora, manipulando o nome substituindo o parâmetro `{shopName}` na URL, ganhar acesso aos dados das vendas de milhares de lojas que utilizam a plataforma de *e-commerce*.
 
 ### Cenário #2
 
-Enquanto monitora o tráfego de rede um um *wearable device*, o atacante tem sua atenção despertada ao perceber o verbo HTTP `PATCH` possui o cabeçalho customizado `X-User-Id: 54796`. Substituindo o valor do cabeçalho o atacante recebe uma resposta HTTP válida, sendo possível portanto modificar os dados de outros usuários.
+Enquanto monitora o tráfego de rede um *wearable device*, o atacante tem sua atenção despertada ao perceber o verbo HTTP `PATCH` possui o cabeçalho customizado `X-User-Id: 54796`. Substituindo o valor do cabeçalho o atacante recebe uma resposta HTTP válida, sendo possível portanto modificar os dados de outros usuários.
 
 ## Como prevenir
 

@@ -1,5 +1,5 @@
-API3:2019 Exposição Excessiva de Dados
-======================================
+API3:2019 Excessive Data Exposure
+=================================
 
 | Agentes/Vetores | Fraquezas de Segurança | Impactos |
 | - | - | - |
@@ -8,7 +8,7 @@ API3:2019 Exposição Excessiva de Dados
 
 ## A API está vulnerável?
 
-A API retorna dados sensíveis ao cliente por padrão. Este dado então é filtrado no lado do cliente antes de ser apresentado o usuário. Um atacante por facilmente investigar o tráfego e enxergar os dados sensíveis.
+A API retorna dados sensíveis ao cliente por padrão. Este dado então é filtrado no lado do cliente antes de ser apresentado ao usuário. Um atacante pode facilmente investigar o tráfego e enxergar os dados sensíveis.
 
 ## Cenários de exemplo de ataques
 
@@ -25,7 +25,7 @@ Um sistema de vigilância baseado em IoT permite aos administradores a criação
 
 * Nunca confie no cliente para filtrar dados sensíveis.
 * Revise as respostas da API para ter certeza que elas contenham apenas informações necessárias.
-* Engenheiros e arquitetos de *endpoints* sempre devem ser perguntar: Quem irá utilizar esta informação? Antes de expor um novo *endpoint* de API.
+* Engenheiros e arquitetos de *endpoints* sempre devem ser perguntar: quem irá utilizar esta informação? antes de expor um novo *endpoint* de API.
 * Tenha cuidado ao utilizar métodos genéricos como `to_json()` e `to_string()`. Ao contrário, seja criterioso com cada propriedade que seja necessário retornar.
 * Classifique dados sensíveis e dados pessoais que sua aplicação armazena, revise todas as chamadas de API se estas chamadas podem significar um problema de segurança.
 * Implemente respostas com mecanismos baseados em *schema* como uma camada extra de segurança. Aplique o mecanismo e o imponha a todos os dados retornados pela API, inclusive erros.

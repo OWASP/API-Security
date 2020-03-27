@@ -1,5 +1,5 @@
-API7:2019 Má Configuração de Segurança
-======================================
+API7:2019 Security Misconfiguration
+===================================
 
 | Agentes/Vetores | Fraquezas de Segurança | Impactos |
 | - | - | - |
@@ -11,7 +11,7 @@ API7:2019 Má Configuração de Segurança
 Sua API pode estar vulnerável se:
 
 * Configurações apropriadas de *hardening* faltam a qualquer parte da aplicação, ou quando há permissões mal configuradas em provedores de nuvem.
-* Os últimos *patches* de segurança não estão aplicados ou o sistemas estão desatualizados.
+* Os últimos *patches* de segurança não estão aplicados ou os sistemas estão desatualizados.
 * Recursos não necessários estão habilitados (ex.: certos verbos HTTP).
 * Transporte criptografado (TLS) não configurado.
 * Diretivas de segurança não enviadas aos clientes (ex.: [Cabeçalhos de Segurança][1]).
@@ -22,7 +22,7 @@ Sua API pode estar vulnerável se:
 
 ### Cenário #1
 
-Um atacante encontra o arquivo `.bash_history` no diretório root do servidor, o qual contém comandos utilizado pelo time de DevOps para acesso à API:
+Um atacante encontra o arquivo `.bash_history` no diretório root do servidor, o qual contém comandos utilizados pelo time de DevOps para acesso à API:
 
 ```
 $ curl -X GET 'https://api.server/endpoint/' -H 'authorization: Basic Zm9vOmJhcg=='
@@ -49,7 +49,7 @@ O ciclo de vida da API deve incluir:
 Além disso:
 
 * Para prevenir que detalhes de erros e outras informações sejam enviados de volta aos atacantes, se aplicável, defina e aplique *schemas* aos *responses* da API.
-* Certifique-se que a API só pode ser acessar por verbos HTTP específicos. Todos os demais verbos devem estar desabilitados (ex: `HEAD`).
+* Certifique-se que a API só pode ser acessada por verbos HTTP específicos. Todos os demais verbos devem estar desabilitados (ex: `HEAD`).
 * APIs que devem ser acessadas por navegadores (ex.: *front-end* de aplicação web) devem implementar uma política CORS apropriada.
 
 ## Referências
@@ -69,7 +69,7 @@ Além disso:
 * [Guide to General Server Security][7], NIST
 * [Let’s Encrypt: a free, automated, and open Certificate Authority][8]
 
-[1]: https://www.owasp.org/index.php/OWASP_Secure_Headers_Project
+[1]: https://owasp.org/www-project-secure-headers/
 [2]: https://www.owasp.org/index.php/Testing_for_configuration_management
 [3]: https://www.owasp.org/index.php/Testing_for_Error_Code_(OTG-ERR-001)
 [4]: https://cwe.mitre.org/data/definitions/2.html

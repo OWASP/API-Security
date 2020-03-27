@@ -1,5 +1,5 @@
-API4:2019 Escassez de Recursos e Limite de Reputação
-====================================================
+API4:2019 Lack of Resources & Rate Limiting
+===========================================
 
 | Agentes/Vetores | Fraquezas de Segurança | Impactos |
 | - | - | - |
@@ -58,7 +58,7 @@ Este mesmo cenário pode ser utilizado para provocar erros de *Integer Overflow*
 [2]: https://docs.docker.com/config/containers/resource_constraints/#cpu
 [3]: https://docs.docker.com/engine/reference/commandline/run/#restart-policies---restart
 [4]: https://docs.docker.com/engine/reference/commandline/run/#set-ulimits-in-container---ulimit
-[5]: https://www.owasp.org/index.php/Blocking_Brute_Force_Attacks
+[5]: https://owasp.org/www-community/controls/Blocking_Brute_Force_Attacks
 [6]: https://github.com/OWASP/CheatSheetSeries/blob/3a8134d792528a775142471b1cb14433b4fda3fb/cheatsheets/Docker_Security_Cheat_Sheet.md#rule-7---limit-resources-memory-cpu-file-descriptors-processes-restarts
 [7]: https://github.com/OWASP/CheatSheetSeries/blob/3a8134d792528a775142471b1cb14433b4fda3fb/cheatsheets/REST_Assessment_Cheat_Sheet.md
 [8]: https://cwe.mitre.org/data/definitions/307.html

@@ -1,5 +1,5 @@
-API6:2019 - Atribuição em Massa
-===============================
+API6:2019 - Mass Assignment
+===========================
 
 | Agentes/Vetores | Fraquezas de Segurança | Impactos |
 | - | - | - |
@@ -42,9 +42,8 @@ Uma vez que o *endpoint* está vulnerável, o atacante recebe créditos sem paga
 
 ### Cenário #2
 
-Um portal de compartilhamento de vídeos permite aos usuários o envio de conteúdo e *download* de conteúdo em diferentes formatos. Um atacante explora a API no *endpoint* `GET /api/v1/videos/{video_id}/meta_data` que retorna um objeto com Um portal de compartilhamento de vídeos permite aos usuários o envio de conteúdo e *download* de conteúdo em diferentes formatos. Um atacante explora a API no *endpoint* `GET /api/v1/videos/{video_id}/meta_data` que retorna um objeto com pripriedades do vídeo. Uma das propriedades é `"mp4_conversion_params":"-v codec h264"`, que indica que a aplicação usa um comando *shell* para converter o vídeo.
- do vídeo. Uma das propriedades é `"mp4_conversion_params":"-v codec h264"`, que indica que a aplicação usa um comando *shell* para converter o vídeo.
-
+Um portal de compartilhamento de vídeos permite aos usuários o envio de conteúdo e *download* de conteúdo em diferentes formatos. Um atacante explora a API no *endpoint* `GET /api/v1/videos/{video_id}/meta_data` que retorna um objeto com propriedades do vídeo. Uma das propriedades é `"mp4_conversion_params":"-v codec h264"`, que indica que a aplicação usa um comando *shell* para converter o vídeo.
+ 
 Este mesmo atacante encontrou o *endpoint* `POST /api/v1/videos/new` que está vulnerável e permite ao cliente atribuir qualquer propriedade ao objeto vídeo, então o atacante atribui um valor malicioso como o exemplo a seguir: `"mp4_conversion_params":"-v codec h264 && format C:/"`. Este valor poderá causar a execução de um comando *shell* quando o atacante pedir o *download* do vídeo no formato mp4.
 
 ## Como prevenir
