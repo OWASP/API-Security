@@ -46,7 +46,7 @@ Come join us!
 
 ![license](images/license.png)
 
-Copyright © 2003-2017 The OWASP Foundation. This document is released under the
+Copyright © 2003-2019 The OWASP Foundation. This document is released under the
 [Creative Commons Attribution Share-Alike 4.0 license][7]. For any reuse or
 distribution, you must make it clear to others the license terms of this work.
 
