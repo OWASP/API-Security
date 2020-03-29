@@ -47,7 +47,7 @@ Junte-se a nós!
 
 ![license](images/license.png)
 
-Copyright © 2003-2020 The OWASP Foundation. Este documento é distribuído de
+Copyright © 2003-2019 The OWASP Foundation. Este documento é distribuído de
 acordo com a licença [Creative Commons Attribution Share-Alike 4.0][7]. Para
 qualquer tipo de reutilização ou distribuição, deve deixar claro para terceiros
 os termos da licença deste trabalho.
