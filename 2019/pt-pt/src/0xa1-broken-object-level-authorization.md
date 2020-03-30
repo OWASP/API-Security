@@ -3,7 +3,7 @@ API1:2019 Broken Object Level Authorization
 
 | Agentes Ameaça/Vetores Ataque | Falha Segurança | Impactos |
 | - | - | - |
-| Específico da API : Abuso **3** | Prevalência **3** : Detetabilidade **2** | Técnico **3** : Específico do Negócio |
+| Específico da API : Abuso **3** | Prevalência **3** : Detectabilidade **2** | Técnico **3** : Específico do Negócio |
 | Os atacantes podem abusar dos _endpoints_ da API vulneráveis através da manipulação do identificador dum objeto que é enviado como parte do pedido. Isto pode conduzir ao acesso não autorizado a informação sensível. Este problema é extremamente comum porque os componentes do servidor normalmente não mantém o estado do cliente, baseando-se essencialmente em parâmetros tais com o identificador do objeto que é enviado para decidir qual o objeto a aceder. | Este tem sido o ataque mais comum e com maior impacto em APIs. Os mecanismos de autorização e controlo de acessos em aplicações modernas são complexos e abrangentes. Ainda que a aplicação implemente uma infraestrutura adequada para validação de autorização, os programadores podem esquecer-se de a realizar antes de aceder a informação sensível. A identificação de problemas no controlo de acessos não é de fácil deteção através de análise estática ou dinâmica. | Acesso não autorizado pode resultar na divulgação de informação a entidades não autorizadas, perda ou manipulação de dados. O acesso não autorizado a objetos pode ainda conduzir à usurpação de contas de utilizador. |
 
 ## A API é vulnerável?
