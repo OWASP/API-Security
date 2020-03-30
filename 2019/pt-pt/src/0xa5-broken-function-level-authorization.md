@@ -91,7 +91,7 @@ aplicacional.
 
 * [CWE-285: Improper Authorization][4]
 
-[1]: https://www.owasp.org/index.php/Forced_browsing
+[1]: https://owasp.org/www-community/attacks/Forced_browsing
 [2]: https://www.owasp.org/index.php/Top_10_2013-A7-Missing_Function_Level_Access_Control
-[3]: https://www.owasp.org/index.php/Category:Access_Control
+[3]: https://owasp.org/www-community/Access_Control
 [4]: https://cwe.mitre.org/data/definitions/285.html

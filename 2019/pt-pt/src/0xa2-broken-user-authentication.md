@@ -84,10 +84,10 @@ minutos descobrir o código enviado na SMS.
 
 * [CWE-798: Use of Hard-coded Credentials][7]
 
-[1]: https://www.owasp.org/index.php/Credential_stuffing
+[1]: https://owasp.org/www-community/attacks/Credential_stuffing
 [2]: https://github.com/danielmiessler/SecLists
 [3]: https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html
-[4]: https://www.owasp.org/index.php/Testing_for_Weak_lock_out_mechanism_(OTG-AUTHN-003)
+[4]: https://github.com/OWASP/wstg/blob/master/document/4-Web_Application_Security_Testing/04-Authentication_Testing/03-Testing_for_Weak_Lock_Out_Mechanism.md
 [5]: https://cloud.google.com/endpoints/docs/openapi/when-why-api-key
-[6]: https://www.owasp.org/index.php/Key_Management_Cheat_Sheet
+[6]: https://cheatsheetseries.owasp.org/cheatsheets/Key_Management_Cheat_Sheet.html
 [7]: https://cwe.mitre.org/data/definitions/798.html
