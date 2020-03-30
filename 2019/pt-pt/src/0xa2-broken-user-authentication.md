@@ -28,14 +28,14 @@ Uma API é vulnerável se:
 
 ## Exemplos de Cenários de Ataque
 
-## Cenário #1
+### Cenário #1
 
 Ataques de [Credential Stuffing][1] utilizando [listas de nomes de utilizador/
 _passwords_ conhecidas][2] são bastante comuns. Se uma API não implementa
 proteções contra ameaças automatizadas ou Credential Stuffing, esta pode ser
 usada como oráculo para identificar se as credenciais são válidas.
 
-## Cenário #2
+### Cenário #2
 
 Um atacante inicia o fluxo de recuperação de _password_, enviando um pedido
 `POST` com o nome de utilizador para o _endpoint_
