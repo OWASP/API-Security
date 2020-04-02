@@ -4,21 +4,23 @@ API8:2019 Inyección
 |Agente/Vector de Ataque | Debilidades de Seguridad | Impacto |
 | - | - | - |
 | API Específica : Explotabilidad **3** | Prevalencia **2** : Detectabilidad **3** | Técnico **3** : ¿Negocio? |
-| Attackers will feed the API with malicious data through whatever injection vectors are available (e.g., direct input, parameters, integrated services, etc.), expecting it to be sent to an interpreter. | Injection flaws are very common and are often found in SQL, LDAP, or NoSQL queries, OS commands, XML parsers, and ORM. These flaws are easy to discover when reviewing the source code. Attackers can use scanners and fuzzers. | Injection can lead to information disclosure and data loss. It may also lead to DoS, or complete host takeover. |
+| Los atacantes alimentarán la API con datos maliciosos a través de los vectores de inyección disponibles (por ejemplo, entrada directa, parámetros, servicios integrados, etc.), esperando que se envíen a un intérprete. | Los defectos de inyección son muy comunes y a menudo se encuentran en consultas SQL, LDAP o NoSQL, comandos del sistema operativo, analizadores XML y ORM. Estos defectos son fáciles de descubrir cuando se revisa el código fuente. Los atacantes pueden usar escáneres y fuzzers. | La inyección puede conducir a la divulgación de información y pérdida de datos. También puede llevar a un DoS o apoderarse completamente del host. |
 
 ## ¿La API es Vulnerable?
 
 La API es vulnerable a inyección si:
 
 * Información suministrada por el cliente no es validada, filtrada, o sanitizada por la API.
-* Información suministrada por el cliente es directamente usada o concatenada a consultas SQL/NoSQL/LDAP, comandos de SO, Analizadores de XML, y Mapeo Relacional de Objetos (ORM) / Mapeador de Documentos de Objetos (ODM)
+* Información suministrada por el cliente es directamente usada o concatenada a consultas SQL/NoSQL/LDAP, comandos de SO, Analizadores de XML, y Mapeo Relacional de Objetos (ORM) / Mapeador de Documentos de Objetos (ODM).
 * Datos que vienen de sistemas externos (ej. sistemas integrados) no son validados, filtrados, o sanitizados por la API.
 
 ## Ejemplos de escenarios de ataque
 
 ### Escenario #1
 
-El firmware de un dispositivo de control parental expone el método `/ api / CONFIG / restore ` el cual espera un appId para que se envíe como un parámetro multiparte. Usando un descompilador, un atacante descubre que un appId pasa directamente a una llamada al sistema sin ningún tipo de sanitización:
+El firmware de un dispositivo de control parental expone el método `/api/CONFIG/restore` el cual espera un appId para que se
+envíe como un parámetro multiparte. Usando un descompilador, un atacante descubre que un appId pasa directamente a una llamada al
+sistema sin ningún tipo de sanitización:
 
 ```c
 snprintf(cmd, 128, "%srestore_backup.sh /tmp/postfile.bin %s %d",
@@ -35,7 +37,7 @@ $ curl -k "https://${deviceIP}:4567/api/CONFIG/restore" -F 'appid=$(/etc/pod/pow
 
 Tenemos una aplicación con funcionalidad CRUD básica para operaciones con
 reservaciones. Un atacante logró identificar que la inyección NoSQL podría ser posible
-a través del parámetro de `bookingId`, un parámetro de tipo string en la petición para borrar una reservación. Así es como se ve dicha solicitud: `DELETE / api / bookings?bookingId = 678`.
+a través del parámetro de `bookingId`, un parámetro de tipo string en la petición para borrar una reservación. Así es como se ve dicha solicitud: `DELETE /api/bookings?bookingId=678`.
 
 El servidor de la API usa la siguiente función para manejar las solicitudes de eliminación:
 
