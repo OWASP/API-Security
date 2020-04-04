@@ -6,7 +6,7 @@ Para a análise de risco usámos a [OWASP Risk Rating Methodology][1].
 A tabela seguinte resume a terminologia associada à pontuação correspondente ao
 nível de risco associado.
 
-| Agentes Ameaça | Abuso | Prevalência da Falha | Detetabilidade | Impacto Técnico | Impacto Negócio |
+| Agentes Ameaça | Abuso | Prevalência da Falha | Deteção | Impacto Técnico | Impacto Negócio |
 | :-: | :-: | :-: | :-: | :-: | :-: |
 | Específico da API | Fácil **3** | Predominante **3** | Fácil **3** | Grave **3** | Específico do Negócio |
 | Específico da API | Moderado **2** | Comum **2** | Moderado **2** | Moderado **2** | Específico do Negócio |
@@ -18,7 +18,7 @@ API. Qualquer um destes fatores podem ter impacto significativo na probabilidade
 dum atacante encontrar e abusar duma falha de segurança particular. Estes
 indicadores não tomam em consideração o impacto atual no seu negócio. Terá de
 ser a sua organização a decidir qual o nível de risco para a segurança das suas
-aplicações e APIs está disposta a aceitar, baseados na cultura, industria e
+aplicações e APIs que está disposta a aceitar, baseado na cultura, indústria e
 regulação a que está sujeita. O propósito do OWASP API Security Top 10 não é
 fazer essa análise por si.
 

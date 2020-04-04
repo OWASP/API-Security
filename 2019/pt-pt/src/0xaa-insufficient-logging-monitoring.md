@@ -3,7 +3,7 @@ API10:2019 Insufficient Logging & Monitoring
 
 | Agentes Ameaça/Vetores Ataque | Falha Segurança | Impactos |
 | - | - | - |
-| Específico da API : Abuso **2** | Prevalência **3** : Detectabilidade **1** | Técnico **2** : Específico Negócio |
+| Específico da API : Abuso **2** | Prevalência **3** : Deteção **1** | Técnico **2** : Específico Negócio |
 | Os atacantes podem tirar partido desta vulnerabilidade para abusar dos sistemas sem ser detetados. | Sem registo de eventos e monitorização, ou com um registo e monitorização insuficientes, é quase impossível detetar atividades suspeitas e responder às mesmas em tempo útil. | Sem visibilidade sobre atividades maliciosas os atacantes têm tempo suficiente para comprometer os sistemas. |
 
 ## A API é vulnerável?

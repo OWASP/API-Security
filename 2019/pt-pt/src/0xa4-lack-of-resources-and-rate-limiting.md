@@ -3,7 +3,7 @@ API4:2019 Lack of Resources & Rate Limiting
 
 | Agentes Ameaça/Vetores Ataque | Falha Segurança | Impactos |
 | - | - | - |
-| Específico da API : Abuso **2** | Prevalência **3** : Detectabilidade **3** | Técnico **2** : Específico Negócio |
+| Específico da API : Abuso **2** | Prevalência **3** : Deteção **3** | Técnico **2** : Específico Negócio |
 | Para abusar destas falhas basta realizar pedidos simples à API. Não é necessária autenticação. Múltiplos pedidos concorrentes podem ser realizados por um único computador ou fazendo uso de recursos computacionais na nuvem. | É comum encontrar APIs que não limitam o número de pedidos ou que usam limites desajustados. | O abuso destas falhas pode conduzir à negação de serviço (DoS), deixando a API incapaz de satisfazer outros pedidos ou mesmo indisponível. |
 
 ## A API é vulnerável?

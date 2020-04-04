@@ -3,7 +3,7 @@ API5:2019 Broken Function Level Authorization
 
 | Agentes Ameaça/Vetores Ataque | Falha Segurança | Impactos |
 | - | - | - |
-| Específico da API : Abuso **3** | Prevalência **2** : Detectabilidade **1** | Técnico **2** : Específico Negócio |
+| Específico da API : Abuso **3** | Prevalência **2** : Deteção **1** | Técnico **2** : Específico Negócio |
 | Para abusar deste tipo de falha o atacante tem de realizar pedidos legítimos ao _endpoint_ da API ao qual não é suposto ter acesso. Estes _endpoints_ podem estar disponíveis para utilizadores anónimos, ordinários ou não privilegiados. É fácil identificar estas falhas em APIs uma vez que  estas são mais estruturada, sendo a forma de acesso a certas funcionalidades mais previsível (e.g., utilizar o método HTTP `PUT` ao invés de `GET` ou substituir a palavra "user" por "admin" no URL). | As verificações de autorização para aceder a uma determinada função ou recurso são normalmente geridas por configuração e às vezes ao nível da implementação. A correta implementação destes mecanismos pode tornar-se confusa, uma vez que, as aplicações modernas prevêem vários perfis ou grupos de utilizador, assim como complexos esquemas de hierarquia (e.g., sub-utilizadores, utilizadores com mais do que um perfil). | Estas falhas permitem aos atacantes aceder de forma não autorizada a certas funcionalidades. As funcionalidades administrativas são o alvo preferencial neste tipo de ataque. |
 
 ## A API é vulnerável?

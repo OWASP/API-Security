@@ -3,7 +3,7 @@ API2:2019 Broken User Authentication
 
 | Agentes Ameaça/Vetores Ataque | Falha Segurança | Impactos |
 | - | - | - |
-| Específico da API : Abuso **3** | Prevalência **2** : Detectabilidade **2** | Técnico **3** : Específico Negócio |
+| Específico da API : Abuso **3** | Prevalência **2** : Deteção **2** | Técnico **3** : Específico Negócio |
 | A autenticação em APIs é um mecanismo complexo e confuso. Engenheiros de software e segurança podem ter conceções erradas com relação ao âmbito da autenticação e como implementá-la corretamente. Por outro lado os mecanismos de autenticação são um alvo fácil para os atacantes uma vez que estão expostos publicamente. Estes dois pontos tornam o componente responsável pela autenticação potencialmente vulnerável a diferentes tipos de abuso. | Podemos dividir os problemas de autenticação em duas partes: 1. Falta de mecanismos de proteção: os _endpoints_ responsáveis pela autenticação devem ser tratados de forma diferente dos demais _endpoints_, implementado camadas de proteção adicionais 2. Falhas na implementação do mecanismo: este é utilizado/implementado sem considerar os vetores de ataque específicos ou baseado em casos de uso desadequados (e.g., um mecanismo de autenticação desenhado para clientes IoT pode não ser a melhor escolha para aplicações web). | Os atacantes podem obter o controlo sobre as contas doutros utilizadores, aceder aos seus dados pessoais e realizar ações sensíveis em seu nome, como por exemplo transferências financeiras ou envio de mensagens pessoais. |
 
 ## A API é vulnerável?

@@ -3,7 +3,7 @@ API8:2019 Injection
 
 | Agentes Ameaça/Vetores Ataque | Falha Segurança | Impactos |
 | - | - | - |
-| Específico da API : Abuso **3** | Prevalência **2** : Detectabilidade **3** | Técnico **3** : Específico Negócio |
+| Específico da API : Abuso **3** | Prevalência **2** : Deteção **3** | Técnico **3** : Específico Negócio |
 | Os atacantes fornecem à API dados maliciosos através dos vetores de injeção disponíveis (e.g., formulários, parâmetros, integrações, etc.), na expetativa que estes sejam enviados a um interpretador. | Falhas de injeção são bastante comuns e são geralmente encontradas em consultas SQL, LDAP ou NoSQL, comandos enviados ao sistema operativo, _parsers_ XML e ORM. Estas falhas são fáceis de identificar durante a revisão do código. Os atacantes podem fazer uso de _scanners_ e _fuzzers_. | As injeções podem conduzir à divulgação de informação e perda de dados. Podem ainda conduzir à negação de serviço (DoS) ou à tomada de controlo do _host_. |
 
 ## A API é vulnerável?
