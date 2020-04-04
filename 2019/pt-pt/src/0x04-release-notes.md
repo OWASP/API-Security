@@ -20,6 +20,26 @@ comunidade sobre os atuais problemas de segurança em APIs. Isto foi apenas
 possível graças ao enorme esforço dum conjunto de voluntários, todos eles
 mencionados na secção [Agradecimentos][3]. Obrigado!
 
+## Notas da Tradução
+
+A tradução do OWASP API Security Top 10 2019 foi realizada de forma voluntária
+com o objetivo de tornar este documento acessível a todos, independentemente do
+domínio da língua em que este foi originalmente produzido.
+
+Acreditamos que este é um contributo válido na missão de consciencializar e
+educar todos quantos estão envolvidos no desenvolvimento e manutenção de APIs e
+_software_ em geral para questões relacionadas com segurança.
+
+A tradução deste documento para Português (Portugal) decorreu durante um período
+conturbado em que enfrentamos uma pandemia global, em consequência da qual
+vivemos em isolamento social. Este trabalho é também uma demonstração daquilo
+que podemos construir em conjunto ainda que condicionados de alguma forma.
+
+Esta tradução resulta do esforço de:
+
+* Paulo Alexandre Silva <me@pauloasilva.com>
+* Rui Silva <riusalvi@gmail.com>
+
 [1]: ./0xd0-about-data.md
 [2]: ./0x10-api-security-risks.md
 [3]: ./0xd1-acknowledgments.md
