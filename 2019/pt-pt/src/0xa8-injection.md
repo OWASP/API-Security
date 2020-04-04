@@ -84,7 +84,7 @@ consultas.
 * Opte por APIs de consulta seguras que oferecem interfaces parametrizadas.
 * Limite sempre o número de registos a devolver por forma a prevenir a
   divulgação massiva de dados em caso de injeção.
-* Valida os dados de entrada usando os filtros necessários para apenas permitir
+* Valide os dados de entrada usando os filtros necessários para apenas permitir
   valores válidos para cada parâmetro.
 * Defina tipos de dados e padrões bem definidos para todos os parâmetros
   textuais.

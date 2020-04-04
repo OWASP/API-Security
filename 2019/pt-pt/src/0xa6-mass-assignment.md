@@ -4,25 +4,25 @@ API6:2019 - Mass Assignment
 | Agentes Ameaça/Vetores Ataque | Falha Segurança | Impactos |
 | - | - | - |
 | Específico da API : Abuso **2** | Prevalência **2** : Deteção **2** | Técnico **2** : Específico Negócio |
-| O abuso requer na maioria das vezes um conhecimento da lógica de negócio, de relações entre objetos, e da estrutura da API. Abusar de Mass Assignment é mais fácil em APIs, visto que por design elas expõem a implementação interna da aplicação e nomes de propriedades. | As _frameworks_ modernas incentivam os programadores a usar funções que ligam automaticamente dados do cliente a variáveis no código e objetos internos. Os atacantes podem usar esta metodologia para atualizar ou mudar propriedades sensíveis de objetos que os programadores nunca quiseram expor. | O abuso pode levar a elevação de privilégios, manipulação de dados, contornar mecanismos de segurança, etc. |
+| O abuso requer na maioria das vezes um conhecimento da lógica de negócio, de relações entre objetos, e da estrutura da API. Abusar de Mass Assignment é mais fácil em APIs, visto que por design elas expõem a implementação interna da aplicação e nomes de propriedades. | As _frameworks_ modernas incentivam os programadores a usar funções que ligam automaticamente dados do cliente a variáveis no código e objetos internos. Os atacantes podem usar esta metodologia para atualizar ou mudar propriedades sensíveis de objetos que os programadores não pretendiam realmente expor. | O abuso pode levar a elevação de privilégios, manipulação de dados, contornar mecanismos de segurança, etc. |
 
 ## A API é vulnerável?
 
-Objetos em aplicações modernas podem conter muitas propriedades. Algumas destas
-propriedades podem ser atualizadas diretamente pelo cliente (e.g.,
+Os objetos em aplicações modernas podem conter muitas propriedades. Algumas
+destas propriedades podem ser atualizadas diretamente pelo cliente (e.g.,
 `user.first_name` ou `user.address`), mas outras não (e.g., a _flag_
 `user.is_vip`).
 
 Um _endpoint_ é vulnerável se converter automaticamente parâmetros do
 cliente em propriedades internas de um objeto, sem considerar a sensibilidade e
 o nível de exposição destas propriedades. Isto pode permitir a um atacante
-atualizar propriedades de objetos aos quais ele não deveria ter acesso.
+atualizar propriedades de objetos, às quais ele não deveria ter acesso.
 
 Exemplos de propriedades sensíveis:
 
 * **Propriedades relacionadas com permissões**: `user.is_admin`, `user.is_vip`
-  deve ser modificado apenas por administradores.
-* **Propriedades dependentes de processos**: `user.cash` deve ser modificado
+  devem ser modificadas apenas por administradores.
+* **Propriedades dependentes de processos**: `user.cash` deve ser modificada
   apenas internamente depois da verificação de pagamento.
 * **Propriedades internas**: `article.created_time` deve ser modificada apenas
   internamente pela aplicação.
@@ -80,7 +80,7 @@ formato MP4.
   atualizar.
 * Usar funcionalidades já existentes para ter uma lista de propriedades que não
   devem ser acedidas por clientes.
-* Se possível, definir explicitamente e forçar utilização de _schemas_ para o
+* Se possível, definir explicitamente e forçar a utilização de _schemas_ para o
   conteúdo dos pedidos.
 
 ## Referências

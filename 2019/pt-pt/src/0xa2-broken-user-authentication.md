@@ -4,7 +4,7 @@ API2:2019 Broken User Authentication
 | Agentes Ameaça/Vetores Ataque | Falha Segurança | Impactos |
 | - | - | - |
 | Específico da API : Abuso **3** | Prevalência **2** : Deteção **2** | Técnico **3** : Específico Negócio |
-| A autenticação em APIs é um mecanismo complexo e confuso. Engenheiros de software e segurança podem ter conceções erradas com relação ao âmbito da autenticação e como implementá-la corretamente. Por outro lado os mecanismos de autenticação são um alvo fácil para os atacantes uma vez que estão expostos publicamente. Estes dois pontos tornam o componente responsável pela autenticação potencialmente vulnerável a diferentes tipos de abuso. | Podemos dividir os problemas de autenticação em duas partes: 1. Falta de mecanismos de proteção: os _endpoints_ responsáveis pela autenticação devem ser tratados de forma diferente dos demais _endpoints_, implementado camadas de proteção adicionais 2. Falhas na implementação do mecanismo: este é utilizado/implementado sem considerar os vetores de ataque específicos ou baseado em casos de uso desadequados (e.g., um mecanismo de autenticação desenhado para clientes IoT pode não ser a melhor escolha para aplicações web). | Os atacantes podem obter o controlo sobre as contas doutros utilizadores, aceder aos seus dados pessoais e realizar ações sensíveis em seu nome, como por exemplo transferências financeiras ou envio de mensagens pessoais. |
+| A autenticação em APIs é um mecanismo complexo e confuso. Engenheiros de software e segurança podem ter conceções erradas com relação ao âmbito da autenticação e como implementá-la corretamente. Por outro lado os mecanismos de autenticação são um alvo fácil para os atacantes uma vez que estão expostos publicamente. Estes dois pontos tornam o componente responsável pela autenticação potencialmente vulnerável a diferentes tipos de abuso. | Podemos dividir os problemas de autenticação em duas partes: 1. Falta de mecanismos de proteção: os _endpoints_ responsáveis pela autenticação devem ser tratados de forma diferente dos demais _endpoints_, implementando camadas de proteção adicionais 2. Falhas na implementação do mecanismo: este é utilizado/implementado sem considerar os vetores de ataque específicos ou baseado em casos de uso desadequados (e.g., um mecanismo de autenticação desenhado para clientes IoT pode não ser a melhor escolha para aplicações web). | Os atacantes podem obter o controlo sobre as contas doutros utilizadores, aceder aos seus dados pessoais e realizar ações sensíveis em seu nome, como por exemplo transferências financeiras ou envio de mensagens pessoais. |
 
 ## A API é vulnerável?
 
@@ -13,7 +13,7 @@ Mecanismos de recuperação de _password_ devem ser tratados da mesma forma que 
 mecanismos de autenticação.
 
 Uma API é vulnerável se:
-* Permite ataques de [credential stuffing][1] em que o atacante tem uma lista de
+* Permite ataques de [_credential stuffing_][1] em que o atacante tem uma lista de
   nomes de utilizador e _passwords_ válidos.
 * Permite ataques de força bruta a uma conta de utilizador específica, não
   implementando mecanismos de mitigação como _captcha_ ou bloqueio da conta por
@@ -30,7 +30,7 @@ Uma API é vulnerável se:
 
 ### Cenário #1
 
-Ataques de [Credential Stuffing][1] utilizando [listas de nomes de utilizador/
+Ataques de [_Credential Stuffing_][1] utilizando [listas de nomes de utilizador/
 _passwords_ conhecidas][2] são bastante comuns. Se uma API não implementa
 proteções contra ameaças automatizadas ou Credential Stuffing, esta pode ser
 usada como oráculo para identificar se as credenciais são válidas.
@@ -62,10 +62,10 @@ minutos descobrir o código enviado na SMS.
   bruta, limitação do número de pedidos e bloqueio de conta.
 * Utilize a  [OWASP Authentication Cheatsheet][3].
 * Sempre que possível implemente autenticação de múltiplos fatores.
-* Implemente mecanismos anti-força bruta para mitigar ataques do tipo credential
-  stuffing, dicionário e força bruta nos _endpoints_ de autenticação. Este
-  mecanismo deve ter configurações mais restritivas do que para os demais
-  _endpoints_ da API.
+* Implemente mecanismos anti-força bruta para mitigar ataques do tipo
+  _credential stuffing_, dicionário e força bruta nos _endpoints_ de
+  autenticação. Este mecanismo deve ter configurações mais restritivas do que
+  para os demais _endpoints_ da API.
 * Implemente [mecanismos de bloqueio de conta][4] / _captcha_ para prevenir
   ataques de força bruta contra utilizadores específicos. Implemente verificação
   da qualidade/força das _passwords_.

@@ -59,8 +59,8 @@ _Buffer Overflow_.
 * Validar de forma adequada os parâmetros enviados na _query string_ e corpo do
   pedido, em particular aqueles que controlam o número de registos a retornar na
   resposta.
-* Definir e forçar tamanho máximo de dados em todos os parâmetros e dados de
-  entrada, tais como comprimento máximo para os texto ou número máximo de
+* Definir e forçar um tamanho máximo de dados para todos os parâmetros e dados
+  de entrada, tais como comprimento máximo para os texto ou número máximo de
   elementos duma lista.
 
 ## Referências

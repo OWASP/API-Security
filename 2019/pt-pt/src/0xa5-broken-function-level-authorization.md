@@ -73,11 +73,12 @@ aplicacional.
 * Rever todos os _endpoints_ à procura de falhas ao nível da verificação de
   autorização de acesso a funções, tendo sempre em consideração a lógica de
   negócio da aplicação e hierarquia dos grupos.
-* Assegurar que todos os controladores administrativos herdam dum controlado
+* Assegurar que todos os controladores administrativos herdam dum controlador
   administrativo base que implementa as verificações de autorização com base no
   grupo/perfil do utilizador.
-* Assegurar que funções administrativas num controlador ordinário implementam as
-  verificações de autorização baseadas no grupo e perfil do utilizador.
+* Assegurar que funções administrativas num controlador ordinário implementam
+  elas próprias as verificações de autorização baseadas no grupo e perfil do
+  utilizador.
 
 ## Referências
 

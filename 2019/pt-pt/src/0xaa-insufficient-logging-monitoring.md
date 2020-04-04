@@ -10,8 +10,8 @@ API10:2019 Insufficient Logging & Monitoring
 
 A API é vulnerável se:
 
-* Não regista qualquer evento, o tipo de evento registado não é o correto ou não
-  os registos não incluem detalhe suficiente.
+* Não regista qualquer evento, o tipo de evento registado não é o correto ou os
+  registos não incluem detalhe suficiente.
 * A integridade do registo não é assegurada (e.g., [Log Injection][1]).
 * Os registos não são monitorizados.
 * A infraestrutura da API não é monitorizada ininterruptamente.

@@ -1,10 +1,11 @@
 Riscos de Segurança em APIs
 ===========================
 
-Para a análise de risco usámos a [OWASP Risk Rating Methodology][1].
+Para a análise de risco usámos a [metodologia de avaliação de risco da
+OWASP][1].
 
 A tabela seguinte resume a terminologia associada à pontuação correspondente ao
-nível de risco associado.
+nível de risco.
 
 | Agentes Ameaça | Abuso | Prevalência | Deteção | Impacto Técnico | Impacto Negócio |
 | :-: | :-: | :-: | :-: | :-: | :-: |

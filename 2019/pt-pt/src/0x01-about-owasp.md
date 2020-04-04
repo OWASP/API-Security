@@ -11,7 +11,7 @@ A OWASP disponibiliza de forma livre e aberta:
 * Livros completos sobre testes de segurança aplicacional, desenvolvimento
   de código seguro e revisão de código focada em segurança
 * Apresentações e [vídeos][1]
-* [Cheat Sheets][2] sobre assuntos diversos
+* [_Cheat Sheets_][2] sobre assuntos diversos
 * Controlos e bibliotecas de segurança _standard_
 * [Comunidades locais espalhados por todo o mundo][3]
 * Investigação de ponta
@@ -20,13 +20,13 @@ A OWASP disponibiliza de forma livre e aberta:
 
 Mais informação em: [https://www.owasp.org][6].
 
-Todas as ferramentas, documentos, vídeos, apresentações e capítulos da OWASP
-são livres e abertos a todos os interessados em melhorar a segurança
+Todas as ferramentas, documentos, vídeos, apresentações e comunidades locais da
+OWASP são livres e abertos a todos os interessados em melhorar a segurança
 aplicacional.
 
 Aconselhamos uma abordagem à segurança aplicacional como sendo um problema de
 pessoas, processos e tecnologia, porque as abordagens mais eficazes à segurança
-aplicacional necessitam de melhoras em todas estas áreas.
+aplicacional necessitam de melhorias em todas estas áreas.
 
 A OWASP é um novo tipo de organização. A nossa independência em relação a
 pressões comerciais permite-nos fornecer informação imparcial, prática e
@@ -37,7 +37,7 @@ de uma forma colaborativa, transparente e aberta.
 
 A fundação OWASP é uma entidade sem fins lucrativos o que assegura o sucesso a
 longo prazo do projeto. Quase todas as pessoas associadas à OWASP são
-voluntárias, incluindo a direção da OWASP, os líderes dos vários capítulos, os
+voluntárias, incluindo a direção da OWASP, os líderes das comunidades locais, os
 líderes dos projetos e os seus membros. Suportamos investigação inovadora em
 segurança através de bolsas e infraestrutura.
 

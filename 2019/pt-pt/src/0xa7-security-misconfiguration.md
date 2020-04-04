@@ -34,8 +34,8 @@ qual contem os comandos usados pela equipa de DevOps para aceder à API:
 $ curl -X GET 'https://api.server/endpoint/' -H 'authorization: Basic Zm9vOmJhcg=='
 ```
 
-O atacante pôde assim identificar novos _endpoints_ da API, usados
-exclusivamente pela equipa de DevOps e que não estão documentados.
+O atacante pôde assim identificar novos _endpoints_ da API, destinados
+exclusivamente ao uso pela equipa de DevOps e que não estão documentados.
 
 ### Cenário #2
 
@@ -66,7 +66,7 @@ O ciclo de vida da API deve incluir:
 * Um processo de revisão e atualização de todas as camadas da API. A revisão
   deve incluir: ficheiros de orquestração, componentes da API e serviços na
   nuvem (e.g., permissões dos _buckets_ S3).
-* Um canal comunicação seguro para todas as interações da API no acesso a
+* Um canal de comunicação seguro para todas as interações da API no acesso a
   recursos estáticos (e.g., imagens).
 * Um processo automatizado para verificar de forma continua as configurações e
   definições em todos os ambientes (produção, _staging_, testes,
@@ -80,9 +80,9 @@ E ainda:
   conformidade.
 * Assegure que a API só é acessível através do verbos HTTP especificados. Todos
   os demais verbos HTTP que não são utilizados deverão estar desativados (e.g.,
-  `HEAD`)
+  `HEAD`).
 * As APIs destinadas a acessos por clientes a correr em navegadores (e.g.,
-  WebApps) devem implementar uma política de Partilha de Recursos entre Origens
+  WebApps) devem implementar uma política de Partilha de Recursos Entre Origens
   (CORS) adequada.
 
 ## Referências

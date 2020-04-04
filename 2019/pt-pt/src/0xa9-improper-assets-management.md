@@ -61,12 +61,12 @@ utilizador, recorrendo a força bruta para adivinhar o _token_ de 6 dígitos.
   a sua suscetibilidade.
 * Documente todos os aspetos da API, tais como autenticação, erros,
   redirecionamentos, política de limitação do número de pedidos, polícia de
-  partilha de recursos entre origens (CORS) e _endpoints_, incluindo os seus
+  Partilha de Recursos Entre Origens (CORS) e _endpoints_, incluindo os seus
   parâmetros, pedidos e respostas.
 * Gere a documentação de forma automática através da adoção de standards. Inclua
   a geração da documentação no seu processo de CI/CD.
 * Torne a documentação da API disponível para aqueles autorizados a consultá-la.
-* Utilize mecanismos de proteção externa, tais como API Security Firewalls, em
+* Utilize mecanismos de proteção externa, tais como _API Security Firewalls_, em
   todas as versões da API expostas e não exclusivamente a versão mais recente em
   produção.
 * Evite a utilização de dados de produção em outros ambientes da API que não de
