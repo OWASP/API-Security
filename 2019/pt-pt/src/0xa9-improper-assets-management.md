@@ -30,7 +30,7 @@ A API pode ser vulnerável se:
 
 ### Cenário #1
 
-Depois de re-desenhar as suas aplicações, um serviço de pesquisa local deixou
+Depois de redesenhar as suas aplicações, um serviço de pesquisa local deixou
 uma versão antiga da API a correr (`api.someservice.com/v1`), desprotegida e com
 acesso à base de dados de utilizadores. Enquanto estava a analisar uma das
 últimas versões das aplicações, um atacante encontrou o endereço da API
@@ -43,12 +43,12 @@ de mais de 100 milhões de utilizadores.
 Uma rede social implementou um mecanismo de limitação do número de pedidos para
 impedir os atacantes de usar ataques de força bruta para adivinhar os _tokens_
 de redefinição de password. Este mecanismo não foi implementado ao nível do
-código da API, mas sim como um componente entre o cliente e a API em uso
-(`www.socialnetwork.com`). Um investigador encontrou um _host_ relativo à versão
-beta da API mas que corria agora a última versão desta, incluindo o mecanismo de
-redefinição da password, mas aqui sem o mecanismo de limitação do número de
-pedidos. O investigador seria capaz de redefinir a password de qualquer
-utilizador, recorrendo a força bruta para adivinhar o _token_ de 6 dígitos.
+código da API, mas sim como um componente entre o cliente e a API em uso. Um
+investigador encontrou um _host_ relativo à versão beta da API mas que corria
+agora a última versão desta, incluindo o mecanismo de redefinição da password,
+mas aqui sem o mecanismo de limitação do número de pedidos. O investigador seria
+capaz de redefinir a password de qualquer utilizador, recorrendo a força bruta
+para adivinhar o _token_ de 6 dígitos.
 
 ## Como Prevenir
 

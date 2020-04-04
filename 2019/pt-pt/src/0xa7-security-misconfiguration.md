@@ -16,7 +16,8 @@ A API é vulnerável se:
 * As últimas atualizações de segurança não foram aplicadas ou os sistemas estão
   desatualizados.
 * Existem funcionalidades ativas que não estão em uso (e.g., verbos HTTP).
-* _Transport Layer Security_ (TLS) não está configurado.
+* A segurança do canal de comunicação não está assegurada: _Transport Layer
+  Security_ (TLS) em falta ou indevidamente configurado.
 * Diretivas de segurança não são enviadas aos clientes (e.g.,
   [cabeçalhos HTTP de segurança][1]).
 * Não existe um política de Partilha de Recursos entre Origens (CORS) ou esta
@@ -28,14 +29,14 @@ A API é vulnerável se:
 ### Cenário #1
 
 Um atacante encontra o ficheiro `.bash_history` na diretoria raiz do servidor, o
-qual contem os comandos usados pela equipa de DevOps para aceder à API:
+qual contém os comandos usados pela equipa de DevOps para aceder à API:
 
 ```
 $ curl -X GET 'https://api.server/endpoint/' -H 'authorization: Basic Zm9vOmJhcg=='
 ```
 
 O atacante pôde assim identificar novos _endpoints_ da API, destinados
-exclusivamente ao uso pela equipa de DevOps e que não estão documentados.
+exclusivamente ao uso pela equipa de DevOps e que não estavam documentados.
 
 ### Cenário #2
 

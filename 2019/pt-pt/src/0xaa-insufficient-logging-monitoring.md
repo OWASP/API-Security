@@ -12,8 +12,9 @@ A API é vulnerável se:
 
 * Não regista qualquer evento, o tipo de evento registado não é o correto ou os
   registos não incluem detalhe suficiente.
-* A integridade do registo não é assegurada (e.g., [Log Injection][1]).
-* Os registos não são monitorizados.
+* A integridade do registo de eventos não é assegurada (e.g.,
+  [Log Injection][1]).
+* Os registos de eventos não são monitorizados.
 * A infraestrutura da API não é monitorizada ininterruptamente.
 
 ## Exemplos de Cenários de Ataque
