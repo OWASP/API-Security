@@ -3,7 +3,7 @@ API7:2019 Security Misconfiguration
 
 | Agentes Ameaça/Vetores Ataque | Falha Segurança | Impactos |
 | - | - | - |
-| Específico da API : Abuso **3** | Prevalência **3** : Detetabilidade **3** | Técnico **2** : Específico Negócio |
+| Específico da API : Abuso **3** | Prevalência **3** : Deteção **3** | Técnico **2** : Específico Negócio |
 | Os atacantes vão regra geral tentar encontrar falhas, _endpoints_ comuns ou ficheiros e diretórios desprotegidos para ganhar acesso não autorizado ou conhecimento do sistema. | Falhas nas configurações de segurança podem acontecer em qualquer camada da API, desde o nível de rede ao aplicacional. Existem ferramentas automáticas para detetar e abusar destas falhas, tais como serviços desnecessários que se encontram em execução ou configurações antigas. | Estas falhas podem não só expor dados sensíveis dos utilizadores, mas também detalhes do sistema que permitam comprometer o servidor. |
 
 ## A API é vulnerável?

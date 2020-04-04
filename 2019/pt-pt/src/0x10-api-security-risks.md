@@ -6,7 +6,7 @@ Para a análise de risco usámos a [OWASP Risk Rating Methodology][1].
 A tabela seguinte resume a terminologia associada à pontuação correspondente ao
 nível de risco associado.
 
-| Agentes Ameaça | Abuso | Prevalência da Falha | Detetabilidade | Impacto Técnico | Impacto Negócio |
+| Agentes Ameaça | Abuso | Prevalência | Deteção | Impacto Técnico | Impacto Negócio |
 | :-: | :-: | :-: | :-: | :-: | :-: |
 | Específico da API | Fácil **3** | Predominante **3** | Fácil **3** | Grave **3** | Específico do Negócio |
 | Específico da API | Moderado **2** | Comum **2** | Moderado **2** | Moderado **2** | Específico do Negócio |

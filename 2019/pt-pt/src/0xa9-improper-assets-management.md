@@ -3,7 +3,7 @@ API9:2019 Improper Assets Management
 
 | Agentes Ameaça/Vetores Ataque | Falha Segurança | Impactos |
 | - | - | - |
-| Específico da API : Abuso **3** | Prevalência **3** : Detectabilidade **2** | Técnico **2** : Específico Negócio |
+| Específico da API : Abuso **3** | Prevalência **3** : Deteção **2** | Técnico **2** : Específico Negócio |
 | Versões antigas da API tipicamente não são alvo de atualizações e podem ser usadas para comprometer sistemas sem ter que lidar com mecanismos de segurança mais avançados, os quais poderão estar ativos nas versões mais recentes. | A documentação desatualizada dificulta a identificação e/ou correção de falhas de segurança. A inexistência dum inventário e duma estratégica de descontinuação estão na génese dos sistemas sem atualizações de segurança que acabam por divulgar informação sensível. É comum encontrar-se APIs expostas desnecessariamente: o conceito de micro-serviços tornou o _deploy_ das aplicações mais fácil e independente (e.g., _cloud_, kubernetes), podendo estar na origem deste fenómeno. | Os atacantes podem conseguir acesso a informação sensível ou até obter o controlo do servidor através de versões antigas e sem atualizações de segurança que estejam ligadas à mesma base de dados. |
 
 ## A API é vulnerável?

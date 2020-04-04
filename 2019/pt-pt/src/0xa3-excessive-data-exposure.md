@@ -3,7 +3,7 @@ API3:2019 Excessive Data Exposure
 
 | Agentes Ameaça/Vetores Ataque | Falha Segurança | Impactos |
 | - | - | - |
-| Específico da API : Abuso **3** | Prevalência **2** : Detectabilidade **2** | Técnico **2** : Específico Negócio |
+| Específico da API : Abuso **3** | Prevalência **2** : Deteção **2** | Técnico **2** : Específico Negócio |
 | Abusar desta falha de segurança é simples e tipicamente passa pela inspeção do tráfego de rede para analisar as respostas da API em busca de dados que não devessem ser devolvidos ao utilizador. | As APIs delegam nos clientes a responsabilidade de filtrar os dados. Uma vez que as APIs são usadas como fonte de dados, com frequência os programadores procuram fazer implementações genéricas sem ter em consideração a relevância dos dados expostos. Regra geral as ferramentas automáticas não conseguem detetar este tipo de vulnerabilidade por ser difícil diferenciar dados legítimos retornados pela API doutros sensíveis que não deveriam ser expostos. Esta tarefa exige um profundo conhecimento da aplicação. | _Excessive Data Exposure_ tipicamente conduz à exposição de dados sensíveis. |
 
 ## A API é vulnerável?
