@@ -3,7 +3,7 @@ Prefácio
 
 As APIs - _Application Programming Interface_ têm um papel fundamental na
 inovação que observamos nos dias de hoje ao nível das aplicações. Desde a banca,
-retalho e transportes à Internet das Coisa (IoT), veículos autónomos e _Smart
+retalho e transportes à Internet das Coisas (IoT), veículos autónomos e _Smart
 Cities_, as APIs são hoje um elemento crítico nas aplicações móveis, _Software
 as a Service_ (SaaS) e aplicações web, sejam elas destinadas ao público em
 geral, parceiros de negócio ou para uso interno das organizações.

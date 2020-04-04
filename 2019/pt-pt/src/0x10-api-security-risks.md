@@ -18,7 +18,7 @@ API. Qualquer um destes fatores podem ter impacto significativo na probabilidade
 dum atacante encontrar e abusar duma falha de segurança particular. Estes
 indicadores não tomam em consideração o impacto atual no seu negócio. Terá de
 ser a sua organização a decidir qual o nível de risco para a segurança das suas
-aplicações e APIs está disposta a aceitar, baseados na cultura, industria e
+aplicações e APIs que está disposta a aceitar, baseado na cultura, indústria e
 regulação a que está sujeita. O propósito do OWASP API Security Top 10 não é
 fazer essa análise por si.
 
