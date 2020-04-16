@@ -3,8 +3,8 @@ API9:2019 Control de Acceso Inapropiado
 
 |Agente/Vector de Ataque | Debilidades de Seguridad | Impacto |
 | - | - | - |
-| API Específica : Explotabilidad **2** | Prevalencia **3** : Detectabilidad **1** | Técnico **2** : Negocio |
-| Old API versions are usually unpatched and are an easy way to compromise systems without having to fight state-of-the-art security mechanisms, which might be in place to protect the most recent API versions. | Outdated documentation makes it more difficult to find and/or fix vulnerabilities. Lack of assets inventory and retire strategies leads to running unpatched systems, resulting in leakage of sensitive data. It’s common to find unnecessarily exposed API hosts because of modern concepts like microservices, which make applications easy to deploy and independent (e.g., cloud computing, k8s). | Attackers may gain access to sensitive data, or even takeover the server through old, unpatched API versions connected to the same database. |
+| API Específica : Explotabilidad **3** | Prevalencia **3** : Detectabilidad **2** | Técnico **2** : Negocio |
+| Las versiones antiguas de API generalmente no tienen las últimas actualizaciones de seguridad y son una manera fácil de comprometer sistemas sin tener que luchar contra los mecanismos de seguridad más modernos, los cuales podrían estar configurados para solo proteger las versiones de las APIs más recientes. | La documentación obsoleta hace que sea más difícil encontrar y / o arreglar vulnerabilidades. La falta de inventario de activos y de estrategias de retiro de los mismos resulta que sistemas estén funcionando aunque no cuenten con las últimas actualizaciones de seguridad, lo que pudiese resultar en la fuga de datos sensibles. Es común encontrar hosts de APIs innecesariamente expuestos debido a conceptos modernos como microservicios, que hacen que las aplicaciones sean independientes y fáciles de desplegar (por ejemplo, computación en la nube, k8s). | Los atacantes pueden obtener acceso a datos sensibles, o incluso tomar el control de un servidor a través del uso de una versión antigua y desactualizada de alguna API conectada a la misma base de datos. |
 
 ## ¿La API es Vulnerable?
 
@@ -30,33 +30,45 @@ La API es vulnerable si:
 ### Escenario #1
 
 Después de rediseñar sus aplicaciones, un servicio de búsqueda dejó una versión antigua de la API (`api.someservice.com/v1`) en ejecución, sin protección y con acceso a la base de datos. Mientras se dirigía a una de las últimas aplicaciones lanzadas, un
-atacante encontró la dirección de la API (`api.someservice.com / v2`). Reemplazando `v2` con
+atacante encontró la dirección de la API (`api.someservice.com/v2`). Reemplazando `v2` con
 `v1` en la URL, el atacante obtuvo acceso a la antigua API desprotegida,
 exponiendo la información personal identificable (PII) de más de 100 millones de usuarios.
 
 ### Escenario #2
 
-Una red social implementó un mecanismo de limitación de velocidad que bloquea a los atacantes de usar un ataque de fuerza bruta para adivinar tokens de restablecimiento de contraseña. Este mecanismo no fue implementado como parte del código de la API, sino en otro componente entre el cliente y la API oficial (`www.socialnetwork.com`).
-
-Un investigador encontró un dominio de una API beta (`www.mbasic.beta.socialnetwork.com`) que corre la misma API, incluyendo el mecanismo de restablecimiento de contraseñas, pero el mecanismo de limitación de velocidad no estaba en su lugar. El investigador fue capaz de restablecer la contraseña de cualquier usuario por medio de la utilización de un simple ataque de fuerza bruta para adivinar un token de 6 dígitos.
+Una red social implementó un mecanismo de limitación de velocidad que bloquea a los atacantes de usar un ataque de fuerza bruta para adivinar tokens de restablecimiento de contraseña. Este mecanismo no fue implementado como parte del código de la API, sino en otro componente entre el cliente y la API oficial (`www.socialnetwork.com`). Un investigador encontró un dominio de una API beta (`www.mbasic.beta.socialnetwork.com`) que corre la misma API, incluyendo el mecanismo de restablecimiento de contraseñas, pero el mecanismo de limitación de velocidad no estaba en su lugar. El investigador fue capaz de restablecer la contraseña de cualquier usuario por medio de la utilización de un simple ataque de fuerza bruta para adivinar un token de 6 dígitos.
 
 ## Cómo Prevenir
 
-* Inventory all API hosts and document important aspects of each one of them,
-  focusing on the API environment (e.g., production, staging, test,
-  development), who should have network access to the host (e.g., public,
-  internal, partners) and the API version.
-* Inventory integrated services and document important aspects such as their
-  role in the system, what data is exchanged (data flow), and its sensitivity.
-* Document all aspects of your API such as authentication, errors, redirects,
-  rate limiting, cross-origin resource sharing (CORS) policy and endpoints,
-  including their parameters, requests, and responses.
-* Generate documentation automatically by adopting open standards. Include the
-  documentation build in your CI/CD pipeline.
-* Make API documentation available to those authorized to use the API.
-* Use external protection measures such as API security firewalls for all exposed versions of your APIs, not just for the current production version.
-* Avoid using production data with non-production API deployments. If this is unavoidable, these endpoints should get the same security treatment as the production ones.
-* When newer versions of APIs include security improvements, perform risk analysis to make the decision of the mitigation actions required for the older version: for example, whether it is possible to backport the improvements without breaking API compatibility or you need to take the older version out quickly and force all clients to move to the latest version.
+* Haga un inventario de todos los hosts de sus APIs y documente aspectos
+importantes de cada un de ellas, centrándose en el entorno de la API
+(por ejemplo, producción, pre-producción, pruebas, desarrollo), quién debe
+tener acceso de red al host (por ejemplo, pública, interna, socios) y la versión
+de la API.
+* Haga un inventario de servicios integrados y documente aspectos importantes
+como su propósito en el sistema, qué datos se manejan (flujo de datos) y su
+nivel de sensibilidad.
+* Documente todos los aspectos de su API, como autenticación, errores,
+redireccionamientos, política de límite de velocidad, intercambio de recursos de
+origen cruzado (CORS) y métodos expuestos, incluidos sus parámetros,
+solicitudes y respuestas.
+* Genere la documentación automáticamente por medio de la adopción de estándares
+abiertos. Incluya la documentación de compilación en su proceso de
+Integración Continua / Despliegue continuo.
+* Ponga la documentación de la API a disposición de aquellos autorizados para
+usar la API.
+* Use medidas de protección externa, como firewalls de seguridad para todas las
+versiones expuestas de sus APIs, es decir, no solo para la versión de producción
+más actual.
+* Evite usar datos de producción con implementaciones de APIs que no sean de
+producción. Si esto es inevitable, estos métodos expuestos deben de recibir el
+mismo cuidado de seguridad que las que se encuentran en producción.
+* Cuando las versiones más recientes de las APIs incluyan mejoras de seguridad,
+realice un análisis de riesgo para tomar la decisión de las acciones de
+mitigación requeridas para las versiones anteriores: por ejemplo, ver si es
+posible hacer esas mejoras de seguridad sin romper la compatibilidad de las APIs
+anteriores o ver si necesita remover la versión anterior rápidamente y obligar a
+todos los clientes a que solo puedan usar la última versión.
 
 ## Referencias
 
