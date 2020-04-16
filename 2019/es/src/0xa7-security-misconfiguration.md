@@ -28,7 +28,7 @@ Un atacante encuentra el archivo `.bash_history` en el directorio raíz del
 servidor, que contiene comandos utilizados por el equipo de DevOps para acceder a la API:
 
 `` `
-$ curl -X OBTENER 'https: //api.server/endpoint/' -H 'autorización: Basic Zm9vOmJhcg =='
+$ curl -X GET 'https: //api.server/endpoint/' -H 'autorización: Basic Zm9vOmJhcg=='
 `` `
 
 Un atacante también podría encontrar nuevos métodos expuestos por la API que solo son utilizados por el equipo de DevOps y no están documentados.
@@ -41,8 +41,17 @@ Para atacar a un servicio en específico, un atacante utiliza un motor de búsqu
 Al inspeccionar el tráfico de una aplicación móvil, un atacante descubre que no todo
 el tráfico HTTP se realiza utilizando un protocolo seguro (por ejemplo, TLS). El atacante encuentra que esto es cierto, específicamente para la descarga de imágenes de perfil. Debido a que la interacción con el usuario es binaria, a pesar del hecho de que el tráfico de la API se realiza por medio de un protocolo seguro, el atacante encuentra un patrón en el tamaño de las respuestas de la API, las cuales utiliza para rastrear las preferencias del usuario sobre el contenido que se representa (por ejemplo, imágenes de perfil).
 
-
 ## Cómo se previene
+El ciclo de vida de la API debe de incluir:
+* Un proceso de fortificación repetible que lleve hacia una implementación
+rápida y fácil en un ambiente debidamente aislado.
+* Una tarea para revisar y actualizar configuraciones en toda la pila de la API.
+La revisión debe incluir: archivos de orquestación, componentes de la API y
+servicios en la nube (por ejemplo, permisos en una cubeta S3).
+* Un canal de comunicación seguro para todas las interacciones de la API
+  cuando ésta accede a los activos estáticos (por ejemplo, imágenes).
+* Un proceso automatizado para evaluar continuamente la efectividad de la
+   configuración y ajustes en todos los ambientes.
 
 ## Referencias
 
