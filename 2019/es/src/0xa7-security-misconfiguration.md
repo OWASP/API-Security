@@ -15,7 +15,7 @@ La API puede ser vulnerable si:
 * Faltan los últimos parches de seguridad o los sistemas están desactualizados.
 * Se habilitan funciones innecesarias (por ejemplo, verbos HTTP).
 * Falta la seguridad de la capa de transporte (TLS).
-* Las directivas de seguridad no se envían a los clientes (por ejemplo, [Encabezados de seguridad] [1]).
+* Las directivas de seguridad no se envían a los clientes (por ejemplo, [Encabezados de seguridad][1]).
 * Falta una política de intercambio de recursos de origen cruzado (CORS) o está configurada incorrectamente.
 * Los mensajes de error incluyen rastros de la pila u otra información confidencial está expuesta.
 
@@ -27,9 +27,9 @@ La API puede ser vulnerable si:
 Un atacante encuentra el archivo `.bash_history` en el directorio raíz del
 servidor, que contiene comandos utilizados por el equipo de DevOps para acceder a la API:
 
-`` `
+```
 $ curl -X GET 'https: //api.server/endpoint/' -H 'autorización: Basic Zm9vOmJhcg=='
-`` `
+```
 
 Un atacante también podría encontrar nuevos métodos expuestos por la API que solo son utilizados por el equipo de DevOps y no están documentados.
 
@@ -52,6 +52,17 @@ servicios en la nube (por ejemplo, permisos en una cubeta S3).
   cuando ésta accede a los activos estáticos (por ejemplo, imágenes).
 * Un proceso automatizado para evaluar continuamente la efectividad de la
    configuración y ajustes en todos los ambientes.
+
+Además:
+
+* Para evitar que los rastros de excepción y otro tipo de información valiosa
+sea enviada a los atacantes, solo si aplica, defina y aplique un estándar a todas las respuestas de la API, incluyendo las respuestas de errores.
+* Asegúrese de que solo los verbos HTTP especificados puedan acceder a la API.
+Todos los demás verbos HTTP deben de deshabilitarse (por ejemplo, HEAD).
+* Las APIs que esperan ser accedidas desde clientes basados en navegador
+(por ejemplo, front-end de una aplicación web) deben implementar una política
+adecuada de intercambio de recursos de origen cruzado (CORS).
+
 
 ## Referencias
 
