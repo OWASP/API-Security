@@ -1,4 +1,4 @@
-API10:2019 Registro y Monitoreo Insuficientes
+API10:2019 Registro y Monitoreo Insuficiente
 ============================================
 
 |Agente/Vector de Ataque | Debilidades de Seguridad | Impacto |
