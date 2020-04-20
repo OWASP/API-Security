@@ -1,4 +1,4 @@
-API9:2019 Control de Acceso Inapropiado
+API9:2019 Control de Acceso Inadecuado
 ====================================
 
 |Agente/Vector de Ataque | Debilidades de Seguridad | Impacto |
