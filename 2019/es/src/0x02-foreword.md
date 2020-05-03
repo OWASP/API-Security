@@ -15,7 +15,7 @@ Sin API seguras, la innovación rápida sería imposible.
 Aunque un Top 10 más amplio de los riesgos de seguridad de una aplicación web todavía
 es relevante, debido a su naturaleza particular, se requiere una lista de riesgos de seguridad
 específicos de la API. La seguridad de API se centra en estrategias y soluciones para
-comprender y mitigar el vulnerabilidades únicas y riesgos de seguridad asociados con las API.
+comprender y mitigar las vulnerabilidades únicas y riesgos de seguridad asociados con las API.
 
 Si está familiarizado con el [Proyecto Top 10 de OWASP][1], notará las
 similitudes entre ambos documentos: están destinados a la legibilidad y

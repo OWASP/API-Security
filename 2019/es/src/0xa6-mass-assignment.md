@@ -6,7 +6,7 @@ API6:2019 - Asignación Masiva
 | Específico de la API : Explotabilidad **2** | Frecuencia **2** : Detectabilidad **2** | Técnico **2** : Específico del Negocio |
 | La explotación usualmente requiere un conocimiento de la lógica de negocio, relaciones de objetos y la estructura de la API.
 La explotación de la asignación masiva es más fácil en las API, ya que por diseño exponen la implementación subyacente de la aplicación
-junto con los nombres de las propiedades. | Los frameworks modernos alientan a los desarrolladores a usar funciones que enlazan
+junto con los nombres de las propiedades. | Los marcos modernos alientan a los desarrolladores a usar funciones que enlazan
 automáticamente la entrada del cliente en variables de código y objetos internos. Los atacantes pueden usar esta metodología para
 actualizar o sobrescribir las propiedades de objetos sensibles que los desarrolladores nunca tuvieron la intención de exponer. |
 La explotación puede conducir a la escalada de privilegios, la manipulación de datos, eludir los mecanismos de seguridad y más. |

@@ -4,7 +4,7 @@ API7:2019 Configuración incorrecta de seguridad
 |Agente/Vector de Ataque | Debilidades de Seguridad | Impacto |
 | - | - | - |
 | API Específica : Explotabilidad **3** | Prevalencia **3** : Detectabilidad **3** | Técnico **2** : ¿Negocio? |
-| Los atacantes a menudo intentarán encontrar fallas que no han sido actualizadas, métodos comunes que estén expuestos o archivos y directorios desprotegidos para obtener acceso no autorizado o conocimiento del sistema. | La configuración incorrecta de seguridad puede ocurrir en cualquier nivel de la pila de API, desde el nivel de red hasta el nivel de aplicación. Hay herramientas automatizadas que están disponibles para detectar y explotar configuraciones incorrectas, como servicios innecesarios u opciones deprecadas. | Las configuraciones incorrectas de seguridad no solo pueden exponer datos confidenciales del usuario, sino también detalles del sistema que pueden llevar a un compromiso total del servidor. |
+| Los atacantes a menudo intentarán encontrar fallas que no han sido actualizadas, métodos comunes que estén expuestos o archivos y directorios desprotegidos para obtener acceso no autorizado o conocimiento del sistema. | La configuración incorrecta de seguridad puede ocurrir en cualquier nivel de la pila de API, desde el nivel de red hasta el nivel de aplicación. Hay herramientas automatizadas que están disponibles para detectar y explotar configuraciones incorrectas, como servicios innecesarios u opciones obsoletas. | Las configuraciones incorrectas de seguridad no solo pueden exponer datos confidenciales del usuario, sino también detalles del sistema que pueden llevar a un compromiso total del servidor. |
 
 
 ## ¿La API es Vulnerable?

@@ -15,12 +15,6 @@ las aplicaciones han cambiado significativamente. Actualmente, las API juegan
 un papel muy importante en esta nueva arquitectura de microservicios,
 aplicaciones de página única (SPA), aplicaciones móviles, IoT, etc.
 
-The OWASP API Security Top 10 was a required effort to create awareness about
-modern API security issues. It was only possible due to a great effort of
-several volunteers, all of them listed in the [Acknowledgments][3] section.
-Thank you!
-
-
 El OWASP API Security Top 10 fue un esfuerzo necesario para crear conciencia sobre
 problemas de seguridad API modernos. Solo fue posible debido a un gran esfuerzo de
 varios voluntarios, todos ellos enumerados en la sección [Agradecimientos][3].
