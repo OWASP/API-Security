@@ -9,13 +9,13 @@ API1:2019 Autorización a Nivel de Objeto Rota
 
 ## ¿Es vulnerable la API?
 
-La autorización a nivel de objeto es un mecanismo de control de acceso que usualmente 
+La autorización a nivel de objeto es un mecanismo de control de acceso que usualmente
 es implementado a nivel de código para validar que un usuario puede acceder sólo a los objetos
 a los que debería acceder.
 
-Todo recurso de API que recibe un ID de objeto, y realiza cualquier tipo de 
+Todo recurso de API que recibe un ID de objeto, y realiza cualquier tipo de
 acción en el objeto, debe implementar controles de autorización a nivel de objeto.
-Los controls deben validar que el usuario que ha iniciado sesión tiene acceso a realizar
+Los controles deben validar que el usuario que ha iniciado sesión tiene acceso a realizar
 la acción requerida en el objeto indicado.
 
 Las fallas en estos mecanismos típicamente resultan en revelación de información no autorizada,
@@ -26,12 +26,12 @@ modificación o destrucción de todos los datos.
 
 ### Escenario #1
 
-Una plataforma de e-commerce para tiendas online (shops) provee una página con una 
-lista de gráficos de ganancia de sus tiendas alojadas. Inspeccionando las peticiones del navegador, 
+Una plataforma de e-commerce para tiendas online (shops) provee una página con una
+lista de gráficos de ganancia de sus tiendas alojadas. Inspeccionando las peticiones del navegador,
 un atacante puede identificar los recursos de API que son usados como fuente de datos para esos gráficos
-y sus patrones `/shops/{shopName}/revenue_data.json`. Usando otro recurso API, 
+y sus patrones `/shops/{shopName}/revenue_data.json`. Usando otro recurso API,
 el atacante puede obtener la lista de nombres de todas las tiendas alojadas. Con un script
-simple para manipular los nombres en la lista, reemplazando `{shopName}` en la URL, 
+simple para manipular los nombres en la lista, reemplazando `{shopName}` en la URL,
 el atacante puede ganar acceso a la información de ventas de miles de tiendas e-commerce.
 
 
@@ -40,19 +40,19 @@ el atacante puede ganar acceso a la información de ventas de miles de tiendas e
 Monitoreando el tráfico de red de un dispositivo wearable, la siguiente petición
 HTTP `PATCH` gana la atención de un atacante debido a la presencia de un encabezado
 HTTP personalizado `X-User-Id: 54796`. Reemplazando el valor de `X-User-Id` con `54795`,
-el atacante recive una respuesta HTTP exitosa y es posible modificar datos de 
+el atacante recibe una respuesta HTTP exitosa y es posible modificar datos de
 cuentas de otros usuarios.
 
 
 ## Cómo prevenir
 
-* Implementar mecanismos de autorización apropiados que se basen en las políticas 
+* Implementar mecanismos de autorización apropiados que se basen en las políticas
   del usuario y su jerarquía.
 * Utilizar un mecanismo de autorización para controlar si el usuario que ha iniciado sesión
-  tiene acceso para realizar la acción solicitada en el registro, en toda función que usa un 
+  tiene acceso para realizar la acción solicitada en el registro, en toda función que usa un
   dato ingresado por el cliente para acceder a un registro de la base de datos.
 * Es preferible usar valores aleatorios e impredecibles como GUIDs para los IDs de los registros.
-* Escriba tests para evaluar los mecanismos de autorización. No despliegue cambios vulnerables que rompan los tests. 
+* Escriba tests para evaluar los mecanismos de autorización. No despliegue cambios vulnerables que rompan los tests.
 
 
 ## Referencias

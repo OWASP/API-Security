@@ -5,8 +5,8 @@ Introducción
 
 Bienvenido a la primera edición de OWASP API Security Top 10. Si estás
 familiarizado con la serie OWASP Top 10, notarás algunas similitudes:
-La intención es la legibilidad y la adopción. De lo contrario, considere visitar
-el [La página wiki de OWASP API Security Project][1], antes de profundizar en
+La intención es la legibilidad y la adopción. De lo contrario, considera visitar
+[La página wiki de OWASP API Security Project][1], antes de profundizar en
 los riesgos más críticos de seguridad de APIs.
 
 Las APIs juegan un papel muy importante en la arquitectura de las aplicaciones
@@ -18,7 +18,7 @@ El objetivo principal de OWASP API Security Top 10 es educar a los involucrados
 en el desarrollo y mantenimiento de APIs, por ejemplo, desarrolladores,
 diseñadores, arquitectos, gerentes u organizaciones.
 
-En la sección [Metodología y datos][2], puede leer más acerca de cómo esta
+En la sección [Metodología y datos][2], puedes leer más acerca de cómo esta
 primera edición se creó. En futuras versiones, queremos involucrar a la
 industria de seguridad, por medio de una convocatoria pública para recolectar
 datos. Por ahora, alentamos a todos a contribuir con preguntas, comentarios e

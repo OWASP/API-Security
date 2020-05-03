@@ -11,7 +11,7 @@ estándares de seguridad**.
 
 OWASP tiene numerosos recursos gratuitos y abiertos para abordar el tema de la
 seguridad desde que inicia un proyecto. Visite la
-[página de proyectos de OWASP][1] para obtener un lista completa de los
+[página de proyectos de OWASP][1] para obtener una lista completa de los
 proyectos disponibles.
 
 | | |
