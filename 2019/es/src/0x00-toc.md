@@ -3,7 +3,7 @@
 
 * [Índice de contenidos](0x00-toc.md)
 * [Sobre OWASP](0x01-about-owasp.md)
-* [Prefacio](0x02-foreward.md)
+* [Prefacio](0x02-foreword.md)
 * [Introducción](0x03-introduction.md)
 * [Notas de la versión](0x04-release-notes.md)
 * [Riesgos de Seguridad API](0x10-api-security-risks.md)
