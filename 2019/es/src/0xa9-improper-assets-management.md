@@ -4,26 +4,25 @@ API9:2019 Control de Acceso Inadecuado
 |Agente/Vector de Ataque | Debilidades de Seguridad | Impacto |
 | - | - | - |
 | API Específica : Explotabilidad **3** | Prevalencia **3** : Detectabilidad **2** | Técnico **2** : Negocio |
-| Las versiones antiguas de API generalmente no tienen las últimas actualizaciones de seguridad y son una manera fácil de comprometer sistemas sin tener que luchar contra los mecanismos de seguridad más modernos, los cuales podrían estar configurados para solo proteger las versiones de las APIs más recientes. | La documentación obsoleta hace que sea más difícil encontrar y / o arreglar vulnerabilidades. La falta de inventario de activos y de estrategias de retiro de los mismos resulta que sistemas estén funcionando aunque no cuenten con las últimas actualizaciones de seguridad, lo que pudiese resultar en la fuga de datos sensibles. Es común encontrar hosts de APIs innecesariamente expuestos debido a conceptos modernos como microservicios, que hacen que las aplicaciones sean independientes y fáciles de desplegar (por ejemplo, computación en la nube, k8s). | Los atacantes pueden obtener acceso a datos sensibles, o incluso tomar el control de un servidor a través del uso de una versión antigua y desactualizada de alguna API conectada a la misma base de datos. |
+| Las versiones antiguas de API generalmente no tienen las últimas actualizaciones de seguridad y son una manera fácil de comprometer sistemas sin tener que luchar contra los mecanismos de seguridad más modernos, los cuales podrían estar configurados para solo proteger las versiones de las APIs más recientes. | La documentación obsoleta hace que sea más difícil encontrar y / o arreglar vulnerabilidades. La falta de inventario de activos y de estrategias de retiro de los mismos resulta que sistemas estén funcionando aunque no cuenten con las últimas actualizaciones de seguridad, lo que pudiese resultar en la fuga de datos sensibles. Es común encontrar hosts de APIs innecesariamente expuestos debido a conceptos modernos como microservicios, que hacen que las aplicaciones sean independientes y fáciles de desplegar (p.e., computación en la nube, k8s). | Los atacantes pueden obtener acceso a datos sensibles, o incluso tomar el control de un servidor a través del uso de una versión antigua y desactualizada de alguna API conectada a la misma base de datos. |
 
 ## ¿La API es Vulnerable?
 
 La API es vulnerable si:
 
-* The purpose of an API host is unclear, and there are no explicit answers to
-  the following questions:
-  * Which environment is the API running in (e.g., production, staging, test,
-    development)?
-  * Who should have network access to the API (e.g., public, internal, partners)?
-  * Which API version is running?
-  * What data is gathered and processed by the API (e.g., PII)?
-  * What's the data flow?
-* There is no documentation, or the existing documentation is not updated.
-* There is no retirement plan for each API version.
-* Hosts inventory is missing or outdated.
-* Integrated services inventory, either first- or third-party, is missing or
-  outdated.
-* Old or previous API versions are running unpatched.
+* El propósito de una API no está claro y no hay respuestas explícitas a las siguientes preguntas:
+
+  * ¿En qué entorno se está ejecutando la API (p.e., producción, pre-producción, pruebas, desarrollo)?
+  * ¿Quién debería tener acceso de red a la API (público, interno, socios)?
+  * ¿Qué versión de la API se está ejecutando?
+  * ¿Qué datos son recolectados y procesados por la API (p.e., PII)?
+  * ¿Cuál es el flujo de datos?
+  * No hay documentación, o la documentación existente no está actualizada.
+  * No hay plan de retiro para cada versión de API.
+  * Falta el inventario de hosts o está desactualizado.
+  * Falta el inventario de servicios integrados, ya sea de primeras o terceras partes, o está desactualizado.
+  * Versiones antiguas o previas de la API están ejecutándose sin parches.
+
 
 ## Escenarios de Ataque de Ejemplo
 
