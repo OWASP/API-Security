@@ -40,7 +40,7 @@ un script multi-hilo contra el recurso `/api/system/verification-codes/{smsToken
 
 * Asegurarse que conoce todos los flujos de autenticación posibles a la API (móviles/
   web/links profundos que implementan autenticación en 1 click/etc.)
-* Pregúntele a sus ingenieros que flujos ha olvidado.
+* Pregúntele a sus ingenieros qué flujos ha olvidado.
 * Lea acerca de sus mecanismos de autenticación. Asegúrese que entiende qué y cómo son usados.
   OAuth no es autenticación, tampoco lo son las claves de API.
 * No invente la rueda en autenticación, generación de tokens, almacenamiento de contraseñas. Use los estándars.
