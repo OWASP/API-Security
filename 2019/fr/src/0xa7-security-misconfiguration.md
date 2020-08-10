@@ -1,9 +1,9 @@
 API7:2019 Security Misconfiguration
 ===================================
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
+| Facteurs de menace / Vecteurs d'attaque | Faille de sécurité | Impact |
 | - | - | - |
-| API Specific : Exploitability **3** | Prevalence **3** : Detectability **3** | Technical **2** : Business Specific |
+| Spécifique API : Exploitabilité **3** | Prévalence **3** : Détectabilité **3** | Technique **2** : Spécifique à l'organisation |
 | Attackers will often attempt to find unpatched flaws, common endpoints, or unprotected files and directories to gain unauthorized access or knowledge of the system. | Security misconfiguration can happen at any level of the API stack, from the network level to the application level. Automated tools are available to detect and exploit misconfigurations such as unnecessary services or legacy options. | Security misconfigurations can not only expose sensitive user data, but also system details that may lead to full server compromise. |
 
 ## L'API est-elle vulnérable ?

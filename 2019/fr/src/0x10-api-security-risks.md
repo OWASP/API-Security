@@ -5,11 +5,11 @@ The [OWASP Risk Rating Methodology][1] was used to do the risk analysis.
 
 The table below summarizes the terminology associated with the risk score.
 
-| Threat Agents | Exploitability | Weakness Prevalence | Weakness Detectability | Technical Impact | Business Impacts |
+| Facteurs de menace | Exploitabilité | Prévalence de la faille | Détectabilité de la faille | Impact technique | Impact organisationnel |
 | :-: | :-: | :-: | :-: | :-: | :-: |
-| API Specific | Easy: **3** | Widespread **3** | Easy **3** | Severe **3** | Business Specific |
-| API Specific | Average: **2** | Common **2** | Average **2** | Moderate **2** | Business Specific |
-| API Specific | Difficult: **1** | Difficult **1** | Difficult **1** | Minor **1** | Business Specific |
+| Spécifique API | Easy: **3** | Widespread **3** | Easy **3** | Severe **3** | Spécifique à l'organisation |
+| Spécifique API | Average: **2** | Common **2** | Average **2** | Moderate **2** | Spécifique à l'organisation |
+| Spécifique API | Difficult: **1** | Difficult **1** | Difficult **1** | Minor **1** | Spécifique à l'organisation |
 
 **Note**: This approach does not take the likelihood of the threat agent into
 account. Nor does it account for any of the various technical details associated

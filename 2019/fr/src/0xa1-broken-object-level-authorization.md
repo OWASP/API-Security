@@ -1,9 +1,9 @@
 API1:2019 Broken Object Level Authorization
 ===========================================
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
+| Facteurs de menace / Vecteurs d'attaque | Faille de sécurité | Impact |
 | - | - | - |
-| API Specific : Exploitability **3** | Prevalence **3** : Detectability **2** | Technical **3** : Business Specific |
+| Spécifique API : Exploitabilité **3** | Prévalence **3** : Détectabilité **2** | Technique **3** : Spécifique à l'organisation |
 | Attackers can exploit API endpoints that are vulnerable to broken object level authorization by manipulating the ID of an object that is sent within the request. This may lead to unauthorized access to sensitive data. This issue is extremely common in API-based applications because the server component usually does not fully track the client’s state, and instead, relies more on parameters like object IDs, that are sent from the client to decide which objects to access. | This has been the most common and impactful attack on APIs. Authorization and access control mechanisms in modern applications are complex and wide-spread. Even if the application implements a proper infrastructure for authorization checks, developers might forget to use these checks before accessing a sensitive object. Access control detection is not typically amenable to automated static or dynamic testing. | Unauthorized access can result in data disclosure to unauthorized parties, data loss, or data manipulation. Unauthorized access to objects can also lead to full account takeover. |
 
 ## L'API est-elle vulnérable ?

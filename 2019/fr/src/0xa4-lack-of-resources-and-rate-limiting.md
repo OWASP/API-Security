@@ -1,9 +1,9 @@
 API4:2019 Lack of Resources & Rate Limiting
 ===========================================
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
+| Facteurs de menace / Vecteurs d'attaque | Faille de sécurité | Impact |
 | - | - | - |
-| API Specific : Exploitability **2** | Prevalence **3** : Detectability **3** | Technical **2** : Business Specific |
+| Spécifique API : Exploitabilité **2** | Prévalence **3** : Détectabilité **3** | Technique **2** : Spécifique à l'organisation |
 | Exploitation requires simple API requests. No authentication is required. Multiple concurrent requests can be performed from a single local computer or by using cloud computing resources. | It’s common to find APIs that do not implement rate limiting or APIs where limits are not properly set. | Exploitation may lead to DoS, making the API unresponsive or even unavailable. |
 
 ## L'API est-elle vulnérable ?
