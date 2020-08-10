@@ -25,9 +25,9 @@ The API might be vulnerable if:
   outdated.
 * Old or previous API versions are running unpatched.
 
-## Example Attack Scenarios
+## Exemples de scénarios d'attaque
 
-### Scenario #1
+### Scénario #1
 
 After redesigning their applications, a local search service left an old API
 version (`api.someservice.com/v1`) running, unprotected, and with access to the
@@ -36,7 +36,7 @@ attacker found the API address (`api.someservice.com/v2`). Replacing `v2` with
 `v1` in the URL gave the attacker access to the old, unprotected API,
 exposing the personal identifiable information (PII) of over 100 Million users.
 
-### Scenario #2
+### Scénario #2
 
 A social network implemented a rate-limiting mechanism that blocks attackers
 from using brute-force to guess reset password tokens. This mechanism wasn’t
@@ -47,7 +47,7 @@ runs the same API, including the reset password mechanism, but the rate limiting
 mechanism was not in place. The researcher was able to reset the password of any
 user by using a simple brute-force to guess the 6 digits token.
 
-## How To Prevent
+## Comment le prévenir
 
 * Inventory all API hosts and document important aspects of each one of them,
   focusing on the API environment (e.g., production, staging, test,
@@ -65,9 +65,9 @@ user by using a simple brute-force to guess the 6 digits token.
 * Avoid using production data with non-production API deployments. If this is unavoidable, these endpoints should get the same security treatment as the production ones.
 * When newer versions of APIs include security improvements, perform risk analysis to make the decision of the mitigation actions required for the older version: for example, whether it is possible to backport the improvements without breaking API compatibility or you need to take the older version out quickly and force all clients to move to the latest version.
 
-## References
+## Références
 
-### External
+### Externes
 
 * [CWE-1059: Incomplete Documentation][1]
 * [OpenAPI Initiative][2]

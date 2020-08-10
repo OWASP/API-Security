@@ -20,9 +20,9 @@ The API might be vulnerable if:
 * Error messages include stack traces, or other sensitive information is
   exposed.
 
-## Example Attack Scenarios
+## Exemples de scénarios d'attaque
 
-### Scenario #1
+### Scénario #1
 
 An attacker finds the `.bash_history` file under the root directory of the
 server, which contains commands used by the DevOps team to access the API:
@@ -34,7 +34,7 @@ $ curl -X GET 'https://api.server/endpoint/' -H 'authorization: Basic Zm9vOmJhcg
 An attacker could also find new endpoints on the API that are used only by the
 DevOps team and are not documented.
 
-### Scenario #2
+### Scénario #2
 
 To target a specific service, an attacker uses a popular search engine to search
 for  computers directly accessible from the Internet. The attacker found a host
@@ -43,7 +43,7 @@ host was using the default configuration, which has authentication disabled by
 default, and the attacker gained access to millions of records with PII,
 personal preferences, and authentication data.
 
-### Scenario #3
+### Scénario #3
 
 Inspecting traffic of a mobile application an attacker finds out that not all
 HTTP traffic is performed on a secure protocol (e.g., TLS). The attacker finds
@@ -52,7 +52,7 @@ interaction is binary, despite the fact that API traffic is performed on a
 secure protocol, the attacker finds a pattern on API responses size, which he
 uses to track user preferences over the rendered content (e.g., profile images).
 
-## How To Prevent
+## Comment le prévenir
 
 The API life cycle should include:
 
@@ -77,7 +77,7 @@ Furthermore:
   front-end) should implement a proper Cross-Origin Resource Sharing (CORS)
   policy.
 
-## References
+## Références
 
 ### OWASP
 
@@ -86,7 +86,7 @@ Furthermore:
 * [OWASP Testing Guide: Testing for Error Codes][3]
 * [OWASP Testing Guide: Test Cross Origin Resource Sharing][9]
 
-### External
+### Externes
 
 * [CWE-2: Environmental Security Flaws][4]
 * [CWE-16: Configuration][5]

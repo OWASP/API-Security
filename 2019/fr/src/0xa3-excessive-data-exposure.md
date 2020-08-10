@@ -12,9 +12,9 @@ The API returns sensitive data to the client by design. This data is usually
 filtered on the client side before being presented to the user. An attacker can
 easily sniff the traffic and see the sensitive data.
 
-## Example Attack Scenarios
+## Exemples de scénarios d'attaque
 
-### Scenario #1
+### Scénario #1
 
 The mobile team uses the `/api/articles/{articleId}/comments/{commentId}`
 endpoint in the articles view to render comments metadata. Sniffing the mobile
@@ -23,7 +23,7 @@ comment’s author is also returned. The endpoint implementation uses a generic
 `toJSON()` method on the `User` model, which contains PII, to serialize the
 object.
 
-### Scenario #2
+### Scénario #2
 
 An IOT-based surveillance system allows administrators to create users with
 different permissions. An admin created a user account for a new security guard
@@ -37,7 +37,7 @@ While the client GUI shows only cameras which the security guard should have
 access to, the actual API response contains a full list of all the cameras in
 the site.
 
-## How To Prevent
+## Comment le prévenir
 
 * Never rely on the client side to filter sensitive data.
 * Review the responses from the API to make sure they contain only legitimate
@@ -54,9 +54,9 @@ the site.
   API methods, including errors.
 
 
-## References
+## Références
 
-### External
+### Externes
 
 * [CWE-213: Intentional Information Exposure][1]
 

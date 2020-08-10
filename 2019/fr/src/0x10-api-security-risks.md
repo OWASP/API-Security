@@ -21,14 +21,14 @@ applications and APIs the organization is willing to accept given your culture,
 industry, and regulatory environment. The purpose of the OWASP API Security Top
 10 is not to do this risk analysis for you.
 
-## References
+## Références
 
 ### OWASP
 
 * [OWASP Risk Rating Methodology][1]
 * [Article on Threat/Risk Modeling][2]
 
-### External
+### Externes
 
 * [ISO 31000: Risk Management Std][3]
 * [ISO 27001: ISMS][4]

@@ -26,7 +26,7 @@ An API is vulnerable if it:
 * Uses plain text, non-encrypted, or weakly hashed passwords.
 * Uses weak encryption keys.
 
-## Example Attack Scenarios
+## Exemples de scénarios d'attaque
 
 ## Scenario #1
 
@@ -45,7 +45,7 @@ possible combinations using a multi-threaded script, against the
 `/api/system/verification-codes/{smsToken}` endpoint to discover the right token
 within a few minutes.
 
-## How To Prevent
+## Comment le prévenir
 
 * Make sure you know all the possible flows to authenticate to the API (mobile/
   web/deep links that implement one-click authentication/etc.)
@@ -67,7 +67,7 @@ within a few minutes.
 * API keys should not be used for user authentication, but for [client app/
   project authentication][5].
 
-## References
+## Références
 
 ### OWASP
 
@@ -75,7 +75,7 @@ within a few minutes.
 * [OWASP Authentication Cheatsheet][3]
 * [Credential Stuffing][1]
 
-### External
+### Externes
 
 * [CWE-798: Use of Hard-coded Credentials][7]
 

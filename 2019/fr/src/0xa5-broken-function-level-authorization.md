@@ -29,9 +29,9 @@ under a specific relative path, like `api/admins`, it’s very common to find
 these administrative endpoints under other relative paths together with regular
 endpoints, like `api/users`.
 
-## Example Attack Scenarios
+## Exemples de scénarios d'attaque
 
-### Scenario #1
+### Scénario #1
 
 During the registration process to an application that allows only invited users
 to join, the mobile application triggers an API call to
@@ -52,7 +52,7 @@ POST /api/invites/new
 {“email”:”hugo@malicious.com”,”role”:”admin”}
 ```
 
-### Scenario #2
+### Scénario #2
 
 An API contains an endpoint that should be exposed only to administrators -
 `GET /api/admin/v1/users/all`. This endpoint returns the details of all the
@@ -61,7 +61,7 @@ checks. An attacker who learned the API structure takes an educated guess and
 manages to access this endpoint, which exposes sensitive details of the users of
 the application.
 
-## How To Prevent
+## Comment le prévenir
 
 Your application should have a consistent and easy to analyze authorization
 module that is invoked from all your business functions. Frequently, such
@@ -78,7 +78,7 @@ code.
 * Make sure that administrative functions inside a regular controller implements
   authorization checks based on the user’s group and role.
 
-## References
+## Références
 
 ### OWASP
 
@@ -86,7 +86,7 @@ code.
 * [OWASP Top 10 2013-A7-Missing Function Level Access Control][2]
 * [OWASP Development Guide: Chapter on Authorization][3]
 
-### External
+### Externes
 
 * [CWE-285: Improper Authorization][4]
 

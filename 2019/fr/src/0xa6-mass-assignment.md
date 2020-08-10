@@ -26,9 +26,9 @@ Examples for sensitive properties:
 * **Internal properties**: `article.created_time` should only be set internally
   by the application.
 
-## Example Attack Scenarios
+## Exemples de scénarios d'attaque
 
-### Scenario #1
+### Scénario #1
 
 A ride sharing application provides a user the option to edit basic information
 for their profile. During this process, an API call is sent to
@@ -54,7 +54,7 @@ The attacker replays the first request with the following payload:
 Since the endpoint is vulnerable to mass assignment, the attacker receives
 credits without paying.
 
-### Scenario #2
+### Scénario #2
 
 A video sharing portal allows users to upload content and download content in
 different formats. An attacker who explores the API found that the endpoint
@@ -68,7 +68,7 @@ The attacker sets a malicious value as follows:
 `"mp4_conversion_params":"-v codec h264 && format C:/"`. This value will cause a
 shell command injection once the attacker downloads the video as MP4.
 
-## How To Prevent
+## Comment le prévenir
 
 * If possible, avoid using functions that automatically bind a client’s input
   into code variables or internal objects.
@@ -78,9 +78,9 @@ shell command injection once the attacker downloads the video as MP4.
 * If applicable, explicitly define and enforce schemas for the input data
   payloads.
 
-## References
+## Références
 
-### External
+### Externes
 
 * [CWE-915: Improperly Controlled Modification of Dynamically-Determined Object Attributes][1]
 

@@ -16,9 +16,9 @@ The API is vulnerable if:
 * Logs are not continuously monitored.
 * API infrastructure is not continuously monitored.
 
-## Example Attack Scenarios
+## Exemples de scénarios d'attaque
 
-### Scenario #1
+### Scénario #1
 
 Access keys of an administrative API were leaked on a public repository. The
 repository owner was notified by email about the potential leak, but took more
@@ -26,7 +26,7 @@ than 48 hours to act upon the incident, and access keys exposure may have
 allowed access to sensitive data. Due to insufficient logging, the company is
 not able to assess what data was accessed by malicious actors.
 
-### Scenario #2
+### Scénario #2
 
 A video-sharing platform was hit by a “large-scale” credential stuffing attack.
 Despite failed logins being logged, no alerts were triggered during the timespan
@@ -34,7 +34,7 @@ of the attack. As a reaction to user complaints, API logs were analyzed and the
 attack was detected. The company had to make a public announcement asking users
 to reset their passwords, and report the incident to regulatory authorities.
 
-## How To Prevent
+## Comment le prévenir
 
 * Log all failed authentication attempts, denied access, and input validation
   errors.
@@ -50,7 +50,7 @@ to reset their passwords, and report the incident to regulatory authorities.
 * Configure custom dashboards and alerts, enabling suspicious activities to be
   detected and responded to earlier.
 
-## References
+## Références
 
 ### OWASP
 
@@ -59,7 +59,7 @@ to reset their passwords, and report the incident to regulatory authorities.
 * [OWASP Application Security Verification Standard: V7: Error Handling and
   Logging Verification Requirements][4]
 
-### External
+### Externes
 
 * [CWE-223: Omission of Security-relevant Information][5]
 * [CWE-778: Insufficient Logging][6]

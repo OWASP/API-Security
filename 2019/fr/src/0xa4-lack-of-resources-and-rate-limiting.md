@@ -22,16 +22,16 @@ of the following limits is missing or set inappropriately (e.g., too low/high):
 * Number of requests per client/resource
 * Number of records per page to return in a single request response
 
-## Example Attack Scenarios
+## Exemples de scénarios d'attaque
 
-### Scenario #1
+### Scénario #1
 
 An attacker uploads a large image by issuing a POST request to `/api/v1/images`.
 When the upload is complete, the API creates multiple thumbnails with different
 sizes. Due to the size of the uploaded image, available memory is exhausted
 during the creation of thumbnails and the API becomes unresponsive.
 
-### Scenario #2
+### Scénario #2
 
 We have an application that contains the users' list on a UI with a limit of
 `200` users per page. The users' list is retrieved from the server using the
@@ -43,7 +43,7 @@ or any other clients (aka DoS).
 The same scenario might be used to provoke Integer Overflow or Buffer Overflow
 errors.
 
-## How To Prevent
+## Comment le prévenir
 
 * Docker makes it easy to limit [memory][1], [CPU][2], [number of restarts][3],
   [file descriptors, and processes][4].
@@ -59,7 +59,7 @@ errors.
   arrays.
 
 
-## References
+## Références
 
 ### OWASP
 
@@ -68,7 +68,7 @@ errors.
   processes, restarts)][6]
 * [REST Assessment Cheat Sheet][7]
 
-### External
+### Externes
 
 * [CWE-307: Improper Restriction of Excessive Authentication Attempts][8]
 * [CWE-770: Allocation of Resources Without Limits or Throttling][9]

@@ -17,9 +17,9 @@ The API is vulnerable to injection flaws if:
 * Data coming from external systems (e.g., integrated systems) is not validated,
   filtered, or sanitized by the API.
 
-## Example Attack Scenarios
+## Exemples de scénarios d'attaque
 
-### Scenario #1
+### Scénario #1
 
 Firmware of a parental control device provides the endpoint
 `/api/CONFIG/restore` which expects an appId to be sent as a multipart
@@ -39,7 +39,7 @@ vulnerable firmware:
 $ curl -k "https://${deviceIP}:4567/api/CONFIG/restore" -F 'appid=$(/etc/pod/power_down.sh)'
 ```
 
-### Scenario #2
+### Scénario #2
 
 We have an application with basic CRUD functionality for operations with
 bookings. An attacker managed to identify that NoSQL injection might be possible
@@ -67,7 +67,7 @@ user's booking:
 DELETE /api/bookings?bookingId[$ne]=678
 ```
 
-## How To Prevent
+## Comment le prévenir
 
 Preventing injection requires keeping data separate from commands and queries.
 
@@ -84,7 +84,7 @@ Preventing injection requires keeping data separate from commands and queries.
   each input parameter.
 * Define data types and strict patterns for all string parameters.
 
-## References
+## Références
 
 ### OWASP
 
@@ -93,7 +93,7 @@ Preventing injection requires keeping data separate from commands and queries.
 * [NoSQL Injection Fun with Objects and Arrays][3]
 * [Command Injection][4]
 
-### External
+### Externes
 
 * [CWE-77: Command Injection][5]
 * [CWE-89: SQL Injection][6]

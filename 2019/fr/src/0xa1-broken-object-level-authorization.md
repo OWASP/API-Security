@@ -20,9 +20,9 @@ requested action on the requested object.
 Failures in this mechanism typically leads to unauthorized information
 disclosure, modification, or destruction of all data.
 
-## Example Attack Scenarios
+## Exemples de scénarios d'attaque
 
-### Scenario #1
+### Scénario #1
 
 An e-commerce platform for online stores (shops) provides a listing page with
 the revenue charts for their hosted shops. Inspecting the browser requests, an
@@ -32,7 +32,7 @@ endpoint, the attacker can get the list of all hosted shop names. With a simple
 script to manipulate the names in the list, replacing `{shopName}` in the URL,
 the attacker gains access to the sales data of thousands of e-commerce stores.
 
-### Scenario #2
+### Scénario #2
 
 While monitoring the network traffic of a wearable device, the following HTTP
 `PATCH` request gets the attention of an attacker due to the presence of a
@@ -40,7 +40,7 @@ custom HTTP request header `X-User-Id: 54796`. Replacing the `X-User-Id` value
 with `54795`, the attacker receives a successful HTTP response, and is able to
 modify other users' account data.
 
-## How To Prevent
+## Comment le prévenir
 
 * Implement a proper authorization mechanism that relies on the user policies
   and hierarchy.
@@ -51,9 +51,9 @@ modify other users' account data.
 * Write tests to evaluate the authorization mechanism. Do not deploy vulnerable
   changes that break the tests.
 
-## References
+## Références
 
-### External
+### Externes
 
 * [CWE-284: Improper Access Control][1]
 * [CWE-285: Improper Authorization][2]
