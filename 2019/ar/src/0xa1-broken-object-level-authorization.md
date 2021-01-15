@@ -17,24 +17,19 @@
   </tr>
   </table>        
 
-<h2 dir='rtl' align='right'> هل واجهة برمجة التطبيقات (API) مصابة ؟</h2>
+<h4 dir='rtl' align='right'> هل واجهة برمجة التطبيقات (API) مصابة ؟</h4>
 
 <p dir='rtl' align='right'> ان عمليات إدارة صلاحيات الوصول والتحكم بها عادة يبنى من خلال كتابة الاكواد البرمجية في المقام الأول  بشكل سليم بحيث يستطيع المستخدم الوصول الى البيانات المسموح له بالوصول لها.
 ان جميع مصادر البيانات الخاصة بـ API لها معرف وكائن وصلاحيات خاص ومرتبطة بها، وعند وجود أي اجراء على تلك المصادر او الكائنات يجب ان يتم استخدام تلك التصاريح. حيث يتم التحقق من صلاحيات المستخدم الذي قام بعملية تسجيل الدخول ومعرفة إذا كان لدية حق الوصول لأجراء او استعراض او تعديل البيانات. وعادة ما يؤدي الفشل في التحقق من هذه الالية الى الكشف والتعديل عن معلومات وبيانات الغير مصرح به.
 
 
-## Example Attack Scenarios
+<h4 dir='rtl' align='right'>امثلة على سيناريوهات الهجوم</h4>
 
-### Scenario #1
+<h4 dir='rtl' align='right'> السيناريو الاول</h4>
 
-An e-commerce platform for online stores (shops) provides a listing page with
-the revenue charts for their hosted shops. Inspecting the browser requests, an
-attacker can identify the API endpoints used as a data source for those charts
-and their pattern `/shops/{shopName}/revenue_data.json`. Using another API
-endpoint, the attacker can get the list of all hosted shop names. With a simple
-script to manipulate the names in the list, replacing `{shopName}` in the URL,
-the attacker gains access to the sales data of thousands of e-commerce stores.
-
+<p dir='rtl' align='right'>
+توفر منصة التجارة الالكترونية مواقع عبر الانترنت (عبارة عن متاجر الالكترونية) خدمة مصادر الربح الخاصة بالمتاجر المستضاف على المنصة، حيث يستطيع المهاجم من خلال عرض مصدر الصفحة معرفة API الذي قام بجلب تلك المعلومات ومعرفة مصدرها على سبيل المثال : `/shops/{shopName}/revenue_data.json`  ومن خلال تلك الطريقة يستطيع المهاجم من الحصول على بيانات الربح لجميع المتاجر المتسضافة في المنصة من خلال  تغير {shopName} في عنوان URL بطريقة غير مصرح بها.
+    
 ### Scenario #2
 
 While monitoring the network traffic of a wearable device, the following HTTP
