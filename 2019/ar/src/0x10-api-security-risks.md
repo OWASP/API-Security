@@ -15,11 +15,11 @@ The [OWASP Risk Rating Methodology][1] was used to do the risk analysis.
     <th> التأثير التقني </th>
     <th> التأثير على مستوى الاعمال </th>
     <tr>
-      <td> تحديد API  </td> 
-       <td> بسيط : 3 </td> 
-        <td> منتشرة: 3 </td> 
-         <td> بسيط : 3 </td> 
-         <td> الخادم : 3 </td> 
+    <td> تحديد API  </td> 
+   <td> بسيط : 3 </td> 
+   <td> منتشرة: 3 </td> 
+   <td> بسيط : 3 </td> 
+     <td> الخادم : 3 </td> 
          <td> تحديد الاعمال </td>
         </tr> 
          <td> تحديد API </td> 
@@ -35,17 +35,15 @@ The [OWASP Risk Rating Methodology][1] was used to do the risk analysis.
          <td> صعب : 1 </td> 
          <td> منخفض </td> 
          <td> تحديد الاعمال </td> 
- 
+</tr> 
+</tr>
+</table>
 
-**Note**: This approach does not take the likelihood of the threat agent into
-account. Nor does it account for any of the various technical details associated
-with your particular application. Any of these factors could significantly
-affect the overall likelihood of an attacker finding and exploiting a particular
-vulnerability. This rating does not take into account the actual impact on your
-business. Your organization will have to decide how much security risk from
-applications and APIs the organization is willing to accept given your culture,
-industry, and regulatory environment. The purpose of the OWASP API Security Top
-10 is not to do this risk analysis for you.
+
+<h4 dir='rtl' align='right'>ملاحظة: </h4>
+<p dir='rtl' align='right'> هذا النهج لا يأخذ في الاعتبار احتمال وجود عامل التهديد. كما أنه لا يأخذ في الحسبان أيًا من التفاصيل الفنية المختلفة المرتبطة بتطبيقك يمكن لأي من هذه العوامل أن تؤثر بشكل كبير على الاحتمالية الإجمالية للمهاجم للعثور على ثغرة أمنية معينة واستغلالها. لا يأخذ هذا التصنيف في الاعتبار التأثير الفعلي على عملك. سيتعين على مؤسستك تحديد مقدار المخاطر الأمنية من التطبيقات وواجهات برمجة التطبيقات التي ترغب المؤسسة في قبولها في ضوء بيئتك التنظيمية. الغرض من OWASP API Security Top 10 ليس القيام بتحليل المخاطر هذا نيابة عنك.
+
+
 
 ## References
 
