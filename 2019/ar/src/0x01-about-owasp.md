@@ -1,21 +1,19 @@
-About OWASP
-===========
+<h2 dir='rtl' align='right'>عن OWASP </h2>
 
-The Open Web Application Security Project (OWASP) is an open community dedicated
-to enabling organizations to develop, purchase, and maintain applications and
-APIs that can be trusted.
+<p dir='rtl' align='right'>هو مشروع/مجتمع لامن تطبيقات الويب وهو مفتوح المصدر ويهدف الى تمكين المؤسسات من تطوير او شراء او صيانة تطبيقاتها بشكل امن و مؤثوق </p>
 
-At OWASP, you'll find free and open:
 
-* Application security tools and standards.
-* Complete books on application security testing, secure code development, and
-  secure code review.
-* Presentations and [videos][1].
-* [Cheat sheets][2] on many common topics.
-* Standard security controls and libraries.
-* [Local chapters worldwide][3].
-* Cutting edge research.
-* Extensive [conferences worldwide][4].
+<p dir='rtl' align='right'> في مجتمع OWASP ستجد : 
+
+<p dir='rtl' align='right'> ▪️ معايير و ادوات التطبيقات الامنة
+<p dir='rtl' align='right'> ▪️ كتب ومراجع كاملة عن اختبار تطبيقات الويب و التطوير الامن ومراجعة الشفرة المصدرية 
+[<p dir='rtl' align='right'> ▪️ العروض التقديمية](https://www.youtube.com/user/OWASPGLOBAL)
+<p dir='rtl' align='right'> ▪️ ملخصات 
+<p dir='rtl' align='right'> ▪️ مكتبة المعايير الامنية والضوابط
+<p dir='rtl' align='right'> ▪️ الفروع المحلية حول العالم
+<p dir='rtl' align='right'> ▪️ البحوث 
+<p dir='rtl' align='right'> ▪️ الموتمرات حول العالم 
+<p dir='rtl' align='right'> ▪️ القائمة البريدية 
 * [Mailing lists][5].
 
 Learn more at: [https://www.owasp.org][6].
