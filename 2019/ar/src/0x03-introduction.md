@@ -1,27 +1,12 @@
-Introduction
-============
+<h2 dir='rtl' align='right'>مدخل  </h2>
 
-## Welcome to the OWASP API Security Top 10 - 2019!
 
-Welcome to the first edition of the OWASP API Security Top 10. If you're
-familiar with the  OWASP Top 10 series, you'll notice the similarities: they are
-intended for readability and adoption. Otherwise, consider visiting the [OWASP
-API Security Project wiki page][1], before digging deeper into the most critical
-API security risks.
+<h4 dir='rtl' align='right'>مرحباً بك في أهم عشرة مخاظر امنية تستهدف واجهة برمجة التطبيقات (API)  </h4>
 
-APIs play a very important role in modern applications' architecture. Since
-creating security awareness and innovation have different paces, it's important
-to focus on common API security weaknesses.
-
-The primary goal of the OWASP API Security Top 10 is to educate those involved
-in API development and maintenance, for example, developers, designers,
-architects, managers, or organizations.
-
-In the [Methodology and Data][2] section, you can read more about how this first
-edition was created. In future versions, we want to involve the security
-industry, with a public call for data. For now, we encourage everyone to
-contribute with questions, comments, and ideas at our [GitHub repository][3] or
-[Mailing list][4].
+<p dir='rtl' align='right'> مرحبًا بك في الإصدار الأول من OWASP API Security Top 10. إذا كنت على دراية بسلسلة OWASP Top 10 ، ستلاحظ أوجه التشابه بينهم: حيث نوصي بقراءة OWASP Top 10  قبل الشروع وقراءة هذا المحتوى.
+<p dir='rtl' align='right'> تلعب واجهات برمجة التطبيقات دورًا مهمًا جدًا في هندسة التطبيقات الحديثة. نظرًا لأن إنشاء الوعي الأمني في البرمجة الامنة والابتكار لهما خطوات مهمة ومختلفة، ومع ذلك فمن المهم التركيز على نقاط الضعف الأمنية الشائعة لواجهة برمجة التطبيقات API.
+<p dir='rtl' align='right'> الهدف الأساسي من OWASP API Security Top 10 هو تثقيف المشاركين في تطوير وصيانة واجهة برمجة التطبيقات API.، على سبيل المثال ، المطورين أو المصممين أو المهندسين البنية التحتية أو المديرين أو المؤسسات.
+<p dir='rtl' align='right'> في قسم المنهجية والبيانات ، يمكنك قراءة المزيد حول كيفية تم إنشاء الإصدار الأول. وما هو المتوقع  من الإصدارات المستقبلية ، حيث نريد تمكين صناعة الأمن في برمجة واجهة التطبيقات API ، كما نشجع الجميع على المساهمة في طرح الأسئلة والتعليقات والأفكار من خلال القائمة البريدية.
 
 [1]: https://www.owasp.org/index.php/OWASP_API_Security_Project
 [2]: ./0xd0-about-data.md
