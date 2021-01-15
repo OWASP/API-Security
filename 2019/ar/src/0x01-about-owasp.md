@@ -3,17 +3,19 @@
 <p dir='rtl' align='right'>هو مشروع/مجتمع لامن تطبيقات الويب وهو مفتوح المصدر ويهدف الى تمكين المؤسسات من تطوير او شراء او صيانة تطبيقاتها بشكل امن و مؤثوق </p>
 
 
-<p dir='rtl' align='right'> في مجتمع OWASP ستجد : </p> 
+ <p dir='rtl' align='right'> في مجتمع OWASP ستجد : </p> 
 
 <p dir='rtl' align='right'> ▪️ معايير و ادوات التطبيقات الامنة
-<p dir='rtl' align='right'> ▪️     كتب ومراجع كاملة عن اختبار تطبيقات الويب و التطوير الامن ومراجعة الشفرة المصدرية 
-[<p dir='rtl' align='right'> ▪️ العروض التقديمية </p>] (https://www.youtube.com/user/OWASPGLOBAL)
+<p dir='rtl' align='right'> ▪️ كتب ومراجع كاملة عن اختبار تطبيقات الويب و التطوير الامن ومراجعة الشفرة المصدرية 
+<p dir='rtl' align='right'> ▪️ العروض التقديمية </p>
 <p dir='rtl' align='right'> ▪️ ملخصات 
 <p dir='rtl' align='right'> ▪️ مكتبة المعايير الامنية والضوابط
 <p dir='rtl' align='right'> ▪️ الفروع المحلية حول العالم
 <p dir='rtl' align='right'> ▪️ البحوث 
 <p dir='rtl' align='right'> ▪️ الموتمرات حول العالم 
-<p dir='rtl' align='right'> ▪️ القائمة البريدية 
+<p dir='rtl' align='right'> ▪️ القائمة البريدية
+
+
 
 Learn more at: [https://www.owasp.org][6].
 
