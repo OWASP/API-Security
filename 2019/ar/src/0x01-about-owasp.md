@@ -18,28 +18,15 @@
 
 <p dir='rtl' align='right'> للاستزداة تفضل  https://www.owasp.org </p>
 
+<p dir='rtl' align='right'> 
+جميع ادوات OWASP  من مستندات ومقاطع فيديو وعروض تقديمية و الفصول هي مجانية ومفتوحة المصدر لاي شخص مهمت في تحسين امان تطبيقات الويب، لذلك ندعوا الى التعامل تحسين مجال امن التطبيقات في جميع المجالات من تحسين القدرات البشرية و السياسات والتقنيات وهي الطرق الاكثر فعالية في تأمين تلك التطبيقات.
 
-All OWASP tools, documents, videos, presentations, and chapters are free and
-open to anyone interested in improving application security.
+مجتمع OWASP هو نوع جديد من انواع التجمعات الغير تجارية وتقدم معلومات غير متحيزة وفعالة في تأمين تطبيقات الويب، ان OWASP هي ليست تابعة لاي شركة تكنولوجيا، على الرغم من اننا ندعم الاستخدام الامثل لادوات الامان، تنتج OWASP العديد من المواد بطرق تعاونية وشفافة ومنقحة.
 
-We advocate approaching application security as a people, process, and
-technology problem, because the most effective approaches to application
-security require improvements in these areas.
+ان OWASP هي مؤسسة غير ربحية الكيان حيث تضمن ان المشاريع تكون طويلة المدى وناجحة، حيث ان جميع المشاركين هم في الاساس متطوعين او قادة او افراد،تدعم OWASP الابحاث الامنية المبتكرة من خلال منح البنية التحتية المناسبة.
 
-OWASP is a new kind of organization. Our freedom from commercial pressures
-allows us to provide unbiased, practical, and cost-effective information about
-application security.
-
-OWASP is not affiliated with any technology company, although we support the
-informed use of commercial security technology. OWASP produces many types of
-materials in a collaborative, transparent, and open way.
-
-The OWASP Foundation is the non-profit entity that ensures the project's
-long-term success. Almost everyone associated with OWASP is a volunteer,
-including the OWASP board, chapter leaders, project leaders, and project
-members. We support innovative security research with grants and infrastructure.
-
-Come join us!
+انضم لنا 
+</p> 
 
 ## Copyright and License
 
