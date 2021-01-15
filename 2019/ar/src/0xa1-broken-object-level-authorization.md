@@ -17,20 +17,11 @@
   </tr>
   </table>        
 
+<h2 dir='rtl' align='right'> هل واجهة برمجة التطبيقات (API) مصابة ؟</h2>
 
-## Is the API Vulnerable?
+<p dir='rtl' align='right'> ان عمليات إدارة صلاحيات الوصول والتحكم بها عادة يبنى من خلال كتابة الاكواد البرمجية في المقام الأول  بشكل سليم بحيث يستطيع المستخدم الوصول الى البيانات المسموح له بالوصول لها.
+ان جميع مصادر البيانات الخاصة بـ API لها معرف وكائن وصلاحيات خاص ومرتبطة بها، وعند وجود أي اجراء على تلك المصادر او الكائنات يجب ان يتم استخدام تلك التصاريح. حيث يتم التحقق من صلاحيات المستخدم الذي قام بعملية تسجيل الدخول ومعرفة إذا كان لدية حق الوصول لأجراء او استعراض او تعديل البيانات. وعادة ما يؤدي الفشل في التحقق من هذه الالية الى الكشف والتعديل عن معلومات وبيانات الغير مصرح به.
 
-Object level authorization is an access control mechanism that is usually
-implemented at the code level to validate that one user can only access objects
-that they should have access to.
-
-Every API endpoint that receives an ID of an object, and performs any type of
-action on the object, should implement object level authorization checks. The
-checks should validate that the logged-in user does have access to perform the
-requested action on the requested object.
-
-Failures in this mechanism typically leads to unauthorized information
-disclosure, modification, or destruction of all data.
 
 ## Example Attack Scenarios
 
