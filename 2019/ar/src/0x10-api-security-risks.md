@@ -6,7 +6,7 @@
  
  
 
-  <table dir='rtl' align="right">
+  <table dir='rtl' align="right">  
   <tr>
     <th>التهديد </th>
     <th> الاستغلال </th>
@@ -40,7 +40,7 @@
 <td> منخفض </td> 
 <td> تحديد الاعمال </td> 
    </tr>
-  </table>
+  </table>  
 
 
 
