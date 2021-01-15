@@ -17,6 +17,7 @@ The [OWASP Risk Rating Methodology][1] was used to do the risk analysis.
     <th> التأثير التقني </th>
     <th> التأثير على مستوى الاعمال </th>
     <tr>
+        </tr> 
     <td> تحديد API  </td> 
    <td> بسيط : 3 </td> 
    <td> منتشرة: 3 </td> 
