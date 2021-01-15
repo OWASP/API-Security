@@ -11,7 +11,7 @@ May 29th, 2019
 
 | | | |
 | - | - | - |
-| https://owasp.org |  <p dir='rtl' align='right'>هذا العمل يخضع لترخيص</p> [Creative Commons Attribution-ShareAlike 4.0 International License][1] | ![Creative Commons License Logo](images/front-cc.png) |
+| https://owasp.org | > <p dir='rtl' align='right'>هذا العمل يخضع لترخيص</p> [Creative Commons Attribution-ShareAlike 4.0 International License][1] | ![Creative Commons License Logo](images/front-cc.png) |
 
 [1]: http://creativecommons.org/licenses/by-sa/4.0/
 
