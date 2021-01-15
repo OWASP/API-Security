@@ -1,14 +1,11 @@
-Notice
-======
 
-This is the text version of OWASP API Security Top 10, used as source for the
-official version distributed as a Portable Document Format (PDF).
+<h3 dir='rtl' align='right'> تنوية</h1>
 
-Contributions to the project such as comments, corrections, or translations
-should be done here. For details on [How To Contribute][1], please refer to
-[CONTRIBUTING.md][1].
+<p dir='rtl' align='right'>هذه هي النسخة النصية من مستند OWASP API Security Top 10 و يتم استخدام النسخة القابلة لتوزيع على هيئة ملف PDF </p>
 
-* Erez Yallon
-* Inon Shkedy
+<p dir='rtl' align='right'> للمساهمة في هذا المشروع من تعلقيات او تصحيح للمفاهميم او الترجمة يجب ان يتم هنا وللحصول على المزيد من التفاصيل  [How To Contribute][1], وكذلك     من هنا[CONTRIBUTING.md][1]. </p>
+
+<p dir='rtl' align='right'> Erez Yallon  </p>
+<p dir='rtl' align='right'> Inon Shkedy  </p>
 
 [1]: ../../CONTRIBUTING.md
