@@ -1,3 +1,4 @@
+<h2 dir='rtl' align='right'>جدول المحتويات</h2>
 
 * [<p dir='rtl' align='right'> محتوى الوثيقة </p>](0x00-toc.md)
 
