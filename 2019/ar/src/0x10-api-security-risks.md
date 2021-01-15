@@ -1,13 +1,13 @@
-<h2 dir='rtl' align='right'>مخاطر برمجة واجهة التطبيقات</h2>
+<h2 dir='rtl' align='right'>مخاطر برمجة واجهة التطبيقات</h2> </p>
 
-[<p dir='rtl' align='right'>▪️ تم استخدام نموذج تقييم المخاطر الخاص بـ OWASP وذلك بهدف تحليل المخاطر  </p>](0x03-introduction.md)
+[<p dir='rtl' align='right'>▪️ تم استخدام نموذج تقييم المخاطر الخاص بـ OWASP وذلك بهدف تحليل المخاطر  </p>](0x03-introduction.md) </p>
 
-<p dir='rtl' align='right'>يلخص الجدول أدناه المصطلحات المرتبطة بدرجة المخاطر. 
+<p dir='rtl' align='right'>يلخص الجدول أدناه المصطلحات المرتبطة بدرجة المخاطر. </p> 
  
  
 
-<table dir='rtl' align="right">
-<tr>
+  <table dir='rtl' align="right">
+  <tr>
 <th>التهديد </th>
 <th> الاستغلال </th>
 <th> نقاط الضعف </th>
@@ -40,6 +40,8 @@
 </tr>
 </table>
 
+
+<p dir='rtl' align='right'>يلخص الجدول أدناه المصطلحات المرتبطة بدرجة المخاطر. </p> 
 
 <h4 dir='rtl' align='right'>ملاحظة: </h4> </p>
 
