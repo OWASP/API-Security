@@ -1,42 +1,23 @@
-Foreword
-========
+<h2 dir='rtl' align='right'>مقدمة </h2>
 
-A foundational element of innovation in today’s app-driven world is the
-Application Programming Interface (API). From banks, retail, and transportation
-to IoT, autonomous vehicles, and smart cities, APIs are a critical part of
-modern mobile, SaaS, and web applications and can be found in customer-facing,
-partner-facing, and internal applications.
+ <p dir='rtl' align='right'> تعتبر واجهة برمجة التطبيقات (API) أحد العناصر الأساسية للابتكار في عالم اليوم القائم على التطبيقات. من البنوك وتجارة التجزئة والنقل إلى إنترنت الأشياء والمركبات المستقلة والمدن الذكية ، تعد واجهات برمجة التطبيقات جزءًا مهمًا من تطبيقات الهاتف المحمول الحديثة و البرمجيات كخدمة SaaS وتطبيقات الويب ويمكن استخدمها في التطبيقات العملاء و الشركاء والتطبيقات الداخلية.
+    
+<p dir='rtl' align='right'> بشكل اساسي ، تعرض واجهات برمجة التطبيقات API منطق التطبيق والبيانات الحساسة مثل معلومات التعريف الشخصية (PII) ولهذا السبب ، أصبحت واجهات برمجة التطبيقات API هدفًا للمهاجمين بشكل متزايد. بدون واجهات برمجة التطبيقات الآمنة API ، سيكون الابتكار السريع مستحيلًا.
+<p dir='rtl' align='right'> على الرغم من مخاطر أمان تطبيق الويب الأوسع نطاقاً ، فإن العشرة الأوائل لا تزال حرجة و منطقية ، نظرًا لطبيعتها استخدماها الخاصة ، حيث يلزم وجود قائمة بالمخاطر الخاصة بواجهة برمجة التطبيقاتAPI .حيث  ان التركيز على  أمان API هو منطلق استراتيجيات الحلول لفهم وتخفيف نقاط الضعف المحتملة و الفريدة التي تستهدف بواجهات برمجة التطبيقات API.
+<p dir='rtl' align='right'> إذا كنت معتادًا على مشروع OWASP Top 10 ، فستلاحظ أوجه التشابه بين كلا المستندين: إنهما مخصصان للقراءة والاعتماد. إذا كنت جديدًا في سلسلة OWASP Top 10 ، فقد يكون من الأفضل لك قراءة أقسام مخاطر الأمان والمنهجية والبيانات الخاصة بواجهة برمجة التطبيقات (API) قبل الانتقال إلى قائمة المخاطر 10 هنا.
 
-By nature, APIs expose application logic and sensitive data such as Personally
-Identifiable Information (PII) and because of this, APIs have increasingly
-become a target for attackers. Without secure APIs, rapid innovation would be
-impossible.
+<p dir='rtl' align='right'> يمكنك المساهمة في OWASP API Security Top 10 بأسئلتك وتعليقاتك وأفكارك في مستودع مشروع GitHub:
+ 
+<p dir='rtl' align='right'> ▪️  https://github.com/OWASP/API-Security/issues
+<p dir='rtl' align='right'> ▪️  https://github.com/OWASP/API-Security/blob/master/CONTRIBUTING.md
 
-Although a broader web application security risks Top 10 still makes sense, due
-to their particular nature, an API-specific security risks list is required.
-API security focuses on strategies and solutions to understand and mitigate the
-unique vulnerabilities and security risks associated with APIs.
-
-If you're familiar with the [OWASP Top 10 Project][1], then you'll notice the
-similarities between both documents: they are intended for readability and
-adoption. If you're new to the OWASP Top 10 series, you may be better off
-reading the [API Security Risks][2] and [Methodology and Data][3] sections
-before jumping into the Top 10 list.
-
-You can contribute to OWASP API Security Top 10 with your questions, comments,
-and ideas at our GitHub project repository:
-
-* https://github.com/OWASP/API-Security/issues
-* https://github.com/OWASP/API-Security/blob/master/CONTRIBUTING.md
-
+<p dir='rtl' align='right'>تستطيع الوصول الى الوثيقة OWASP API Security Top 10 من هنا :
 You can find the OWASP API Security Top 10 here:
 
-* https://www.owasp.org/index.php/OWASP_API_Security_Project
-* https://github.com/OWASP/API-Security
+<p dir='rtl' align='right'> ▪️ https://www.owasp.org/index.php/OWASP_API_Security_Project
+<p dir='rtl' align='right'> ▪️ https://github.com/OWASP/API-Security
+<p dir='rtl' align='right'> نود أن نشكر جميع المساهمين الذين جعلوا هذا المشروع متوفر لكم بجهودهم ومساهماتهم. تم سردها جميعًا في قسم الشكر والتقدير. شكرا لك!
 
-We wish to thank all the contributors who made this project possible with their
-effort and contributions. They are all listed in the [Acknowledgments
-section][4]. Thank you!
 
 [1]: https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project
 [2]: ./0x10-api-security-risks.md
