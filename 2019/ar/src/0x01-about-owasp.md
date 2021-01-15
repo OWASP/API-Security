@@ -7,7 +7,7 @@
 
 <p dir='rtl' align='right'> ▪️ معايير و ادوات التطبيقات الامنة
 <p dir='rtl' align='right'> ▪️ كتب ومراجع كاملة عن اختبار تطبيقات الويب و التطوير الامن ومراجعة الشفرة المصدرية 
-[<p dir='rtl' align='right'>▪️ العروض التقديمية </p>]https://www.youtube.com/user/OWASPGLOBAL)
+[<p dir='rtl' align='right'>▪️ العروض التقديمية </p>] (https://www.youtube.com/user/OWASPGLOBAL)
 <p dir='rtl' align='right'> ▪️ ملخصات 
 <p dir='rtl' align='right'> ▪️ مكتبة المعايير الامنية والضوابط
 <p dir='rtl' align='right'> ▪️ الفروع المحلية حول العالم
