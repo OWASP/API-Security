@@ -54,17 +54,17 @@
 
 <h4 dir='rtl' align='right'>المراجع  </h4> </p>
 
-* [OWASP Risk Rating Methodology][1]
-* [Article on Threat/Risk Modeling][2]
+<p dir='rtl' align='right'>▪️ [OWASP Risk Rating Methodology][1]
+<p dir='rtl' align='right'>▪️ [Article on Threat/Risk Modeling][2]
 
-### External
+<h4 dir='rtl' align='right'>الروابط الخارجية  </h4> </p>
 
-* [ISO 31000: Risk Management Std][3]
-* [ISO 27001: ISMS][4]
-* [NIST Cyber Framework (US)][5]
-* [ASD Strategic Mitigations (AU)][6]
-* [NIST CVSS 3.0][7]
-* [Microsoft Threat Modeling Tool][8]
+<p dir='rtl' align='right'>▪️ [ISO 31000: Risk Management Std][3]
+<p dir='rtl' align='right'>▪️ [ISO 27001: ISMS][4]
+<p dir='rtl' align='right'>▪️ [NIST Cyber Framework (US)][5]
+<p dir='rtl' align='right'>▪️ [ASD Strategic Mitigations (AU)][6]
+<p dir='rtl' align='right'>▪️ [NIST CVSS 3.0][7]
+<p dir='rtl' align='right'>▪️ [Microsoft Threat Modeling Tool][8]
 
 [1]: https://www.owasp.org/index.php/OWASP_Risk_Rating_Methodology
 [2]: https://www.owasp.org/index.php/Threat_Risk_Modeling
