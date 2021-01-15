@@ -1,7 +1,5 @@
 <h2 dir='rtl' align='right'>مخاطر برمجة واجهة التطبيقات</h2>
 
-
-The [OWASP Risk Rating Methodology][1] was used to do the risk analysis.
 [<p dir='rtl' align='right'>▪️ تم استخدام نموذج تقييم المخاطر الخاص بـ OWASP وذلك بهدف تحليل المخاطر  </p>](0x03-introduction.md)
 
 <p dir='rtl' align='right'>يلخص الجدول أدناه المصطلحات المرتبطة بدرجة المخاطر. 
