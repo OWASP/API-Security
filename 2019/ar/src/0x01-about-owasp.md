@@ -28,7 +28,7 @@
 انضم لنا 
 </p> 
 
-## Copyright and License
+<h2 dir='rtl' align='right'>حقوق النشر والتراخيص   </h2>
 
 ![license](images/license.png)
 
