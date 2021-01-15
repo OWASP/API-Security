@@ -5,19 +5,19 @@
 
  <p dir='rtl' align='right'> في مجتمع OWASP ستجد : </p> 
 
-<p dir='rtl' align='right'> ▪️ معايير و ادوات التطبيقات الامنة
-<p dir='rtl' align='right'> ▪️ كتب ومراجع كاملة عن اختبار تطبيقات الويب و التطوير الامن ومراجعة الشفرة المصدرية 
+<p dir='rtl' align='right'> ▪️ معايير و ادوات التطبيقات الامنة </p>
+<p dir='rtl' align='right'> ▪️ كتب ومراجع كاملة عن اختبار تطبيقات الويب و التطوير الامن ومراجعة الشفرة المصدرية </p>
 <p dir='rtl' align='right'> ▪️ العروض التقديمية </p>
-<p dir='rtl' align='right'> ▪️ ملخصات 
-<p dir='rtl' align='right'> ▪️ مكتبة المعايير الامنية والضوابط
-<p dir='rtl' align='right'> ▪️ الفروع المحلية حول العالم
-<p dir='rtl' align='right'> ▪️ البحوث 
-<p dir='rtl' align='right'> ▪️ الموتمرات حول العالم 
-<p dir='rtl' align='right'> ▪️ القائمة البريدية
+<p dir='rtl' align='right'> ▪️ ملخصات </p>
+<p dir='rtl' align='right'> ▪️ مكتبة المعايير الامنية والضوابط </p>
+<p dir='rtl' align='right'> ▪️ الفروع المحلية حول العالم </p>
+<p dir='rtl' align='right'> ▪️ البحوث </p>
+<p dir='rtl' align='right'> ▪️ الموتمرات حول العالم </p>
+<p dir='rtl' align='right'> ▪️ القائمة البريدية </p>
 
 
+<p dir='rtl' align='right'> https://www.owasp.org : للاستزادة تفضل موقع </p>
 
-Learn more at: [https://www.owasp.org][6].
 
 All OWASP tools, documents, videos, presentations, and chapters are free and
 open to anyone interested in improving application security.
