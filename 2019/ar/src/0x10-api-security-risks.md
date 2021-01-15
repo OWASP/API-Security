@@ -1,15 +1,41 @@
-API Security Risks
-==================
+<h2 dir='rtl' align='right'>مخاطر برمجة واجهة التطبيقات</h2>
+
 
 The [OWASP Risk Rating Methodology][1] was used to do the risk analysis.
+[<p dir='rtl' align='right'>▪️ تم استخدام نموذج تقييم المخاطر الخاص بـ OWASP وذلك بهدف تحليل المخاطر  </p>](0x03-introduction.md)
 
-The table below summarizes the terminology associated with the risk score.
-
-| Threat Agents | Exploitability | Weakness Prevalence | Weakness Detectability | Technical Impact | Business Impacts |
-| :-: | :-: | :-: | :-: | :-: | :-: |
-| API Specific | Easy: **3** | Widespread **3** | Easy **3** | Severe **3** | Business Specific |
-| API Specific | Average: **2** | Common **2** | Average **2** | Moderate **2** | Business Specific |
-| API Specific | Difficult: **1** | Difficult **1** | Difficult **1** | Minor **1** | Business Specific |
+<p dir='rtl' align='right'>يلخص الجدول أدناه المصطلحات المرتبطة بدرجة المخاطر. 
+ 
+<table dir='rtl' align="right">
+  <tr>
+    <th>التهديد </th>
+    <th> الاستغلال </th>
+    <th> نقاط الضعف </th>
+    <th> قابلية اكتشاف الضعف </th>
+    <th> التأثير التقني </th>
+    <th> التأثير على مستوى الاعمال </th>
+    <tr>
+      <td> تحديد API  </td> 
+       <td> بسيط : 3 </td> 
+        <td> منتشرة: 3 </td> 
+         <td> بسيط : 3 </td> 
+         <td> الخادم : 3 </td> 
+         <td> تحديد الاعمال </td>
+        </tr> 
+         <td> تحديد API </td> 
+         <td> متوسط : 2 </td> 
+         <td> عام : 2 </td> 
+         <td> متوسط : 2 </td> 
+         <td> متوسط : 2  </td> 
+         <td> تحديد الاعمال </td> 
+         </tr> 
+         <td> صعب : 1 </td> 
+         <td> صعب : 1 </td> 
+         <td> صعب : 1 </td> 
+         <td> صعب : 1 </td> 
+         <td> منخفض </td> 
+         <td> تحديد الاعمال </td> 
+ 
 
 **Note**: This approach does not take the likelihood of the threat agent into
 account. Nor does it account for any of the various technical details associated
