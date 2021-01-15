@@ -16,7 +16,7 @@
 <p dir='rtl' align='right'> ▪️ القائمة البريدية </p>
 
 
-<p dir='rtl' align='right'> https://www.owasp.org : للاستزادة تفضل موقع </p>
+<p dir='rtl' align='right'> للاستزداة تفضل  https://www.owasp.org </p>
 
 
 All OWASP tools, documents, videos, presentations, and chapters are free and
