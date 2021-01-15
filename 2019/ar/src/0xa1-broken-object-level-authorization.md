@@ -30,33 +30,25 @@
 <p dir='rtl' align='right'>
 توفر منصة التجارة الالكترونية مواقع عبر الانترنت (عبارة عن متاجر الالكترونية) خدمة مصادر الربح الخاصة بالمتاجر المستضاف على المنصة، حيث يستطيع المهاجم من خلال عرض مصدر الصفحة معرفة API الذي قام بجلب تلك المعلومات ومعرفة مصدرها على سبيل المثال : `/shops/{shopName}/revenue_data.json`  ومن خلال تلك الطريقة يستطيع المهاجم من الحصول على بيانات الربح لجميع المتاجر المتسضافة في المنصة من خلال  تغير {shopName} في عنوان URL بطريقة غير مصرح بها.
     
-### Scenario #2
+<h4 dir='rtl' align='right'>السيناريو الثاني : </h4>
 
-While monitoring the network traffic of a wearable device, the following HTTP
-`PATCH` request gets the attention of an attacker due to the presence of a
-custom HTTP request header `X-User-Id: 54796`. Replacing the `X-User-Id` value
-with `54795`, the attacker receives a successful HTTP response, and is able to
-modify other users' account data.
+<p dir='rtl' align='right'>
+اثناء فحص حركة مرور البيانات من قبل المهاجم، قام بإرسال طلب من نوع PATCH  من خلال بروتوكول HTTP  لاختبار وفحص جميع الردود من قبل الخادم، وبعد عمليات متعددة  قام المهاجم بإرسال طلب من نوع PATCH  وهو احد الطلبات المتعارف عليها في برتوكول HTTP. تتضمن الترويسة الافتراضية التي يستخدمها الطلب هي header X-User-Id: 54796 مما لفت انتباه المهاجم الى تغيرها لي header X-User-Id: 54795 مما سمح للمهاجم بالوصول/و التعديل الغير مصرح به لبيانات مستخدمين اخرين.
 
-## How To Prevent
+<h4 dir='rtl' align='right'>كيف تتصدى لها </h4>
 
-* Implement a proper authorization mechanism that relies on the user policies
-  and hierarchy.
-* Use an authorization mechanism to check if the logged-in user has access to
-  perform the requested action on the record in every function that uses an
-  input from the client to access a record in the database.
-* Prefer to use random and unpredictable values as GUIDs for records’ IDs.
-* Write tests to evaluate the authorization mechanism. Do not deploy vulnerable
-  changes that break the tests.
+<p dir='rtl' align='right'> الاعتماد على سياسة و آلية تخويل لصلاحيات تعتمد على سياسة الاستخدام المقبول والتسلسل الهرمي السهل الواضح.
+<p dir='rtl' align='right'> استخدام آلية لتحقق من صلاحيات المستخدم الذي قام بتسجيل الدخول وهل لديه الحق في تنفيذ الإجراءات على السجلات في كل سجل على حدة وبشكل مستقل.
+<p dir='rtl' align='right'> يفضل استخدام قيم عشوائية وغير قابلة لتخمين في استخدام GUIDs في السجلات
+<p dir='rtl' align='right'> يفضل كتابة معايير لاختبار مدى نضج التفويض والصلاحيات وفي حال وجود أي ثغرة يفضل عدم استخدمها حتى تتخطى الاختبارات والمعايير المتفق عليها.
 
-## References
+<h4 dir='rtl' align='right'>المراجع :  </h4>
+<h4 dir='rtl' align='right'>المصادر الخارجية :   </h4>
 
-### External
+[<p dir='rtl' align='right'>▪️ Improper Access Control  </p>](https://cwe.mitre.org/data/definitions/284.html)
 
-* [CWE-284: Improper Access Control][1]
-* [CWE-285: Improper Authorization][2]
-* [CWE-639: Authorization Bypass Through User-Controlled Key][3]
+[<p dir='rtl' align='right'>▪️ Improper Authorization </p>](https://cwe.mitre.org/data/definitions/285.html)
 
-[1]: https://cwe.mitre.org/data/definitions/284.html
-[2]: https://cwe.mitre.org/data/definitions/285.html
-[3]: https://cwe.mitre.org/data/definitions/639.html
+[<p dir='rtl' align='right'>▪️ Authorization Bypass Through User-Controlled Key </p>](https://cwe.mitre.org/data/definitions/639.html)
+
+
