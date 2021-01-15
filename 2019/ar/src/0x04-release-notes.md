@@ -1,24 +1,12 @@
-Release Notes
-=============
+<h2 dir='rtl' align='right'>ملاحظات عن الاصدار </h2>
 
-This is the first OWASP API Security Top 10 edition, which we plan to be updated
-periodically, every three or four years.
+<p dir='rtl' align='right'> هذا هو الإصدار الأول من OWASP API Security Top 10 ، والذي نخطط لتحديثه بشكل دوري ، كل ثلاث أو أربع سنوات.
 
-Unlike this version, in future versions, we want to make a public call for data,
-involving the security industry in this effort. In the [Methodology and Data][1]
-section, you'll find more details about how this version was built. For more
-details about the security risks, please refer to the [API Security Risks][2]
-section.
-
-It is important to realize that over the last few years, architecture of 
-applications has significantly changed. Currently, APIs play a very important
-role in this new architecture of microservices, Single Page Applications (SPAs),
-mobile apps, IoT, etc.
-
-The OWASP API Security Top 10 was a required effort to create awareness about
-modern API security issues. It was only possible due to a great effort of
-several volunteers, all of them listed in the [Acknowledgments][3] section.
-Thank you!
+<p dir='rtl' align='right'> على عكس هذا الإصدار ، في الإصدارات المستقبلية ، سنقوم بدعوة عامة للمشاركة لتمكين صناعة تطبيقات امنة ويكون جهد مشترك . في قسم المنهجية والبيانات ستجد المزيد من التفاصيل حول كيفية تم إنشاء هذا الإصدار. لمزيد من التفاصيل حول مخاطر الأمان ، يرجى الرجوع إلى قسم مخاطر أمان واجهة برمجة التطبيقات API.
+<p dir='rtl' align='right'> من المهم أن ندرك أنه على مدى السنوات القليلة الماضية ، تغيرت بنية التطبيقات بشكل كبير. حيث تلعب واجهات برمجة التطبيقات API  وقتوم حاليًا بدور مهم للغاية في هذه البنية الجديدة للخدمات المصغرة وتطبيقات الدخول ذات الصفحة الواحدة (SPA) وتطبيقات الأجهزة المحمولة وإنترنت الأشياء وما إلى ذلك.
+<p dir='rtl' align='right'> ان ايجاد OWASP API Security Top 10  يحتاج الى جهدًا كبير بهدف خلق الوعي حول مشكلات أمان API الحديثة. وكما نكرر الشكر لجميع المتطوعين في انشاء هذه الوثيقة ، وجميعهم مدرجون في قسم الشكر والتقدير. 
+   
+<p dir='rtl' align='right'> شكرا لك!
 
 [1]: ./0xd0-about-data.md
 [2]: ./0x10-api-security-risks.md
