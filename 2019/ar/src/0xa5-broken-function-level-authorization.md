@@ -16,45 +16,33 @@
   </tr>
   </table>    
 
-## Is the API Vulnerable?
 
-The best way to find broken function level authorization issues is to perform
-deep analysis of the authorization mechanism, while keeping in mind the user
-hierarchy, different roles or groups in the application, and asking the
-following questions:
+<h3 dir='rtl' align='right'>هل أنا معرض لهذه الثغرة؟</h3>
 
-* Can a regular user access administrative endpoints?
-* Can a user perform sensitive actions (e.g., creation, modification, or
-  erasure) that they should not have access to by simply changing the HTTP
-  method (e.g., from `GET` to `DELETE`)?
-* Can a user from group X access a function that should be exposed only to users
-  from group Y, by simply guessing the endpoint URL and parameters (e.g.,
-  `/api/v1/users/export_all`)?
+<p dir='rtl' align='right'> أفضل طريقة للعثور على مشكلات وخلل تفويض مستوى الصلاحيات والمصادقة هي إجراء تحليل عميق لآلية التفويض ، مع مراعاة التسلسل الهرمي للمستخدم ، والأدوار أو المجموعات المختلفة في التطبيق ، وطرح الأسئلة التالية:
+    
+<p dir='rtl' align='right'>▪️ هل يستطيع المستخدم العادي الوصول الى مصادر صلاحيات المدراء ؟
+<p dir='rtl' align='right'>▪️ هل يستطيع المستخدم التعديل او التعين او المسح لمصادر البيانات عند تغير طريقة الطلب للبروتوكول على سبيل المثال من GET الى DELETE ؟
+<p dir='rtl' align='right'>▪️  هل يستطيع المستخدم في مجموعة أ من الوصول الى مصادر المجموعة ب من خلال تخمين مصدر تلك المجموعة /api/v1/users/export_all 
 
-Don’t assume that an API endpoint is regular or administrative only based on the
-URL path.
+<p dir='rtl' align='right'> لا تقم بوضع وتقسيم الصلاحيات ما بين الصلاحيات المعتادة والصلاحيات الادارية من خلال مسار URL.
+<p dir='rtl' align='right'>و من الشائع لدى المطورين عرض مصادر البيانات الإدارية ضمن مسار محدد مثل API/Admin ومن الشائع كذلك استخدام مصادر واحدة للمستخدم العادي وكذلك للمدراء مثل api/users.
+    
+    
+<p dir='rtl' align='right'>▪️
+<p dir='rtl' align='right'>▪️
+<p dir='rtl' align='right'>▪️
 
-While developers might choose to expose most of the administrative endpoints
-under a specific relative path, like `api/admins`, it’s very common to find
-these administrative endpoints under other relative paths together with regular
-endpoints, like `api/users`.
 
-## Example Attack Scenarios
+<h3 dir='rtl' align='right'> امثلة على سيناريوهات الهجوم: </h3>
 
-### Scenario #1
+<h4 dir='rtl' align='right'>السيناريو الاول: </h4>
 
-During the registration process to an application that allows only invited users
-to join, the mobile application triggers an API call to
-`GET /api/invites/{invite_guid}`. The response contains a JSON with details
-about the invite, including the user’s role and the user’s email.
+<p dir='rtl' align='right'> يقوم التطبيق فقط بالسماح للمستخدمين المدعوين بالتسجيل، حيث يقوم التطبيق بطلب API الخاص من خلال طلب GET  على سبيل المثال المسار التالي " /api/invites/{invite_guid}" ويأتي الرد من الخادم والذي يحتوي على ملف JSON مع تفاصيل الدعوة، وكذلك تفاصيل المستخدمين و الصلاحيات والبريد الالكتروني.
 
-An attacker duplicated the request and manipulated the HTTP method and endpoint
-to `POST /api/invites/new`. This endpoint should only be accessed by
-administrators using the admin console, which does not implement function level
-authorization checks.
+<p dir='rtl' align='right'> يقوم المهاجم بتكرار الطلبات ومحاولة التلاعب والتعديل في طريقة الطلب من مصدر البيانات  من GET  الى POST  مع المسار التالي " /api/invites/new" حيث ان هذا المسار مسموح بالوصول له فقط لأصحاب الصلاحيات الإدارية بواسطة صفحة الإدارة والتي من الوضح عدم تطبيق مستوى المصادقة والتفويض على مستوى الصلاحية.
 
-The attacker exploits the issue and sends himself an invite to create an
-admin account:
+<p dir='rtl' align='right'> المهاجم قام باستغلال الخطأ من خلال ارسال طلب دعوة لنفسة ومن ثم قام بإنشاء حساب بصلاحيات مرتفعة.
 
 ```
 POST /api/invites/new
@@ -62,7 +50,9 @@ POST /api/invites/new
 {“email”:”hugo@malicious.com”,”role”:”admin”}
 ```
 
-### Scenario #2
+<h4 dir='rtl' align='right'>السيناريو الثاني : </h4>
+
+<p dir='rtl' align='right'>
 
 An API contains an endpoint that should be exposed only to administrators -
 `GET /api/admin/v1/users/all`. This endpoint returns the details of all the
