@@ -1,10 +1,22 @@
-API6:2019 - Mass Assignment
+<h2 dir='rtl' align='right'>خلل في التعين او التعديل  </h2>
 ===========================
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
-| - | - | - |
-| API Specific : Exploitability **2** | Prevalence **2** : Detectability **2** | Technical **2** : Business Specific |
-| Exploitation usually requires an understanding of the business logic, objects' relations, and the API structure. Exploitation of mass assignment is easier in APIs, since by design they expose the underlying implementation of the application along with the properties’ names. | Modern frameworks encourage developers to use functions that automatically bind input from the client into code variables and internal objects. Attackers can use this methodology to update or overwrite sensitive object’s properties that the developers never intended to expose. | Exploitation may lead to privilege escalation, data tampering, bypass of security mechanisms, and more. |
+<table dir='rtl' align="right">
+  <tr>
+    <th>عوامل التهديد/ الاستغلال  </th>
+    <th> نقاط الضعف </th>
+    <th> التأثير </th>
+    <tr>
+    <td> خصائص API : قابلية الاستغلال 2 </td>
+    <td> الانتشار : 3 قابلية الاكتشاف : 2  </td>
+    <td> التأثر التقني و تأثر الاعمال: 3 </td>
+  </tr> 
+     <td> يتطلب الاستغلال عادةً فهم منطق آلية العمل وعلاقة الكائنات ببعضها وهيكل واجهة برمجة التطبيقات API حيث يعد استغلال الخلل في التعين او التعديل  أسهل في واجهات برمجة التطبيقاتAPI  ، حيث انها في بعض الاحيان عند عرض بعض الخصائص الخاصة بـAPI يقوم كذلك بعرض الإعدادات والخواص الخاصة بها. </td>
+    <td> تشجع الاطر الحديثة في البرمجة المطورين على استخدام الطرق الأتوماتيكية التي تسمح للمستخدم بإدخال المتغيرات داخل الكائن. وهذا يسمح للمهاجمين باستخدامها لتحديث بعض المعلومات الحساسة او الكتابة فوق تلك الخصائص او الكائنات التي قام المطورين بإخفائها  </td>
+    <td> قد يؤدي هذا الاستغلال الى تصعيد الصلاحيات والتلاعب بالامتيازات وتجاوز آليات الامان وغير ذلك   </td>    
+  </tr>
+  </table>
+
 
 ## Is the API Vulnerable?
 
