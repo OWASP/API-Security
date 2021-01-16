@@ -38,6 +38,6 @@
 * thomaskonrad
 * xycloops123
 
-<p dir='rtl' align='right'> وكذلك المترجمين باللغة العربية وهم : 
+<p dir='rtl' align='right'> وكذلك المترجمين للغة العربية وهم : 
 <p dir='rtl' align='right'>▪️ مالك الدوسري 
 <p dir='rtl' align='right'>▪️ محمد السحيمي
