@@ -1,18 +1,36 @@
-API4:2019 Lack of Resources & Rate Limiting
-===========================================
+<h2 dir='rtl' align='right'> API4:2019 ضعف في البنية التحتية و حد محاولات الطلبات </h2>
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
-| - | - | - |
-| API Specific : Exploitability **2** | Prevalence **3** : Detectability **3** | Technical **2** : Business Specific |
-| Exploitation requires simple API requests. No authentication is required. Multiple concurrent requests can be performed from a single local computer or by using cloud computing resources. | It’s common to find APIs that do not implement rate limiting or APIs where limits are not properly set. | Exploitation may lead to DoS, making the API unresponsive or even unavailable. |
 
-## Is the API Vulnerable?
+<table dir='rtl' align="right">
+  <tr>
+    <th>عوامل التهديد/ الاستغلال  </th>
+    <th> نقاط الضعف </th>
+    <th> التأثير </th>
+    <tr>
+    <td> خصائص API : قابلية الاستغلال </td>
+    <td> الانتشار : 3 قابلية الاكتشاف : 3  </td>
+    <td> التأثر التقني و تأثر الاعمال: 2 </td>
+  </tr> 
+     <td> ان عملية الاختراق في بعض الاحيان عملية غير معقدة حيث لا يستلزم الا طلب بسيط للـAPI ومن غير عملية مصادقة كذلك وقد يتم ارسال طلب من خلال جهاز واحد او أجهزة متعددة او أجهزة الخدمات السحابية. </td>
+    <td> من الاخطاء الشائعة والمنتشرة هو عدم وضع معدل لطلبات او لم يتم اختيار الموصفات المناسبة عند تنصيب واجهات برمجة التطبيقات API. </td>
+    <td> قد يؤدي الاستغلال الى هجمات حجب الخدمة DOS مما يجعل واجهة برمجة التطبيقات API غير مستجيبة او خارج الخدمة. </td>    
+  </tr>
+  </table> 
+  
 
-API requests consume resources such as network, CPU, memory, and storage. The
-amount of resources required to satisfy a request greatly depends on the user
-input and endpoint business logic. Also, consider the fact that requests from
-multiple API clients compete for resources. An API is vulnerable if at least one
-of the following limits is missing or set inappropriately (e.g., too low/high):
+<h3 dir='rtl' align='right'>هل أنا معرض لهذه الثغرة؟</h3>
+
+<p dir='rtl' align='right'>تستهلك واجهة برمجة التطبيقات API المصادر والأصول من شبكات ووحدات المعالجة وكذلك وسائط التخزين حيث يعتمد بشكل كبير مقدرة تعامل البنية التحتية حسب طلبات ومدخلات المستخدم لمصادر البيانات. وضع في الاعتبار ان طلبات واجهة برمجة التطبيقات API التي تفوق قدرات البنية التحتية تعرضها للخطر بشكل كبير اذا لم يتم تدارك وضع معدل لمستوى ومحتوى تلك الطلبات ومنها:
+
+<p dir='rtl' align='right'>▪️ مدة حياة الطلب
+<p dir='rtl' align='right'>▪️ اعلى حد من استخدام الذاكرة العشوائية لكل طلب
+<p dir='rtl' align='right'>▪️ عدد الملفات وطرق وصفها وحفظها وعرضها 
+<p dir='rtl' align='right'>▪️  عدد العمليات
+<p dir='rtl' align='right'>▪️ عدد وحجم البياتات عند رفعها
+<p dir='rtl' align='right'>▪️ عدد الطلبات لكل مستخدم 
+<p dir='rtl' align='right'>▪️ عدد الصفحات التي يتم عرضها في كل طلب و استجابة لصفحة الواحدة.
+<p dir='rtl' align='right'>▪️
+<p dir='rtl' align='right'>▪️
 
 * Execution timeouts
 * Max allocable memory
