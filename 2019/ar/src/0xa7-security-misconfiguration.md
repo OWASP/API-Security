@@ -1,56 +1,53 @@
-API7:2019 Security Misconfiguration
-===================================
+<h2 dir='rtl' align='right'> API7:2019 الاعداد الخاطئ</h2>
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
-| - | - | - |
-| API Specific : Exploitability **3** | Prevalence **3** : Detectability **3** | Technical **2** : Business Specific |
-| Attackers will often attempt to find unpatched flaws, common endpoints, or unprotected files and directories to gain unauthorized access or knowledge of the system. | Security misconfiguration can happen at any level of the API stack, from the network level to the application level. Automated tools are available to detect and exploit misconfigurations such as unnecessary services or legacy options. | Security misconfigurations can not only expose sensitive user data, but also system details that may lead to full server compromise. |
+<table dir='rtl' align="right">
+  <tr>
+    <th>عوامل التهديد/ الاستغلال  </th>
+    <th> نقاط الضعف </th>
+    <th> التأثير </th>
+    <tr>
+    <td> خصائص API : قابلية الاستغلال 3</td>
+    <td> الانتشار : 3 قابلية الاكتشاف : 3  </td>
+    <td> التأثر التقني و تأثر الاعمال: 3 </td>
+  </tr> 
+     <td> يحاول المهاجمون غالباً البحث عن الثغرات الأمنية على مستوى الأنظمة او اليات العمل اول على مصادر بيانات غير محمية وذلك بغيت الوصول الغير مصرح به للمعلومات. </td>
+    <td> يمكن ان يحدث الاعداد الخاطئ في أي مستوى من مستويات واجهة برمجة التطبيقات API، ابتداءًا من مستوى الشبكة الى مستوى التطبيقات، حيث تتوفر الأدوات للقيام بالفحص واكتشاف الأخطاء بشكل آلي وذلك بهدف البحث عن مواطن الإعدادات الخاطئة او الخدمات الفعلة والغير ضرورية او الخيارات القديمة والمصابة بثغرات. </td>
+    <td> قد يؤدي عملية الإعدادات الخاطئة الى تسريب البيانات وكذلك اختراق الأنظمة والخوادم. </td>    
+  </tr>
+  </table>
 
-## Is the API Vulnerable?
+<h3 dir='rtl' align='right'>هل أنا معرض لهذه الثغرة؟</h3>
 
-The API might be vulnerable if:
+<p dir='rtl' align='right'> قد يكون واجهة التطبيقات API معرض لثغرات في حال :
 
-* Appropriate security hardening is missing across any part of the application
-  stack, or if it has improperly configured permissions on cloud services.
-* The latest security patches are missing, or the systems are out of date.
-* Unnecessary features are enabled (e.g., HTTP verbs).
-* Transport Layer Security (TLS) is missing.
-* Security directives are not sent to clients (e.g., [Security Headers][1]).
-* A Cross-Origin Resource Sharing (CORS) policy is missing or improperly set.
-* Error messages include stack traces, or other sensitive information is
-  exposed.
+<p dir='rtl' align='right'>▪️ اذا لم يكن هناك أي آلية متبعة لعملية تعزيز حماية النظام في جميع مراحلة او اذا كان هناك تهيئة غير صحيحة على الخدمات السحابية.
+<p dir='rtl' align='right'>▪️ اذا لم يكن هناك آلية لسد الثغرات الأمنية او في حال كانت الأنظمة المستخدمة غير محدثة او خارجة عن الخدمة.
+<p dir='rtl' align='right'>▪️ اذا كان هناك تفعيل لبعض الطلبات الغير مطلوبة مثل بعض طلبات HTTP الغير مستخدمة TREAC او DELETE على سبيل المثال.
+<p dir='rtl' align='right'>▪️  اذا لم يتم استخدام التشفير بواسطة TLS. 
+<p dir='rtl' align='right'>▪️ إذا لم يتم تعين سياسة مشاركة المواد بطريقة صحيحة او كان هناك خطا في الإعدادات الخاصة بها
+<p dir='rtl' align='right'>▪️ إذا كانت رسائل الخطة تحتوي على معلومات حساسة ويمكن تتبعها.   
 
-## Example Attack Scenarios
+<p dir='rtl' align='right'>▪️    
 
-### Scenario #1
+<h3 dir='rtl' align='right'> امثلة على سيناريوهات الهجوم: </h3>
 
-An attacker finds the `.bash_history` file under the root directory of the
-server, which contains commands used by the DevOps team to access the API:
+<h4 dir='rtl' align='right'>السيناريو الاول: </h4>
+
+<p dir='rtl' align='right'> يعثر المهاجم على ملف .bash_history في احد المسارات الرئيسية في الخادم والذي يحتوي على الأوامر التي يستخدمها المطورين في الوصول الى واجهة برمجية التطبيقات API.
 
 ```
 $ curl -X GET 'https://api.server/endpoint/' -H 'authorization: Basic Zm9vOmJhcg=='
 ```
+<p dir='rtl' align='right'> يمكن للمهاجم ايضاً معرفة مصادر البيانات من خلال الأوامر التي يستخدمها المطورين من خلال تكرار عملية الوصول للملف أعلاه وما حدث ذلك الا بسبب عد توثيق الإجراءات بالشكل الصحيح.
 
-An attacker could also find new endpoints on the API that are used only by the
-DevOps team and are not documented.
+    
+<h4 dir='rtl' align='right'>السيناريو الثاني : </h4>
 
-### Scenario #2
+<p dir='rtl' align='right'> يقوم المهاجمون في معظم الأحيان في استخدام محركات البحث بهدف الحصول على خوادم يستطيع من خلالها الوصول الى مصدر البيانات بشكل مباشر. او من خلال البحث عن أحد المنافذ المشهورة في قواعد البيانات او في إدارة الأنظمة والخوادم.  وفي حال كان الخادم او النظام المستهدف يقوم باستخدام الأعدادت الافتراضية وغير محمي باستخدام مصادقة صحيحة قد يمكن المهاجم من الوصول للبيانات الشخصية PII والذي قد يؤدي الى تسريب بيانات المستخدمين لتلك الخدمة.
 
-To target a specific service, an attacker uses a popular search engine to search
-for  computers directly accessible from the Internet. The attacker found a host
-running a popular database management system, listening on the default port. The
-host was using the default configuration, which has authentication disabled by
-default, and the attacker gained access to millions of records with PII,
-personal preferences, and authentication data.
+<h4 dir='rtl' align='right'>السيناريو الثالث  : </h4>
 
-### Scenario #3
-
-Inspecting traffic of a mobile application an attacker finds out that not all
-HTTP traffic is performed on a secure protocol (e.g., TLS). The attacker finds
-this to be true, specifically for the download of profile images. As user
-interaction is binary, despite the fact that API traffic is performed on a
-secure protocol, the attacker finds a pattern on API responses size, which he
-uses to track user preferences over the rendered content (e.g., profile images).
+<p dir='rtl' align='right'> عند اعتراض حركة المرور للبيانات الخاصة بأحد تطبيقات الهواتف المحمولة والتي تستخدم بروتوكول TLS  في حركة البيانات ولكن  لا تعتمد على التشفير باستخدام TLS  عند استخدام واجهة برمجة التطبيقات API وبعد البحث من قبل المهاجم استطاع معرفة ان عملية تحميل ورفع الصور يتم بشكل غير مشفر، فقد وجد المهاجم نمط وطريقة لمعرفة الاستجابة الواردة من قبل الخادم او من قبل مصدر البيانات والتي قد تمكنه بطريقة او بأخرى من تتبع تفضيلات المستخدمين عند تنزيل او عرض تلك الصور.
 
 ## How To Prevent
 
