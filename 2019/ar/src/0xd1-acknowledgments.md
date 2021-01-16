@@ -1,10 +1,8 @@
-Acknowledgments
-===============
+<h2 dir='rtl' align='right'>الاقرار  </h2>
 
-## Acknowledgments to Contributors
+<p dir='rtl' align='right'> المساهمين في صناعة هذا المحتوى 
 
-We’d like to thank the following contributors who contributed publicly on GitHub
-or via other means:
+<p dir='rtl' align='right'>نشكر جميع المشاركين بشكل عام من خلال منصة GitHub وكذلك المشاركين من خلال وسائل ووسائط اخرى وهم : 
 
 * 007divyachawla
 * Abid Khan
