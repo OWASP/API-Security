@@ -27,14 +27,19 @@
 <p dir='rtl' align='right'> - ما هو إصدار API  المستخدم ؟ 
 <p dir='rtl' align='right'> - ماهي البيانات التي يتم جمعها بواسطة API؟ وهل هي بيانات شخصية؟
 <p dir='rtl' align='right'> - ماهي آلية وسير العمليات ؟
-<p dir='rtl' align='right'>▪️    
-<p dir='rtl' align='right'>▪️
-<p dir='rtl' align='right'>▪️
-<p dir='rtl' align='right'>▪️    
+<p dir='rtl' align='right'>▪️ لا توجد وثائق معتمدة او وثائق قديمة وغير محدثة.  
+<p dir='rtl' align='right'>▪️ لا توجد خطة لإيقاف أي واجهة برمجة التطبيقات القديمة API
+<p dir='rtl' align='right'>▪️ لا توجد آلية لحصر الأصول او انها قديمة.
+<p dir='rtl' align='right'>▪️ لا توجد آلية لحصر الأصول المتصلة بالأنظمة سوء كانت طرف اول او طرف ثالث.
+<p dir='rtl' align='right'>▪️ إصدارات قديمة وغير محدثة ولا تزال مستخدمة
+<p dir='rtl' align='right'>▪️ 
     
-## Example Attack Scenarios
 
-### Scenario #1
+<h3 dir='rtl' align='right'> امثلة على سيناريوهات الهجوم: </h3>
+
+<h4 dir='rtl' align='right'>السيناريو الاول: </h4>
+
+<p dir='rtl' align='right'> 
 
 After redesigning their applications, a local search service left an old API
 version (`api.someservice.com/v1`) running, unprotected, and with access to the
