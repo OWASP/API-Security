@@ -1,51 +1,47 @@
-API2:2019 Broken User Authentication
-====================================
+<h2 dir='rtl' align='right'> API2:2019 خلل في صلاحيات المستخدم </h2>
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
-| - | - | - |
-| API Specific : Exploitability **3** | Prevalence **2** : Detectability **2** | Technical **3** : Business Specific |
-| Authentication in APIs is a complex and confusing mechanism. Software and security engineers might have misconceptions about what are the boundaries of authentication and how to implement it correctly. In addition, the authentication mechanism is an easy target for attackers, since it’s exposed to everyone. These two points makes the authentication component potentially vulnerable to many exploits. | There are two sub-issues: 1. Lack of protection mechanisms: APIs endpoints that are responsible for authentication must be treated differently from regular endpoints and implement extra layers of protection 2. Misimplementation of the mechanism: The mechanism is used / implemented without considering the attack vectors, or it’s the wrong use case (e.g., an authentication mechanism designed for IoT clients might not be the right choice for web applications). | Attackers can gain control to other users’ accounts in the system, read their personal data, and perform sensitive actions on their behalf, like money transactions and sending personal messages. |
+<table dir='rtl' align="right">
+  <tr>
+    <th>عوامل التهديد/ الاستغلال  </th>
+    <th> نقاط الضعف </th>
+    <th> التأثير </th>
+    <tr>
+    <td> خصائص API : قابلية الاستغلال: 3 </td>
+    <td> الانتشار : 2 قابلية الاكتشاف : 2  </td>
+    <td> التأثر التقني و تأثر الاعمال: 3 </td>
+  </tr> 
+     <td> المصادقة في واجهات برمجة التطبيقات API هي آلية معقدة وصعبة الفهم وقد يكون لدى مهندسي البرمجيات ومهندس امن المعلومات بعض المفاهيم الخاطئة حول حدود المصادقة وكيفية تنفيذها بشكل صحيح. بالإضافة إلى ذلك، تعد آلية المصادقة هدفًا سهلاً للمهاجمين ، نظرًا لأنها متاحة للجميع. تجعل هاتان النقطتان مكون المصادقة عرضة للعديد من عمليات الاستغلال. </td>
+    <td> هناك مسألتان فرعيتان: 1. محدودية آليات الحماية: يجب التعامل مع مصادر البيانات الخاصة بواجهات برمجة التطبيقات API والمسؤولة عن المصادقة بشكل مختلف عن المصادر الاخرى وتأمين طبقات إضافية من الحماية 2. سوء تنفيذ الآلية: يتم استخدام / تنفيذ الآلية دون مراعاة طرق الاستغلال الهجوم، أو أنها تبني بشكل غير صحيح (على سبيل المثال، قد لا تتناسب آلية المصادقة المصممة لأجهزة إنترنت الأشياء مع لتطبيقات الويب). </td>
+    <td> يمكن للمهاجمين التحكم في حسابات المستخدمين الآخرين في النظام ، وقراءة بياناتهم الشخصية ، وتنفيذ إجراءات حساسة نيابة عنهم ، مثل المعاملات المالية وإرسال الرسائل الشخصية. </td>    
+  </tr>
+  </table>      
 
-## Is the API Vulnerable?
+<h3 dir='rtl' align='right'>هل أنا معرض لهذه الثغرة؟</h3>
+<p dir='rtl' align='right'>مصادر البيانات وآلية عملها والاصول الخاصة بها تحتاج إلى الحماية. حيث يجب معاملة "نسيت كلمة المرور / إعادة تعيين كلمة المرور" بنفس طريقة آليات المصادقة.
+    
+<p dir='rtl' align='right'> يكون API معرض للخطر اذا كان: 
+<p dir='rtl' align='right'> ▪️ اذا كان لدى المهاجم قائمة متكاملة من اسماء المستخدمين وكلمات المرور تم الحصول عليها من اختراق او تسريب سابق
+<p dir='rtl' align='right'> ▪️ عند قيام المهاجم بهجمات كسر كلمة المرور وعدم استخدام آلية تحقق اخرى من المستخدم مثل Captcha.
+<p dir='rtl' align='right'> ▪️ كلمات المرور الضعيفة
+<p dir='rtl' align='right'> ▪️ ارسال المعلومات الحساسة او كلمات المرور من خلال URL.
+<p dir='rtl' align='right'> ▪️ عدم التحقق بالشكل الصحيح من عمليات المصادقة
+<p dir='rtl' align='right'> ▪️ الموافقة على استخدام المصادقة الغير موقعه او الموقع بشكل غير امن ("alg":"none") او عدم التحقق من تاريخ انتهاء المصادقة.
+<p dir='rtl' align='right'> ▪️ استخدام البيانات غير المشفرة في عمليات تسجيل الدخول او عدم حفظ الارقام السرية بشكل مشفر
+<p dir='rtl' align='right'> ▪️ استخدام مفاتيح تشفير ضعيفة.
 
-Authentication endpoints and flows are assets that need to be protected. “Forgot
-password / reset password” should be treated the same way as authentication
-mechanisms.
 
-An API is vulnerable if it:
-* Permits [credential stuffing][1] whereby the attacker has a list of valid
-  usernames and passwords.
-* Permits attackers to perform a brute force attack on the same user account, without
-  presenting captcha/account lockout mechanism.
-* Permits weak passwords.
-* Sends sensitive authentication details, such as auth tokens and passwords in
-  the URL.
-* Doesn’t validate the authenticity of tokens.
-* Accepts unsigned/weakly signed JWT tokens (`"alg":"none"`)/doesn’t
-  validate their expiration date.
-* Uses plain text, non-encrypted, or weakly hashed passwords.
-* Uses weak encryption keys.
+<h3 dir='rtl' align='right'> امثلة على سيناريوهات الهجوم: </h3>
 
-## Example Attack Scenarios
+<h4 dir='rtl' align='right'>السيناريو الاول: </h4>
 
-## Scenario #1
+<p dir='rtl' align='right'> في حال قام المهاجم باستخدام بمحاولة الدخول بحسابات متعددة والتي تم الحصول عليها من تسريب للبيانات والتي يجب ان نقوم بوضع آلية للحماية من هجمات الدخول المتعدد بحسابات صحيح في وقت قصير ومحدود.
 
-[Credential stuffing][1] (using [lists of known usernames/passwords][2]), is a
-common attack. If an application does not implement automated threat or
-credential stuffing protections, the application can be used as a password
-oracle (tester) to determine if the credentials are valid.
+<h4 dir='rtl' align='right'>السيناريو الثاني : </h4>
 
-## Scenario #2
+<p dir='rtl' align='right'>في حال قام المهاجم بمحاولة استعاد كلمة المرور من خلال ارسال طلب POST الى `/api/system/verification-codes` وذلك باستخدام اسم المستخدم فقط لتحقق من استعادة كلمة المرور. حيث يقوم التطبيق بإرسال رسالة نصية لهاتف الضحية مع آلية المصادقة الجديدة والمكونة من 6 ارقام. وحيث ان API لم يقم بوضع حد اعلى لطلبات المصادقة سيقوم المهاجم بتنفيذ جميع الاحتماليات وذلك بالتخمين على آلية المصادقة التي تم ارسالها الى هاتف الضحية وذلك بإرسال طلبات متعددة الى `/api/system/verification-codes/{smsToken}` لتحقق من مصدر البيانات في حال كان احد عمليات التخمين كانت صحيحة.
+    
 
-An attacker starts the password recovery workflow by issuing a POST request to
-`/api/system/verification-codes` and by providing the username in the request
-body. Next an SMS token with 6 digits is sent to the victim’s phone. Because the
-API does not implement a rate limiting policy, the attacker can test all
-possible combinations using a multi-threaded script, against the
-`/api/system/verification-codes/{smsToken}` endpoint to discover the right token
-within a few minutes.
-
-## How To Prevent
+<h4 dir='rtl' align='right'>كيف أمنع هذه الثغرة؟ </h4>
 
 * Make sure you know all the possible flows to authenticate to the API (mobile/
   web/deep links that implement one-click authentication/etc.)
