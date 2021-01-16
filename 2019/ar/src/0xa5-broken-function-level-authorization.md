@@ -1,10 +1,20 @@
-API5:2019 Broken Function Level Authorization
-=============================================
+<h2 dir='rtl' align='right'> API5:2019 ضعف في التحقق من الهوية وادارة الصلاحيات و التفويض </h2>
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
-| - | - | - |
-| API Specific : Exploitability **3** | Prevalence **2** : Detectability **1** | Technical **2** : Business Specific |
-| Exploitation requires the attacker to send legitimate API calls to the API endpoint that they should not have access to. These endpoints might be exposed to anonymous users or regular, non-privileged users. It’s easier to discover these flaws in APIs since APIs are more structured, and the way to access certain functions is more predictable (e.g., replacing the HTTP method from GET to PUT, or changing the “users” string in the URL to "admins"). | Authorization checks for a function or resource are usually managed via configuration, and sometimes at the code level. Implementing proper checks can be a confusing task, since modern applications can contain many types of roles or groups and complex user hierarchy (e.g., sub-users, users with more than one role). | Such flaws allow attackers to access unauthorized functionality. Administrative functions are key targets for this type of attack. |
+<table dir='rtl' align="right">
+  <tr>
+    <th>عوامل التهديد/ الاستغلال  </th>
+    <th> نقاط الضعف </th>
+    <th> التأثير </th>
+    <tr>
+    <td> خصائص API : قابلية الاستغلال </td>
+    <td> الانتشار : 2 قابلية الاكتشاف : 1  </td>
+    <td> التأثر التقني و تأثر الاعمال: 2 </td>
+  </tr> 
+     <td> ان عملية استغلال هذه الثغرة بسيط نسيباً بحيث يستطيع المهاجم ارسال طلب غير ضار من خلال واجهة برمجة التطبيقات API الى مصادر البيانات التي من الغير مصرح له بالاطلاع عليها. وقد تكون تلك المصادر متاحة للمسخدمين المجهولين او المستخدم الذي لا يملك صلاحيات عالية. وحيث ان من السهل اكتشاف مثل تلك الثغرات من خلال معرفة سلوك الطلبات والياتها المستخدمة وطرق طلبها والردود المتوقعة من كل طلب وقد يتم استغلالها ببساطة من خلال استبدال طلب GET  بـ PUT او تغير صلاحيات المستخدم من "User " الى "Admin".   </td>
+    <td> عادة ما يتم تحديد صلاحيات الوصول للموارد من خلال الاعدادات. وفي بعض الأحيان على مستوى الاكواد البرمجية، ان عملية تنصيب طرق التحقق بالشكل الصحيح قد تكون في بعض الأحيان عملية معقدة. حيث ان معظم التطبيقات الحديثة تحتوي على مختلف الصلاحيات والمجموعات بتسلسل هرمي معقد بعض الشي. </td>
+    <td> بعض آليات العمل قد تسمح للمهاجم في الاستفادة والوصول والاطلاع الغير مصرح به، او حصوله على صلاحيات إدارية تمكنه من التحكم والسيطرة. </td>    
+  </tr>
+  </table>    
 
 ## Is the API Vulnerable?
 
