@@ -1,63 +1,48 @@
-API3:2019 Excessive Data Exposure
-=================================
+<h2 dir='rtl' align='right'> API3:2019 خلل في استعراض البيانات  </h2>
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
-| - | - | - |
-| API Specific : Exploitability **3** | Prevalence **2** : Detectability **2** | Technical **2** : Business Specific |
-| Exploitation of Excessive Data Exposure is simple, and is usually performed by sniffing the traffic to analyze the API responses, looking for sensitive data exposure that should not be returned to the user. | APIs rely on clients to perform the data filtering. Since APIs are used as data sources, sometimes developers try to implement them in a generic way without thinking about the sensitivity of the exposed data. Automatic tools usually can’t detect this type of vulnerability because it’s hard to differentiate between legitimate data returned from the API, and sensitive data that should not be returned without a deep understanding of the application. | Excessive Data Exposure commonly leads to exposure of sensitive data. |
-
-## Is the API Vulnerable?
-
-The API returns sensitive data to the client by design. This data is usually
-filtered on the client side before being presented to the user. An attacker can
-easily sniff the traffic and see the sensitive data.
-
-## Example Attack Scenarios
-
-### Scenario #1
-
-The mobile team uses the `/api/articles/{articleId}/comments/{commentId}`
-endpoint in the articles view to render comments metadata. Sniffing the mobile
-application traffic, an attacker finds out that other sensitive data related to
-comment’s author is also returned. The endpoint implementation uses a generic
-`toJSON()` method on the `User` model, which contains PII, to serialize the
-object.
-
-### Scenario #2
-
-An IOT-based surveillance system allows administrators to create users with
-different permissions. An admin created a user account for a new security guard
-that should only have access to specific buildings on the site. Once the
-security guard uses his mobile app, an API call is triggered to:
-`/api/sites/111/cameras` in order to receive data about the available cameras
-and show them on the dashboard. The response contains a list with details about
-cameras in the following format:
-`{"id":"xxx","live_access_token":"xxxx-bbbbb","building_id":"yyy"}`.
-While the client GUI shows only cameras which the security guard should have
-access to, the actual API response contains a full list of all the cameras in
-the site.
-
-## How To Prevent
-
-* Never rely on the client side to filter sensitive data.
-* Review the responses from the API to make sure they contain only legitimate
-  data.
-* Backend engineers should always ask themselves "who is the
-  consumer of the data?" before exposing a new API endpoint.
-* Avoid using generic methods such as `to_json()` and `to_string()`.
-  Instead, cherry-pick specific properties you really want to return
-* Classify sensitive and personally identifiable information (PII) that
-  your application stores and works with, reviewing all API calls returning such
-  information to see if these responses pose a security issue.
-* Implement a schema-based response validation mechanism as an extra layer of
-  security. As part of this mechanism define and enforce data returned by all
-  API methods, including errors.
+<table dir='rtl' align="right">
+  <tr>
+    <th>عوامل التهديد/ الاستغلال  </th>
+    <th> نقاط الضعف </th>
+    <th> التأثير </th>
+    <tr>
+    <td> خصائص API : قابلية الاستغلال </td>
+    <td> الانتشار : 3 قابلية الاكتشاف : 2  </td>
+    <td> التأثر التقني و تأثر الاعمال: 2 </td>
+  </tr> 
+     <td> عادة ما يكون الكشف الغير مصرح به عن المعلومات او البيانات من خلال مراقبة حركة مرور البيانات او الطلبات وتحليل جميع الردود القادمة من API، وذلك للبحث عن أي بيانات حساسة يتم استعادتها وغير مصرح للمستخدم بالاطلاع عليها.  </td>
+    <td>  تعتمد واجهات التطبيقات API على ان تكون عوامل التصفية من جانب المستخدم حيث ان API عادة ما يتم استخدامه كمصدر للبيانات وفي بعض الأحيان يقوم المطورون بتنصيب API بشكل عام وافتراضي من غير التفكير في طرق التعامل مع البيانات الحساسة. حيث ان أدوات الفحص واكتشاف الثغرات الأمنية تستطيع رصد مثل تلك الثغرات والتي يصعب على API معرفة إذا كان هذا الطلب لأغراض الاستخدام الصحيح والقانوني او لأغراض الاطلاع وتسريب البيانات الحساسة. لذلك يجب ان نقوم بتصنيف البيانات الحساسة والفهم العميق لألية الطلب لها. </td>
+    <td> عادة ما يودي الكشف عن البيانات الى الاطلاع غير المصرح به او تسريب البيانات</td>    
+  </tr>
+  </table>        
 
 
-## References
 
-### External
+<h3 dir='rtl' align='right'>هل أنا معرض لهذه الثغرة؟</h3>
 
-* [CWE-213: Intentional Information Exposure][1]
+<p dir='rtl' align='right'> تقوم واجهة برمجة التطبيقات  بإرجاع البيانات الحساسة إلى العميل حسب التصميم والطلب . عادة ما يتم تصفية هذه البيانات من جانب العميل قبل تقديمها للمستخدم. يمكن للمهاجم بسهولة اعتراض حركة المرور ورؤية البيانات الحساسة.
 
-[1]: https://cwe.mitre.org/data/definitions/213.html
+
+<h3 dir='rtl' align='right'> امثلة على سيناريوهات الهجوم: </h3>
+
+<h4 dir='rtl' align='right'>السيناريو الاول: </h4>
+
+<p dir='rtl' align='right'> يقوم مطورين تطبيق الهواتف الذكية باستخدام `/api/articles/{articleId}/comments/{commentId}` كمصدر للبيانات وذلك بهدف عرض المقالات وبعض البيانات الوصفية الخاصة بها. وهنا يقوم المهاجم باعتراض حركة مرور البيانات الصادرة من هذه التطبيق وقراءة تلك البيانات الوصفية والتي قد تقوم بتسريب بعض البيانات الحساسة مثل بيانات كاتبين التعليقات وبعض بيانات تحديد الشخصية كـ PII، حيث ان مصدر البيانات تم تنصيبه بشكل افتراضي على هيئة (JSON) ومبنية على عامل التصفية لدى المستخدم.
+
+<h4 dir='rtl' align='right'>السيناريو الثاني : </h4>
+<p dir='rtl' align='right'> يسمح نظام المراقبة المبني على أنظمة IOT او انترنت الأشياء لمدير النظام بانشاء حسابات  للمستخدمين بمختلف الصلاحيات، حيث قام مدير النظام بانشاء حساب لاحد حراس الامن والذي مصرح له بالاطلاع على بعض المباني و المواقع. وعندما قام الحارس باستخدام هاتفه للاطلاع على النظام يقوم نظام API باستدعاء لوحة أنظمة المراقبة المتاحة له من خلال /api/sites/111/cameras والتي تسمح له بمعرفة عدد الكاميرات المتاحة الاطلاع عليها من قبل حارس الامن حيث ان بعد عملية الطلب تم استقبال الرد من الخادم ببعض المعلومات التفصيلية على سبيل المثال `{"id":"xxx","live_access_token":"xxxx-bbbbb","building_id":"yyy"}`  والتي لا تظهر على لوحة المراقبة الخاصة بالحارس ( الواجهة الرسومية ) بل في تفاصيل الطلب فقط والتي تحتوي على جميع الكاميرات والمباني.
+
+<h4 dir='rtl' align='right'>كيف أمنع هذه الثغرة؟ </h4>
+
+<p dir='rtl' align='right'>▪️ لا تثق ابداُ في عوامل التصفية لدى العميل او المستخدم في حال كانت هناك بيانات حساسة
+<p dir='rtl' align='right'>▪️ دائماً قم بمراجعة الطلبات والردود من مصادر البيانات لتاكد من ان جميع البيانات المتوفرة هي بيانات غير حساسة ومنطقية
+<p dir='rtl' align='right'>▪️ يجب على مهندسي التطبيقات الداخلية و مسؤولي الانظمة السؤال بشكل دائم من هم مستخدمي تلك البيانات قبل البدء بتنصيب API جديدة على النظام.
+<p dir='rtl' align='right'>▪️ تجنب استخدام الإعدادات العامة مثل to_json() و To_string() واستبدلها بـدلاً من ذلك بخصائص معينة ومحددة مطلوب استرجاعها. 
+<p dir='rtl' align='right'>▪️  قم بتصنيف المعلومات الحساسة و المعلومات المرتبطة بالهوية الشخصية (PII) التي يخزنها تطبيقك ويعمل معها ، مع مراجعة جميع الطلبات الخاصة بواجهة برمجة التطبيقاتAPI   والردود المتوقعة منها ومعرفة الاشكاليات الامنية التي قد يتم رصدها بتلك الردود  
+<p dir='rtl' align='right'>▪️ قم باستخدام آليات التحقق مثل (schema-based response validation mechanism) وحدد ماهي البيانات التي يتم ارجاعها مع الطلبات بما في ذلك الاخطاء والمعلومات المتوفرة بها.
+
+
+<h4 dir='rtl' align='right'>المراجع :  </h4>
+<h4 dir='rtl' align='right'>المصادر الخارجية :   </h4>
+
+[<p dir='rtl' align='right'>▪️ CWE-213: Intentional Information Exposure </p>](https://cwe.mitre.org/data/definitions/213.html)
