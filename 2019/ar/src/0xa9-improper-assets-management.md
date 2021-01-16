@@ -39,16 +39,12 @@
 
 <h4 dir='rtl' align='right'>السيناريو الاول: </h4>
 
-<p dir='rtl' align='right'> 
+<p dir='rtl' align='right'> بعد إعادة عملية تصميم التطبيقات، لم يتم الاهتمام بترقية الإصدار الخاص بواجهة برمجة التطبيقات API بل تم استخدام القديم وهو متوفرة على المسار التالي api.someservice.com/v1. وهو المستخدم وغير محمي، مع إمكانية الوصول الى قاعدة البيانات بصلاحيات مستخدم. وبعد عمليات الفحص من قبل المهاجمين في التطبيقات المعاد تصميمها وهي على المسار التالي api.someservice.com/v2. بعد عملية تخمين بسيطة جداً تم تغير /v2  الى v1  في المسار للموقع والذي منح المهاجم إمكانية الوصول لواجهة برمجة التطبيقات القديمة والغير محدثة والتي أدت الى تسريب معلومات حساسة لأكثر من 100 مليون مستخدمة ومنه معلومات شخصية.
 
-After redesigning their applications, a local search service left an old API
-version (`api.someservice.com/v1`) running, unprotected, and with access to the
-user database. While targeting one of the latest released applications, an
-attacker found the API address (`api.someservice.com/v2`). Replacing `v2` with
-`v1` in the URL gave the attacker access to the old, unprotected API,
-exposing the personal identifiable information (PII) of over 100 Million users.
 
-### Scenario #2
+<h4 dir='rtl' align='right'>السيناريو الثاني : </h4>
+
+<p dir='rtl' align='right'>
 
 A social network implemented a rate-limiting mechanism that blocks attackers
 from using brute-force to guess reset password tokens. This mechanism wasn’t
