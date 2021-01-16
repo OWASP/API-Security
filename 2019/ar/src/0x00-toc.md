@@ -19,5 +19,5 @@
 [<p dir='rtl' align='right'>▪️ API10:2019  خلل في طريقة تسجيل الاحداث والمراقبة  </p>](0xaa-insufficient-logging-monitoring.md)
 [<p dir='rtl' align='right'>▪️ ماهو التالي للمطورين </p>](0xb0-next-devs.md)
 [<p dir='rtl' align='right'>▪️ افضل الممارسات لتطوير بشكل امن  </p>](0xb1-next-devsecops.md)
-[<p dir='rtl' align='right'>▪️ الاليات المتبعة والبيانات</p>](0xd0-about-data.md)
+[<p dir='rtl' align='right'>▪️ المنهجية والبيانات</p>](0xd0-about-data.md)
 [<p dir='rtl' align='right'>▪️ الاقرار </p>](0xd1-acknowledgments.md)
