@@ -49,54 +49,35 @@ $ curl -X GET 'https://api.server/endpoint/' -H 'authorization: Basic Zm9vOmJhcg
 
 <p dir='rtl' align='right'> عند اعتراض حركة المرور للبيانات الخاصة بأحد تطبيقات الهواتف المحمولة والتي تستخدم بروتوكول TLS  في حركة البيانات ولكن  لا تعتمد على التشفير باستخدام TLS  عند استخدام واجهة برمجة التطبيقات API وبعد البحث من قبل المهاجم استطاع معرفة ان عملية تحميل ورفع الصور يتم بشكل غير مشفر، فقد وجد المهاجم نمط وطريقة لمعرفة الاستجابة الواردة من قبل الخادم او من قبل مصدر البيانات والتي قد تمكنه بطريقة او بأخرى من تتبع تفضيلات المستخدمين عند تنزيل او عرض تلك الصور.
 
-## How To Prevent
 
-The API life cycle should include:
+<h4 dir='rtl' align='right'>كيف أمنع هذه الثغرة؟ </h4>
 
-* A repeatable hardening process leading to fast and easy deployment of a
-  properly locked down environment.
-* A task to review and update configurations across the entire API stack. The
-  review should include: orchestration files, API components, and cloud services
-  (e.g., S3 bucket permissions).
-* A secure communication channel for all API interactions access to static
-  assets (e.g., images).
-* An automated process to continuously assess the effectiveness of the
-  configuration and settings in all environments.
+<p dir='rtl' align='right'> دورة حياة واجهة برمجة التطبيقات API لابد ان تشتمل على : 
 
-Furthermore:
+<p dir='rtl' align='right'>▪️ عملية تعزيز حماية الأنظمة تساهم بشكل كبير في بناء بيئة امنة و موثوقة 
+<p dir='rtl' align='right'>▪️ إيجاد آلية لمراجعة الإعدادات و التحديثات بأكملها ويجب ان تتضمن مراجعة كل من ملفات الحفظ و المزامنة مكونات واجهة برمجة التطبيقات API التطبيقات و الخدمات السحابية.
+<p dir='rtl' align='right'>▪️ توفير اتصال امن و مشفر لجميع الاتصالات في التعامل مع التطبيق او رفع وتحميل الصور.
+<p dir='rtl' align='right'>▪️ عملية تقييم امني مستمر لمعرفة مستوى نضج الاعدادات في جميع انحاء البنية التحتية.
 
-* To prevent exception traces and other valuable information from being sent
-  back to attackers, if applicable, define and enforce all API response payload
-  schemas including error responses.
-* Ensure API can only be accessed by the specified HTTP verbs. All other HTTP
-  verbs should be disabled (e.g. `HEAD`).
-* APIs expecting to be accessed from browser-based clients (e.g., WebApp
-  front-end) should implement a proper Cross-Origin Resource Sharing (CORS)
-  policy.
+<p dir='rtl' align='right'> علاوة على ذلك: 
 
-## References
+<p dir='rtl' align='right'>▪️ لمنع تتبع الأخطاء التي قد يتم الرد بها بعد عمليات الطلب والتي قد تمكن المهاجم من استعراض البيانات الحساسة يجب ان تكون جميع الرود محدودة ومحصورة بما في ذلك عمليات الاستجابة للأخطاء.
+<p dir='rtl' align='right'>▪️ تأكد انه لا يمكن الوصول الى واجهة برمجة التطبيقات API الا من خلال احد الطلبات المحددة وعد السماح بجميع الطلبات الخاصة ببروتوكول HTTP بالعمل بل ويجب تعطيلها مثال (HEAD , TRACE).
+<p dir='rtl' align='right'>▪️ يجب على واجهات برمجة التطبيقات API التي تتوقع أن يتم الوصول إليها من عملاء يستندون إلى المتصفح على سبيل المثال (الواجهة الامامية لخدمات الويب) يجب تنفيذ سياسة سليمة وموثوقة لمشاركة الموارد عبر (CORS).
+    
 
-### OWASP
+<h4 dir='rtl' align='right'>المراجع :  </h4>
 
-* [OWASP Secure Headers Project][1]
-* [OWASP Testing Guide: Configuration Management][2]
-* [OWASP Testing Guide: Testing for Error Codes][3]
-* [OWASP Testing Guide: Test Cross Origin Resource Sharing][9]
+[<p dir='rtl' align='right'>▪️ OWASP Secure Headers Project </p>](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project)
+[<p dir='rtl' align='right'>▪️ OWASP Testing Guide: Configuration Management </p>](https://www.owasp.org/index.php/Testing_for_configuration_management)
+[<p dir='rtl' align='right'>▪️ OWASP Testing Guide: Testing for Error Codes </p>](https://www.owasp.org/index.php/Testing_for_Error_Code_(OTG-ERR-001))
+[<p dir='rtl' align='right'>▪️ OWASP Testing Guide: Test Cross Origin Resource Sharing</p>](https://www.owasp.org/index.php/Test_Cross_Origin_Resource_Sharing_(OTG-CLIENT-007))
 
-### External
+<h4 dir='rtl' align='right'>المصادر الخارجية :   </h4>
 
-* [CWE-2: Environmental Security Flaws][4]
-* [CWE-16: Configuration][5]
-* [CWE-388: Error Handling][6]
-* [Guide to General Server Security][7], NIST
-* [Let’s Encrypt: a free, automated, and open Certificate Authority][8]
 
-[1]: https://www.owasp.org/index.php/OWASP_Secure_Headers_Project
-[2]: https://www.owasp.org/index.php/Testing_for_configuration_management
-[3]: https://www.owasp.org/index.php/Testing_for_Error_Code_(OTG-ERR-001)
-[4]: https://cwe.mitre.org/data/definitions/2.html
-[5]: https://cwe.mitre.org/data/definitions/16.html
-[6]: https://cwe.mitre.org/data/definitions/388.html
-[7]: https://csrc.nist.gov/publications/detail/sp/800-123/final
-[8]: https://letsencrypt.org/
-[9]: https://www.owasp.org/index.php/Test_Cross_Origin_Resource_Sharing_(OTG-CLIENT-007)
+[<p dir='rtl' align='right'>▪️ CWE-2: Environmental Security Flaws </p>]( https://cwe.mitre.org/data/definitions/2.html)
+[<p dir='rtl' align='right'>▪️ CWE-16: Configuration </p>](https://cwe.mitre.org/data/definitions/16.html)
+[<p dir='rtl' align='right'>▪️ CWE-388: Error Handling </p>](https://cwe.mitre.org/data/definitions/388.html)
+[<p dir='rtl' align='right'>▪️ Guide to General Server Security , NIST </p>]( https://csrc.nist.gov/publications/detail/sp/800-123/final)
+[<p dir='rtl' align='right'>▪️ Let’s Encrypt: a free, automated, and open Certificate Authority </p>](https://letsencrypt.org/)
