@@ -1,4 +1,4 @@
-<h2 dir='rtl' align='right'>API1:2019 خلل التفاويض والصلاحيات </h2>
+<h2 dir='rtl' align='right'>API1:2019 خلل التفويض والصلاحيات </h2>
 
 
 <table dir='rtl' align="right">
