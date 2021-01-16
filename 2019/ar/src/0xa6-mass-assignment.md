@@ -56,34 +56,18 @@
 <h4 dir='rtl' align='right'>السيناريو الثاني : </h4>
 
 <p dir='rtl' align='right'> تتيح منصة مشاركة ملفات الفيديو تحميل ورفع وتنزيل الملفات بتنسيقات وامتدادات مختلفة. حيث لاحظ المهاجم ان واجهة برمجة التطبيقات والتي تستطيع الوصول لها من خلال طلب GET على المسار التالي /api/v1/videos/{video_id}/meta_data انه يستطيع الحصول على ملف JSON يحتوي على خصائص ملفات الفيديو. على سبيل المثال "mp4_conversion_params":"-v codec h264" مما يوضح ان التطبيق يستخدم أوامر Shell لعملية تحويل الفيديو.
-<p dir='rtl' align='right'>    
 
-A video sharing portal allows users to upload content and download content in
-different formats. An attacker who explores the API found that the endpoint
-`GET /api/v1/videos/{video_id}/meta_data` returns a JSON object with the video’s
-properties. One of the properties is `"mp4_conversion_params":"-v codec h264"`,
-which indicates that the application uses a shell command to convert the video.
+<p dir='rtl' align='right'>  وجد المهاجم احد مصادر البيانات مصابة بالثغرة التي تسمح له بالتعديل والتعين فقام بإرسال تعليمات برمجية ضارة باستخدام واجهة برمجة التطبيقات API مع طلب POST من خلال المسار التالي /api/v1/videos/new حيث قام بتعين القيمة التالية مع العملية "mp4_conversion_params":"-v codec h264 && format C:/" والتي سمحت للمهاجم بتنفيذ التعليمات من خلال أوامر Shell بعد ارساله لطلب تنزيل ملف الفيديو.  
 
-The attacker also found the endpoint `POST /api/v1/videos/new` is vulnerable to
-mass assignment and allows the client to set any property of the video object.
-The attacker sets a malicious value as follows:
-`"mp4_conversion_params":"-v codec h264 && format C:/"`. This value will cause a
-shell command injection once the attacker downloads the video as MP4.
+<h4 dir='rtl' align='right'>كيف أمنع هذه الثغرة؟ </h4>
 
-## How To Prevent
+<p dir='rtl' align='right'>▪️ تجنب ما أمكن استخدام الوظائف التي تتطلب من المستخدم ادخل بعض المتغيرات في الاكواد الداخلية.
+<p dir='rtl' align='right'>▪️ أضف الخصائص التي يتوجب على المستخدم إدخالها الى قائمة بيضاء محددة.
+<p dir='rtl' align='right'>▪️ استخدام الطرق والاساليب التي تمنع المستخدم من الاطلاع او الوصول غير المصرح به الى المصادر او الخصائص.
+<p dir='rtl' align='right'>▪️ إذا كان من الممكن فرض سياسة استخدام مدخلات محددة في البيانات عند عمليات الرفع او التنزيل.
 
-* If possible, avoid using functions that automatically bind a client’s input
-  into code variables or internal objects.
-* Whitelist only the properties that should be updated by the client.
-* Use built-in features to blacklist properties that should not be accessed by
-  clients.
-* If applicable, explicitly define and enforce schemas for the input data
-  payloads.
 
-## References
+<h4 dir='rtl' align='right'>المراجع :  </h4>
+<h4 dir='rtl' align='right'>المصادر الخارجية :   </h4>
 
-### External
-
-* [CWE-915: Improperly Controlled Modification of Dynamically-Determined Object Attributes][1]
-
-[1]: https://cwe.mitre.org/data/definitions/915.html
+[<p dir='rtl' align='right'>▪️ CWE-915: Improperly Controlled Modification of Dynamically-Determined Object Attributes </p>](https://cwe.mitre.org/data/definitions/915.html)
