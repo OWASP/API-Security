@@ -32,9 +32,7 @@
 <p dir='rtl' align='right'>▪️ لا توجد آلية لحصر الأصول او انها قديمة.
 <p dir='rtl' align='right'>▪️ لا توجد آلية لحصر الأصول المتصلة بالأنظمة سوء كانت طرف اول او طرف ثالث.
 <p dir='rtl' align='right'>▪️ إصدارات قديمة وغير محدثة ولا تزال مستخدمة
-<p dir='rtl' align='right'>▪️ 
     
-
 <h3 dir='rtl' align='right'> امثلة على سيناريوهات الهجوم: </h3>
 
 <h4 dir='rtl' align='right'>السيناريو الاول: </h4>
@@ -44,34 +42,22 @@
 
 <h4 dir='rtl' align='right'>السيناريو الثاني : </h4>
 
-<p dir='rtl' align='right'>
+<p dir='rtl' align='right'> تقوم منصات التواصل الاجتماعي باستخدام آلية مبتكرة لمنع هجمات كسر كلمات المرور من خلال تحديد معدل الطلبات وذلك بهدف تقليل محاولات الاختراق. ولكن آلية الأمان تلك لم يتم تطبيقها على الكود الخاص بواجهة برمجة التطبيقات API. بل قاموا بفصلها لكي تكون ما بين المستخدم و API. (www.socialnetwork.com). واحد الباحثين قام بإيجاد النطاق الحاص بـAPI (www.mbasic.beta.socialnetwork.com) والذي يستطيع من خلاله القيام بنفس المهام التي تقوم بها منصة التواصل الاجتماعي بما في ذلك إعادة تعين كلمات المرور من خلال استخدام أسلوب مصادقة يتم استخدامه من قبل المنصة وهو عبارة عن رمز مكون من 6 ارقام يتم إدخاله في حال طلبت استعادة كلمة المرور.
 
-A social network implemented a rate-limiting mechanism that blocks attackers
-from using brute-force to guess reset password tokens. This mechanism wasn’t
-implemented as part of the API code itself, but in a separate component between
-the client and the official API (`www.socialnetwork.com`).
-A researcher found a beta API host (`www.mbasic.beta.socialnetwork.com`) that
-runs the same API, including the reset password mechanism, but the rate limiting
-mechanism was not in place. The researcher was able to reset the password of any
-user by using a simple brute-force to guess the 6 digits token.
 
-## How To Prevent
 
-* Inventory all API hosts and document important aspects of each one of them,
-  focusing on the API environment (e.g., production, staging, test,
-  development), who should have network access to the host (e.g., public,
-  internal, partners) and the API version.
-* Inventory integrated services and document important aspects such as their
-  role in the system, what data is exchanged (data flow), and its sensitivity.
-* Document all aspects of your API such as authentication, errors, redirects,
-  rate limiting, cross-origin resource sharing (CORS) policy and endpoints,
-  including their parameters, requests, and responses.
-* Generate documentation automatically by adopting open standards. Include the
-  documentation build in your CI/CD pipeline.
-* Make API documentation available to those authorized to use the API.
-* Use external protection measures such as API security firewalls for all exposed versions of your APIs, not just for the current production version.
-* Avoid using production data with non-production API deployments. If this is unavoidable, these endpoints should get the same security treatment as the production ones.
-* When newer versions of APIs include security improvements, perform risk analysis to make the decision of the mitigation actions required for the older version: for example, whether it is possible to backport the improvements without breaking API compatibility or you need to take the older version out quickly and force all clients to move to the latest version.
+<h4 dir='rtl' align='right'>كيف أمنع هذه الثغرة؟ </h4>
+
+<p dir='rtl' align='right'>▪️ 	جرد وحصر جميع المعرفات والأجهزة الخاصة بواجهة برمجة التطبيقات وتوثيقهم بمستند لكل كائن على حدة، والتركيز بشكل كبير على بيئة API (على سبيل المثال، الإنتاج ، التدريج ، الاختبار ، التطوير)، وماهي آليات الوصول لشبكة API وهل هي متاحة للعامة او داخلياً او لعملاء والشركاء.
+<p dir='rtl' align='right'>▪️  	حصر جميع الأصول المتربطة بالأنظمة الخاصة بك وماهي البيانات التي يتم تبادلها ومدى حساسية تلك البيانات.
+<p dir='rtl' align='right'>▪️ 	قم بتوثيق جميع جوانب واجهة برمجة التطبيقات API خصوصاً ما يرتبط بعمليات المصادقة وآلية العمل وتحديد معدل واضح لمستوى مشاركة الموارد عبر CORS ومصادر البيانات، بما في ذلك الاستعلامات والطلبات والاستجابة لتلك الطلبات.
+<p dir='rtl' align='right'>▪️ 	قم باستخدام بعض الطرق والتقنيات الالية لأغراض التوثيق المبنية على معايير أساسية والتي تشمل وثائق CI/CD 
+<p dir='rtl' align='right'>▪️ 	التأكد من ان الوثائق متاحة للأشخاص المصرح لهم فقط.
+<p dir='rtl' align='right'>▪️ 	التأكد من استخدام التدابير الوقائية اللازمة مثل جدران الحماية الخاصة بواجهة برمجة التطبيقات API لجميع واجهة برمجة التطبيقات المتصلة بالأنترنت وليس فقط المتوفر في بيئة التشغيل.
+<p dir='rtl' align='right'>▪️ -	تجنب استخدام مصادر البيانات على البيئة التشغيلية باستخدام واجهة برمجة التطبيقات غير جاهز للعمل في تلك البيئة، وفي حال توجب عليك استخدامه فجيب تطبيق عليه جميع المعايير الأمنية نفسها التي تم تطبيقها على بيئة التشغيل.
+<p dir='rtl' align='right'>▪️ -	في حال كانت الإصدارات الحديثة من واجهة برمجة التطبيقات تحتوي على معايير امان افضل، قم بأجراء تحليل للمخاطر لاتخاذ القرارات والإجراءات التي تخفف من الضرر على الإصدار الحالي. على سبيل المثال اذا كان من الممكن تعطيل الإصدار السابق من دون الاضرار بواجهة برمجة التطبيقات والانتقال للإصدار الحديث بشكل تدريجي او من الممكن اجبار المستخدمين على الانتقال الى الإصدار الحديث بشكل عاجل. 
+<p dir='rtl' align='right'>▪️
+
 
 ## References
 
