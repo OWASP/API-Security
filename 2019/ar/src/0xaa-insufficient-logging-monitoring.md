@@ -1,38 +1,40 @@
-API10:2019 Insufficient Logging & Monitoring
+<h2 dir='rtl' align='right'> API10:2019 خلل في طريقة تسجيل الاحداث والمراقبة </h2>
 ============================================
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
-| - | - | - |
-| API Specific : Exploitability **2** | Prevalence **3** : Detectability **1** | Technical **2** : Business Specific |
-| Attackers take advantage of lack of logging and monitoring to abuse systems without being noticed. | Without logging and monitoring, or with insufficient logging and monitoring, it is almost impossible to track suspicious activities and respond to them in a timely fashion. | Without visibility over on-going malicious activities, attackers have plenty of time to fully compromise systems. |
+<table dir='rtl' align="right">
+  <tr>
+    <th>عوامل التهديد/ الاستغلال  </th>
+    <th> نقاط الضعف </th>
+    <th> التأثير </th>
+    <tr>
+    <td> خصائص API : قابلية الاستغلال 2 </td>
+    <td> الانتشار : 1 قابلية الاكتشاف : 3  </td>
+    <td> التأثر التقني و تأثر الاعمال: 2 </td>
+  </tr> 
+     <td> يستغل المهاجمون عدم تسجيل الاحداث وحركة مرور البيانات للقيام بأنشطة ضارة. </td>
+    <td> من دون وجود آلية او نظام لتسجيل حركة مرور البيانات او الاحداث سيكون هناك نظام مراقبة غير كفؤ، بل قد يصل في بعض الأحيان الى العملية المستحيلة لتتبع الأنشطة الضارة واتخاذ الاجراء في الوقت المناسب. </td>
+    <td> من غير الحصول على تغطية شاملة لحركة المرور والسجلات سيكون لدى المهاجمين المقدرة على اختراق الأنظمة من غير وجود أي آلية لرصدهم او تتبع تحركاتهم داخل الأنظمة. </td>    
+  </tr>
+  </table>
+<h3 dir='rtl' align='right'>هل أنا معرض لهذه الثغرة؟</h3>
 
-## Is the API Vulnerable?
+<p dir='rtl' align='right'> سيكون النظام لديك معرض اذا كان: 
 
-The API is vulnerable if:
+<p dir='rtl' align='right'>▪️ لا يتم استخراج أي سجلات او لم يتم تعين عمليات التسجيل بالشكل الصحيح او لم يتم جمع السجلات بشكل كافي وناضج.
+<p dir='rtl' align='right'>▪️ عند عدم ضمان السجلات (على سبيل المثال في حال حقن السجلات بسجلات غير صحيح)
+<p dir='rtl' align='right'>▪️ لا يتم مراقبة السجلات بشكل مستمر
+<p dir='rtl' align='right'>▪️ لا يتم مراقبة البنية التحتية لواجهة برمجة التطبيقات API بشكل مستمر.
+    
+<h3 dir='rtl' align='right'> امثلة على سيناريوهات الهجوم: </h3>
 
-* It does not produce any logs, the logging level is not set correctly, or log
-  messages do not include enough detail.
-* Log integrity is not guaranteed (e.g., [Log Injection][1]).
-* Logs are not continuously monitored.
-* API infrastructure is not continuously monitored.
+<h4 dir='rtl' align='right'>السيناريو الاول: </h4>
 
-## Example Attack Scenarios
+<p dir='rtl' align='right'> عن طريق الخطأ تم تسريب احد مفاتيح إدارة المستودعات في احد قواعد البيانات العامة، تم احظار مالك المستودع عن طريق البريد الالكتروني بشأن التسريب المحتمل، ولكن لم يقم مالك المستودع من التجاوب خلال 48 ساعة والتصرف بشأن هذا التسريب، والذي من المحتمل استخدام هذه المفاتيح في عمليات تسريب البيانات، ولكن بسبب عدم كافية موارد تسجيل السجلات والاحداث لا تستطيع الشركة تقييم ومعرفة الأصول والبيانات التي تم الوصول لها او في حال تم تسريبها.
 
-### Scenario #1
+<h4 dir='rtl' align='right'>السيناريو الثاني : </h4>
 
-Access keys of an administrative API were leaked on a public repository. The
-repository owner was notified by email about the potential leak, but took more
-than 48 hours to act upon the incident, and access keys exposure may have
-allowed access to sensitive data. Due to insufficient logging, the company is
-not able to assess what data was accessed by malicious actors.
+<p dir='rtl' align='right'> تم استهداف أحد منصات مشاركة ملفات الفيديو بهجمات كسر كلمات المرور المسربة مسبقاً من أحد الهجمات السابقة. على الرغم من عدد المحاولات تسجيل الدخول غير الصحيحة لم يتم تفعيل التنبيهات خلال فترة الهجوم، وكردة فعل قام المستخدمين بالشكوى من اغلاق الحسابات الخاصة بهم بسبب عدد المحاولات، وبعد عملية تحليل السجلات الخاصة بواجهات برمجة التطبيقات API تبين ان هناك فعلاً هجوم وكان على الشركة اصدار اعلان لجميع المستخدمين بتغير كلمات المرور الخاصة. 
 
-### Scenario #2
-
-A video-sharing platform was hit by a “large-scale” credential stuffing attack.
-Despite failed logins being logged, no alerts were triggered during the timespan
-of the attack. As a reaction to user complaints, API logs were analyzed and the
-attack was detected. The company had to make a public announcement asking users
-to reset their passwords, and report the incident to regulatory authorities.
 
 ## How To Prevent
 
