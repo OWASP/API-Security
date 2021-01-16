@@ -29,77 +29,42 @@
 <p dir='rtl' align='right'>▪️ عدد وحجم البياتات عند رفعها
 <p dir='rtl' align='right'>▪️ عدد الطلبات لكل مستخدم 
 <p dir='rtl' align='right'>▪️ عدد الصفحات التي يتم عرضها في كل طلب و استجابة لصفحة الواحدة.
+
+
+<h3 dir='rtl' align='right'> امثلة على سيناريوهات الهجوم: </h3>
+
+<h4 dir='rtl' align='right'>السيناريو الاول: </h4>
+<p dir='rtl' align='right'> يقوم المهاجم برفع صورة كبيرة الحجم والابعاد عن طريق طلب POST  الى `/api/v1/images` وعند اكتمال عملية الرفع يقوم الخادم باستعراض الصور المتبقية على هيئة ايقونات مصغرة بسبب الابعاد والحجم الذي قد يستغرق الموارد وقد يؤدي الى عدم واجهة برمجة التطبيقات API.
+    
+<h4 dir='rtl' align='right'>السيناريو الثاني : </h4>
+
+<p dir='rtl' align='right'> يقوم التطبيق بعرض المستخدمين بحد اقصى 100 مستخدم في كل صفحة من خلال ارسال طلب الى `/api/users?page=1&size=100`، مما قد يمكن المهاجم من تغير القيمة الى 200000 في عدد أسماء المستخدمين المعروضة في صفحة واحد مما يسبب في حدوث مشكلات في أداة قاعدة البيانات وفي الوقت نفسة تصبح واجهة برمجة التطبيقات غير متاحة وغير قادرة على التعامل مع الطلبات الأخرى ( هجمة حجب الخدمة DOS ) ويمكن استخدام نفس السيناريو لاستعراض الأخطاء او لاستغلال بعض عمليات Integer Overflow  او Buffer Overflow.
+
+<h4 dir='rtl' align='right'>كيف أمنع هذه الثغرة؟ </h4>
+
+<p dir='rtl' align='right'>▪️ يجعل منصة Docker  الامر في غاية البساطة في التحكم في الذاكرة العشوائية او وحدات المعالجة و التخزين 
+<p dir='rtl' align='right'>▪️ ضع معدل محدد لعدد الطلبات التي يقوم بطلبها المستخدم خلال اطار زمني معين
+<p dir='rtl' align='right'>▪️ اخطار المستخدم عند تجازو المعدل المحدد في الاطار الزمني المعين 
+<p dir='rtl' align='right'>▪️ قم باضافة بعض آليات التحقق من جانب الخادم في عمليات الطلبات او حتى التحقق من النصوص او العمليات او الطلبات وتحديداً في تلك العمليات التي تتطلب عدد من السجلات يتم استرجاعها من العميل.
+<p dir='rtl' align='right'>▪️ تحديد وفرض الحد الاعلى لحجم وابعاد الطلبات المرفوعة مثل الحد الاقصى لعدد الجمل او الحد الاعلى لعدد الاسطر
 <p dir='rtl' align='right'>▪️
-<p dir='rtl' align='right'>▪️
-
-* Execution timeouts
-* Max allocable memory
-* Number of file descriptors
-* Number of processes
-* Request payload size (e.g., uploads)
-* Number of requests per client/resource
-* Number of records per page to return in a single request response
-
-## Example Attack Scenarios
-
-### Scenario #1
-
-An attacker uploads a large image by issuing a POST request to `/api/v1/images`.
-When the upload is complete, the API creates multiple thumbnails with different
-sizes. Due to the size of the uploaded image, available memory is exhausted
-during the creation of thumbnails and the API becomes unresponsive.
-
-### Scenario #2
-
-We have an application that contains the users' list on a UI with a limit of
-`200` users per page. The users' list is retrieved from the server using the
-following query: `/api/users?page=1&size=100`. An attacker changes the `size`
-parameter to `200 000`, causing performance issues on the database. Meanwhile,
-the API becomes unresponsive and is unable to handle further requests from this
-or any other clients (aka DoS).
-
-The same scenario might be used to provoke Integer Overflow or Buffer Overflow
-errors.
-
-## How To Prevent
-
-* Docker makes it easy to limit [memory][1], [CPU][2], [number of restarts][3],
-  [file descriptors, and processes][4].
-* Implement a limit on how often a client can call the API within a defined
-  timeframe.
-* Notify the client when the limit is exceeded by providing the limit number and
-  the time at which the limit will be reset.
-* Add proper server-side validation for query string and request body
-  parameters, specifically the one that controls the number of records to be
-  returned in the response.
-* Define and enforce maximum size of data on all incoming parameters and
-  payloads such as maximum length for strings and maximum number of elements in
-  arrays.
 
 
-## References
 
-### OWASP
+<h4 dir='rtl' align='right'>المراجع :  </h4>
 
-* [Blocking Brute Force Attacks][5]
-* [Docker Cheat Sheet - Limit resources (memory, CPU, file descriptors,
-  processes, restarts)][6]
-* [REST Assessment Cheat Sheet][7]
+[<p dir='rtl' align='right'>▪️ Blocking Brute Force Attacks  </p>](https://www.owasp.org/index.php/Blocking_Brute_Force_Attacks)
 
-### External
+[<p dir='rtl' align='right'>▪️ Docker Cheat Sheet - Limit resources (memory, CPU, file descriptors, processes, restarts  </p>](https://github.com/OWASP/CheatSheetSeries/blob/3a8134d792528a775142471b1cb14433b4fda3fb/cheatsheets/Docker_Security_Cheat_Sheet.md#rule-7---limit-resources-memory-cpu-file-descriptors-processes-restarts)
 
-* [CWE-307: Improper Restriction of Excessive Authentication Attempts][8]
-* [CWE-770: Allocation of Resources Without Limits or Throttling][9]
-* “_Rate Limiting (Throttling)_” - [Security Strategies for Microservices-based
-  Application Systems][10], NIST
+[<p dir='rtl' align='right'>▪️ REST Assessment Cheat Sheet  </p>](https://github.com/OWASP/CheatSheetSeries/blob/3a8134d792528a775142471b1cb14433b4fda3fb/cheatsheets/REST_Assessment_Cheat_Sheet.md)
 
-[1]: https://docs.docker.com/config/containers/resource_constraints/#memory
-[2]: https://docs.docker.com/config/containers/resource_constraints/#cpu
-[3]: https://docs.docker.com/engine/reference/commandline/run/#restart-policies---restart
-[4]: https://docs.docker.com/engine/reference/commandline/run/#set-ulimits-in-container---ulimit
-[5]: https://www.owasp.org/index.php/Blocking_Brute_Force_Attacks
-[6]: https://github.com/OWASP/CheatSheetSeries/blob/3a8134d792528a775142471b1cb14433b4fda3fb/cheatsheets/Docker_Security_Cheat_Sheet.md#rule-7---limit-resources-memory-cpu-file-descriptors-processes-restarts
-[7]: https://github.com/OWASP/CheatSheetSeries/blob/3a8134d792528a775142471b1cb14433b4fda3fb/cheatsheets/REST_Assessment_Cheat_Sheet.md
-[8]: https://cwe.mitre.org/data/definitions/307.html
-[9]: https://cwe.mitre.org/data/definitions/770.html
-[10]: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-204-draft.pdf
+<h4 dir='rtl' align='right'>المصادر الخارجية :   </h4>
+
+[<p dir='rtl' align='right'>▪️ CWE-307: Improper Restriction of Excessive Authentication Attempts  </p>](https://cwe.mitre.org/data/definitions/307.html)
+
+[<p dir='rtl' align='right'>▪️ CWE-770: Allocation of Resources Without Limits or Throttling  </p>](https://cwe.mitre.org/data/definitions/770.html)
+
+[<p dir='rtl' align='right'>▪️ “_Rate Limiting (Throttling)_” - [Security Strategies for Microservices-based
+  Application Systems </p>](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-204-draft.pdf)
+
