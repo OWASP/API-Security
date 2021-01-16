@@ -38,3 +38,4 @@
 * thomaskonrad
 * xycloops123
 
+<p dir='rtl' align='right'> وكذلك المترجمين باللغة العربية وهم : 
