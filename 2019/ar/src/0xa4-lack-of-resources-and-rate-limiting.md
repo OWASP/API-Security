@@ -65,5 +65,5 @@
 
 [<p dir='rtl' align='right'>▪️ CWE-770: Allocation of Resources Without Limits or Throttling  </p>](https://cwe.mitre.org/data/definitions/770.html)
 
-[<p dir='rtl' align='right'>▪️ “_Rate Limiting (Throttling)_” - [Security Strategies for Microservices-based Application Systems </p>](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-204-draft.pdf)
+[<p dir='rtl' align='right'>▪️ “_Rate Limiting (Throttling)_” - Security Strategies for Microservices-based Application Systems </p>](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-204-draft.pdf)
 
