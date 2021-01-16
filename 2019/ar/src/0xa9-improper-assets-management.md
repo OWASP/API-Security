@@ -59,12 +59,11 @@
 <p dir='rtl' align='right'>▪️
 
 
-## References
 
-### External
+<h4 dir='rtl' align='right'>المراجع :  </h4>
 
-* [CWE-1059: Incomplete Documentation][1]
-* [OpenAPI Initiative][2]
+[<p dir='rtl' align='right'>▪️ CWE-1059: Incomplete Documentation </p>](https://cwe.mitre.org/data/definitions/1059.html)
+[<p dir='rtl' align='right'>▪️ OpenAPI Initiative </p>](https://www.openapis.org/)
 
-[1]: https://cwe.mitre.org/data/definitions/1059.html
-[2]: https://www.openapis.org/
+<h4 dir='rtl' align='right'>المصادر الخارجية : </h4>
+
