@@ -48,7 +48,7 @@
 <p dir='rtl' align='right'>▪️ اقرأ عن آليات المصادقة الخاصة بك. تأكد من أنك تفهم ماذا وكيف يتم استخدامها ويجب التنويه على ان برتوكول. OAuth ليس للمصادقة ، ولا مفاتيح واجهة برمجة التطبيقات API تستخدم للمصادقة.
 <p dir='rtl' align='right'>▪️ لا تقم بختراع واعادة صناعة آليات مصادقة جديدة بل اتبع افضل الامتثالات والمعايير المتعارف عليها.
 <p dir='rtl' align='right'>▪️ يجب التعامل مع مصادر البيانات لاستعادة كلمة المرور ونسيت كلمة المرور بشكل صحيح وذلك من خلال وضع ضوابط و آليات للحد من هجمات كسر كلمات المرور والاستفادة من وسائل الحماية كتعطيل الحساب بعد عدد محاولات غير ناجحة من عمليات تسجيل الدخول.
-[<p dir='rtl' align='right'>▪️ قم باستخدام نموذج OWASP Authentication Cheatsheet </p>]( https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
+[<p dir='rtl' align='right'>▪️ قم باستخدام نموذج OWASP Authentication Cheatsheet </p>](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
 <p dir='rtl' align='right'>▪️ في حال توفر التحقق الثنائي قم باستخدامه.
 <p dir='rtl' align='right'>▪️ قم بتنصيب التقنيات والطرق  والاليات لرصد هجمات كسر كلمات المرور او محاولة استغلال الحسابات المسربة وقم بوضع آلية محددة لتقليل معدل المصادقة المستخدمة على API.
 <p dir='rtl' align='right'>▪️ قم باستخدام آلية ايقاف الحسابات او Captcha وذلك لتقليل ومنع هجمات كسر كلمات المرور وقم بتنصيب تقنية عدم اتاحة استخدام كلمات المرور الضعيفة.
@@ -59,7 +59,7 @@
 
 <h4 dir='rtl' align='right'>المراجع :  </h4>
 
-[<p dir='rtl' align='right'>▪️ OWASP Key Management Cheat Sheet  </p>]https://www.owasp.org/index.php/Key_Management_Cheat_Sheet)
+[<p dir='rtl' align='right'>▪️ OWASP Key Management Cheat Sheet  </p>](https://www.owasp.org/index.php/Key_Management_Cheat_Sheet)
 [<p dir='rtl' align='right'>▪️ OWASP Authentication Cheatsheet </p>](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
 [<p dir='rtl' align='right'>▪️ Credential Stuffing </p>](https://www.owasp.org/index.php/Credential_stuffing)
 
