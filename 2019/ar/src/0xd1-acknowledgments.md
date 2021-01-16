@@ -1,4 +1,4 @@
-<h2 dir='rtl' align='right'>الاقرار  </h2>
+<h2 dir='rtl' align='right'>الإقرار  </h2>
 
 <p dir='rtl' align='right'> المساهمين في صناعة هذا المحتوى 
 
