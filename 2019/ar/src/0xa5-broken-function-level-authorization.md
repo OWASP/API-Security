@@ -27,12 +27,6 @@
 
 <p dir='rtl' align='right'> لا تقم بوضع وتقسيم الصلاحيات ما بين الصلاحيات المعتادة والصلاحيات الادارية من خلال مسار URL.
 <p dir='rtl' align='right'>و من الشائع لدى المطورين عرض مصادر البيانات الإدارية ضمن مسار محدد مثل API/Admin ومن الشائع كذلك استخدام مصادر واحدة للمستخدم العادي وكذلك للمدراء مثل api/users.
-    
-    
-<p dir='rtl' align='right'>▪️
-<p dir='rtl' align='right'>▪️
-<p dir='rtl' align='right'>▪️
-
 
 <h3 dir='rtl' align='right'> امثلة على سيناريوهات الهجوم: </h3>
 
@@ -52,45 +46,27 @@ POST /api/invites/new
 
 <h4 dir='rtl' align='right'>السيناريو الثاني : </h4>
 
-<p dir='rtl' align='right'>
+<p dir='rtl' align='right'> تحتوي واجهة برمجة التطبيقات API على صلاحيات وصول الى مصادر البيانات والمحددة فقط لمدراء النظام من خلال الطلب باستخدام GET  للمسار التالي /api/admin/v1/users/all حيث ان مصدر البيانات عند ارجاع البيانات لا بتأكد من صلاحيات من قام بطلبها او الصلاحيات المخولة له مما يمكن المهاجم من تخمين المسارات الخاصة بمصادر البيانات لاستعراض بيانات حساسة غير مصرح له بالوصول لها.
 
-An API contains an endpoint that should be exposed only to administrators -
-`GET /api/admin/v1/users/all`. This endpoint returns the details of all the
-users of the application and does not implement function-level authorization
-checks. An attacker who learned the API structure takes an educated guess and
-manages to access this endpoint, which exposes sensitive details of the users of
-the application.
+<h4 dir='rtl' align='right'>كيف أمنع هذه الثغرة؟ </h4>
 
-## How To Prevent
+<p dir='rtl' align='right'>يجب أن يحتوي التطبيق الخاص بك على وحدة تفويض متسقة وسهلة التحليل يتم استدعاؤها وظائف تطبيقك.  في كثير من الأحيان يتم توفير هذه الحماية بواسطة مكون أو أكثر خارج الاكواد البرمجية الخاصة بالتطبيق.
 
-Your application should have a consistent and easy to analyze authorization
-module that is invoked from all your business functions. Frequently, such
-protection is provided by one or more components external to the application
-code.
+<p dir='rtl' align='right'>▪️ يجب منع الوصول لجميع المصادر بشكل افتراضي وبعد ذلك يتم السماح والاستثناء للمصادر لكل مصدر على حدة ولكل صلاحية بشكل مستقل.
+<p dir='rtl' align='right'>▪️ قم بمراجعة صلاحيات المصادقة والتفويض الخاص بالآليات العمل، مع مراعاة منطق التسلسل الهرمي وصلاحيات المجموعات والصلاحيات على مستوى المستخدمين.
+<p dir='rtl' align='right'>▪️ التأكد من ان صلاحيات التحكم الادارية مبنية بشكل سليم ومرتبطة بصلاحيات المصادقة والتفويض لكل مجموعة او مستخدم او صلاحية.
+<p dir='rtl' align='right'>▪️ التأكد من ان الاوامر والصلاحيات الادارية مبنية بشكل محوكم وهناك وحدة تحكم تقوم بفحص الصلاحيات والتفويض لكل مستخدم بناء على المجموعة التي تم تعينه بداخلها.
 
-* The enforcement mechanism(s) should deny all access by default, requiring
-  explicit grants to specific roles for access to every function.
-* Review your API endpoints against function level authorization flaws, while
-  keeping in mind the business logic of the application and groups hierarchy.
-* Make sure that all of your administrative controllers inherit from an
-  administrative abstract controller that implements authorization checks based
-  on the user’s group/role.
-* Make sure that administrative functions inside a regular controller implements
-  authorization checks based on the user’s group and role.
 
-## References
 
-### OWASP
+<h4 dir='rtl' align='right'>المراجع :  </h4>
 
-* [OWASP Article on Forced Browsing][1]
-* [OWASP Top 10 2013-A7-Missing Function Level Access Control][2]
-* [OWASP Development Guide: Chapter on Authorization][3]
+[<p dir='rtl' align='right'>▪️OWASP Article on Forced Browsing</p>](https://www.owasp.org/index.php/Forced_browsing)
 
-### External
+[<p dir='rtl' align='right'>▪️ OWASP Top 10 2013-A7-Missing Function Level Access Control </p>](https://www.owasp.org/index.php/Top_10_2013-A7-Missing_Function_Level_Access_Control)
 
-* [CWE-285: Improper Authorization][4]
+[<p dir='rtl' align='right'>▪️ OWASP Development Guide: Chapter on Authorization </p>](https://www.owasp.org/index.php/Category:Access_Control)
 
-[1]: https://www.owasp.org/index.php/Forced_browsing
-[2]: https://www.owasp.org/index.php/Top_10_2013-A7-Missing_Function_Level_Access_Control
-[3]: https://www.owasp.org/index.php/Category:Access_Control
-[4]: https://cwe.mitre.org/data/definitions/285.html
+<h4 dir='rtl' align='right'>المصادر الخارجية :   </h4>
+
+[<p dir='rtl' align='right'>▪️CWE-285: Improper Authorization </p>](https://cwe.mitre.org/data/definitions/285.html)
