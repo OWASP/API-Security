@@ -43,15 +43,13 @@ system(cmd);
 $ curl -k "https://${deviceIP}:4567/api/CONFIG/restore" -F 'appid=$(/etc/pod/power_down.sh)'
 ```
 
-### Scenario #2
+<h4 dir='rtl' align='right'>السيناريو الثاني : </h4>
 
-We have an application with basic CRUD functionality for operations with
-bookings. An attacker managed to identify that NoSQL injection might be possible
-through `bookingId` query string parameter in the delete booking request. This
-is how the request looks like: `DELETE /api/bookings?bookingId=678`.
 
-The API server uses the following function to handle delete requests:
+<p dir='rtl' align='right'> تطبيق للحجوزات قائم على وظائف CRUD، حيث قام المهاجم بالعديد من محاولات الفحص التي مكنته من معرفة اللغة المستخدمة في المفسر وهي NoSQL والتي استطاع من خلالها حقن المعرف الفريد للحجوزات bookingid باوامر من اجل مسح وحذف الحجوزات من خلال استخدام المسار التالي: DELETE /api/bookings?bookingId=678
 
+<p dir='rtl' align='right'> حيث قام المهاجم بإرسال الطلب من خلال واجهة برمجة التطبيقات API لتعامل مع طلب الحذف الامر التالي:
+    
 ```javascript
 router.delete('/bookings', async function (req, res, next) {
   try {
@@ -63,49 +61,32 @@ router.delete('/bookings', async function (req, res, next) {
 });
 ```
 
-<h4 dir='rtl' align='right'>السيناريو الثاني : </h4>
-
-<p dir='rtl' align='right'> تطبيق للحجوزات قائم على وظائف CRUD، حيث قام المهاجم بالعديد من محاولات الفحص التي مكنته من معرفة اللغة المستخدمة في المفسر وهي NoSQL والتي استطاع من خلالها حقن المعرف الفريد للحجوزات bookingid باوامر من اجل مسح وحذف الحجوزات من خلال استخدام المسار التالي: DELETE /api/bookings?bookingId=678
-<p dir='rtl' align='right'> حيث قام المهاجم بإرسال الطلب من خلال واجهة برمجة التطبيقات API لتعامل مع طلب الحذف الامر التالي:
-    
+<p dir='rtl' align='right'> قام المهاجم باعتراض الطلبات الخاصة بالمعرف الفريد bookinigid  وقام بتغير طريقة الاستعلام والتي أدت الى حذف حجز مستخدم اخر. 
 ```
 DELETE /api/bookings?bookingId[$ne]=678
 ```
 
-## How To Prevent
+<h4 dir='rtl' align='right'>كيف أمنع هذه الثغرة؟ </h4>
 
-Preventing injection requires keeping data separate from commands and queries.
+<p dir='rtl' align='right'> لمنع عمليات الحقن انت بحاجة الى فصل الأوامر والتعليمات البرمجية عن الاستعلامات بشكل صحيح و امن.
 
-* Perform data validation using a single, trustworthy, and actively maintained
-  library.
-* Validate, filter, and sanitize all client-provided data, or other data coming
-  from integrated systems.
-* Special characters should be escaped using the specific syntax for the target
-  interpreter.
-* Prefer a safe API that provides a parameterized interface.
-* Always limit the number of returned records to prevent mass disclosure in case
-  of injection.
-* Validate incoming data using sufficient filters to only allow valid values for
-  each input parameter.
-* Define data types and strict patterns for all string parameters.
-
+<p dir='rtl' align='right'>▪️ قم بإجراء التحقق من صحة البيانات المدخلة باستخدام مكتبة موحدة وامنه وموثوقة  ويتم صيانتها بشكل دوري.
+<p dir='rtl' align='right'>▪️ التحقق من صحة جميع البيانات المقدمة من المستخدم أو غيرها من البيانات الواردة من الأنظمة المتكاملة وتصفيتها.
+<p dir='rtl' align='right'>▪️ يجب تخطي الأحرف الخاصة باستخدام الصيغة المحددة المفسر المستهدف.
+<p dir='rtl' align='right'>▪️ قم بتوفير بيئة امنه لواجهة برمجة التطبيقات API ذات استعلامات واضحة.
+<p dir='rtl' align='right'>▪️ حدد دائمًا عدد السجلات التي يتم إرجاعها لمنع تسريب البيانات للجميع في حالة نجاح عملية الحقن.
+<p dir='rtl' align='right'>▪️ تحقق من صحة البيانات الواردة باستخدام عوامل تصفية كافية للسماح فقط بالقيم الصالحة لكل استعلام تم إدخاله.
+<p dir='rtl' align='right'>▪️ تعريف بشكل واضح ومحدد ماهي الانماط و انواع البيانات المستخدمة في الاستعلامات 
 ## References
 
-### OWASP
+<h4 dir='rtl' align='right'>المراجع :  </h4>
 
-* [OWASP Injection Flaws][1]
-* [SQL Injection][2]
-* [NoSQL Injection Fun with Objects and Arrays][3]
-* [Command Injection][4]
+<h4 dir='rtl' align='right'>المصادر الخارجية :   </h4>
 
-### External
+[<p dir='rtl' align='right'>▪️ OWASP Injection Flaws  </p>](https://www.owasp.org/index.php/Injection_Flaws)
+[<p dir='rtl' align='right'>▪️ SQL Injection </p>](https://www.owasp.org/index.php/SQL_Injection)
+[<p dir='rtl' align='right'>▪️ NoSQL Injection Fun with Objects and Arrays </p>](https://www.owasp.org/images/e/ed/GOD16-NOSQL.pdf)
+[<p dir='rtl' align='right'>▪️ Command Injection </p>]( https://www.owasp.org/index.php/Command_Injection)
 
-* [CWE-77: Command Injection][5]
-* [CWE-89: SQL Injection][6]
-
-[1]: https://www.owasp.org/index.php/Injection_Flaws
-[2]: https://www.owasp.org/index.php/SQL_Injection
-[3]: https://www.owasp.org/images/e/ed/GOD16-NOSQL.pdf
-[4]: https://www.owasp.org/index.php/Command_Injection
-[5]: https://cwe.mitre.org/data/definitions/77.html
-[6]: https://cwe.mitre.org/data/definitions/89.html
+[<p dir='rtl' align='right'>▪️ CWE-77: Command Injection </p>](https://cwe.mitre.org/data/definitions/77.html)
+[<p dir='rtl' align='right'>▪️ CWE-89: SQL Injection </p>](https://cwe.mitre.org/data/definitions/89.html)
