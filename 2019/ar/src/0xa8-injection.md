@@ -62,6 +62,7 @@ router.delete('/bookings', async function (req, res, next) {
 ```
 
 <p dir='rtl' align='right'> قام المهاجم باعتراض الطلبات الخاصة بالمعرف الفريد bookinigid  وقام بتغير طريقة الاستعلام والتي أدت الى حذف حجز مستخدم اخر. 
+
 ```
 DELETE /api/bookings?bookingId[$ne]=678
 ```
