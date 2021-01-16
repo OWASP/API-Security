@@ -43,30 +43,28 @@
 
 <h4 dir='rtl' align='right'>كيف أمنع هذه الثغرة؟ </h4>
 
-* Make sure you know all the possible flows to authenticate to the API (mobile/
-  web/deep links that implement one-click authentication/etc.)
-* Ask your engineers what flows you missed.
-* Read about your authentication mechanisms. Make sure you understand what and
-  how they are used. OAuth is not authentication, and neither is API keys.
-* Don't reinvent the wheel in authentication, token generation, password
-  storage. Use the standards.
-* Credential recovery/forget password endpoints should be treated as login
-  endpoints in terms of brute force, rate limiting, and lockout protections.
-* Use the [OWASP Authentication Cheatsheet][3].
-* Where possible, implement multi-factor authentication.
-* Implement anti brute force mechanisms to mitigate credential stuffing,
-  dictionary attack, and brute force attacks on your authentication endpoints.
-  This mechanism should be stricter than the regular rate limiting mechanism on
-  your API.
-* Implement [account lockout][4] / captcha mechanism to prevent brute force
-  against specific users. Implement weak-password checks.
-* API keys should not be used for user authentication, but for [client app/
-  project authentication][5].
+<p dir='rtl' align='right'>▪️ يجب ان تكون على دراية بجميع طرق و آليات المصادقة التي تتم من خلال ( الهواتف /تطبيقات الويب /المصادقة الواحدة/إلخ)
+<p dir='rtl' align='right'>▪️ قم بالتعاون مع مهندس التطبيقات لمعرفة ماهي الآليات المفقودة عند عمليات المصادقة 
+<p dir='rtl' align='right'>▪️ اقرأ عن آليات المصادقة الخاصة بك. تأكد من أنك تفهم ماذا وكيف يتم استخدامها ويجب التنويه على ان برتوكول. OAuth ليس للمصادقة ، ولا مفاتيح واجهة برمجة التطبيقات API تستخدم للمصادقة.
+<p dir='rtl' align='right'>▪️ لا تقم بختراع واعادة صناعة آليات مصادقة جديدة بل اتبع افضل الامتثالات والمعايير المتعارف عليها.
+<p dir='rtl' align='right'>▪️ يجب التعامل مع مصادر البيانات لاستعادة كلمة المرور ونسيت كلمة المرور بشكل صحيح وذلك من خلال وضع ضوابط و آليات للحد من هجمات كسر كلمات المرور والاستفادة من وسائل الحماية كتعطيل الحساب بعد عدد محاولات غير ناجحة من عمليات تسجيل الدخول.
+[<p dir='rtl' align='right'>▪️ قم باستخدام نموذج OWASP Authentication Cheatsheet </p>]( https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
+<p dir='rtl' align='right'>▪️ في حال توفر التحقق الثنائي قم باستخدامه.
+<p dir='rtl' align='right'>▪️ قم بتنصيب التقنيات والطرق  والاليات لرصد هجمات كسر كلمات المرور او محاولة استغلال الحسابات المسربة وقم بوضع آلية محددة لتقليل معدل المصادقة المستخدمة على API.
+<p dir='rtl' align='right'>▪️ قم باستخدام آلية ايقاف الحسابات او Captcha وذلك لتقليل ومنع هجمات كسر كلمات المرور وقم بتنصيب تقنية عدم اتاحة استخدام كلمات المرور الضعيفة.
+<p dir='rtl' align='right'>▪️ لا ينبغي استخدام API كوسيلة للمصادقة للمستخدم بل يستخدم على سبيل المثال لتطبيقات والمشاريع.
+    
 
-## References
 
-### OWASP
 
+<h4 dir='rtl' align='right'>المراجع :  </h4>
+[<p dir='rtl' align='right'>▪️ OWASP Key Management Cheat Sheet  </p>]https://www.owasp.org/index.php/Key_Management_Cheat_Sheet)
+[<p dir='rtl' align='right'>▪️ OWASP Authentication Cheatsheet </p>](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
+[<p dir='rtl' align='right'>▪️ Credential Stuffing </p>](https://www.owasp.org/index.php/Credential_stuffing)
+
+<h4 dir='rtl' align='right'>المصادر الخارجية :   </h4>
+
+[<p dir='rtl' align='right'>▪️ CWE-798: Use of Hard-coded Credentials </p>]( https://cwe.mitre.org/data/definitions/798.html)
 * [OWASP Key Management Cheat Sheet][6]
 * [OWASP Authentication Cheatsheet][3]
 * [Credential Stuffing][1]
