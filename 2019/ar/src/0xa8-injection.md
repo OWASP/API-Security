@@ -1,30 +1,35 @@
-API8:2019 Injection
-===================
+<h2 dir='rtl' align='right'> API8:2019 الحقن </h2>
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
-| - | - | - |
-| API Specific : Exploitability **3** | Prevalence **2** : Detectability **3** | Technical **3** : Business Specific |
-| Attackers will feed the API with malicious data through whatever injection vectors are available (e.g., direct input, parameters, integrated services, etc.), expecting it to be sent to an interpreter. | Injection flaws are very common and are often found in SQL, LDAP, or NoSQL queries, OS commands, XML parsers, and ORM. These flaws are easy to discover when reviewing the source code. Attackers can use scanners and fuzzers. | Injection can lead to information disclosure and data loss. It may also lead to DoS, or complete host takeover. |
 
-## Is the API Vulnerable?
+<table dir='rtl' align="right">
+  <tr>
+    <th>عوامل التهديد/ الاستغلال  </th>
+    <th> نقاط الضعف </th>
+    <th> التأثير </th>
+    <tr>
+    <td> خصائص API : قابلية الاستغلال 3 </td>
+    <td> الانتشار : 2 قابلية الاكتشاف : 3  </td>
+    <td> التأثر التقني و تأثر الاعمال: 3 </td>
+  </tr> 
+    <td>يقوم المهاجمون بإرسال بيانات ضارة من خلال واجهة برمجة التطبيقاتAPI  وذلك بهدف حقنها وارسالها الى المفسر ومن صور طرق ادخل البيانات ( الادخال المباشر، التعليمات البرمجية، طرق ربط الخدمات ..الخ) متوقعين ارسالها الى المفسر. </td>
+    <td>  تعد أساليب الحقن أسلوب شائع لدى المهاجمين وغالباً ما توجد استعلامات جاهزة لمختلف أنواع اللغات SQL,LDAP,NoSQL ,OS Command ,XML parsers. حيث انه من السهل الكشف عن الثغرات عند قراءة الشفرة المصدرية للاكواد البرمجية باستخدامات عمليات المسح الالية او اليدوية.</td>
+    <td>  يمكن ان يؤدي الحقن الى الكشف عن المعلومات الغير مصرح به او مسح وفقدان البيانات وفي بعض الأحيان قد يودي الى هجمات حجب الخدمة DOS، او اختراق الكامل لنظام.</td>    
+  </tr>
+  </table>        
 
-The API is vulnerable to injection flaws if:
+<h3 dir='rtl' align='right'>هل أنا معرض لهذه الثغرة؟</h3>
 
-* Client-supplied data is not validated, filtered, or sanitized by the API.
-* Client-supplied data is directly used or concatenated to SQL/NoSQL/LDAP
-  queries, OS commands, XML parsers, and Object Relational Mapping (ORM)/Object
-  Document Mapper (ODM).
-* Data coming from external systems (e.g., integrated systems) is not validated,
-  filtered, or sanitized by the API.
+<p dir='rtl' align='right'> قد يكون واجهة برمجة التطبيقات API معرض للاستغلال بمثل هذه الهجمات عند : 
 
-## Example Attack Scenarios
+<p dir='rtl' align='right'>▪️  لا يتم تصفية البيانات او التحقق منها في حال كانت مقدمة من المستخدمين من طريق واجهة برمجة التطبيقات
+<p dir='rtl' align='right'>▪️ يتم استخدام البيانات بشكل مباشر مع SQL/NoSQL/LDAP queries, OS commands, XML parsers.
+<p dir='rtl' align='right'>▪️ لا يتم التحقق من صحة البيانات الواردة من أنظمة خارجية مثل (الأنظمة المرتبطة بالخادم) او تصفيتها او التحقق منها  قبل واجهة برمجة التطبيقات API قبل عملية استخدامها 
+    
+<h3 dir='rtl' align='right'> امثلة على سيناريوهات الهجوم: </h3>
 
-### Scenario #1
+<h4 dir='rtl' align='right'>السيناريو الاول: </h4>
 
-Firmware of a parental control device provides the endpoint
-`/api/CONFIG/restore` which expects an appId to be sent as a multipart
-parameter. Using a decompiler, an attacker finds out that the appId is passed
-directly into a system call without any sanitization:
+<p dir='rtl' align='right'> يتم استخدام الكاميرات للمراقبة في المنازل مصدر بيانات للإعدادات في المسار التالي /api/CONFIG/restore و من المتوقع ان يتم استقبال معرف فريد في أجزاء متعددة، فباستخدام برنامج فك وتحويل الشفرات البرمجية(decompile)، تمكن المهاجم من إيجاد طريقة لتعامل مع النظام بشكل مباشر ومن غير عوامل التصفية المقترحة.
 
 ```c
 snprintf(cmd, 128, "%srestore_backup.sh /tmp/postfile.bin %s %d",
@@ -32,8 +37,7 @@ snprintf(cmd, 128, "%srestore_backup.sh /tmp/postfile.bin %s %d",
 system(cmd);
 ```
 
-The following command allows the attacker to shut down any device with the same
-vulnerable firmware:
+<p dir='rtl' align='right'> يسمح الامر التالي للمهاجم بإغلاق أي جهاز مصاب بتلك الثغرة البرمجية
 
 ```
 $ curl -k "https://${deviceIP}:4567/api/CONFIG/restore" -F 'appid=$(/etc/pod/power_down.sh)'
@@ -59,10 +63,11 @@ router.delete('/bookings', async function (req, res, next) {
 });
 ```
 
-The attacker intercepted the request and changed `bookingId` query string
-parameter as shown below. In this case, the attacker managed to delete another
-user's booking:
+<h4 dir='rtl' align='right'>السيناريو الثاني : </h4>
 
+<p dir='rtl' align='right'> تطبيق للحجوزات قائم على وظائف CRUD، حيث قام المهاجم بالعديد من محاولات الفحص التي مكنته من معرفة اللغة المستخدمة في المفسر وهي NoSQL والتي استطاع من خلالها حقن المعرف الفريد للحجوزات bookingid باوامر من اجل مسح وحذف الحجوزات من خلال استخدام المسار التالي: DELETE /api/bookings?bookingId=678
+<p dir='rtl' align='right'> حيث قام المهاجم بإرسال الطلب من خلال واجهة برمجة التطبيقات API لتعامل مع طلب الحذف الامر التالي:
+    
 ```
 DELETE /api/bookings?bookingId[$ne]=678
 ```
