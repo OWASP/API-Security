@@ -1,30 +1,37 @@
-API9:2019 Improper Assets Management
-====================================
+<h2 dir='rtl' align='right'> API9:2019 خلل في ادارة الاصول </h2>
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
-| - | - | - |
-| API Specific : Exploitability **3** | Prevalence **3** : Detectability **2** | Technical **2** : Business Specific |
-| Old API versions are usually unpatched and are an easy way to compromise systems without having to fight state-of-the-art security mechanisms, which might be in place to protect the most recent API versions. | Outdated documentation makes it more difficult to find and/or fix vulnerabilities. Lack of assets inventory and retire strategies leads to running unpatched systems, resulting in leakage of sensitive data. It’s common to find unnecessarily exposed API hosts because of modern concepts like microservices, which make applications easy to deploy and independent (e.g., cloud computing, k8s). | Attackers may gain access to sensitive data, or even takeover the server through old, unpatched API versions connected to the same database. |
+<table dir='rtl' align="right">
+  <tr>
+    <th>عوامل التهديد/ الاستغلال  </th>
+    <th> نقاط الضعف </th>
+    <th> التأثير </th>
+    <tr>
+    <td> خصائص API : قابلية الاستغلال </td>
+    <td> الانتشار : 3 قابلية الاكتشاف : 2  </td>
+    <td> التأثر التقني و تأثر الاعمال: 2 </td>
+  </tr> 
+     <td> ان استخدام واجهة برمجة التطبيقات القديمة و الغير محدثة هو اسهل طريقة تسبب اختراق الأنظمة لديك دون الحاجة والجهد الذي قد يبذلها المهاجم حتى وان كانت أدوات ومكونات الأمان تم ايجادها بشكل صحيح وسليم، ولكن جميع تلك الأدوات والمكونات وجدت للأنظمة الحديثة و المتطورة من واجهة برمجة التطبيقات API.</td>
+    <td> ان عمليات التوثيق الغير محدثة تجعل من الصعب تتبع واصلاح الثغرات. وكذلك عدم جرد الأصول التقنية يؤدي بشكل مباشر الى عدم ترقيع الأنظمة من الثغرات الأمنية، والذي قد يؤدي الى تسريب للبيانات. وكما انه من الشائع رصد واجهة برمجة التطبيقات API متاحة على الانترنت دون الحاجة لها بسبب الأنظمة والمفاهيم الحديثة في الخدمات المصفرة والتي تجعل من التطبيقات سهلة النشر ومستقلة على سبيل المثال (الحوسبة السحابية) </td>
+    <td> قد يتمكن المهاجمون من الوصول الى بيانات حساسة غير مصرح لهم بالوصول لها، او حتى اختراق الخادم من خلال استغلال احد الثغرات الغير مرقعه لخدمات واجهة برمجة التطبيقات API والتي تستخدم للاتصال بقاعدة البيانات. </td>    
+  </tr>
+  </table>        
 
-## Is the API Vulnerable?
 
-The API might be vulnerable if:
+<h3 dir='rtl' align='right'>هل أنا معرض لهذه الثغرة؟</h3>
 
-* The purpose of an API host is unclear, and there are no explicit answers to
-  the following questions:
-  * Which environment is the API running in (e.g., production, staging, test,
-    development)?
-  * Who should have network access to the API (e.g., public, internal, partners)?
-  * Which API version is running?
-  * What data is gathered and processed by the API (e.g., PII)?
-  * What's the data flow?
-* There is no documentation, or the existing documentation is not updated.
-* There is no retirement plan for each API version.
-* Hosts inventory is missing or outdated.
-* Integrated services inventory, either first- or third-party, is missing or
-  outdated.
-* Old or previous API versions are running unpatched.
+<p dir='rtl' align='right'> قد يكون معرض واجهة برمجة التطبيقات لمثل هذه الثغره في حالة : 
 
+<p dir='rtl' align='right'>▪️ الغرض من استخدام واجهة برمجة التطبيقات غير واضح والذي قد يقود للأسئلة التالية: 
+<p dir='rtl' align='right'> -  ما هي البيئة التي تعمل فيها واجهة برمجة التطبيقات (على سبيل المثال ، الإنتاج ، التدريج ، الاختبار ، التطوير)؟
+<p dir='rtl' align='right'> - من المخول للوصول الى الشبكة الخاصة بواجهة برمجة التطبيقات (على سبيل المثال ، عام ، داخلي ، شركاء)؟
+<p dir='rtl' align='right'> - ما هو إصدار API  المستخدم ؟ 
+<p dir='rtl' align='right'> - ماهي البيانات التي يتم جمعها بواسطة API؟ وهل هي بيانات شخصية؟
+<p dir='rtl' align='right'> - ماهي آلية وسير العمليات ؟
+<p dir='rtl' align='right'>▪️    
+<p dir='rtl' align='right'>▪️
+<p dir='rtl' align='right'>▪️
+<p dir='rtl' align='right'>▪️    
+    
 ## Example Attack Scenarios
 
 ### Scenario #1
