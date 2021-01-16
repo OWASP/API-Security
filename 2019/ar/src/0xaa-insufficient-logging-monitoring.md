@@ -1,5 +1,5 @@
 <h2 dir='rtl' align='right'> API10:2019 خلل في طريقة تسجيل الاحداث والمراقبة </h2>
-============================================
+
 
 <table dir='rtl' align="right">
   <tr>
@@ -36,39 +36,26 @@
 <p dir='rtl' align='right'> تم استهداف أحد منصات مشاركة ملفات الفيديو بهجمات كسر كلمات المرور المسربة مسبقاً من أحد الهجمات السابقة. على الرغم من عدد المحاولات تسجيل الدخول غير الصحيحة لم يتم تفعيل التنبيهات خلال فترة الهجوم، وكردة فعل قام المستخدمين بالشكوى من اغلاق الحسابات الخاصة بهم بسبب عدد المحاولات، وبعد عملية تحليل السجلات الخاصة بواجهات برمجة التطبيقات API تبين ان هناك فعلاً هجوم وكان على الشركة اصدار اعلان لجميع المستخدمين بتغير كلمات المرور الخاصة. 
 
 
-## How To Prevent
+<h4 dir='rtl' align='right'>كيف أمنع هذه الثغرة؟ </h4>
 
-* Log all failed authentication attempts, denied access, and input validation
-  errors.
-* Logs should be written using a format suited to be consumed by a log
-  management solution, and should include enough detail to identify the
-  malicious actor.
-* Logs should be handled as sensitive data, and their integrity should be
-  guaranteed at rest and transit.
-* Configure a monitoring system to continuously monitor the infrastructure,
-  network, and the API functioning.
-* Use a Security Information and Event Management (SIEM) system to aggregate and
-  manage logs from all components of the API stack and hosts.
-* Configure custom dashboards and alerts, enabling suspicious activities to be
-  detected and responded to earlier.
+<p dir='rtl' align='right'>▪️ قم بتسجيل جميع محاولات المصادقة الفاشلة او محاولات رفض الوصول للمجلدات او الامتدادات وكذلك جميع المدخلات المحجوبة.
+<p dir='rtl' align='right'>▪️ يجب كتابة السجلات بشكل متناسق لاستخدامه في عمليات إدارة السجلات ويجب ان تتضمن كافة التفاصيل التي تتيح للمحلل معرفة الأنشطة الضارة ومن قام بها.
+<p dir='rtl' align='right'>▪️ يجب التعامل مع السجلات باعتبارها بيانات حساسة ويجب ضمان سلامتها اثناء المرور و التخزين.
+<p dir='rtl' align='right'>▪️ قم بإعداد عمليات المراقبة واجعلها مستمرة ولتشمل البنية التحتية والشبكات و واجهة برمجة التطبيقات API.
+<p dir='rtl' align='right'>▪️ استخدم أنظمة SIEM  لإدارة السجلات من جميع المصادر والأنظمة و واجهات برمجة التطبيقات.
+<p dir='rtl' align='right'>▪️ قم بإعداد لوحة مراقبة مخصصة لتنبيهات الأمنية وقم بتفعيل التواقيع الرقمية لرصد الأنشطة المشبوهة لرصدها في مراحلها الأولية.
 
-## References
+<h4 dir='rtl' align='right'>المراجع :  </h4>
 
-### OWASP
+[<p dir='rtl' align='right'>▪️ OWASP Logging Cheat Sheet </p>]( https://www.owasp.org/index.php/Logging_Cheat_Sheet)
+[<p dir='rtl' align='right'>▪️ OWASP Proactive Controls: Implement Logging and Intrusion Detection </p>](https://www.owasp.org/index.php/OWASP_Proactive_Controls)
+[<p dir='rtl' align='right'>▪️ OWASP Application Security Verification Standard: V7: Error Handling and
+  Logging Verification Requirements </p>](https://github.com/OWASP/ASVS/blob/master/4.0/en/0x15-V7-Error-Logging.md)
 
-* [OWASP Logging Cheat Sheet][2]
-* [OWASP Proactive Controls: Implement Logging and Intrusion Detection][3]
-* [OWASP Application Security Verification Standard: V7: Error Handling and
-  Logging Verification Requirements][4]
+<h4 dir='rtl' align='right'>المصادر الخارجية : </h4>
 
-### External
-
-* [CWE-223: Omission of Security-relevant Information][5]
-* [CWE-778: Insufficient Logging][6]
+[<p dir='rtl' align='right'>▪️ CWE-223: Omission of Security-relevant Information </p>]( https://cwe.mitre.org/data/definitions/223.html)
+[<p dir='rtl' align='right'>▪️ CWE-778: Insufficient Logging </p>]( https://cwe.mitre.org/data/definitions/778.html)
 
 [1]: https://www.owasp.org/index.php/Log_Injection
-[2]: https://www.owasp.org/index.php/Logging_Cheat_Sheet
-[3]: https://www.owasp.org/index.php/OWASP_Proactive_Controls
-[4]: https://github.com/OWASP/ASVS/blob/master/4.0/en/0x15-V7-Error-Logging.md
-[5]: https://cwe.mitre.org/data/definitions/223.html
-[6]: https://cwe.mitre.org/data/definitions/778.html
+
