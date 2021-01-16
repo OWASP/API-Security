@@ -1,25 +1,31 @@
-What's Next For DevSecOps
-=========================
+<h2 dir='rtl' align='right'>ما التالي لمطوري الممارسات الامنية في التطبيقات؟  </h2> 
 
-Due to their importance in modern application architectures, building secure
-APIs is crucial. Security cannot be neglected, and it should be part of the
-whole development life cycle. Scanning and penetration testing yearly are no
-longer enough.
+<p dir='rtl' align='right'> نظرًا لأهميتها في بناء التطبيقات الحديثة ، فإن بناء واجهات برمجة آمنة أمر في غاية الأهمية ، ويجب أن يكون الأمن جزءًا من دورة حياة التطوير بأكملها. لم تعد اختبارات الاختراق السنوية كافية.
+<p dir='rtl' align='right'> يجب أن تنضم DevSecOps إلى جهود التطوير ، مما يسهل اختبار الأمان المستمر عبر دورة حياة تطوير البرامج بأكملها. هدفهم هو تعزيز طريق التطوير بأتمتة الأمان ، ودون التأثير على سرعة التطوير.
+    
+<p dir='rtl' align='right'> في حالة تود الاطلاع والمراجعة ، راجع https://www.devsecops.org/ 
 
-DevSecOps should join the development effort, facilitating continuous security
-testing across the entire software development life cycle. Their goal is to
-enhance the development pipeline with security automation, and without impacting
-the speed of development.
+<table dir='rtl' align="right">
+  <tr>
+    <td> فهم نماذج التهديد </td>
+    <td>تأتي أولويات الاختبار من نماذج التهديد المتوقعة. إذا لم يكن لديك واحد ، ففكر في استخدام OWASP Application Security Verification Standard (ASVS) ، ودليل اختبار OWASP كمدخل. قد يساعد في رفع مستوى الوعي  لفريق التطوير. </td>
+    <tr>
+    <td> فهم دورة حياة التطبيقات </td>
+    <td>قم بالانضمام الى فريق تطوير البرمجيات لفهم دورة حياة البرامج. حيث ان مساهمتك في اختبار الامان بشكل مستمر ومتوافق مع الاوات والعمليات والاجرات التي يتفق عليها الجميع وبشكل سلسل. </td>
+     <tr>
+    <td> استراتيجيات الاختبار</td>
+    <td> لا يجب ان تؤثر اعمالك على سرعة وتيرة التطوير بل يجب أن تختار بحكمة الأسلوب الأفضل (البسيط والأسرع والأكثر دقة) للتحقق من متطلبات الأمان. يمكن أن يكون إطار OWASP للمعرفة الأمنية ومعيار OWASP للتحقق من أمان التطبيقات مصادر جيدة لمتطلبات الأمان الوظيفية وغير الوظيفية. هناك مصادر أخرى للمشاريع والأدوات المشابهة لتلك التي يقدمها مجتمع DevSecOps  </td>
+     <tr>
+    <td> تحقيق التغطية والدقة المطلوبة</td>
+    <td> أنت حلقة الوصل بين المطورين وفرق العمليات. لتحقيق التغطية  بالشكل المطلوب ، لا يجب أن تركز فقط على آلية عملها فقط ، ولكن أيضًا على التنسيق بشكل سليم. وذلك من خلال العمل بالقرب من فرق التطوير والعمليات من البداية حتى تتمكن من استغلال الجهود المبذولة. يجب أن تهدف إلى حالة دائمة من تحقيق معايير الأمان بشكل الأساسي ومستمر.  </td>
+      <tr>
+    <td> ايصال النتائج بشكل واضح </td>
+    <td> قم بالمشاركة في صنع قيمة مع اقل اختلاف مع فرق العمل.  وقم بتسليم النتائج في الوقت المناسب ، باستخدام الأدوات المتاحة من قبل الفريق، انضم إلى فريق التطوير لمعالجة النتائج والمخرجات وقم بشرح ووصف نقاط الضعف بشكل واضح جداً وكيف سيتم إساءة استخدامها وقم بذكر بعض السيناريوهات الحقيقة لاستغلالها .  </td>
+ </tr>  
+ </tr>  
+  </tr>
+  </table>        
 
-In case of doubt, stay informed, and review, the [DevSecOps Manifesto][1] often.
-
-| | |
-|-|-|
-| **Understand the Threat Model** | Testing priorities come from a threat model. If you don't have one, consider using [OWASP Application Security Verification Standard (ASVS)][2], and the [OWASP Testing Guide][3] as an input. Involving the development team may help to make them more security-aware. |
-| **Understand the SDLC** | Join the development team to better understand the Software Development Life Cycle. Your contribution on continuous security testing should be compatible with people, processes, and tools. Everyone should agree with the process, so that there's no unnecessary friction or resistance. |
-| **Testing Strategies** | As your work should not impact the development speed, you should wisely choose the best (simple, fastest, most accurate) technique to verify the security requirements. The [OWASP Security Knowledge Framework][4] and [OWASP Application Security Verification Standard][5] can be great sources of functional and nonfunctional security requirements. There are other great sources for [projects][6] and [tools][7] similar to the one offered by the [DevSecOps community][8]. |
-| **Achieving Coverage and Accuracy** | You're the bridge between developers and operations teams. To achieve coverage, not only should you focus on the functionality, but also the orchestration. Work close to both development and operations teams from the beginning so you can optimize your time and effort. You should aim for a state where the essential security is verified continuously. |
-| **Clearly Communicate Findings** | Contribute value with less or no friction. Deliver findings in a timely fashion, within the tools development teams are using (not PDF files). Join the development team to address the findings. Take the opportunity to educate them, clearly describing the weakness and how it can be abused, including an attack scenario to make it real. |
 
 [1]: https://www.devsecops.org/
 [2]: https://www.owasp.org/index.php/Category:OWASP_Application_Security_Verification_Standard_Project
