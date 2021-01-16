@@ -1,41 +1,24 @@
-Methodology and Data
-====================
+<h2 dir='rtl' align='right'> المنهجية والبيانات </h2>
 
-## Overview
 
-Since the AppSec industry has not been specifically focused on the most recent
-architecture of applications, in which APIs play an important role, compiling a
-list of the ten most critical API security risks, based on a public call for
-data, would have been a hard task. Despite there being no public data call, the
-resulting Top 10 list is still based on publicly available data, security
-experts' contributions, and open discussion with the security community.
+<h3 dir='rtl' align='right'>نظرة عامة  </h3> 
 
-## Methodology
+<p dir='rtl' align='right'> نظرًا لأن صناعة برامج آمنة لم تركز بشكل خاص على أحدث بنية وهيكلة للتطبيقات، حيث تلعب واجهات برمجة التطبيقات دورًا مهمًا، فإن تجميع قائمة بأكثر عشرة مخاطرلواجهة برمجة التطبيقات (API)، استنادًا إلى استفتاء عام، كانت من أصعب المهام. على الرغم من عدم وجود مصادر عامة، إلا أن قائمة العشرة أخطار لا تزال تستند على الاستفتاء، ومساهمات خبراء الأمن المعلوماتي، والمناقشات المفتوحة مع مجتمع الأمن.
 
-In the first phase, publicly available data about APIs security incidents were
-collected, reviewed, and categorized by a group of security experts. Such
-data was collected from bug bounty platforms and vulnerability databases,
-within a one-year-old time frame. It was used for statistical purposes.
+<h3 dir='rtl' align='right'> المنهجية </h3> 
 
-In the next phase, security practitioners with penetration testing experience
-were asked to compile their own Top 10 list.
+<p dir='rtl' align='right'> في المرحلة الأولى، تم جمع البيانات المتاحة من المصادر العامة وحول الحوادث الأمنية لواجهات برمجة التطبيقات API ومراجعتها وتصنيفها من قبل مجموعة من خبراء الأمن. وكما تم جمع هذه البيانات من منصات مكافآت الثغرات وقواعد بيانات الثغرات الأمنية، في إطار زمني مدته عام واحد. تم استخدام تلك البيانات لأغراض إحصائية.
+ 
+ <p dir='rtl' align='right'> في المرحلة التالية ، طُلب من الممارسين الأمنيين ذوي الخبرة في اختبار الاختراق حصر اكثر عشر مخاطر امنية خاصة بهم.
+ 
+<p dir='rtl' align='right'> تم استخدام منهجية OWASP لتصنيف المخاطر لإجراء تحليل المخاطر. تمت مناقشة النتائج ومراجعتها بين الممارسين الأمنيين. للحصول على رأي OWASP حول هذه الامر ، يرجى الرجوع إلى قسم مخاطر أمان API.
+    
+<p dir='rtl' align='right'>  نتجت المسودة الأولى من OWASP API Security Top 10 2019 عن توافق بين النتائج الإحصائية من المرحلة الأولى وقوائم الممارسين الأمنيين. ثم تم تقديم هذه المسودة لتقديرها ومراجعتها من قبل مجموعة أخرى من ممارسي الأمن ، من ذوي الخبرة ذات الصلة في مجالات أمان واجهة برمجة التطبيقات.
 
-The [OWASP Risk Rating Methodology][1] was used to perform he Risk Analysis. The
-scores were discussed and reviewed between the security practitioners. For
-considerations on these matters, please refer to the [API Security Risks][2]
-section.
+<p dir='rtl' align='right'> تم تقديم OWASP API Security Top 10 2019 لأول مرة في حدث OWASP Global AppSec في (مايو 2019). منذ ذلك الحين ، كان متاحًا على GitHub للمناقشة العامة والمساهمات.
 
-The first draft of the OWASP API Security Top 10 2019 resulted from a consensus
-between statistical results from phase one, and the security practitioners'
-lists. This draft was then submitted for appreciation and review by another
-group of security practitioners, with relevant experience in the API security
-fields.
-
-The OWASP API Security Top 10 2019 was first presented in the OWASP Global
-AppSec Tel Aviv event (May 2019). Since then, it has been available on GitHub
-for public discussion and contributions.
-
-The list of contributors is available in the [Acknowledgments][3] section.
+<p dir='rtl' align='right'> قائمة المساهمين متاحة في قسم الشكر والتقدير.
+  
 
 [1]: https://www.owasp.org/index.php/OWASP_Risk_Rating_Methodology
 [2]: ./0x10-api-security-risks.md
