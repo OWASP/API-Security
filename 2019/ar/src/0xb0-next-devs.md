@@ -1,17 +1,10 @@
-What's Next For Developers
-==========================
+<h2 dir='rtl' align='right'>ما التالي للمطورين؟ </h2>
 
-The task to create and maintain secure software, or fixing existing sofware, can be
-difficult. APIs are no different.
+<p dir='rtl' align='right'> قد تكون مهمة إنشاء برامج آمنة وصيانتها ، أو إصلاح البرامج الموجودة ، صعبة. وكذلك هو الحال مع واجهات برمجة التطبيقات لا تختلف.
+<p dir='rtl' align='right'> نعتقد أن التعليم والوعي من العوامل الرئيسية لكتابة برامج آمنة. كل شيء آخر من المتطلبات هو لتحقيق الأهداف المنشودة ،  وهو بالأساس يعتمد على إنشاء واستخدام عمليات أمنية قابلة للتكرار وضوابط أمنية قياسية.
+<p dir='rtl' align='right'> لدى OWASP العديد من الموارد المجانية والمفتوحة لمعالجة مشاكل الأمن منذ بداية هذه المشروع. يرجى زيارة صفحة مشاريع أواسب للحصول على قائمة شاملة بالمشاريع المتاحة.
 
-We believe that education and awareness are key factors to write secure
-software. Everything else required to accomplish the goal, depends on
-**establishing and using repeatable security processes and standard security
-controls**.
 
-OWASP has numerous free and open resources to address security since the very
-beginning of the project. Please visit the [OWASP Projects page][1] for a
-comprehensive list of available projects.
 
 | | |
 |-|-|
