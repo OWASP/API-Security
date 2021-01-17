@@ -1,7 +1,7 @@
 <h2 dir='rtl' align='right'>جدول المحتويات</h2>
 
 [<p dir='rtl' align='right'>▪️ محتوى الوثيقة </p>](0x00-toc.md)
-[<p dir='rtl' align='right'>▪️ مقدمة عن OWASP  </p>](0x01-about-owasp.md)
+[<p dir='rtl' align='right'>▪️ عن منظمة أواسب </p>](0x01-about-owasp.md)
 [<p dir='rtl' align='right'>▪️ تمهيد  </p>](0x02-foreword.md)
 [<p dir='rtl' align='right'>▪️ مقدمة </p>](0x03-introduction.md)
 [<p dir='rtl' align='right'>▪️ عن النسخة </p>](0x04-release-notes.md)
