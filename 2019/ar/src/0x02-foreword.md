@@ -12,8 +12,6 @@
 <p dir='rtl' align='right'> ▪️  https://github.com/OWASP/API-Security/blob/master/CONTRIBUTING.md
 
 <p dir='rtl' align='right'>تستطيع الوصول الى الوثيقة OWASP API Security Top 10 من هنا :
-You can find the OWASP API Security Top 10 here:
-
 <p dir='rtl' align='right'> ▪️ https://www.owasp.org/index.php/OWASP_API_Security_Project
 <p dir='rtl' align='right'> ▪️ https://github.com/OWASP/API-Security
 <p dir='rtl' align='right'> نود أن نشكر جميع المساهمين الذين جعلوا هذا المشروع متوفر لكم بجهودهم ومساهماتهم. تم سردها جميعًا في قسم الشكر والتقدير. شكرا لك!
