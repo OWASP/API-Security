@@ -3,7 +3,7 @@
 
 <h3 dir='rtl' align='right'>OWASP API Security Top 10 2019</h3>
 
- <p dir='rtl' align='right'> أهم عشرة مخاطر امنية تستهدف واجهة برمجة التطبيقات (API)</p>
+ <p dir='rtl' align='right'> أهم عشرة مخاطر أمنية تستهدف واجهة برمجة التطبيقات (API)</p>
 
  <p dir='rtl' align='right'> 19 مايو 2019</p>
  
