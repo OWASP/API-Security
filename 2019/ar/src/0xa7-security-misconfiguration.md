@@ -83,3 +83,6 @@ $ curl -X GET 'https://api.server/endpoint/' -H 'authorization: Basic Zm9vOmJhcg
 [7]: https://csrc.nist.gov/publications/detail/sp/800-123/final
 [8]: https://letsencrypt.org/
 [9]: https://www.owasp.org/index.php/Test_Cross_Origin_Resource_Sharing_(OTG-CLIENT-007)
+
+</div>
+
