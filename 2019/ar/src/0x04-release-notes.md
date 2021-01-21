@@ -1,4 +1,4 @@
-<h2 dir='rtl' align='right'>ملاحظات عن الاصدار </h2>
+<h2 dir='rtl' align='right'>ملاحظات عن الإصدار </h2>
 
 <p dir='rtl' align='right'>هذا هو الإصدار الأول من OWASP API Security Top 10، والذي نخطط لتحديثه بشكل دوري كل ثلاث أو أربع سنوات. 
 
