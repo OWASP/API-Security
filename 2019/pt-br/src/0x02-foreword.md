@@ -5,7 +5,7 @@ Elemento fundamental na inovação nas soluções *app-driven* nos dias de hoje 
 
 Por natureza, as APIs expõem a lógica dos aplicativos e dados sensíveis, inclusive, dados pessoais sensíveis, e por esta razão, as APIs vem se tornando cada vez mais alvo de atacantes. Sem APIs seguras, inovações podem se tornar impossíveis.
 
-Embora uma ampla avaliação de Top 10 a respeito da segurança de aplicações fala sentido, em razão de suas particularidades, uma lista de riscos de segurança específica para APIs também é um requisito. A segurança de APIs tem foco em estratégias e soluções para a compreensão e mitigação de vulnerabilidades únicas associadas às APIs.
+Embora uma ampla avaliação de Top 10 a respeito da segurança de aplicações faça sentido, em razão de suas particularidades, uma lista de riscos de segurança específica para APIs também é um requisito. A segurança de APIs tem foco em estratégias e soluções para a compreensão e mitigação de vulnerabilidades únicas associadas às APIs.
 
 Se você é familiarizado com o projeto [OWASP Top 10][1], irá perceber similaridades entre os dois documentos: Isto é intencional para facilitar a compreensão e adoção. Se você é um novato nas séries Top 10 do OWASP, talvez seja melhor você ler atentamente as seções [Riscos de Segurança de API][2] e [Metodologia e Dados][3] antes.
 
