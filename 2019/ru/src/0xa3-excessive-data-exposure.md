@@ -1,20 +1,24 @@
-API3:2019 Excessive Data Exposure
+API3:2019 Предоставление Излишних Данных
 =================================
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
+| Источники угроз/Векторы атак | Недостатки безопасности | Последствия |
 | - | - | - |
-| API Specific : Exploitability **3** | Prevalence **2** : Detectability **2** | Technical **2** : Business Specific |
+| Зависит от API : Сложность эксплуатации **3** | Распространненность **2** : Сложность обнаружения **2** | Технические последствия **2** : Зависит от бизнеса |
 | Exploitation of Excessive Data Exposure is simple, and is usually performed by sniffing the traffic to analyze the API responses, looking for sensitive data exposure that should not be returned to the user. | APIs rely on clients to perform the data filtering. Since APIs are used as data sources, sometimes developers try to implement them in a generic way without thinking about the sensitivity of the exposed data. Automatic tools usually can’t detect this type of vulnerability because it’s hard to differentiate between legitimate data returned from the API, and sensitive data that should not be returned without a deep understanding of the application. | Excessive Data Exposure commonly leads to exposure of sensitive data. |
 
-## Is the API Vulnerable?
+Предоставление Излишних Данных легко эксплуатировать. Для этого нужно перехватить трафик и проанализировать ответы API на предмет конфиденциальных данных, которые API не должно возвращать пользователю. | API рассчитывает, что клиентское приложение отфильтрует данные отображаемые пользователю. Поскольку API используются в качестве источников данных, иногда разработчики пытаются сделать его общим для всех клиентов, не думая о конфиденциальности данных возвращаемых пользователю. Автоматизированные инструменты зачастую не обнаруживают эту уязвимость, поскольку без детального понимания логики приложения очень трудно определить должно ли API возвращать те или иные данные. | Предоставление Излишних Данных обычно приводит к разглашению конфиденциальных данных. |
+
+## Как определить является ли API уязвимым?
 
 The API returns sensitive data to the client by design. This data is usually
 filtered on the client side before being presented to the user. An attacker can
 easily sniff the traffic and see the sensitive data.
 
-## Example Attack Scenarios
+Если API спроектировано так, что возвращает конфиденциальные данные клиенсткому приложению, которое в свою очередь фильтрует их перед отображением пользователю. Злоумышленник с легкостью может перехватить трафик и увидеть конфиденциальные данные.
 
-### Scenario #1
+## Примеры сценариев атаки
+
+## Сценарий #1
 
 The mobile team uses the `/api/articles/{articleId}/comments/{commentId}`
 endpoint in the articles view to render comments metadata. Sniffing the mobile
@@ -23,7 +27,10 @@ comment’s author is also returned. The endpoint implementation uses a generic
 `toJSON()` method on the `User` model, which contains PII, to serialize the
 object.
 
-### Scenario #2
+Команда мобильного приложения использует конечную точку API `/api/articles/{articleId}/comments/{commentId}` для отображения метаданных комментариев в представлении статей. Злоумышленник перехватывает трафик от мобильного приложения и находит в ответе дополнительные конфиденциальные данные об авторе комментария. Конечная точка API использует стандартный метод `toJSON()` на объекте модели `User`, содержащем персональные данные, для сериализации этого объекта.
+
+
+### Сценарий #2
 
 An IOT-based surveillance system allows administrators to create users with
 different permissions. An admin created a user account for a new security guard
@@ -37,7 +44,9 @@ While the client GUI shows only cameras which the security guard should have
 access to, the actual API response contains a full list of all the cameras in
 the site.
 
-## How To Prevent
+Система видео наблюдения базирующаяся на IOT позволяет администраторам создавать пользователей с различными привилегиями. Администратор создал учетную запись для нового охранника, которая должна иметь доступ только к определенным зданиям на объекте. Когда охранник использует мобильное приложение, оно отправляет запрос к конечной точке API `/api/sites/111/cameras`, чтобы получить данные о доступных камерах и отобразить их на панели управления. Ответ API содержит список данных о камерах в следующем формате: `{"id":"xxx","live_access_token":"xxxx-bbbbb","building_id":"yyy"}`. Клиентское приложение показывает только те камеры, к которым охранник имеет доступ, однако ответ API содержит полный список камер на объекте.
+
+## Как предотвратить
 
 * Never rely on the client side to filter sensitive data.
 * Review the responses from the API to make sure they contain only legitimate
@@ -53,10 +62,15 @@ the site.
   security. As part of this mechanism define and enforce data returned by all
   API methods, including errors.
 
+* Не рассчитывайте, что клиентское приложение отфильтрует данные.
+* Проверьте, что ответы API содержат только те данные, которые отображаются клиентским приложением.
+* Разработчики серверной части должны всегда задаваться вопросом "Кто получит данные?" перед публикацией новых конечных точек API.
+* Избегайте использования стандартных методов, например, `to_json()` или `to_string()`. Вместо этого вручную выбирайте свойства объектов, которые вы возвращаете в ответе.
+* Внедрите механизм валидации базирующийся на проверке данных по схеме в качестве дополнительного уровня защиты. В рамках этого механизма определите данные возвращаемые каждой конечной точкой API (в том числе в ошибках) и обеспечьте, что только эти данные возвращаются пользователю.
 
-## References
+## Ссылки
 
-### External
+### Внешние
 
 * [CWE-213: Intentional Information Exposure][1]
 

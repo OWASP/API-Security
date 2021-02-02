@@ -1,16 +1,18 @@
-API2:2019 Broken User Authentication
+API2:2019 Некорректная Аутентификация Пользователей
 ====================================
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
+| Источники угроз/Векторы атак | Недостатки безопасности | Последствия |
 | - | - | - |
-| API Specific : Exploitability **3** | Prevalence **2** : Detectability **2** | Technical **3** : Business Specific |
+| Зависит от API : Сложность эксплуатации **3** | Распространненность **2** : Сложность обнаружения **2** | Технические последствия **3** : Зависит от бизнеса |
 | Authentication in APIs is a complex and confusing mechanism. Software and security engineers might have misconceptions about what are the boundaries of authentication and how to implement it correctly. In addition, the authentication mechanism is an easy target for attackers, since it’s exposed to everyone. These two points makes the authentication component potentially vulnerable to many exploits. | There are two sub-issues: 1. Lack of protection mechanisms: APIs endpoints that are responsible for authentication must be treated differently from regular endpoints and implement extra layers of protection 2. Misimplementation of the mechanism: The mechanism is used / implemented without considering the attack vectors, or it’s the wrong use case (e.g., an authentication mechanism designed for IoT clients might not be the right choice for web applications). | Attackers can gain control to other users’ accounts in the system, read their personal data, and perform sensitive actions on their behalf, like money transactions and sending personal messages. |
+| Аутентификация в API - сложный и запутанный механизм. Разработчики и инженеры безопасности могут иметь неверное представление о том, что входит в понятие аутентификации, и как внедрить ее правильно. Кроме того, механизм аутентификации - простая цель для злоумышленников, поскольку он общедоступен. Все это приводит к тому, что механизм аутентификации потенциально сожержит большое число уязвимостей. | Механизм аутентификации подвержен двум основным проблемам: 1. Отсутствие механизмов защиты: разработчики должны обращать особое внимание на конечные точки API отвечающие за аутентификацию и внедрить дополнительные уровни защиты 2. Некорректная реализация механизма: механизм используется или реализован, не принимая во внимание основные векторы атак, или используется механизм не подходящий под текущую ситуацию (например, механизм аутентификации для IoT устройств не подходит для веб приложений). | Злоумышленник может получить контроль над учетными записями других пользователей в системе, получить доступ к их персональным данным, или осуществить критичные действия от их имени, например, отправить денежные переводы или персональные сообщения.|
 
-## Is the API Vulnerable?
+## Как определить является ли API уязвимым?
 
 Authentication endpoints and flows are assets that need to be protected. “Forgot
 password / reset password” should be treated the same way as authentication
 mechanisms.
+Конечные точки API отвечающие за аутентификацию и процесс аутентификации - это активы требующие защиты. Необходимо относиться к функционалу восстановления пароля аналогично механизму аутентификации.
 
 An API is vulnerable if it:
 * Permits [credential stuffing][1] whereby the attacker has a list of valid
@@ -26,16 +28,28 @@ An API is vulnerable if it:
 * Uses plain text, non-encrypted, or weakly hashed passwords.
 * Uses weak encryption keys.
 
-## Example Attack Scenarios
+API уязвимо если:
+* Уязвимо к [перебору учетных данных][1], при условии, что у злоумышленника есть списки валидных логинов и паролей.
+* Позволяет злоумышленнику подбирать пароль к одной и той же учетной записи путем перебора, не требуя ввода CAPTCHA или не блокируя учетную запись.
+* Допускает слабые пароли.
+* Передает конфиденциальные аутентификационные данные в URL, например, аутентификационные токены или пароли.
+* Не проверяет подлинность токенов.
+* Не отклоняет JWT токены без подписи или использующие уязвимые алгоритмы подписи (`"alg":"none"`), не проверяет срок действия токена. 
+* Хранит пароли в открытом виде или в хэшированном виде с использованием слабых алгоритомов хэширования.
+* Использует слабые ключи шифрования.
 
-## Scenario #1
+## Примеры сценариев атаки
+
+## Сценарий #1
 
 [Credential stuffing][1] (using [lists of known usernames/passwords][2]), is a
 common attack. If an application does not implement automated threat or
 credential stuffing protections, the application can be used as a password
 oracle (tester) to determine if the credentials are valid.
 
-## Scenario #2
+[Перебор учетных данных][1] с использованием [списка известных логинов и паролей][2] - распространенная атака. Если в приложении отсутствуют автоматизированные меры защиты от угроз или перебора учетных данных, то оно может быть использовано для определения валидности учетных данных.
+
+## Сценарий #2
 
 An attacker starts the password recovery workflow by issuing a POST request to
 `/api/system/verification-codes` and by providing the username in the request
@@ -45,7 +59,9 @@ possible combinations using a multi-threaded script, against the
 `/api/system/verification-codes/{smsToken}` endpoint to discover the right token
 within a few minutes.
 
-## How To Prevent
+Злоумышленник начинет восстановление пароля, отправляя POST запрос конечную точку API `/api/system/verification-codes` и указывая имя пользователя в теле запроса. Затем одноразовый пароль из 6 цифр отправляется на телефон жертвы. Поскольку API не ограничивает количество запросов, злоумышленник может за несколько минут подобрать корректный одноразовый пароль, перебирая все возможные пароли с помощью скрипта, работающего в много потоков и отправляющего запросы на `/api/system/verification-codes/{smsToken}`.
+
+## Как предотвратить?
 
 * Make sure you know all the possible flows to authenticate to the API (mobile/
   web/deep links that implement one-click authentication/etc.)
@@ -67,7 +83,18 @@ within a few minutes.
 * API keys should not be used for user authentication, but for [client app/
   project authentication][5].
 
-## References
+* Идентифицируйте все возможные способы аутентификации в API (для мобильных и веб клиентов, deep links обеспечивающие аутентификацию в одно нажатие и так далее).
+* Обсудите с разработчиками способы аутентификации, которые вы пропустили.
+* Изучите используемые механизмы аутентификации. Изучите что они из себя представляют и как используются. OAuth не используется для аутентификации, так же как и API ключи.
+* Не изобратайте велосипед, когда речь идет об аутентификации, генерации токенов и хранении паролей. Используйте стандарты.
+* Внедрите защиту от перебора, ограничение на количество единовременных запросов и временную блокировку учетных записей на конечных точках API, отвечающих за восстановление учетных данных и пароля, аналогично мерам защиты реализованным на конечных точках API, используемых для аутентификации.
+* Ознакомьтесь с [OWASP Authentication Cheatsheet][3].
+* Используйте многофакторную аутентификации, где это возможно.
+* Используйте механизмы защиты от перебора учетных данных, перебора по словарю и перебора всех возможных значений на конечных точках API, отвечающих за аутентификацию. Эти механизмы должны быть использовать более строгие правила по сравнению с механизмом ограничивающим количество запросов в остальных конечных точках API.
+* Внедрите [блокировку учетных записей][4] или CAPTCHA для предотвращения перебора аутентификационных данных, направленного на единичных пользователей. Внедрите защиту от слабых паролей.
+* Не используйте API ключи для аутентификации пользователей. Они должны использоваться для [аутентификации приложений и проектов, являющихся клиентами API][5].
+
+## Ссылки
 
 ### OWASP
 
@@ -75,7 +102,7 @@ within a few minutes.
 * [OWASP Authentication Cheatsheet][3]
 * [Credential Stuffing][1]
 
-### External
+### Внешние
 
 * [CWE-798: Use of Hard-coded Credentials][7]
 
