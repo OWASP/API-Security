@@ -1,12 +1,14 @@
-API7:2019 Security Misconfiguration
+API7:2019 Ошибки настроек безопасности
 ===================================
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
+| Источники угроз/Векторы атак | Недостатки безопасности | Последствия |
 | - | - | - |
-| API Specific : Exploitability **3** | Prevalence **3** : Detectability **3** | Technical **2** : Business Specific |
+| Зависит от API : Сложность эксплуатации **3** | Распространненность **3** : Сложность обнаружения **3** | Технические последствия **2** : Зависит от бизнеса |
 | Attackers will often attempt to find unpatched flaws, common endpoints, or unprotected files and directories to gain unauthorized access or knowledge of the system. | Security misconfiguration can happen at any level of the API stack, from the network level to the application level. Automated tools are available to detect and exploit misconfigurations such as unnecessary services or legacy options. | Security misconfigurations can not only expose sensitive user data, but also system details that may lead to full server compromise. |
 
-## Is the API Vulnerable?
+| Злоумышленник часто пытаются найти незакрытые уязвимости, распространенные конечные точки API или незащищенные файлы и папки, чтобы получить информацию о системе или неавторизованный доступ к ней. | Ошибка настроек безопасности может произойти на любом уровне API: от сетевого уровня до уровня приложения. Существуют автоматизированные инструменты для обнаружения и эксплуатации таких ошибок конфигурации, как ненужные (забытые) сервисы или использование устаревших параметров. | Ошибки настроек безопасности могут не только раскрыть конфиденциальные данные пользователей, но и данные о системе, что потенциально может привести к её полной компрометации. |
+
+## Как определить является ли API уязвимым?
 
 The API might be vulnerable if:
 
@@ -20,9 +22,18 @@ The API might be vulnerable if:
 * Error messages include stack traces, or other sensitive information is
   exposed.
 
-## Example Attack Scenarios
+API уязвимо если:
+* Должные настройки безопасности отсутствуют на любом уровне приложения, а также если права доступа к облачным сервисам некорректно настроены.
+* Используется устаревшая система, или не установлены новейшие исправления по безопасности.
+* Активен излишний функционал (например, HTTP методы).
+* Не используется протокол TLS (Transport Layer Security).
+* Требования (указания, директивы???) по безопасности не отправляются клиентам (например, [Заголовки Безопасности][1]).
+* Политика разделения ресурсов между источниками (Cross-Origin Resource Sharing) отсутствует или некорректно настроена.
+* Сообщения об ошибках включают детальную информацию или раскрывают критичные данные. 
 
-### Scenario #1
+## Примеры сценариев атаки
+
+## Сценарий #1
 
 An attacker finds the `.bash_history` file under the root directory of the
 server, which contains commands used by the DevOps team to access the API:
@@ -34,7 +45,15 @@ $ curl -X GET 'https://api.server/endpoint/' -H 'authorization: Basic Zm9vOmJhcg
 An attacker could also find new endpoints on the API that are used only by the
 DevOps team and are not documented.
 
-### Scenario #2
+Злоумышленник в корне директории сервера находит файл `.bash_history`, содержащий команды использованные командой DevOps для доступа к API:
+
+```
+$ curl -X GET 'https://api.server/endpoint/' -H 'authorization: Basic Zm9vOmJhcg=='
+```
+
+Злоумышленник также может найти другие незадокументированные конечные точки API, используемые только командой DevOps.
+
+### Сценарий #2
 
 To target a specific service, an attacker uses a popular search engine to search
 for  computers directly accessible from the Internet. The attacker found a host
@@ -43,7 +62,9 @@ host was using the default configuration, which has authentication disabled by
 default, and the attacker gained access to millions of records with PII,
 personal preferences, and authentication data.
 
-### Scenario #3
+Для атаки на конкретный сервис злоумышленник использует популярный писковик, чтобы найти компьютеры доступные из сети Интернет напрямую. Злоумышленник находит сервер, на котором запущена популярная система управления базой данных, доступная на стандартном порте. На сервере используется стандартная конфигурация, не предполагающая аутентификации, что позволяет злоумышленнику получить доступ к миллионам записей с персональными данными, личными предпочтениями и аутентификационными данными.
+
+### Сценарий #3
 
 Inspecting traffic of a mobile application an attacker finds out that not all
 HTTP traffic is performed on a secure protocol (e.g., TLS). The attacker finds
@@ -52,7 +73,10 @@ interaction is binary, despite the fact that API traffic is performed on a
 secure protocol, the attacker finds a pattern on API responses size, which he
 uses to track user preferences over the rendered content (e.g., profile images).
 
-## How To Prevent
+!!!TBD
+Анализируя трафик мобилього приложения, злоумышленник обнаруживает, что не весь HTTP трафик защищен (например, с помощью TLS). В частности скачивание изображения профиля не защищено. Поскольку пользователь обменивается с сервером бинарными данными, не смотря на защиту трафика, злоумышленник может найти закономерности в размере ответов API, которые он в свою очередь может использовать для отслеживания предпочтений пользователя.
+
+## Как предотвратить
 
 The API life cycle should include:
 
@@ -66,6 +90,13 @@ The API life cycle should include:
 * An automated process to continuously assess the effectiveness of the
   configuration and settings in all environments.
 
+Жизненный цикл API должен включать в себя:
+
+* Повторяемый процесс усиления настроек безопасности, ведущий к более быстрому и простому развертыванию должным образом защищенного окружения
+* Задачу по обзору и обновлению конфигурации на всех уровнях API. Обзор должен включать в себя файлы оркестрации, конпоненты API и облачных сервисов (например, права доступа в S3 bucket).
+* Использование защищенного канала связи при доступе к статическим ресурсам.
+* Автоматизированный процесс, проводящий постоянную оценку эффективности настроек и параметров во всех окружениях.
+
 Furthermore:
 
 * To prevent exception traces and other valuable information from being sent
@@ -77,7 +108,13 @@ Furthermore:
   front-end) should implement a proper Cross-Origin Resource Sharing (CORS)
   policy.
 
-## References
+Кроме того:
+
+* Для предотвращения отправки злоумышленникам подробных сообщений об ошибках и другой критичной информации, если это возможно, определите схемы данных всех ответов API и обеспечьте проверку этих ответов по схемам, включая соощения об ошибках.
+* Убедитесь, что API доступно только с использованием заданного списка HTTP методов. Любые другие методы HTTP должны быть отключены (например, `HEAD`).
+* API, клиентами которых подразумеваются браузерные клиентские приложения, должны иметь корректно настроенную политику разделения ресурсов между источниками (CORS).
+
+## Ссылки
 
 ### OWASP
 
@@ -86,7 +123,7 @@ Furthermore:
 * [OWASP Testing Guide: Testing for Error Codes][3]
 * [OWASP Testing Guide: Test Cross Origin Resource Sharing][9]
 
-### External
+### Внешние
 
 * [CWE-2: Environmental Security Flaws][4]
 * [CWE-16: Configuration][5]
