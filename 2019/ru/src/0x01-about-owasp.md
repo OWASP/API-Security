@@ -35,7 +35,7 @@ Learn more at: [https://www.owasp.org][6].
 
 All OWASP tools, documents, videos, presentations, and chapters are free and
 open to anyone interested in improving application security.
-Все инструменты, документы, видео, презентации и отделения OWASP бесплатны и открыты для всех, заинтересованных в улучшении безрпасности разработки ПО.
+Все инструменты, документы, видео, презентации и отделения OWASP бесплатны и открыты для всех, заинтересованных в улучшении безопасности разработки ПО.
 
 We advocate approaching application security as a people, process, and
 technology problem, because the most effective approaches to application
