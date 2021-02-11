@@ -71,7 +71,7 @@ The attacker replays the first request with the following payload:
 Since the endpoint is vulnerable to mass assignment, the attacker receives
 credits without paying.
 
-Поскольку конечная точка API узвима к массовому переназначению параметров, злоумышленник зачисляет деньги на свой баланс, не совершив платежа. 
+Поскольку точка входа узвима к массовому переназначению параметров, злоумышленник зачисляет деньги на свой баланс, не совершив платежа. 
 
 ### Сценарий #2
 
@@ -81,7 +81,7 @@ different formats. An attacker who explores the API found that the endpoint
 properties. One of the properties is `"mp4_conversion_params":"-v codec h264"`,
 which indicates that the application uses a shell command to convert the video.
 
-Портал для обмена видео позволяет пользователям загружать и скачивать материалы в разынх форматах. Злоумышленник обследует API и обнаруживает, что конечная точка `GET /api/v1/videos/{video_id}/meta_data` возвращает JSON объект с параметрами видео. Один из параметров `"mp4_conversion_params":"-v codec h264"` дает понять, что приложение использует консольную команду для конвертации видео.
+Портал для обмена видео позволяет пользователям загружать и скачивать материалы в разынх форматах. Злоумышленник обследует API и обнаруживает, что точка входа `GET /api/v1/videos/{video_id}/meta_data` возвращает JSON объект с параметрами видео. Один из параметров `"mp4_conversion_params":"-v codec h264"` дает понять, что приложение использует консольную команду для конвертации видео.
 
 The attacker also found the endpoint `POST /api/v1/videos/new` is vulnerable to
 mass assignment and allows the client to set any property of the video object.
@@ -89,7 +89,7 @@ The attacker sets a malicious value as follows:
 `"mp4_conversion_params":"-v codec h264 && format C:/"`. This value will cause a
 shell command injection once the attacker downloads the video as MP4.
 
-Злоумышленник также обнаружил, что конечная точка `POST /api/v1/videos/new` уязвима к массовому переназначению параметров и позволяет клиенту установить значение любого свойства объекта видео. 
+Злоумышленник также обнаружил, что точка входа `POST /api/v1/videos/new` уязвима к массовому переназначению параметров и позволяет клиенту установить значение любого свойства объекта видео. 
 Злоумышленник устанавливает следующее значение параметра: `"mp4_conversion_params":"-v codec h264 && format C:/"`. Это значение приведет к инъекции команды операционной системы, как только злоумышленник скачает видео в формате MP4.
 
 ## Как предотвратить

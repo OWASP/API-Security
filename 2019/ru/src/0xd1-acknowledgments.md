@@ -1,10 +1,12 @@
-Acknowledgments
+Благодарность
 ===============
 
-## Acknowledgments to Contributors
+## Благодарность участникам
 
 We’d like to thank the following contributors who contributed publicly on GitHub
 or via other means:
+
+Мы хотели бы поблагодарить всех участников, кто публично участвовал в проекте на GitHub или другими способами:
 
 * 007divyachawla
 * Abid Khan
