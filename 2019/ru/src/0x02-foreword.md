@@ -29,7 +29,7 @@ adoption. If you're new to the OWASP Top 10 series, you may be better off
 reading the [API Security Risks][2] and [Methodology and Data][3] sections
 before jumping into the Top 10 list.
 
-Если вы уже знакомы с [OWASP Top 10 Project][1], то наверняка заметите сходства, их основная цель - повышение читаемости и использования. Если вы не знакомы с семейством OWASP Top 10, то рекомендуем сначала ознакомиться с секциями [Риски Безопасности API][2] и [Методология и Данные][3] перед погружением в спискок Top 10.
+Если вы уже знакомы с [OWASP Top 10 Project][1], то наверняка заметите сходства, их основная цель - повышение читаемости и использования. Если вы не знакомы с семейством OWASP Top 10, то рекомендуем сначала ознакомиться с секциями [Риски Безопасности API][2] и [Методология и Данные][3] перед погружением в список Top 10.
 
 You can contribute to OWASP API Security Top 10 with your questions, comments,
 and ideas at our GitHub project repository:
