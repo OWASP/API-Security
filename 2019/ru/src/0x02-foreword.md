@@ -21,7 +21,7 @@ to their particular nature, an API-specific security risks list is required.
 API security focuses on strategies and solutions to understand and mitigate the
 unique vulnerabilities and security risks associated with APIs.
 
-Не смотря на то, что более обширный web application security risks Top 10 по прежнему приемлем, ввиду специфики API, необходим отдельный список рисков безопасности, относящихся к API.
+Не смотря на то, что более обширный web application security risks Top 10 по прежнему приемлем, ввиду специфики API, необходим отдельный список рисков безопасности, относящихся к API. Стандарт по безопасности API фокусируется на стратегиях и решениях для понимания и предотвращения уникальных уязвимостей и рисков безопасности связанных с использованием API.
 
 If you're familiar with the [OWASP Top 10 Project][1], then you'll notice the
 similarities between both documents: they are intended for readability and

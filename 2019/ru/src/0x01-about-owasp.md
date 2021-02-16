@@ -40,12 +40,12 @@ open to anyone interested in improving application security.
 We advocate approaching application security as a people, process, and
 technology problem, because the most effective approaches to application
 security require improvements in these areas.
-Мы выступаем за подход к безопасности к разработке ПО как к проблеме на уровне людей, процессов и технологий, поскольку наиболее эффективные подходы к безопасности разработки ПО подразумевают улучшения на всех этих уровнях.
+Мы выступаем за подход к безопасности к разработке ПО как к проблеме на уровне людей, процессов и технологий, поскольку наиболее эффективные подходы к безопасности разработки ПО требует улучшения на всех этих уровнях.
 
 OWASP is a new kind of organization. Our freedom from commercial pressures
 allows us to provide unbiased, practical, and cost-effective information about
 application security.
-OWASP - это новый вид организации. Наша свобода от давления коммерческими организациями позволяет нам предоставлять беспристрастную, практичную и экономически оправданную информацию о разработке ПО.
+OWASP - это новый вид организации. Наша свобода от давления коммерческими организациями позволяет нам предоставлять беспристрастную, практичную и экономически оправданную информацию о безопасной разработке ПО.
 
 OWASP is not affiliated with any technology company, although we support the
 informed use of commercial security technology. OWASP produces many types of
@@ -69,8 +69,9 @@ Come join us!
 [Creative Commons Attribution Share-Alike 4.0 license][7]. For any reuse or
 distribution, you must make it clear to others the license terms of this work.
 
-Copyright © 2003-2019 The OWASP Foundation. Этот документ выпущен в соответствии с
-[лицензией Creative Commons Attribution Share-Alike 4.0][7]. При переиспользовании или распространении вы обязаны разъяснить условия лицензии настоящейго документа.
+Copyright © 2003-2019 The OWASP Foundation. 
+Этот документ выпущен в соответствии с
+[лицензией Creative Commons Attribution Share-Alike 4.0][7]. При переиспользовании или распространении вы обязаны разъяснить условия лицензии настоящего документа.
 
 [1]: https://www.youtube.com/user/OWASPGLOBAL
 [2]: https://www.owasp.org/index.php/OWASP_Cheat_Sheet_Series

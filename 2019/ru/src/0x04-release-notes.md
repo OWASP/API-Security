@@ -26,7 +26,7 @@ modern API security issues. It was only possible due to a great effort of
 several volunteers, all of them listed in the [Acknowledgments][3] section.
 Thank you!
 
-OWASP API Security Top 10 - попытка повысить информированность о проблемах безопасности современных API. Он был возможен благодаря труду волонтеров, перечисленных в секции [Благодарность][3].
+OWASP API Security Top 10 - попытка повысить информированность о проблемах безопасности современных API. Он был возможен благодаря труду волонтеров, перечисленных в секции [Благодарность][3]. Спасибо вам!
 
 [1]: ./0xd0-about-data.md
 [2]: ./0x10-api-security-risks.md
