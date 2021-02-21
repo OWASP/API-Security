@@ -87,7 +87,7 @@ module that is invoked from all your business functions. Frequently, such
 protection is provided by one or more components external to the application
 code.
 
-В вашем приложении должен быть последовательный и легко анализируемый модуль авторизации, вызываемый всеми бизнес функциями. Зачастую такая защита предоставляется одной или несколькими компонентами вне кода приложения.
+В вашем приложении должен быть согласованный и легко анализируемый модуль авторизации, вызываемый всеми бизнес функциями. Зачастую такая защита предоставляется одной или несколькими компонентами вне кода приложения.
 
 * The enforcement mechanism(s) should deny all access by default, requiring
   explicit grants to specific roles for access to every function.
