@@ -19,7 +19,7 @@ applications has significantly changed. Currently, APIs play a very important
 role in this new architecture of microservices, Single Page Applications (SPAs),
 mobile apps, IoT, etc.
 
-Необходимо понимать, что за последние несколько лет аритектура приложений значительно изменилась. В настоящий момент API играют очень важную роль в новой архитектуре микро-сервисов, одностраничных приложений (SPA), мобильных приложений, интернете вещей и так далее.
+Необходимо понимать, что за последние несколько лет архитектура приложений значительно изменилась. В настоящий момент API играют очень важную роль в новой архитектуре микро-сервисов, одностраничных приложений (SPA), мобильных приложений, интернете вещей и так далее.
 
 The OWASP API Security Top 10 was a required effort to create awareness about
 modern API security issues. It was only possible due to a great effort of

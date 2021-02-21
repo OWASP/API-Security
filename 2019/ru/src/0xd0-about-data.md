@@ -10,7 +10,7 @@ data, would have been a hard task. Despite there being no public data call, the
 resulting Top 10 list is still based on publicly available data, security
 experts' contributions, and open discussion with the security community.
 
-Поскольку индустрия AppSec не сфокусирована главным образом на новейшей архитектуре приложений, в которой API играют важную роль, составление списка из десяти наиболее критичных рисков безопасности API на базе публичного сбора данных - сложная задача. Не смотря на отсутствие публичного сбора данных получившийся список все равно основан на общедоступной информации, вкладе экспертов по безопасности и открытых дискуссий сообщества по безопасности.
+Поскольку индустрия AppSec не сфокусирована главным образом на новейшей архитектуре приложений, в которой API играют важную роль, составление списка из десяти наиболее критичных рисков безопасности API на базе публичного сбора данных - сложная задача. Несмотря на отсутствие публичного сбора данных, получившийся список все равно основан на общедоступной информации, вкладе экспертов по безопасности и открытых дискуссиях сообщества по безопасности.
 
 ## Методология
 
@@ -19,12 +19,12 @@ collected, reviewed, and categorized by a group of security experts. Such
 data was collected from bug bounty platforms and vulnerability databases,
 within a one-year-old time frame. It was used for statistical purposes.
 
-На первом этапе группой экспертов по безопасности собрала, проанализировала и категоризировала публичные данные об инцидентах безопасности в API. Эти данные были собраны с площадок bug bounty и баз данных уязвимостей за один год. Этот временной промежуток выбран для удобства расчета статистики.
+На первом этапе группа экспертов по безопасности собрала, проанализировала и категоризировала публичные данные об инцидентах безопасности в API. Эти данные были собраны с площадок bug bounty и баз данных уязвимостей за один год. Этот временной промежуток выбран для удобства расчета статистики.
 
 In the next phase, security practitioners with penetration testing experience
 were asked to compile their own Top 10 list.
 
-Затем эксперты по безопасности с опытом тестирования на проникновение составили свой список наибоее критичных рисков.
+Затем эксперты по безопасности с опытом тестирования на проникновение составили свой список наиболее критичных рисков.
 
 The [OWASP Risk Rating Methodology][1] was used to perform he Risk Analysis. The
 scores were discussed and reviewed between the security practitioners. For
@@ -45,8 +45,7 @@ The OWASP API Security Top 10 2019 was first presented in the OWASP Global
 AppSec Tel Aviv event (May 2019). Since then, it has been available on GitHub
 for public discussion and contributions.
 
-OWASP API Security Top 10 2019 впервые был представлен на конференции OWASP Global
-AppSec Tel Aviv в мае 2019 года. С тех пор он доступен на GitHub для публичного обсуждения и содействия.
+OWASP API Security Top 10 2019 впервые был представлен на конференции OWASP Global AppSec Tel Aviv в мае 2019 года. С тех пор он доступен на GitHub для публичного обсуждения и содействия.
 
 The list of contributors is available in the [Acknowledgments][3] section.
 

@@ -20,10 +20,11 @@ At OWASP, you'll find free and open:
 * [Mailing lists][5].
 
 В OWASP вы найдете открытые и бесплатные:
+
 * Инструменты и стандарты по безопасности разработки ПО.
 * Полноценные книги по тестированию безопасности, разработке безопасного кода и анализу безопасности кода.
 * Презентации и [видео][1].
-* [Списки с подсказками (Cheat sheets)][2] на разные темы.
+* [Списки рекомеедаций (Cheat sheets)][2] на разные темы.
 * Стандартизированные меры безопасности и библиотеки.
 * [Локальные отделения по всему миру][3].
 * Современнейшие исследования.
@@ -35,7 +36,7 @@ Learn more at: [https://www.owasp.org][6].
 
 All OWASP tools, documents, videos, presentations, and chapters are free and
 open to anyone interested in improving application security.
-Все инструменты, документы, видео, презентации и отделения OWASP бесплатны и открыты для всех, заинтересованных в улучшении безопасности разработки ПО.
+Все инструменты, документы, видео, презентации и отделения OWASP бесплатны и открыты для всех, кто заинтересован в улучшении безопасности разработки ПО.
 
 We advocate approaching application security as a people, process, and
 technology problem, because the most effective approaches to application
