@@ -3,7 +3,7 @@
 
 * [Содержание](0x00-toc.md)
 * [Об OWASP](0x01-about-owasp.md)
-* [Предислование](0x02-foreward.md)
+* [Предисловие](0x02-foreward.md)
 * [Введение](0x03-introduction.md)
 * [Анонс выпуска](0x04-release-notes.md)
 * [Риски безопасности API](0x10-api-security-risks.md)
