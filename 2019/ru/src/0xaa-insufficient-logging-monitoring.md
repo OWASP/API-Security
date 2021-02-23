@@ -4,19 +4,9 @@ API10:2019 Недостаточное Логирование и Монитори
 | Источники угроз/Векторы атак | Недостатки безопасности | Последствия |
 | - | - | - |
 | Зависит от API : Сложность эксплуатации **2** | Распространненность **3** : Сложность обнаружения **1** | Технические последствия **2** : Зависит от бизнеса |
-| Attackers take advantage of lack of logging and monitoring to abuse systems without being noticed. | Without logging and monitoring, or with insufficient logging and monitoring, it is almost impossible to track suspicious activities and respond to them in a timely fashion. | Without visibility over on-going malicious activities, attackers have plenty of time to fully compromise systems. |
-
 | Злоумышленник пользуется отсутствием логирования и мониторинга для незаметной эксплуатации уязвимостей системы. | Отсутствующие или недостаточные логирование и мониторинг не позволяют отследить подозрительную активность и своевременно отреагировать на нее. | Без наблюдения за происходящей подозрительной активностью у злоумышленника есть достаточно времени для полной компрометации системы. |
 
 ## Как определить, является ли API уязвимым?
-
-The API is vulnerable if:
-
-* It does not produce any logs, the logging level is not set correctly, or log
-  messages do not include enough detail.
-* Log integrity is not guaranteed (e.g., [Log Injection][1]).
-* Logs are not continuously monitored.
-* API infrastructure is not continuously monitored.
 
 API уязвим, если:
 
@@ -29,39 +19,13 @@ API уязвим, если:
 
 ## Сценарий #1
 
-Access keys of an administrative API were leaked on a public repository. The
-repository owner was notified by email about the potential leak, but took more
-than 48 hours to act upon the incident, and access keys exposure may have
-allowed access to sensitive data. Due to insufficient logging, the company is
-not able to assess what data was accessed by malicious actors.
-
 Ключ доступа к административному API утекли через общедоступный репозиторий. Владелец репозитория был уведомлен о потенциальной утечке по электронной почте, но отреагировал на инцидент более чем через 48 часов, в связи с чем утечка ключей могла привести к получению доступа к критичным данным. Из-за недостаточного логирования компания не в состоянии оценить, к каким данным злоумыленники смогли получить доступ.
 
 ### Сценарий #2
 
-A video-sharing platform was hit by a “large-scale” credential stuffing attack.
-Despite failed logins being logged, no alerts were triggered during the timespan
-of the attack. As a reaction to user complaints, API logs were analyzed and the
-attack was detected. The company had to make a public announcement asking users
-to reset their passwords, and report the incident to regulatory authorities.
-
 Платформа обмена видео подверглась масштабной атаке по перебору учетных данных. Не смотря на логирование неуспешных попыток входа, уведомление об атаке не последовало в течение всего хода атаки. Логи были проанализированы и атака обнаружена только во время анализа обращения пользователя. Компании пришлось публично попросить пользователей сменить пароли и отправить отчет об атаке в регулирующие органы.
 
 ## Как предотвратить
-
-* Log all failed authentication attempts, denied access, and input validation
-  errors.
-* Logs should be written using a format suited to be consumed by a log
-  management solution, and should include enough detail to identify the
-  malicious actor.
-* Logs should be handled as sensitive data, and their integrity should be
-  guaranteed at rest and transit.
-* Configure a monitoring system to continuously monitor the infrastructure,
-  network, and the API functioning.
-* Use a Security Information and Event Management (SIEM) system to aggregate and
-  manage logs from all components of the API stack and hosts.
-* Configure custom dashboards and alerts, enabling suspicious activities to be
-  detected and responded to earlier.
 
 * Логируйте все неудачные попытки входа, отказы в доступе и ошибки валидации входящих данных.
 * Логи должны быть представлены в формате, позволяющем обрабатывать их с помощью систем управления логами, и должны включать достаточное количество деталей, позволяющих идентифицировать злоумышленника.
@@ -76,8 +40,7 @@ to reset their passwords, and report the incident to regulatory authorities.
 
 * [OWASP Logging Cheat Sheet][2]
 * [OWASP Proactive Controls: Implement Logging and Intrusion Detection][3]
-* [OWASP Application Security Verification Standard: V7: Error Handling and
-  Logging Verification Requirements][4]
+* [OWASP Application Security Verification Standard: V7: Error Handling and Logging Verification Requirements][4]
 
 ### Внешние
 
