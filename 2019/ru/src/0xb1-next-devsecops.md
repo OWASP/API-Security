@@ -3,13 +3,6 @@
 
 Создание безопасных API критически важно из-за их роли в архитектуре современных приложений. Безопасностью нельзя пренебрегать, она должна быть частью всего жизненного цикла разработки. Уже недостаточно проводить сканирование и тестирование на проникновение раз в год.
 
-DevSecOps should join the development effort, facilitating continuous security
-testing across the entire software development life cycle. Their goal is to
-enhance the development pipeline with security automation, and without impacting
-the speed of development.
-
-In case of doubt, stay informed, and review, the [DevSecOps Manifesto][1] often.
-
 DevSecOps должны присоединиться к работе по разработке и обеспечить непрерывное тестирование безопасности на всем жизненном цикле разработки ПО. Их цель - усовершенствовать процесс разработки, автоматизировав проверки безопасности, не влияя на скорость разработки.
 
 Если вы сомневаетесь, ознакомьтесь с [DevSecOps Manifesto][1] и следите за его обновлениями.
