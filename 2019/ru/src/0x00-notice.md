@@ -4,7 +4,7 @@
 This is the text version of OWASP API Security Top 10, used as source for the
 official version distributed as a Portable Document Format (PDF).
 
-Это текстовая версия OWASP API Security Top 10, используемая для создания официальной версии распространяемой в формате PDF.
+Это текстовая версия OWASP API Security Top 10, используемая для создания официальной версии, распространяемой в формате PDF.
 
 Contributions to the project such as comments, corrections, or translations
 should be done here. For details on [How To Contribute][1], please refer to

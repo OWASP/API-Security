@@ -7,21 +7,21 @@ to IoT, autonomous vehicles, and smart cities, APIs are a critical part of
 modern mobile, SaaS, and web applications and can be found in customer-facing,
 partner-facing, and internal applications.
 
-Программируемый интерфейс приложений (API) - фундаментальный элемент инноваций в современном, движимом приложениями мире. API - существенная часть современных мобильных, SaaS и веб приложений, используемая в клиентских, партнерских и внутренних приложениях в сферах от банков и логистики до интернета вещей, автономных автомобилей и умных городов.
+Программный интерфейс приложений (API) - фундаментальный элемент инноваций в современном, движимом приложениями мире. API - важная составляющая современных мобильных, SaaS и веб приложений, используемая в клиентских, партнерских и внутренних приложениях от банковской сферы, сфер розничных продаж и логистики до интернета вещей, автономных автомобилей и умных городов.
 
 By nature, APIs expose application logic and sensitive data such as Personally
 Identifiable Information (PII) and because of this, APIs have increasingly
 become a target for attackers. Without secure APIs, rapid innovation would be
 impossible.
 
-По своей природе API раскрывают логику приложения и критичные данные, например, персональные данные, именно поэтому они все чаще становятся целью злоумышленников. Стремительные инновации невозможны без безопасных API.
+По своей природе API раскрывают логику приложения и критичные данные, например, персональные данные, именно поэтому API все чаще становятся целью злоумышленников. Стремительные инновации невозможны без безопасных API.
 
 Although a broader web application security risks Top 10 still makes sense, due
 to their particular nature, an API-specific security risks list is required.
 API security focuses on strategies and solutions to understand and mitigate the
 unique vulnerabilities and security risks associated with APIs.
 
-Не смотря на то, что более обширный web application security risks Top 10 по прежнему актуален, ввиду специфики API, необходим отдельный список рисков безопасности специфичных для API. Безопасность API фокусируется на стратегиях и решениях, направленных на понимание и предотвращение уникальных уязвимостей и рисков безопасности, связанных с использованием API.
+Несмотря на то, что более обширный web application security risks Top 10 по прежнему актуален, ввиду специфики API, необходим отдельный список рисков безопасности специфичных для API. Безопасность API фокусируется на стратегиях и решениях, направленных на понимание и предотвращение уникальных уязвимостей и рисков безопасности, связанных с использованием API.
 
 If you're familiar with the [OWASP Top 10 Project][1], then you'll notice the
 similarities between both documents: they are intended for readability and
