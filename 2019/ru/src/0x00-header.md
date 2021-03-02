@@ -6,7 +6,7 @@
 
 29 Мая 2019 года
 
-![WASP Logo URL TBA](images/front-wasp.png)
+![OWASP Logo URL TBA](images/front-wasp.png)
 
 | | | |
 | - | - | - |
