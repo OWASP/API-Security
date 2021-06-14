@@ -4,27 +4,29 @@ API8:2019 Injection
 | Facteurs de menace / Vecteurs d'attaque | Faille de sécurité | Impact |
 | - | - | - |
 | Spécifique API : Exploitabilité **3** | Prévalence **2** : Détectabilité **3** | Technique **3** : Spécifique à l'organisation |
-| Attackers will feed the API with malicious data through whatever injection vectors are available (e.g., direct input, parameters, integrated services, etc.), expecting it to be sent to an interpreter. | Injection flaws are very common and are often found in SQL, LDAP, or NoSQL queries, OS commands, XML parsers, and ORM. These flaws are easy to discover when reviewing the source code. Attackers can use scanners and fuzzers. | Injection can lead to information disclosure and data loss. It may also lead to DoS, or complete host takeover. |
+| Les attaquants vont envoyer à l'API des données malveillantes via tout vecteur d'injection disponible (ex : entrée directe, paramètres, services intégrés, etc), en espérant qu'elles soient envoyés à un interpréteur. | Les failles par injection sont très courantes et souvent trouvées dans des requêtes SQL, LDAP, ou NoSQL, des commandes de système d'exploitation, des parsers XML et des ORM. Ces failles sont faciles à trouver lors de la revue du code source. Les attaquants peuvent utiliser des scanners et des fuzzers. | L'injection peut aboutir à des divulgations d'informations et des pertes de données. Elle peut aussi aboutir à un déni de service, ou à une prise de contrôle complète de l'hôte. |
 
 ## L'API est-elle vulnérable ?
 
-The API is vulnerable to injection flaws if:
+L'API est vulnérables à l'injection si :
 
-* Client-supplied data is not validated, filtered, or sanitized by the API.
-* Client-supplied data is directly used or concatenated to SQL/NoSQL/LDAP
-  queries, OS commands, XML parsers, and Object Relational Mapping (ORM)/Object
-  Document Mapper (ODM).
-* Data coming from external systems (e.g., integrated systems) is not validated,
-  filtered, or sanitized by the API.
+* Les données fournies par le client ne sont pas validées, filtrées et épurées
+  par l'API.
+* Les données fournies par le client sont directement utilisées ou concaténées
+  dans des requêtes SQL / NoSQL / LDAP, des commandes de système
+  d'exploitation, des parsers XML ou des mappages objet-relationnel (ORM) /
+  mappages objet-document (ODM).
+* Les données en provenance de systèmes externes (ex : systèmes intégrés) ne
+  sont pas validées, filtrées et épurées par l'API.
 
 ## Exemples de scénarios d'attaque
 
 ### Scénario #1
 
-Firmware of a parental control device provides the endpoint
-`/api/CONFIG/restore` which expects an appId to be sent as a multipart
-parameter. Using a decompiler, an attacker finds out that the appId is passed
-directly into a system call without any sanitization:
+Le firmware d'un appareil de contrôle parental dispose d'un point d'accès
+`/api/CONFIG/restore` qui prend en entrée un appId devant être envoyé comme
+paramètre multiparties. Avec un décompilateur, un attaquant découvre que
+l'appId est passé directement dans un appel système sans aucune épuration :
 
 ```c
 snprintf(cmd, 128, "%srestore_backup.sh /tmp/postfile.bin %s %d",
@@ -32,8 +34,8 @@ snprintf(cmd, 128, "%srestore_backup.sh /tmp/postfile.bin %s %d",
 system(cmd);
 ```
 
-The following command allows the attacker to shut down any device with the same
-vulnerable firmware:
+La commande suivante permet à l'attaquant d'arrêter tout appareil équipé de ce
+même firmware vulnérable :
 
 ```
 $ curl -k "https://${deviceIP}:4567/api/CONFIG/restore" -F 'appid=$(/etc/pod/power_down.sh)'
@@ -41,12 +43,14 @@ $ curl -k "https://${deviceIP}:4567/api/CONFIG/restore" -F 'appid=$(/etc/pod/pow
 
 ### Scénario #2
 
-We have an application with basic CRUD functionality for operations with
-bookings. An attacker managed to identify that NoSQL injection might be possible
-through `bookingId` query string parameter in the delete booking request. This
-is how the request looks like: `DELETE /api/bookings?bookingId=678`.
+Nous avons une application dotée de fonctionnalités CRUD basiques pour les
+opérations de réservation. Un attaquant a réussi à découvrir qu'une injection
+NoSQL pourrait être possible via le paramètre `bookingId` de la chaine de
+requête pour la suppression d'une réservation. Voici à quoi ressemble cette
+requête : `DELETE /api/bookings?bookingId=678`.
 
-The API server uses the following function to handle delete requests:
+L'API serveur utilise la fonction suivante pour traiter les requêtes de
+suppression :
 
 ```javascript
 router.delete('/bookings', async function (req, res, next) {
@@ -59,30 +63,32 @@ router.delete('/bookings', async function (req, res, next) {
 });
 ```
 
-The attacker intercepted the request and changed `bookingId` query string
-parameter as shown below. In this case, the attacker managed to delete another
-user's booking:
+L'attaquant a intercepté la requête et a remplacé le paramètre `bookingId` de
+la chaine de requête comme indiqué ci-dessous. Dans le cas présent, l'attaquant
+a réussi à supprimer la réservation d'un autre utilisateur :
 
 ```
 DELETE /api/bookings?bookingId[$ne]=678
 ```
 
-## Comment le prévenir
+## Comment s'en prémunir
 
-Preventing injection requires keeping data separate from commands and queries.
+Prévenir les injections requiert de séparer les données des commandes et des
+requêtes.
 
-* Perform data validation using a single, trustworthy, and actively maintained
-  library.
-* Validate, filter, and sanitize all client-provided data, or other data coming
-  from integrated systems.
-* Special characters should be escaped using the specific syntax for the target
-  interpreter.
-* Prefer a safe API that provides a parameterized interface.
-* Always limit the number of returned records to prevent mass disclosure in case
-  of injection.
-* Validate incoming data using sufficient filters to only allow valid values for
-  each input parameter.
-* Define data types and strict patterns for all string parameters.
+* Effectuez la validation des données avec une bibliothèque unique, digne de
+  confiance et activement maintenue.
+* Validez, filtrez et épurez toutes les données fournies par le client, ou les
+  autres données en provenance de systèmes intégrés.
+* Les caractères spéciaux doivent être échappés en utilisant la syntaxe
+  spécifique à l'interpréteur cible.
+* Préférez une API sûre qui fournit une interface paramétrée.
+* Limitez toujours le nombre d'enregistrements retournés pour éviter les
+  divulgations de masse en cas d'injection.
+* Validez les données entrantes avec suffisamment de filtres pour accepter
+  uniquement les valeurs valides pour chaque paramètre d'entrée.
+* Définissez des types de données et des schémas stricts pour tous les
+  paramètres de chaines.
 
 ## Références
 

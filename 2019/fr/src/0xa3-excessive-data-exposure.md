@@ -4,54 +4,39 @@ API3:2019 Excessive Data Exposure
 | Facteurs de menace / Vecteurs d'attaque | Faille de sécurité | Impact |
 | - | - | - |
 | Spécifique API : Exploitabilité **3** | Prévalence **2** : Détectabilité **2** | Technique **2** : Spécifique à l'organisation |
-| Exploitation of Excessive Data Exposure is simple, and is usually performed by sniffing the traffic to analyze the API responses, looking for sensitive data exposure that should not be returned to the user. | APIs rely on clients to perform the data filtering. Since APIs are used as data sources, sometimes developers try to implement them in a generic way without thinking about the sensitivity of the exposed data. Automatic tools usually can’t detect this type of vulnerability because it’s hard to differentiate between legitimate data returned from the API, and sensitive data that should not be returned without a deep understanding of the application. | Excessive Data Exposure commonly leads to exposure of sensitive data. |
+| L'exploitation d'exposition excessive de données est simple, et est généralement effectuée en écoutant le trafic pour analyser les réponses de l'API, à la recherche de données sensibles qui ne devraient pas être retournées à l'utilisateur. | Les API comptent sur les clients pour effectuer le filtrage des données. Comme les API sont utilisées comme sources de données, les développeurs les implémentent parfois de manière générique sans penser au caractère sensible des données diffusées. En général les outils automatiques ne permettent pas de détecter ce type de vulnérabilité car il est difficile de faire la différence entre les données légitimement retournées par l'API, et des données sensibles qui ne devraient pas être retournées sans une compréhension en profondeur de l'application. | L'exposition excessive de données conduit généralement à la diffusion de données sensibles. |
 
 ## L'API est-elle vulnérable ?
 
-The API returns sensitive data to the client by design. This data is usually
-filtered on the client side before being presented to the user. An attacker can
-easily sniff the traffic and see the sensitive data.
+L'API retourne des données sensibles au client par conception. Ces données sont généralement filtrées côté client avant de présenter les données à l'utilisateur. Un attaquant peut facilement écouter le trafic et voir les données sensibles.
 
 ## Exemples de scénarios d'attaque
 
 ### Scénario #1
 
-The mobile team uses the `/api/articles/{articleId}/comments/{commentId}`
-endpoint in the articles view to render comments metadata. Sniffing the mobile
-application traffic, an attacker finds out that other sensitive data related to
-comment’s author is also returned. The endpoint implementation uses a generic
-`toJSON()` method on the `User` model, which contains PII, to serialize the
-object.
+L'équipe mobile utilise le point d'accès `/api/articles/{articleId}/comments/{commentId}`
+dans la vue des articles pour le rendu des métadonnées des commentaires. Ecoutant le trafic de l'application mobile, un attaquant découvre que d'autres données sensibles relatives à l'auteur du commentaire sont également retournées. L'implémentation du point d'accès utilise une méthode générique `toJSON()` sur le modèle `User`, qui contient des données personnelles, pour sérialiser l'objet.
 
 ### Scénario #2
 
-An IOT-based surveillance system allows administrators to create users with
-different permissions. An admin created a user account for a new security guard
-that should only have access to specific buildings on the site. Once the
-security guard uses his mobile app, an API call is triggered to:
-`/api/sites/111/cameras` in order to receive data about the available cameras
-and show them on the dashboard. The response contains a list with details about
-cameras in the following format:
-`{"id":"xxx","live_access_token":"xxxx-bbbbb","building_id":"yyy"}`.
-While the client GUI shows only cameras which the security guard should have
-access to, the actual API response contains a full list of all the cameras in
-the site.
+Un système de surveillance à base d'IoT permet aux administrateurs de créer des utilisateurs avec différentes permissions. Un administrateur a créé un compte utilisateur pour un nouvel agent de sécurité qui ne devrait avoir accès qu'à certains bâtiments spécifiques sur le site. Quand l'agent de sécurité utilise son appli mobile, un appel d'API est effectué vers `/api/sites/111/cameras` pour recevoir des données à propos des caméras disponibles et les montrer sur un tableau de bord. La réponse contient une liste avec des informations sur les caméras au format suivant : `{"id":"xxx","live_access_token":"xxxx-bbbbb","building_id":"yyy"}`.
+Si l'interface graphique du client montre uniquement les caméras auxquelles l'agent de sécurité doit avoir accès, la réponse de l'API contient en réalité la liste complète de toutes les caméras présentes sur le site.
 
-## Comment le prévenir
+## Comment s'en prémunir
 
-* Never rely on the client side to filter sensitive data.
-* Review the responses from the API to make sure they contain only legitimate
-  data.
-* Backend engineers should always ask themselves "who is the
-  consumer of the data?" before exposing a new API endpoint.
-* Avoid using generic methods such as `to_json()` and `to_string()`.
-  Instead, cherry-pick specific properties you really want to return
-* Classify sensitive and personally identifiable information (PII) that
-  your application stores and works with, reviewing all API calls returning such
-  information to see if these responses pose a security issue.
-* Implement a schema-based response validation mechanism as an extra layer of
-  security. As part of this mechanism define and enforce data returned by all
-  API methods, including errors.
+* Ne comptez jamais sur le côté client pour filtrer des données sensibles.
+* Passez en revue les réponses de l'API pour vous assurer qu'elles contiennent
+  uniquement des données nécessaires.
+* Les ingénieurs backend devraient toujours se poser la question "qui est le
+  destinataire de des données ?" avant d'exposer un nouveau point d'accès d'API.
+* Évitez les méthodes génériques telles que `to_json()` ou `to_string()`.
+  Au lieu de cela, choisissez les éléments précis que vous voulez vraiment retourner.
+* Classifiez les données sensibles et personnelles que votre application stocke et
+  manipule, et passez en revue tous les appels d'API qui retournent de telles
+  données pour voir si les réponses posent des problèmes de sécurité.
+* Implémentez un mécanisme de réponse basé sur un schéma comme couche de sécurité
+  supplémentaire. Au sein de ce mécanisme définissez et validez les données retournées
+  par toutes les méthodes d'API, y compris les erreurs.
 
 
 ## Références

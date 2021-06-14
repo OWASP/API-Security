@@ -1,25 +1,19 @@
-What's Next For Developers
-==========================
+Perspectives pour les Développeurs
+==================================
 
-The task to create and maintain secure software, or fixing existing sofware, can be
-difficult. APIs are no different.
+Créer ou maintenir la sécurité d'un logiciel, ou corriger un logiciel existant, peut s'avérer difficile. Il en va de même pour les API.
 
-We believe that education and awareness are key factors to write secure
-software. Everything else required to accomplish the goal, depends on
-**establishing and using repeatable security processes and standard security
-controls**.
+Nous pensons que l'éducation et la connaissance sont des facteurs clés pour écrire des logiciels sécurisés. L'atteinte de cet objectif repose ensuite sur **la mise en place et l'utilisation de processus de sécurité reproductibles et de contrôles de sécurité standards**.
 
-OWASP has numerous free and open resources to address security since the very
-beginning of the project. Please visit the [OWASP Projects page][1] for a
-comprehensive list of available projects.
+L'OWASP propose de nombreuses ressources gratuites et libres pour aborder la sécurité dès le début d'un projet. Veuillez visiter la [page des projets OWASP][1] pour connaitre la liste complète des projets disponibles.
 
 | | |
 |-|-|
-| **Education** | You can start reading [OWASP Education Project materials][2] according to your profession and interest. For hands-on learning, we added **crAPI** - **C**ompletely **R**idiculous **API** on [our roadmap][3]. Meanwhile, you can practice WebAppSec using the [OWASP DevSlop Pixi Module][4], a vulnerable WebApp and API service intent to teach users how to test modern web applications and API's for security issues, and how to write more secure API's in the future. You can also attend [OWASP AppSec Conference][5] training sessions, or [join your local chapter][6]. |
-| **Security Requirements** | Security should be part of every project from the beginning. When doing requirements elicitation, it is important to define what "secure" means for that project. OWASP recommends you use the [OWASP Application Security Verification Standard (ASVS)][7] as a guide for setting the security requirements. If you're outsourcing, consider the [OWASP Secure Software Contract Annex][8], which should be adapted according to local law and regulations. |
-| **Security Architecture** | Security should remain a concern during all the project stages. The [OWASP Prevention Cheat Sheets][9] are a good starting point for guidance on how to design security in during the architecture phase. Among many others, you'll find the [REST Security Cheat Sheet][10] and the [REST Assessment Cheat Sheet][11]. |
-| **Standard Security Controls** | Adopting Standard Security Controls reduces the risk of introducing security weaknesses while writing your own logic. Despite the fact that many modern frameworks now come with built-in standard effective controls, [OWASP Proactive Controls][12] gives you a good overview of what security controls you should look to include in your project. OWASP also provides some libraries and tools you may find valuable, such as validation controls. |
-| **Secure Software Development Life Cycle** | You can use the [OWASP Software Assurance Maturity Model (SAMM)][13] to improve the process when building APIs. Several other OWASP projects are available to help you during the different API development phases e.g., the [OWASP Code Review Project][14]. |
+| **Éducation** | Vous pouvez commencer par lire les [projets de la catégorie OWASP Education][2] en fonction de votre profession de votre intérêt. Pour une approche plus pratique, nous avons ajouté le projet **crAPI** - **C**ompletely **R**idiculous **API** à  [notre roadmap][3]. En attendant, vous pouvez vous entrainer à la sécurité des applis web avec le [module OWASP DevSlop Pixi][4], une WebApp et un service d'API volontairement vulnérables destinés à apprendre aux utilisateurs comment tester la sécurité des applications web modernes et des services d'API, et comment développer des API plus sécurisées à l'avenir. Vous pouvez également participer à des sessions de formation de [conférence OWASP AppSec][5], ou [rejoindre une section OWASP locale][6]. |
+| **Besoins de Sécurité** | La sécurité doit faire partie de chaque projet dès le début. Lors de la formulation des besoins, il est important de définir ce que "sécurisé" signifie pour ce projet. L'OWASP vous recommande d'utiliser le [OWASP Application Security Verification Standard (ASVS)][7] comme guide pour définir vos besoins de sécurité. Si vous sous-traitez, envisagez le projet [OWASP Secure Software Contract Annex][8], qui devra être adapté aux lois et réglementations locales. |
+| **Architecture de Sécurité** | La sécurité doit rester une préoccupation durant toutes les étapes du projet. Les [OWASP Prevention Cheat Sheets][9] sont un bon point de départ pour guider la conception de la sécurité durant la phase d'architecture. Parmi beaucoup d'autres, vous trouverez la [REST Security Cheat Sheet][10] et la [REST Assessment Cheat Sheet][11]. |
+| **Contrôles de Sécurité Standards** | L'adoption de contrôles de sécurité standards réduit le risque d'introduire des vulnérabilités de sécurité lorsque vous implémentez votre logique métier. Bien que de nombreux frameworks modernes incluent désormais des contrôles standards efficaces,[OWASP Proactive Controls][12] vous fournit un bon résumé des contrôles de sécurité que vous devriez inclure dans votre projet. L'OWASP fournit aussi quelques bibliothèques et outils que vous pourrez trouver utiles, tels que des contrôles de validation. |
+| **Cycle de Développement Logiciel Sécurisé** | Vous pouvez utiliser le [OWASP Software Assurance Maturity Model (SAMM)][13] pour améliorer le processus de développement d'API. Plusieurs autres projets OWASP sont disponibles pour vous aider durant les différentes phases de développement d'API, par ex. le [OWASP Code Review Project][14]. |
 
 [1]: https://www.owasp.org/index.php/Category:OWASP_Project
 [2]: https://www.owasp.org/index.php/OWASP_Education_Material_Categorized

@@ -4,59 +4,48 @@ API4:2019 Lack of Resources & Rate Limiting
 | Facteurs de menace / Vecteurs d'attaque | Faille de sécurité | Impact |
 | - | - | - |
 | Spécifique API : Exploitabilité **2** | Prévalence **3** : Détectabilité **3** | Technique **2** : Spécifique à l'organisation |
-| Exploitation requires simple API requests. No authentication is required. Multiple concurrent requests can be performed from a single local computer or by using cloud computing resources. | It’s common to find APIs that do not implement rate limiting or APIs where limits are not properly set. | Exploitation may lead to DoS, making the API unresponsive or even unavailable. |
+| L'exploitation consiste en de simples requêtes d'API. Aucune authentification n'est requise. Des requêtes multiples concurrentes peuvent être effectuées depuis un unique ordinateur local ou en utilisant des ressources d'informatique en nuage. | Il est fréquent de trouver des API qui n'implémentent pas de limitations des requêtes ou dont les limitations ne sont pas correctement paramétrées. | L'exploitation peut aboutir à un déni de service, rendant l'API incapable de répondre ou même indisponible. |
 
 ## L'API est-elle vulnérable ?
 
-API requests consume resources such as network, CPU, memory, and storage. The
-amount of resources required to satisfy a request greatly depends on the user
-input and endpoint business logic. Also, consider the fact that requests from
-multiple API clients compete for resources. An API is vulnerable if at least one
-of the following limits is missing or set inappropriately (e.g., too low/high):
+Les requêtes d'API consomment des ressources réseau, processeur, mémoire et de stockage. La quantité de ressources requises pour satisfaire à une requête dépendent grandement des données entrées par l'utilisateur et de la logique métier du point d'accès. De plus, il faut considérer le fait que les requêtes de différents clients de l'API sont en concurrence pour l'utilisation des ressources. Une API est vulnérable si au moins une des limites suivantes est manquante ou incorrectement paramétrée (c'est-à-dire trop basse / trop élevée) :
 
-* Execution timeouts
-* Max allocable memory
-* Number of file descriptors
-* Number of processes
-* Request payload size (e.g., uploads)
-* Number of requests per client/resource
-* Number of records per page to return in a single request response
+* durée maximale d'exécution
+* Maximum de mémoire allouable
+* Nombre de descripteurs de fichiers
+* Nombre de processus
+* Taille de la charge utile de la requête (ex. téléversement)
+* Nombre de requêtes par client / ressource
+* Nombre d'enregistrements par page à retourner pour chaque réponse individuelle
 
 ## Exemples de scénarios d'attaque
 
 ### Scénario #1
 
-An attacker uploads a large image by issuing a POST request to `/api/v1/images`.
-When the upload is complete, the API creates multiple thumbnails with different
-sizes. Due to the size of the uploaded image, available memory is exhausted
-during the creation of thumbnails and the API becomes unresponsive.
+Un attaquant téléverse une grande image en émettant une requête POST vers `/api/v1/images`.
+Lorsque le téléversement est terminé, l'API crée plusieurs vignettes avec différentes tailles. Du fait de la taille de l'image téléversée, la mémoire disponible est saturée par la création des vignettes et l'API ne répond plus.
 
 ### Scénario #2
 
-We have an application that contains the users' list on a UI with a limit of
-`200` users per page. The users' list is retrieved from the server using the
-following query: `/api/users?page=1&size=100`. An attacker changes the `size`
-parameter to `200 000`, causing performance issues on the database. Meanwhile,
-the API becomes unresponsive and is unable to handle further requests from this
-or any other clients (aka DoS).
+Nous avons une application qui contient la liste des utilisateurs avec une limite de `200` utilisateurs par page. La liste des utilisateurs est obtenue auprès du serveur avec la requête suivante : `/api/users?page=1&size=100`. Un attaquant change la valeur de `size`
+en `200 000`, entrainant des problèmes de perfomance sur la base de données. De ce fait, l'API ne répond plus et n'est plus capable de traiter d'autres requêtes de ce client ou d'autres clients (autrement dit déni de service).
 
-The same scenario might be used to provoke Integer Overflow or Buffer Overflow
-errors.
+Le même scénario peut être utilisé pour générer des erreurs Integer Overflow ou Buffer Overflow.
 
-## Comment le prévenir
+## Comment s'en prémunir
 
-* Docker makes it easy to limit [memory][1], [CPU][2], [number of restarts][3],
-  [file descriptors, and processes][4].
-* Implement a limit on how often a client can call the API within a defined
-  timeframe.
-* Notify the client when the limit is exceeded by providing the limit number and
-  the time at which the limit will be reset.
-* Add proper server-side validation for query string and request body
-  parameters, specifically the one that controls the number of records to be
-  returned in the response.
-* Define and enforce maximum size of data on all incoming parameters and
-  payloads such as maximum length for strings and maximum number of elements in
-  arrays.
+* Docker permet facilement de limiter [la mémoire][1], [le processeur][2], [le nombre de redémarrages][3],
+  [les descripteurs de fichiers et les processus][4].
+* Implémentez une limite du nombre d'appels à l'API qu'un client peut effectuer
+  sur une période donnée.
+* Notifiez le client quand la limite est dépassée en indiquant la limite et quand
+  cette limite sera remise à zéro.
+* Ajoutez des validations adaptées côté serveur pour les paramètres fournis en
+  chaines ou en corps de requêtes, en particulier ceux qui contrôlent le nombre
+  d'enregistrements à retourner dans la réponse.
+* Définissez et implémentez une taille maximale de données pour tous les paramètres
+  d'entrée et les charges utiles, comme des longueurs maximales pour les chaines de
+  caractères et un nombre maximal d'éléments dans les tableaux.
 
 
 ## Références

@@ -1,41 +1,44 @@
-Methodology and Data
-====================
+Méthodologie et Données
+=======================
 
-## Overview
+## Présentation
 
-Since the AppSec industry has not been specifically focused on the most recent
-architecture of applications, in which APIs play an important role, compiling a
-list of the ten most critical API security risks, based on a public call for
-data, would have been a hard task. Despite there being no public data call, the
-resulting Top 10 list is still based on publicly available data, security
-experts' contributions, and open discussion with the security community.
+Comme l'industrie de la sécurité applicative n'est pas spécifiquement concentrée
+sur les architectures applicatives les plus récentes, dans lesquelles les API
+jouent un rôle important, il aurait été difficile de compiler une liste des dix
+risques de sécurité les plus critiques pour les API en s'appuyant sur un appel
+public à informations. Bien qu'il n'y ait pas eu de tel appel public
+à informations, la liste résultante composant le Top 10 est basée sur des
+informations publiquement accessibles, des contributions d'experts en sécurité,
+et des discussions ouvertes avec la communauté de la sécurité.
 
-## Methodology
+## Méthodologie
 
-In the first phase, publicly available data about APIs security incidents were
-collected, reviewed, and categorized by a group of security experts. Such
-data was collected from bug bounty platforms and vulnerability databases,
-within a one-year-old time frame. It was used for statistical purposes.
+Dans un premier temps, des informations publiquement disponibles sur des
+incidents de sécurité concernant des API ont été collectées, évaluées, et
+catégorisées par un groupe d'experts en sécurité. Ces données ont été collectées
+à partir de plateformes de bug bounty et de bases de données de vulnérabilités,
+sur une période d'un an, à des fins statistiques.
 
-In the next phase, security practitioners with penetration testing experience
-were asked to compile their own Top 10 list.
+Dans un deuxième temps, il a été demandé à des praticiens de la sécurité
+expérimentés en tests d'intrusion de compiler leur propre Top 10.
 
-The [OWASP Risk Rating Methodology][1] was used to perform he Risk Analysis. The
-scores were discussed and reviewed between the security practitioners. For
-considerations on these matters, please refer to the [API Security Risks][2]
-section.
+La [méthodologique d'évaluation de risque OWASP][1] a été utilisée pour
+effectuer l'analyse de risques. Les scores ont été discutés et évalués par les
+praticiens de la sécurité. Sur ces questions, veuillez vous référer à la section
+des [risques de sécurité des API][2].
 
-The first draft of the OWASP API Security Top 10 2019 resulted from a consensus
-between statistical results from phase one, and the security practitioners'
-lists. This draft was then submitted for appreciation and review by another
-group of security practitioners, with relevant experience in the API security
-fields.
+La première ébauche de l'OWASP API Security Top 10 2019 résultait d'un consensus
+entre les données statistiques de la première phase et les listes des praticiens
+en sécurité. Cette ébauche a ensuite été soumise pour avis et évaluation à un
+autre groupe de praticiens de la sécurité disposant d'expériences en lien avec
+la sécurité des API.
 
-The OWASP API Security Top 10 2019 was first presented in the OWASP Global
-AppSec Tel Aviv event (May 2019). Since then, it has been available on GitHub
-for public discussion and contributions.
+Le OWASP API Security Top 10 2019 a été présenté pour la première fois lors de
+l'événement OWASP Global AppSec Tel Aviv (mai 2019). Depuis lors, il a été mis
+à disposition sur GitHub pour permettre discussions et contributions publiques.
 
-The list of contributors is available in the [Acknowledgments][3] section.
+La liste des contributeurs est disponible dans la section des [Remerciements][3].
 
 [1]: https://www.owasp.org/index.php/OWASP_Risk_Rating_Methodology
 [2]: ./0x10-api-security-risks.md

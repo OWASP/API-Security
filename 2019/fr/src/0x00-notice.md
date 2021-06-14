@@ -1,12 +1,12 @@
-Notice
-======
+Note
+====
 
-This is the text version of OWASP API Security Top 10, used as source for the
-official version distributed as a Portable Document Format (PDF).
+Ceci est la version texte de l'OWASP API Security Top 10, utilisé comme source
+pour la version officielle distribuée en Portable Document Format (PDF).
 
-Contributions to the project such as comments, corrections, or translations
-should be done here. For details on [How To Contribute][1], please refer to
-[CONTRIBUTING.md][1].
+Les contributions au projet telles que les commentaires, les corrections ou les
+traductions doivent être effectuées ici. Pour plus de détails sur
+[comment contribuer][1], veuillez vous référer au document [CONTRIBUTING.md][1].
 
 * Erez Yallon
 * Inon Shkedy

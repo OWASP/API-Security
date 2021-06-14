@@ -1,24 +1,26 @@
-Release Notes
-=============
+Notes de versions
+=================
 
-This is the first OWASP API Security Top 10 edition, which we plan to be updated
-periodically, every three or four years.
+Ceci est la première édition de l'OWASP API Security Top 10, que nous prévoyons
+de mettre à jour périodiquement, tous les trois ou quatre ans.
 
-Unlike this version, in future versions, we want to make a public call for data,
-involving the security industry in this effort. In the [Methodology and Data][1]
-section, you'll find more details about how this version was built. For more
-details about the security risks, please refer to the [API Security Risks][2]
-section.
+Contrairement à cette version, nous voulons pour les futures versions lancer un
+appel public à données, impliquant le secteur de la sécurité dans cette démarche.
+Dans la section [Méthodologie et Données][1], vous trouverez plus d'informations
+sur la manière dont cette version a été construite. Pour plus de détails sur les
+riques de sécurité, veuillez vous référer à la section
+[Risques de Sécurité des API][2].
 
-It is important to realize that over the last few years, architecture of 
-applications has significantly changed. Currently, APIs play a very important
-role in this new architecture of microservices, Single Page Applications (SPAs),
-mobile apps, IoT, etc.
+Il est important d'être conscient que l'architecture des applications a
+considérablement changé au cours des dernières années. Actuellement les API
+jouent un rôle très important dans cette nouvelle architecture de microservices,
+de *single page applications*, d'applis mobiles, d'IoT, etc.
 
-The OWASP API Security Top 10 was a required effort to create awareness about
-modern API security issues. It was only possible due to a great effort of
-several volunteers, all of them listed in the [Acknowledgments][3] section.
-Thank you!
+L'OWASP API Security Top 10 était un effort nécessaire pour créer une prise de
+conscience des questions de sécurité des API modernes. Cela n'a été possible que
+grâce aux efforts considérables de plusieurs volontaires, qui sont tous
+répertoriés dans la section [Remerciements][3].
+Merci !
 
 [1]: ./0xd0-about-data.md
 [2]: ./0x10-api-security-risks.md

@@ -4,68 +4,61 @@ API2:2019 Broken User Authentication
 | Facteurs de menace / Vecteurs d'attaque | Faille de sécurité | Impact |
 | - | - | - |
 | Spécifique API : Exploitabilité **3** | Prévalence **2** : Détectabilité **2** | Technique **3** : Spécifique à l'organisation |
-| Authentication in APIs is a complex and confusing mechanism. Software and security engineers might have misconceptions about what are the boundaries of authentication and how to implement it correctly. In addition, the authentication mechanism is an easy target for attackers, since it’s exposed to everyone. These two points makes the authentication component potentially vulnerable to many exploits. | There are two sub-issues: 1. Lack of protection mechanisms: APIs endpoints that are responsible for authentication must be treated differently from regular endpoints and implement extra layers of protection 2. Misimplementation of the mechanism: The mechanism is used / implemented without considering the attack vectors, or it’s the wrong use case (e.g., an authentication mechanism designed for IoT clients might not be the right choice for web applications). | Attackers can gain control to other users’ accounts in the system, read their personal data, and perform sensitive actions on their behalf, like money transactions and sending personal messages. |
+| L'authentification dans les API est un mécanisme complexe et source de confusions. Les ingénieurs logiciel et en sécurité peuvent avoir des a-prioris sur les limites de l'authentification et la manière de l'implémenter correctement. De plus, le mécanisme d'authentification est une cible facile pour les attaquants, dans la mesure où elle est accessible à tous. Ces deux points rendent le composant d'authentification potentiellement vulnérable à de nombreuses exploitations. | On distingue deux sous-problèmes : 1. Manque de mécanismes de protection : les points d'accès d'API responsables de l'authentification doivent être traités différemment des autres points d'accès et doivent implémenter des niveaux de protection supplémentaires 2. Mauvaise implémentation du mécanisme : Le mécanisme est utilisé / implémenté sans prendre en considération les vecteurs d'attaque, ou n'est pas utilisé à bon escient (ex. un mécanisme d'authentification conçu pour des clients IoT n'est probablement pas le bon choix pour des applications web). | Des attaquants peuvent prendre le contrôle des comptes d'autres utilisateurs dans le système, lire leurs données personnelles, et effectuer des actions sensibles à leur place, comme des transactions financières ou l'envoi de messages personnels. |
 
 ## L'API est-elle vulnérable ?
 
-Authentication endpoints and flows are assets that need to be protected. “Forgot
-password / reset password” should be treated the same way as authentication
-mechanisms.
+Les points d'accès et les flux d'authentification sont des ressources qui doivent être protégées. “Mot de passe oublié / changement de mot de passe” doivent être traités de la même manière que les mécanismes d'authentification.
 
-An API is vulnerable if it:
-* Permits [credential stuffing][1] whereby the attacker has a list of valid
-  usernames and passwords.
-* Permits attackers to perform a brute force attack on the same user account, without
-  presenting captcha/account lockout mechanism.
-* Permits weak passwords.
-* Sends sensitive authentication details, such as auth tokens and passwords in
-  the URL.
-* Doesn’t validate the authenticity of tokens.
-* Accepts unsigned/weakly signed JWT tokens (`"alg":"none"`)/doesn’t
-  validate their expiration date.
-* Uses plain text, non-encrypted, or weakly hashed passwords.
-* Uses weak encryption keys.
+Une API est vulnérable si elle :
+* Permet le [bourrage d'identifiants][1] quand l'attaquant dispose d'une liste de noms
+  d'utilisateurs et de mots de passe.
+* Permet à des attaquants d'effectuer une attaque par force brute sur le même compte
+  utilisateur, sans présenter de captcha ou de mécanisme de blocage.
+* Permet des mots de passe faibles.
+* Envoie des éléments d'authentification sensibles, tels que des tokens
+  d'authentification ou des mots de passe dans l'URL.
+* Ne valide pas l'authenticité des tokens.
+* Accepte des tokens JWT non signés / faiblement signés (`"alg":"none"`) / ne
+  valide pas leur date d'expiration.
+* Utilise des mots de passe en clair, non chiffrés ou faiblement hashés.
+* Utilise des clés de chiffrement faibles.
 
 ## Exemples de scénarios d'attaque
 
 ## Scenario #1
 
-[Credential stuffing][1] (using [lists of known usernames/passwords][2]), is a
-common attack. If an application does not implement automated threat or
-credential stuffing protections, the application can be used as a password
-oracle (tester) to determine if the credentials are valid.
+Le [bourrage d'identifiants][1] (utilisant des [listes de noms d'utilisateurs / mots de passe connus][2]), est une attaque courante. Si une application n'implémente pas de protections automatisées contre les menaces ou le bourrage d'identifiants, l'application peut être utilisée comme oracle à mots de passe (testeur) pour déterminer si les identifiants sont valides.
 
 ## Scenario #2
 
-An attacker starts the password recovery workflow by issuing a POST request to
-`/api/system/verification-codes` and by providing the username in the request
-body. Next an SMS token with 6 digits is sent to the victim’s phone. Because the
-API does not implement a rate limiting policy, the attacker can test all
-possible combinations using a multi-threaded script, against the
-`/api/system/verification-codes/{smsToken}` endpoint to discover the right token
-within a few minutes.
+Un attaquant commence le processus de récupération de mot de passe en émettant une requête POST vers `/api/system/verification-codes` comportant le nom d'utilisateur dans le corps de la requête. Ensuite un token à 6 chiffres est envoyé par SMS sur le téléphone de la victime. Comme l'API n'implémente pas de mécanisme limitant les requêtes, l'attaquant peut tester toutes les combinaisons possibles en utilisant un script multi-threadé contre le point d'accès `/api/system/verification-codes/{smsToken}` pour découvrir le bon token en l'espace de quelques minutes.
 
-## Comment le prévenir
+## Comment s'en prémunir
 
-* Make sure you know all the possible flows to authenticate to the API (mobile/
-  web/deep links that implement one-click authentication/etc.)
-* Ask your engineers what flows you missed.
-* Read about your authentication mechanisms. Make sure you understand what and
-  how they are used. OAuth is not authentication, and neither is API keys.
-* Don't reinvent the wheel in authentication, token generation, password
-  storage. Use the standards.
-* Credential recovery/forget password endpoints should be treated as login
-  endpoints in terms of brute force, rate limiting, and lockout protections.
-* Use the [OWASP Authentication Cheatsheet][3].
-* Where possible, implement multi-factor authentication.
-* Implement anti brute force mechanisms to mitigate credential stuffing,
-  dictionary attack, and brute force attacks on your authentication endpoints.
-  This mechanism should be stricter than the regular rate limiting mechanism on
-  your API.
-* Implement [account lockout][4] / captcha mechanism to prevent brute force
-  against specific users. Implement weak-password checks.
-* API keys should not be used for user authentication, but for [client app/
-  project authentication][5].
+* Assurez-vous de connaitre tous les flux possibles pour s'identifier auprès de
+  l'API (mobile / web / liens profonds qui implémentent l'authentification en un
+  clic / etc.)
+* Demandez à vos ingénieurs quels flux vous avez oubliés.
+* Documentez-vous sur vos mécanismes d'authentification. Assurez-vous de comprendre
+  ce qui est utilisé et comment. OAuth n'est pas une authentification, les clés
+  d'API non plus.
+* Ne réinventez pas la roue en matière d'authentification, de génération de tokens,
+  de stockage de mots de passe. Utilisez les standards.
+* Les points d'accès de récupération / d'oubli de mot de passe doivent être traités 
+  comme des points d'accès de login en termes de force brute, limitation de requêtes 
+  et de protection par blocage.
+* Utilisez la [cheatsheet OWASP Authentication ][3].
+* Quand c'est possible, implémentez l'authentification multi-facteurs.
+* Implementez des mécanismes anti force brute pour empêcher le bourrage
+  d'identifiants, les attaques par dictionnaire, et les attaques par force brute
+  contre vos points d'accès d'authentification. Ce mécanisme devrait être plus strict
+  que le mécanisme de limitation de requêtes normal de votre API.
+* Implémentez [le blocage de compte][4] / un mécanisme de captcha pour empêcher
+  l'emploi de force brute contre des utilisateurs spécifiques. Implementez des
+  contrôles de faiblesse de mot de passe.
+* Les clés d'API ne doivent pas être utilisées pour authentifier un utilisateur,
+  mais pour [app client / authentification de projet][5].
 
 ## Références
 

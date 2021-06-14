@@ -4,51 +4,57 @@ API10:2019 Insufficient Logging & Monitoring
 | Facteurs de menace / Vecteurs d'attaque | Faille de sécurité | Impact |
 | - | - | - |
 | Spécifique API : Exploitabilité **2** | Prévalence **3** : Détectabilité **1** | Technique **2** : Spécifique à l'organisation |
-| Attackers take advantage of lack of logging and monitoring to abuse systems without being noticed. | Without logging and monitoring, or with insufficient logging and monitoring, it is almost impossible to track suspicious activities and respond to them in a timely fashion. | Without visibility over on-going malicious activities, attackers have plenty of time to fully compromise systems. |
+| Les attaquants exploitent l'absence de logging et de monitoring pour utiliser frauduleusement des systèmes sans se faire repérer. | En l'absence de logging et de monitoring, ou si le logging et le monitoring sont insuffisants, il est pratiquement
+impossible de suivre des activités suspectes et d'y répondre rapidement. | Sans visibilité sur les activités malveillantes en cours, les attaquants disposent de beaucoup de temps et peuvent compromettre complètement les systèmes. |
 
 ## L'API est-elle vulnérable ?
 
-The API is vulnerable if:
+L'API is vulnérable si :
 
-* It does not produce any logs, the logging level is not set correctly, or log
-  messages do not include enough detail.
-* Log integrity is not guaranteed (e.g., [Log Injection][1]).
-* Logs are not continuously monitored.
-* API infrastructure is not continuously monitored.
+* Elle ne produit pas de logs, le niveau de logging n'est pas réglé
+  correctement, ou les messages de log ne comportent pas suffisamment
+  d'informations.
+* L'intégrité des logs ne peut pas être garantie (ex : [Log Injection][1]).
+* Les logs ne sont pas monitorés en permanence.
+* L'infrastructure de l'API n'est pas monitorée en permanence.
 
 ## Exemples de scénarios d'attaque
 
 ### Scénario #1
 
-Access keys of an administrative API were leaked on a public repository. The
-repository owner was notified by email about the potential leak, but took more
-than 48 hours to act upon the incident, and access keys exposure may have
-allowed access to sensitive data. Due to insufficient logging, the company is
-not able to assess what data was accessed by malicious actors.
+Les clés d'accès d'une API administrative ont fuité sur un répertoire public.
+Le propriétaire du répertoire a été notifié par e-mail à propos de cette fuite
+potentielle, mais a mis plus de 48 heures à réagir à l'incident, et
+l'exposition des clés d'accès peut avoir permis l'accès à des données
+personnelles. Du fait d'un logging insuffisant, l'entreprise n'est pas capable
+d'évaluer quelles données ont pu être consultées par des acteurs malveillants.
 
 ### Scénario #2
 
-A video-sharing platform was hit by a “large-scale” credential stuffing attack.
-Despite failed logins being logged, no alerts were triggered during the timespan
-of the attack. As a reaction to user complaints, API logs were analyzed and the
-attack was detected. The company had to make a public announcement asking users
-to reset their passwords, and report the incident to regulatory authorities.
+Une plate-forme de partage de vidéos a subi une attaque par bourrage
+d'identifiants de “grande ampleur”. Malgré le log des essais infructueux,
+aucune alerte n'a été émise pendant la durée de l'attaque. En réaction aux
+plaintes des utilisateurs, les logs de l'API ont été analysés et l'attaque a
+été détectée. L'entreprise a dû faire une annonce publique pour demander aux
+utilisateurs de réinitialiser leur mot de passe, et a dû déclarer l'incident
+aux autorités de contrôle.
 
-## Comment le prévenir
+## Comment s'en prémunir
 
-* Log all failed authentication attempts, denied access, and input validation
-  errors.
-* Logs should be written using a format suited to be consumed by a log
-  management solution, and should include enough detail to identify the
-  malicious actor.
-* Logs should be handled as sensitive data, and their integrity should be
-  guaranteed at rest and transit.
-* Configure a monitoring system to continuously monitor the infrastructure,
-  network, and the API functioning.
-* Use a Security Information and Event Management (SIEM) system to aggregate and
-  manage logs from all components of the API stack and hosts.
-* Configure custom dashboards and alerts, enabling suspicious activities to be
-  detected and responded to earlier.
+* Loggez toutes les tentatives infructueuses d'authentification, les accès
+  refusés et les erreurs de validations des données entrées.
+* Les logs doivent être formatés pour pouvoir être traités par un outil de
+  gestion des logs, et doivent inclure suffisamment d'informations pour pouvoir
+  identifier un acteur malveillant.
+* Les logs doivent être considérés comme des données sensibles, et leur
+  intégrité doit être garantie pour leur stockage comme pour leur transfert.
+* Configurez un système de monitoring pour surveiller en permanence
+  l'infrastructure, le réseau et le fonctionnement de l'API.
+* Utilisez un système d'information et de gestion des événements (SIEM) pour
+  agréger et gérer les logs de tous les composants de la pile et l'API et des
+  hôtes.
+* Configurez des tableaux de bord et des alertes personnalisés, permettant la
+  détection et le traitement plus rapide d'activités suspectes.
 
 ## Références
 

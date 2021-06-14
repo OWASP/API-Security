@@ -4,66 +4,83 @@ API9:2019 Improper Assets Management
 | Facteurs de menace / Vecteurs d'attaque | Faille de sécurité | Impact |
 | - | - | - |
 | Spécifique API : Exploitabilité **3** | Prévalence **3** : Détectabilité **2** | Technique **2** : Spécifique à l'organisation |
-| Old API versions are usually unpatched and are an easy way to compromise systems without having to fight state-of-the-art security mechanisms, which might be in place to protect the most recent API versions. | Outdated documentation makes it more difficult to find and/or fix vulnerabilities. Lack of assets inventory and retire strategies leads to running unpatched systems, resulting in leakage of sensitive data. It’s common to find unnecessarily exposed API hosts because of modern concepts like microservices, which make applications easy to deploy and independent (e.g., cloud computing, k8s). | Attackers may gain access to sensitive data, or even takeover the server through old, unpatched API versions connected to the same database. |
+| Les anciennes versions des API n'ont souvent pas bénéficié des correctifs de sécurité et sont un moyen facile pour compromettre des systèmes sans avoir à affronter des mécanismes de sécurité de pointe, qui peuvent avoir été mis en place pour protéger les versions les plus récentes de l'API. | Une documentation obsolète rend plus difficile la recherche et / ou la correction de vulnérabilités. L'absence d'inventaire des actifs et de stratégies de mise à la retraite conduit à faire tourner des systèmes dépourvus de correctifs de sécurité, entrainant la divulgation de données sensibles. Des hôtes d'API inutilement exposés sont fréquemment trouvés du fait des concepts modernes comme les micro-services, qui rendent les applications faciles à déployer et indépendantes (ex : informatique en nuage, kubernetes). | Les attaquants peuvent obtenir accès à des données sensibles, et même prendre le contrôle du serveur via d'anciennes versions non corrigées de l'API connectées à la même base de données. |
 
 ## L'API est-elle vulnérable ?
 
-The API might be vulnerable if:
+L'API peut être vulnérable si :
 
-* The purpose of an API host is unclear, and there are no explicit answers to
-  the following questions:
-  * Which environment is the API running in (e.g., production, staging, test,
-    development)?
-  * Who should have network access to the API (e.g., public, internal, partners)?
-  * Which API version is running?
-  * What data is gathered and processed by the API (e.g., PII)?
-  * What's the data flow?
-* There is no documentation, or the existing documentation is not updated.
-* There is no retirement plan for each API version.
-* Hosts inventory is missing or outdated.
-* Integrated services inventory, either first- or third-party, is missing or
-  outdated.
-* Old or previous API versions are running unpatched.
+* L'objectif de l'hôte de l'API n'est pas clair, et il n'y a pas de réponses
+  explicites aux questions suivantes :
+  * Dans quel environment tourne l'API (ex : production, staging, test,
+    développement) ?
+  * Qui doit avoir un accès réseau à l'API (ex : public, interne, partenaires) ?
+  * Quelle version de l'API tourne ?
+  * Quelles données sont collectées et traitées par l'API (ex : données
+    personnelles) ?
+  * Quel est le flux des données ?
+* Il n'y a pas de documentation, ou la documentation existante n'est pas mise
+  à jour.
+* Il n'y a pas de plan de mise à la retraite pour chaque version de l'API.
+* L'inventaire des hôtes est manquant ou obsolète.
+* L'inventaire des services intégrés, en propre ou par des tiers, est manquant
+  ou obsolète.
+* Des versions anciennes ou antérieures de l'API tournent sans correctifs.
 
 ## Exemples de scénarios d'attaque
 
 ### Scénario #1
 
-After redesigning their applications, a local search service left an old API
-version (`api.someservice.com/v1`) running, unprotected, and with access to the
-user database. While targeting one of the latest released applications, an
-attacker found the API address (`api.someservice.com/v2`). Replacing `v2` with
-`v1` in the URL gave the attacker access to the old, unprotected API,
-exposing the personal identifiable information (PII) of over 100 Million users.
+Après avoir repensé ses applications, un service local de recherche avait
+laissé une ancienne version de l'API (`api.someservice.com/v1`) tourner sans
+protection, avec un accès à la base de données clients. En ciblant l'une des
+applications dernièrement publiées, un attaquant a trouvé l'adresse de l'API (`api.someservice.com/v2`). En remplaçant `v2` par `v1` dans l'URL l'attaquant
+a obtenu accès à l'ancienne API non protégée, exposant les données personnelles
+de plus de 100 millions d'utilisateurs.
 
 ### Scénario #2
 
-A social network implemented a rate-limiting mechanism that blocks attackers
-from using brute-force to guess reset password tokens. This mechanism wasn’t
-implemented as part of the API code itself, but in a separate component between
-the client and the official API (`www.socialnetwork.com`).
-A researcher found a beta API host (`www.mbasic.beta.socialnetwork.com`) that
-runs the same API, including the reset password mechanism, but the rate limiting
-mechanism was not in place. The researcher was able to reset the password of any
-user by using a simple brute-force to guess the 6 digits token.
+Un réseau social avait mis en place un mécanisme de limitation du nombre de
+requêtes pour empêcher  des attaquants d'employer la force brute pour deviner
+les tokens de réinitialisation des mots de passe. Ce mécanisme n'était pas
+implémenté au niveau du code de l'API elle-même, mais dans un composant séparé
+situé entre le client et l'API officielle (`www.socialnetwork.com`).
+Un chercheur a découvert un hôte d'API en beta
+(`www.mbasic.beta.socialnetwork.com`) qui faisait tourner la même API, y
+compris le mécanisme de réinitialisation du mot de passe, mais était dépourvu
+du mécanisme de limitation du nombre de requêtes. Le chercheur était en mesure
+de réinitialiser le mot de passe de n'importe quel utilisateur simplement en
+utilisant la force brute pour deviner le token à 6 chiffres.
 
-## Comment le prévenir
+## Comment s'en prémunir
 
-* Inventory all API hosts and document important aspects of each one of them,
-  focusing on the API environment (e.g., production, staging, test,
-  development), who should have network access to the host (e.g., public,
-  internal, partners) and the API version.
-* Inventory integrated services and document important aspects such as their
-  role in the system, what data is exchanged (data flow), and its sensitivity.
-* Document all aspects of your API such as authentication, errors, redirects,
-  rate limiting, cross-origin resource sharing (CORS) policy and endpoints,
-  including their parameters, requests, and responses.
-* Generate documentation automatically by adopting open standards. Include the
-  documentation build in your CI/CD pipeline.
-* Make API documentation available to those authorized to use the API.
-* Use external protection measures such as API security firewalls for all exposed versions of your APIs, not just for the current production version.
-* Avoid using production data with non-production API deployments. If this is unavoidable, these endpoints should get the same security treatment as the production ones.
-* When newer versions of APIs include security improvements, perform risk analysis to make the decision of the mitigation actions required for the older version: for example, whether it is possible to backport the improvements without breaking API compatibility or you need to take the older version out quickly and force all clients to move to the latest version.
+* Inventoriez tous les hôtes d'API et documentez les aspects importants de
+  chacun d'entre eux, en vous concentrant sur l'environnement de l'API (ex :
+  production, staging, test, développement), sur qui devrait avoir un accès
+  réseau à l'hôte (ex : public, interne, partenaires) et les versions de l'API.
+* Inventoriez les systèmes intégrés et documentez les aspects importants tels
+  que leur rôle dans le système, quelles données sont échangées (flux des
+  données) et leur sensibilité.
+* Documentez tous les aspects de votre API et notamment l'authentification, les
+  erreurs, les redirections, la limitation du nombre de requêtes, la politique
+  de partage de ressources entre origines multiples (CORS) et les points
+  d'accès, incluant leurs paramètres, les requêtes et les réponses.
+* Générez la documentation automatiquement en adoptant des standards ouverts.
+  Incluez la construction de la documentation dans votre processus CI/CD.
+* Donnez accès à la documentation de l'API aux personnes autorisées à utiliser
+  l'API.
+* Utilisez des mesures de protection externes telles que des firewalls de
+  sécurité pour API pour toutes les versions exposées de vos API, et pas
+  seulement pour la version courante en production.
+* Évitez d'utiliser des données de production avec des déploiements d'API
+  autres que ceux de production. Si vous ne pouvez l'évitez, ces points d'accès
+  doivent bénéficier du même niveau de sécurité que ceux de production.
+* Lorsque des nouvelles versions des API intègrent des améliorations de
+  sécurité, effectuez une analyse de risque pour décider les actions 
+  d'atténuation requises pour l'ancienne version : par exemple, s'il est ou non
+  possible de rétro-porter les améliorations sans rompre la compatibilité ou si
+  vous devez retirer rapidement l'ancienne version et forcer tous les clients à
+  passer à la dernière version.
 
 ## Références
 

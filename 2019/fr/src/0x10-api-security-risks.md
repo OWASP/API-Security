@@ -1,25 +1,26 @@
-API Security Risks
-==================
+Risques de sécurité des API
+===========================
 
-The [OWASP Risk Rating Methodology][1] was used to do the risk analysis.
+La [méthodologie d'évaluation de risques OWASP][1] a été utilisée pour effectuer l'analyse de risques.
 
-The table below summarizes the terminology associated with the risk score.
+La table ci-dessous résume la terminologie associée au niveau de risque.
 
 | Facteurs de menace | Exploitabilité | Prévalence de la faille | Détectabilité de la faille | Impact technique | Impact organisationnel |
 | :-: | :-: | :-: | :-: | :-: | :-: |
-| Spécifique API | Easy: **3** | Widespread **3** | Easy **3** | Severe **3** | Spécifique à l'organisation |
-| Spécifique API | Average: **2** | Common **2** | Average **2** | Moderate **2** | Spécifique à l'organisation |
-| Spécifique API | Difficult: **1** | Difficult **1** | Difficult **1** | Minor **1** | Spécifique à l'organisation |
+| Spécifique API | Facile: **3** | Répandu **3** | Facile **3** | Sévère **3** | Spécifique à l'organisation |
+| Spécifique API | Moyen: **2** | Commune **2** | Moyenne **2** | Modéré **2** | Spécifique à l'organisation |
+| Spécifique API | Difficile: **1** | Difficile **1** | Difficile **1** | Mineure **1** | Spécifique à l'organisation |
 
-**Note**: This approach does not take the likelihood of the threat agent into
-account. Nor does it account for any of the various technical details associated
-with your particular application. Any of these factors could significantly
-affect the overall likelihood of an attacker finding and exploiting a particular
-vulnerability. This rating does not take into account the actual impact on your
-business. Your organization will have to decide how much security risk from
-applications and APIs the organization is willing to accept given your culture,
-industry, and regulatory environment. The purpose of the OWASP API Security Top
-10 is not to do this risk analysis for you.
+**Note**: Cette approche ne prend pas en compte la probabilité du facteur de
+menace. Elle ne prend pas non plus en compte les différents détails techniques
+spécifiques à votre application. Ces facteurs pourraient modifier de manière
+significative la probabilité globale qu'un attaquant trouve et exploite une
+vulnérabilité particulière. Cette évaluation ne prend pas en compte l'impact
+réel sur votre activité. Votre organisation devra décider quel niveau de risque
+de sécurité elle est prête à accepter pour vos applications et vos API en
+fonction de votre culture, votre secteur d'activité et votre environnement
+réglementaire. L'objet du projet OWASP API Security Top 10 n'est pas d'effectuer
+cette analyse de risques à votre place.
 
 ## Références
 

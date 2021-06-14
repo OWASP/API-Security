@@ -1,42 +1,44 @@
-Foreword
-========
+Avant-propos
+============
 
-A foundational element of innovation in today’s app-driven world is the
-Application Programming Interface (API). From banks, retail, and transportation
-to IoT, autonomous vehicles, and smart cities, APIs are a critical part of
-modern mobile, SaaS, and web applications and can be found in customer-facing,
-partner-facing, and internal applications.
+L'Application Programming Interface (API) est un élément fondateur des
+applications omniprésentes dans le monde actuel. Des banques, commerces, du
+transport à l'IoT, aux véhicules autonomes et aux villes intelligentes, les API
+forment une partie critique des applications mobiles, Saas et web modernes que
+l'on trouve dans des applications destinées aux consommateurs, aux partenaires
+ou aux usages internes.
 
-By nature, APIs expose application logic and sensitive data such as Personally
-Identifiable Information (PII) and because of this, APIs have increasingly
-become a target for attackers. Without secure APIs, rapid innovation would be
+Par nature, les API exposent la logique applicative et des données sensibles
+telles que des données personnelles, et de ce fait les API sont devenues une
+cible pour des attaquants. Sans des API sécurisées, l'innovation rapide serait
 impossible.
 
-Although a broader web application security risks Top 10 still makes sense, due
-to their particular nature, an API-specific security risks list is required.
-API security focuses on strategies and solutions to understand and mitigate the
-unique vulnerabilities and security risks associated with APIs.
+Bien qu'un Top 10 plus large sur les risques de sécurité des applications web
+fasse toujours sens, du fait de leur nature particulière, une liste des risques
+spécifiques aux API est nécessaire. La sécurité des API se concentre sur des
+stratégies et des solutions pour comprendre et corriger les vulnérabilités et
+risques de sécurité uniques aux API.
 
-If you're familiar with the [OWASP Top 10 Project][1], then you'll notice the
-similarities between both documents: they are intended for readability and
-adoption. If you're new to the OWASP Top 10 series, you may be better off
-reading the [API Security Risks][2] and [Methodology and Data][3] sections
-before jumping into the Top 10 list.
+Si vous êtes familiarisés avec le projet [OWASP Top 10][1], vous aurez alors
+remarqué des similarités entre les deux documents : ils sont conçus pour être
+lisibles et adoptés. Si vous découvrez la série OWASP Top 10, il vaudrait
+peut-être mieux commencer par lire les sections [Risques de sécurité des API][2]
+et [Méthodologie et données][3] avant de vous plonger dans la liste du Top 10.
 
-You can contribute to OWASP API Security Top 10 with your questions, comments,
-and ideas at our GitHub project repository:
+Vous pouvez contribuer à l'OWASP API Security Top 10 avec vos questions,
+commentaires et idées sur notre dépôt GitHub du projet :
 
 * https://github.com/OWASP/API-Security/issues
 * https://github.com/OWASP/API-Security/blob/master/CONTRIBUTING.md
 
-You can find the OWASP API Security Top 10 here:
+Vous trouverez l'OWASP API Security Top 10 ici :
 
 * https://www.owasp.org/index.php/OWASP_API_Security_Project
 * https://github.com/OWASP/API-Security
 
-We wish to thank all the contributors who made this project possible with their
-effort and contributions. They are all listed in the [Acknowledgments
-section][4]. Thank you!
+Nous voulons remercier tous les contributeurs qui ont rendu ce projet possible
+grâce à leurs efforts et leurs contributions. Ils sont tous listés dans la
+[section des remerciements][4]. Merci !
 
 [1]: https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project
 [2]: ./0x10-api-security-risks.md

@@ -1,27 +1,30 @@
 Introduction
 ============
 
-## Welcome to the OWASP API Security Top 10 - 2019!
+## Bienvenue à l'OWASP API Security Top 10 - 2019 !
 
-Welcome to the first edition of the OWASP API Security Top 10. If you're
-familiar with the  OWASP Top 10 series, you'll notice the similarities: they are
-intended for readability and adoption. Otherwise, consider visiting the [OWASP
-API Security Project wiki page][1], before digging deeper into the most critical
-API security risks.
+Bienvenue à la première édition du projet OWASP API Security Top 10. Si vous
+connaissez les séries OWASP Top 10, vous remarquerez les similarités : elles
+sont voulues pour faciliter en la lisibilité l'adoption. Si ce n'est pas votre
+cas, vous pouvez commencer par consulter la [page wiki de l'OWASP
+API Security Project][1], avant d'approfondir avec les risques de sécurité les
+plus critiques des API.
 
-APIs play a very important role in modern applications' architecture. Since
-creating security awareness and innovation have different paces, it's important
-to focus on common API security weaknesses.
+Les API jouent un rôle très important dans l'architecture des applications
+modernes. Dans la mesure où la création d'une prise de conscience de la sécurité
+et l'innovation ont des rythmes différents, il est important de se concentrer
+sur les vulnérabilités de sécurité courantes des API.
 
-The primary goal of the OWASP API Security Top 10 is to educate those involved
-in API development and maintenance, for example, developers, designers,
-architects, managers, or organizations.
+L'objectif principal du projet OWASP API Security Top 10 est d'éduquer ceux qui
+sont impliqués dans le développement et la maintenance des API, notamment :
+développeurs, designers, architectes, managers, ainsi que les organisations.
 
-In the [Methodology and Data][2] section, you can read more about how this first
-edition was created. In future versions, we want to involve the security
-industry, with a public call for data. For now, we encourage everyone to
-contribute with questions, comments, and ideas at our [GitHub repository][3] or
-[Mailing list][4].
+Dans la section [méthodologie et Données][2], vous pouvez en lire davantage sur
+la manière dont cette première édition a été créée. Pour les prochaines versions,
+nous voulons impliquer l'industrie de la sécurité, avec un appel public à
+informations. Pour le moment, nous encourageons chacun à contribuer avec des
+questions, des commentaires ou des idées sur notre [dépôt GitHub][3] ou notre
+[liste de diffusion][4].
 
 [1]: https://www.owasp.org/index.php/OWASP_API_Security_Project
 [2]: ./0xd0-about-data.md

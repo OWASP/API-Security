@@ -4,47 +4,45 @@ API5:2019 Broken Function Level Authorization
 | Facteurs de menace / Vecteurs d'attaque | Faille de sécurité | Impact |
 | - | - | - |
 | Spécifique API : Exploitabilité **3** | Prévalence **2** : Détectabilité **1** | Technique **2** : Spécifique à l'organisation |
-| Exploitation requires the attacker to send legitimate API calls to the API endpoint that they should not have access to. These endpoints might be exposed to anonymous users or regular, non-privileged users. It’s easier to discover these flaws in APIs since APIs are more structured, and the way to access certain functions is more predictable (e.g., replacing the HTTP method from GET to PUT, or changing the “users” string in the URL to "admins"). | Authorization checks for a function or resource are usually managed via configuration, and sometimes at the code level. Implementing proper checks can be a confusing task, since modern applications can contain many types of roles or groups and complex user hierarchy (e.g., sub-users, users with more than one role). | Such flaws allow attackers to access unauthorized functionality. Administrative functions are key targets for this type of attack. |
+| L'exploitation requiert que l'attaquant envoie des appels d'API légitimes vers un point d'accès d'API auquel il ne devrait pas avoir accès. Ces points d'accès peuvent être exposés à des utilisateurs anonymes ou à des utilisateurs normaux dépourvus de privilèges. Il est plus facile de découvrir ces failles dans les API car les API sont plus structurées, et le mode d'accès à certaines fonctions est plus prévisible (ex : remplacer la méthode HTTP GET par PUT, ou changer la chaine "users" de la requête en "admins". | Les contrôles d'autorisation pour une fonction ou une ressource sont généralement gérés via la configuration, et parfois au niveau du code. L'implémentation de contrôles appropriés peut être source de confusion, car les applications modernes peuvent contenir de nombreux types de rôles ou de groupes et une hiérarchie des utilisateurs complexe (ex : sous-utilisateurs, utilisateurs avec plusieurs rôles). | Ces failles permettent aux attaquants d'accéder à des fonctionnalités non autorisées. Les tâches administratives constituent des cibles principales pour ce type d'attaque. |
 
 ## L'API est-elle vulnérable ?
 
-The best way to find broken function level authorization issues is to perform
-deep analysis of the authorization mechanism, while keeping in mind the user
-hierarchy, different roles or groups in the application, and asking the
-following questions:
+La meilleure manière de trouver des problèmes de niveaux d'accès aux fonctionnalités consiste à effectuer une analyse approfondie du mécanisme d'autorisation, tout en gardant à l'esprit la hiérarchie des utilisateurs, les différents rôles ou groupes dans l'application, et à poser les questions suivantes :
 
-* Can a regular user access administrative endpoints?
-* Can a user perform sensitive actions (e.g., creation, modification, or
-  erasure) that they should not have access to by simply changing the HTTP
-  method (e.g., from `GET` to `DELETE`)?
-* Can a user from group X access a function that should be exposed only to users
-  from group Y, by simply guessing the endpoint URL and parameters (e.g.,
-  `/api/v1/users/export_all`)?
+* Un utilisateur normal peut-il accéder à des points d'accès d'administration ?
+* Un utilisateur peut-il effectuer des actions sensibles (ex : création,
+  modification ou suppression) auxquelles il ne devrait pas avoir accès en
+  changeant simplement la méthode HTTP (ex : de `GET` à `DELETE`) ?
+* Un utilisateur du groupe X peut-il accéder à une fonction qui ne devrait être
+  accessible qu'aux utilisateurs du groupe Y, simplement en devinant l'URL du
+  point d'accès et les paramètres (ex : `/api/v1/users/export_all`) ?
 
-Don’t assume that an API endpoint is regular or administrative only based on the
-URL path.
+Ne supposez pas qu'un point d'accès d'API est normal ou administrateur
+uniquement sur la base du chemin de l'URL.
 
-While developers might choose to expose most of the administrative endpoints
-under a specific relative path, like `api/admins`, it’s very common to find
-these administrative endpoints under other relative paths together with regular
-endpoints, like `api/users`.
+Si les développeurs peuvent choisir d'exposer la plupart des points d'accès
+d'administration sous un chemin relatif spécifique, comme like `api/admins`, on
+trouve très fréquemment ces points d'accès administrateur sous d'autres chemins
+relatifs avec les points d'accès normaux, comme `api/users`.
 
 ## Exemples de scénarios d'attaque
 
 ### Scénario #1
 
-During the registration process to an application that allows only invited users
-to join, the mobile application triggers an API call to
-`GET /api/invites/{invite_guid}`. The response contains a JSON with details
-about the invite, including the user’s role and the user’s email.
+Au cours du processus d'enregistrement à une application qui permet uniquement
+aux utilisateurs invités de s'inscrire, l'application mobile effectue un appel
+d'API à `GET /api/invites/{invite_guid}`. La réponse contient un JSON avec des
+informations sur l'invitation, parmi lesquelles le rôle de l'utilisateur et son
+e-mail.
 
-An attacker duplicated the request and manipulated the HTTP method and endpoint
-to `POST /api/invites/new`. This endpoint should only be accessed by
-administrators using the admin console, which does not implement function level
-authorization checks.
+Un attaquant a dupliqué la requête et manipulé la méthode HTTP et le point
+d'accès vers `POST /api/invites/new`. Ce point d'accès devrait être accessible
+uniquement aux administrateurs via la console d'administration, qui
+n'implémente pas de contrôles de niveaux d'accès aux fonctionnalités.
 
-The attacker exploits the issue and sends himself an invite to create an
-admin account:
+L'attaquant exploite cette faille et s'envoie à lui-même une invitation pour se
+créer un compte administrateur :
 
 ```
 POST /api/invites/new
@@ -54,29 +52,33 @@ POST /api/invites/new
 
 ### Scénario #2
 
-An API contains an endpoint that should be exposed only to administrators -
-`GET /api/admin/v1/users/all`. This endpoint returns the details of all the
-users of the application and does not implement function-level authorization
-checks. An attacker who learned the API structure takes an educated guess and
-manages to access this endpoint, which exposes sensitive details of the users of
-the application.
+Une API comporte un point d'accès qui devrait uniquement être accessible aux
+administrateurs : `GET /api/admin/v1/users/all`. Ce point d'accès renvoie les
+informations sur tous les utilisateurs de l'application et n'implémente pas de
+contrôles de niveaux d'accès aux fonctionnalités. Un attaquant qui a appris la
+structure de l'API effectue une déduction logique et réussit à accéder à ce
+point d'accès, qui expose des données sensibles sur les utilisateurs de
+l'application..
 
-## Comment le prévenir
+## Comment s'en prémunir
 
-Your application should have a consistent and easy to analyze authorization
-module that is invoked from all your business functions. Frequently, such
-protection is provided by one or more components external to the application
-code.
+Votre application devrait disposer d'un module d'autorisations constant et
+facile à analyser qui est invoqué par toutes vos fonctions opérationnelles.
+Fréquemment, cette protection est fournie par un ou plusieurs composants
+externes au code de l'application.
 
-* The enforcement mechanism(s) should deny all access by default, requiring
-  explicit grants to specific roles for access to every function.
-* Review your API endpoints against function level authorization flaws, while
-  keeping in mind the business logic of the application and groups hierarchy.
-* Make sure that all of your administrative controllers inherit from an
-  administrative abstract controller that implements authorization checks based
-  on the user’s group/role.
-* Make sure that administrative functions inside a regular controller implements
-  authorization checks based on the user’s group and role.
+* Le(s) mécanisme(s) de contrôle devraient interdire tous les accès par défaut,
+  et requérir des privilèges explicites à des rôles spécifiques pour l'accès à
+  toutes les fonctions.
+* Passez en revue vos points d'accès d'API à la recherche de failles d'accès au
+  niveau des fonctions, en gardant à l'esprit la logique applicative et la
+  hiérarchie des groupes.
+* Assurez-vous que tous vos contrôleurs d'administration héritent d'un
+  contrôleur d'administration abstrait qui implémente des contrôles
+  d'autorisation basés sur le groupe / rôle de l'utilisateur.
+* Assurez-vous que les fonctions d'administration à l'intérieur d'un contrôleur
+  normal implémentent des contrôles d'autorisation basés sur le groupe / rôle
+  de l'utilisateur.
 
 ## Références
 

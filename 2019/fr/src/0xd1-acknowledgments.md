@@ -1,10 +1,10 @@
-Acknowledgments
-===============
+Remerciements
+=============
 
-## Acknowledgments to Contributors
+## Remerciements aux Contributeurs
 
-We’d like to thank the following contributors who contributed publicly on GitHub
-or via other means:
+Nous voulons remercier les contributeurs suivants qui ont contribué publiquement
+sur GitHub ou par d'autres moyens :
 
 * 007divyachawla
 * Abid Khan

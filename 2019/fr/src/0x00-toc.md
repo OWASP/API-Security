@@ -1,13 +1,13 @@
-Table of Contents
-=================
+Table des Matières
+==================
 
-* [Table of Contents](0x00-toc.md)
-* [About OWASP](0x01-about-owasp.md)
-* [Foreword](0x02-foreward.md)
+* [Table des Matières](0x00-toc.md)
+* [À propos d'OWASP](0x01-about-owasp.md)
+* [Avant-propos](0x02-foreward.md)
 * [Introduction](0x03-introduction.md)
-* [Release Notes](0x04-release-notes.md)
-* [API Security Risks](0x10-api-security-risks.md)
-* [OWASP Top 10 API Security Risks – 2019](0x11-t10.md)
+* [Notes de versions](0x04-release-notes.md)
+* [Risques de sécurité des API](0x10-api-security-risks.md)
+* [OWASP Top 10 Risques de sécurité des API – 2019](0x11-t10.md)
 * [API1:2019 Broken Object Level Authorization](0xa1-broken-object-level-authorization.md)
 * [API2:2019 Broken User Authentication](0xa2-broken-user-authentication.md)
 * [API3:2019 Excessive Data Exposure](0xa3-excessive-data-exposure.md)
@@ -18,7 +18,7 @@ Table of Contents
 * [API8:2019 Injection](0xa8-injection.md)
 * [API9:2019 Improper Assets Management](0xa9-improper-assets-management.md)
 * [API10:2019 Insufficient Logging & Monitoring](0xaa-insufficient-logging-monitoring.md)
-* [What's Next For Developers](0xb0-next-devs.md)
-* [What's Next For DevSecOps](0xb1-next-devsecops.md)
-* [Methodology and Data](0xd0-about-data.md)
-* [Acknowledgments](0xd1-acknowledgments.md)
+* [Perspectives pour les Développeurs](0xb0-next-devs.md)
+* [Perspectives pour les DevSecOps](0xb1-next-devsecops.md)
+* [Méthodologie et Données](0xd0-about-data.md)
+* [Remerciements](0xd1-acknowledgments.md)

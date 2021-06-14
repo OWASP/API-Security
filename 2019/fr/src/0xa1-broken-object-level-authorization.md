@@ -4,52 +4,38 @@ API1:2019 Broken Object Level Authorization
 | Facteurs de menace / Vecteurs d'attaque | Faille de sécurité | Impact |
 | - | - | - |
 | Spécifique API : Exploitabilité **3** | Prévalence **3** : Détectabilité **2** | Technique **3** : Spécifique à l'organisation |
-| Attackers can exploit API endpoints that are vulnerable to broken object level authorization by manipulating the ID of an object that is sent within the request. This may lead to unauthorized access to sensitive data. This issue is extremely common in API-based applications because the server component usually does not fully track the client’s state, and instead, relies more on parameters like object IDs, that are sent from the client to decide which objects to access. | This has been the most common and impactful attack on APIs. Authorization and access control mechanisms in modern applications are complex and wide-spread. Even if the application implements a proper infrastructure for authorization checks, developers might forget to use these checks before accessing a sensitive object. Access control detection is not typically amenable to automated static or dynamic testing. | Unauthorized access can result in data disclosure to unauthorized parties, data loss, or data manipulation. Unauthorized access to objects can also lead to full account takeover. |
+| Des attaquants peuvent exploiter des points d'accès d'API qui sont vulnérables à la faille de niveau d'autorisation en manipulant l'ID d'un objet qui est envoyé avec la requête. Ceci peut entrainer à un accès non autorisé à des données sensibles. Ce problème est extrêmement commun dans les applications basées sur des API parce que le composant serveur ne suit pas complètement l'état du client, et au lieu de cela, s'appuie davantage sur des paramètres comme les ID objets, qui sont envoyés par le client, pour déterminer à quel objet accéder. | Cette attaque est la plus courante et la plus impactante sur les APIs. Les mécanismes d'autorisation et de contrôle d'accès des applications modernes sont complexes et étendus. Même si l'application implémente une infrastructure adaptée pour les contrôles d'autorisations, les développeurs peuvent oublier d'utiliser ces contrôles avant d'autoriser l'accès à un objet sensible. La détection de contrôles d'accès ne se prête typiquement pas à des tests statiques ou dynamiques automatisés. | Un accès non autorisé peut aboutir à la diffusion de données à des tiers non autorisés, des pertes de données, ou des manipulations de données. Un accès non autorisé aux objets peut aussi aboutir à une prise de contrôle complète d'un compte. |
 
 ## L'API est-elle vulnérable ?
 
-Object level authorization is an access control mechanism that is usually
-implemented at the code level to validate that one user can only access objects
-that they should have access to.
+L'autorisation au niveau de l'objet est un mécanisme de contrôle d'accès qui est généralement implémenté au niveau du code pour valider qu'un utilisateur puisse uniquement accéder aux objets auxquels il doit avoir accès.
 
-Every API endpoint that receives an ID of an object, and performs any type of
-action on the object, should implement object level authorization checks. The
-checks should validate that the logged-in user does have access to perform the
-requested action on the requested object.
+Chaque point d'accès d'API qui reçoit l'ID d'un objet, et effectue une action quelconque sur l' objet, doit implémenter des contrôles d'accès au niveau de l'objet. Les contrôles doivent valider que l'utilisateur connecté dispose de l'accès pour effectuer l'action requise sur l'objet requis.
 
-Failures in this mechanism typically leads to unauthorized information
-disclosure, modification, or destruction of all data.
+Des vulnérabilités de ce mécanisme entraînent typiquement des diffusions non autorisées d'information, la modification ou la destruction de toutes les données.
 
 ## Exemples de scénarios d'attaque
 
 ### Scénario #1
 
-An e-commerce platform for online stores (shops) provides a listing page with
-the revenue charts for their hosted shops. Inspecting the browser requests, an
-attacker can identify the API endpoints used as a data source for those charts
-and their pattern `/shops/{shopName}/revenue_data.json`. Using another API
-endpoint, the attacker can get the list of all hosted shop names. With a simple
-script to manipulate the names in the list, replacing `{shopName}` in the URL,
-the attacker gains access to the sales data of thousands of e-commerce stores.
+Une plateforme de commerce électronique pour des magasins en ligne (boutiques) comporte une page listant les diagrammes de vente pour les boutiques hébergées. Examinant les requêtes du navigateur, un attaquant peut identifier les points d'accès de l'API utilisés comme sources de données pour ces diagrammes et leur schéma `/shops/{shopName}/revenue_data.json`. Utilisant un autre point d'accès de l'API, l'attaquant peut obtenir la liste de tous les noms des boutiques hébergées. Avec un simple script pour manipuler les noms de la liste, remplaçant `{shopName}` dans l'URL, l'attaquant obtient l'accès aux données de vente de milliers de boutiques de commerce électronique.
 
 ### Scénario #2
 
-While monitoring the network traffic of a wearable device, the following HTTP
-`PATCH` request gets the attention of an attacker due to the presence of a
-custom HTTP request header `X-User-Id: 54796`. Replacing the `X-User-Id` value
-with `54795`, the attacker receives a successful HTTP response, and is able to
-modify other users' account data.
+Observant le trafic réseau d'un appareil de poche, la requête HTTP `PATCH` suivante attire l'attention d'un attaquant du fait de la présence d'un en-tête HTTP personnalisé `X-User-Id: 54796`. Remplaçant  la valeur `X-User-Id` par `54795`, l'attaquant obtient une réponse HTTP valide, et est en mesure de modifier les données des autres comptes utilisateurs.
 
-## Comment le prévenir
+## Comment s'en prémunir
 
-* Implement a proper authorization mechanism that relies on the user policies
-  and hierarchy.
-* Use an authorization mechanism to check if the logged-in user has access to
-  perform the requested action on the record in every function that uses an
-  input from the client to access a record in the database.
-* Prefer to use random and unpredictable values as GUIDs for records’ IDs.
-* Write tests to evaluate the authorization mechanism. Do not deploy vulnerable
-  changes that break the tests.
+* Implémentez un véritable mécanisme d'autorisation qui s'appuie sur des droits
+  utilisateurs et sur une hiérarchie.
+* Utilisez un mécanisme d'autorisation pour vérifier si l'utilisateur connecté est
+  autorisé à effectuer l'action requise sur l'enregistrement pour toute fonction
+  qui utilise une entrée du client pour accéder à un enregistrement dans la base
+  de données.
+* Préférez l'utilisation de valeurs aléatoires et non prévisibles comme GUIDs pour
+  les ID des enregistrements.
+* Écrivez des tests pour évaluer les mécanismes d'autorisation. Ne déployez pas des
+  modifications vulnérables qui ne passent pas les tests.
 
 ## Références
 
