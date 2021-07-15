@@ -56,7 +56,7 @@ Un attaquant commence le processus de récupération de mot de passe en émettan
   que le mécanisme de limitation de requêtes normal de votre API.
 * Implémentez [le blocage de compte][4] / un mécanisme de captcha pour empêcher
   l'emploi de force brute contre des utilisateurs spécifiques. Implementez des
-  contrôles de faiblesse de mot de passe.
+  mesures pour une meilleure robustesse des mots de passe.
 * Les clés d'API ne doivent pas être utilisées pour authentifier un utilisateur,
   mais pour [app client / authentification de projet][5].
 
