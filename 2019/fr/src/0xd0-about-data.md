@@ -17,7 +17,7 @@ et des discussions ouvertes avec la communauté de la sécurité.
 Dans un premier temps, des informations publiquement disponibles sur des
 incidents de sécurité concernant des API ont été collectées, évaluées, et
 catégorisées par un groupe d'experts en sécurité. Ces données ont été collectées
-à partir de plateformes de bug bounty et de bases de données de vulnérabilités,
+à partir de plateformes de prime aux bogues (bug bounty) et de bases de données de vulnérabilités,
 sur une période d'un an, à des fins statistiques.
 
 Dans un deuxième temps, il a été demandé à des praticiens de la sécurité
