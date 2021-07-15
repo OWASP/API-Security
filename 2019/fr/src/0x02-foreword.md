@@ -1,7 +1,7 @@
 Avant-propos
 ============
 
-L'Application Programming Interface (API) est un élément fondateur des
+L'Application Programming Interface (API), en français interface de programmation applicative, est un élément fondateur des
 applications omniprésentes dans le monde actuel. Des banques, commerces, du
 transport à l'IoT, aux véhicules autonomes et aux villes intelligentes, les API
 forment une partie critique des applications mobiles, Saas et web modernes que
