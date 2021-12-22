@@ -46,7 +46,7 @@ requêtes pour empêcher des attaquants d'employer la force brute pour deviner
 les jetons (Token) de réinitialisation des mots de passe. Ce mécanisme n'était pas
 implémenté au niveau du code de l'API elle-même, mais dans un composant séparé
 situé entre le client et l'API officielle (`www.socialnetwork.com`).
-Un chercheur a découvert un hôte d'API en beta
+Un chercheur découvrit un hôte d'API en beta
 (`www.mbasic.beta.socialnetwork.com`) qui faisait tourner la même API, y
 compris le mécanisme de réinitialisation du mot de passe, mais était dépourvu
 du mécanisme de limitation du nombre de requêtes. Le chercheur fut alors en mesure
