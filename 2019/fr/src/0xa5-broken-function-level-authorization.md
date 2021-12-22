@@ -24,7 +24,7 @@ uniquement sur la base du chemin de l'URL.
 Si les développeurs peuvent choisir d'exposer la plupart des points d'accès
 d'administration sous un chemin relatif spécifique, comme `api/admins`, on
 trouve très fréquemment ces points d'accès administrateur sous d'autres chemins
-relatifs avec les points d'accès normaux, comme `api/users`.
+relatifs mélés aux points d'accès normaux, comme `api/users`.
 
 ## Exemples de scénarios d'attaque
 
