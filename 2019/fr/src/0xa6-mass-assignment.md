@@ -32,7 +32,7 @@ Exemples d'informations sensibles :
 
 ### Scénario #1
 
-Une application d'auto-partage permet à l'utilisateur de modifier les
+Une application de covoiturage permet à l'utilisateur de modifier les
 informations de base de son profil. Au cours de ce processus, un appel d'API
 est envoyé à `PUT /api/v1/users/me` avec l'objet JSON légitime suivant :
 
