@@ -28,7 +28,7 @@ Si l'interface graphique du client montre uniquement les caméras auxquelles l'a
 * Passez en revue les réponses de l'API pour vous assurer qu'elles contiennent
   uniquement des données nécessaires.
 * Les ingénieurs backend devraient toujours se poser la question "qui est le
-  destinataire de des données ?" avant d'exposer un nouveau point d'accès d'API.
+  consommateur des données ?" avant d'exposer un nouveau point d'accès d'API.
 * Évitez les méthodes génériques telles que `to_json()` ou `to_string()`.
   Au lieu de cela, choisissez les éléments précis que vous voulez vraiment retourner.
 * Classifiez les données sensibles et personnelles que votre application stocke et
