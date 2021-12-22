@@ -81,7 +81,7 @@ au format MP4.
 * Utilisez les fonctionnalités natives pour interdire les attributs qui ne
   doivent pas être accessibles aux clients.
 * Si applicable, définissez et imposez des schémas pour la validation des
-  données d'entrée.
+  données d'entrée de la charge utile .
 
 ## Références
 
