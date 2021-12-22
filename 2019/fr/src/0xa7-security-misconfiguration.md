@@ -17,6 +17,8 @@ L'API peut être vulnérable si :
   systèmes sont obsolètes.
 * Des fonctionnalités non nécessaires sont déployées (ex : verbes HTTP).
 * La sécurité de la couche de transport (TLS) est manquante.
+* Les instructions d'en-têtes sécurisées ne sont pas envoyées au client 
+  (e.g., [Security Headers][1]).
 * La politique de partage de ressources entre origines multiples (CORS) est
   manquante ou mal définie.
 * Les messages d'erreurs incluent des traces de pile d'exécution, ou exposent
