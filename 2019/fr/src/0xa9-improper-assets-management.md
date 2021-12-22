@@ -76,7 +76,7 @@ utilisant la force brute pour deviner le token à 6 chiffres.
 * Évitez d'utiliser des données de production avec des déploiements d'API
   autres que ceux de production. Si vous ne pouvez l'évitez, ces points d'accès
   doivent bénéficier du même niveau de sécurité que ceux de production.
-* Lorsque des nouvelles versions des API intègrent des améliorations de
+* Lorsque de nouvelles versions d'API intègrent des améliorations de
   sécurité, effectuez une analyse de risque pour décider les actions 
   d'atténuation requises pour l'ancienne version : par exemple, s'il est ou non
   possible de rétro-porter les améliorations sans rompre la compatibilité ou si
