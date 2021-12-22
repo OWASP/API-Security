@@ -22,7 +22,7 @@ L'API is vulnérable si :
 
 ### Scénario #1
 
-Les clés d'accès d'une API administrative ont fuité sur un répertoire public.
+Les clés d'accès d'une API d'administration ont fuitées sur un répertoire public.
 Le propriétaire du répertoire a été notifié par e-mail à propos de cette fuite
 potentielle, mais a mis plus de 48 heures à réagir à l'incident, et
 l'exposition des clés d'accès peut avoir permis l'accès à des données
