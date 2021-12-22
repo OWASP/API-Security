@@ -70,7 +70,7 @@ externes au code de l'application.
 * Le(s) mécanisme(s) de contrôle devraient interdire tous les accès par défaut,
   et requérir des privilèges explicites à des rôles spécifiques pour l'accès à
   toutes les fonctions.
-* Passez en revue vos points d'accès d'API à la recherche de failles d'accès au
+* Passez en revue vos points d'accès d'API à la recherche des défauts d'autorisations
   niveau des fonctions, en gardant à l'esprit la logique applicative et la
   hiérarchie des groupes.
 * Assurez-vous que tous vos contrôleurs d'administration héritent d'un
