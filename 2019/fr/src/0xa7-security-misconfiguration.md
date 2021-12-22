@@ -69,7 +69,7 @@ Le cycle de vie de l'API devrait inclure :
 * Une tâche pour évaluer et actualiser les configurations sur l'ensemble des
   couches de l'API. L'évaluation devrait couvrir : les fichiers
   d'orchestration, les composants d'API, et les services cloud
-  (ex : permissions des compartiments S3).
+  (ex : permissions des compartiments de stockage S3).
 * Un canal de communication sécurisé pour tous les accès API d'interaction
   avec les éléments statiques (ex : images).
 * Un processus automatisé pour évaluer en continu l'efficacité de la
