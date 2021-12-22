@@ -24,7 +24,7 @@ Si l'interface graphique du client montre uniquement les caméras auxquelles l'a
 
 ## Comment s'en prémunir
 
-* Ne comptez jamais sur le côté client pour filtrer des données sensibles.
+* Ne comptez jamais sur le client d'API pour filtrer des données sensibles.
 * Passez en revue les réponses de l'API pour vous assurer qu'elles contiennent
   uniquement des données nécessaires.
 * Les ingénieurs backend devraient toujours se poser la question "qui est le
