@@ -8,7 +8,7 @@ API3:2019 Excessive Data Exposure
 
 ## L'API est-elle vulnérable ?
 
-L'API retourne des données sensibles au client par conception. Ces données sont généralement filtrées côté client avant de présenter les données à l'utilisateur. Un attaquant peut facilement écouter le trafic et voir les données sensibles.
+Par conception, l'API retourne des données sensibles au client. De plus, ces données sont généralement filtrées côté client avant d'être présentées à l'utilisateur. Un attaquant peut facilement écouter le trafic et voir les données sensibles.
 
 ## Exemples de scénarios d'attaque
 
