@@ -70,7 +70,7 @@ utilisant la force brute pour deviner le token à 6 chiffres.
   Intégrez cette génération automatique de la documentation dans votre processus de déploiement continu CI/CD.
 * Donnez accès à la documentation de l'API aux personnes autorisées à utiliser
   l'API.
-* Utilisez des mesures de protection externes telles que des firewalls de
+* Utilisez des mesures de protection externes telles les pare-feux de
   sécurité pour API pour toutes les versions exposées de vos API, et pas
   seulement pour la version courante en production.
 * Évitez d'utiliser des données de production avec des déploiements d'API
