@@ -11,7 +11,7 @@ API7:2019 Security Misconfiguration
 L'API peut être vulnérable si :
 
 * Un durcissement approprié de la sécurité est manquant sur n'importe quelle
-  partie de la pile de l'application, ou si elle possède des permissions mal
+  partie de la pile applicative, ou si elle possède des permissions mal
   configurées au niveau des services dans le cloud.
 * Les dernières mises à jour de sécurité ne sont pas appliquées, ou les
   systèmes sont obsolètes.
