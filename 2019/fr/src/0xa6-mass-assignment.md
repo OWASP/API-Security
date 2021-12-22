@@ -26,7 +26,7 @@ Exemples d'informations sensibles :
 * **Attributs dépendant de processus** : `user.cash` ne doit être défini au  
   niveau interne qu'après vérification du paiement.
 * **Attributs internes** : `article.created_time` doit être
-  défini au niveau interne par l'application.
+  défini uniquement par l'application.
 
 ## Exemples de scénarios d'attaque
 
