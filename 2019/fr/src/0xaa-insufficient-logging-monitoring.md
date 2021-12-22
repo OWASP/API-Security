@@ -51,7 +51,7 @@ aux autorités de contrôle.
 * Configurez un système de monitoring pour surveiller en permanence
   l'infrastructure, le réseau et le fonctionnement de l'API.
 * Utilisez un système d'information et de gestion des événements (SIEM) pour
-  agréger et gérer les logs de tous les composants de la pile et l'API et des
+  agréger et gérer les logs de tous les composants de la pile de l'API et des
   hôtes.
 * Configurez des tableaux de bord et des alertes personnalisés, permettant la
   détection et le traitement plus rapide d'activités suspectes.
