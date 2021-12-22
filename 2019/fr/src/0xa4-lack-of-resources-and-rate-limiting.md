@@ -41,7 +41,7 @@ Le même scénario peut être utilisé pour générer des erreurs Integer Overfl
 * Notifiez le client quand la limite est dépassée en indiquant la limite et quand
   cette limite sera remise à zéro.
 * Ajoutez des validations adaptées côté serveur pour les paramètres fournis en
-  chaines ou en corps de requêtes, en particulier ceux qui contrôlent le nombre
+  ou fournis en corps de requête, en particulier ceux qui contrôlent le nombre
   d'enregistrements à retourner dans la réponse.
 * Définissez et implémentez une taille maximale de données pour tous les paramètres
   d'entrée et les charges utiles, comme des longueurs maximales pour les chaines de
