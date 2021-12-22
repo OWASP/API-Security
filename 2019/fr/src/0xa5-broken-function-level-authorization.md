@@ -63,7 +63,7 @@ l'application..
 ## Comment s'en prémunir
 
 Votre application devrait disposer d'un module d'autorisations constant et
-facile à analyser qui est invoqué par toutes vos fonctions opérationnelles.
+facile à analyser qui est invoqué par toutes vos fonctions métiers.
 Fréquemment, cette protection est fournie par un ou plusieurs composants
 externes au code de l'application.
 
