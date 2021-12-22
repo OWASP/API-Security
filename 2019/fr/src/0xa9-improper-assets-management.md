@@ -42,7 +42,7 @@ de plus de 100 millions d'utilisateurs.
 ### Scénario #2
 
 Un réseau social avait mis en place un mécanisme de limitation du nombre de
-requêtes pour empêcher  des attaquants d'employer la force brute pour deviner
+requêtes pour empêcher des attaquants d'employer la force brute pour deviner
 les jetons (Token) de réinitialisation des mots de passe. Ce mécanisme n'était pas
 implémenté au niveau du code de l'API elle-même, mais dans un composant séparé
 situé entre le client et l'API officielle (`www.socialnetwork.com`).
