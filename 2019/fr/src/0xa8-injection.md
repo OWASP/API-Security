@@ -4,7 +4,7 @@ API8:2019 Injection
 | Facteurs de menace / Vecteurs d'attaque | Faille de sécurité | Impact |
 | - | - | - |
 | Spécifique API : Exploitabilité **3** | Prévalence **2** : Détectabilité **3** | Technique **3** : Spécifique à l'organisation |
-| Les attaquants vont envoyer à l'API des données malveillantes via tout vecteur d'injection disponible (ex : entrée directe, paramètres, services intégrés, etc), en espérant qu'elles soient envoyés à un interpréteur. | Les failles par injection sont très courantes et souvent trouvées dans des requêtes SQL, LDAP, ou NoSQL, des commandes de système d'exploitation, des parsers XML et des ORM. Ces failles sont faciles à trouver lors de la revue du code source. Les attaquants peuvent utiliser des scanners et des fuzzers. | L'injection peut aboutir à des divulgations d'informations et des pertes de données. Elle peut aussi aboutir à un déni de service, ou à une prise de contrôle complète de l'hôte. |
+| Les attaquants vont envoyer à l'API des données malveillantes via tout vecteur d'injection disponible (ex : entrée directe, paramètres, services intégrés, etc), en espérant qu'elles soient envoyés à un interpréteur. | Les failles par injection sont très courantes et souvent trouvées dans des requêtes SQL, LDAP, ou NoSQL, des commandes systèmes (OS), des parsers XML et des ORM. Ces failles sont faciles à trouver lors de la revue du code source. Les attaquants peuvent utiliser des scanners et des fuzzers. | L'injection peut aboutir à des divulgations d'informations et des pertes de données. Elle peut aussi aboutir à un déni de service, ou à une prise de contrôle complète de l'hôte. |
 
 ## L'API est-elle vulnérable ?
 
