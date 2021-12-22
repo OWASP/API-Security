@@ -55,7 +55,7 @@ POST /api/invites/new
 Une API comporte un point d'accès qui devrait uniquement être accessible aux
 administrateurs : `GET /api/admin/v1/users/all`. Ce point d'accès renvoie les
 informations sur tous les utilisateurs de l'application et n'implémente pas de
-contrôles de niveaux d'accès aux fonctionnalités. Un attaquant qui a appris la
+contrôles d'autorisations d'accès. Un attaquant ayant appris la
 structure de l'API effectue une déduction logique et réussit à accéder à ce
 point d'accès, qui expose des données sensibles sur les utilisateurs de
 l'application..
