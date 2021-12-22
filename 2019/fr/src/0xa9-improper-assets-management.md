@@ -49,7 +49,7 @@ situé entre le client et l'API officielle (`www.socialnetwork.com`).
 Un chercheur a découvert un hôte d'API en beta
 (`www.mbasic.beta.socialnetwork.com`) qui faisait tourner la même API, y
 compris le mécanisme de réinitialisation du mot de passe, mais était dépourvu
-du mécanisme de limitation du nombre de requêtes. Le chercheur était en mesure
+du mécanisme de limitation du nombre de requêtes. Le chercheur fut alors en mesure
 de réinitialiser le mot de passe de n'importe quel utilisateur simplement en
 utilisant la force brute pour deviner le token à 6 chiffres.
 
