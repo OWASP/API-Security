@@ -21,7 +21,8 @@ L'API peut être vulnérable si :
   * Quel est le flux des données ?
 * Il n'y a pas de documentation, ou la documentation existante n'est pas mise
   à jour.
-* Il n'y a pas de plan de mise à la retraite pour chaque version de l'API.
+* Il n'y a pas de plan pour le retrait / la désactivation (des points d'accès 
+  devenus obsolètes) par version d'API.
 * L'inventaire des hôtes est manquant ou obsolète.
 * L'inventaire des services intégrés, en propre ou par des tiers, est manquant
   ou obsolète.
