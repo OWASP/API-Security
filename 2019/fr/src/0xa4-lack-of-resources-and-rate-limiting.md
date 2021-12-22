@@ -43,7 +43,7 @@ Le même scénario peut être utilisé pour générer des erreurs Integer Overfl
 * Ajoutez des validations adaptées côté serveur pour les paramètres fournis en
   ou fournis en corps de requête, en particulier ceux qui contrôlent le nombre
   d'enregistrements à retourner dans la réponse.
-* Définissez et implémentez une taille maximale de données pour tous les paramètres
+* Définissez et appliquez une taille maximale pour les données entrées en paramètres
   d'entrée et les charges utiles, comme des longueurs maximales pour les chaines de
   caractères et un nombre maximal d'éléments dans les tableaux.
 
