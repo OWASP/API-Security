@@ -5,7 +5,7 @@ API10:2019 Insufficient Logging & Monitoring
 | - | - | - |
 | Spécifique API : Exploitabilité **2** | Prévalence **3** : Détectabilité **1** | Technique **2** : Spécifique à l'organisation |
 | Les attaquants exploitent l'absence de logging et de monitoring pour utiliser frauduleusement des systèmes sans se faire repérer. | En l'absence de logging et de monitoring, ou si le logging et le monitoring sont insuffisants, il est pratiquement
-impossible de suivre des activités suspectes et d'y répondre rapidement. | Sans visibilité sur les activités malveillantes en cours, les attaquants disposent de beaucoup de temps et peuvent compromettre complètement les systèmes. |
+il est pratiquement impossible de suivre des activités suspectes et d'y répondre rapidement. | Sans visibilité sur les activités malveillantes en cours, les attaquants disposent de beaucoup de temps et peuvent compromettre complètement les systèmes. |
 
 ## L'API est-elle vulnérable ?
 
