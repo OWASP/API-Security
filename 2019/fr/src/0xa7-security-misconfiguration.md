@@ -77,7 +77,7 @@ Le cycle de vie de l'API devrait inclure :
 
 De plus :
 
-* Pour éviter que des traces d'exceptions et d'autres informations importantes
+* Pour éviter que des traces d'appels lors d'exceptions et d'autres informations importantes
   ne soient renvoyées aux attaquants, si applicable, définissez et implémentez
   des schémas pour toutes les réponses y compris les erreurs.
 * Assurez-vous que l'API ne soit accessible qu'avec des verbes HTTP
