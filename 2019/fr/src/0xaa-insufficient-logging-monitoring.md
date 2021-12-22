@@ -47,7 +47,7 @@ aux autorités de contrôle.
   gestion des logs, et doivent inclure suffisamment d'informations pour pouvoir
   identifier un acteur malveillant.
 * Les logs doivent être considérés comme des données sensibles, et leur
-  intégrité doit être garantie pour leur stockage comme pour leur transfert.
+  intégrité doit être garantie durant leur stockage comme au cours de leur transfert.
 * Configurez un système de monitoring pour surveiller en permanence
   l'infrastructure, le réseau et le fonctionnement de l'API.
 * Utilisez un système d'information et de gestion des événements (SIEM) pour
