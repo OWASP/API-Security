@@ -50,7 +50,7 @@ Un attaquant commence le processus de récupération de mot de passe en émettan
   et de protection par blocage.
 * Utilisez la [cheatsheet OWASP Authentication ][3].
 * Quand c'est possible, implémentez l'authentification multi-facteurs.
-* Implementez des mécanismes anti force brute pour empêcher le bourrage
+* Implémentez des mécanismes anti force brute pour empêcher le bourrage
   d'identifiants, les attaques par dictionnaire, et les attaques par force brute
   contre vos points d'accès d'authentification. Ce mécanisme devrait être plus strict
   que le mécanisme de limitation de requêtes normal de votre API.
