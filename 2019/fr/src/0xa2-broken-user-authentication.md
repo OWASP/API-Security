@@ -58,7 +58,7 @@ Un attaquant commence le processus de récupération de mot de passe en émettan
   l'emploi de force brute contre des utilisateurs spécifiques. Implementez des
   mesures pour une meilleure robustesse des mots de passe.
 * Les clés d'API ne doivent pas être utilisées pour authentifier un utilisateur,
-  mais pour [app client / authentification de projet][5].
+  mais pour d'autres [applications clientes / authentification de projet][5].
 
 ## Références
 
