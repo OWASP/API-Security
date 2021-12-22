@@ -34,7 +34,7 @@ Si l'interface graphique du client montre uniquement les caméras auxquelles l'a
 * Classifiez les données sensibles et personnelles que votre application stocke et
   manipule, et passez en revue tous les appels d'API qui retournent de telles
   données pour voir si les réponses posent des problèmes de sécurité.
-* Implémentez un mécanisme de réponse basé sur un schéma comme couche de sécurité
+* Implémentez un mécanisme de réponse basé sur un schéma de validation afin d'ajouter un niveau de sécurité
   supplémentaire. Au sein de ce mécanisme définissez et validez les données retournées
   par toutes les méthodes d'API, y compris les erreurs.
 
