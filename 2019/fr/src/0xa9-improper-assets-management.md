@@ -67,7 +67,7 @@ utilisant la force brute pour deviner le token à 6 chiffres.
   de partage de ressources entre origines multiples (CORS) et les points
   d'accès, incluant leurs paramètres, les requêtes et les réponses.
 * Générez la documentation automatiquement en adoptant des standards ouverts.
-  Incluez la construction de la documentation dans votre processus CI/CD.
+  Intégrez cette génération automatique de la documentation dans votre processus de déploiement continu CI/CD.
 * Donnez accès à la documentation de l'API aux personnes autorisées à utiliser
   l'API.
 * Utilisez des mesures de protection externes telles que des firewalls de
