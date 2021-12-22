@@ -80,7 +80,7 @@ au format MP4.
   client.
 * Utilisez les fonctionnalités natives pour interdire les attributs qui ne
   doivent pas être accessibles aux clients.
-* Si applicable, définissez et imposez des schémas pour la charge utile des
+* Si applicable, définissez et imposez des schémas pour la validation des
   données d'entrée.
 
 ## Références
