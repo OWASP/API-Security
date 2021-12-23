@@ -4,7 +4,7 @@ API9:2019 Improper Assets Management
 | Facteurs de menace / Vecteurs d'attaque | Faille de sécurité | Impact |
 | - | - | - |
 | Spécifique API : Exploitabilité **3** | Prévalence **3** : Détectabilité **2** | Technique **2** : Spécifique à l'organisation |
-| Les anciennes versions des API n'ont souvent pas bénéficié des correctifs de sécurité et sont un moyen facile pour compromettre des systèmes sans avoir à affronter des mécanismes de sécurité de pointe, qui peuvent avoir été mis en place pour protéger les versions les plus récentes de l'API. | Une documentation obsolète rend plus difficile la recherche et / ou la correction de vulnérabilités. L'absence d'inventaire des points actifs et de stratégies de retrait pour ceux ne devant plus être utilisés, conduit à faire tourner des systèmes dépourvus de correctifs de sécurité, entrainant la divulgation de données sensibles. Des hôtes d'API inutilement exposés sont fréquemment trouvés du fait des concepts modernes comme les micro-services, qui rendent les applications faciles à déployer et indépendantes (ex : Cloud, aussi appelé informatique en nuage, Kubernetes). | Les attaquants peuvent obtenir accès à des données sensibles, et même prendre le contrôle du serveur via d'anciennes versions non corrigées de l'API connectées à la même base de données. |
+| Les anciennes versions des API n'ont souvent pas bénéficié des correctifs de sécurité et sont un moyen facile pour compromettre des systèmes sans avoir à affronter des mécanismes de sécurité de pointe, qui peuvent avoir été mis en place pour protéger les versions les plus récentes de l'API. | Une documentation obsolète rend plus difficile la recherche et / ou la correction de vulnérabilités. L'absence d'inventaire des points actifs et de stratégies de retrait pour ceux ne devant plus être utilisés, conduit à faire tourner des systèmes dépourvus de correctifs de sécurité, entrainant la divulgation de données sensibles. Des hôtes d'API inutilement exposés sont fréquemment trouvés du fait des concepts modernes comme les micro-services, qui rendent les applications faciles à déployer et indépendantes (ex : cloud, aussi appelé informatique en nuage, Kubernetes). | Les attaquants peuvent obtenir accès à des données sensibles, et même prendre le contrôle du serveur via d'anciennes versions non corrigées de l'API connectées à la même base de données. |
 
 ## L'API est-elle vulnérable ?
 
@@ -21,7 +21,7 @@ L'API peut être vulnérable si :
   * Quel est le flux des données ?
 * Il n'y a pas de documentation, ou la documentation existante n'est pas mise
   à jour.
-* Il n'y a pas de plan pour le retrait / la désactivation (des points d'accès 
+* Il n'y a pas de plan pour le retrait / la désactivation (des points d'accès
   devenus obsolètes) par version d'API.
 * L'inventaire des hôtes est manquant ou obsolète.
 * L'inventaire des services intégrés, en propre ou par des tiers, est manquant
@@ -77,7 +77,7 @@ utilisant la force brute pour deviner le token à 6 chiffres.
   autres que ceux de production. Si vous ne pouvez l'évitez, ces points d'accès
   doivent bénéficier du même niveau de sécurité que ceux de production.
 * Lorsque de nouvelles versions d'API intègrent des améliorations de
-  sécurité, effectuez une analyse de risque pour décider les actions 
+  sécurité, effectuez une analyse de risque pour décider les actions
   d'atténuation requises pour l'ancienne version : par exemple, s'il est ou non
   possible de rétro-porter les améliorations sans rompre la compatibilité ou si
   vous devez retirer rapidement l'ancienne version et forcer tous les clients à

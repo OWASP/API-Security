@@ -4,8 +4,7 @@ API10:2019 Insufficient Logging & Monitoring
 | Facteurs de menace / Vecteurs d'attaque | Faille de sécurité | Impact |
 | - | - | - |
 | Spécifique API : Exploitabilité **2** | Prévalence **3** : Détectabilité **1** | Technique **2** : Spécifique à l'organisation |
-| Les attaquants exploitent l'absence de logging et de monitoring pour utiliser frauduleusement des systèmes sans se faire repérer. | En l'absence de logging et de monitoring, ou si le logging et le monitoring sont insuffisants, il est pratiquement
-il est pratiquement impossible de suivre des activités suspectes et d'y répondre rapidement. | Sans visibilité sur les activités malveillantes en cours, les attaquants disposent de beaucoup de temps et peuvent compromettre complètement les systèmes. |
+| Les attaquants exploitent l'absence de logging et de monitoring pour utiliser frauduleusement des systèmes sans se faire repérer. | En l'absence de logging et de monitoring, ou si le logging et le monitoring sont insuffisants, il est pratiquement impossible de suivre des activités suspectes et d'y répondre rapidement. | Sans visibilité sur les activités malveillantes en cours, les attaquants disposent de beaucoup de temps et peuvent compromettre complètement les systèmes. |
 
 ## L'API est-elle vulnérable ?
 
@@ -22,7 +21,7 @@ L'API is vulnérable si :
 
 ### Scénario #1
 
-Les clés d'accès d'une API d'administration ont fuitées sur un répertoire public.
+Les clés d'accès d'une API d'administration ont fuité sur un répertoire public.
 Le propriétaire du répertoire a été notifié par e-mail à propos de cette fuite
 potentielle, mais a mis plus de 48 heures à réagir à l'incident, et
 l'exposition des clés d'accès peut avoir permis l'accès à des données

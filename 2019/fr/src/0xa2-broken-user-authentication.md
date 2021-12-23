@@ -45,8 +45,8 @@ Un attaquant commence le processus de récupération de mot de passe en émettan
   d'API non plus.
 * Ne réinventez pas la roue en matière d'authentification, de génération de tokens,
   de stockage de mots de passe. Utilisez les standards.
-* Les points d'accès de récupération / d'oubli de mot de passe doivent être traités 
-  comme des points d'accès de login en termes de force brute, limitation de requêtes 
+* Les points d'accès de récupération / d'oubli de mot de passe doivent être traités
+  comme des points d'accès de login en termes de force brute, limitation de requêtes
   et de protection par blocage.
 * Utilisez la [cheatsheet OWASP Authentication ][3].
 * Quand c'est possible, implémentez l'authentification multi-facteurs.
@@ -58,7 +58,7 @@ Un attaquant commence le processus de récupération de mot de passe en émettan
   l'emploi de force brute contre des utilisateurs spécifiques. Implementez des
   mesures pour une meilleure robustesse des mots de passe.
 * Les clés d'API ne doivent pas être utilisées pour authentifier un utilisateur,
-  mais pour d'autres [applications clientes / authentification de projet][5].
+  mais pour les [applications clientes / authentification de projets][5].
 
 ## Références
 
