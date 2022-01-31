@@ -26,7 +26,7 @@ Um atacante faz *uploads* de imagens grandes enviando request POST em `/api/v1/i
 
 ### Cenário #2
 
-Uma aplicação contém uma lista de usuários em uma interface com o limite de `200` usuários por página. A lista é solicitada ao servidor utilizando a seguinte *query* `/api/users?page=1&size=100`. Um atacante modifica o parâmetro `size` de `200` para `200000`, provocando problemas de desempenho no banco de dados. Enquanto isso, a API torna-se indisponível e portanto incapaz de responder outras requisições deste e de todos os demais clientes (também conhecido como DoS).
+Uma aplicação contém uma lista de usuários em uma interface com o limite de `200` usuários por página. A lista é solicitada ao servidor utilizando a seguinte *query* `/api/users?page=1&size=200`. Um atacante modifica o parâmetro `size` de `200` para `200000`, provocando problemas de desempenho no banco de dados. Enquanto isso, a API torna-se indisponível e portanto incapaz de responder outras requisições deste e de todos os demais clientes (também conhecido como DoS).
 
 Este mesmo cenário pode ser utilizado para provocar erros de *Integer Overflow* ou *Buffer Overflow*.
 
