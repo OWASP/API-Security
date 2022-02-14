@@ -44,7 +44,7 @@ O pedido `GET /api/v1/users/me` incluí uma propriedade `credit_balance`
 adicional:
 
 ```json
-{"user_name":"inons","age":24,"credit_balance":10}.
+{"user_name":"inons","age":24,"credit_balance":10}
 ```
 
 O atacante envia novamente o primeiro pedido com o seguinte conteúdo:

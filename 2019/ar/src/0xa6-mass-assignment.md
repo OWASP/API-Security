@@ -34,7 +34,7 @@
 يتضمن الطلب GET للمسار التالي `/api/v1/users/me` مع خاصية معرفة الرصيد الائتمانية:
 
 ```json
-{"user_name":"inons","age":24,"credit_balance":10}.
+{"user_name":"inons","age":24,"credit_balance":10}
 ```
 
 حيث قام المهاجم باعتراض الطلب وتغيره إلى التالي:

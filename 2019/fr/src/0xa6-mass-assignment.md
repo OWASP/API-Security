@@ -44,7 +44,7 @@ La requête `GET /api/v1/users/me` comporte un attribut supplémentaire sur le
 solde du compte :
 
 ```json
-{"user_name":"inons","age":24,"credit_balance":10}.
+{"user_name":"inons","age":24,"credit_balance":10}
 ```
 
 L'attaquant rejoue la première requête avec la charge utile suivante :
