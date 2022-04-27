@@ -27,7 +27,7 @@ Lorsque le téléversement est terminé, l'API crée plusieurs vignettes avec di
 
 ### Scénario #2
 
-Nous avons une application qui contient la liste des utilisateurs avec une limite de `200` utilisateurs par page. La liste des utilisateurs est obtenue auprès du serveur avec la requête suivante : `/api/users?page=1&size=100`. Un attaquant change la valeur de `size`
+Nous avons une application qui contient la liste des utilisateurs avec une limite de `200` utilisateurs par page. La liste des utilisateurs est obtenue auprès du serveur avec la requête suivante : `/api/users?page=1&size=200`. Un attaquant change la valeur de `size`
 en `200 000`, entrainant des problèmes de perfomance sur la base de données. De ce fait, l'API ne répond plus et n'est plus capable de traiter d'autres requêtes de ce client ou d'autres clients (autrement dit déni de service).
 
 Le même scénario peut être utilisé pour générer des erreurs Integer Overflow ou Buffer Overflow.
