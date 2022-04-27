@@ -30,7 +30,7 @@ Um aplicativo de compartilhamento de corridas permite ao usuário a opção de e
 A requisição `GET /api/v1/users/me` inclui uma propriedade adicional chamada "credit_balance property":
 
 ```json
-{"user_name":"inons","age":24,"credit_balance":10}.
+{"user_name":"inons","age":24,"credit_balance":10}
 ```
 O atacante repete a primeira requisição com o *payload* abaixo:
 

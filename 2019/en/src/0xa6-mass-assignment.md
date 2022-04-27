@@ -42,7 +42,7 @@ The request `GET /api/v1/users/me` includes an additional credit_balance
 property:
 
 ```json
-{"user_name":"inons","age":24,"credit_balance":10}.
+{"user_name":"inons","age":24,"credit_balance":10}
 ```
 
 The attacker replays the first request with the following payload:

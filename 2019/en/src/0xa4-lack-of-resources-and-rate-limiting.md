@@ -35,7 +35,7 @@ during the creation of thumbnails and the API becomes unresponsive.
 
 We have an application that contains the users' list on a UI with a limit of
 `200` users per page. The users' list is retrieved from the server using the
-following query: `/api/users?page=1&size=100`. An attacker changes the `size`
+following query: `/api/users?page=1&size=200`. An attacker changes the `size`
 parameter to `200 000`, causing performance issues on the database. Meanwhile,
 the API becomes unresponsive and is unable to handle further requests from this
 or any other clients (aka DoS).

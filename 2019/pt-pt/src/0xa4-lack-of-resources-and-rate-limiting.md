@@ -38,7 +38,7 @@ indisponível.
 
 Uma aplicação apresenta uma listagem de utilizadores até ao limite de 200 por
 página. A lista dos utilizadores é obtida por meio dum pedido ao _endpoint_
-`/api/users?page=1&size=100`. Um atacante altera o valor do parâmetro `size`
+`/api/users?page=1&size=200`. Um atacante altera o valor do parâmetro `size`
 de `200` para `200000`, causando problemas de performance no servidor de base de
 dados. Enquanto se verificam estes problemas de performance a API fica
 indisponível e incapaz de satisfazer pedidos de qualquer utilizador (DoS).
