@@ -7,7 +7,7 @@
 * [Εισαγωγή](0x03-introduction.md)
 * [Σημειώσεις Έκδοσης](0x04-release-notes.md)
 * [Ρίσκα Ασφαλείας των API](0x10-api-security-risks.md)
-* [OWASP Τα σημαντικότερα 10 Ρίσκα Ασφαλείας για API – 2019](0x11-t10.md)
+* [OWASP Τα 10 Κορυφαία Ρίσκα Ασφαλείας για API – 2019](0x11-t10.md)
 * [API1:2019 Broken Object Level Authorization](0xa1-broken-object-level-authorization.md)
 * [API2:2019 Broken User Authentication](0xa2-broken-user-authentication.md)
 * [API3:2019 Excessive Data Exposure](0xa3-excessive-data-exposure.md)
