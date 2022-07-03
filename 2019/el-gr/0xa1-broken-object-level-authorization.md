@@ -42,14 +42,16 @@ modify other users' account data.
 
 ## Τρόπος Πρόληψης
 
-* Implement a proper authorization mechanism that relies on the user policies
-  and hierarchy.
-* Use an authorization mechanism to check if the logged-in user has access to
-  perform the requested action on the record in every function that uses an
-  input from the client to access a record in the database.
-* Prefer to use random and unpredictable values as GUIDs for records’ IDs.
-* Write tests to evaluate the authorization mechanism. Do not deploy vulnerable
-  changes that break the tests.
+* Εφαρμόστε έναν κατάλληλο μηχανισμό εξουσιοδότησης που βασίζεται στις πολιτικές 
+και την ιεραρχία των χρηστών.
+* Χρησιμοποιήστε έναν μηχανισμό εξουσιοδότησης για να ελέγξετε εάν ο συνδεδεμένος 
+χρήστης έχει πρόσβαση για να εκτελέσει την απαιτούμενη ενέργεια στην εγγραφή σε 
+κάθε λειτουργία που χρησιμοποιεί μια είσοδο από τον πελάτη για πρόσβαση σε μια 
+εγγραφή στη βάση δεδομένων.
+* Προτιμήστε να χρησιμοποιείτε τυχαίες και απρόβλεπτες τιμές ως GUID για τα 
+αναγνωριστικά των εγγραφών.
+* Γράψτε tess για την αξιολόγηση του μηχανισμού εξουσιοδότησης. Μην αναπτύσσετε 
+ευάλωτες αλλαγές που σπάνε τις δοκιμές.
 
 ## Αναφορές
 
