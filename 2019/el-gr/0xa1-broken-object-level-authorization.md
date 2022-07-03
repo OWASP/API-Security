@@ -36,12 +36,6 @@ API1:2019 Broken Object Level Authorization
 
 ### Σενάριο #2
 
-While monitoring the network traffic of a wearable device, the following HTTP
-`PATCH` request gets the attention of an attacker due to the presence of a
-custom HTTP request header `X-User-Id: 54796`. Replacing the `X-User-Id` value
-with `54795`, the attacker receives a successful HTTP response, and is able to
-modify other users' account data.
-
 Κατά την παρακολούθηση της κυκλοφορίας δικτύου μιας φορητής συσκευής, το ακόλουθο 
 αίτημα HTTP `PATCH` τραβά την προσοχή ενός εισβολέα λόγω της παρουσίας μιας 
 προσαρμοσμένης κεφαλίδας αιτήματος HTTP `X-User-Id: 54796`. Αντικαθιστώντας την 
