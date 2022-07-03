@@ -32,6 +32,16 @@ endpoint, the attacker can get the list of all hosted shop names. With a simple
 script to manipulate the names in the list, replacing `{shopName}` in the URL,
 the attacker gains access to the sales data of thousands of e-commerce stores.
 
+Μια πλατφόρμα ηλεκτρονικού εμπορίου για ηλεκτρονικά καταστήματα παρέχει μια σελίδα 
+καταχώρισης με τα διαγράμματα εσόδων για τα καταστήματα που φιλοξενούν. Επιθεωρώντας 
+τα αιτήματα του προγράμματος περιήγησης, ένας εισβολέας μπορεί να αναγνωρίσει τα 
+τελικά σημεία API που χρησιμοποιούνται ως πηγή δεδομένων για αυτά τα γραφήματα 
+και το μοτίβο τους /shops/{shopName}/revenue_data.json. Χρησιμοποιώντας ένα άλλο 
+τελικό σημείο API, ο εισβολέας μπορεί να λάβει τη λίστα με όλα τα ονόματα καταστημάτων 
+που φιλοξενούνται. Με ένα απλό σενάριο χειρισμού των ονομάτων στη λίστα, αντικαθιστώντας 
+το {shopName} στη διεύθυνση URL, ο εισβολέας αποκτά πρόσβαση στα δεδομένα πωλήσεων 
+χιλιάδων καταστημάτων ηλεκτρονικού εμπορίου.
+
 ### Σενάριο #2
 
 While monitoring the network traffic of a wearable device, the following HTTP
