@@ -2,7 +2,7 @@
 
 ## OWASP API Security Top 10 2019 στα Ελληνικά
 
-Τα κορυφαία 10 ρίσκα ασφαλείας API - Ελληνική μετάφραση του "The Ten Most Critical API Security Risks"
+Τα 10 Κορυφαία Ρίσκα Ασφαλείας API - Ελληνική μετάφραση του "The Ten Most Critical API Security Risks"
 
 30/6/2022
 
