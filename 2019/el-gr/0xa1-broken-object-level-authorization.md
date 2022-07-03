@@ -24,22 +24,14 @@ API1:2019 Broken Object Level Authorization
 
 ### Σενάριο #1
 
-An e-commerce platform for online stores (shops) provides a listing page with
-the revenue charts for their hosted shops. Inspecting the browser requests, an
-attacker can identify the API endpoints used as a data source for those charts
-and their pattern `/shops/{shopName}/revenue_data.json`. Using another API
-endpoint, the attacker can get the list of all hosted shop names. With a simple
-script to manipulate the names in the list, replacing `{shopName}` in the URL,
-the attacker gains access to the sales data of thousands of e-commerce stores.
-
 Μια πλατφόρμα ηλεκτρονικού εμπορίου για ηλεκτρονικά καταστήματα παρέχει μια σελίδα 
 καταχώρισης με τα διαγράμματα εσόδων για τα καταστήματα που φιλοξενούν. Επιθεωρώντας 
 τα αιτήματα του προγράμματος περιήγησης, ένας εισβολέας μπορεί να αναγνωρίσει τα 
 τελικά σημεία API που χρησιμοποιούνται ως πηγή δεδομένων για αυτά τα γραφήματα 
-και το μοτίβο τους /shops/{shopName}/revenue_data.json. Χρησιμοποιώντας ένα άλλο 
+και το μοτίβο τους `/shops/{shopName}/revenue_data.json`. Χρησιμοποιώντας ένα άλλο 
 τελικό σημείο API, ο εισβολέας μπορεί να λάβει τη λίστα με όλα τα ονόματα καταστημάτων 
 που φιλοξενούνται. Με ένα απλό σενάριο χειρισμού των ονομάτων στη λίστα, αντικαθιστώντας 
-το {shopName} στη διεύθυνση URL, ο εισβολέας αποκτά πρόσβαση στα δεδομένα πωλήσεων 
+το `{shopName}` στη διεύθυνση URL, ο εισβολέας αποκτά πρόσβαση στα δεδομένα πωλήσεων 
 χιλιάδων καταστημάτων ηλεκτρονικού εμπορίου.
 
 ### Σενάριο #2
@@ -49,6 +41,12 @@ While monitoring the network traffic of a wearable device, the following HTTP
 custom HTTP request header `X-User-Id: 54796`. Replacing the `X-User-Id` value
 with `54795`, the attacker receives a successful HTTP response, and is able to
 modify other users' account data.
+
+Κατά την παρακολούθηση της κυκλοφορίας δικτύου μιας φορητής συσκευής, το ακόλουθο 
+αίτημα HTTP `PATCH` τραβά την προσοχή ενός εισβολέα λόγω της παρουσίας μιας 
+προσαρμοσμένης κεφαλίδας αιτήματος HTTP `X-User-Id: 54796`. Αντικαθιστώντας την 
+τιμή `X-User-Id` με `54795`, ο εισβολέας λαμβάνει μια επιτυχημένη απάντηση HTTP 
+και μπορεί να τροποποιήσει τα δεδομένα λογαριασμού άλλων χρηστών.
 
 ## Τρόπος Πρόληψης
 
