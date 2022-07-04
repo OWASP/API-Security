@@ -8,23 +8,17 @@ API2:2019 Broken User Authentication
 
 ## Είναι το API ευάλωτο;
 
-Authentication endpoints and flows are assets that need to be protected. “Forgot
-password / reset password” should be treated the same way as authentication
-mechanisms.
+Τα τελικά σημεία και οι ροές ελέγχου ταυτότητας είναι στοιχεία που πρέπει να προστατεύονται. Το "Ξέχασα τον κωδικό πρόσβασης / επαναφορά κωδικού πρόσβασης" θα πρέπει να αντιμετωπίζεται με τον ίδιο τρόπο όπως και οι μηχανισμοί ελέγχου ταυτότητας.
 
 An API is vulnerable if it:
-* Permits [credential stuffing][1] whereby the attacker has a list of valid
-  usernames and passwords.
-* Permits attackers to perform a brute force attack on the same user account, without
-  presenting captcha/account lockout mechanism.
-* Permits weak passwords.
-* Sends sensitive authentication details, such as auth tokens and passwords in
-  the URL.
-* Doesn’t validate the authenticity of tokens.
-* Accepts unsigned/weakly signed JWT tokens (`"alg":"none"`)/doesn’t
-  validate their expiration date.
-* Uses plain text, non-encrypted, or weakly hashed passwords.
-* Uses weak encryption keys.
+* Επιτρέπει [credential stuffing][1] με το οποίο ο εισβολέας έχει μια λίστα με έγκυρα ονόματα χρήστη και κωδικούς πρόσβασης.
+* Επιτρέπει στους εισβολείς να εκτελούν επίθεση ωμής βίας (brute force attack) στον ίδιο λογαριασμό χρήστη, χωρίς να παρουσιάζουν μηχανισμό κλειδώματος captcha/λογαριασμού.
+* Επιτρέπει αδύναμους κωδικούς πρόσβασης.
+* Στέλνει ευαίσθητες λεπτομέρειες ελέγχου ταυτότητας, όπως διακριτικά ταυτότητας και κωδικούς πρόσβασης στη διεύθυνση URL.
+* Δεν επικυρώνει την αυθεντικότητα των διακριτικών.
+* Αποδέχεται ανυπόγραφα/ασθενώς υπογεγραμμένα διακριτικά JWT (`"alg":"none"`)/δεν επικυρώνει την ημερομηνία λήξης τους.
+* Χρησιμοποιεί απλό κείμενο, μη κρυπτογραφημένους ή ασθενώς κατακερματισμένους κωδικούς πρόσβασης.
+* Χρησιμοποιεί αδύναμα κλειδιά κρυπτογράφησης.
 
 ## Παράδειγμα Σεναρίων Επίθεσης
 
