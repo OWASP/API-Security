@@ -53,8 +53,8 @@ oracle (tester) to determine if the credentials are valid.
 την αποθήκευση κωδικού πρόσβασης. Χρησιμοποιήστε τα πρότυπα.
 * Τα τελικά σημεία ανάκτησης διαπιστευτηρίων/λήψης κωδικού πρόσβασης θα πρέπει να αντιμετωπίζονται 
 ως τελικά σημεία σύνδεσης όσον αφορά την ωμή βία, τον περιορισμό του ρυθμού και τις προστασίες κλειδώματος.
-* Use the [OWASP Authentication Cheatsheet][3].
-* Where possible, implement multi-factor authentication.
+* Χρησιμοποιήστε το [OWASP Authentication Cheatsheet][3].
+* Όπου είναι δυνατόν, εφαρμόστε έλεγχο ταυτότητας πολλαπλών παραγόντων (multi-factor authentication).
 * Implement anti brute force mechanisms to mitigate credential stuffing,
   dictionary attack, and brute force attacks on your authentication endpoints.
   This mechanism should be stricter than the regular rate limiting mechanism on
