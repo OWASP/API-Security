@@ -29,15 +29,18 @@ common attack. If an application does not implement automated threat or
 credential stuffing protections, the application can be used as a password
 oracle (tester) to determine if the credentials are valid.
 
+Το [Credential stuffing][1] (χρησιμοποιώντας [λίστες γνωστών ονομάτων χρήστη/κωδικών πρόσβασης][2]), είναι μια συνηθισμένη επίθεση. Εάν μια εφαρμογή δεν εφαρμόζει αυτοματοποιημένες προστασίες από απειλές ή Credential stuffing, η εφαρμογή μπορεί να χρησιμοποιηθεί ως μαντείο κωδικού πρόσβασης (ελεγκτής) για να προσδιοριστεί εάν τα διαπιστευτήρια είναι έγκυρα.
+
 ## Σενάριο #2
 
-An attacker starts the password recovery workflow by issuing a POST request to
-`/api/system/verification-codes` and by providing the username in the request
-body. Next an SMS token with 6 digits is sent to the victim’s phone. Because the
-API does not implement a rate limiting policy, the attacker can test all
-possible combinations using a multi-threaded script, against the
-`/api/system/verification-codes/{smsToken}` endpoint to discover the right token
-within a few minutes.
+Ένας εισβολέας ξεκινά τη ροή εργασιών ανάκτησης κωδικού πρόσβασης εκδίδοντας ένα 
+αίτημα POST στο `/api/system/verification-codes` και παρέχοντας το όνομα χρήστη 
+στο σώμα του αιτήματος. Στη συνέχεια, ένα διακριτικό SMS με 6 ψηφία αποστέλλεται 
+στο τηλέφωνο του θύματος. Επειδή το API δεν εφαρμόζει πολιτική περιορισμού ρυθμού, 
+ο εισβολέας μπορεί να δοκιμάσει όλους τους πιθανούς συνδυασμούς χρησιμοποιώντας 
+ένα σενάριο πολλαπλών νημάτων, σε σχέση με το τελικό σημείο 
+`/api/system/verification-codes/{smsToken}` για να ανακαλύψει το σωστό διακριτικό 
+μέσα σε λίγα λεπτά.
 
 ## Τρόπος Πρόληψης
 
