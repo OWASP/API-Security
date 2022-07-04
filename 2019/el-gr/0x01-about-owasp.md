@@ -45,7 +45,7 @@ review ασφαλούς κώδικα.
 
 ## Copyright και Άδεια
 
-![license](https://github.com/OWASP/API-Security/raw/master/2019/fr/src/images/license.png)
+![license](images/license.png)
 
 Copyright © 2003-2019 The OWASP Foundation. Αυτό το έγγραφο κυκλοφορεί κάτω από την άδεια
 [Creative Commons Attribution Share-Alike 4.0 license][7]. Για να επαναχρησιμοποιήσετε ή 
