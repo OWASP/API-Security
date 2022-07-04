@@ -55,14 +55,12 @@ oracle (tester) to determine if the credentials are valid.
 ως τελικά σημεία σύνδεσης όσον αφορά την ωμή βία, τον περιορισμό του ρυθμού και τις προστασίες κλειδώματος.
 * Χρησιμοποιήστε το [OWASP Authentication Cheatsheet][3].
 * Όπου είναι δυνατόν, εφαρμόστε έλεγχο ταυτότητας πολλαπλών παραγόντων (multi-factor authentication).
-* Implement anti brute force mechanisms to mitigate credential stuffing,
-  dictionary attack, and brute force attacks on your authentication endpoints.
-  This mechanism should be stricter than the regular rate limiting mechanism on
-  your API.
-* Implement [account lockout][4] / captcha mechanism to prevent brute force
-  against specific users. Implement weak-password checks.
-* API keys should not be used for user authentication, but for [client app/
-  project authentication][5].
+* Εφαρμόστε μηχανισμούς κατά της ωμής βίας για τον μετριασμό του γεμίσματος διαπιστευτηρίων, της επίθεσης 
+λεξικού και των επιθέσεων ωμής βίας στα τελικά σημεία ελέγχου ταυτότητας. Αυτός ο μηχανισμός θα πρέπει 
+να είναι πιο αυστηρός από τον κανονικό μηχανισμό περιορισμού ρυθμών στο API σας.
+* Εφαρμόστε το μηχανισμό [account lockout][4] / captcha για να αποτρέψετε την ωμή βία εναντίον συγκεκριμένων 
+χρηστών. Εφαρμόστε ελέγχους αδύναμου κωδικού πρόσβασης.
+* Τα κλειδιά API δεν πρέπει να χρησιμοποιούνται για έλεγχο ταυτότητας χρήστη, αλλά για [client app/project authentication][5].
 
 ## Αναφορές
 
