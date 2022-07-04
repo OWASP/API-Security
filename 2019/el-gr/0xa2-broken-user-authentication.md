@@ -4,9 +4,9 @@ API2:2019 Broken User Authentication
 | Παράγοντες Απειλής/Φορείς Επίθεσης | Αδυναμία Ασφαλείας | Επιπτώσεις |
 | - | - | - |
 | Εξαρτώνται από το API : Εκμεταλλευσιμότητα **3** | Επιπολασμός **2** : Ανιχνευσιμότητα **2** | Τεχνικές **3** : Εξαρτώνται από την Επιχείρηση |
-| Authentication in APIs is a complex and confusing mechanism. Software and security engineers might have misconceptions about what are the boundaries of authentication and how to implement it correctly. In addition, the authentication mechanism is an easy target for attackers, since it’s exposed to everyone. These two points makes the authentication component potentially vulnerable to many exploits. | There are two sub-issues: 1. Lack of protection mechanisms: APIs endpoints that are responsible for authentication must be treated differently from regular endpoints and implement extra layers of protection 2. Misimplementation of the mechanism: The mechanism is used / implemented without considering the attack vectors, or it’s the wrong use case (e.g., an authentication mechanism designed for IoT clients might not be the right choice for web applications). | Attackers can gain control to other users’ accounts in the system, read their personal data, and perform sensitive actions on their behalf, like money transactions and sending personal messages. |
+| Ο έλεγχος ταυτότητας στα API είναι ένας πολύπλοκος και μπερδεμένος μηχανισμός. Οι μηχανικοί λογισμικού και ασφάλειας ενδέχεται να έχουν λανθασμένες αντιλήψεις σχετικά με τα όρια του ελέγχου ταυτότητας και πώς να τον εφαρμόσουν σωστά. Επιπλέον, ο μηχανισμός ελέγχου ταυτότητας είναι ένας εύκολος στόχος για τους εισβολείς, καθώς είναι εκτεθειμένος σε όλους. Αυτά τα δύο σημεία καθιστούν το στοιχείο ελέγχου ταυτότητας δυνητικά ευάλωτο σε πολλά exploits. | Υπάρχουν δύο επιμέρους ζητήματα: 1. Έλλειψη μηχανισμών προστασίας: Τα τελικά σημεία API που είναι υπεύθυνα για τον έλεγχο ταυτότητας πρέπει να αντιμετωπίζονται διαφορετικά από τα κανονικά τελικά σημεία και να εφαρμόζουν επιπλέον επίπεδα προστασίας 2. Εσφαλμένη εφαρμογή του μηχανισμού: Ο μηχανισμός χρησιμοποιείται / υλοποιείται χωρίς να λαμβάνονται υπόψη τα  διανύσματα επίθεσης ή είναι λάθος η περίπτωση χρήσης (π.χ. ένας μηχανισμός ελέγχου ταυτότητας που έχει σχεδιαστεί για πελάτες IoT μπορεί να μην είναι η σωστή επιλογή για εφαρμογές Ιστού). | Οι εισβολείς μπορούν να αποκτήσουν τον έλεγχο των λογαριασμών άλλων χρηστών στο σύστημα, να διαβάσουν τα προσωπικά τους δεδομένα και να εκτελέσουν ευαίσθητες ενέργειες για λογαριασμό τους, όπως συναλλαγές χρημάτων και αποστολή προσωπικών μηνυμάτων. |
 
-## Is the API Vulnerable?
+## Είναι το API ευάλωτο;
 
 Authentication endpoints and flows are assets that need to be protected. “Forgot
 password / reset password” should be treated the same way as authentication
@@ -26,16 +26,16 @@ An API is vulnerable if it:
 * Uses plain text, non-encrypted, or weakly hashed passwords.
 * Uses weak encryption keys.
 
-## Example Attack Scenarios
+## Παράδειγμα Σεναρίων Επίθεσης
 
-## Scenario #1
+## Σενάριο #1
 
 [Credential stuffing][1] (using [lists of known usernames/passwords][2]), is a
 common attack. If an application does not implement automated threat or
 credential stuffing protections, the application can be used as a password
 oracle (tester) to determine if the credentials are valid.
 
-## Scenario #2
+## Σενάριο #2
 
 An attacker starts the password recovery workflow by issuing a POST request to
 `/api/system/verification-codes` and by providing the username in the request
@@ -45,7 +45,7 @@ possible combinations using a multi-threaded script, against the
 `/api/system/verification-codes/{smsToken}` endpoint to discover the right token
 within a few minutes.
 
-## How To Prevent
+## Τρόπος Πρόληψης
 
 * Make sure you know all the possible flows to authenticate to the API (mobile/
   web/deep links that implement one-click authentication/etc.)
@@ -67,7 +67,7 @@ within a few minutes.
 * API keys should not be used for user authentication, but for [client app/
   project authentication][5].
 
-## References
+## Αναφορές
 
 ### OWASP
 
@@ -75,7 +75,7 @@ within a few minutes.
 * [OWASP Authentication Cheatsheet][3]
 * [Credential Stuffing][1]
 
-### External
+### Εξωτερικές
 
 * [CWE-798: Use of Hard-coded Credentials][7]
 
