@@ -23,17 +23,7 @@ API3:2019 Excessive Data Exposure
 
 ### Σενάριο #2
 
-An IOT-based surveillance system allows administrators to create users with
-different permissions. An admin created a user account for a new security guard
-that should only have access to specific buildings on the site. Once the
-security guard uses his mobile app, an API call is triggered to:
-`/api/sites/111/cameras` in order to receive data about the available cameras
-and show them on the dashboard. The response contains a list with details about
-cameras in the following format:
-`{"id":"xxx","live_access_token":"xxxx-bbbbb","building_id":"yyy"}`.
-While the client GUI shows only cameras which the security guard should have
-access to, the actual API response contains a full list of all the cameras in
-the site.
+Ένα σύστημα επιτήρησης που βασίζεται στο IOT επιτρέπει στους διαχειριστές να δημιουργούν χρήστες με διαφορετικά δικαιώματα. Ένας διαχειριστής δημιούργησε έναν λογαριασμό χρήστη για έναν νέο φύλακα που θα πρέπει να έχει πρόσβαση μόνο σε συγκεκριμένα κτίρια στον ιστότοπο. Μόλις ο φύλακας χρησιμοποιήσει την εφαρμογή του για κινητά, ενεργοποιείται μια κλήση API στη διεύθυνση: `/api/sites/111/cameras` προκειμένου να λάβει δεδομένα σχετικά με τις διαθέσιμες κάμερες και να τις εμφανίσει στον πίνακα ελέγχου. Η απάντηση περιέχει μια λίστα με λεπτομέρειες σχετικά με τις κάμερες στην ακόλουθη μορφή: `{"id":"xxx","live_access_token":"xxxx-bbbbb","building_id":"yyy"}`. Ενώ το GUI του πελάτη εμφανίζει μόνο κάμερες στις οποίες θα πρέπει να έχει πρόσβαση ο φύλακας, η πραγματική απόκριση API περιέχει μια πλήρη λίστα με όλες τις κάμερες στον ιστότοπο.
 
 ## Τρόπος Πρόληψης
 
