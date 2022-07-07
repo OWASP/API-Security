@@ -37,19 +37,19 @@ the site.
 
 ## Τρόπος Πρόληψης
 
-* Never rely on the client side to filter sensitive data.
-* Review the responses from the API to make sure they contain only legitimate
-  data.
-* Backend engineers should always ask themselves "who is the
-  consumer of the data?" before exposing a new API endpoint.
-* Avoid using generic methods such as `to_json()` and `to_string()`.
-  Instead, cherry-pick specific properties you really want to return
-* Classify sensitive and personally identifiable information (PII) that
-  your application stores and works with, reviewing all API calls returning such
-  information to see if these responses pose a security issue.
-* Implement a schema-based response validation mechanism as an extra layer of
-  security. As part of this mechanism define and enforce data returned by all
-  API methods, including errors.
+* Μην βασίζεστε ποτέ στην πλευρά του προγράμματος-πελάτη για να φιλτράρετε ευαίσθητα δεδομένα.
+* Ελέγξτε τις απαντήσεις από το API για να βεβαιωθείτε ότι περιέχουν μόνο αποδεκτά δεδομένα.
+* Οι back-end προγραμματιστές θα πρέπει πάντα να αναρωτιούνται "ποιος είναι ο καταναλωτής των δεδομένων;" 
+πριν εκθέσουν δημόσια ένα νέο τελικό σημείο API.
+* Αποφύγετε τη χρήση γενικών μεθόδων όπως `to_json()` και `to_string()`. 
+Αντίθετα, επιλέξτε συγκεκριμένα πεδία που θέλετε πραγματικά να επιστρέψετε.
+* Ταξινομήστε όλες τις ευαίσθητες και προσωπικά αναγνωρίσιμες πληροφορίες (PII) 
+τις οποίες αποθηκεύει και συνεργάζεται η εφαρμογή σας, ελέγχοντας όλες τις κλήσεις 
+API που επιστρέφουν τέτοιες πληροφορίες για να δείτε εάν αυτές οι απαντήσεις 
+δημιουργούν πρόβλημα ασφαλείας.
+* Εφαρμόστε έναν μηχανισμό επικύρωσης απόκρισης που βασίζεται σε σχήματα (schema-based)
+ως ένα επιπλέον επίπεδο ασφάλειας. Ως μέρος αυτού του μηχανισμού ορίστε και επιβάλλετε 
+δεδομένα που επιστρέφονται από όλες τις μεθόδους API, συμπεριλαμβανομένων των σφαλμάτων.
 
 
 ## Αναφορές
