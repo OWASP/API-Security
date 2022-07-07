@@ -24,11 +24,6 @@ API2:2019 Broken User Authentication
 
 ## Σενάριο #1
 
-[Credential stuffing][1] (using [lists of known usernames/passwords][2]), is a
-common attack. If an application does not implement automated threat or
-credential stuffing protections, the application can be used as a password
-oracle (tester) to determine if the credentials are valid.
-
 Το [Credential stuffing][1] (χρησιμοποιώντας [λίστες γνωστών ονομάτων χρήστη/κωδικών πρόσβασης][2]), είναι μια συνηθισμένη επίθεση. Εάν μια εφαρμογή δεν εφαρμόζει αυτοματοποιημένες προστασίες από απειλές ή Credential stuffing, η εφαρμογή μπορεί να χρησιμοποιηθεί ως μαντείο κωδικού πρόσβασης (ελεγκτής) για να προσδιοριστεί εάν τα διαπιστευτήρια είναι έγκυρα.
 
 ## Σενάριο #2
