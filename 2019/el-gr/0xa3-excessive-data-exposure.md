@@ -14,12 +14,11 @@ API3:2019 Excessive Data Exposure
 
 ### Σενάριο #1
 
-The mobile team uses the `/api/articles/{articleId}/comments/{commentId}`
-endpoint in the articles view to render comments metadata. Sniffing the mobile
-application traffic, an attacker finds out that other sensitive data related to
-comment’s author is also returned. The endpoint implementation uses a generic
-`toJSON()` method on the `User` model, which contains PII, to serialize the
-object.
+Η ομάδα development για κινητά χρησιμοποιεί το τελικό σημείο `/api/articles/{articleId}/comments/{commentId}` 
+στην προβολή άρθρων για την απόδοση μεταδεδομένων σχολίων. Ανιχνεύοντας την κίνηση της εφαρμογής 
+για κινητά, ένας εισβολέας ανακαλύπτει ότι επιστρέφονται και άλλα ευαίσθητα δεδομένα που σχετίζονται 
+με τον συντάκτη του σχολίου. Η υλοποίηση τελικού σημείου χρησιμοποιεί μια γενική μέθοδο toJSON() 
+στο μοντέλο χρήστη, η οποία περιέχει PII, για τη σειριοποίηση (serialization) του αντικειμένου.
 
 ### Σενάριο #2
 
