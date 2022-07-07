@@ -1,10 +1,10 @@
 API3:2019 Excessive Data Exposure
 =================================
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
+| Παράγοντες Απειλής/Φορείς Επίθεσης | Αδυναμία Ασφαλείας | Επιπτώσεις |
 | - | - | - |
-| API Specific : Exploitability **3** | Prevalence **2** : Detectability **2** | Technical **2** : Business Specific |
-| Exploitation of Excessive Data Exposure is simple, and is usually performed by sniffing the traffic to analyze the API responses, looking for sensitive data exposure that should not be returned to the user. | APIs rely on clients to perform the data filtering. Since APIs are used as data sources, sometimes developers try to implement them in a generic way without thinking about the sensitivity of the exposed data. Automatic tools usually can’t detect this type of vulnerability because it’s hard to differentiate between legitimate data returned from the API, and sensitive data that should not be returned without a deep understanding of the application. | Excessive Data Exposure commonly leads to exposure of sensitive data. |
+| Εξαρτώνται από το API : Εκμεταλλευσιμότητα **3** | Επιπολασμός **2** : Ανιχνευσιμότητα **2** | Τεχνικές **2** : Εξαρτώνται από την Επιχείρηση |
+| Η εκμετάλλευση της υπερβολικής έκθεσης δεδομένων (Excessive Data Exposure) είναι απλή και συνήθως γίνεται παρατηρώντας την κίνηση των δεδομένων για ανάλυση των αποκρίσεων του API, αναζητώντας έκθεση σε ευαίσθητα δεδομένα που δεν πρέπει να επιστραφούν στον χρήστη. | Τα API βασίζονται σε πελάτες για την εκτέλεση του φιλτραρίσματος δεδομένων. Δεδομένου ότι τα API χρησιμοποιούνται ως πηγές δεδομένων, μερικές φορές οι προγραμματιστές προσπαθούν να τα εφαρμόσουν με γενικό τρόπο χωρίς να σκέφτονται την ευαισθησία των εκτεθειμένων δεδομένων. Τα αυτόματα εργαλεία συνήθως δεν μπορούν να εντοπίσουν αυτόν τον τύπο ευπάθειας, επειδή είναι δύσκολο να γίνει διάκριση μεταξύ των νόμιμων δεδομένων που επιστρέφονται από το API και των ευαίσθητων δεδομένων που δεν πρέπει να επιστραφούν χωρίς βαθιά κατανόηση της εφαρμογής. | Η υπερβολική έκθεση δεδομένων οδηγεί συνήθως σε έκθεση ευαίσθητων δεδομένων. |
 
 ## Είναι το API ευάλωτο;
 
