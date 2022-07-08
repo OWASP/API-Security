@@ -29,16 +29,6 @@ API4:2019 Lack of Resources & Rate Limiting
 
 ### Σενάριο #2
 
-We have an application that contains the users' list on a UI with a limit of
-`200` users per page. The users' list is retrieved from the server using the
-following query: `/api/users?page=1&size=200`. An attacker changes the `size`
-parameter to `200 000`, causing performance issues on the database. Meanwhile,
-the API becomes unresponsive and is unable to handle further requests from this
-or any other clients (aka DoS).
-
-The same scenario might be used to provoke Integer Overflow or Buffer Overflow
-errors.
-
 Έχουμε μια εφαρμογή που περιέχει τη λίστα χρηστών σε μια διεπαφή χρήστη (UI) με όριο 
 200 χρήστες ανά σελίδα. Η λίστα των χρηστών ανακτάται από τον διακομιστή χρησιμοποιώντας 
 το ακόλουθο ερώτημα: `/api/users?page=1&size=200`. Ένας εισβολέας αλλάζει την παράμετρο 
