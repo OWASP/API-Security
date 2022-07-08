@@ -39,20 +39,24 @@ or any other clients (aka DoS).
 The same scenario might be used to provoke Integer Overflow or Buffer Overflow
 errors.
 
+Έχουμε μια εφαρμογή που περιέχει τη λίστα χρηστών σε μια διεπαφή χρήστη (UI) με όριο 
+200 χρήστες ανά σελίδα. Η λίστα των χρηστών ανακτάται από τον διακομιστή χρησιμοποιώντας 
+το ακόλουθο ερώτημα: `/api/users?page=1&size=200`. Ένας εισβολέας αλλάζει την παράμετρο 
+μεγέθους σε `200 000`, προκαλώντας προβλήματα απόδοσης στη βάση δεδομένων. 
+Εν τω μεταξύ, το API δεν ανταποκρίνεται και δεν είναι σε θέση να χειριστεί περαιτέρω 
+αιτήματα από αυτόν ή άλλους πελάτες (γνωστός και ως DoS).
+
+Το ίδιο σενάριο μπορεί να χρησιμοποιηθεί για την πρόκληση σφαλμάτων υπερχείλισης ακεραίων (Integer Overflow) ή υπερχείλισης buffer (Buffer Overflow).
+
 ## Τρόπος Πρόληψης
 
-* Docker makes it easy to limit [memory][1], [CPU][2], [number of restarts][3],
-  [file descriptors, and processes][4].
-* Implement a limit on how often a client can call the API within a defined
-  timeframe.
-* Notify the client when the limit is exceeded by providing the limit number and
-  the time at which the limit will be reset.
-* Add proper server-side validation for query string and request body
-  parameters, specifically the one that controls the number of records to be
-  returned in the response.
-* Define and enforce maximum size of data on all incoming parameters and
-  payloads such as maximum length for strings and maximum number of elements in
-  arrays.
+* Το Docker διευκολύνει τον περιορισμό της [μνήμης][1], του [CPU][2], τον [αριθμό επανεκκινήσεων][3],
+  των [περιγραφέων αρχείου (file descriptors), και διεργασιών (processes)][4].
+* Εφαρμόστε ένα όριο σχετικά με το πόσο συχνά ένα πρόγραμμα-πελάτης μπορεί να καλεί το API εντός ενός καθορισμένου χρονικού πλαισίου.
+* Ειδοποιήστε το πρόγραμμα-πελάτη όταν γίνεται υπέρβαση του ορίου παρέχοντας τον αριθμό ορίου και την ώρα κατά την οποία θα γίνει επαναφορά του ορίου.
+* Προσθέστε την κατάλληλη επικύρωση (validation) από την πλευρά του διακομιστή για τις παραμέτρους συμβολοσειράς ερωτήματος (query string) και σώματος αιτήματος, ειδικά αυτή που ελέγχει τον αριθμό των εγγραφών που θα επιστραφούν στην απάντηση.
+* Καθορισμός και επιβολή μέγιστου μεγέθους δεδομένων σε όλες τις εισερχόμενες παραμέτρους και ωφέλιμα φορτία (payloads), 
+όπως το μέγιστο μήκος για τις συμβολοσειρές (strings) και τον μέγιστο αριθμό στοιχείων σε πίνακες (elements in arrays).
 
 
 ## Αναφορές
