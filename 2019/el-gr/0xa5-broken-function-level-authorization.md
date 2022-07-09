@@ -43,12 +43,13 @@ POST /api/invites/new
 
 ### Σενάριο #2
 
-An API contains an endpoint that should be exposed only to administrators -
-`GET /api/admin/v1/users/all`. This endpoint returns the details of all the
-users of the application and does not implement function-level authorization
-checks. An attacker who learned the API structure takes an educated guess and
-manages to access this endpoint, which exposes sensitive details of the users of
-the application.
+Ένα API περιέχει ένα τελικό σημείο (endpoint) που θα πρέπει να εκτίθεται μόνο στους διαχειριστές - 
+`GET /api/admin/v1/users/all`. Αυτό το τελικό σημείο επιστρέφει τα στοιχεία όλων των χρηστών της 
+εφαρμογής και δεν εφαρμόζει ελέγχους εξουσιοδότησης σε επίπεδο λειτουργίας. Ένας εισβολέας που 
+έμαθε τη δομή του API παίρνει μια ενημερωμένη εικασία και καταφέρνει να αποκτήσει πρόσβαση σε αυτό 
+το τελικό σημείο, το οποίο εκθέτει ευαίσθητες λεπτομέρειες των χρηστών της εφαρμογής.
+
+
 
 ## Τρόπος Πρόληψης
 
