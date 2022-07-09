@@ -52,10 +52,7 @@ the application.
 
 ## Τρόπος Πρόληψης
 
-Your application should have a consistent and easy to analyze authorization
-module that is invoked from all your business functions. Frequently, such
-protection is provided by one or more components external to the application
-code.
+Η εφαρμογή σας θα πρέπει να διαθέτει μια συνεπή και εύκολη στην ανάλυση ενότητα εξουσιοδότησης που θα χρησιμοποιείται από όλες τις λειτουργίες της επιχείρησής σας. Συχνά, μια τέτοια προστασία παρέχεται από ένα ή περισσότερα στοιχεία εκτός του κώδικα εφαρμογής.
 
 * The enforcement mechanism(s) should deny all access by default, requiring
   explicit grants to specific roles for access to every function.
