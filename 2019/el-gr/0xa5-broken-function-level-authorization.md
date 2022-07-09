@@ -54,15 +54,10 @@ the application.
 
 Η εφαρμογή σας θα πρέπει να διαθέτει μια συνεπή και εύκολη στην ανάλυση ενότητα εξουσιοδότησης (authorization module) που θα χρησιμοποιείται από όλες τις λειτουργίες της επιχείρησής σας. Συχνά, μια τέτοια προστασία παρέχεται από ένα ή περισσότερα στοιχεία εκτός του κώδικα εφαρμογής.
 
-* The enforcement mechanism(s) should deny all access by default, requiring
-  explicit grants to specific roles for access to every function.
-* Review your API endpoints against function level authorization flaws, while
-  keeping in mind the business logic of the application and groups hierarchy.
-* Make sure that all of your administrative controllers inherit from an
-  administrative abstract controller that implements authorization checks based
-  on the user’s group/role.
-* Make sure that administrative functions inside a regular controller implements
-  authorization checks based on the user’s group and role.
+* Οι μηχανισμοί επιβολής θα πρέπει να απαγορεύουν κάθε πρόσβαση από προεπιλογή, απαιτώντας ρητές επιχορηγήσεις (explicit grants) σε συγκεκριμένους ρόλους για πρόσβαση σε κάθε λειτουργία.
+* Ελέγξτε τα τελικά σημεία του API σας σε σχέση με ελαττώματα εξουσιοδότησης σε επίπεδο συνάρτησης (function level), λαμβάνοντας παράλληλα υπόψη την επιχειρηματική λογική της ιεραρχίας της εφαρμογής και των ομάδων.
+* Βεβαιωθείτε ότι όλοι οι διαχειριστικοί controllers σας κληρονομούν από έναν διαχειριστικό abstract controller που εφαρμόζει ελέγχους εξουσιοδότησης με βάση την ομάδα/ρόλο του χρήστη.
+* Βεβαιωθείτε ότι οι λειτουργίες διαχείρισης μέσα σε έναν κανονικό controller εφαρμόζουν ελέγχους εξουσιοδότησης βάσει της ομάδας και του ρόλου του χρήστη.
 
 ## Αναφορές
 
