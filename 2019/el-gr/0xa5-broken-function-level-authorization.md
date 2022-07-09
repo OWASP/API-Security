@@ -22,18 +22,17 @@ API5:2019 Broken Function Level Authorization
 
 ### Σενάριο #1
 
-During the registration process to an application that allows only invited users
-to join, the mobile application triggers an API call to
-`GET /api/invites/{invite_guid}`. The response contains a JSON with details
-about the invite, including the user’s role and the user’s email.
+Κατά τη διαδικασία εγγραφής σε μια εφαρμογή που επιτρέπει τη συμμετοχή μόνο σε 
+προσκεκλημένους χρήστες, η εφαρμογή για κινητά ενεργοποιεί μια κλήση API στο 
+`GET /api/invites/{invite_guid}`. Η απάντηση περιέχει ένα JSON με λεπτομέρειες 
+σχετικά με την πρόσκληση, συμπεριλαμβανομένου του ρόλου του χρήστη και του email του χρήστη.
 
-An attacker duplicated the request and manipulated the HTTP method and endpoint
-to `POST /api/invites/new`. This endpoint should only be accessed by
-administrators using the admin console, which does not implement function level
-authorization checks.
+Ένας εισβολέας αντιτύπωσε το αίτημα και χειρίστηκε τη μέθοδο HTTP και το τελικό 
+σημείο σε `POST /api/invites/new`. Αυτό το τελικό σημείο θα πρέπει να έχει πρόσβαση μόνο 
+από διαχειριστές που χρησιμοποιούν την κονσόλα διαχειριστή, η οποία δεν εφαρμόζει ελέγχους 
+εξουσιοδότησης σε επίπεδο λειτουργίας.
 
-The attacker exploits the issue and sends himself an invite to create an
-admin account:
+Ο εισβολέας εκμεταλλεύεται το πρόβλημα και στέλνει στον εαυτό του μια πρόσκληση να δημιουργήσει έναν λογαριασμό διαχειριστή:
 
 ```
 POST /api/invites/new
