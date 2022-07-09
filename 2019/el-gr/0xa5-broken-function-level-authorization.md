@@ -3,20 +3,15 @@ API5:2019 Broken Function Level Authorization
 
 | Παράγοντες Απειλής/Φορείς Επίθεσης | Αδυναμία Ασφαλείας | Επιπτώσεις |
 | - | - | - |
-| Εξαρτώνται από το API : Exploitability **3** | Επιπολασμός **2** : Ανιχνευσιμότητα **1** | Τεχνικές **2** : Εξαρτώνται από την Επιχείρηση |
-| Exploitation requires the attacker to send legitimate API calls to the API endpoint that they should not have access to. These endpoints might be exposed to anonymous users or regular, non-privileged users. It’s easier to discover these flaws in APIs since APIs are more structured, and the way to access certain functions is more predictable (e.g., replacing the HTTP method from GET to PUT, or changing the “users” string in the URL to "admins"). | Authorization checks for a function or resource are usually managed via configuration, and sometimes at the code level. Implementing proper checks can be a confusing task, since modern applications can contain many types of roles or groups and complex user hierarchy (e.g., sub-users, users with more than one role). | Such flaws allow attackers to access unauthorized functionality. Administrative functions are key targets for this type of attack. |
+| Εξαρτώνται από το API : Εκμεταλλευσιμότητα **3** | Επιπολασμός **2** : Ανιχνευσιμότητα **1** | Τεχνικές **2** : Εξαρτώνται από την Επιχείρηση |
+| Η εκμετάλλευση (exploitation) απαιτεί από τον εισβολέα να στέλνει νόμιμες κλήσεις API στο τελικό σημείο API στο οποίο δεν θα πρέπει να έχει πρόσβαση. Αυτά τα τελικά σημεία ενδέχεται να εκτίθενται σε ανώνυμους χρήστες ή σε τακτικούς, μη προνομιούχους χρήστες. Είναι πιο εύκολο να ανακαλύψετε αυτά τα ελαττώματα στα API, καθώς τα API είναι πιο δομημένα και ο τρόπος πρόσβασης σε ορισμένες λειτουργίες είναι πιο προβλέψιμος (π.χ. αντικατάσταση της μεθόδου HTTP από GET σε PUT ή αλλαγή της συμβολοσειράς "χρήστες" στη διεύθυνση URL σε "διαχειριστές" ). | Η διαχείριση των ελέγχων εξουσιοδότησης για μια λειτουργία ή έναν πόρο γίνεται συνήθως μέσω διαμόρφωσης και μερικές φορές σε επίπεδο κώδικα. Η εφαρμογή σωστών ελέγχων μπορεί να είναι μια μπερδεμένη εργασία, καθώς οι σύγχρονες εφαρμογές μπορεί να περιέχουν πολλούς τύπους ρόλων ή ομάδων και πολύπλοκη ιεραρχία χρηστών (π.χ. υποχρήστες, χρήστες με περισσότερους από έναν ρόλους). | Τέτοια ελαττώματα επιτρέπουν στους εισβολείς να έχουν πρόσβαση σε μη εξουσιοδοτημένη λειτουργικότητα. Οι διοικητικές λειτουργίες (administrative functions) είναι βασικοί στόχοι για αυτόν τον τύπο επίθεσης. |
 
-## Is the API Vulnerable?
+## Είναι το API ευάλωτο;
 
-The best way to find broken function level authorization issues is to perform
-deep analysis of the authorization mechanism, while keeping in mind the user
-hierarchy, different roles or groups in the application, and asking the
-following questions:
+Ο καλύτερος τρόπος για να βρείτε ζητήματα εξουσιοδότησης σε επίπεδο κατεστραμμένων συναρτήσεων (Broken Function Level Authorization) είναι να πραγματοποιήσετε βαθιά ανάλυση του μηχανισμού εξουσιοδότησης, λαμβάνοντας παράλληλα υπόψη την ιεραρχία των χρηστών, διαφορετικούς ρόλους ή ομάδες στην εφαρμογή και θέτοντας τις ακόλουθες ερωτήσεις:
 
-* Can a regular user access administrative endpoints?
-* Can a user perform sensitive actions (e.g., creation, modification, or
-  erasure) that they should not have access to by simply changing the HTTP
-  method (e.g., from `GET` to `DELETE`)?
+* Μπορεί ένας τακτικός χρήστης να έχει πρόσβαση στα τελικά σημεία διαχείρισης;
+* Μπορεί ένας χρήστης να εκτελέσει ευαίσθητες ενέργειες (π.χ. δημιουργία, τροποποίηση ή διαγραφή) στις οποίες δεν θα έπρεπε να έχει πρόσβαση αλλάζοντας απλώς τη μέθοδο HTTP (π.χ. από "GET" σε "DELETE");
 * Can a user from group X access a function that should be exposed only to users
   from group Y, by simply guessing the endpoint URL and parameters (e.g.,
   `/api/v1/users/export_all`)?
@@ -29,9 +24,9 @@ under a specific relative path, like `api/admins`, it’s very common to find
 these administrative endpoints under other relative paths together with regular
 endpoints, like `api/users`.
 
-## Example Attack Scenarios
+## Παραδείγματα Σεναρίων Επίθεσης
 
-### Scenario #1
+### Σενάριο #1
 
 During the registration process to an application that allows only invited users
 to join, the mobile application triggers an API call to
@@ -52,7 +47,7 @@ POST /api/invites/new
 {“email”:”hugo@malicious.com”,”role”:”admin”}
 ```
 
-### Scenario #2
+### Σενάριο #2
 
 An API contains an endpoint that should be exposed only to administrators -
 `GET /api/admin/v1/users/all`. This endpoint returns the details of all the
@@ -61,7 +56,7 @@ checks. An attacker who learned the API structure takes an educated guess and
 manages to access this endpoint, which exposes sensitive details of the users of
 the application.
 
-## How To Prevent
+## Τρόπος Πρόληψης
 
 Your application should have a consistent and easy to analyze authorization
 module that is invoked from all your business functions. Frequently, such
@@ -78,7 +73,7 @@ code.
 * Make sure that administrative functions inside a regular controller implements
   authorization checks based on the user’s group and role.
 
-## References
+## Αναφορές
 
 ### OWASP
 
@@ -86,7 +81,7 @@ code.
 * [OWASP Top 10 2013-A7-Missing Function Level Access Control][2]
 * [OWASP Development Guide: Chapter on Authorization][3]
 
-### External
+### Εξωτερικές
 
 * [CWE-285: Improper Authorization][4]
 
