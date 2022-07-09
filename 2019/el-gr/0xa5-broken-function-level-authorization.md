@@ -12,17 +12,11 @@ API5:2019 Broken Function Level Authorization
 
 * Μπορεί ένας τακτικός χρήστης να έχει πρόσβαση στα τελικά σημεία διαχείρισης;
 * Μπορεί ένας χρήστης να εκτελέσει ευαίσθητες ενέργειες (π.χ. δημιουργία, τροποποίηση ή διαγραφή) στις οποίες δεν θα έπρεπε να έχει πρόσβαση αλλάζοντας απλώς τη μέθοδο HTTP (π.χ. από "GET" σε "DELETE");
-* Can a user from group X access a function that should be exposed only to users
-  from group Y, by simply guessing the endpoint URL and parameters (e.g.,
-  `/api/v1/users/export_all`)?
+* Μπορεί ένας χρήστης από την ομάδα Χ να αποκτήσει πρόσβαση σε μια συνάρτηση που θα πρέπει να εκτίθεται μόνο σε χρήστες από την ομάδα Υ, μαντεύοντας απλώς τη διεύθυνση URL του τελικού σημείου και τις παραμέτρους (π.χ. `/api/v1/users/export_all`);
 
-Don’t assume that an API endpoint is regular or administrative only based on the
-URL path.
+Μην υποθέτετε ότι ένα τελικό σημείο API είναι κανονικό ή διαχειριστικό μόνο με βάση τη διαδρομή URL.
 
-While developers might choose to expose most of the administrative endpoints
-under a specific relative path, like `api/admins`, it’s very common to find
-these administrative endpoints under other relative paths together with regular
-endpoints, like `api/users`.
+Ενώ οι προγραμματιστές ενδέχεται να επιλέξουν να εκθέσουν τα περισσότερα από τα τελικά σημεία διαχείρισης σε μια συγκεκριμένη σχετική διαδρομή, όπως `api/admins`, είναι πολύ συνηθισμένο να βρίσκουμε αυτά τα τελικά σημεία διαχείρισης σε άλλες σχετικές διαδρομές μαζί με κανονικά τελικά σημεία, όπως `api/users`.
 
 ## Παραδείγματα Σεναρίων Επίθεσης
 
