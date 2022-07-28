@@ -4,27 +4,21 @@ API6:2019 Mass Assignment
 | Παράγοντες Απειλής/Φορείς Επίθεσης | Αδυναμία Ασφαλείας | Επιπτώσεις |
 | - | - | - |
 | Εξαρτώνται από το API : Εκμεταλλευσιμότητα **2** | Επιπολασμός **2** : Ανιχνευσιμότητα **2** | Τεχνικές Επιπτώσεις **2** : Εξαρτώνται από την Επιχείρηση |
-| Η εκμετάλλευση (exploitation) συνήθως απαιτεί κατανόηση της επιχειρηματικής λογικής (business logic), των σχέσεων των αντικειμένων και της δομής του API.  Η εκμετάλλευση της μαζικής εκχώρησης (Mass Assignment) είναι ευκολότερη στα API, καθώς από το σχεδιασμό τους εκθέτουν την υλοποίηση της εφαρμογής μαζί με τα ονόματα των ιδιοτήτων. | Τα σύγχρονα frameworks ενθαρρύνουν τους προγραμματιστές να χρησιμοποιούν συναρτήσεις (functions) που συνδέουν αυτόματα την είσοδο από το πρόγραμμα-πελάτη σε μεταβλητές κώδικα και εσωτερικά αντικείμενα. Οι εισβολείς μπορούν να χρησιμοποιήσουν αυτήν τη μεθοδολογία για να ενημερώσουν ή να αντικαταστήσουν τις ιδιότητες ευαίσθητων αντικειμένων (object properties) που οι προγραμματιστές δεν σκόπευαν ποτέ να εκθέσουν. | Η εκμετάλλευση (exploitation) μπορεί να οδηγήσει σε κλιμάκωση των προνομίων (privilege escalation), παραποίηση δεδομένων (data tampering), παράκαμψη μηχανισμών ασφαλείας και πολλά άλλα. |
+| Η εκμετάλλευση (exploitation) συνήθως απαιτεί κατανόηση της επιχειρηματικής λογικής (business logic), των σχέσεων των αντικειμένων και της δομής του API.  Η εκμετάλλευση της μαζικής εκχώρησης (Mass Assignment) είναι ευκολότερη στα API, καθώς από το σχεδιασμό τους εκθέτουν την υλοποίηση της εφαρμογής μαζί με τα ονόματα των ιδιοτήτων (properties' names). | Τα σύγχρονα frameworks ενθαρρύνουν τους προγραμματιστές να χρησιμοποιούν συναρτήσεις (functions) που συνδέουν αυτόματα την είσοδο από το πρόγραμμα-πελάτη σε μεταβλητές κώδικα και εσωτερικά αντικείμενα. Οι εισβολείς μπορούν να χρησιμοποιήσουν αυτήν τη μεθοδολογία για να ενημερώσουν ή να αντικαταστήσουν τις ιδιότητες ευαίσθητων αντικειμένων (object properties) που οι προγραμματιστές δεν σκόπευαν ποτέ να εκθέσουν. | Η εκμετάλλευση (exploitation) μπορεί να οδηγήσει σε κλιμάκωση των προνομίων (privilege escalation), παραποίηση δεδομένων (data tampering), παράκαμψη μηχανισμών ασφαλείας και πολλά άλλα. |
 
 ## Πότε το API είναι ευάλωτο;
 
-Objects in modern applications might contain many properties. Some of these
-properties should be updated directly by the client (e.g., `user.first_name` or
-`user.address`) and some of them should not (e.g., `user.is_vip` flag).
+Τα αντικείμενα (objects) στις σύγχρονες εφαρμογές μπορεί να περιέχουν πολλές ιδιότητες (properties). 
+Ορισμένες από αυτές τις ιδιότητες θα πρέπει να ενημερωθούν απευθείας από το πρόγραμμα-πελάτη 
+(π.χ. `user.first_name` ή `user.address`) και ορισμένες από αυτές όχι (π.χ. `user.is_vip`).
 
-An API endpoint is vulnerable if it automatically converts client parameters
-into internal object properties, without considering the sensitivity and the
-exposure level of these properties. This could allow an attacker to update
-object properties that they should not have access to.
+Ένα τελικό σημείο API είναι ευάλωτο εάν μετατρέπει αυτόματα τις παραμέτρους του προγράμματος-πελάτη σε ιδιότητες εσωτερικού αντικειμένου, χωρίς να λαμβάνεται υπόψη η ευαισθησία και το επίπεδο έκθεσης αυτών των ιδιοτήτων. Αυτό θα μπορούσε να επιτρέψει σε έναν εισβολέα να ενημερώσει τις ιδιότητες αντικειμένων (object properties) στις οποίες δεν θα έπρεπε να έχει πρόσβαση.
 
-Examples for sensitive properties:
+Παραδείγματα για ευαίσθητες ιδιότητες (properties):
 
-* **Permission-related properties**: `user.is_admin`, `user.is_vip` should only
-  be set by admins.
-* **Process-dependent properties**: `user.cash` should only be set internally
-  after payment verification.
-* **Internal properties**: `article.created_time` should only be set internally
-  by the application.
+* **Ιδιότητες που σχετίζονται με δικαιώματα**: Τα `user.is_admin`, `user.is_vip` θα πρέπει να ορίζονται μόνο από διαχειριστές.
+* **Ιδιότητες που εξαρτώνται από κάποια διαδικασία (process)**: Το `user.cash` θα πρέπει να οριστεί εσωτερικά μόνο μετά την επαλήθευση πληρωμής.
+* **Εσωτερικές ιδιότητες**: Το `article.created_time` πρέπει να ρυθμιστεί εσωτερικά και μόνο από την εφαρμογή.
 
 ## Example Attack Scenarios
 
