@@ -47,17 +47,11 @@ API6:2019 Mass Assignment
 
 ### Σενάριο #2
 
-A video sharing portal allows users to upload content and download content in
-different formats. An attacker who explores the API found that the endpoint
-`GET /api/v1/videos/{video_id}/meta_data` returns a JSON object with the video’s
-properties. One of the properties is `"mp4_conversion_params":"-v codec h264"`,
-which indicates that the application uses a shell command to convert the video.
+Ένα portal κοινής χρήσης βίντεο (video sharing portal) επιτρέπει στους χρήστες να ανεβάζουν περιεχόμενο και να κατεβάζουν περιεχόμενο σε διαφορετικές μορφές. Ένας εισβολέας που εξερευνά το API διαπίστωσε ότι το τελικό σημείο `GET /api/v1/videos/{video_id}/meta_data` επιστρέφει ένα αντικείμενο JSON με τις ιδιότητες του βίντεο. Μία από τις ιδιότητες είναι `"mp4_conversion_params":"-v codec h264"`, που υποδεικνύει ότι η εφαρμογή χρησιμοποιεί μια εντολή shell για τη μετατροπή του βίντεο.
 
-The attacker also found the endpoint `POST /api/v1/videos/new` is vulnerable to
-mass assignment and allows the client to set any property of the video object.
-The attacker sets a malicious value as follows:
-`"mp4_conversion_params":"-v codec h264 && format C:/"`. This value will cause a
-shell command injection once the attacker downloads the video as MP4.
+Ο εισβολέας διαπίστωσε επίσης ότι το τελικό σημείο `POST /api/v1/videos/new` είναι ευάλωτο σε μαζική εκχώρηση (Mass Assignment) και επιτρέπει στον πελάτη να ορίσει οποιαδήποτε ιδιότητα του αντικειμένου βίντεο.
+Ο εισβολέας ορίζει μια κακόβουλη τιμή ως εξής:
+`"mp4_conversion_params":"-v codec h264 && format C:/"`. Αυτή η τιμή θα προκαλέσει μια ένεση εντολής shell (shell command injection) μόλις ο εισβολέας κατεβάσει το βίντεο ως MP4.
 
 ## Τρόπος Πρόληψης
 
