@@ -3,8 +3,8 @@ API7:2019 Security Misconfiguration
 
 | Παράγοντες Απειλής (Threat agents) / Φορείς Επίθεσης (Attack vectors) | Αδυναμία Ασφαλείας (Security Weakness) | Επιπτώσεις (Impacts) |
 | - | - | - |
-| API Specific : Exploitability **3** | Prevalence **3** : Detectability **3** | Technical **2** : Business Specific |
-| Attackers will often attempt to find unpatched flaws, common endpoints, or unprotected files and directories to gain unauthorized access or knowledge of the system. | Security misconfiguration can happen at any level of the API stack, from the network level to the application level. Automated tools are available to detect and exploit misconfigurations such as unnecessary services or legacy options. | Security misconfigurations can not only expose sensitive user data, but also system details that may lead to full server compromise. |
+| Εξαρτώνται από το API : Εκμεταλλευσιμότητα **3** | Επιπολασμός **3** : Ανιχνευσιμότητα **3** | Τεχνικές Επιπτώσεις **2** : Εξαρτώνται από την Επιχείρηση |
+| Οι εισβολείς συχνά επιχειρούν να βρουν μη επιδιορθωμένα ελαττώματα (unpatched flows), κοινά τελικά σημεία ή μη προστατευμένα αρχεία και καταλόγους για να αποκτήσουν μη εξουσιοδοτημένη πρόσβαση ή γνώση του συστήματος. | Λανθασμένες ρυθμίσεις παραμέτρων ασφαλείας (Security Misconfiguration) μπορούν να υπάρξουν σε οποιοδήποτε επίπεδο της στοίβας API (API stack), από το επίπεδο δικτύου έως το επίπεδο εφαρμογής. Διατίθενται αυτοματοποιημένα εργαλεία για τον εντοπισμό και την εκμετάλλευση εσφαλμένων διαμορφώσεων, όπως περιττές υπηρεσίες ή επιλογές παλαιού τύπου (legacy options). | Οι εσφαλμένες διαμορφώσεις ασφαλείας δεν μπορούν μόνο να εκθέσουν ευαίσθητα δεδομένα χρήστη, αλλά και λεπτομέρειες συστήματος που μπορεί να οδηγήσουν σε πλήρη παραβίαση του διακομιστή. |
 
 ## Πότε το API είναι ευάλωτο
 
