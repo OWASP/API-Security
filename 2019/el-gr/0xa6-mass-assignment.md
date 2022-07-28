@@ -61,13 +61,10 @@ shell command injection once the attacker downloads the video as MP4.
 
 ## Τρόπος Πρόληψης
 
-* If possible, avoid using functions that automatically bind a client’s input
-  into code variables or internal objects.
-* Whitelist only the properties that should be updated by the client.
-* Use built-in features to blacklist properties that should not be accessed by
-  clients.
-* If applicable, explicitly define and enforce schemas for the input data
-  payloads.
+* Εάν είναι δυνατόν, αποφύγετε τη χρήση συναρτήσεων που δεσμεύουν αυτόματα την είσοδο ενός προγράμματος-πελάτη σε μεταβλητές κώδικα ή εσωτερικά αντικείμενα.
+* Δημιουργήστε μια λίστα επιτρεπόμενων (whitelist) ιδιοτήτων μόνο με τις ιδιότητες που πρέπει να ενημερωθούν από τον πελάτη (API client).
+* Χρησιμοποιήστε ενσωματωμένες δυνατότητες του framework σας για να δημιουργήσετε μια μαύρη λίστα ιδιοτήτων που δεν πρέπει να έχουν πρόσβαση οι πελάτες (API clients).
+* Εάν είναι εφικτό, ορίστε και επιβάλλετε ρητά σχήματα (schemas) για τα payloads δεδομένων εισόδου.
 
 ## Αναφορές
 
