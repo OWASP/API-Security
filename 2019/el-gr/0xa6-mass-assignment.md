@@ -3,10 +3,10 @@ API6:2019 Mass Assignment
 
 | Παράγοντες Απειλής/Φορείς Επίθεσης | Αδυναμία Ασφαλείας | Επιπτώσεις |
 | - | - | - |
-| API Specific : Exploitability **2** | Prevalence **2** : Detectability **2** | Technical **2** : Business Specific |
-| Exploitation usually requires an understanding of the business logic, objects' relations, and the API structure. Exploitation of mass assignment is easier in APIs, since by design they expose the underlying implementation of the application along with the properties’ names. | Modern frameworks encourage developers to use functions that automatically bind input from the client into code variables and internal objects. Attackers can use this methodology to update or overwrite sensitive object’s properties that the developers never intended to expose. | Exploitation may lead to privilege escalation, data tampering, bypass of security mechanisms, and more. |
+| Εξαρτώνται από το API : Εκμεταλλευσιμότητα **2** | Επιπολασμός **2** : Ανιχνευσιμότητα **2** | Τεχνικές Επιπτώσεις **2** : Εξαρτώνται από την Επιχείρηση |
+| Η εκμετάλλευση (exploitation) συνήθως απαιτεί κατανόηση της επιχειρηματικής λογικής (business logic), των σχέσεων των αντικειμένων και της δομής του API.  Η εκμετάλλευση της μαζικής εκχώρησης (Mass Assignment) είναι ευκολότερη στα API, καθώς από το σχεδιασμό τους εκθέτουν την υλοποίηση της εφαρμογής μαζί με τα ονόματα των ιδιοτήτων. | Τα σύγχρονα frameworks ενθαρρύνουν τους προγραμματιστές να χρησιμοποιούν συναρτήσεις (functions) που συνδέουν αυτόματα την είσοδο από τον πελάτη σε μεταβλητές κώδικα και εσωτερικά αντικείμενα. Οι εισβολείς μπορούν να χρησιμοποιήσουν αυτήν τη μεθοδολογία για να ενημερώσουν ή να αντικαταστήσουν τις ιδιότητες ευαίσθητων αντικειμένων που οι προγραμματιστές δεν σκόπευαν ποτέ να εκθέσουν. | Η εκμετάλλευση (exploitation) μπορεί να οδηγήσει σε κλιμάκωση των προνομίων (privilege escalation), παραποίηση δεδομένων (data tampering), παράκαμψη μηχανισμών ασφαλείας και πολλά άλλα. |
 
-## Is the API Vulnerable?
+## Πότε το API είναι ευάλωτο;
 
 Objects in modern applications might contain many properties. Some of these
 properties should be updated directly by the client (e.g., `user.first_name` or
@@ -68,7 +68,7 @@ The attacker sets a malicious value as follows:
 `"mp4_conversion_params":"-v codec h264 && format C:/"`. This value will cause a
 shell command injection once the attacker downloads the video as MP4.
 
-## How To Prevent
+## Τρόπος Πρόληψης
 
 * If possible, avoid using functions that automatically bind a client’s input
   into code variables or internal objects.
