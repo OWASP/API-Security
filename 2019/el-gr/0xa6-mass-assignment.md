@@ -20,35 +20,32 @@ API6:2019 Mass Assignment
 * **Ιδιότητες που εξαρτώνται από κάποια διαδικασία (process)**: Το `user.cash` θα πρέπει να οριστεί εσωτερικά μόνο μετά την επαλήθευση πληρωμής.
 * **Εσωτερικές ιδιότητες**: Το `article.created_time` θα πρέπει να οριστεί εσωτερικά και μόνο από την εφαρμογή.
 
-## Example Attack Scenarios
+## Παραδείγματα Σεναρίων Επίθεσης
 
-### Scenario #1
+### Σενάριο #1
 
-A ride sharing application provides a user the option to edit basic information
-for their profile. During this process, an API call is sent to
-`PUT /api/v1/users/me` with the following legitimate JSON object:
+Μια εφαρμογή κοινής χρήσης διαδρομής (ride sharing) παρέχει στον χρήστη την επιλογή να επεξεργαστεί βασικές πληροφορίες για το προφίλ του. 
+Κατά τη διάρκεια αυτής της διαδικασίας, αποστέλλεται μια κλήση API στο
+`PUT /api/v1/users/me` με το ακόλουθο νόμιμο αντικείμενο JSON:
 
 ```json
 {"user_name":"inons","age":24}
 ```
 
-The request `GET /api/v1/users/me` includes an additional credit_balance
-property:
+Το αίτημα `GET /api/v1/users/me` περιλαμβάνει μια πρόσθετη ιδιότητα credit_balance:
 
 ```json
 {"user_name":"inons","age":24,"credit_balance":10}
 ```
 
-The attacker replays the first request with the following payload:
-
+Ο εισβολέας επαναλαμβάνει το πρώτο αίτημα με το ακόλουθο payload:
 ```json
 {"user_name":"attacker","age":60,"credit_balance":99999}
 ```
 
-Since the endpoint is vulnerable to mass assignment, the attacker receives
-credits without paying.
+Δεδομένου ότι το τελικό σημείο είναι ευάλωτο σε μαζική εκχώρηση (Mass Assignment), ο εισβολέας λαμβάνει πιστώσεις χωρίς να πληρώσει.
 
-### Scenario #2
+### Σενάριο #2
 
 A video sharing portal allows users to upload content and download content in
 different formats. An attacker who explores the API found that the endpoint
