@@ -1,14 +1,14 @@
 API7:2019 Security Misconfiguration
 ===================================
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
+| Παράγοντες Απειλής (Threat agents) / Φορείς Επίθεσης (Attack vectors) | Αδυναμία Ασφαλείας (Security Weakness) | Επιπτώσεις (Impacts) |
 | - | - | - |
 | API Specific : Exploitability **3** | Prevalence **3** : Detectability **3** | Technical **2** : Business Specific |
 | Attackers will often attempt to find unpatched flaws, common endpoints, or unprotected files and directories to gain unauthorized access or knowledge of the system. | Security misconfiguration can happen at any level of the API stack, from the network level to the application level. Automated tools are available to detect and exploit misconfigurations such as unnecessary services or legacy options. | Security misconfigurations can not only expose sensitive user data, but also system details that may lead to full server compromise. |
 
-## Is the API Vulnerable?
+## Πότε το API είναι ευάλωτο
 
-The API might be vulnerable if:
+Το API μπορεί να είναι ευάλωτο αν:
 
 * Appropriate security hardening is missing across any part of the application
   stack, or if it has improperly configured permissions on cloud services.
@@ -20,9 +20,9 @@ The API might be vulnerable if:
 * Error messages include stack traces, or other sensitive information is
   exposed.
 
-## Example Attack Scenarios
+## Παραδείγματα Σεναρίων Επίθεσης
 
-### Scenario #1
+### Σενάριο #1
 
 An attacker finds the `.bash_history` file under the root directory of the
 server, which contains commands used by the DevOps team to access the API:
@@ -34,7 +34,7 @@ $ curl -X GET 'https://api.server/endpoint/' -H 'authorization: Basic Zm9vOmJhcg
 An attacker could also find new endpoints on the API that are used only by the
 DevOps team and are not documented.
 
-### Scenario #2
+### Σενάριο #2
 
 To target a specific service, an attacker uses a popular search engine to search
 for  computers directly accessible from the Internet. The attacker found a host
@@ -43,7 +43,7 @@ host was using the default configuration, which has authentication disabled by
 default, and the attacker gained access to millions of records with PII,
 personal preferences, and authentication data.
 
-### Scenario #3
+### Σενάριο #3
 
 Inspecting traffic of a mobile application an attacker finds out that not all
 HTTP traffic is performed on a secure protocol (e.g., TLS). The attacker finds
@@ -52,7 +52,7 @@ interaction is binary, despite the fact that API traffic is performed on a
 secure protocol, the attacker finds a pattern on API responses size, which he
 uses to track user preferences over the rendered content (e.g., profile images).
 
-## How To Prevent
+## Τρόπος Πρόληψης
 
 The API life cycle should include:
 
@@ -77,7 +77,7 @@ Furthermore:
   front-end) should implement a proper Cross-Origin Resource Sharing (CORS)
   policy.
 
-## References
+## Αναφορές
 
 ### OWASP
 
@@ -86,7 +86,7 @@ Furthermore:
 * [OWASP Testing Guide: Testing for Error Codes][3]
 * [OWASP Testing Guide: Test Cross Origin Resource Sharing][9]
 
-### External
+### Εξωτερικές
 
 * [CWE-2: Environmental Security Flaws][4]
 * [CWE-16: Configuration][5]
