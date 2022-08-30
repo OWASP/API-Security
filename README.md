@@ -1,3 +1,7 @@
+> **Note**
+> OWASP API Top 10 2022 call for data is open! Check out [how to
+> contribute][cfd-2022].
+
 OWASP API Security Top 10
 =========================
 
@@ -52,3 +56,5 @@ one.
 [3]: https://github.com/OWASP/API-Security/tree/develop/
 [4]: https://github.com/OWASP/API-Security/blob/master/CONTRIBUTING.md
 [5]: https://www.owasp.org/index.php/User:Inon
+[cfd-2022]: https://owasp.org/www-project-api-security/announcements/cfd/2022/
+
