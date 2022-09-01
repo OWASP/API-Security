@@ -19,19 +19,19 @@ API7:2019 Security Misconfiguration
 * Δεν υπάρχει πολιτική Cross-Origin Resource Sharing (CORS) ή έχει ρυθμιστεί εσφαλμένα.
 * Τα μηνύματα σφαλμάτων περιλαμβάνουν το ίχνος στοίβας (stack trace) ή άλλες ευαίσθητες πληροφορίες είναι εκτεθειμένες.
 
-## Παραδείγματα Σεναρίων Επίθεσης
+## Παραδείγματα από Σενάρια Επίθεσης
 
 ### Σενάριο #1
 
-An attacker finds the `.bash_history` file under the root directory of the
-server, which contains commands used by the DevOps team to access the API:
+Ένας εισβολέας βρίσκει το αρχείο `.bash_history` κάτω από τον κεντρικό φάκελο (root folder)
+του διακομιστή, το οποίο περιλαμβάνει εντολές που χρησιμοποιήθηκαν από την ομάδα DevOps για να έχει πρόσβαση στο API:
 
 ```
 $ curl -X GET 'https://api.server/endpoint/' -H 'authorization: Basic Zm9vOmJhcg=='
 ```
 
-An attacker could also find new endpoints on the API that are used only by the
-DevOps team and are not documented.
+Ένας εισβολέας θα μπορούσε επίσης να βρει άγνωστα τελικά σημεία του API που
+χρησιμοποιούνται μόνο απο την ομάδα DevOps και τα οποία δεν είναι τεκμηριωμένα.
 
 ### Σενάριο #2
 
