@@ -13,9 +13,9 @@ API7:2019 Security Misconfiguration
 * Δεν υπάρχει η κατάλληλη θωράκιση ασφαλείας (security hardening) σε όλα τα 
 μέρη της στοίβας της εφαρμογής, ή υπάρχουν λάθος ρυθμίσεις δικαιωμάτων σε υπηρεσίες Cloud. 
 * Δεν έχουν εγκατασταθεί οι ενημερωμένες εκδόσεις ασφαλείας, ή τα συστήματα είναι παροχημένα.
-* Άχρηστες δυνατότητες (features) είναι ενεργοποιημένες (για παράδειγμα, HTTP verbs που δεν χρησιμοποιούνται).
+* Αχρείαστα χαρακτηριστικά (features) είναι ενεργοποιημένα (για παράδειγμα, το API δέχεται HTTP verbs που δεν χρησιμοποιούνται).
 * Δεν υπάρχει Transport Layer Security (TLS).
-* Security directives are not sent to clients (e.g., [Security Headers][1]).
+* Τα Security directives δεν στέλνονται στους clients (e.g., [Security Headers][1]).
 * A Cross-Origin Resource Sharing (CORS) policy is missing or improperly set.
 * Error messages include stack traces, or other sensitive information is
   exposed.
