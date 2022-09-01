@@ -15,10 +15,9 @@ API7:2019 Security Misconfiguration
 * Δεν έχουν εγκατασταθεί οι ενημερωμένες εκδόσεις ασφαλείας, ή τα συστήματα είναι παροχημένα.
 * Αχρείαστα χαρακτηριστικά (features) είναι ενεργοποιημένα (για παράδειγμα, το API δέχεται HTTP verbs που δεν χρησιμοποιούνται).
 * Δεν υπάρχει Transport Layer Security (TLS).
-* Τα Security directives δεν στέλνονται στους clients (e.g., [Security Headers][1]).
-* A Cross-Origin Resource Sharing (CORS) policy is missing or improperly set.
-* Error messages include stack traces, or other sensitive information is
-  exposed.
+* Οι οδηγίες ασφαλείας (security directives) δεν στέλνονται στους clients (e.g., [Επικεφαλίδες Ασφαλείας][1]).
+* Δεν υπάρχει πολιτική Cross-Origin Resource Sharing (CORS) ή έχει ρυθμιστεί εσφαλμένα.
+* Τα μηνύματα σφαλμάτων περιλαμβάνουν το ίχνος στοίβας (stack trace) ή άλλες ευαίσθητες πληροφορίες είναι εκτεθειμένες.
 
 ## Παραδείγματα Σεναρίων Επίθεσης
 
