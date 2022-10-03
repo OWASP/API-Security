@@ -35,25 +35,25 @@ $ curl -X GET 'https://api.server/endpoint/' -H 'authorization: Basic Zm9vOmJhcg
 
 ### Σενάριο #2
 
-To target a specific service, an attacker uses a popular search engine to search
-for  computers directly accessible from the Internet. The attacker found a host
-running a popular database management system, listening on the default port. The
-host was using the default configuration, which has authentication disabled by
-default, and the attacker gained access to millions of records with PII,
-personal preferences, and authentication data.
+Με στόχο μια συγκεκριμένη υπηρεσία, ένας εισβολέας χρησιμοποιεί μια δημοφιλή μηχανή αναζήτησης για να αναζητήσει
+υπολογιστές άμεσα προσβάσιμους από το Διαδίκτυο. Ο εισβολέας βρίσκει έναν διακομιστή που τρέχει ένα δημοφιλές σύστημα
+διαχείρισης βάσεων δεδομένων, το οποίο ακούει στην προεπιλεγμένη θύρα.
+Ο διακομιστής αυτός χρησιμοποιεί τις προεπιλεγμένες ρυθμίσεις (default configuration), οι οποίες έχουν απενεργοποιημένο
+τον έλεγχο ταυτότητας, με αποτέλεσμα ο εισβολέας να απεκτήσει πρόσβαση σε εκατομμύρια εγγραφές με PII,
+προσωπικές προτιμήσεις και δεδομένα ελέγχου ταυτότητας.
 
 ### Σενάριο #3
 
-Inspecting traffic of a mobile application an attacker finds out that not all
-HTTP traffic is performed on a secure protocol (e.g., TLS). The attacker finds
-this to be true, specifically for the download of profile images. As user
-interaction is binary, despite the fact that API traffic is performed on a
-secure protocol, the attacker finds a pattern on API responses size, which he
-uses to track user preferences over the rendered content (e.g., profile images).
+Επιθεωρώντας την κίνηση δεδομένων μιας εφαρμογής για κινητά, 
+ένας εισβολέας ανακαλύπτει ότι η κίνηση HTTP δεν εκτελείται ολικά κάτω από ένα ασφαλές πρωτόκολλο (π.χ. TLS).
+Ο εισβολέας ανακαλύπτει ότι αυτό συμβαίνει ειδικά για τη λήψη εικόνων προφίλ. 
+Καθώς η αλληλεπίδραση του χρήστη είναι δυαδική και παρά το γεγονός ότι η υπόλοιπη κίνηση API εκτελείται κάτω από ένα ασφαλές πρωτόκολλο, 
+ο εισβολέας βρίσκει ένα μοτίβο στο μέγεθος των απαντήσεων API, 
+το οποίο χρησιμοποιεί για να παρακολουθεί τις προτιμήσεις των χρηστών σε σχέση με το περιεχόμενο που εμφανίζεται (π.χ. εικόνες προφίλ).
 
 ## Τρόπος Πρόληψης
 
-The API life cycle should include:
+Ο κύκλος ζωής των API θα πρέπει να περιλαμβάνει τα παρακάτω:
 
 * A repeatable hardening process leading to fast and easy deployment of a
   properly locked down environment.
