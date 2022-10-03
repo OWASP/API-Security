@@ -60,9 +60,9 @@ API6:2019 Mass Assignment
 * Χρησιμοποιήστε ενσωματωμένες δυνατότητες του framework σας για να δημιουργήσετε μια μαύρη λίστα ιδιοτήτων που δεν πρέπει να έχουν πρόσβαση οι πελάτες (API clients).
 * Εάν είναι εφικτό, ορίστε και επιβάλλετε ρητά σχήματα (schemas) για τα payloads δεδομένων εισόδου.
 
-## Αναφορές
+## Αναφορές (References)
 
-### Εξωτερικές
+### Εξωτερικές Αναφορές
 
 * [CWE-915: Improperly Controlled Modification of Dynamically-Determined Object Attributes][1]
 
