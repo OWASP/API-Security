@@ -63,13 +63,12 @@ $ curl -X GET 'https://api.server/endpoint/' -H 'authorization: Basic Zm9vOmJhcg
 
 Ακόμα:
 
-* Για να αποτρέψετε την πιθανή αποστολή ιχνών εξαίρεσης (exception trace) και άλλων πολύτιμων πληροφοριών στους εισβολείς,
+* Για να αποτρέψετε την πιθανή αποστολή ίχνων εξαίρεσης (exception trace) και άλλων πολύτιμων πληροφοριών στους εισβολείς,
 εάν έχετε την δυνατότητα, ορίστε και επιβάλετε συγκρεκριμένα σχήματα απόκρισης API, συμπεριλαμβανομένων των αποκρίσεων σφαλμάτων.
-* Ensure API can only be accessed by the specified HTTP verbs. All other HTTP
-  verbs should be disabled (e.g. `HEAD`).
-* APIs expecting to be accessed from browser-based clients (e.g., WebApp
-  front-end) should implement a proper Cross-Origin Resource Sharing (CORS)
-  policy.
+* Βεβαιωθείτε ότι το API είναι προσβάσιμο μόνο από τα ρήματα HTTP (HTTP verbs) που έχετε καθορίσει. 
+Όλα τα άλλα ρήματα HTTP (HTTP verbs) θα πρέπει να είναι απενεργοποιημένα (π.χ. "HEAD").
+* Τα API που αναμένεται να έχουν πρόσβαση από πελάτες που βασίζονται σε προγράμματα περιήγησης 
+* (π.χ., το front-end μιας εφαρμογής Web) θα πρέπει να εφαρμόζουν μια σωστή πολιτική κοινής χρήσης πόρων μεταξύ προέλευσης (CORS).
 
 ## Αναφορές
 
