@@ -70,16 +70,16 @@ $ curl -X GET 'https://api.server/endpoint/' -H 'authorization: Basic Zm9vOmJhcg
 * Τα API που αναμένεται να έχουν πρόσβαση από πελάτες που βασίζονται σε προγράμματα περιήγησης 
 * (π.χ., το front-end μιας εφαρμογής Web) θα πρέπει να εφαρμόζουν μια σωστή πολιτική κοινής χρήσης πόρων μεταξύ προέλευσης (CORS).
 
-## Αναφορές
+## Αναφορές (References)
 
-### OWASP
+### Αναφορές OWASP
 
 * [OWASP Secure Headers Project][1]
 * [OWASP Testing Guide: Configuration Management][2]
 * [OWASP Testing Guide: Testing for Error Codes][3]
 * [OWASP Testing Guide: Test Cross Origin Resource Sharing][9]
 
-### Εξωτερικές
+### Εξωτερικές Αναφορές
 
 * [CWE-2: Environmental Security Flaws][4]
 * [CWE-16: Configuration][5]
