@@ -59,15 +59,15 @@ POST /api/invites/new
 * Βεβαιωθείτε ότι όλοι οι διαχειριστικοί controllers σας κληρονομούν από έναν διαχειριστικό abstract controller που εφαρμόζει ελέγχους εξουσιοδότησης με βάση την ομάδα/ρόλο του χρήστη.
 * Βεβαιωθείτε ότι οι λειτουργίες διαχείρισης μέσα σε έναν κανονικό controller εφαρμόζουν ελέγχους εξουσιοδότησης βάσει της ομάδας και του ρόλου του χρήστη.
 
-## Αναφορές
+## Αναφορές (References)
 
-### OWASP
+### Αναφορές OWASP
 
 * [OWASP Article on Forced Browsing][1]
 * [OWASP Top 10 2013-A7-Missing Function Level Access Control][2]
 * [OWASP Development Guide: Chapter on Authorization][3]
 
-### Εξωτερικές
+### Εξωτερικές Αναφορές
 
 * [CWE-285: Improper Authorization][4]
 
