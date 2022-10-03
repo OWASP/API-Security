@@ -84,16 +84,16 @@ Preventing injection requires keeping data separate from commands and queries.
   each input parameter.
 * Define data types and strict patterns for all string parameters.
 
-## References
+## Αναφορές (References)
 
-### OWASP
+### Αναφορές OWASP
 
 * [OWASP Injection Flaws][1]
 * [SQL Injection][2]
 * [NoSQL Injection Fun with Objects and Arrays][3]
 * [Command Injection][4]
 
-### External
+### Εξωτερικές Αναφορές
 
 * [CWE-77: Command Injection][5]
 * [CWE-89: SQL Injection][6]
