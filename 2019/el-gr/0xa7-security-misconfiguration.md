@@ -61,11 +61,10 @@ $ curl -X GET 'https://api.server/endpoint/' -H 'authorization: Basic Zm9vOmJhcg
 * Ένα ασφαλές κανάλι επικοινωνίας για όλες τις αλληλεπιδράσεις του API σε στατικά στοιχεία (π.χ. εικόνες).
 * Αυτοματοποιημένη διαδικασία για τη συνεχή αξιολόγηση της αποτελεσματικότητας των ρυθμίσεων σε όλα τα περιβάλλοντα.
 
-Furthermore:
+Ακόμα:
 
-* To prevent exception traces and other valuable information from being sent
-  back to attackers, if applicable, define and enforce all API response payload
-  schemas including error responses.
+* Για να αποτρέψετε την πιθανή αποστολή ιχνών εξαίρεσης (exception trace) και άλλων πολύτιμων πληροφοριών στους εισβολείς,
+εάν έχετε την δυνατότητα, ορίστε και επιβάλετε συγκρεκριμένα σχήματα απόκρισης API, συμπεριλαμβανομένων των αποκρίσεων σφαλμάτων.
 * Ensure API can only be accessed by the specified HTTP verbs. All other HTTP
   verbs should be disabled (e.g. `HEAD`).
 * APIs expecting to be accessed from browser-based clients (e.g., WebApp
