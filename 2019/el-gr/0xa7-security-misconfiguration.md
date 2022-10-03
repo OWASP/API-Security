@@ -39,7 +39,7 @@ $ curl -X GET 'https://api.server/endpoint/' -H 'authorization: Basic Zm9vOmJhcg
 υπολογιστές άμεσα προσβάσιμους από το Διαδίκτυο. Ο εισβολέας βρίσκει έναν διακομιστή που τρέχει ένα δημοφιλές σύστημα
 διαχείρισης βάσεων δεδομένων, το οποίο ακούει στην προεπιλεγμένη θύρα.
 Ο διακομιστής αυτός χρησιμοποιεί τις προεπιλεγμένες ρυθμίσεις (default configuration), οι οποίες έχουν απενεργοποιημένο
-τον έλεγχο ταυτότητας, με αποτέλεσμα ο εισβολέας να απεκτήσει πρόσβαση σε εκατομμύρια εγγραφές με PII,
+τον έλεγχο ταυτότητας, με αποτέλεσμα ο εισβολέας να αποκτήσει πρόσβαση σε εκατομμύρια εγγραφές με προσωπικά δεδομένα (PII),
 προσωπικές προτιμήσεις και δεδομένα ελέγχου ταυτότητας.
 
 ### Σενάριο #3
@@ -53,17 +53,13 @@ $ curl -X GET 'https://api.server/endpoint/' -H 'authorization: Basic Zm9vOmJhcg
 
 ## Τρόπος Πρόληψης
 
-Ο κύκλος ζωής των API θα πρέπει να περιλαμβάνει τα παρακάτω:
+Με στόχο την αποτελεσματική πρόληψη, ο κύκλος ζωής των API θα πρέπει να περιλαμβάνει τα παρακάτω:
 
-* A repeatable hardening process leading to fast and easy deployment of a
-  properly locked down environment.
-* A task to review and update configurations across the entire API stack. The
-  review should include: orchestration files, API components, and cloud services
-  (e.g., S3 bucket permissions).
-* A secure communication channel for all API interactions access to static
-  assets (e.g., images).
-* An automated process to continuously assess the effectiveness of the
-  configuration and settings in all environments.
+* Επαναλαμβανόμενη διαδικασία θωράκισης (hardening) που επιτρέπει γρήγορη 
+και εύκολη εγκατάσταση ενός σωστά ασφαλισμένου περιβάλλοντος στο οποίο θα τρέχουν τα API.
+*  Έλεγχο και ενημέρωση των ρυθμίσεων σε ολόκληρο το stack των API. Ο έλεγχος θα πρέπει να περιλαμβάνει αρχεία που χρησιμοποιούνται κατά την ενορχήστρωση (orchestration), API components και υπηρεσίες cloud (π.χ. δικαιώματα κάδων S3).
+* Ένα ασφαλές κανάλι επικοινωνίας για όλες τις αλληλεπιδράσεις του API σε στατικά στοιχεία (π.χ. εικόνες).
+* Αυτοματοποιημένη διαδικασία για τη συνεχή αξιολόγηση της αποτελεσματικότητας των ρυθμίσεων σε όλα τα περιβάλλοντα.
 
 Furthermore:
 
