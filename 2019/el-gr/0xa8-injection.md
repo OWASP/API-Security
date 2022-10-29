@@ -18,10 +18,10 @@ API8:2019 Injection
 
 ### Σενάριο #1
 
-Firmware of a parental control device provides the endpoint
-`/api/CONFIG/restore` which expects an appId to be sent as a multipart
-parameter. Using a decompiler, an attacker finds out that the appId is passed
-directly into a system call without any sanitization:
+Το υλικολογισμικό μιας συσκευής γονικού ελέγχου παρέχει το τελικό σημείο
+`/api/CONFIG/restore` το οποίο αναμένει ότι ένα appId θα σταλεί ως παράμετρος πολλαπλών τμημάτων. 
+Χρησιμοποιώντας έναν απομεταγλωττιστή, ένας εισβολέας ανακαλύπτει ότι το appId έχει περάσει
+απευθείας σε μια κλήση συστήματος χωρίς καμία απολύμανση:
 
 ```c
 snprintf(cmd, 128, "%srestore_backup.sh /tmp/postfile.bin %s %d",
@@ -29,8 +29,7 @@ snprintf(cmd, 128, "%srestore_backup.sh /tmp/postfile.bin %s %d",
 system(cmd);
 ```
 
-The following command allows the attacker to shut down any device with the same
-vulnerable firmware:
+Η ακόλουθη εντολή επιτρέπει στον εισβολέα να τερματίσει οποιαδήποτε συσκευή με το ίδιο ευάλωτο υλικολογισμικό:
 
 ```
 $ curl -k "https://${deviceIP}:4567/api/CONFIG/restore" -F 'appid=$(/etc/pod/power_down.sh)'
