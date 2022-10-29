@@ -19,9 +19,9 @@ API8:2019 Injection
 ### Σενάριο #1
 
 Το υλικολογισμικό μιας συσκευής γονικού ελέγχου παρέχει το τελικό σημείο
-`/api/CONFIG/restore` το οποίο αναμένει ότι ένα appId θα σταλεί ως παράμετρος πολλαπλών τμημάτων. 
-Χρησιμοποιώντας έναν απομεταγλωττιστή, ένας εισβολέας ανακαλύπτει ότι το appId έχει περάσει
-απευθείας σε μια κλήση συστήματος χωρίς καμία απολύμανση:
+`/api/CONFIG/restore` το οποίο αναμένει ότι ένα appId θα σταλεί ως παράμετρος πολλαπλών τμημάτων (multipart parameter). 
+Χρησιμοποιώντας έναν απομεταγλωττιστή (decompiler), ένας εισβολέας ανακαλύπτει ότι το appId έχει περάσει
+απευθείας σε μια κλήση συστήματος χωρίς καμία απολύμανση (sanitization):
 
 ```c
 snprintf(cmd, 128, "%srestore_backup.sh /tmp/postfile.bin %s %d",
@@ -37,12 +37,10 @@ $ curl -k "https://${deviceIP}:4567/api/CONFIG/restore" -F 'appid=$(/etc/pod/pow
 
 ### Σενάριο #2
 
-We have an application with basic CRUD functionality for operations with
-bookings. An attacker managed to identify that NoSQL injection might be possible
-through `bookingId` query string parameter in the delete booking request. This
-is how the request looks like: `DELETE /api/bookings?bookingId=678`.
+Έχουμε μια εφαρμογή με βασική λειτουργικότητα CRUD για λειτουργίες με κρατήσεις (bookings). 
+Ένας εισβολέας κατάφερε να αναγνωρίσει ότι η εισαγωγή NoSQL μπορεί να είναι δυνατή μέσω της παραμέτρου συμβολοσειράς ερωτήματος «bookingId» στο αίτημα διαγραφής κράτησης. To αίτημα είναι το εξής: `DELETE /api/bookings?bookingId=678`.
 
-The API server uses the following function to handle delete requests:
+Ο διακομιστής API χρησιμοποιεί την ακόλουθη λειτουργία (function) για να χειριστεί αιτήματα διαγραφής:
 
 ```javascript
 router.delete('/bookings', async function (req, res, next) {
@@ -55,9 +53,7 @@ router.delete('/bookings', async function (req, res, next) {
 });
 ```
 
-The attacker intercepted the request and changed `bookingId` query string
-parameter as shown below. In this case, the attacker managed to delete another
-user's booking:
+Ο εισβολέας παρέκοψε το αίτημα και άλλαξε την παράμετρο συμβολοσειράς ερωτήματος «bookingId», όπως φαίνεται παρακάτω. Σε αυτήν την περίπτωση, ο εισβολέας κατάφερε να διαγράψει την κράτηση άλλου χρήστη:
 
 ```
 DELETE /api/bookings?bookingId[$ne]=678
@@ -67,8 +63,8 @@ DELETE /api/bookings?bookingId[$ne]=678
 
 Η πρόληψη της έγχυσης απαιτεί τη διατήρηση των δεδομένων ξεχωριστά από εντολές και ερωτήματα.
 
-* Εκτελέστε επικύρωση δεδομένων χρησιμοποιώντας μια ενιαία, αξιόπιστη και ενεργά συντηρούμενη βιβλιοθήκη.
-* Επικύρωση, φιλτράρισμα και απολύμανση όλων των δεδομένων που παρέχονται από τον πελάτη ή άλλων δεδομένων που προέρχονται από ενσωματωμένα συστήματα.
+* Εκτελέστε επικύρωση (validation) δεδομένων χρησιμοποιώντας μια ενιαία, αξιόπιστη και ενεργά συντηρούμενη βιβλιοθήκη.
+* Επικύρωση (validation), φιλτράρισμα και απολύμανση (sanitization) όλων των δεδομένων που παρέχονται από τον πελάτη ή άλλων δεδομένων που προέρχονται από ενσωματωμένα συστήματα.
 * Οι ειδικοί χαρακτήρες θα πρέπει να διαφεύγουν (escape) χρησιμοποιώντας τη συγκεκριμένη σύνταξη διερμηνέα προορισμού.
 * Προτιμήστε ένα ασφαλές API που παρέχει μια παραμετροποιημένη διεπαφή.
 * Φροντίστε να περιορίσετε τον αριθμό των επιστρεφόμενων εγγραφών για να αποτρέψετε τη μαζική αποκάλυψη σε περίπτωση ένεσης.
