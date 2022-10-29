@@ -1,10 +1,10 @@
 API8:2019 Injection
 ===================
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
+| Παράγοντες Απειλής (Threat agents) / Φορείς Επίθεσης (Attack vectors) | Αδυναμία Ασφαλείας (Security Weakness) | Επιπτώσεις (Impacts) |
 | - | - | - |
-| API Specific : Exploitability **3** | Prevalence **2** : Detectability **3** | Technical **3** : Business Specific |
-| Attackers will feed the API with malicious data through whatever injection vectors are available (e.g., direct input, parameters, integrated services, etc.), expecting it to be sent to an interpreter. | Injection flaws are very common and are often found in SQL, LDAP, or NoSQL queries, OS commands, XML parsers, and ORM. These flaws are easy to discover when reviewing the source code. Attackers can use scanners and fuzzers. | Injection can lead to information disclosure and data loss. It may also lead to DoS, or complete host takeover. |
+| Εξαρτώνται από το API : Εκμεταλλευσιμότητα **3** | Επιπολασμός  **2** : Ανιχνευσιμότητα **3** | Τεχνικές Επιπτώσεις **3** : Εξαρτώνται από την Επιχείρηση |
+| Οι εισβολείς τροφοδοτούν το API με κακόβουλα δεδομένα μέσω οποιωνδήποτε διαθέσιμων διανυσμάτων έγχυσης (injection vectors) (π.χ. άμεση εισαγωγή (direct input), παράμετροι (parameters), ενσωματωμένες υπηρεσίες (integrated services) κ.λπ.), αναμένοντας να σταλούν τελικώς σε έναν διερμηνέα (interpreter). | Οι ευπάθειες ένεσης είναι πολύ κοινές και εντοπίζονται συχνά σε ερωτήματα SQL, LDAP ή NoSQL, εντολές λειτουργικού συστήματος, αναλυτές XML και ORM. Αυτές οι ευπάθειες είναι εύκολο να εντοπιστούν κατά τον έλεγχο του πηγαίου κώδικα. Οι επιτιθέμενοι μπορούν να χρησιμοποιήσουν σαρωτές και fuzzers για να εντωπίσουν τέτοιες ευπάθειες. | Η έγχυση (injection) μπορεί να οδηγήσει σε αποκάλυψη πληροφοριών και απώλεια δεδομένων. Μπορεί επίσης να οδηγήσει σε DoS ή πλήρη κατάληψη του κεντρικού υπολογιστή. |
 
 ## Is the API Vulnerable?
 
