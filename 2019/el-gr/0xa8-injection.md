@@ -6,20 +6,17 @@ API8:2019 Injection
 | Εξαρτώνται από το API : Εκμεταλλευσιμότητα **3** | Επιπολασμός  **2** : Ανιχνευσιμότητα **3** | Τεχνικές Επιπτώσεις **3** : Εξαρτώνται από την Επιχείρηση |
 | Οι εισβολείς τροφοδοτούν το API με κακόβουλα δεδομένα μέσω οποιωνδήποτε διαθέσιμων διανυσμάτων έγχυσης (injection vectors) (π.χ. άμεση εισαγωγή (direct input), παράμετροι (parameters), ενσωματωμένες υπηρεσίες (integrated services) κ.λπ.), αναμένοντας να σταλούν τελικώς σε έναν διερμηνέα (interpreter). | Οι ευπάθειες ένεσης είναι πολύ κοινές και εντοπίζονται συχνά σε ερωτήματα SQL, LDAP ή NoSQL, εντολές λειτουργικού συστήματος, αναλυτές XML και ORM. Αυτές οι ευπάθειες είναι εύκολο να εντοπιστούν κατά τον έλεγχο του πηγαίου κώδικα. Οι επιτιθέμενοι μπορούν να χρησιμοποιήσουν σαρωτές και fuzzers για να εντωπίσουν τέτοιες ευπάθειες. | Η έγχυση (injection) μπορεί να οδηγήσει σε αποκάλυψη πληροφοριών και απώλεια δεδομένων. Μπορεί επίσης να οδηγήσει σε DoS ή πλήρη κατάληψη του κεντρικού υπολογιστή. |
 
-## Is the API Vulnerable?
+## Πότε το API είναι ευάλωτο
 
-The API is vulnerable to injection flaws if:
+Πότε το API είναι ευάλωτο σε ευπάθεια έγχυσης (injection flaw) όταν:
 
-* Client-supplied data is not validated, filtered, or sanitized by the API.
-* Client-supplied data is directly used or concatenated to SQL/NoSQL/LDAP
-  queries, OS commands, XML parsers, and Object Relational Mapping (ORM)/Object
-  Document Mapper (ODM).
-* Data coming from external systems (e.g., integrated systems) is not validated,
-  filtered, or sanitized by the API.
+* Τα δεδομένα που παρέχονται από τον πελάτη δεν επικυρώνονται, φιλτράρονται ή απολυμαίνονται (sanitized) από το API.
+* Τα δεδομένα που παρέχονται από τον πελάτη χρησιμοποιούνται απευθείας ή συνδέονται με ερωτήματα SQL/NoSQL/LDAP, εντολές λειτουργικού συστήματος, αναλυτές XML και σχεσιακή αντιστοίχιση αντικειμένων (ORM) / χαρτογράφηση εγγράφων αντικειμένου (ODM).
+* Τα δεδομένα που προέρχονται από εξωτερικά συστήματα (π.χ. ολοκληρωμένα συστήματα) δεν επικυρώνονται, φιλτράρονται ή απολυμαίνονται από το API.
 
-## Example Attack Scenarios
+## Παραδείγματα από Σενάρια Επίθεσης
 
-### Scenario #1
+### Σενάριο #1
 
 Firmware of a parental control device provides the endpoint
 `/api/CONFIG/restore` which expects an appId to be sent as a multipart
@@ -39,7 +36,7 @@ vulnerable firmware:
 $ curl -k "https://${deviceIP}:4567/api/CONFIG/restore" -F 'appid=$(/etc/pod/power_down.sh)'
 ```
 
-### Scenario #2
+### Σενάριο #2
 
 We have an application with basic CRUD functionality for operations with
 bookings. An attacker managed to identify that NoSQL injection might be possible
@@ -67,22 +64,17 @@ user's booking:
 DELETE /api/bookings?bookingId[$ne]=678
 ```
 
-## How To Prevent
+## Τρόπος Πρόληψης
 
-Preventing injection requires keeping data separate from commands and queries.
+Η πρόληψη της έγχυσης απαιτεί τη διατήρηση των δεδομένων ξεχωριστά από εντολές και ερωτήματα.
 
-* Perform data validation using a single, trustworthy, and actively maintained
-  library.
-* Validate, filter, and sanitize all client-provided data, or other data coming
-  from integrated systems.
-* Special characters should be escaped using the specific syntax for the target
-  interpreter.
-* Prefer a safe API that provides a parameterized interface.
-* Always limit the number of returned records to prevent mass disclosure in case
-  of injection.
-* Validate incoming data using sufficient filters to only allow valid values for
-  each input parameter.
-* Define data types and strict patterns for all string parameters.
+* Εκτελέστε επικύρωση δεδομένων χρησιμοποιώντας μια ενιαία, αξιόπιστη και ενεργά συντηρούμενη βιβλιοθήκη.
+* Επικύρωση, φιλτράρισμα και απολύμανση όλων των δεδομένων που παρέχονται από τον πελάτη ή άλλων δεδομένων που προέρχονται από ενσωματωμένα συστήματα.
+* Οι ειδικοί χαρακτήρες θα πρέπει να διαφεύγονται(escaped) χρησιμοποιώντας τη συγκεκριμένη σύνταξη διερμηνέα προορισμού.
+* Προτιμήστε ένα ασφαλές API που παρέχει μια παραμετροποιημένη διεπαφή.
+* Φροντίστε να περιορίσετε τον αριθμό των επιστρεφόμενων εγγραφών για να αποτρέψετε τη μαζική αποκάλυψη σε περίπτωση ένεσης.
+* Επικυρώστε τα εισερχόμενα δεδομένα χρησιμοποιώντας επαρκή φίλτρα για να επιτρέπονται μόνο έγκυρες τιμές για κάθε παράμετρο εισόδου.
+* Ορίστε τύπους δεδομένων και αυστηρά μοτίβα για όλες τις παραμέτρους συμβολοσειράς.
 
 ## Αναφορές (References)
 
