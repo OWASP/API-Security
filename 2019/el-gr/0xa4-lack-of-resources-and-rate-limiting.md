@@ -51,14 +51,14 @@ API4:2019 Lack of Resources & Rate Limiting
 
 ## Αναφορές
 
-### OWASP
+### Αναφορές OWASP
 
 * [Blocking Brute Force Attacks][5]
 * [Docker Cheat Sheet - Limit resources (memory, CPU, file descriptors,
   processes, restarts)][6]
 * [REST Assessment Cheat Sheet][7]
 
-### Εξωτερικές
+### Εξωτερικές Αναφορές
 
 * [CWE-307: Improper Restriction of Excessive Authentication Attempts][8]
 * [CWE-770: Allocation of Resources Without Limits or Throttling][9]
