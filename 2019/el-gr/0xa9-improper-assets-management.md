@@ -8,18 +8,16 @@ API9:2019 Improper Assets Management
 
 ## Πότε το API είναι ευάλωτο
 
-Το API ίσως είναι ευάλωτο αν:
+Το API ίσως είναι ευάλωτο όταν:
 
-* The purpose of an API host is unclear, and there are no explicit answers to
-  the following questions:
-  * Which environment is the API running in (e.g., production, staging, test,
-    development)?
-  * Who should have network access to the API (e.g., public, internal, partners)?
-  * Which API version is running?
-  * What data is gathered and processed by the API (e.g., PII)?
-  * What's the data flow?
-* There is no documentation, or the existing documentation is not updated.
-* There is no retirement plan for each API version.
+* Ο σκοπός ενός κεντρικού υπολογιστή API είναι ασαφής και δεν υπάρχουν σαφείς απαντήσεις στις ακόλουθες ερωτήσεις:
+  * Σε ποιο περιβάλλον εκτελείται το API (π.χ. παραγωγή (production), σταδιοποίηση (staging), δοκιμή (test), ανάπτυξη (development));
+  * Ποιός πρέπει να έχει πρόσβαση δικτύου στο API (π.χ. δημόσια πρόσβαση, εσωτερική πρόσβαση, πρόσβαση σε συνεργάτες);
+  * Ποια έκδοση API εκτελείται;
+  * Ποια δεδομένα συλλέγονται και επεξεργάζονται από το API (π.χ. Προσωπικά αναγνωρίσιμα στοιχεία (PII));
+  * Ποια είναι η ροή των δεδομένων;
+* Δεν υπάρχει τεκμηρίωση (documentation) ή η υπάρχουσα τεκμηρίωση δεν έχει ενημερωθεί.
+* Δεν υπάρχει σχέδιο συνταξιοδότησης (retirement plan) για κάθε έκδοση API.
 * Hosts inventory is missing or outdated.
 * Integrated services inventory, either first- or third-party, is missing or
   outdated.
