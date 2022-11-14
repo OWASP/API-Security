@@ -1,14 +1,14 @@
 API9:2019 Improper Assets Management
 ====================================
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
+| Παράγοντες Απειλής (Threat agents) / Φορείς Επίθεσης (Attack vectors) | Αδυναμία Ασφαλείας (Security Weakness) | Επιπτώσεις (Impacts) |
 | - | - | - |
-| API Specific : Exploitability **3** | Prevalence **3** : Detectability **2** | Technical **2** : Business Specific |
-| Old API versions are usually unpatched and are an easy way to compromise systems without having to fight state-of-the-art security mechanisms, which might be in place to protect the most recent API versions. | Outdated documentation makes it more difficult to find and/or fix vulnerabilities. Lack of assets inventory and retire strategies leads to running unpatched systems, resulting in leakage of sensitive data. It’s common to find unnecessarily exposed API hosts because of modern concepts like microservices, which make applications easy to deploy and independent (e.g., cloud computing, k8s). | Attackers may gain access to sensitive data, or even takeover the server through old, unpatched API versions connected to the same database. |
+| Εξαρτώνται από το API : Εκμεταλλευσιμότητα **3** | Επιπολασμός **3** : Ανιχνευσιμότητα **2** | Τεχνικές Επιπτώσεις **2** : Εξαρτώνται από την Επιχείρηση |
+| Παλιές εκδόσεις ενός API μένουν συνήθως ανενημέρωτες από patches (unpatched) και έτσι αποτελούν έναν εύκολο τρόπο για την κατάληψη συστημάτων χωρίς να χρειάζεται ο εισβολέας να παλέψει με μηχανισμούς ασφαλείας τελευταίας τεχνολογίας, οι οποίοι μπορεί να υπάρχουν αλλά να προστατεύουν μόνο τις νέες εκδόσεις ενος API. | Outdated documentation makes it more difficult to find and/or fix vulnerabilities. Lack of assets inventory and retire strategies leads to running unpatched systems, resulting in leakage of sensitive data. It’s common to find unnecessarily exposed API hosts because of modern concepts like microservices, which make applications easy to deploy and independent (e.g., cloud computing, k8s). | Attackers may gain access to sensitive data, or even takeover the server through old, unpatched API versions connected to the same database. |
 
-## Is the API Vulnerable?
+## Πότε το API είναι ευάλωτο
 
-The API might be vulnerable if:
+Το API ίσως είναι ευάλωτο αν:
 
 * The purpose of an API host is unclear, and there are no explicit answers to
   the following questions:
