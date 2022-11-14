@@ -49,7 +49,7 @@ API4:2019 Lack of Resources & Rate Limiting
 όπως το μέγιστο μήκος για τις συμβολοσειρές (strings) και τον μέγιστο αριθμό στοιχείων σε πίνακες (elements in arrays).
 
 
-## Αναφορές
+## Αναφορές (References)
 
 ### Αναφορές OWASP
 
