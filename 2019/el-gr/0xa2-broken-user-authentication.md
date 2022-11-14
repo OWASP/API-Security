@@ -57,15 +57,15 @@ API2:2019 Broken User Authentication
 χρηστών. Εφαρμόστε ελέγχους αδύναμου κωδικού πρόσβασης.
 * Τα κλειδιά API δεν πρέπει να χρησιμοποιούνται για έλεγχο ταυτότητας χρήστη, αλλά για [client app/project authentication][5].
 
-## Αναφορές
+## Αναφορές (References)
 
-### OWASP
+### Αναφορές OWASP
 
 * [OWASP Key Management Cheat Sheet][6]
 * [OWASP Authentication Cheatsheet][3]
 * [Credential Stuffing][1]
 
-### Εξωτερικές
+### Εξωτερικές Αναφορές
 
 * [CWE-798: Use of Hard-coded Credentials][7]
 
