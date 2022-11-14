@@ -23,9 +23,9 @@ API9:2019 Improper Assets Management
   outdated.
 * Old or previous API versions are running unpatched.
 
-## Example Attack Scenarios
+## Παραδείγματα Σεναρίων Επίθεσης
 
-### Scenario #1
+### Σενάριο Επίθεσης #1
 
 After redesigning their applications, a local search service left an old API
 version (`api.someservice.com/v1`) running, unprotected, and with access to the
@@ -34,7 +34,7 @@ attacker found the API address (`api.someservice.com/v2`). Replacing `v2` with
 `v1` in the URL gave the attacker access to the old, unprotected API,
 exposing the personal identifiable information (PII) of over 100 Million users.
 
-### Scenario #2
+### Σενάριο Επίθεσης #2
 
 A social network implemented a rate-limiting mechanism that blocks attackers
 from using brute-force to guess reset password tokens. This mechanism wasn’t
@@ -45,7 +45,7 @@ runs the same API, including the reset password mechanism, but the rate limiting
 mechanism was not in place. The researcher was able to reset the password of any
 user by using a simple brute-force to guess the 6 digits token.
 
-## How To Prevent
+## Τρόπος Πρόληψης
 
 * Inventory all API hosts and document important aspects of each one of them,
   focusing on the API environment (e.g., production, staging, test,
