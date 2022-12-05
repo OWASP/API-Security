@@ -1,7 +1,3 @@
-> **Note**
-> OWASP API Top 10 2022 call for data is open! Check out [how to
-> contribute][cfd-2022].
-
 OWASP API Security Top 10
 =========================
 
