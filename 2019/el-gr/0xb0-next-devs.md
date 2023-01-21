@@ -1,17 +1,19 @@
 What's Next For Developers
 ==========================
 
-The task to create and maintain secure software, or fixing existing sofware, can be
-difficult. APIs are no different.
+Η εργασία δημιουργίας και συντήρησης ασφαλούς λογισμικού ή η επιδιόρθωση υπάρχοντος λογισμικού είναι δύσκολη. 
+Το ίδιο συμβαίνει και με τα API.
 
-We believe that education and awareness are key factors to write secure
-software. Everything else required to accomplish the goal, depends on
-**establishing and using repeatable security processes and standard security
-controls**.
+Πιστεύουμε ότι η εκπαίδευση και η ευαισθητοποίηση είναι βασικοί παράγοντες για τη δημιουργία ασφαλούς λογισμικού. 
+Όλα τα άλλα που απαιτούνται για την επίτευξη του στόχου, εξαρτώνται από τη δημιουργία και τη χρήση επαναλαμβανόμενων
+διαδικασιών ασφαλείας και τυπικών ελέγχων ασφαλείας.
 
 OWASP has numerous free and open resources to address security since the very
 beginning of the project. Please visit the [OWASP Projects page][1] for a
 comprehensive list of available projects.
+
+Το OWASP διαθέτει πολλούς δωρεάν και ανοιχτούς πόρους για την αντιμετώπιση της ασφάλειας από την αρχή του έργου. 
+Επισκεφτείτε τη σελίδα OWASP Projects [OWASP Projects page][1] για μια ολοκληρωμένη λίστα με τα διαθέσιμα έργα.
 
 | | |
 |-|-|
