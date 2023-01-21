@@ -1,7 +1,7 @@
 What's Next For Developers
 ==========================
 
-Η εργασία δημιουργίας και συντήρησης ασφαλούς λογισμικού ή η επιδιόρθωση υπάρχοντος λογισμικού είναι δύσκολη. 
+Η εργασία δημιουργίας και συντήρησης ασφαλούς λογισμικού καθώς και η επιδιόρθωση υπάρχοντος λογισμικού είναι δύσκολη. 
 Το ίδιο συμβαίνει και με τα API.
 
 Πιστεύουμε ότι η εκπαίδευση και η ευαισθητοποίηση είναι βασικοί παράγοντες για τη δημιουργία ασφαλούς λογισμικού. 
@@ -13,7 +13,7 @@ What's Next For Developers
 
 | | |
 |-|-|
-| **Education** | You can start reading [OWASP Education Project materials][2] according to your profession and interest. For hands-on learning, we added **crAPI** - **C**ompletely **R**idiculous **API** on [our roadmap][3]. Meanwhile, you can practice WebAppSec using the [OWASP DevSlop Pixi Module][4], a vulnerable WebApp and API service intent to teach users how to test modern web applications and API's for security issues, and how to write more secure API's in the future. You can also attend [OWASP AppSec Conference][5] training sessions, or [join your local chapter][6]. |
+| **Εκπαίδευση** | You can start reading [OWASP Education Project materials][2] according to your profession and interest. For hands-on learning, we added **crAPI** - **C**ompletely **R**idiculous **API** on [our roadmap][3]. Meanwhile, you can practice WebAppSec using the [OWASP DevSlop Pixi Module][4], a vulnerable WebApp and API service intent to teach users how to test modern web applications and API's for security issues, and how to write more secure API's in the future. You can also attend [OWASP AppSec Conference][5] training sessions, or [join your local chapter][6]. |
 | **Security Requirements** | Security should be part of every project from the beginning. When doing requirements elicitation, it is important to define what "secure" means for that project. OWASP recommends you use the [OWASP Application Security Verification Standard (ASVS)][7] as a guide for setting the security requirements. If you're outsourcing, consider the [OWASP Secure Software Contract Annex][8], which should be adapted according to local law and regulations. |
 | **Security Architecture** | Security should remain a concern during all the project stages. The [OWASP Prevention Cheat Sheets][9] are a good starting point for guidance on how to design security in during the architecture phase. Among many others, you'll find the [REST Security Cheat Sheet][10] and the [REST Assessment Cheat Sheet][11]. |
 | **Standard Security Controls** | Adopting Standard Security Controls reduces the risk of introducing security weaknesses while writing your own logic. Despite the fact that many modern frameworks now come with built-in standard effective controls, [OWASP Proactive Controls][12] gives you a good overview of what security controls you should look to include in your project. OWASP also provides some libraries and tools you may find valuable, such as validation controls. |
