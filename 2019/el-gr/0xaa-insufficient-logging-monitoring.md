@@ -1,24 +1,23 @@
 API10:2019 Insufficient Logging & Monitoring
 ============================================
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
+| Παράγοντες Απειλής (Threat agents) / Φορείς Επίθεσης (Attack vectors) | Αδυναμία Ασφαλείας (Security Weakness) | Επιπτώσεις (Impacts) |
 | - | - | - |
-| API Specific : Exploitability **2** | Prevalence **3** : Detectability **1** | Technical **2** : Business Specific |
-| Attackers take advantage of lack of logging and monitoring to abuse systems without being noticed. | Without logging and monitoring, or with insufficient logging and monitoring, it is almost impossible to track suspicious activities and respond to them in a timely fashion. | Without visibility over on-going malicious activities, attackers have plenty of time to fully compromise systems. |
+| Εξαρτώνται από το API : Εκμεταλλευσιμότητα **2** | Επιπολασμός **3** : Ανιχνευσιμότητα **1** | Τεχνικές Επιπτώσεις **2** : Εξαρτώνται από την Επιχείρηση |
+| Οι επιτιθέμενοι εκμεταλλεύονται την έλλειψη καταγραφής (logging) και παρακολούθησης (monitoring) για να κάνουν κατάχρηση συστημάτων χωρίς να γίνουν αντιληπτοί. | Χωρίς καταγραφή και παρακολούθηση ή με ανεπαρκή καταγραφή και παρακολούθηση, είναι σχεδόν αδύνατο να παρακολουθήσετε ύποπτες δραστηριότητες και να απαντήσετε σε αυτές έγκαιρα. | Χωρίς ορατότητα σε συνεχείς κακόβουλες δραστηριότητες, οι εισβολείς έχουν άφθονο χρόνο για να υπονομεύσουν πλήρως τα συστήματα σας. |
 
-## Is the API Vulnerable?
+## Πότε το API είναι ευάλωτο
 
-The API is vulnerable if:
+Το API είναι ευάλωτο όταν:
 
-* It does not produce any logs, the logging level is not set correctly, or log
-  messages do not include enough detail.
-* Log integrity is not guaranteed (e.g., [Log Injection][1]).
-* Logs are not continuously monitored.
-* API infrastructure is not continuously monitored.
+* Δεν παράγει κανένα αρχείο καταγραφής, το επίπεδο καταγραφής δεν έχει ρυθμιστεί σωστά ή τα μηνύματα καταγραφής δεν περιλαμβάνουν αρκετές λεπτομέρειες.
+* Η ακεραιότητα του αρχείου καταγραφής δεν είναι εγγυημένη (π.χ. [Log Injection][1]).
+* Τα αρχεία καταγραφής δεν παρακολουθούνται συνεχώς.
+* Η υποδομή API δεν παρακολουθείται συνεχώς.
 
-## Example Attack Scenarios
+## Παραδείγματα από Σενάρια Επίθεσης
 
-### Scenario #1
+### Σενάριο Επίθεσης #1
 
 Access keys of an administrative API were leaked on a public repository. The
 repository owner was notified by email about the potential leak, but took more
