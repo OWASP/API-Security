@@ -1,17 +1,15 @@
 Επόμενα Βήματα για DevSecOps
 =========================
 
-Due to their importance in modern application architectures, building secure
-APIs is crucial. Security cannot be neglected, and it should be part of the
-whole development life cycle. Scanning and penetration testing yearly are no
-longer enough.
+Λόγω της σημασίας τους στις σύγχρονες αρχιτεκτονικές εφαρμογών, η δημιουργία ασφαλών API είναι ζωτικής σημασίας. 
+Η ασφάλεια δεν μπορεί να παραμεληθεί και θα πρέπει να αποτελεί μέρος ολόκληρου του κύκλου ζωής της ανάπτυξης. 
+Η σάρωση (scanning) και οι ετήσιες δοκιμές διείσδυσης (penetration tests) δεν είναι πλέον αρκετές.
 
-DevSecOps should join the development effort, facilitating continuous security
-testing across the entire software development life cycle. Their goal is to
-enhance the development pipeline with security automation, and without impacting
-the speed of development.
+Οι DevSecOps θα πρέπει να συμμετάσχουν στην προσπάθεια ανάπτυξης, διευκολύνοντας τις συνεχείς δοκιμές ασφαλείας 
+σε ολόκληρο τον κύκλο ζωής ανάπτυξης λογισμικού. Στόχος τους είναι να ενισχύσουν τον αγωγό ανάπτυξης με 
+αυτοματισμό ασφαλείας, χωρίς να επηρεάζουν την ταχύτητα ανάπτυξης.
 
-In case of doubt, stay informed, and review, the [DevSecOps Manifesto][1] often.
+Σε περίπτωση αμφιβολίας, μείνετε ενημερωμένοι και αναθεωρήστε συχνά το [DevSecOps Manifesto][1].
 
 | | |
 |-|-|
