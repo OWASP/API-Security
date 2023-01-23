@@ -1,4 +1,4 @@
-What's Next For DevSecOps
+Επόμενα Βήματα για DevSecOps
 =========================
 
 Due to their importance in modern application architectures, building secure
