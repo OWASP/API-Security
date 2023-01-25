@@ -1,41 +1,41 @@
-Acknowledgments
+स्वीकृतियाँ
 ===============
 
-## Acknowledgments to Contributors
+## योगदानकर्ताओं के लिए आभार
 
-We’d like to thank the following contributors who contributed publicly on GitHub
-or via other means:
+हम निम्नलिखित योगदानकर्ताओं को धन्यवाद देना चाहते हैं जिन्होंने गिटहब पर सार्वजनिक रूप से योगदान दिया
+या अन्य माध्यम से:
 
-* 007divyachawla
-* Abid Khan
-* Adam Fisher
-* anotherik
-* bkimminich
-* caseysoftware
-* Chris Westphal
-* dsopas
-* DSotnikov
-* emilva
-* ErezYalon
-* flascelles
-* Guillaume Benats
-* IgorSasovets
-* Inonshk
-* JonnySchnittger
-* jmanico
-* jmdx
-* Keith Casey
-* kozmic
-* LauraRosePorter
-* Matthieu Estrade
-* nathanawmk
-* PauloASilva
-* pentagramz
-* philippederyck
-* pleothaud
-* r00ter
-* Raj kumar
-* Sagar Popat
-* Stephen Gates
-* thomaskonrad
+* ००७ दिव्या चावला
+* आबिद खान
+* एडम फिशर
+* दूसरा
+* बिकमिनिच
+* केसीसॉफ्टवेयर
+* क्रिस वेस्टफाल
+* डसोपस
+* डी सोतनिकोव
+* एमिल्वा
+* एरेज़ यालन
+* फ्लैसेल्स
+* गिलाउम बेनट्स
+* इगोर सासोवेट्स
+* इनोनशक
+* जॉनी श्निट्गर
+* जमनिको
+* जेएमडीएक्स
+* कीथ केसी
+* कोज़मिक
+* लौरा रोजपोर्टर
+* मैथ्यू एस्ट्रेड
+* नाथनावमक
+* पाउलो सिल्वा
+* पेंटाग्रामज़
+* फ़िलिपेडरीक
+* प्लीथाउड
+* र00टर
+* राज कुमार
+* सागर पोपट
+* स्टीफन गेट्स
+* थॉमसनराड
 * xycloops123
