@@ -1,31 +1,31 @@
-What's Next For DevSecOps
+DevSecOps के लिए आगे क्या है
 =========================
 
-Due to their importance in modern application architectures, building secure
-APIs is crucial. Security cannot be neglected, and it should be part of the
-whole development life cycle. Scanning and penetration testing yearly are no
-longer enough.
+आधुनिक अनुप्रयोग आर्किटेक्चर में उनके महत्व के कारण, भवन सुरक्षित है
+एपीआई महत्वपूर्ण है। सुरक्षा की उपेक्षा नहीं की जा सकती है, और यह इसका हिस्सा होना चाहिए
+संपूर्ण विकास जीवन चक्र। स्कैनिंग और पैठ परीक्षण वार्षिक नहीं हैं
+काफी लंबा।
 
-DevSecOps should join the development effort, facilitating continuous security
-testing across the entire software development life cycle. Their goal is to
-enhance the development pipeline with security automation, and without impacting
-the speed of development.
+DevSecOps को निरंतर सुरक्षा की सुविधा प्रदान करते हुए, विकास के प्रयास में शामिल होना चाहिए
+पूरे सॉफ्टवेयर विकास जीवन चक्र में परीक्षण। करना उनका लक्ष्य है
+सुरक्षा स्वचालन के साथ और प्रभावित किए बिना विकास पाइपलाइन को बढ़ाएं
+विकास की गति।
 
-In case of doubt, stay informed, and review, the [DevSecOps Manifesto][1] often.
+संदेह की स्थिति में, सूचित रहें और अक्सर [DevSecOps Manifesto] [1] की समीक्षा करें।
 
 | | |
 |-|-|
-| **Understand the Threat Model** | Testing priorities come from a threat model. If you don't have one, consider using [OWASP Application Security Verification Standard (ASVS)][2], and the [OWASP Testing Guide][3] as an input. Involving the development team may help to make them more security-aware. |
-| **Understand the SDLC** | Join the development team to better understand the Software Development Life Cycle. Your contribution on continuous security testing should be compatible with people, processes, and tools. Everyone should agree with the process, so that there's no unnecessary friction or resistance. |
-| **Testing Strategies** | As your work should not impact the development speed, you should wisely choose the best (simple, fastest, most accurate) technique to verify the security requirements. The [OWASP Security Knowledge Framework][4] and [OWASP Application Security Verification Standard][5] can be great sources of functional and nonfunctional security requirements. There are other great sources for [projects][6] and [tools][7] similar to the one offered by the [DevSecOps community][8]. |
-| **Achieving Coverage and Accuracy** | You're the bridge between developers and operations teams. To achieve coverage, not only should you focus on the functionality, but also the orchestration. Work close to both development and operations teams from the beginning so you can optimize your time and effort. You should aim for a state where the essential security is verified continuously. |
-| **Clearly Communicate Findings** | Contribute value with less or no friction. Deliver findings in a timely fashion, within the tools development teams are using (not PDF files). Join the development team to address the findings. Take the opportunity to educate them, clearly describing the weakness and how it can be abused, including an attack scenario to make it real. |
+|**खतरे के मॉडल को समझें** | परीक्षण प्राथमिकताएं खतरे के मॉडल से आती हैं। यदि आपके पास एक नहीं है, तो [OWASP एप्लिकेशन सुरक्षा सत्यापन मानक (ASVS)] [2], और [OWASP परीक्षण गाइड] [3] को एक इनपुट के रूप में उपयोग करने पर विचार करें। विकास दल को शामिल करने से उन्हें अधिक सुरक्षा-जागरूक बनाने में मदद मिल सकती है। |
+| **SDLC को समझें** | सॉफ्टवेयर डेवलपमेंट लाइफ साइकिल को बेहतर ढंग से समझने के लिए डेवलपमेंट टीम में शामिल हों। निरंतर सुरक्षा परीक्षण पर आपका योगदान लोगों, प्रक्रियाओं और उपकरणों के अनुकूल होना चाहिए। सभी को प्रक्रिया से सहमत होना चाहिए, ताकि कोई अनावश्यक घर्षण या विरोध न हो। |
+| **परीक्षण रणनीतियाँ** | जैसा कि आपके काम को विकास की गति को प्रभावित नहीं करना चाहिए, आपको सुरक्षा आवश्यकताओं को सत्यापित करने के लिए बुद्धिमानी से सर्वोत्तम (सरल, सबसे तेज़, सबसे सटीक) तकनीक का चयन करना चाहिए। [OWASP सुरक्षा ज्ञान ढांचा] [4] और [OWASP अनुप्रयोग सुरक्षा सत्यापन मानक] [5] कार्यात्मक और गैर-कार्यात्मक सुरक्षा आवश्यकताओं के महान स्रोत हो सकते हैं। [परियोजनाओं] [6] और [उपकरण] [7] के लिए [DevSecOps समुदाय] [8] द्वारा प्रस्तावित एक के समान अन्य महान स्रोत हैं। |
+| **कवरेज और सटीकता प्राप्त करना** | आप डेवलपर्स और संचालन टीमों के बीच सेतु हैं। कवरेज प्राप्त करने के लिए, आपको न केवल कार्यक्षमता, बल्कि ऑर्केस्ट्रेशन पर भी ध्यान देना चाहिए। शुरुआत से ही विकास और संचालन दोनों टीमों के करीब काम करें ताकि आप अपना समय और प्रयास अनुकूलित कर सकें। आपको ऐसे राज्य का लक्ष्य रखना चाहिए जहां आवश्यक सुरक्षा लगातार सत्यापित हो। |
+| **निष्कर्षों का स्पष्ट रूप से संचार करें** | कम या बिना घर्षण के मूल्य का योगदान करें। उपकरण विकास दल उपयोग कर रहे हैं (पीडीएफ फाइल नहीं) के भीतर समयबद्ध तरीके से निष्कर्ष प्रदान करें। निष्कर्षों को संबोधित करने के लिए विकास दल में शामिल हों। उन्हें शिक्षित करने का अवसर लें, कमजोरी का स्पष्ट रूप से वर्णन करें और इसका दुरुपयोग कैसे किया जा सकता है, इसे वास्तविक बनाने के लिए हमले के परिदृश्य सहित। |
 
-[1]: https://www.devsecops.org/
-[2]: https://www.owasp.org/index.php/Category:OWASP_Application_Security_Verification_Standard_Project
-[3]: https://www.owasp.org/index.php/OWASP_Testing_Project
-[4]: https://www.owasp.org/index.php/OWASP_Security_Knowledge_Framework
-[5]: https://www.owasp.org/index.php/Category:OWASP_Application_Security_Verification_Standard_Project
-[6]: http://devsecops.github.io/
-[7]: https://github.com/devsecops/awesome-devsecops
-[8]: http://devsecops.org
+[१]: https://www.devsecops.org/
+[२]: https://www.owasp.org/index.php/Category:OWASP_Application_Security_Verification_Standard_Project
+[३]: https://www.owasp.org/index.php/OWASP_Testing_Project
+[४]: https://www.owasp.org/index.php/OWASP_Security_Knowledge_Framework
+[५]: https://www.owasp.org/index.php/Category:OWASP_Application_Security_Verification_Standard_Project
+[६]: http://devsecops.github.io/
+[७]: https://github.com/devsecops/awesome-devsecops
+[८]: http://devsecops.org
