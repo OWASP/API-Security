@@ -1,42 +1,41 @@
-Methodology and Data
+कार्यप्रणाली और डेटा
 ====================
 
-## Overview
+## अवलोकन
 
-Since the AppSec industry has not been specifically focused on the most recent
-architecture of applications, in which APIs play an important role, compiling a
-list of the ten most critical API security risks, based on a public call for
-data, would have been a hard task. Despite there being no public data call, the
-resulting Top 10 list is still based on publicly available data, security
-experts' contributions, and open discussion with the security community.
+चूँकि AppSec उद्योग विशेष रूप से नवीनतम पर ध्यान केंद्रित नहीं किया गया है
+अनुप्रयोगों की वास्तुकला, जिसमें एपीआई एक महत्वपूर्ण भूमिका निभाते हैं, संकलन करते हैं
+सार्वजनिक कॉल के आधार पर दस सबसे महत्वपूर्ण एपीआई सुरक्षा जोखिमों की सूची
+डेटा, एक कठिन कार्य होता। कोई सार्वजनिक डेटा कॉल नहीं होने के बावजूद,
+परिणामी शीर्ष 10 सूची अभी भी सार्वजनिक रूप से उपलब्ध डेटा, सुरक्षा पर आधारित है
+विशेषज्ञों का योगदान, और सुरक्षा समुदाय के साथ खुली चर्चा।
 
-## Methodology
+## क्रियाविधि
 
-In the first phase, publicly available data about APIs security incidents were
-collected, reviewed, and categorized by a group of security experts. Such
-data was collected from bug bounty platforms and vulnerability databases,
-within a one-year-old time frame. It was used for statistical purposes.
+पहले चरण में एपीआई सुरक्षा घटनाओं के बारे में सार्वजनिक रूप से उपलब्ध डेटा थे
+सुरक्षा विशेषज्ञों के एक समूह द्वारा एकत्र, समीक्षा और वर्गीकृत। ऐसा
+बग बाउंटी प्लेटफॉर्म और भेद्यता डेटाबेस से डेटा एकत्र किया गया था,
+एक वर्ष की समय सीमा के भीतर। इसका उपयोग सांख्यिकीय उद्देश्यों के लिए किया गया था।
 
-In the next phase, security practitioners with penetration testing experience
-were asked to compile their own Top 10 list.
+अगले चरण में, पैठ परीक्षण अनुभव वाले सुरक्षा व्यवसायी
+को अपनी शीर्ष 10 सूची संकलित करने के लिए कहा गया।
 
-The [OWASP Risk Rating Methodology][1] was used to perform he Risk Analysis. The
-scores were discussed and reviewed between the security practitioners. For
-considerations on these matters, please refer to the [API Security Risks][2]
-section.
+[OWASP जोखिम रेटिंग पद्धति] [1] का उपयोग जोखिम विश्लेषण करने के लिए किया गया था।
+सुरक्षा चिकित्सकों के बीच स्कोर पर चर्चा और समीक्षा की गई। के लिए
+इन मामलों पर विचार, कृपया [एपीआई सुरक्षा जोखिम] [2] देखें
+खंड।
 
-The first draft of the OWASP API Security Top 10 2019 resulted from a consensus
-between statistical results from phase one, and the security practitioners'
-lists. This draft was then submitted for appreciation and review by another
-group of security practitioners, with relevant experience in the API security
-fields.
+OWASP API Security Top 10 2019 का पहला मसौदा सर्वसम्मति से तैयार किया गया
+पहले चरण के सांख्यिकीय परिणामों और सुरक्षा व्यवसायियों के बीच
+सूची। यह मसौदा तब दूसरे द्वारा प्रशंसा और समीक्षा के लिए प्रस्तुत किया गया था
+एपीआई सुरक्षा में प्रासंगिक अनुभव के साथ सुरक्षा चिकित्सकों का समूह
+खेत।
 
-The OWASP API Security Top 10 2019 was first presented in the OWASP Global
-AppSec Tel Aviv event (May 2019). Since then, it has been available on GitHub
-for public discussion and contributions.
+OWASP API Security Top 10 2019 को सबसे पहले OWASP ग्लोबल में प्रस्तुत किया गया था
+AppSec तेल अवीव घटना (मई 2019)। तब से, यह GitHub पर उपलब्ध है
+सार्वजनिक चर्चा और योगदान के लिए।
 
-The list of contributors is available in the [Acknowledgments][3] section.
-
-[1]: https://www.owasp.org/index.php/OWASP_Risk_Rating_Methodology
-[2]: ./0x10-api-security-risks.md
-[3]: ./0xd1-acknowledgments.md
+योगदानकर्ताओं की सूची [स्वीकृति] [3] अनुभाग में उपलब्ध है।
+[१]: https://www.owasp.org/index.php/OWASP_Risk_Rating_Methodology
+[२]: ./0x10-api-security-risks.md
+[३]: ./0xd1-acknowledgments.md
