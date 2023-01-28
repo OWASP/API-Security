@@ -1,37 +1,37 @@
-What's Next For Developers
+डेवलपर्स के लिए आगे क्या है
 ==========================
 
-The task to create and maintain secure software, or fixing existing sofware, can be
-difficult. APIs are no different.
+सुरक्षित सॉफ़्टवेयर बनाने और बनाए रखने या मौजूदा सॉफ़्टवेयर को ठीक करने का कार्य हो सकता है
+मुश्किल। एपीआई अलग नहीं हैं।
 
-We believe that education and awareness are key factors to write secure
-software. Everything else required to accomplish the goal, depends on
-**establishing and using repeatable security processes and standard security
-controls**.
+हमारा मानना ​​है कि सुरक्षित लिखने के लिए शिक्षा और जागरूकता प्रमुख कारक हैं
+सॉफ़्टवेयर। लक्ष्य को पूरा करने के लिए आवश्यक बाकी सब कुछ निर्भर करता है
+** दोहराए जाने योग्य सुरक्षा प्रक्रियाओं और मानक सुरक्षा की स्थापना और उपयोग करना
+नियंत्रण **।
 
-OWASP has numerous free and open resources to address security since the very
-beginning of the project. Please visit the [OWASP Projects page][1] for a
-comprehensive list of available projects.
+OWASP के पास शुरू से ही सुरक्षा को संबोधित करने के लिए कई स्वतंत्र और खुले संसाधन हैं
+परियोजना की शुरुआत। इसके के लिए कृपया [OWASP प्रोजेक्ट्स पेज] [1] पर जाएं
+उपलब्ध परियोजनाओं की व्यापक सूची।
 
 | | |
 |-|-|
-| **Education** | You can start reading [OWASP Education Project materials][2] according to your profession and interest. For hands-on learning, we added **crAPI** - **C**ompletely **R**idiculous **API** on [our roadmap][3]. Meanwhile, you can practice WebAppSec using the [OWASP DevSlop Pixi Module][4], a vulnerable WebApp and API service intent to teach users how to test modern web applications and API's for security issues, and how to write more secure API's in the future. You can also attend [OWASP AppSec Conference][5] training sessions, or [join your local chapter][6]. |
-| **Security Requirements** | Security should be part of every project from the beginning. When doing requirements elicitation, it is important to define what "secure" means for that project. OWASP recommends you use the [OWASP Application Security Verification Standard (ASVS)][7] as a guide for setting the security requirements. If you're outsourcing, consider the [OWASP Secure Software Contract Annex][8], which should be adapted according to local law and regulations. |
-| **Security Architecture** | Security should remain a concern during all the project stages. The [OWASP Prevention Cheat Sheets][9] are a good starting point for guidance on how to design security in during the architecture phase. Among many others, you'll find the [REST Security Cheat Sheet][10] and the [REST Assessment Cheat Sheet][11]. |
-| **Standard Security Controls** | Adopting Standard Security Controls reduces the risk of introducing security weaknesses while writing your own logic. Despite the fact that many modern frameworks now come with built-in standard effective controls, [OWASP Proactive Controls][12] gives you a good overview of what security controls you should look to include in your project. OWASP also provides some libraries and tools you may find valuable, such as validation controls. |
-| **Secure Software Development Life Cycle** | You can use the [OWASP Software Assurance Maturity Model (SAMM)][13] to improve the process when building APIs. Several other OWASP projects are available to help you during the different API development phases e.g., the [OWASP Code Review Project][14]. |
+| **शिक्षा** | आप अपने पेशे और रुचि के अनुसार [OWASP शिक्षा परियोजना सामग्री] [2] पढ़ना शुरू कर सकते हैं। हाथों-हाथ सीखने के लिए, हमने [हमारे रोडमैप] [3] पर **crAPI** - **C**पूरी तरह से **R**इडीकुलस **API** जोड़ा। इस बीच, आप [OWASP DevSlop Pixi Module] [4] का उपयोग करके WebAppSec का अभ्यास कर सकते हैं, जो उपयोगकर्ताओं को आधुनिक वेब एप्लिकेशन और सुरक्षा मुद्दों के लिए API का परीक्षण करने और भविष्य में अधिक सुरक्षित API लिखने का तरीका सिखाने के लिए एक कमजोर WebApp और API सेवा है। . आप [OWASP AppSec कॉन्फ़्रेंस] [5] प्रशिक्षण सत्रों में भी शामिल हो सकते हैं, या [अपने स्थानीय अध्याय में शामिल हों] [6]। |
+| **सुरक्षा आवश्यकताएँ** | सुरक्षा शुरू से ही हर परियोजना का हिस्सा होनी चाहिए। आवश्यकताओं को पूरा करते समय, यह परिभाषित करना महत्वपूर्ण है कि उस परियोजना के लिए "सुरक्षित" का क्या अर्थ है। OWASP अनुशंसा करता है कि आप [OWASP एप्लिकेशन सुरक्षा सत्यापन मानक (ASVS)] [7] को सुरक्षा आवश्यकताओं को निर्धारित करने के लिए एक गाइड के रूप में उपयोग करें। यदि आप आउटसोर्सिंग कर रहे हैं, तो [OWASP सुरक्षित सॉफ़्टवेयर अनुबंध] [8] पर विचार करें, जिसे स्थानीय कानून और विनियमों के अनुसार अनुकूलित किया जाना चाहिए। |
+| **सुरक्षा संरचना** | सभी परियोजना चरणों के दौरान सुरक्षा एक चिंता का विषय होना चाहिए। [OWASP प्रिवेंशन चीट शीट्स] [9] आर्किटेक्चर चरण के दौरान सुरक्षा को कैसे डिजाइन किया जाए, इस पर मार्गदर्शन के लिए एक अच्छा प्रारंभिक बिंदु है। कई अन्य लोगों के बीच, आपको [REST सुरक्षा चीट शीट] [10] और [REST असेसमेंट चीट शीट] [11] मिलेगी। |
+| **मानक सुरक्षा नियंत्रण** | मानक सुरक्षा नियंत्रण अपनाने से अपना तर्क लिखते समय सुरक्षा कमजोरियों को पेश करने का जोखिम कम हो जाता है। इस तथ्य के बावजूद कि कई आधुनिक ढांचे अब अंतर्निहित मानक प्रभावी नियंत्रणों के साथ आते हैं, [OWASP प्रोएक्टिव कंट्रोल्स] [12] आपको एक अच्छा अवलोकन देता है कि आपको अपनी परियोजना में शामिल करने के लिए कौन से सुरक्षा नियंत्रणों को देखना चाहिए। OWASP कुछ पुस्तकालय और उपकरण भी प्रदान करता है जो आपको मूल्यवान लग सकते हैं, जैसे सत्यापन नियंत्रण। |
+|**सुरक्षित सॉफ़्टवेयर विकास जीवन चक्र** | एपीआई बनाते समय प्रक्रिया को बेहतर बनाने के लिए आप [OWASPी सॉफ्टवेयर आश्वासन परिपक्वता मॉडल (एसएएमएम)] [13] का उपयोग कर सकते हैं। विभिन्न एपीआई विकास चरणों के दौरान आपकी सहायता के लिए कई अन्य OWASPी परियोजनाएं उपलब्ध हैं, उदाहरण के लिए, [OWASPी कोड समीक्षा परियोजना] [14]। |
 
-[1]: https://www.owasp.org/index.php/Category:OWASP_Project
-[2]: https://www.owasp.org/index.php/OWASP_Education_Material_Categorized
-[3]: https://www.owasp.org/index.php/OWASP_API_Security_Project#tab=Road_Map
-[4]: https://devslop.co/Home/Pixi
-[5]: https://www.owasp.org/index.php/Category:OWASP_AppSec_Conference
-[6]: https://www.owasp.org/index.php/OWASP_Chapter
-[7]: https://www.owasp.org/index.php/Category:OWASP_Application_Security_Verification_Standard_Project
-[8]: https://www.owasp.org/index.php/OWASP_Secure_Software_Contract_Annex
-[9]: https://www.owasp.org/index.php/OWASP_Cheat_Sheet_Series
-[10]: https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/REST_Security_Cheat_Sheet.md
-[11]: https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/REST_Assessment_Cheat_Sheet.md
-[12]: https://www.owasp.org/index.php/OWASP_Proactive_Controls#tab=OWASP_Proactive_Controls_2018
-[13]: https://www.owasp.org/index.php/OWASP_SAMM_Project
-[14]: https://www.owasp.org/index.php/Category:OWASP_Code_Review_Project
+[१]: https://www.owasp.org/index.php/Category:OWASP_Project
+[२]: https://www.owasp.org/index.php/OWASP_Education_Material_Categorized
+[३]: https://www.owasp.org/index.php/OWASP_API_Security_Project#tab=Road_Map
+[४]: https://devslop.co/Home/Pixi
+[५]: https://www.owasp.org/index.php/Category:OWASP_AppSec_Conference
+[६]: https://www.owasp.org/index.php/OWASP_Chapter
+[७]: https://www.owasp.org/index.php/Category:OWASP_Application_Security_Verification_Standard_Project
+[८]: https://www.owasp.org/index.php/OWASP_Secure_Software_Contract_Annex
+[९]: https://www.owasp.org/index.php/OWASP_Cheat_Sheet_Series
+[१०]: https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/REST_Security_Cheat_Sheet.md
+[११]: https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/REST_Assessment_Cheat_Sheet.md
+[१२]: https://www.owasp.org/index.php/OWASP_Proactive_Controls#tab=OWASP_Proactive_Controls_2018
+[१३]: https://www.owasp.org/index.php/OWASP_SAMM_Project
+[१४]: https://www.owasp.org/index.php/Category:OWASP_Code_Review_Project
