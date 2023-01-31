@@ -34,6 +34,7 @@ This project aims to:
 
 * [Erez Yalon][0]
 * [Inon Shkedy][5]
+* [Paulo Silva][6]
 
 ## Licensing
 
@@ -52,3 +53,6 @@ one.
 [3]: https://github.com/OWASP/API-Security/tree/develop/
 [4]: https://github.com/OWASP/API-Security/blob/master/CONTRIBUTING.md
 [5]: https://www.owasp.org/index.php/User:Inon
+[6]: mailto:paulo.silva@owasp.org
+[cfd-2022]: https://owasp.org/www-project-api-security/announcements/cfd/2022/
+
