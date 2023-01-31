@@ -103,7 +103,7 @@ De plus :
 * [Guide to General Server Security][7], NIST
 * [Let’s Encrypt: a free, automated, and open Certificate Authority][8]
 
-[1]: https://www.owasp.org/index.php/OWASP_Secure_Headers_Project
+[1]: https://owasp.org/www-project-secure-headers/
 [2]: https://www.owasp.org/index.php/Testing_for_configuration_management
 [3]: https://www.owasp.org/index.php/Testing_for_Error_Code_(OTG-ERR-001)
 [4]: https://cwe.mitre.org/data/definitions/2.html
