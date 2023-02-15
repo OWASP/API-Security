@@ -38,3 +38,5 @@
 * Stephen Gates
 * thomaskonrad
 * xycloops123
+* Athanasios Emmanouilidis
+* Apostolos Giannakidis
