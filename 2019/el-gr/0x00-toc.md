@@ -3,7 +3,7 @@
 
 * [Πίνακας Περιεχομένων](0x00-toc.md)
 * [Σχετικά με το OWASP](0x01-about-owasp.md)
-* [Πρόλογος](0x02-foreward.md)
+* [Πρόλογος](0x02-foreword.md)
 * [Εισαγωγή](0x03-introduction.md)
 * [Σημειώσεις Έκδοσης](0x04-release-notes.md)
 * [Ρίσκα Ασφαλείας των API](0x10-api-security-risks.md)
