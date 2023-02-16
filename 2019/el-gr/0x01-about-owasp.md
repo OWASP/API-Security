@@ -44,7 +44,7 @@
 
 ![license](images/license.png)
 
-Copyright © 2003-2019 The OWASP Foundation. Αυτό το έγγραφο κυκλοφορεί με την άδεια
+Copyright © 2003-2019 The OWASP Foundation. Αυτό το έγγραφο κυκλοφορεί υπό την άδεια
 [Creative Commons Attribution Share-Alike 4.0 license][7]. Για να επαναχρησιμοποιήσετε ή 
 να διανέμετε, θα πρέπει να καταστήσετε σαφές στους άλλους τους όρους άδειας χρήσης αυτού του έργου.
 
