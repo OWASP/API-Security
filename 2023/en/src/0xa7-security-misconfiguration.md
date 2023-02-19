@@ -61,6 +61,36 @@ header, private conversations end-up cached by the web browser, allowing
 malicious actors to retrieve them from the browser cache files in the
 filesystem.
 
+### Scenario #3
+
+An e-commerce application does not restrict access to its `dev` node on firewall resulting in verbose response from API. Attacker might be able to get access to sensitive information on the product through the verbose response received from the `dev` node.
+
+```
+GET /api/product?id=1234
+Host: e-commerce.com
+
+Response:
+{
+"product_id":1234,
+"product_price":"$100",
+"product_seller":"ABC"
+}
+```
+
+```
+GET /api/product?id=1234
+Host: dev.e-commerce.com
+
+Response:
+
+{
+"product_id":1234,
+"product_price":"$100",
+"product_discount":"$50",
+"product_next_discount_date":"01/04/2023",
+"product_seller":"ABC"
+}
+```
 ## How To Prevent
 
 The API life cycle should include
