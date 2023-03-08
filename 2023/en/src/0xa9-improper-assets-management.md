@@ -48,8 +48,8 @@ An API has a "<ins>data flow blindspot</ins>" if:
 A social network implemented a rate-limiting mechanism that blocks attackers
 from using brute force to guess reset password tokens. This mechanism wasn't
 implemented as part of the API code itself but in a separate component between
-the client and the official API (www.socialnetwork.com). A researcher found a
-beta API host (www.mbasic.beta.socialnetwork.com) that runs the same API,
+the client and the official API (```api.socialnetwork.owasp.org```). A researcher found a
+beta API host (```beta.api.socialnetwork.owasp.org```) that runs the same API,
 including the reset password mechanism, but the rate-limiting mechanism was not
 in place. The researcher was able to reset the password of any user by using
 simple brute force to guess the 6 digit token.
