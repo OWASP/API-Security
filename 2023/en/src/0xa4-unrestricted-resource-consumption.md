@@ -85,8 +85,8 @@ the next monthly bill increases from US$13, on average, to US$8k.
 
 ## How To Prevent
 
-* Use container-based solutions that make it easy to limit [memory][1],
-  [CPU][2], [number of restarts][3], [file descriptors, and processes][4].
+* Use a solution that makes it easy to limit [memory][1],
+  [CPU][2], [number of restarts][3], [file descriptors, and processes][4] such as Containers / Serverless code (e.g. Lambdas).
 * Define and enforce a maximum size of data on all incoming parameters and
   payloads, such as maximum length for strings, maximum number of elements in
   arrays, and maximum upload file size (regardless of whether it is stored
