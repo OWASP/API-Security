@@ -80,8 +80,10 @@ Furthermore:
   (TLS), regardless of whether it is an internal or public-facing API.
 * Be specific about which HTTP verbs each API can be accessed by: all other
   HTTP verbs should be disabled (e.g. HEAD).
-* Implement a proper Cross-Origin Resource Sharing (CORS) policy on APIs
-  expected to be accessed from browser-based clients (e.g. web app front-ends).
+* APIs expecting to be accessed from browser-based clients (e.g., WebApp
+  front-end) should, at least:
+  * implement a proper Cross-Origin Resource Sharing (CORS) policy
+  * include applicable Security Headers
 * Ensure all servers in the HTTP server chain (e.g. load balancers, reverse
   and forward proxies, and back-end servers) process incoming requests in a
   uniform manner to avoid desync issues.
