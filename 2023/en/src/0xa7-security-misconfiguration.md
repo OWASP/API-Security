@@ -80,6 +80,8 @@ Furthermore:
   (TLS), regardless of whether it is an internal or public-facing API.
 * Be specific about which HTTP verbs each API can be accessed by: all other
   HTTP verbs should be disabled (e.g. HEAD).
+* Restrict incoming content types/data formats to those that meet the business/
+  functional requirements.
 * Implement a proper Cross-Origin Resource Sharing (CORS) policy on APIs
   expected to be accessed from browser-based clients (e.g. web app front-ends).
 * Ensure all servers in the HTTP server chain (e.g. load balancers, reverse
