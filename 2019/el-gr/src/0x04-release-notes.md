@@ -22,9 +22,8 @@
 θέματα που σχετίζονται με την ασφάλεια.
 
 Η ελληνική μετάφραση προέκυψε από την προσπάθεια των παρακάτω:
-
-Athanasios Emmanouilidis https://www.linkedin.com/in/athanasiosem/
-Apostolos Giannakidis https://www.linkedin.com/in/giannakidisapostolos
+- Athanasios Emmanouilidis https://www.linkedin.com/in/athanasiosem/
+- Apostolos Giannakidis https://www.linkedin.com/in/giannakidisapostolos/
 
 [1]: ./0xd0-about-data.md
 [2]: ./0x10-api-security-risks.md
