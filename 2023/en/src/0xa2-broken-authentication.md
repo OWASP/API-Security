@@ -11,7 +11,7 @@ API2:2023 Broken Authentication
 Authentication endpoints and flows are assets that need to be protected. Additionally, "Forgot password / reset password" should be treated the same way
 as authentication mechanisms.
 
-A public-facing API is vulnerable if it:
+An API is vulnerable if it:
 
 * Permits credential stuffing where the attacker uses brute force with a list
   of valid usernames and passwords.
