@@ -42,7 +42,7 @@ image. Choosing the second, will trigger the following API call:
 ```
 POST /api/profile/upload_picture
 
-{"picture_url":"http:///example.com/profile_pic.jpg"}
+{"picture_url":"http://example.com/profile_pic.jpg"}
 ```
 
 An attacker can send a malicious URL and initiate port scanning within the
