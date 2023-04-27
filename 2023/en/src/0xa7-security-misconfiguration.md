@@ -84,6 +84,10 @@ Furthermore:
   front-end) should, at least:
   * implement a proper Cross-Origin Resource Sharing (CORS) policy
   * include applicable Security Headers
+* Restrict incoming content types/data formats to those that meet the business/
+  functional requirements.
+* Implement a proper Cross-Origin Resource Sharing (CORS) policy on APIs
+  expected to be accessed from browser-based clients (e.g. web app front-ends).
 * Ensure all servers in the HTTP server chain (e.g. load balancers, reverse
   and forward proxies, and back-end servers) process incoming requests in a
   uniform manner to avoid desync issues.
