@@ -1,11 +1,6 @@
 API8:2023 Lack of Protection from Automated Threats
 ===================================================
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
-| - | - | - |
-| API Specific : Exploitability **3** | Prevalence **3** : Detectability **1** | Technical **1** : Business Specific |
-| Exploitation usually involves understanding of the business model of the API, finding sensitive business flows, and automating access to these flows, causing harm to the business.  | When broken down, each of an attack's requests represent a completely legitimate request and cannot be identified as an attack. An attack can be identified only when looking at the sum of the requests in regards to the service/application business logic. | In general technical impact is not expected. Exploitation might hurt the business in different ways, for example: 1. Prevent legitimate users from purchasing a product; 2. Lead to inflation in the internal economy of a game; 3. Allow the attacker to send excessive amounts of messages/comments and easily spread fake news. |
-
 ## Is the API Vulnerable?
 
 Automated threats have become more profitable, smarter and harder to protect

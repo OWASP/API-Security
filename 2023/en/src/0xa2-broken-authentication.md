@@ -1,14 +1,10 @@
 API2:2023 Broken Authentication
 ===============================
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
-| - | - | - |
-| API Specific : Exploitability **3** | Prevalence **2** : Detectability **2** | Technical **3** : Business Specific |
-| Authentication in APIs is a complex and confusing mechanism. Software and security engineers might have misconceptions about what are the boundaries of authentication and how to implement it correctly. In addition, the authentication mechanism is an easy target for attackers, since it's exposed to everyone. These two points make the authentication component potentially vulnerable to many exploits. | There are two sub-issues: 1. Lack of protection mechanisms: API endpoints that are responsible for authentication must be treated differently from regular endpoints and implement extra layers of protection; 2. Misimplementation of the mechanism: The mechanism is used / implemented without considering the attack vectors, or for the wrong use case (e.g. an authentication mechanism designed for IoT clients might not be the right choice for web applications). | Attackers can gain control of other users' accounts in the system, read their personal data, and perform sensitive actions on their behalf, like money transactions and sending personal messages. |
-
 ## Is the API Vulnerable?
 
-Authentication endpoints and flows are assets that need to be protected. Additionally, "Forgot password / reset password" should be treated the same way
+Authentication endpoints and flows are assets that need to be protected.
+Additionally, "Forgot password / reset password" should be treated the same way
 as authentication mechanisms.
 
 An API is vulnerable if it:

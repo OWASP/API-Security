@@ -1,11 +1,6 @@
 API3:2023 Broken Object Property Level Authorization
 ====================================================
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
-| - | - | - |
-| API Specific : Exploitability **3** | Prevalence **2** : Detectability **2** | Technical **2** : Business Specific |
-|  Attackers can exploit API endpoints that are vulnerable to broken object property level authorization by reading or changing values of object properties they are not supposed to access. | Authorization in APIs is done in layers. While developers might perform proper validations to make sure that a user has access to a function, and then to a specific object, they often don't validate if the user is allowed to access a specific property within the object. | Unauthorized access can result in data disclosure to unauthorized parties, data loss, or data manipulation. |
-
 ## Is the API Vulnerable?
 
 When allowing a user to access an object using an API endpoint, it is important

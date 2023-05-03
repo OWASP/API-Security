@@ -1,11 +1,6 @@
 API6:2023 Server Side Request Forgery
 =====================================
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
-| - | - | - |
-| API Specific : Exploitability **2** | Prevalence **2** : Detectability **1** | Technical **2** : Business Specific |
-| Exploitation requires the attacker to find an API endpoint that receives a URI as a parameter and then accesses the provided URI. URL parsing inconsistencies are well-known for most common programming languages' built-in functions and libraries. | Modern concepts in application development encourage developers to access URIs provided by the client. Usually, server-side data retrieval is not logged, or when it is chances are it isn't being monitored. | Successful exploitation might lead to internal services enumeration (e.g. port scanning) or information disclosure, bypassing firewalls or other security mechanisms. In some cases, it can lead to DoS or the server being used as a proxy to hide malicious activities. |
-
 ## Is the API Vulnerable?
 
 Server-Side Request Forgery (SSRF) flaws occur whenever an API is fetching a

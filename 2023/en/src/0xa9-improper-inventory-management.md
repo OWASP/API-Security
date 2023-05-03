@@ -1,11 +1,6 @@
 API9:2023 Improper Inventory Management
 =======================================
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
-| - | - | - |
-| API Specific : Exploitability **3** | Prevalence **3** : Detectability **2** | Technical **2** : Business Specific |
-| Threat agents usually get unauthorized access through old API versions or endpoints left running unpatched and  using weaker security requirements. Alternatively, they may get access to sensitive data through a 3rd party with whom there's no reason to share data with. | Outdated documentation makes it more difficult to find and/or fix vulnerabilities. Lack of assets inventory and retirement strategies leads to running unpatched systems, resulting in leakage of sensitive data. It's common to find unnecessarily exposed API hosts because of modern concepts like microservices, which make applications easy to deploy and independent (e.g. cloud computing, K8S). | Attackers can gain access to sensitive data, or even take over the server, through old, unpatched API versions connected to the same database. |
-
 ## Is the API Vulnerable?
 
 The sprawled and connected nature of APIs and modern applications brings new

@@ -1,11 +1,6 @@
 API5:2023 Broken Function Level Authorization
 =============================================
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
-| - | - | - |
-| API Specific : Exploitability **3** | Prevalence **2** : Detectability **1** | Technical **2** : Business Specific |
-| Exploitation requires the attacker to send legitimate API calls to the API endpoint that they should not have access to. These endpoints might be exposed to anonymous users or regular, non-privileged users. It's easier to discover these flaws in APIs since APIs are more structured, and the way to access certain functions is more predictable (e.g. replacing the HTTP method from GET to PUT, or changing the "users" string in the URL to "admins"). | Authorization checks for a function or resource are usually managed via configuration, and sometimes at the code level. Implementing proper checks can be a confusing task since modern applications can contain many types of roles or groups and complex user hierarchies (e.g.  sub-users, or users with more than one role). Detection relies on proper logging and monitoring. | Such flaws allow attackers to access unauthorized functionality. Administrative functions are key targets for this type of attack. |
-
 ## Is the API Vulnerable?
 
 The best way to find broken function level authorization issues is to perform
@@ -25,8 +20,8 @@ Don't assume that an API endpoint is regular or administrative only based on
 the URL path.
 
 While developers might choose to expose most of the administrative endpoints
-under a specific relative path, like `/api/admins`, it's very common to find these
-administrative endpoints under other relative paths together with regular
+under a specific relative path, like `/api/admins`, it's very common to find
+these administrative endpoints under other relative paths together with regular
 endpoints, like `/api/users`.
 
 ## Example Attack Scenarios

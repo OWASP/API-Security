@@ -1,11 +1,6 @@
 API4:2023 Unrestricted Resource Consumption
 ===========================================
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
-| - | - | - |
-| API Specific : Exploitability **2** | Prevalence **3** : Detectability **3** | Technical **2** : Business Specific |
-| Exploitation requires simple API requests. Multiple concurrent requests can be performed from a single local computer or by using cloud computing resources. | It's common to find APIs that do not limit client interactions or resource consumptions. Although most of the time interactions are logged, due to the lack of monitoring,  or improper monitoring, malicious activity passes unnoticed. | Exploitation can lead to DoS due to resource starvation, but it can also impact service providers' billing. |
-
 ## Is the API Vulnerable?
 
 Satisfying API requests requires resources such as network bandwidth, CPU,
