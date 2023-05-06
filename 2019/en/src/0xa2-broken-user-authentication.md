@@ -65,7 +65,7 @@ within a few minutes.
 * Implement [account lockout][4] / captcha mechanism to prevent brute force
   against specific users. Implement weak-password checks.
 * API keys should not be used for user authentication, but for [client app/
-  project authentication][5].
+  project authorization][5].
 
 ## References
 
