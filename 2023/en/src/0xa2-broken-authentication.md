@@ -84,7 +84,7 @@ Authorization: Bearer <token>
 
 Because the API does not require the user to confirm their identity by
 providing their current password, bad actors are able to put themselves in a
-position to steal the auth token.They also might be able to take over the
+position to steal the auth token. They also might be able to take over the
 victim's account by starting the reset password workflow after updating the
 email address of the victim's account.
 
