@@ -4,7 +4,7 @@ API10:2023 Unsafe Consumption of APIs
 | Threat agents/Attack vectors | Security Weakness | Impacts |
 | - | - | - |
 | API Specific : Exploitability **2** | Prevalence **2** : Detectability **1** | Technical **3** : Business Specific |
-| Developers tend to trust but not verify in their endpoints which interact with external or third-party APIs. Successful exploitation of security flaws in these APIs can impact those relying on them. | Usually, API integrations rely on weaker security requirements such as those regarding transport security, authentication/authorization, and input validation and sanitization. | Exposure of sensitive information to unauthorized actors and many kinds  of injections are common issues. |
+| Exploiting this issue requires attackers to identify and potentially compromise other APIs/services the target API integrated with. Usually, this information is not publicly available or the integrated API/service is not easily exploitable. | Developers tend to trust but not verify in their endpoints which interact with external or third-party APIs, relying on weaker security requirements such as those regarding transport security, authentication/authorization, and input validation and sanitization. Attackers need to identify services the target API integrates with (data sources) and, eventually, compromise them. Sometimes, harmless payloads provided to an integrated service will compromise the target API. | The impact varies according to what the target API does with pulled data. Successful exploitation may lead to sensitive information exposure to unauthorized actors, many kinds of injections, or denial of service. |
 
 ## Is the API Vulnerable?
 
