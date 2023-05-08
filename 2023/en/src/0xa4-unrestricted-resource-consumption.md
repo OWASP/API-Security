@@ -4,7 +4,7 @@ API4:2023 Unrestricted Resource Consumption
 | Threat agents/Attack vectors | Security Weakness | Impacts |
 | - | - | - |
 | API Specific : Exploitability **2** | Prevalence **3** : Detectability **3** | Technical **2** : Business Specific |
-| Exploitation requires simple API requests. Multiple concurrent requests can be performed from a single local computer or by using cloud computing resources. | It's common to find APIs that do not limit client interactions or resource consumptions. Although most of the time interactions are logged, due to the lack of monitoring,  or improper monitoring, malicious activity passes unnoticed. | Exploitation can lead to DoS due to resource starvation, but it can also impact service providers' billing. |
+| Exploitation requires simple API requests. Multiple concurrent requests can be performed from a single local computer or by using cloud computing resources. Most of the automated tools available are designed to cause DoS via high loads of traffic, impacting APIs' service rate. | It's common to find APIs that do not limit client interactions or resource consumptions. Crafted API requests, such as those including parameters that control the number of resource to be returned and performing response status/time/length analysis should allow to identify the issue. The same is valid of batched operations. Although threat agents don't have visibility over costs impact, this can be inferred based on service providers (e.g. cloud provider) business/pricing model. | Exploitation can lead to DoS due to resource starvation, but it can also lead to operational costs increase such as those related to the infrastructure due to higher CPU demand, increasing cloud storage needs, etc. |
 
 ## Is the API Vulnerable?
 
