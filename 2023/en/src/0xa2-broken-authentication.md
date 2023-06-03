@@ -3,8 +3,8 @@ API2:2023 Broken Authentication
 
 | Threat agents/Attack vectors | Security Weakness | Impacts |
 | - | - | - |
-| API Specific : Exploitability **3** | Prevalence **2** : Detectability **2** | Technical **3** : Business Specific |
-| The authentication mechanism is an easy target for attackers since it's exposed to everyone. Although more advanced technical skill may be required to exploit some authentication issues, exploitation tools are generally available. | Software and security engineers misconceptions regarding authentication boundaries and inherent implementation complexity make authentication issues of some sort prevalent. Exploitation tools are generally available or they are easy to create. | Attackers can gain control of other users' accounts in the system, read their personal data, and perform sensitive actions on their behalf. Systems are unlikely to be able to distinguish attackers' actions from legit user ones. |
+| API Specific : Exploitability **Easy** | Prevalence **Common** : Detectability **Easy** | Technical **Severe** : Business Specific |
+| The authentication mechanism is an easy target for attackers since it's exposed to everyone. Although more advanced technical skills may be required to exploit some authentication issues, exploitation tools are generally available. | Software and security engineers’ misconceptions regarding authentication boundaries and inherent implementation complexity make authentication issues prevalent. Methodologies of detecting broken authentication are available and easy to create. | Attackers can gain complete control of other users’ accounts in the system, read their personal data, and perform sensitive actions on their behalf. Systems are unlikely to be able to distinguish attackers’ actions from legitimate user ones. |
 
 ## Is the API Vulnerable?
 
