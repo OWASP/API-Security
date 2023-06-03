@@ -8,7 +8,8 @@ API2:2023 Broken Authentication
 
 ## Is the API Vulnerable?
 
-Authentication endpoints and flows are assets that need to be protected. Additionally, "Forgot password / reset password" should be treated the same way
+Authentication endpoints and flows are assets that need to be protected.
+Additionally, "Forgot password / reset password" should be treated the same way
 as authentication mechanisms.
 
 An API is vulnerable if it:
@@ -82,11 +83,11 @@ Authorization: Bearer <token>
 { "email": "<new_email_address>" }
 ```
 
-Because the API does not require the user to confirm their identity by
-providing their current password, bad actors are able to put themselves in a
-position to steal the auth token.They also might be able to take over the
-victim's account by starting the reset password workflow after updating the
-email address of the victim's account.
+Because the API does not require users to confirm their identity by providing
+their current password, bad actors able to put themselves in a position to
+steal the auth token might be able to take over the victim's account by starting
+the reset password workflow after updating the email address of the victim's
+account.
 
 ## How To Prevent
 

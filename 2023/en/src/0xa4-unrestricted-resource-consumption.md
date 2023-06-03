@@ -30,45 +30,84 @@ inappropriately (e.g. too low/high):
 
 ### Scenario #1
 
-An attacker uploads a large image by issuing a POST request to /api/v1/images.
-When the upload is complete, the API creates multiple thumbnails with different
-sizes. Due to the size of the uploaded image, available memory is exhausted
-during the creation of thumbnails and the API becomes unresponsive.
+A social network implemented a “forgot password” flow using SMS verification,
+enabling the user to receive a one time token via SMS in order to reset their
+password.
+
+Once a user clicks on "forgot password" an API call is sent from the user's
+browser to the back-end API:
+
+```
+POST /initiate_forgot_password
+
+{
+  "step": 1,
+  "user_number": "6501113434"
+}
+```
+
+Then, behind the scenes, an API call is sent from the back-end to a 3rd party
+API that takes care of the SMS delivering:
+
+```
+POST /sms/send_reset_pass_code
+
+Host: willyo.net
+
+{
+  "phone_number": "6501113434"
+}
+```
+
+The 3rd party provider, Willyo, charges $0.05 per this type of call.
+
+An attacker writes a script that sends the first API call tens of thousands of
+times. The back-end follows and requests Willyo to send tens of thousands of
+text messages, leading the company to lose thousands of dollars in a matter of
+minutes.
 
 ### Scenario #2
 
-In order to activate a credit card the following API request should be issued
-providing the last four digits printed on it (only users with physical access
-to the card should be able to perform such operation):
+A GraphQL API Endpoint allows the user to upload a profile picture.
 
 ```
 POST /graphql
 
 {
   "query": "mutation {
-    validateOTP(token: \"abcdef\", card: \"123456\") {
-      authToken
+    uploadPic(name: \"pic1\", base64_pic: \"R0FOIEFOR0xJVA…\") {
+      url
     }
   }"
 }
 ```
 
-Bad actors will be able to perform the credit card activation without physical
-access to it, crafting a request like the one below:
+Once the upload is complete, the API generates multiple thumbnails with
+different sizes based on the uploaded picture. This graphical operation takes a
+lot of memory from the server.
+
+The API implements a traditional rate limiting protection - a user can't access
+the GraphQL endpoint too many times in a short period of time. The API also
+checks for the uploaded picture's size before generating thumbnails to avoid
+processing pictures that are too large.
+
+An attacker can easily bypass those mechanisms, by leveraging the flexible
+nature of GraphQL:
 
 ```
 POST /graphql
 
 [
-  {"query": "mutation {activateCard(token: \"abcdef\", card: \"0000\") {authToken}}"},
-  {"query": "mutation {activateCard(token: \"abcdef\", card: \"0001\") {authToken}}"},
+  {"query": "mutation {uploadPic(name: \"pic1\", base64_pic: \"R0FOIEFOR0xJVA…\") {url}}"},
+  {"query": "mutation {uploadPic(name: \"pic2\", base64_pic: \"R0FOIEFOR0xJVA…\") {url}}"},
   ...
-  {"query": "mutation {activateCard(token: \"abcdef\", card: \"9999\") {authToken}}"}
+  {"query": "mutation {uploadPic(name: \"pic999\", base64_pic: \"R0FOIEFOR0xJVA…\") {url}}"},
 }
 ```
 
-Because the API does not limit the number of times the activateCard operation
-can be attempted, one of the mutations will succeed.
+Because the API does not limit the number of times the `uploadPic` operation can
+be attempted, the call will lead to exhaustion of server memory and Denial of
+Service.
 
 ### Scenario #3
 
@@ -86,7 +125,8 @@ the next monthly bill increases from US$13, on average, to US$8k.
 ## How To Prevent
 
 * Use a solution that makes it easy to limit [memory][1],
-  [CPU][2], [number of restarts][3], [file descriptors, and processes][4] such as Containers / Serverless code (e.g. Lambdas).
+  [CPU][2], [number of restarts][3], [file descriptors, and processes][4] such
+  as Containers / Serverless code (e.g. Lambdas).
 * Define and enforce a maximum size of data on all incoming parameters and
   payloads, such as maximum length for strings, maximum number of elements in
   arrays, and maximum upload file size (regardless of whether it is stored

@@ -56,14 +56,14 @@ not required):
 GET /dm/user_updates.json?conversation_id=1234567&cursor=GRlFp7LCUAAAA
 ```
 
-Because the API response does not include the Cache-Control HTTP response
+Because the API response does not include the `Cache-Control` HTTP response
 header, private conversations end-up cached by the web browser, allowing
 malicious actors to retrieve them from the browser cache files in the
 filesystem.
 
 ## How To Prevent
 
-The API life cycle should include
+The API life cycle should include:
 
 * A repeatable hardening process leading to fast and easy deployment of a
   properly locked down environment
@@ -86,8 +86,6 @@ Furthermore:
   * include applicable Security Headers
 * Restrict incoming content types/data formats to those that meet the business/
   functional requirements.
-* Implement a proper Cross-Origin Resource Sharing (CORS) policy on APIs
-  expected to be accessed from browser-based clients (e.g. web app front-ends).
 * Ensure all servers in the HTTP server chain (e.g. load balancers, reverse
   and forward proxies, and back-end servers) process incoming requests in a
   uniform manner to avoid desync issues.

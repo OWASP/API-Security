@@ -8,10 +8,10 @@ API7:2023 Server Side Request Forgery
 
 ## Is the API Vulnerable?
 
-Server-Side Request Forgery (SSRF) flaws occur whenever an API is fetching a
-remote resource without validating the user-supplied URL. It allows an attacker
-to coerce the application to send a crafted request to an unexpected
-destination, even when protected by a firewall or a VPN.
+Server-Side Request Forgery (SSRF) flaws occur when an API is fetching a remote
+resource without validating the user-supplied URL. It enables an attacker to
+coerce the application to send a crafted request to an unexpected destination,
+even when protected by a firewall or a VPN.
 
 Modern concepts in application development make SSRF more common and more
 dangerous.
@@ -23,7 +23,6 @@ and URL previews.
 More dangerous - Modern technologies like cloud providers, Kubernetes, and
 Docker expose management and control channels over HTTP on predictable,
 well-known paths. Those channels are an easy target for an SSRF attack.
-
 
 It is also more challenging to limit outbound traffic from your application,
 because of the connected nature of modern applications.
@@ -42,14 +41,18 @@ image. Choosing the second, will trigger the following API call:
 ```
 POST /api/profile/upload_picture
 
-{"picture_url":"http://example.com/profile_pic.jpg"}
+{
+  "picture_url": "http://example.com/profile_pic.jpg"
+}
 ```
 
 An attacker can send a malicious URL and initiate port scanning within the
 internal network using the API Endpoint.
 
 ```
-{"picture_url":"localhost:8080"}
+{
+  "picture_url": "localhost:8080"
+}
 ```
 
 Based on the response time, the attacker can figure out whether the port is
@@ -91,7 +94,7 @@ POST /graphql
 
 ```
 
-During the creation process, the API backend sends a test request to the
+During the creation process, the API back-end sends a test request to the
 provided webhook URL, and presents to the user the response.
 
 An attacker can leverage this flow, and make the API request a sensitive
@@ -129,7 +132,7 @@ can view the credentials of the cloud environment.
 
 * Isolate the resource fetching mechanism in your network: usually these
   features are aimed to retrieve remote resources and not internal ones.
-* Whenever possible, use allow lists of
+* Whenever possible, use allow lists of:
   * Remote origins users are expected to download resources from (e.g. Google
     Drive, Gravatar, etc.)
   * URL schemes and ports

@@ -104,4 +104,3 @@ sells the information for malicious purposes.
 * [CWE-1059: Incomplete Documentation][1]
 
 [1]: https://cwe.mitre.org/data/definitions/1059.html
-

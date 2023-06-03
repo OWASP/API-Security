@@ -65,48 +65,61 @@ As part of this flow, an API call is sent by the host to
 `POST /api/host/approve_booking` with the following legitimate payload:
 
 ```
-{"approved":true,"comment":"Check-in is after 3pm"}
+{
+  "approved": true,
+  "comment": "Check-in is after 3pm"
+}
 ```
 
 The host replays the legitimate request, and adds the following malicious
 payload:
 
 ```
-{"approved":true,"comment":"Check-in is after 3pm","total_stay_price":"$1,000,000"}
+{
+  "approved": true,
+  "comment": "Check-in is after 3pm",
+  "total_stay_price": "$1,000,000"
+}
 ```
 
 The API endpoint is vulnerable because there is no validation that the host
-should have access to the internal object property - "total_stay_price", and
+should have access to the internal object property - `total_stay_price`, and
 the guest will be charged more than she was supposed to be.
 
 ### Scenario #3
 
 A social network that is based on short videos, enforces restrictive content
 filtering and censorship. Even if an uploaded video is blocked, the user can
-change the description of the video using the following API request
+change the description of the video using the following API request:
 
 ```
 PUT /api/video/update_video
 
-{"description":"a funny video about cats"}
+{
+  "description": "a funny video about cats"
+}
 ```
 
 A frustrated user can replay the legitimate request, and add the following
 malicious payload:
 
 ```
-{"description":"a funny video about cats","blocked":false}
+{
+  "description": "a funny video about cats",
+  "blocked": false
+}
 ```
 
 The API endpoint is vulnerable because there is no validation if the user
-should have access to the internal object property - "blocked", and the user
-can change the value from "true" to "false" and unlock their own blocked content.
+should have access to the internal object property - `blocked`, and the user
+can change the value from `true` to `false` and unlock their own blocked
+content.
 
 ## How To Prevent
 
 * When exposing an object using an API endpoint, always make sure that the user
   should have access to the object's properties you expose.
-* Avoid using generic methods such as to_json() and to_string(). Instead,
+* Avoid using generic methods such as `to_json()` and `to_string()`. Instead,
   cherry-pick specific object properties you specifically want to return.
 * If possible, avoid using functions that automatically bind a client's input
   into code variables, internal objects, or object properties

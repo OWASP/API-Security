@@ -22,13 +22,14 @@ disclosure, modification, or destruction of all data.
 
 Comparing the user ID of the current session (e.g. by extracting it from the
 JWT token) with the vulnerable ID parameter isn't a sufficient solution to
-solve BOLA. This approach could address only a small subset of cases.
+solve Broken Object Level Authorization (BOLA). This approach could address
+only a small subset of cases.
 
 In the case of BOLA, it's by design that the user will have access to the
 vulnerable API endpoint/function. The violation happens at the object level,
 by manipulating the ID. If an attacker manages to access an API
-endpoint/function they should not have access to - this is a case of BFLA
-rather than BOLA.
+endpoint/function they should not have access to - this is a case of [Broken
+Function Level Authorization][5] (BFLA) rather than BOLA.
 
 ## Example Attack Scenarios
 
@@ -37,7 +38,7 @@ rather than BOLA.
 An e-commerce platform for online stores (shops) provides a listing page with
 the revenue charts for their hosted shops. Inspecting the browser requests, an
 attacker can identify the API endpoints used as a data source for those charts
-and their pattern `/shops/{shopName}/revenue_data.json`. Using another API
+and their pattern: `/shops/{shopName}/revenue_data.json`. Using another API
 endpoint, the attacker can get the list of all hosted shop names. With a
 simple script to manipulate the names in the list, replacing `{shopName}` in
 the URL, the attacker gains access to the sales data of thousands of e-commerce
@@ -52,7 +53,7 @@ As part of this flow, the user sends the Vehicle Identification Number (VIN) to
 the API.
 The API fails to validate that the VIN represents a vehicle that belongs to the
 logged in user, which leads to a BOLA vulnerability. An attacker can access
-vehicles that don't belong to them.
+vehicles that don't belong to him.
 
 ### Scenario #3
 
@@ -75,8 +76,8 @@ POST /graphql
 }
 ```
 
-Since a document ID is deleted without any further permission checks, a user
-may be able to delete another user's document.
+Since the document with the given ID is deleted without any further permission
+checks, a user may be able to delete another user's document.
 
 ## How To Prevent
 
@@ -88,7 +89,6 @@ may be able to delete another user's document.
 * Prefer the use of random and unpredictable values as GUIDs for records' IDs.
 * Write tests to evaluate the vulnerability of the authorization mechanism. Do
   not deploy changes that make the tests fail.
-
 
 ## References
 
@@ -106,3 +106,4 @@ may be able to delete another user's document.
 [2]: https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Testing_Automation_Cheat_Sheet.html
 [3]: https://cwe.mitre.org/data/definitions/285.html
 [4]: https://cwe.mitre.org/data/definitions/639.html
+[5]: ./0xa5-broken-function-level-authorization.md

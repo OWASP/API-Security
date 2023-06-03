@@ -25,8 +25,8 @@ Don't assume that an API endpoint is regular or administrative only based on
 the URL path.
 
 While developers might choose to expose most of the administrative endpoints
-under a specific relative path, like `/api/admins`, it's very common to find these
-administrative endpoints under other relative paths together with regular
+under a specific relative path, like `/api/admins`, it's very common to find
+these administrative endpoints under other relative paths together with regular
 endpoints, like `/api/users`.
 
 ## Example Attack Scenarios
@@ -48,7 +48,10 @@ The attacker exploits the issue and sends a new invite with admin privileges:
 ```
 POST /api/invites/new
 
-{"email":"attacker@somehost.com","role":"admin"}
+{
+  "email": "attacker@somehost.com",
+  "role":"admin"
+}
 ```
 
 Later on, the attacker uses the maliciously crafted invite in order to create
@@ -69,7 +72,6 @@ Your application should have a consistent and easy-to-analyze authorization
 module that is invoked from all your business functions. Frequently, such
 protection is provided by one or more components external to the application
 code.
-
 
 * The enforcement mechanism(s) should deny all access by default, requiring
   explicit grants to specific roles for access to every function.

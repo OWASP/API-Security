@@ -46,11 +46,13 @@ request like the one below:
 
 ```
 POST /user/store_phr_record
-{ "genome": "ACTAGTAG__TTGADDAAIICCTT…" }
+{
+  "genome": "ACTAGTAG__TTGADDAAIICCTT…"
+}
 ```
 
 Bad actors found a way to compromise the third-party API and it starts
-responding with a 308 Permanent Redirect to requests like the previous one.
+responding with a `308 Permanent Redirect` to requests like the previous one.
 
 ```
 HTTP/1.1 308 Permanent Redirect
@@ -63,11 +65,11 @@ attacker's server.
 
 ### Scenario #3
 
-An attacker can prepare a git repo named `'; drop db;--`.
+An attacker can prepare a git repository named `'; drop db;--`.
 
 Now, when an integration from an attacked application is done with the
-malicious repo, an injection payload is used on an application that builds an
-SQL query believing the repo's name is safe input.
+malicious repository, SQL injection payload is used on an application that
+builds an SQL query believing the repository's name is safe input.
 
 ## How To Prevent
 
