@@ -1,4 +1,4 @@
-API7:2023 Security Misconfiguration
+API8:2023 Security Misconfiguration
 ===================================
 
 | Threat agents/Attack vectors | Security Weakness | Impacts |

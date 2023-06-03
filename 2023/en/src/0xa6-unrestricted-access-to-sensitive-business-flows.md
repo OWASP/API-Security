@@ -1,5 +1,5 @@
-API8:2023 Lack of Protection from Automated Threats
-===================================================
+API6:2023 Unrestricted Access to Sensitive Business Flows
+=========================================================
 
 | Threat agents/Attack vectors | Security Weakness | Impacts |
 | - | - | - |
@@ -8,51 +8,60 @@ API8:2023 Lack of Protection from Automated Threats
 
 ## Is the API Vulnerable?
 
-Automated threats have become more profitable, smarter and harder to protect
-from, and APIs are often used as an easy target for them. Traditional
-protections, such as rate limiting and captchas become less effective over time.
-For example, an attacker who operates bot-nets (for scalping) gets around rate
-limiting because they can easily access the API from thousands of location/IP
-addresses around the world, in a matter of seconds.
+When creating an API Endpoint, it is important to understand which business flow
+it exposes. Some business flows are more sensitive than others, in the sense
+that excessive access to them may harm the business.
 
-Vulnerable APIs don't necessarily have implementation bugs. They simply expose
-a business flow - such as buying a ticket, or posting a comment - without
-considering how the functionality could harm the business if used excessively
-in an automated manner.
+Common examples of sensitive business flows and risk of excessive access
+associated with them:
 
-Each industry might have its own specific risks when it comes to automated
-threats.
+* Purchasing a product flow - an attacker can buy all the stock of a high-demand
+  item at once and resell for a higher price (scalping)
+* Creating a comment/post flow - an attacker can spam the system
+* Making a reservation - an attacker can reserve all the available time slots
+  and prevent other users from using the system
 
-An API endpoint is vulnerable if it exposes a business-sensitive functionality,
-and allows an attacker to harm the business by accessing it in an excessive
-automated manner.
+The risk of excessive access might change between industries and businesses.
+For example - creation of posts by a script might be considered as a risk of
+spam by one social network, but encouraged by another social network.
 
-The [OWASP Automated Threats to Web Applications][1] covers different types of
-automated threats and their impact.
+An API Endpoint is vulnerable if it exposes a sensitive business flow, without
+appropriately restricting the access to it.
 
 ## Example Attack Scenarios
 
 ### Scenario #1
 
-A technology company announces they are going to release a new gaming console
-on Thanksgiving. The product has a very high demand and the stock is limited.
-An attacker, operator of a network of automated threats, writes code to
-automatically buy the new product and complete the transaction.
+A technology company announces they are going to release a new gaming console on
+Thanksgiving. The product has a very high demand and the stock is limited. An
+attacker writes code to automatically buy the new product and complete the
+transaction.
 
 On the release day, the attacker runs the code distributed across different IP
 addresses and locations. The API doesn't implement the appropriate protection
-and allows the attacker to buy the majority of the stock before other
-legitimate users.
+and allows the attacker to buy the majority of the stock before other legitimate
+users.
 
 Later on, the attacker sells the product on another platform for a much higher
 price.
 
-
 ### Scenario #2
 
+An airline company offers online ticket purchasing with no cancellation fee. A
+user with malicious intentions books 90% of the seats of a desired flight.
+
+A few days before the flight the malicious user canceled all the tickets at
+once, which forced the airline to discount the ticket prices in order to fill
+the flight.
+
+At this point, the user buys herself a single ticket that is much cheaper than
+the original one.
+
+### Scenario #3
+
 A ride-sharing app provides a referral program - users can invite their friends
-and gain credit for each friend who has joined the app. This credit can be
-later used as cash to book rides.
+and gain credit for each friend who has joined the app. This credit can be later
+used as cash to book rides.
 
 An attacker exploits this flow by writing a script to automate the registration
 process, with each new user adding credit to the attacker's wallet.
@@ -78,11 +87,12 @@ The mitigation planning should be done in two layers:
     solutions, thus more costly for them
   * Human detection: using either captcha or more advanced biometric solutions
     (e.g. typing patterns)
-  * Non-human patterns: analyze the user flow to detect non-human patterns
-    (e.g.  the user accessed the "add to cart" and "complete purchase"
-    functions in less than one second)
+  * Non-human patterns: analyze the user flow to detect non-human patterns (e.g.
+    the user accessed the "add to cart" and "complete purchase" functions in
+    less than one second)
   * Consider blocking IP addresses of Tor exit nodes and well-known proxies
-* Secure and limit access to APIs that are consumed directly by machines (such
+
+  Secure and limit access to APIs that are consumed directly by machines (such
   as developer and B2B APIs). They tend to be an easy target for attackers
   because they often don't implement all the required protection mechanisms.
 

@@ -1,4 +1,4 @@
-API6:2023 Server Side Request Forgery
+API7:2023 Server Side Request Forgery
 =====================================
 
 | Threat agents/Attack vectors | Security Weakness | Impacts |

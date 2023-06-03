@@ -24,9 +24,9 @@ a fast pace industry. It does not replace other TOP 10's. In this edition:
   common root cause: object property level authorization validation failures.
 * We've put more emphasis on resource consumption, over focusing on the pace
   they are exhausted.
-* We've created a new category "Lack of Protection from Automated Threats" to
-  address new threats, including most of those that can be mitigated using rate
-  limiting.
+* We've created a new category "Unrestricted Access to Sensitive Business Flows"
+  to address new threats, including most of those that can be mitigated using
+  rate limiting.
 * We added "Unsafe Consumption of APIs" to address something we've started
   seeing: attackers have started looking for a target's integrated services to
   compromise those, instead of hitting the APIs of their target directly. This
