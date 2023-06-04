@@ -1,10 +1,10 @@
 ![OWASP LOGO](images/owasp-logo.png)
 
-## OWASP API Security Top 10 2019
+## OWASP API Security Top 10 2023
 
 The Ten Most Critical API Security Risks
 
-May 29th, 2019
+June 5th, 2023
 
 ![WASP Logo URL TBA](images/front-wasp.png)
 
