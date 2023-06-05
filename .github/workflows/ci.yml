@@ -21,6 +21,6 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: pip install mkdocs-material
+      - run: pip install mkdocs-material==9.0.9
       - run: pip install git+https://github.com/PauloASilva/mkdocs-monorepo-plugin@feat/i18n
       - run: mkdocs gh-deploy --force
