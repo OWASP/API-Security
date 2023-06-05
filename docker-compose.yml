@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+
+  preview:
+    build: .
+    image: owasp/api-top10:latest
+    container_name: "owasp_api-top10"
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/docs:ro
