@@ -1,0 +1,41 @@
+site_name: OWASP API Security Top 10
+site_description: The Ten Most Critical API Security Risks
+site_author: OWASP API Security Project team
+site_url: https://owasp.org/API-Security/
+
+copyright: '&copy; Copyright 2023 - OWASP API Security Project team'
+
+repo_name: 'OWASP/API-Security'
+repo_url: 'https://github.com/OWASP/API-Security'
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  language: en
+  favicon: assets/images/favicon.png
+  logo: assets/images/icon.png
+  features:
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.footer
+    - search.suggest
+
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/APItop10
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+plugins:
+  - monorepo
+  - search:
+      lang: en
+
+nav:
+  - Home:
+    - 'README.md'
+    - 'How-to Contribute': ./CONTRIBUTING.md
+  - 2023: '!include ./editions/2023/mkdocs.yml'
+  - 2019: '!include ./editions/2019/mkdocs.yml'
