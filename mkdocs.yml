@@ -1,6 +1,7 @@
 site_name: OWASP API Security Top 10
 site_description: The Ten Most Critical API Security Risks
 site_author: OWASP API Security Project team
+site_url: https://owasp.org/API-Security/
 
 copyright: '&copy; Copyright 2023 - OWASP API Security Project team'
 
