@@ -9,7 +9,8 @@
           {% for lang in config.extra.alternate -%}
             <li class="md-select__item">
               {% set segments = page.url.split('/') %}
-              <a href="/{{ segments[0:2]|join('/') }}/{{ lang.lang }}/{{ segments[3:]|join('/') }}" hreflang="{{ lang.lang }}" class="md-select__link">
+              {% set site_url = config.site_url.rstrip('/') %}
+              <a href="{{ site_url }}/{{ segments[0:2]|join('/') }}/{{ lang.lang }}/{{ segments[3:]|join('/') }}" hreflang="{{ lang.lang }}" class="md-select__link">
                 {{ lang.name }}
               </a>
             </li>
