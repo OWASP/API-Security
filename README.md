@@ -47,7 +47,7 @@ may distribute the resulting work only under the same or similar license to this
 one.
 
 [0]: https://www.owasp.org/index.php/User:ErezYalon
-[1]: http://creativecommons.org/licenses/by-sa/3.0/
+[1]: http://creativecommons.org/licenses/by-sa/4.0/
 [2]: https://github.com/OWASP/API-Security/blob/develop/2019/en/dist/owasp-api-security-top-10.pdf
 [3]: https://github.com/OWASP/API-Security/tree/develop/
 [4]: https://github.com/OWASP/API-Security/blob/master/CONTRIBUTING.md
