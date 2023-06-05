@@ -2,7 +2,6 @@ name: ci
 on:
   push:
     branches:
-      - release/2.2.0
       - master
 permissions:
   contents: write
