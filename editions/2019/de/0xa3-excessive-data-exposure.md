@@ -1,5 +1,4 @@
-API3:2019 Excessive Data Exposure
-=================================
+# API3:2019 Excessive Data Exposure
 
 | Bedrohungsakteure/Angriffsvektoren | Sicherheitslücken | Auswirkungen |
 | - | - | - |
@@ -12,12 +11,12 @@ Die API gibt sensible Daten absichtlich an den Client zurück. Diese Daten werde
 
 ## Beispiele für Angriffe
 
-## Szenario #1
+### Szenario #1
 
 Das Mobile-Team verwendet den Endpunkt `/api/articles/{articleId}/comments/{commentId}`
 in der Artikelansicht, um Metadaten zu Kommentaren zu rendern. Durch das Sniffing des Datenverkehrs der mobilen Anwendung findet ein Angreifer heraus, dass auch andere sensible Daten, die sich auf den Autor des Kommentars beziehen, zurückgegeben werden. Die Implementierung des Endpunkts verwendet eine generische `toJSON()`-Methode des User-Modells, das PII enthält, um das Objekt zu serialisieren.
 
-## Szenario #2
+### Szenario #2
 
 Ein IoT-basiertes Überwachungssystem ermöglicht es Administratoren, Benutzer mit unterschiedlichen Berechtigungen zu erstellen. Ein Administrator erstellt ein Benutzerkonto für einen neuen Sicherheitsmitarbeiter, der nur Zugang zu bestimmten Gebäuden auf dem Gelände haben sollte. Sobald der Sicherheitsmitarbeiter seine mobile App verwendet, wird ein API-Aufruf ausgelöst: /api/sites/111/cameras, um Daten über die verfügbaren Kameras zu erhalten und sie auf dem Dashboard anzuzeigen. Die Antwort enthält eine Liste mit Details über Kameras im folgenden Format: `{"id": "xxx", "live_access_token": "xxxx-bbbbb", "building_id": "yyy"}`. Während die Client-GUI nur Kameras anzeigt, auf die der Sicherheitsmitarbeiter Zugriff haben soll, enthält die tatsächliche API-Antwort eine vollständige Liste aller Kameras auf dem Gelände.
 

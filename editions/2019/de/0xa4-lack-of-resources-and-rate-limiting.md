@@ -1,5 +1,4 @@
-API4:2019 Lack of Resources & Rate Limiting
-===========================================
+# API4:2019 Lack of Resources & Rate Limiting
 
 | Bedrohungsakteure/Angriffsvektoren | Sicherheitslücken | Auswirkungen |
 | - | - | - |
@@ -24,14 +23,14 @@ der folgenden Grenzwerte fehlt oder unangemessen eingestellt ist (z. B. zu niedr
 
 ## Beispiele für Angriffe
 
-## Szenario #1
+### Szenario #1
 
 Ein Angreifer lädt ein großes Bild hoch, indem er eine POST-Anfrage an `/api/v1/images` stellt.
 Wenn der Upload abgeschlossen ist, erstellt die API mehrere Miniaturbilder mit unterschiedlichen
 Größen. Aufgrund der Größe des hochgeladenen Bildes ist der verfügbare Speicher
 während der Erstellung der Miniaturansichten erschöpft und die API reagiert nicht mehr.
 
-## Szenario #2
+### Szenario #2
 
 Gegeben ist eine Anwendung, die die Benutzerliste auf einer Benutzeroberfläche mit einer Begrenzung von
 200 Benutzer pro Seite anzeigt. Die Benutzerliste wird mit folgender Abfrage vom Server abgerufen: `/api/users?page=1&size=200`. Ein Angreifer ändert den Parameter `size`

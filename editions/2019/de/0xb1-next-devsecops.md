@@ -1,5 +1,4 @@
-Was kommt als Nächstes für DevSecOps?
-=========================
+# Was kommt als Nächstes für DevSecOps?
 
 Aufgrund ihrer Bedeutung in modernen Anwendungsarchitekturen ist der Aufbau sicherer
 APIs von entscheidender Bedeutung. Die Sicherheit darf nicht vernachlässigt werden und sollte Teil des

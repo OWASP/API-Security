@@ -1,5 +1,4 @@
-Einleitung
-============
+# Einleitung
 
 ## Willkommen bei der OWASP API Security Top 10 - 2019!
 

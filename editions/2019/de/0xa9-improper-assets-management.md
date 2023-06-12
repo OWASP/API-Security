@@ -1,5 +1,4 @@
-API9:2019 Improper Assets Management
-====================================
+# API9:2019 Improper Assets Management
 
 | Bedrohungsakteure/Angriffsvektoren | Sicherheitslücken | Auswirkungen |
 | - | - | - |
@@ -24,11 +23,11 @@ Die API könnte verwundbar sein, wenn:
 
 ## Beispiele für Angriffe
 
-## Szenario #1
+### Szenario #1
 
 Nach der Neugestaltung ihrer Anwendungen ließ ein lokaler Suchdienst eine alte API-Version (`api.someservice.com/v1`) weiterlaufen, ohne Schutz und mit Zugriff auf die Benutzerdatenbank. Während eines Angriffs auf eine der neuesten veröffentlichten Anwendungen fand ein Angreifer die API-Adresse (`api.someservice.com/v2`). Durch das Ersetzen von `v2` in der URL durch `v1` erhielt der Angreifer Zugriff auf die alte, ungeschützte API und konnte personenbezogene Daten (PII) von über 100 Millionen Nutzern offenlegen.
 
-## Szenario #2
+### Szenario #2
 
 Ein soziales Netzwerk hat einen Mechanismus zum Rate-Limiting eingeführt, der Angreifer daran hindert, mittels Brute-Force-Attacken zurückgesetzte Passwort-Token zu erraten. Dieser Mechanismus wurde nicht als Teil des API-Codes selbst implementiert, sondern in einer separaten Komponente zwischen dem Client und der offiziellen API (`www.socialnetwork.com`).
 Ein Forscher fand einen Beta-API-Host (`www.mbasic.beta.socialnetwork.com`), der dieselbe API ausführte, einschließlich des Mechanismus zum Zurücksetzen des Passworts, aber der Mechanismus zum Rate-Limiting war nicht implementiert. Der Forscher konnte das Passwort jedes Benutzers zurücksetzen, indem er mittels einer einfachen Brute-Force-Methode den 6-stelligen Token erraten hat.

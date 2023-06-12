@@ -1,5 +1,4 @@
-API8:2019 Injection
-===================
+# API8:2019 Injection
 
 | Bedrohungsakteure/Angriffsvektoren | Sicherheitslücken | Auswirkungen |
 | - | - | - |
@@ -16,7 +15,7 @@ Die API ist anfällig für Injection-Angriffe, wenn:
 
 ## Beispiele für Angriffe
 
-## Szenario #1
+### Szenario #1
 
 Die Firmware einer Kindersicherungseinrichtung stellt den Endpunkt
 `/api/CONFIG/restore` zur Verfügung, der die Übermittlung einer appId als Multipart
@@ -36,7 +35,7 @@ verwundbaren Firmware ausschalten:
 $ curl -k "https://${deviceIP}:4567/api/CONFIG/restore" -F 'appid=$(/etc/pod/power_down.sh)'
 ```
 
-## Szenario #2
+### Szenario #2
 
 Wir haben eine Anwendung mit grundlegenden CRUD-Funktionen für Operationen mit
 Buchungen. Ein Angreifer konnte herausfinden, dass eine NoSQL-Injection möglich ist, welche

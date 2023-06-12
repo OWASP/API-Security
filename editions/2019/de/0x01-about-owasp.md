@@ -1,5 +1,4 @@
-Über das OWASP
-===========
+# Über das OWASP
 
 Das Open Web Application Security Project (OWASP) ist eine offene Gemeinschaft, deren Ziel es ist Organisationen zu ermöglichen, Anwendungen und APIs zu entwickeln, zu erwerben und zu pflegen, denen man vertrauen kann.
 

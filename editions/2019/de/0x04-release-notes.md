@@ -1,5 +1,4 @@
-Erläuterungen zur Veröffentlichung
-=============
+# Erläuterungen zur Veröffentlichung
 
 Dies ist die erste Ausgabe der OWASP API Security Top 10, die regelmäßig, alle drei 
 oder vier Jahre, aktualisiert werden soll.

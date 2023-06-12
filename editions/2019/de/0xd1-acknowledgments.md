@@ -1,5 +1,4 @@
-Danksagungen
-===============
+# Danksagungen
 
 ## Danksagungen an einzelne Mitwirkende
 

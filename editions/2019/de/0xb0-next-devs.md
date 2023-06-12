@@ -1,5 +1,4 @@
-Was kommt als Nächstes für Entwickler?
-==========================
+# Was kommt als Nächstes für Entwickler?
 
 Die Aufgabe, sichere Software zu erstellen und zu pflegen oder bestehende Software zu reparieren, kann
 schwierig sein. Bei APIs ist das nicht anders.

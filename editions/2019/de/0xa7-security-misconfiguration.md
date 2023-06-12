@@ -1,5 +1,4 @@
-API7:2019 Security Misconfiguration
-===================================
+# API7:2019 Security Misconfiguration
 
 | Bedrohungsakteure/Angriffsvektoren | Sicherheitslücken | Auswirkungen |
 | - | - | - |
@@ -20,7 +19,7 @@ Die API könnte anfällig sein, wenn:
 
 ## Beispiele für Angriffe
 
-## Szenario #1
+### Szenario #1
 
 Ein Angreifer findet die Datei `.bash_history` unter dem Stammverzeichnis des Servers, die Befehle enthält, die vom DevOps-Team für den Zugriff auf die API verwendet werden:
 
@@ -30,11 +29,11 @@ $ curl -X GET 'https://api.server/endpoint/' -H 'authorization: Basic Zm9vOmJhcg
 Ein Angreifer könnte auch neue Endpunkte für die API identifizieren, die nur vom
 DevOps-Team verwendet werden und nicht dokumentiert sind.
 
-## Szenario #2
+### Szenario #2
 
 Um einen bestimmten Dienst ins Visier zu nehmen, verwendet ein Angreifer eine beliebte Suchmaschine, um nach Computern zu suchen. Der Angreifer fand einen Host, auf dem ein beliebtes Datenbankmanagementsystem auf dem Standardport läuft. Der Host verwendete die Standardkonfiguration, bei der die Authentifizierung standardmäßig deaktiviert ist. Der Angreifer erlangte Zugriff auf Millionen von Datensätzen mit personenbezogenen Daten, persönlichen Präferenzen und Authentifizierungsdaten.
 
-## Szenario #3
+### Szenario #3
 
 Bei der Untersuchung des Datenverkehrs einer mobilen Anwendung stellt ein Angreifer fest, dass nicht der gesamte HTTP-Verkehr über ein sicheres Protokoll (z. B. TLS) abgewickelt wird. Der Angreifer findet dies insbesondere für den Download von Profilbildern herraus. Da die Daten binär kodiert sind, findet der Angreifer, ein Muster in der Größe der API-Antworten, das er nutzt, um die Präferenzen der Benutzer bezüglich des dargestellten Inhalts (z. B. Profilbilder) auszulesen.
 

@@ -1,5 +1,4 @@
-Inhaltsverzeichnis
-=================
+# Inhaltsverzeichnis
 
 * [Inhaltsverzeichnis](0x00-toc.md)
 * [Über das OWASP](0x01-about-owasp.md)

@@ -1,5 +1,4 @@
-API1:2019 Broken Object Level Authorization
-===========================================
+# API1:2019 Broken Object Level Authorization
 
 | Bedrohungsakteure/Angriffsvektoren | Sicherheitslücken | Auswirkungen |
 | - | - | - |
@@ -16,11 +15,11 @@ Versagen dieses Mechanismus führt in der Regel zur unberechtigten Offenlegung, 
 
 ## Beispiele für Angriffe
 
-## Szenario #1
+### Szenario #1
 
 Ein E-Commerce-Plattform für Online-Shops bietet eine Auflistungsseite mit Umsatzdiagrammen für die von ihr gehosteten Shops. Durch Untersuchung der Browseranfragen kann ein Angreifer die API-Endpunkte identifizieren, die als Datenquelle für diese Diagramme dienen und deren Muster `/shops/{shopName}/revenue_data.json` ist. Über einen anderen API-Endpunkt kann der Angreifer eine Liste aller gehosteten Shopnamen abrufen. Mithilfe eines einfachen Skripts, das die Namen in der Liste manipuliert und `{shopName}` in der URL ersetzt, erhält der Angreifer Zugang zu den Verkaufsdaten von Tausenden von E-Commerce-Shops.
 
-## Szenario #2
+### Szenario #2
 
 Beim Überwachen des Netzwerkverkehrs eines Wearable fällt einem Angreifer eine HTTP PATCH-Anfrage auf, die einen benutzerdefinierten HTTP-Anfrageheader mit dem Namen X-User-Id: 54796 enthält. Durch Ersetzen des X-User-Id-Werts durch 54795 erhält der Angreifer eine erfolgreiche HTTP-Antwort und kann die Kontodaten anderer Benutzer ändern.
 

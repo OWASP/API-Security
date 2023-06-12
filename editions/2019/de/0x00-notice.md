@@ -1,5 +1,4 @@
-Notiz
-======
+# Notiz
 
 Dies ist die Textversion der OWASP API Security Top 10, die dient als Quelle für die
 offizielle Version, die als Portable Document Format (PDF) veröffentlicht wird.

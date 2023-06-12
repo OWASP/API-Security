@@ -1,5 +1,4 @@
-API5:2019 Broken Function Level Authorization
-=============================================
+# API5:2019 Broken Function Level Authorization
 
 | Bedrohungsakteure/Angriffsvektoren | Sicherheitslücken | Auswirkungen |
 | - | - | - |
@@ -20,7 +19,7 @@ Obwohl Entwickler dazu neigen, die meisten administrativen Endpunkte unter einem
 
 ## Beispiele für Angriffe
 
-## Szenario #1
+### Szenario #1
 
 Während des Registrierungsprozesses für eine Anwendung, die nur eingeladenen Nutzern die Teilnahme erlaubt beitreten können, löst die mobile Anwendung einen API-Aufruf aus an `GET /api/invites/{invite_guid}`.
 Die Antwort enthält ein JSON mit Details über die Einladung, einschließlich der Rolle des Benutzers und seiner E-Mail.
@@ -37,7 +36,7 @@ POST /api/invites/new
 {“email”:”hugo@malicious.com”,”role”:”admin”}
 ```
 
-## Szenario #2
+### Szenario #2
 
 Eine API enthält einen Endpunkt, der nur für Administratoren zugänglich sein sollte - `GET /api/admin/v1/users/all`. Dieser Endpunkt liefert die Details aller Benutzer der Anwendung zurück und führt keine Berechtigungsprüfungen auf Funktionsebene durch. Ein Angreifer, der die Struktur der API kennt, errät den Zugriff auf diesen Endpunkt und erlangt dadurch Zugang zu sensiblen Details der Anwendungsnutzer.
 

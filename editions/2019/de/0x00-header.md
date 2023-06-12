@@ -1,12 +1,16 @@
-![OWASP LOGO](images/owasp-logo.png)
+---
+title: ''
+---
 
-## OWASP API Security Top 10 2019
+![OWASP LOGO](./images/owasp-logo.png)
+
+# OWASP API Security Top 10 2019
 
 Die 10 kritischsten Sicherheitsrisiken für APIs
 
 27 Januar 2023
 
-![WASP Logo URL TBA](images/front-wasp.png)
+![WASP Logo URL TBA](./images/front-wasp.png)
 
 | | | |
 | - | - | - |

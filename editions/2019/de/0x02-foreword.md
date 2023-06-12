@@ -1,5 +1,4 @@
-Vorwort
-========
+# Vorwort
 
 Ein fundamentales Element der Innovation in der heutigen App-getriebenen Welt ist die
 Anwendungsprogrammierschnittstelle (API). Von Bankenwesen, dem Einzelhandel 

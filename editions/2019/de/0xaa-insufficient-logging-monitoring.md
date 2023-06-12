@@ -1,5 +1,4 @@
-API10:2019 Insufficient Logging & Monitoring
-============================================
+# API10:2019 Insufficient Logging & Monitoring
 
 | Bedrohungsakteure/Angriffsvektoren | Sicherheitslücken | Auswirkungen |
 | - | - | - |

@@ -1,5 +1,4 @@
-API6:2019 - Mass Assignment
-===========================
+# API6:2019 - Mass Assignment
 
 | Bedrohungsakteure/Angriffsvektoren | Sicherheitslücken | Auswirkungen |
 | - | - | - |
@@ -20,7 +19,7 @@ Beispiele für sensible Eigenschaften:
 
 ## Beispiele für Angriffe
 
-## Szenario #1
+### Szenario #1
 
 Eine Anwendung für Mitfahrgelegenheiten bietet einem Nutzer die Möglichkeit, grundlegende Informationen für sein Profil zu bearbeiten. Während dieses Prozesses wird ein API-Aufruf gesendet an
 `PUT /api/v1/users/me` mit dem folgenden legitimen JSON-Objekt:
@@ -43,7 +42,7 @@ Der Angreifer wiederholt die erste Anfrage mit der folgendem Payload:
 
 Da der Endpunkt anfällig für "MAss Assignment" ist, erhält der Angreifer Credits, ohne zu bezahlen.
 
-## Szenario #2
+### Szenario #2
 
 Ein Portal zur gemeinsamen Nutzung von Videos ermöglicht es Nutzern, Inhalte hochzuladen und in verschiedenen Formaten herunterzuladen. Ein Angreifer, der die API erforscht, fand heraus, dass der Endpunkt `GET /api/v1/videos/{video_id}/meta_data` ein JSON-Objekt mit den Eigenschaften des Videos zurückgibt. Eine der Eigenschaften ist `"mp4_conversion_params":"-v codec h264"`, was darauf hinweist, dass die Anwendung einen Shell-Befehl zur Konvertierung des Videos verwendet.
 

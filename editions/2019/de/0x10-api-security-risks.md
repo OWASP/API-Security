@@ -1,5 +1,4 @@
-Sicherheitsrisiken für APIs
-==================
+# Sicherheitsrisiken für APIs
 
 Zur Durchführung der Risikoanalyse wurde die [OWASP Risk Rating Methodology][1] verwendet.
 

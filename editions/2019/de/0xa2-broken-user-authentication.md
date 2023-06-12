@@ -1,5 +1,4 @@
-API2:2019 Broken User Authentication
-====================================
+# API2:2019 Broken User Authentication
 
 | Bedrohungsakteure/Angriffsvektoren | Sicherheitslücken | Auswirkungen |
 | - | - | - |
@@ -25,14 +24,14 @@ Eine API ist verwundbar, wenn sie folgendes zulässt:
 
 ## Beispiele für Angriffe
 
-## Szenario #1
+### Szenario #1
 
 [Credential stuffing][1] (durch Verwendung von [Listen mit bekannten Benutzernamen/Passwörtern][2])
 ist ein häufiger Angriff. Wenn eine Anwendung keine automatischen Schutzmaßnahmen gegen Bedrohungen
 oder Credential Stuffing implementiert, kann die Anwendung als Passwort-Oracle (Tester) verwendet werden,
 um zu bestimmen, ob die Anmeldeinformationen gültig sind.
 
-## Szenario #2
+### Szenario #2
 
 Ein Angreifer startet den Passwort-Wiederherstellungs-Prozess, indem er eine POST-Anfrage an
 `/api/system/verification-codes` sendet und den Benutzernamen im Anfrage-Body bereitstellt.

@@ -1,5 +1,4 @@
-Methodik und Daten
-====================
+# Methodik und Daten
 
 ## Überblick
 
