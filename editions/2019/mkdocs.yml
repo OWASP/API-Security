@@ -5,14 +5,16 @@ extra:
   alternate:
     - name: Arabic
       lang: ar
-    - name: Greek (Greece)
-      lang: el-gr
+    - name: German
+      lang: de
     - name: English
       lang: en
     - name: Farsi
       lang: fa
     - name: French
       lang: fr
+    - name: Greek (Greece)
+      lang: el-gr
     - name: Portugês (Brasil)
       lang: pt-BR
     - name: Portugês (Portugal)
