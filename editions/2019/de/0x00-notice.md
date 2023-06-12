@@ -11,4 +11,4 @@ sollten hier gemacht werden. Einzelheiten dazu [wie sie beitragen können][1] fi
 * Erez Yallon
 * Inon Shkedy
 
-[1]: ../../CONTRIBUTING.md
+[1]: ../../../CONTRIBUTING.md
