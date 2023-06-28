@@ -103,4 +103,5 @@ The mitigation planning should be done in two layers:
 * [API10:2019 Insufficient Logging & Monitoring][2]
 
 [1]: https://owasp.org/www-project-automated-threats-to-web-applications/
-[2]: https://github.com/OWASP/API-Security/blob/master/editions/2019/en/0xaa-insufficient-logging-monitoring.md
+[2]: https://owasp.org/API-Security/editions/2019/en/0xaa-insufficient-logging-monitoring/
+
