@@ -144,8 +144,8 @@ content.
 * [CWE-213: Exposure of Sensitive Information Due to Incompatible Policies][4]
 * [CWE-915: Improperly Controlled Modification of Dynamically-Determined Object Attributes][5]
 
-[1]: https://github.com/OWASP/API-Security/blob/master/2019/en/src/0xa3-excessive-data-exposure.md
-[2]: https://github.com/OWASP/API-Security/blob/master/2019/en/src/0xa6-mass-assignment.md
+[1]: https://owasp.org/API-Security/editions/2019/en/0xa3-excessive-data-exposure/
+[2]: https://owasp.org/API-Security/editions/2019/en/0xa6-mass-assignment/
 [3]: https://cheatsheetseries.owasp.org/cheatsheets/Mass_Assignment_Cheat_Sheet.html
 [4]: https://cwe.mitre.org/data/definitions/213.html
 [5]: https://cwe.mitre.org/data/definitions/915.html
