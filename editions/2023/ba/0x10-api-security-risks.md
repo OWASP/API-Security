@@ -17,8 +17,8 @@ Tabel berikut merangkum istilah yang diasosiasikan dengan nilai risiko.
 
 ### OWASP
 
-* [OWASP Risk Rating Methodology][1]
-* [Article on Threat/Risk Modeling][2]
+* [Metodologi Pemeringkatan Risiko OWASP][1]
+* [Artikel tentang Pemodelan Ancaman/Risiko][2]
 
 ### Eksternal
 
