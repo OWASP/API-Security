@@ -1,34 +1,26 @@
-# API Security Risks
+# Risiko Keamanan API API
 
-The [OWASP Risk Rating Methodology][1] was used to do the risk analysis.
+[Metodologi Pemeringkatan Risiko OWASP][1] digunakan untuk melakukan analisis risiko.
 
-The table below summarizes the terminology associated with the risk score.
+Tabel berikut merangkum istilah yang diasosiasikan dengan nilai risiko.
 
-| Threat Agents | Exploitability | Weakness Prevalence | Weakness Detectability | Technical Impact | Business Impacts |
+| Agen Ancaman | Eksploitasi | Prevalensi Kelemahan | Deteksi Kelemahan | Dampak Teknikal | Dampak Bisnis |
 | :-: | :-: | :-: | :-: | :-: | :-: |
-| API Specific | Easy: **3** | Widespread **3** | Easy **3** | Severe **3** | Business Specific |
-| API Specific | Average: **2** | Common **2** | Average **2** | Moderate **2** | Business Specific |
-| API Specific | Difficult: **1** | Difficult **1** | Difficult **1** | Minor **1** | Business Specific |
+| Spesifik API | Mudah : **3** | Tersebar luas **3** | Mudah **3** | Severe **3** | Spesifik Bisnis |
+| Spesifik API | Menengah: **2** | Umum **2** | Menengah **2** | Sedang **2** | Spesifik Bisnis |
+| Spesifik API | Sukar: **1** | Sukar **1** | Sukar **1** | Minor **1** | Spesifik Bisnis |
 
-**Note**: This approach does not take the likelihood of the threat agent into
-account. Nor does it account for any of the various technical details associated
-with your particular application. Any of these factors could significantly
-affect the overall likelihood of an attacker finding and exploiting a particular
-vulnerability. This rating does not take into account the actual impact on your
-business. Your organization will have to decide how much security risk from
-applications and APIs the organization is willing to accept given your culture,
-industry, and regulatory environment. The purpose of the OWASP API Security Top
-10 is not to do this risk analysis for you. Since this edition is not
-data-driven, prevalence results from a consensus among the team members.
+**Catatan**: Pendekatan ini tidak mempertimbangkan kemungkinan agen ancaman. Dan juga tidak mempertimbangkan berbagai rincian teknikal yang terkait dengan aplikasi anda. Semua faktor ini dapat secara signifikan mempengaruhi kemungkinan penyerang menemukan dan mengeksploitasi kerentanan tertentu. Pemeringkatan ini tidak mempertimbangkan dampak aktual terhadap bisnis anda. Organisasi anda perlu menentukan tingkat risiko keamanan aplikasi dan API yang dapat diterima berdasarkan budaya, industri, dan lingkungan regulasi anda.  OWASP API Security Top
+10 tidak bertujuan melakukan risiko analisis ini untuk anda. Oleh karena edisi ini bukan berdasarkan data, namun berdasarkan konsensus umum di antara anggota tim.
 
-## References
+## Referensi
 
 ### OWASP
 
 * [OWASP Risk Rating Methodology][1]
 * [Article on Threat/Risk Modeling][2]
 
-### External
+### Eksternal
 
 * [ISO 31000: Risk Management Std][3]
 * [ISO 27001: ISMS][4]
