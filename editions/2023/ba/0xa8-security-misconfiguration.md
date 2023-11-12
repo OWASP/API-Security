@@ -1,4 +1,4 @@
-# API8:2023 Konfigurasi Keamanan
+# API8:2023 Miskonfigurasi Keamanan
 
 | Agen Ancaman/Vektor Serangan | Kelemahan Keamanan | Dampak |
 | - | - | - |

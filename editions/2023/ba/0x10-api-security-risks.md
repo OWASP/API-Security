@@ -1,4 +1,4 @@
-# Risiko Keamanan API API
+# Risiko Keamanan API
 
 [Metodologi Pemeringkatan Risiko OWASP][1] digunakan untuk melakukan analisis risiko.
 
@@ -10,7 +10,7 @@ Tabel berikut merangkum istilah yang diasosiasikan dengan nilai risiko.
 | Spesifik API | Menengah: **2** | Umum **2** | Menengah **2** | Sedang **2** | Spesifik Bisnis |
 | Spesifik API | Sukar: **1** | Sukar **1** | Sukar **1** | Minor **1** | Spesifik Bisnis |
 
-**Catatan**: Pendekatan ini tidak mempertimbangkan kemungkinan agen ancaman. Dan juga tidak mempertimbangkan berbagai rincian teknikal yang terkait dengan aplikasi anda. Semua faktor ini dapat secara signifikan mempengaruhi kemungkinan penyerang menemukan dan mengeksploitasi kerentanan tertentu. Pemeringkatan ini tidak mempertimbangkan dampak aktual terhadap bisnis anda. Organisasi anda perlu menentukan tingkat risiko keamanan aplikasi dan API yang dapat diterima berdasarkan budaya, industri, dan lingkungan regulasi anda.  OWASP API Security Top
+**Catatan**: Pendekatan ini tidak mempertimbangkan kemungkinan agen ancaman, dan juga tidak mempertimbangkan berbagai rincian teknikal yang terkait dengan aplikasi anda. Semua faktor ini dapat secara signifikan mempengaruhi kemungkinan penyerang menemukan dan mengeksploitasi kerentanan tertentu. Pemeringkatan ini tidak mempertimbangkan dampak aktual terhadap bisnis anda. Organisasi anda perlu menentukan tingkat risiko keamanan aplikasi dan API yang dapat diterima berdasarkan budaya, industri, dan lingkungan regulasi anda.  OWASP API Security Top
 10 tidak bertujuan melakukan risiko analisis ini untuk anda. Oleh karena edisi ini bukan berdasarkan data, namun berdasarkan konsensus umum di antara anggota tim.
 
 ## Referensi

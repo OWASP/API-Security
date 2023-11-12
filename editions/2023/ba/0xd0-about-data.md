@@ -1,20 +1,20 @@
 # Metodologi dan Data
 
-## Gambaran
+## Ringkasan
 
-Untuk pembaruan daftar ini, tim Keamanan API OWASP menggunakan metodologi yang sama yang digunakan untuk daftar tahun 2019 yang sukses dan banyak diadopsi, dengan tambahan [Panggilan Data Publik][1] selama 3 bulan. Sayangnya, panggilan data ini tidak menghasilkan data yang memungkinkan analisis statistik yang relevan mengenai masalah keamanan API yang paling umum.
+Untuk pembaruan daftar ini, tim Keamanan API OWASP menggunakan metodologi yang sama dengan yang digunakan untuk daftar tahun 2019 yang sukses dan banyak diadopsi, dengan tambahan [Panggilan Data Publik][1] selama 3 bulan. Sayangnya, panggilan data ini tidak menghasilkan data yang memungkinkan analisis statistik yang relevan mengenai masalah keamanan API yang paling umum.
 
-Namun, dengan industri keamanan API yang lebih matang dan mampu memberikan umpan balik langsung dan wawasan, proses pembaruan terus berlanjut dengan menggunakan metodologi yang sama seperti sebelumnya.
+Namun, dengan industri keamanan API yang lebih matang dan mampu memberikan umpan balik dan wawasan langsung, proses pembaruan terus berlanjut dengan menggunakan metodologi yang sama seperti sebelumnya.
 
 Dengan sampai di sini, kami percaya bahwa kami telah memiliki dokumen kesadaran yang fokus ke depan untuk tiga atau empat tahun mendatang, yang lebih berfokus pada masalah khusus API modern. Tujuan dari proyek ini bukanlah menggantikan daftar 10 besar lainnya, tetapi sebaliknya untuk menangani risiko keamanan API teratas yang ada dan yang akan datang, yang menurut kami harus diperhatikan oleh industri.
 
 ## Metodologi
 
-Dalam fase pertama, data yang tersedia secara publik tentang insiden keamanan API dikumpulkan, ditinjau, dan dikategorikan. Data tersebut dikumpulkan dari platform bug bounty dan laporan yang tersedia secara publik. Hanya masalah yang dilaporkan antara 2019 dan 2022 yang dipertimbangkan. Data ini digunakan untuk memberikan gambaran tim tentang dalam arah mana daftar 10 besar sebelumnya seharusnya berkembang serta membantu mengatasi bias data yang mungkin disumbangkan.
+Dalam fase pertama, data yang tersedia secara publik tentang insiden keamanan API dikumpulkan, ditinjau, dan dikategorikan. Data tersebut dikumpulkan dari platform bug bounty dan laporan yang tersedia secara publik. Hanya masalah yang dilaporkan antara 2019 dan 2022 yang dipertimbangkan. Data ini digunakan untuk memberikan gambaran pada tim mengenai ke arah mana daftar 10 besar sebelumnya seharusnya berkembang serta membantu mengatasi bias atas data yang disumbangkan.
 
-[Panggilan Data Publik][1] berjalan mulai dari 1 September hingga 30 November 2022. Secara paralel, tim proyek mulai mendiskusikan apa yang telah berubah sejak 2019. Diskusi tersebut mencakup dampak dari daftar sebelumnya, umpan balik yang diterima dari komunitas, dan tren baru dalam keamanan API.
+[Panggilan Data Publik][1] berjalan mulai dari 1 September hingga 30 Nopember 2022. Secara paralel, tim proyek mulai mendiskusikan apa yang telah berubah sejak 2019. Diskusi tersebut mencakup dampak dari daftar sebelumnya, umpan balik yang diterima dari komunitas, dan tren baru dalam keamanan API.
 
-Tim proyek mempromosikan pertemuan dengan spesialis tentang ancaman keamanan API yang relevan untuk mendapatkan wawasan tentang bagaimana korban terpengaruh dan bagaimana ancaman-ancaman tersebut dapat diredakan.
+Tim proyek mempromosikan pertemuan dengan spesialis tentang ancaman keamanan API yang relevan untuk mendapatkan wawasan tentang bagaimana korban terpengaruh dan bagaimana ancaman-ancaman tersebut dapat diatasi.
 
 Upaya ini menghasilkan draf awal tentang apa yang tim percayai sebagai sepuluh risiko keamanan API yang paling kritis. [Metodologi Penilaian Risiko OWASP][2] digunakan untuk melakukan analisis risiko. Peringkat prevalensi diputuskan dari konsensus di antara anggota tim proyek, berdasarkan pengalaman mereka di lapangan. Untuk pertimbangan-pertimbangan tentang masalah ini, silakan lihat bagian [Risiko Keamanan API][3].
 
