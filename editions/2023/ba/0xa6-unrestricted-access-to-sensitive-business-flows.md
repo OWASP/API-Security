@@ -19,7 +19,7 @@ Risiko akses berlebihan mungkin berubah antar industri dan bisnis. Misalnya - pe
 
 Sebuah Endpoint API rentan jika mengekspos aliran bisnis sensitif, tanpa membatasi akses ke dalamnya dengan tepat.
 
-## Skenario Contoh Serangan
+## Contoh Skenario Serangan
 
 ### Skenario #1  
 
