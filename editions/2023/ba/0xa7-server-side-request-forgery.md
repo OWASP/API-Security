@@ -2,12 +2,12 @@
 
 | Agen ancaman/Vektor serangan | Kelemahan Keamanan | Dampak |
 | - | - | - |
-| Khusus API: **Mudah** dieksploitasi | **Umum** Prevalensi: **Mudah** Terdeteksi | **Sedang** Teknis: Spesifik Bisnis |  
-| Eksploitasi membutuhkan penyerang untuk menemukan endpoint API yang mengakses URI yang disediakan oleh klien. Secara umum, SSRF dasar (saat respons dikembalikan ke penyerang) lebih mudah dieksploitasi daripada SSRF Buta di mana penyerang tidak mendapat umpan balik apakah serangan berhasil atau tidak. | Konsep modern dalam pengembangan aplikasi mendorong pengembang untuk mengakses URI yang disediakan oleh klien. Kurangnya atau validasi yang tidak tepat dari URI tersebut adalah masalah yang umum. Permintaan dan analisis respons API reguler akan diperlukan untuk mendeteksi masalah tersebut. Ketika respons tidak dikembalikan (SSRF Buta) mendeteksi kerentanan membutuhkan lebih banyak upaya dan kreativitas. | Eksploitasi yang berhasil mungkin mengarah ke enumerasi layanan internal (mis. pemindaian port), pengungkapan informasi, menghindari firewall, atau mekanisme keamanan lainnya. Dalam beberapa kasus, dapat mengarah ke DoS atau server digunakan sebagai proxy untuk menyembunyikan kegiatan berbahaya. |
+| Khusus API: **Mudah** dieksploitasi | Prevalensi **Umum** : **Mudah** Terdeteksi | Teknis **Sedang** : Spesifik Bisnis |  
+| Eksploitasi membutuhkan penyerang untuk menemukan endpoint API yang mengakses URI yang disediakan oleh klien. Secara umum, SSRF dasar (saat respons dikembalikan ke penyerang) lebih mudah dieksploitasi daripada Blind SSRF ketika penyerang tidak menerima informasi apakah serangan berhasil atau tidak. | Konsep modern dalam pengembangan aplikasi mendorong pengembang untuk mengakses URI yang disediakan oleh klien. Kurangnya atau validasi yang tidak tepat dari URI tersebut adalah masalah yang umum. Permintaan dan analisis respons API reguler akan dibutuhkan untuk mendeteksi masalah tersebut. Ketika respons tidak dikembalikan (Blind SSRF) mendeteksi kerentanan membutuhkan lebih banyak upaya dan kreativitas. | Eksploitasi yang berhasil mungkin mengarah ke enumerasi layanan internal (misalnya pemindaian port), pengungkapan informasi, menghindari firewall, atau mekanisme keamanan lainnya. Dalam beberapa kasus, dapat mengarah ke DoS atau server digunakan sebagai proxy untuk menyembunyikan kegiatan berbahaya. |
 
 ## Apakah API Rentan?
 
-Celah Pemalsuan Permintaan Sisi Server (SSRF) terjadi ketika API mengambil sumber daya jarak jauh tanpa memvalidasi URL yang diberikan pengguna. Ini memungkinkan penyerang memaksa aplikasi untuk mengirim permintaan yang dibuat ke tujuan yang tidak terduga, bahkan ketika dilindungi oleh firewall atau VPN.
+Celah Pemalsuan Permintaan Sisi Server (SSRF) terjadi ketika API mengambil sumber daya jarak jauh tanpa memvalidasi URL yang diberikan pengguna. Hal ini memungkinkan penyerang memaksa aplikasi untuk mengirim permintaan yang dibuat ke tujuan yang tidak terduga, bahkan ketika dilindungi oleh firewall atau VPN.
 
 Konsep modern dalam pengembangan aplikasi membuat SSRF lebih umum dan lebih berbahaya. 
 
@@ -15,15 +15,15 @@ Lebih umum - konsep berikut mendorong pengembang untuk mengakses sumber daya eks
 
 Lebih berbahaya - Teknologi modern seperti penyedia cloud, Kubernetes, dan Docker mengekspos saluran manajemen dan kontrol melalui HTTP pada jalur yang dapat diprediksi dan dikenal dengan baik. Saluran tersebut adalah target yang mudah untuk serangan SSRF. 
 
-Juga lebih menantang untuk membatasi lalu lintas keluar dari aplikasi Anda, karena sifat terhubung dari aplikasi modern.
+Juga lebih menantang untuk membatasi lalu lintas keluar aplikasi Anda, karena sifat terhubung aplikasi modern.
 
 Risiko SSRF tidak selalu dapat sepenuhnya dihilangkan. Saat memilih mekanisme perlindungan, penting untuk mempertimbangkan risiko bisnis dan kebutuhan.
 
-## Skenario Serangan Contoh
+## Contoh Skenario Serangan
 
 ### Skenario #1
 
-Sebuah jejaring sosial memungkinkan pengguna mengunggah foto profil. Pengguna dapat memilih untuk mengunggah file gambar dari mesin mereka, atau menyediakan URL gambar. Memilih yang kedua, akan memicu panggilan API berikut:
+Sebuah jejaring sosial memungkinkan pengguna mengunggah foto profil. Pengguna dapat memilih untuk mengunggah file gambar dari mesin mereka, atau menyediakan URL gambar. Memilih opsi kedua, akan memicu panggilan API berikut:
 
 ```
 POST /api/profile/upload_picture 
@@ -77,7 +77,7 @@ POST /graphql
 
 Selama proses pembuatan, back-end API mengirim permintaan uji ke URL webhook yang diberikan, dan menyajikan respons ke pengguna. 
 
-Seorang penyerang dapat memanfaatkan alur ini, dan membuat permintaan API menjadi sumber daya sensitif, seperti layanan metadata cloud internal yang mengekspos kredensial:
+Seorang penyerang dapat memanfaatkan alur ini, dan membuat permintaan API untuk sumber daya sensitif, seperti layanan metadata cloud internal yang mengekspos kredensial:
 
 ```
 POST /graphql
@@ -109,8 +109,8 @@ Karena aplikasi menampilkan respons dari permintaan uji, penyerang dapat melihat
 ## Cara Mencegah
 
 * Isolasi mekanisme pengambilan sumber daya di jaringan Anda: biasanya fitur ini bertujuan untuk mengambil sumber daya jarak jauh dan bukan internal.
-* Kapan pun memungkinkan, gunakan daftar putih dari:
-  * Asal jarak jauh yang diharapkan pengguna untuk mengunduh sumber daya (mis. Google Drive, Gravatar, dll.)
+* Kapan pun memungkinkan, gunakan allow list untuk:
+  * Asal lokasi sumber daya (misalnya Google Drive, Gravatar, dll.) yang diharapkan digunakan pengguna untuk mengunduh sumber daya 
   * Skema URL dan port
   * Jenis media yang diterima untuk fungsionalitas tertentu
 * Nonaktifkan pengalihan HTTP. 
