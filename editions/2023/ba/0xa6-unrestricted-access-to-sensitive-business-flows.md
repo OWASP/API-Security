@@ -2,8 +2,8 @@
 
 | Agen ancaman/Vektor serangan | Kelemahan Keamanan | Dampak |
 | - | - | - |
-| Khusus API: **Mudah** dieksploitasi | **Luas** Prevalensi: **Rata-rata** Terdeteksi | **Sedang** Teknis: Spesifik Bisnis |
-| Eksploitasi biasanya melibatkan pemahaman model bisnis yang didukung oleh API, menemukan aliran bisnis sensitif, dan mengotomatisasi akses ke aliran tersebut, yang merugikan bisnis. | Kurangnya pandangan holistik tentang API untuk sepenuhnya mendukung persyaratan bisnis cenderung berkontribusi pada prevalensi masalah ini. Penyerang secara manual mengidentifikasi sumber daya (mis. endpoint) apa yang terlibat dalam alur kerja target dan bagaimana mereka bekerja sama. Jika mekanisme mitigasi sudah ada, penyerang perlu menemukan cara untuk menghindarinya. | Secara umum, dampak teknis tidak diharapkan. Eksploitasi mungkin merugikan bisnis dengan berbagai cara, misalnya: mencegah pengguna sah membeli produk, atau menyebabkan inflasi dalam perekonomian internal sebuah game. |
+| Khusus API: **Mudah** dieksploitasi | Prevalensi **Luas** : Terdeteksi **Rata-rata** | Teknis **Sedang** : Spesifik Bisnis |
+| Eksploitasi biasanya melibatkan pemahaman model bisnis yang didukung oleh API, menemukan aliran bisnis sensitif, dan mengotomatisasi akses ke aliran tersebut, yang merugikan bisnis. | Kurangnya pandangan holistik tentang API untuk sepenuhnya mendukung persyaratan bisnis cenderung berkontribusi pada prevalensi masalah ini. Penyerang secara manual mengidentifikasi sumber daya (misalnya endpoint) apa yang terlibat dalam alur kerja target dan bagaimana mereka bekerja sama. Jika mekanisme mitigasi sudah ada, penyerang perlu menemukan cara untuk melewatinya. | Secara umum, dampak teknis tidak diharapkan. Eksploitasi mungkin merugikan bisnis dengan berbagai cara, misalnya: mencegah pengguna sah membeli produk, atau menyebabkan inflasi dalam perekonomian internal sebuah game. |
 
 ## Apakah API Rentan?
 
@@ -11,15 +11,15 @@ Saat membuat Endpoint API, penting untuk memahami aliran bisnis apa yang diekspo
 
 Contoh umum aliran bisnis sensitif dan risiko akses berlebihan yang terkait dengannya:
 
-* Aliran pembelian produk - seorang penyerang dapat membeli semua persediaan item berpermintaan tinggi sekaligus dan menjual kembali dengan harga yang lebih tinggi (penimbunan)
-* Aliran membuat komentar/posting - seorang penyerang dapat spam sistem  
+* Aliran pembelian produk - seorang penyerang dapat membeli semua persediaan item yang sangat diminati secara sekaligus dan menjual kembali dengan harga yang lebih tinggi (penimbunan)
+* Aliran membuat komentar/posting - seorang penyerang dapat men-spam sistem  
 * Melakukan reservasi - seorang penyerang dapat memesan semua slot waktu yang tersedia dan mencegah pengguna lain menggunakan sistem
 
-Risiko akses berlebihan mungkin berubah antar industri dan bisnis. Misalnya - pembuatan posting oleh skrip mungkin dianggap sebagai risiko spam oleh satu jejaring sosial, tetapi didorong oleh jejaring sosial lainnya.
+Risiko akses berlebihan mungkin berubah antar industri dan bisnis. Misalnya - pembuatan post oleh skrip mungkin dianggap sebagai risiko spam oleh satu jejaring sosial, tetapi didorong oleh jejaring sosial lainnya.
 
 Sebuah Endpoint API rentan jika mengekspos aliran bisnis sensitif, tanpa membatasi akses ke dalamnya dengan tepat.
 
-## Skenario Serangan Contoh
+## Skenario Contoh Serangan
 
 ### Skenario #1  
 
@@ -52,11 +52,11 @@ Perencanaan mitigasi harus dilakukan dalam dua lapisan:
 * Bisnis - identifikasi aliran bisnis yang mungkin merugikan bisnis jika digunakan secara berlebihan.
 * Rekayasa - pilih mekanisme perlindungan yang tepat untuk memitigasi risiko bisnis.
 
-  Beberapa mekanisme perlindungan lebih sederhana sedangkan yang lain lebih sulit diterapkan. Metode berikut digunakan untuk memperlambat ancaman otomatis:
+  Beberapa mekanisme perlindungan lebih sederhana sementara yang lain lebih sulit diterapkan. Metode berikut digunakan untuk memperlambat ancaman otomatis:
 
-  * Fingerprinting perangkat: menolak layanan ke perangkat klien yang tidak diharapkan (mis. browser tanpa kepala) cenderung membuat aktor ancaman menggunakan solusi yang lebih canggih, sehingga lebih mahal bagi mereka
-  * Deteksi manusia: menggunakan captcha atau solusi biometrik tingkat lanjut (mis. pola pengetikan) 
-  * Pola non-manusia: menganalisis alur pengguna untuk mendeteksi pola non-manusia (mis. pengguna mengakses fungsi "tambah ke keranjang" dan "selesaikan pembelian" dalam waktu kurang dari satu detik)
+  * Fingerprinting perangkat: menolak layanan ke perangkat klien yang tidak diharapkan (misalnya headless browser) cenderung membuat aktor ancaman menggunakan solusi yang lebih canggih, sehingga lebih mahal bagi mereka
+  * Deteksi manusia: menggunakan captcha atau solusi biometrik tingkat lanjut (misalnya pola pengetikan) 
+  * Pola non-manusia: menganalisis alur pengguna untuk mendeteksi pola non-manusia (misalnya pengguna mengakses fungsi "tambah ke keranjang" dan "selesaikan pembelian" dalam waktu kurang dari satu detik)
   * Pertimbangkan memblokir alamat IP dari node keluar Tor dan proxy terkenal
 
   Amankan dan batasi akses ke API yang dikonsumsi langsung oleh mesin (seperti API pengembang dan B2B). Mereka cenderung menjadi target yang mudah bagi penyerang karena seringkali tidak menerapkan semua mekanisme perlindungan yang diperlukan.
