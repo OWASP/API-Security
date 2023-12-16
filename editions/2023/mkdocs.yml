@@ -5,3 +5,6 @@ extra:
   alternate:
     - name: English
       lang: en
+  alternate:
+    - name: Portugês (Portugal)
+      lang: pt-pt
