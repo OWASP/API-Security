@@ -1,11 +1,10 @@
-# Notice
+# Nota
 
-This is the text version of OWASP API Security Top 10, used as source for any
-official versions of this document such the web site.
+Esta é a versão de texto do OWASP API Security Top 10, usada como fonte para quaisquer versões oficiais deste documento como por exemplo o website.
 
-Contributions to the project such as comments, corrections, or translations
-should be done here. For details on [How To Contribute][1], please refer to
-[CONTRIBUTING.md][1].
+Contribuições para o projeto tais como comentários, correções ou traduções devem
+ser feitas aqui. Para mais detalhes sobre [Como Contribuir][1], por favor
+consulte a secção [CONTRIBUTING.md][1].
 
 * Erez Yallon
 * Inon Shkedy
