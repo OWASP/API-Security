@@ -1,41 +1,45 @@
-# Foreword
+# Prefácio
 
-A foundational element of innovation in today's app-driven world is the
-Application Programming Interface (API). From banks, retail, and transportation
-to IoT, autonomous vehicles, and smart cities, APIs are a critical part of
-modern mobile, SaaS, and web applications and can be found in customer-facing,
-partner-facing, and internal applications.
+As APIs - _Application Programming Interface_ têm um papel fundamental na
+inovação que observamos nos dias de hoje ao nível das aplicações. Desde a banca,
+retalho e transportes à Internet das Coisas (IoT), veículos autónomos e _Smart
+Cities_, as APIs são hoje um elemento crítico nas aplicações móveis, _Software
+as a Service_ (SaaS) e aplicações web, sejam elas destinadas ao público em
+geral, parceiros de negócio ou para uso interno das organizações.
 
-By nature, APIs expose application logic and sensitive data such as Personally
-Identifiable Information (PII) and because of this, APIs have increasingly
-become a target for attackers. Without secure APIs, rapid innovation would be
-impossible.
+Por definição as APIs expõem lógica aplicacional e dados sensíveis tais como
+informação pessoal (PII - _Personally Identifiable Information_), motivo pelo
+qual se têm vindo a tornar um alvo para os atacantes. Se não conseguirmos
+garantir a segurança das APIs será impossível continuar a inovar a um ritmo
+acelerado.
 
-Although a broader web application security risks Top 10 still makes sense, due
-to their particular nature, an API-specific security risks list is required.
-API security focuses on strategies and solutions to understand and mitigate the
-unique vulnerabilities and security risks associated with APIs.
+Apesar de continuar a fazer sentindo manter uma lista dos 10 principais
+problemas de segurança em aplicações web, devido à natureza particular das APIs,
+é importante haver também uma tal lista específica para APIs.
+A segurança das APIs foca-se nas estratégias e soluções para compreender e
+mitigar as vulnerabilidades e risco de segurança associado às APIs.
 
-If you're familiar with the [OWASP Top 10 Project][1], then you'll notice the
-similarities between both documents: they are intended for readability and
-adoption. If you're new to the OWASP Top 10 series, you may be better off
-reading the [API Security Risks][2] and [Methodology and Data][3] sections
-before jumping into the Top 10 list.
+Se estiver familiarizado com o projeto [OWASP Top 10][1] com certeza notará as
+semelhanças entre os documentos: elas são propositadas para facilitar a leitura
+e adoção deste. Se por outro lado for a primeira vez que tem contacto com um
+documento da série OWASP Top 10, sugerimos que comece por ler as secções [Riscos
+de Segurança em APIs][2] e [Metodologia e Dados][3] antes de aprofundar a lista
+dos dez problemas de segurança mais críticos em APIs.
 
-You can contribute to OWASP API Security Top 10 with your questions, comments,
-and ideas at our GitHub project repository:
+Pode contribuir para o OWASP API Security Top 10 com perguntas, comentários e
+ideias no repositório do projeto no GitHub:
 
 * https://owasp.org/www-project-api-security/
 * https://github.com/OWASP/API-Security/blob/master/CONTRIBUTING.md
 
-You can find the OWASP API Security Top 10 here:
+Pode ainda encontrar o OWASP API Security Top 10 em:
 
 * https://owasp.org/www-project-api-security/
 * https://github.com/OWASP/API-Security
 
-We wish to thank all the contributors who made this project possible with their
-effort and contributions. They are all listed in the [Acknowledgments
-section][4]. Thank you!
+Gostaríamos de agradecer a todos os que participaram neste projeto, tornando-o
+possível com o seu empenho e contribuições. A lista de contribuidores
+encontra-se na secção [Agradecimentos][4]. Obrigado!
 
 [1]: https://owasp.org/www-project-top-ten/
 [2]: ./0x10-api-security-risks.md
