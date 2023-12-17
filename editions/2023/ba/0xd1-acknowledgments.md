@@ -2,7 +2,7 @@
 
 ## Ucapan Terima Kasih kepada Kontributor
 
-Kami ingin mengucapakn terima kasih kepada kontributor berikut ini yang telah berkontribusi secara terbuka melalui GitHub, atau cara lainnya:
+Kami ingin mengucapakn terima kasih kepada kontributor berikut ini yang telah berkontribusi secara terbuka melalui GitHub, atau melalui cara lainnya:
 
 247arjun, abunuwas, Alissa Knight, Arik Atar, aymenfurter, Corey J. Ball, cyn8,
 d0znpp, Dan Gordon, donge, Dor Tumarkin, faizzaidi, gavjl, guybensimhon, Inês
