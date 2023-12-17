@@ -2,12 +2,12 @@
 
 | Agen Ancaman/Vektor Serangan | Kelemahan Keamanan | Dampak |
 | - | - | - |
-| Khusus API : Kemungkinan Dieksploitasi **Mudah** | Meluas **Umum** : Kemungkinan Dideteksi **Sedang** | Teknis **Serius** : Khusus Bisnis |
-| Mengeksploitasi masalah ini memerlukan penyerang untuk mengidentifikasi dan mungkin mengompromikan API/Layanan lain yang terintegrasi dengan API target. Biasanya, informasi ini tidak tersedia secara publik atau API/Layanan yang terintegrasi tidak mudah dieksploitasi. | Para pengembang cenderung percaya dan tidak memverifikasi titik akhir yang berinteraksi dengan API eksternal atau pihak ketiga, mengandalkan persyaratan keamanan yang lebih lemah seperti yang berkaitan dengan keamanan transportasi, otentikasi/otorisasi, dan validasi serta sanitasi input. Penyerang perlu mengidentifikasi layanan yang terintegrasi dengan API target (sumber data) dan, akhirnya, mengompromikannya. | Dampaknya bervariasi sesuai dengan apa yang dilakukan API target dengan data yang diambil. Eksploitasi yang berhasil dapat menyebabkan paparan informasi sensitif kepada aktor yang tidak diotorisasi, banyak jenis injeksi, atau penolakan layanan. |
+| Khusus API : Kemungkinan Dieksploitasi **Mudah** | Prevalensi **Umum** : Kemungkinan Dideteksi **Sedang** | Teknis **Serius** : Khusus Bisnis |
+| Penyerang perlu mengidentifikasi dan mungkin mengkompromikan API/Layanan lain yang terintegrasi dengan API target untuk mengeksploitasi masalah ini. Biasanya, informasi ini tidak tersedia secara publik atau API/layanan yang terintegrasi tidak mudah dieksploitasi. | Para pengembang cenderung percaya dan tidak memverifikasi endpoint yang berinteraksi dengan API eksternal atau pihak ketiga, mengandalkan persyaratan keamanan yang lebih lemah seperti yang berkaitan dengan keamanan transportasi, otentikasi/otorisasi, dan validasi serta sanitasi input. Penyerang perlu mengidentifikasi layanan yang terintegrasi dengan API target (sumber data) dan, akhirnya, mengkompromikannya. | Dampaknya bervariasi sesuai dengan apa yang dilakukan API target dengan data yang diambil. Eksploitasi yang berhasil dapat menyebabkan paparan informasi sensitif kepada aktor yang tidak diotorisasi, banyak jenis injeksi, atau penolakan layanan. |
 
 ## Apakah API Rentan?
 
-Pengembang cenderung percaya data yang diterima dari API pihak ketiga lebih dari masukan pengguna. Hal ini terutama berlaku untuk API yang ditawarkan oleh perusahaan-perusahaan terkemuka. Karena itu, pengembang cenderung mengadopsi standar keamanan yang lebih lemah, misalnya dalam hal validasi dan sanitasi input.
+Pengembang cenderung lebih percaya data yang diterima dari API pihak ketiga daripada masukan pengguna. Hal ini terutama berlaku untuk API yang ditawarkan oleh perusahaan-perusahaan terkemuka. Karena itu, pengembang cenderung mengadopsi standar keamanan yang lebih lemah, misalnya dalam hal validasi dan sanitasi input.
 
 API mungkin rentan jika:
 
@@ -16,7 +16,7 @@ API mungkin rentan jika:
   memprosesnya atau melewatkan data tersebut ke komponen yang lebih rendah;
 * Mengikuti pengalihan tanpa pertimbangan;
 * Tidak membatasi jumlah sumber daya yang tersedia untuk memproses respons layanan pihak ketiga;
-* Tidak mengimplementasikan waktu habis untuk interaksi dengan layanan pihak ketiga;
+* Tidak mengimplementasikan batas waktu untuk interaksi dengan layanan pihak ketiga;
 
 ## Contoh Skenario Serangan
 
@@ -24,11 +24,11 @@ API mungkin rentan jika:
 
 Sebuah API mengandalkan layanan pihak ketiga untuk memperkaya alamat bisnis yang diberikan oleh pengguna akhir. Ketika alamat diberikan kepada API oleh pengguna akhir, alamat tersebut dikirim ke layanan pihak ketiga dan data yang dikembalikan kemudian disimpan dalam database lokal yang mendukung SQL.
 
-Penjahat menggunakan layanan pihak ketiga untuk menyimpan muatan SQLi yang terkait dengan bisnis yang dibuat oleh mereka. Kemudian mereka menyerang API yang rentan dengan memberikan masukan khusus yang membuatnya menarik "bisnis jahat" mereka dari layanan pihak ketiga. Muatan SQLi akhirnya dieksekusi oleh database, menggantikan data ke server yang dikendalikan oleh penyerang.
+Aktor jahat menggunakan layanan pihak ketiga untuk menyimpan muatan SQLi yang terkait dengan bisnis yang dibuat oleh mereka. Kemudian mereka menyerang API yang rentan dengan memberikan masukan khusus yang membuatnya menarik "bisnis berbahaya" mereka dari layanan pihak ketiga. Muatan SQLi akhirnya dieksekusi oleh database, mengirimkan data ke server yang dikendalikan oleh penyerang.
 
 ### Skenario #2
 
-Sebuah API terintegrasi dengan penyedia layanan pihak ketiga untuk menyimpan informasi medis sensitif pengguna. Data dikirim melalui koneksi aman menggunakan permintaan HTTP seperti di bawah ini:
+Sebuah API terintegrasi dengan penyedia layanan pihak ketiga untuk menyimpan secara aman informasi medis sensitif pengguna. Data dikirim melalui koneksi aman menggunakan permintaan HTTP seperti di bawah ini:
 
 ```
 POST /user/store_phr_record
@@ -37,14 +37,14 @@ POST /user/store_phr_record
 }
 ```
 
-Penjahat menemukan cara untuk mengompromikan API pihak ketiga dan mulai memberikan respons `308 Permanent Redirect` untuk permintaan seperti di atas.
+Aktor jahat menemukan cara untuk mengkompromikan API pihak ketiga dan mulai memberikan respons `308 Permanent Redirect` untuk permintaan seperti di atas.
 
 ```
 HTTP/1.1 308 Permanent Redirect
 Location: https://attacker.com/
 ```
 
-Karena API mengikuti pengalihan dari layanan pihak ketiga tanpa mempertimbangkannya, itu akan mengulangi permintaan yang sama persis termasuk data sensitif pengguna, kali ini ke server penyerang.
+Karena API mengikuti pengalihan dari layanan pihak ketiga tanpa mempertimbangkannya, ia akan mengirimkan permintaan yang sama persis termasuk data sensitif pengguna, namun kali ini ke server penyerang.
 
 ### Skenario #3
 
@@ -54,11 +54,11 @@ Sekarang, ketika integrasi dari aplikasi yang diserang dilakukan dengan reposito
 
 ## Cara Mencegah
 
-* Saat mengevaluasi penyedia layanan, nilai posisi keamanan API mereka.
+* Saat mengevaluasi penyedia layanan, nilai postur keamanan API mereka.
 * Pastikan semua interaksi API terjadi melalui saluran komunikasi yang aman (TLS).
 * Selalu validasi dan lakukan sanitasi data yang diterima dari API terintegrasi sebelum menggunakannya.
-* Pertahankan daftar putih lokasi yang dikenal API terintegrasi dapat mengalihkan
-  milik Anda: jangan mengikuti pengalihan tanpa pertimbangan.
+* Pelihara daftar whitelist lokasi yang dikenal API terintegrasi yang dapat mengalihkan
+  permintaan Anda: jangan mengikuti pengalihan tanpa pertimbangan.
 
 
 ## Referensi
