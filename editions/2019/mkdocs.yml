@@ -15,9 +15,9 @@ extra:
       lang: fr
     - name: Greek (Greece)
       lang: el-gr
-    - name: Portugês (Brasil)
+    - name: Português (Brasil)
       lang: pt-BR
-    - name: Portugês (Portugal)
+    - name: Português (Portugal)
       lang: pt-pt
     - name: Russian
       lang: ru
