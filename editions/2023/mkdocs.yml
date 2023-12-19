@@ -1,0 +1,7 @@
+site_name: editions/2023
+docs_dir: .
+
+extra:
+  alternate:
+    - name: English
+      lang: en
