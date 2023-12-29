@@ -1,12 +1,12 @@
-# Release Notes
+# Notas da Versão
 
-This is the second edition of the OWASP API Security Top 10 edition, exactly
-four years after its first release. A lot has changed in the API (security)
-scene. API traffic increased at a fast pace, some API protocols gained a lot
-more traction, many new API security vendors/solutions have popped up, and, of
-course, attackers have developed new skills and techniques to compromise
-APIs. It was about time to get the list of the ten most critical API security
-risks updated.
+Esta é a segunda edição do OWASP API Security Top 10, exatamente quatro anos
+após a primeira versão. Muito mudou no panorama das API (a nível de 
+segurança). O tráfego das API aumentou a um ritmo acelerado, alguns protocolos 
+de API ganharam muito mais popularidade, surgiram muitos novos vendedores/
+soluções de segurança para API e, claro, os atacantes desenvolveram novas 
+capacidades e técnicas para comprometer APIs. Já era hora de atualizar a lista 
+dos dez riscos de segurança de API mais críticos.
 
 With a more mature API security industry, for the first time, there was [a
 public call for data][1]. Unfortunately, no data was contributed, but based on
