@@ -8,13 +8,14 @@ soluções de segurança para API e, claro, os atacantes desenvolveram novas
 capacidades e técnicas para comprometer APIs. Já era hora de atualizar a lista 
 dos dez riscos de segurança de API mais críticos.
 
-With a more mature API security industry, for the first time, there was [a
-public call for data][1]. Unfortunately, no data was contributed, but based on
-the project's team experience, careful API security specialist review, and
-community feedback on the release candidate, we built this new list. In the
-[Methodology and Data section][2], you'll find more details about how this
-version was built. For more details about the security risks please refer to the
-[API Security Risks section][3].
+Com uma indústria de segurança de API mais madura, pela primeira vez, houve [um
+ apelo público para dados][1]. Infelizmente, não foram fornecidos dados, mas 
+ com base na experiência da equipa do projeto, numa análise cuidadosa por 
+ especialistas em segurança de API e no feedback da comunidade sobre a versão 
+ preliminar, construímos esta nova lista. Na [secção Metodologia e Dados][2], 
+ encontrará mais detalhes sobre como esta versão foi elaborada. Para mais 
+ detalhes sobre os riscos de segurança, consulte a [secção Riscos de Segurança 
+ em APIs][3].
 
 The OWASP API Security Top 10 2023 is a forward-looking awareness document for
 a fast pace industry. It does not replace other TOP 10's. In this edition:
