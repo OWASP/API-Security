@@ -9,7 +9,7 @@ Avec une industrie de la sécurité des API plus mature, pour la première fois,
 
 Le OWASP API Security Top 10 2023 est un document de sensibilisation tourné vers l'avenir pour une industrie en constante évolution. Il ne remplace pas les autres TOP 10. Dans cette édition :
 
-* Nous avons combiné l' "Excessive Data Exposure" et le "Mass Assignment" en mettant l'accent sur la cause commune : les échecs de validation de l'autorisation au niveau des propriétés de l'objet.
+* Nous avons combiné l' "Excessive Data Exposure" et le "Mass Assignment" en mettant l'accent sur la cause commune : "Broken Object Property Level Authorization".
 * Nous avons mis davantage l'accent sur la consommation de ressources, plutôt que sur le rythme auquel elles sont épuisées.
 * Nous avons créé une nouvelle catégorie "Unrestricted Access to Sensitive Business Flows" pour aborder de nouvelles menaces, comprenant la plupart de celles qui peuvent être atténuées par le biais du rate limiting.
 * Nous avons ajouté "Unsafe Consumption of APIs" pour aborder quelque chose que nous avons commencé à voir : les attaquants ont commencé à chercher à compromettre les services intégrés de la cible, au lieu de viser directement les API. C'est le bon moment pour commencer à sensibiliser à ce risque croissant.

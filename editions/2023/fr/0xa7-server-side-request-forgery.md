@@ -3,7 +3,7 @@
 | Facteurs de menace / Vecteurs d'attaque | Faille de sécurité | Impacts |
 | - | - | - |
 | Spécifique à l'API : Exploitabilité **Facile** | Prévalence **Courante** : Détectabilité **Facile** | Technique **Modérée** : Spécifique à l'organisation |
-| L'exploitation nécessite que l'attaquant trouve un point d'accès API qui accède à une URI fournie par le client. En général, l'exploitation de la SSRF de base (lorsque la réponse est renvoyée à l'attaquant) est plus facile que la SSRF aveugle, dans laquelle l'attaquant n'a aucun retour d'information sur le succès de l'attaque. | Les concepts modernes de développement d'applications encouragent les développeurs à accéder à des URI fournies par le client. Le manque de validation ou une validation incorrecte de ces URI sont des problèmes courants. Des requêtes API régulières et une analyse des réponses seront nécessaires pour détecter le problème. Lorsque la réponse n'est pas renvoyée (SSRF aveugle), la détection de la vulnérabilité nécessite plus d'efforts et de créativité. | L'exploitation réussie peut entraîner une énumération des services internes (par exemple, un balayage de ports), une divulgation d'informations, le contournement des pare-feu ou d'autres mécanismes de sécurité. Dans certains cas, cela peut entraîner un déni de service ou l'utilisation du serveur comme proxy pour masquer des activités malveillantes. |
+| L'exploitation nécessite que l'attaquant trouve un point d'accès API qui accède à une URI fournie par le client. En général, l'exploitation de la SSRF de base (lorsque la réponse est renvoyée à l'attaquant) est plus facile que la SSRF aveugle, dans laquelle l'attaquant n'a aucun retour d'information sur le succès de l'attaque. | Les concepts modernes de développement d'applications encouragent les développeurs à accéder à des URI fournies par le client. Le manque de validation ou une validation incorrecte de ces URI sont des problèmes courants. L'analyse des réponses et des requêtes associées sera nécessaire pour détecter le problème. Lorsque la réponse n'est pas renvoyée (SSRF aveugle), la détection de la vulnérabilité nécessite plus d'efforts et de créativité. | L'exploitation réussie peut entraîner une énumération des services internes (par exemple, un balayage de ports), une divulgation d'informations, le contournement des pare-feu ou d'autres mécanismes de sécurité. Dans certains cas, cela peut entraîner un déni de service ou l'utilisation du serveur comme proxy pour masquer des activités malveillantes. |
 
 ## L'API est-elle vulnérable ?
 
@@ -15,7 +15,7 @@ Encore plus courant - les concepts suivants encouragent les développeurs à acc
 
 Encore plus dangereux - les technologies modernes comme les fournisseurs de cloud, Kubernetes et Docker exposent des canaux de gestion et de contrôle via HTTP sur des chemins prévisibles et bien connus. Ces canaux sont une cible facile pour une attaque SSRF.
 
-C'est plus difficile de limiter le trafic sortant de votre application, en raison de la nature connectée des applications modernes.
+Il est de plus en plus difficile de limiter le trafic sortant de votre application, en raison de la nature connectée des applications modernes.
 
 Le risque de SSRF ne peut pas toujours être complètement éliminé. Lors du choix d'un mécanisme de protection, il est important de tenir compte des risques et des besoins de l'entreprise.
 

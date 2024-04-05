@@ -11,8 +11,7 @@ Lors de la création d'un point d'accès (endpoint) API, il est important de com
 
 Des exemples courants de flux commerciaux sensibles et des risques d'accès excessif associés :
 
-* Achat d'un produit - un attaquant peut acheter tout le stock d'un article
-  très demandé à la fois et le revendre à un prix plus élevé (revente)
+* Achat d'un produit - un attaquant peut acheter tout le stock d'un article très demandé en une fois et de tous les revendre à un prix plus élevé
 * Création d'un flux de commentaires/publications - un attaquant peut spammer le système
 * Réservation - un attaquant peut réserver tous les créneaux horaires disponibles
   et empêcher d'autres utilisateurs d'utiliser le système
@@ -49,15 +48,15 @@ L'attaquant peut ensuite profiter de trajets gratuits ou vendre les comptes avec
 
 ## Comment s'en prémunir ?
 
-La planification d'atténuation doit être effectuée en deux couches :
+La planification de mitigation doit être effectuée en deux couches :
 
-* Business - identifier les flux commerciaux qui pourraient nuire à l'entreprise s'ils sont excessivement utilisés.
+* Business - identifier les flux commerciaux qui pourraient nuire à l'entreprise s'ils "taient utilisés de manière excessive.
 * Ingénierie - choisir les bons mécanismes de protection pour atténuer le risque commercial.
 
 Certains mécanismes de protection sont plus simples tandis que d'autres sont plus difficiles à mettre en œuvre. Les méthodes suivantes sont utilisées pour ralentir les menaces automatisées :
 
 * Empreinte de l'appareil : refuser le service aux appareils clients inattendus (par exemple, les navigateurs sans interface graphique) tend à inciter les acteurs malveillants à utiliser des solutions plus sophistiquées, donc plus coûteuses pour eux
-* Détection humaine : utiliser soit un captcha, soit des solutions biométriques plus avancées (par exemple, les modèles de frappe)
+* Détection humaine : utiliser soit un captcha, soit des solutions biométriques plus avancées (par exemple : biométrie par modèles de frappe)
 * Modèles non humains : analyser le flux de l'utilisateur pour détecter les modèles non humains (par exemple, l'utilisateur a accédé aux fonctions "ajouter au panier" et "compléter l'achat" en moins d'une seconde)
 * Considérer le blocage des adresses IP des nœuds de sortie Tor et des proxies bien connus
 

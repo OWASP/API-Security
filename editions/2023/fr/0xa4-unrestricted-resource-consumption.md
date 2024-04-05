@@ -3,7 +3,7 @@
 | Facteurs de menace / Vecteurs d'attaque | Faille de sécurité | Impact |
 | - | - | - |
 | Spécifique à l'API : Exploitabilité **Moyenne** | Prévalence **Répandue** : Détection **Facile** | Technique **Grave** : Spécifique à l'organisation |
-| L'exploitation de cette faille nécessite des requêtes API simples. Plusieurs requêtes simultanées peuvent être effectuées à partir d'un seul ordinateur local ou en utilisant des ressources cloud. La plupart des outils automatisés disponibles sont conçus pour provoquer un déni de service (DoS) via des charges de trafic élevées, impactant le taux de service des API. | Il est courant de trouver des API qui ne limitent pas les interactions client ou la consommation de ressources. Écrire et tester avec des requêtes API incluant des paramètres qui contrôlent le nombre de ressources à renvoyer et qui effectuent une analyse de l'état/du temps/de la longueur de la réponse, devraient permettre d'identifier le problème. Il en va de même pour les opérations groupées. Bien que les attaquants n'aient pas de visibilité sur l'impact des coûts, cela peut être déduit en fonction du modèle commercial/tarifaire des fournisseurs de services (par exemple, le fournisseur de services cloud). | L'exploitation peut entraîner un déni de service (DoS) en raison de l'épuisement des ressources, mais elle peut également entraîner une augmentation des coûts opérationnels tels que ceux liés à l'infrastructure en raison d'une demande accrue de CPU, augmentant les besoins de stockage sur le cloud, etc. |
+| L'exploitation de cette faille nécessite des requêtes API simples. Plusieurs requêtes simultanées peuvent être effectuées à partir d'un seul ordinateur local ou en utilisant des ressources cloud. La plupart des outils automatisés disponibles sont conçus pour provoquer un déni de service (DoS) via des charges de trafic élevées, impactant le taux de service des API. | Il est courant de trouver des API qui ne limitent pas les interactions client ou la consommation de ressources. Écrire et tester avec des requêtes API incluant des paramètres qui contrôlent le nombre de ressources à renvoyer et qui effectuent une analyse de l'état/du temps/de la longueur de la réponse, devraient permettre d'identifier le problème. Il en va de même pour les opérations groupées. Bien que les attaquants n'aient pas de visibilité sur l'impact des coûts, cela peut être déduit en fonction du modèle commercial/tarifaire des fournisseurs de services (par exemple, le fournisseur de services cloud). | L'exploitation peut entraîner un déni de service (DoS) en raison de l'épuisement des ressources, mais elle peut également entraîner une augmentation des coûts opérationnels tels que ceux liés à l'infrastructure : en raison d'une demande accrue en CPU, l'augmentation des besoins en stockage sur le cloud, etc. |
 
 ## L'API est-elle vulnérable ?
 
@@ -49,7 +49,7 @@ Host: willyo.net
 }
 ```
 
-Le fournisseur tiers, Willyo, facture 0,05 $ par ce type d'appel.
+Le fournisseur tiers, Willyo, facture 0,05 $ par envoi SMS.
 
 Un attaquant écrit un script qui envoie le premier appel API des dizaines de milliers de fois. Le back-end suit et demande à Willyo d'envoyer des dizaines de milliers de SMS, ce qui conduit l'entreprise à perdre des milliers de dollars en quelques minutes.
 
@@ -71,7 +71,7 @@ POST /graphql
 
 Une fois le téléchargement terminé, l'API génère plusieurs miniatures de tailles différentes basées sur l'image téléchargée. Cette opération graphique consomme beaucoup de mémoire.
 
-L'API met en œuvre une protection traditionnelle de limitation du taux - un utilisateur ne peut pas accéder trop de fois à l'endpoint GraphQL en peu de temps. L'API vérifie également la taille de l'image téléchargée avant de générer des miniatures pour éviter de traiter des images trop grandes.
+L'API met en œuvre une protection traditionnelle de "rate limiting" - un utilisateur ne peut pas accéder trop de fois à l'endpoint GraphQL en peu de temps. L'API vérifie également la taille de l'image téléchargée avant de générer des miniatures pour éviter de traiter des images trop grandes.
 
 Un attaquant peut facilement contourner ces mécanismes, en exploitant la nature flexible de GraphQL :
 
@@ -97,10 +97,10 @@ Quand l'un des fichiers est mis à jour, sa taille augmente à 18 Go. Tous les c
 ## Comment s'en prémunir
 
 * Utilisez une solution qui facilite la limitation de la [mémoire][1], du [CPU][2], du [nombre de redémarrages][3], des descripteurs de fichiers et des processus tels que les conteneurs / le code Serverless (par exemple, les Lambdas).
-* Définissez et appliquez une taille maximale de données sur tous les paramètres et payload entrants, telle que la longueur maximale des chaînes, le nombre maximal d'éléments dans les tableaux et la taille maximale des fichiers téléchargés (qu'ils soient stockés localement ou dans un stockage cloud).
-* Mettez en place une limite sur la fréquence à laquelle un client peut interagir avec l'API dans un intervalle de temps défini (limitation du taux).
-* La limitation du taux doit être ajustée en fonction des besoins de l'entreprise. Certains points d'accès API peuvent nécessiter des politiques plus strictes.
-* Limitez/ralentissez le nombre de fois ou la fréquence à laquelle un seul client/utilisateur API peut exécuter une seule opération (par exemple, valider un OTP, ou demander une récupération de mot de passe sans visiter l'URL à usage unique).
+* Définissez et appliquez une taille maximale de données sur tous les paramètres et payloads entrants, telle que la longueur maximale des chaînes, le nombre maximal d'éléments dans les tableaux et la taille maximale des fichiers téléchargés (qu'ils soient stockés localement ou dans un stockage cloud).
+* Mettez en place une limite sur la fréquence à laquelle un client peut interagir avec l'API dans un intervalle de temps défini (rate limiting).
+* Le "rate limiting" doit être ajustée méticuleusement en fonction des besoins de l'entreprise. Certains points d'accès API peuvent nécessiter des politiques plus strictes.
+* Limitez/ralentissez le nombre de fois ou la fréquence à laquelle un client/utilisateur API défini peut exécuter certaines opérations (par exemple, valider un OTP, ou demander une récupération de mot de passe sans visiter l'URL à usage unique).
 * Ajoutez une validation appropriée côté serveur pour les paramètres de la requête et son contenu, en particulier ceux qui contrôlent le nombre d'enregistrements à renvoyer dans la réponse.
 * Configurez des limites de dépenses pour tous les fournisseurs de services/intégrations API. Lorsque cela n'est pas possible, configurez plutôt des alertes de facturation.
 

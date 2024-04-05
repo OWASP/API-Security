@@ -3,7 +3,7 @@
 | Facteurs de menace / Vecteurs d'attaque | Faille de sécurité | Impact |
 | - | - | - |
 | Spécifique à l'API : Exploitabilité **Facile** | Prévalence **Répandue** : Détectabilité **Facile** | Technique **Grave** : Spécifique à l'organisation |
-| Le mécanisme d'authentification est une cible facile pour les attaquants car il est exposé à tout le monde. Bien que des compétences techniques plus avancées puissent être nécessaires pour exploiter certaines failles d'authentification, des outils d'exploitation sont généralement disponibles. | Les erreurs de conception des ingénieurs logiciels et en sécurité concernant les limites de l'authentification et la complexité de sa mise en œuvre rendent les problèmes d'authentification courants. Les méthodologies de détection des problèmes d'authentification sont disponibles et faciles à créer. | Les attaquants peuvent prendre le contrôle complet des comptes d'autres utilisateurs du système, lire leurs données personnelles et effectuer des actions sensibles en leur nom. Les systèmes sont peu susceptibles de pouvoir distinguer les actions des attaquants de celles des utilisateurs légitimes. |
+| Le mécanisme d'authentification est une cible facile pour les attaquants car il est exposé à tout le monde. Bien que des compétences techniques plus avancées puissent être nécessaires pour exploiter certaines failles d'authentification, des outils d'exploitation sont généralement disponibles. | Les erreurs de conception commises par les ingénieurs logiciels et en sécurité ou la complexité d'implémentation rendent les problèmes courants pour l'authentification des utilisateurs. Les méthodologies de détection des problèmes d'authentification sont disponibles et faciles à créer. | Les attaquants peuvent prendre le contrôle complet des comptes d'autres utilisateurs du système, lire leurs données personnelles et effectuer des actions sensibles en leur nom. Les systèmes sont peu susceptibles de pouvoir distinguer les actions des attaquants de celles des utilisateurs légitimes. |
 
 
 ## L'API est-elle vulnérable ?
@@ -78,7 +78,7 @@ Comme l'API ne demande pas aux utilisateurs de confirmer leur identité en fourn
 * Assurez-vous de connaître tous les flux possibles pour s'authentifier à l'API (mobile/web/liens profonds qui implémentent l'authentification en un clic/etc.). Demandez à vos ingénieurs quels flux vous avez manqués.
 * Documentez-vous sur vos mécanismes d'authentification. Assurez-vous de comprendre ce qu'ils sont et comment ils sont utilisés. OAuth n'est pas une authentification, pas plus que les clés API.
 * Ne réinventez pas la roue en matière d'authentification, de génération de jetons ou de stockage de mots de passe. Utilisez les standards.
-* Les points d'accès de récupération des informations d'identification/mot de passe oublié doivent être traités comme des points d'accès de connexion en termes de protection contre la force brute, de "rate limiting" et de protections de blocage.
+* Les points d'accès de récupération des informations d'identification/mot de passe oublié doivent être traités comme des points d'accès de connexion. Ils doivent être protégés contre les attaques par la force brute : par le blocage de comptes ou la mise en place de "rate limiting" contraignant.
 * Exigez une ré-authentification pour les opérations sensibles (par exemple, changer l'adresse e-mail du propriétaire du compte/le numéro de téléphone 2FA).
 * Utilisez le [Cheat Sheet d'authentification OWASP][1].
 * Là où c'est possible, mettez en œuvre l'authentification multi-facteurs.
