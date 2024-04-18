@@ -1,32 +1,32 @@
-# API4:2023 Konsumsi Sumber Daya yang Tidak Terbatas
+# API4:2023 Konsumsi Sumber Daya yang Tidak Dibatasi
 
 | Agen ancaman/Vektor serangan | Kelemahan Keamanan | Dampak |
 | - | - | - |
 | Khusus API: **Rata-rata** dieksploitasi | **Luas** Prevalensi: **Mudah** Terdeteksi | **Parah** Teknis: Spesifik Bisnis |
-| Eksploitasi membutuhkan permintaan API sederhana. Beberapa permintaan serentak dapat dilakukan dari satu komputer lokal atau dengan menggunakan sumber daya komputasi cloud. Sebagian besar alat otomatis yang tersedia dirancang untuk menyebabkan DoS melalui beban lalu lintas tinggi, yang berdampak pada tingkat layanan API. | Umum ditemukan API yang tidak membatasi interaksi atau konsumsi sumber daya klien. Permintaan API yang dibuat, seperti yang mencakup parameter yang mengendalikan jumlah sumber daya yang akan dikembalikan dan melakukan analisis status/waktu/panjang respons seharusnya memungkinkan identifikasi masalah. Hal yang sama berlaku untuk operasi batch. Meskipun agen ancaman tidak memiliki visibilitas atas dampak biaya, ini dapat disimpulkan berdasarkan model bisnis/harga penyedia layanan (mis. penyedia cloud). | Eksploitasi dapat menyebabkan DoS karena kelaparan sumber daya, tetapi juga dapat menyebabkan peningkatan biaya operasional seperti yang terkait dengan infrastruktur karena permintaan CPU yang lebih tinggi, peningkatan kebutuhan penyimpanan cloud, dll. |
+| Eksploitasi membutuhkan permintaan API sederhana. Beberapa permintaan serentak dapat dilakukan dari satu komputer lokal atau dengan menggunakan sumber daya komputasi cloud. Sebagian besar alat otomatis yang tersedia dirancang untuk menyebabkan DoS melalui beban lalu lintas tinggi, yang berdampak pada tingkat layanan API. | Umum ditemukan API yang tidak membatasi interaksi atau konsumsi sumber daya klien. Permintaan API yang dibuat, seperti yang mencakup parameter yang mengendalikan jumlah sumber daya yang akan dikembalikan dan melakukan analisis status/waktu/panjang respons seharusnya memungkinkan identifikasi masalah. Hal yang sama berlaku untuk operasi batch. Meskipun agen ancaman tidak memiliki visibilitas atas dampak biaya, ini dapat disimpulkan berdasarkan model bisnis/harga penyedia layanan (misalnya penyedia cloud). | Eksploitasi dapat menyebabkan DoS karena kekurangan sumber daya, tetapi juga dapat menyebabkan peningkatan biaya operasional seperti yang terkait dengan infrastruktur karena permintaan CPU yang lebih tinggi, peningkatan kebutuhan penyimpanan cloud, dll. |
 
 ## Apakah API Rentan?
 
-Memenuhi permintaan API memerlukan sumber daya seperti bandwidth jaringan, CPU, memori, dan penyimpanan. Terkadang sumber daya yang diperlukan tersedia oleh penyedia layanan melalui integrasi API, dan dibayar per permintaan, seperti mengirim email/SMS/panggilan telepon, validasi biometrik, dll.  
+Memenuhi permintaan API memerlukan sumber daya seperti bandwidth jaringan, CPU, memori, dan penyimpanan. Terkadang sumber daya yang diperlukan disediakan oleh penyedia layanan melalui integrasi API, dan dibayar berdasarkan permintaan, seperti mengirim email/SMS/panggilan telepon, validasi biometrik, dll.  
 
-API rentan jika setidaknya salah satu batasan berikut hilang atau diatur tidak tepat (mis. terlalu rendah/tinggi):
+API rentan jika setidaknya salah satu batasan berikut hilang atau diatur dengan tidak tepat (misalnya terlalu rendah/tinggi):
 
 * Batas waktu eksekusi
 * Memori maksimum yang dapat dialokasikan  
 * Jumlah maksimum deskriptor file
 * Jumlah proses maksimum
 * Ukuran file unggah maksimum
-* Jumlah operasi untuk dilakukan dalam satu permintaan klien API (mis. penyuntingan batch GraphQL)
+* Jumlah operasi untuk dilakukan dalam satu permintaan klien API (misalnya penyuntingan batch GraphQL)
 * Jumlah catatan per halaman untuk dikembalikan dalam satu permintaan-respons
-* Batas pengeluaran penyedia layanan pihak ketiga 
+* Batas biaya untuk layanan pihak ketiga 
 
 ## Skenario Serangan Contoh
 
 ### Skenario #1
 
-Sebuah jejaring sosial mengimplementasikan alur "lupa kata sandi" menggunakan verifikasi SMS, memungkinkan pengguna menerima token sekali pakai melalui SMS untuk mereset kata sandi mereka.
+Sebuah jejaring sosial mengimplementasikan alur "lupa kata sandi" menggunakan verifikasi SMS, hal ini memungkinkan pengguna menerima token sekali pakai melalui SMS untuk mereset kata sandi mereka.
 
-Begitu pengguna mengklik "lupa kata sandi" panggilan API dikirim dari browser pengguna ke API back-end:
+Setelah pengguna mengklik "lupa kata sandi" sebuah panggilan API dikirim dari browser pengguna ke API back-end:
 
 ```
 POST /initiate_forgot_password
@@ -49,7 +49,7 @@ Host: willyo.net
 }
 ```
 
-Penyedia pihak ketiga, Willyo, membebankan $0,05 per panggilan jenis ini.
+Penyedia pihak ketiga, Willyo, membebankan $0,05 untuk setiap panggilan jenis ini.
 
 Seorang penyerang menulis skrip yang mengirim panggilan API pertama puluhan ribu kali. Back-end mengikuti dan meminta Willyo untuk mengirim puluhan ribu pesan teks, yang menyebabkan perusahaan kehilangan ribuan dolar dalam hitungan menit.
 
@@ -69,9 +69,9 @@ POST /graphql
 }
 ```
 
-Begitu unggah selesai, API menghasilkan beberapa thumbnail dengan ukuran berbeda berdasarkan gambar yang diunggah. Operasi grafis ini mengambil banyak memori dari server.
+Begitu proses unggah selesai, API menghasilkan beberapa thumbnail dengan ukuran berbeda berdasarkan gambar yang diunggah. Operasi grafis ini mengambil banyak memori server.
 
-API mengimplementasikan perlindungan pembatasan tingkat tradisional - pengguna tidak dapat mengakses endpoint GraphQL terlalu banyak dalam jangka waktu singkat. API juga memeriksa ukuran gambar yang diunggah sebelum menghasilkan thumbnail untuk menghindari memproses gambar yang terlalu besar. 
+API mengimplementasikan perlindungan pembatasan tradisional - pengguna tidak dapat mengakses endpoint GraphQL terlalu banyak dalam jangka waktu singkat. API juga memeriksa ukuran gambar yang diunggah sebelum menghasilkan thumbnail untuk menghindari memproses gambar yang terlalu besar. 
 
 Seorang penyerang dapat dengan mudah mengatasi mekanisme tersebut, dengan memanfaatkan sifat fleksibel GraphQL:
 
@@ -86,23 +86,23 @@ POST /graphql
 ]
 ```
 
-Karena API tidak membatasi berapa kali operasi `uploadPic` dapat dicoba, panggilan akan menyebabkan kelelahan memori server dan Penolakan Layanan.
+Karena API tidak membatasi berapa kali operasi `uploadPic` dapat dicoba, panggilan akan menyebabkan habisnya memori server dan Denial of Service.
 
 ### Skenario #3
 
-Sebuah penyedia layanan memungkinkan klien mengunduh file sebesar apa pun menggunakan API-nya. File-file ini disimpan di penyimpanan objek cloud dan jarang berubah. Penyedia layanan mengandalkan layanan cache untuk memiliki tingkat layanan yang lebih baik dan menjaga konsumsi bandwidth tetap rendah. Layanan cache hanya menyimpan file hingga 15GB.
+Sebuah penyedia layanan memungkinkan klien mengunduh file berukuran sebesar apa pun menggunakan API-nya. File-file ini disimpan di penyimpanan objek cloud dan jarang berubah. Penyedia layanan mengandalkan layanan cache agar memiliki tingkat layanan yang lebih baik dan menjaga konsumsi bandwidth tetap rendah. Layanan cache hanya menyimpan file hingga 15GB.
 
-Ketika salah satu file diperbarui, ukurannya meningkat menjadi 18GB. Semua klien layanan segera mulai menarik versi baru. Karena tidak ada peringatan biaya konsumsi, atau pengeluaran maksimum yang diizinkan untuk layanan cloud, tagihan bulanan berikutnya meningkat dari rata-rata US$13 menjadi US$8rb.
+Ketika salah satu file diperbarui, ukurannya meningkat menjadi 18GB. Semua klien layanan segera mulai menarik versi baru. Karena tidak ada peringatan biaya konsumsi, atau pengeluaran maksimum yang diizinkan untuk layanan cloud, tagihan bulanan berikutnya meningkat dari rata-rata US$13 menjadi US$8 ribu.
 
 ## Cara Mencegah
 
-* Gunakan solusi yang memudahkan membatasi [memori][1], [CPU][2], [jumlah restart][3], [deskriptor file, dan proses][4] seperti Kontainer / kode Tanpa Server (mis. Lambda).
-* Tentukan dan tegakkan ukuran data maksimum pada semua parameter dan payload masukan, seperti panjang maksimum untuk string, jumlah elemen maksimum dalam array, dan ukuran file unggah maksimum (terlepas dari apakah disimpan secara lokal atau di penyimpanan cloud). 
-* Terapkan batas seberapa sering klien dapat berinteraksi dengan API dalam rentang waktu tertentu (pembatasan tingkat).
-* Pembatasan tingkat harus diatur halus berdasarkan kebutuhan bisnis. Beberapa Endpoint API mungkin memerlukan kebijakan yang lebih ketat.  
-* Batasi/atur seberapa banyak atau seberapa sering satu klien/pengguna API dapat mengeksekusi operasi tunggal (mis. memvalidasi OTP, atau meminta pemulihan kata sandi tanpa mengunjungi URL sekali pakai).
+* Gunakan solusi yang memudahkan pembatasan [memori][1], [CPU][2], [jumlah restart][3], [deskriptor file, dan proses][4] seperti Kontainer / Serverless code (misalnya Lambda).
+* Tentukan dan pastikan ukuran data maksimum pada semua parameter dan payload masukan, seperti panjang maksimum string, jumlah elemen maksimum array, dan ukuran file unggah maksimum (terlepas apakah disimpan secara lokal atau di penyimpanan cloud). 
+* Terapkan batas seberapa sering klien dapat berinteraksi dengan API dalam rentang waktu tertentu (pembatasan laju).
+* Pembatasan laju harus diatur berdasarkan kebutuhan bisnis. Beberapa Endpoint API mungkin memerlukan kebijakan yang lebih ketat.  
+* Batasi/atur seberapa banyak atau seberapa sering satu klien/pengguna API dapat mengeksekusi operasi tunggal (misalnya memvalidasi OTP, atau meminta pemulihan kata sandi tanpa mengunjungi URL sekali pakai).
 * Tambahkan validasi sisi server yang tepat untuk parameter string kueri dan body permintaan, khususnya yang mengendalikan jumlah catatan yang akan dikembalikan dalam respons.
-* Konfigurasikan batas pengeluaran untuk semua penyedia layanan/integrasi API. Jika mengatur batas pengeluaran tidak mungkin, peringatan tagihan sebaiknya dikonfigurasi.
+* Konfigurasikan batas pengeluaran untuk semua penyedia layanan/integrasi API. Jika tidak memungkinkan untuk membatasi pengeluaran, sebaiknya konfigurasi peringatan tagihan.
 
 ## Referensi
 

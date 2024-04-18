@@ -1,26 +1,17 @@
-# Introduction
+# Perkenalan
 
-## Welcome to the OWASP API Security Top 10 - 2023!
+## Selamat Datang di OWASP API Security Top 10 - 2023!
 
-Welcome to the second edition of the OWASP API Security Top 10!
+Selamat datang di edisi kedua OWASP API Security Top 10!
 
-This awareness document was first published back in 2019. Since then, the API
-Security industry has flourished and become more mature. We strongly believe
-this work has positively contributed to it, due to it being quickly adopted as
-an industry reference.
+Dokumen ini pertama kali dipublikasikan pada tahun 2019. Sejak saat itu, industri keamanan API berkembang dan menjadi lebih dewasa. Kami sungguh percaya bahwa usaha ini telah berkontribusi positif terhadap hal itu, karena telah diadopsi secara cepat sebagai referensi industri.
 
-APIs play a very important role in modern application architecture. But since
-innovation has a different pace than creating security awareness, we believe
-it's important to focus on creating awareness for common API security
-weaknesses.
+API memainkan peranan penting di dalam arsitektur aplikasi modern. Namun karena inovasi memiliki kecepatan yang berbeda dibanding membuat kesadaran keamanan, kami percaya adalah penting untuk fokus menciptakan kesadaran atas kelemahan-kelemahan keamanan API umum.
 
-The primary goal of the OWASP API Security Top 10 is to educate those involved
-in API development and maintenance, for example, developers, designers,
-architects, managers, or organizations. You can know more about the API Security
-Project visiting [the project page][1].
+Tujuan utama OWASP API Security Top 10 adalah mendidik mereka yang terlibat dalam pengembangan dan pengelolaan API, sebagai contoh, para pengembang, desainer, arsitek, manajer atau organisasi. Anda dapat mengetahui lebih lanjut tentang API Security
+Project dengan mengunjungi [halaman proyek][1].
 
-If you're not familiar with the OWASP top 10 series, we recommend checking at
-least the following top 10 projects:
+Jika anda tidak mengenal seri OWASP top 10, kami merekomendasikan anda untuk memeriksa beberapa proyek top 10 berikut ini:
 
 * [OWASP Cloud-Native Application Security Top 10][2]
 * [OWASP Desktop App Security Top 10][3]
@@ -34,14 +25,9 @@ least the following top 10 projects:
 * [OWASP Top 10 Privacy Risks][11]
 * [OWASP Serverless Top 10][12]
 
-None of the projects replaces another: if you're working on a mobile application
-powered by a back-end API, you're better off reading both the corresponding top
-10's. The same is valid if you're working on a web or desktop application
-powered by APIs.
+Tidak ada proyek yang menggantikan satu dengan lainnya: jika anda bekerja dengan aplikasi mobile yang didukung oleh API back-end, anda sebaiknya membaca kedua top 10 yang terkait. Hal yang sama juga berlaku bila anda bekerja dengan aplikasi web atau desktop yang menggunakan API.
 
-In the [Methodology and Data][13] section, you can read more about how this
-edition was created. For now, we encourage everyone to contribute with
-questions, comments, and ideas at our [GitHub repository][14] or
+Dalam bab [Metodologi dan Data][13], anda dapat membaca lebih lanjut bagaimana edisi ini dibuat. Untuk saat ini, kami menganjurkan setiap orang untuk berkontribusi dengan pertanyaan, komentar, dan ide Anda di repositori proyek GitHub kami [repositori GitHub][14] or
 [Mailing list][15].
 
 [1]: https://owasp.org/www-project-api-security/

@@ -1,9 +1,8 @@
-# Acknowledgments
+# Ucapan Terima Kasih
 
-## Acknowledgments to Contributors
+## Ucapan Terima Kasih kepada Kontributor
 
-We'd like to thank the following contributors who contributed publicly on
-GitHub, or via other means:
+Kami ingin mengucapakn terima kasih kepada kontributor berikut ini yang telah berkontribusi secara terbuka melalui GitHub, atau melalui cara lainnya:
 
 247arjun, abunuwas, Alissa Knight, Arik Atar, aymenfurter, Corey J. Ball, cyn8,
 d0znpp, Dan Gordon, donge, Dor Tumarkin, faizzaidi, gavjl, guybensimhon, Inês

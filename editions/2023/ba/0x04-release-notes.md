@@ -1,43 +1,22 @@
-# Release Notes
+# Catatan Rilis
 
-This is the second edition of the OWASP API Security Top 10 edition, exactly
-four years after its first release. A lot has changed in the API (security)
-scene. API traffic increased at a fast pace, some API protocols gained a lot
-more traction, many new API security vendors/solutions have popped up, and, of
-course, attackers have developed new skills and techniques to compromise
-APIs. It was about time to get the list of the ten most critical API security
-risks updated.
+Ini adalah edisi kedua OWASP API Security Top 10, tepat empat tahun setelah rilis pertama. Banyak perubahan terjadi dalam area keamanan API. Lalu lintas API meningkat dalam fase yang cepat, beberapa protokol API mendapatkan banyak daya tarik, berbagai solusi/vendor keamanan API telah bermunculan, dan tentu saja, para penyerang telah mengembangkan kemampuan dan teknik baru untuk menyerang API. Sudah saatnya untuk memperbarui daftar sepuluh risiko paling kritis keamanan API.
 
-With a more mature API security industry, for the first time, there was [a
-public call for data][1]. Unfortunately, no data was contributed, but based on
-the project's team experience, careful API security specialist review, and
-community feedback on the release candidate, we built this new list. In the
-[Methodology and Data section][2], you'll find more details about how this
-version was built. For more details about the security risks please refer to the
-[API Security Risks section][3].
+Dengan semakin matangnya industri keamanan API, untuk pertama kalinya, ada [panggilan publik untuk data][1]. Namun sayangnya, tidak ada data yang dikontribusikan, namun berdasarkan pengalaman tim proyek, tinjauan cermat spesialis keamanan API, dan masukan dari komunitas, kami membuat daftar baru ini. Dalam bagian 
+[Metodologi dan Data][2], anda akan menemukan informasi rinci mengenai bagaimana versi ini dikembangkan. Informasi lebih rinci mengenai risiko keamanan silakan mengacu ke bagian
+[Risiko Keamanan API][3].
 
-The OWASP API Security Top 10 2023 is a forward-looking awareness document for
-a fast pace industry. It does not replace other TOP 10's. In this edition:
+OWASP API Security Top 10 2023 adalah dokumen kesadaran berwawasan ke depan untuk industri yang berkembang cepat. Dokumen ini tidak menggantikan TOP 10 lainnya. Dalam edisi ini:
 
-* We've combined Excessive Data Exposure and Mass Assignment focusing on the
-  common root cause: object property level authorization validation failures.
-* We've put more emphasis on resource consumption, over focusing on the pace
-  they are exhausted.
-* We've created a new category "Unrestricted Access to Sensitive Business Flows"
-  to address new threats, including most of those that can be mitigated using
-  rate limiting.
-* We added "Unsafe Consumption of APIs" to address something we've started
-  seeing: attackers have started looking for a target's integrated services to
-  compromise those, instead of hitting the APIs of their target directly. This
-  is the right time to start creating awareness about this increasing risk.
+* Kami telah menggabungkan Paparan Data Berlebihan dan  Penugasan Massal dengan berfokus pada akar masalah yang sama: kegagalan validasi otorisasi tingkat properti obyek.
+* Kami lebih menekankan pada konsumsi sumber daya, daripada berfokus pada kecepatan mereka dihabiskan.
+* Kami telah membuat kategori baru "Akses Tanpa Batas ke Aliran Bisnis Sensitif" untuk mengatasi ancaman baru, termasuk ancaman yang dapat dimitigasi dengan menggunakan pembatasan. 
+* Kami menambahkan "Konsumsi API yang Tidak Aman" untuk mengatasi sesuatu hal yang mulai kami jumpai: penyerang telah mulai menyasar layanan integrasi target, alih-alih menyerang API target secara langsung. Saat ini adalah saat yang tepat untuk mulai membuat kesadaran atas meningkatnya risiko ini.
 
-APIs play an increasingly important role in modern microservices architecture,
-Single Page Applications (SPAs), mobile apps, IoT, etc. The OWASP API Security
-Top 10 is a required effort to create awareness about modern API security
-issues.
+API memainkan peranan penting dalam arsitektur mikroservice modern, Single Page Applications (SPA), aplikasi mobile, IoT, dsb. OWASP API Security
+Top 10 adalah upaya yang dibutuhkan untuk menciptakan kesadaran mengenai isu-isu keamanan API modern.
 
-This update was only possible due to the great effort of several volunteers,
-listed in the [Acknowledgments][4] section.
+Pembaruan ini hanya dimungkinkan berkat usaha besar beberapa sukarelawan yang tercantum dalam bagian  [Ucapan Terima Kasih][4] section.
 
 Thank you!
 
