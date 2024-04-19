@@ -43,7 +43,7 @@ segurança através de bolsas e infraestrutura.
 
 Junte-se a nós!
 
-## Copyright and License
+## Direitos de Autor e Licença
 
 ![license](images/license.png)
 
