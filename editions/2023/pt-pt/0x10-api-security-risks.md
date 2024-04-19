@@ -1,27 +1,29 @@
-# API Security Risks
+# Riscos de Segurança em APIs
 
-The [OWASP Risk Rating Methodology][1] was used to do the risk analysis.
+Para a análise de risco usámos a [metodologia de avaliação de risco da
+OWASP][1].
 
-The table below summarizes the terminology associated with the risk score.
+A tabela seguinte resume a terminologia associada à pontuação correspondente ao
+nível de risco.
 
-| Threat Agents | Exploitability | Weakness Prevalence | Weakness Detectability | Technical Impact | Business Impacts |
+| Agentes Ameaça | Abuso | Prevalência | Deteção | Impacto Técnico | Impacto Negócio |
 | :-: | :-: | :-: | :-: | :-: | :-: |
-| API Specific | Easy: **3** | Widespread **3** | Easy **3** | Severe **3** | Business Specific |
-| API Specific | Average: **2** | Common **2** | Average **2** | Moderate **2** | Business Specific |
-| API Specific | Difficult: **1** | Difficult **1** | Difficult **1** | Minor **1** | Business Specific |
+| Específico da API | Fácil **3** | Predominante **3** | Fácil **3** | Grave **3** | Específico do Negócio |
+| Específico da API | Moderado **2** | Comum **2** | Moderado **2** | Moderado **2** | Específico do Negócio |
+| Específico da API | Difícil **1** | Incomum **1** | Difícil **1** | Reduzido **1** | Específico do Negócio |
 
-**Note**: This approach does not take the likelihood of the threat agent into
-account. Nor does it account for any of the various technical details associated
-with your particular application. Any of these factors could significantly
-affect the overall likelihood of an attacker finding and exploiting a particular
-vulnerability. This rating does not take into account the actual impact on your
-business. Your organization will have to decide how much security risk from
-applications and APIs the organization is willing to accept given your culture,
-industry, and regulatory environment. The purpose of the OWASP API Security Top
-10 is not to do this risk analysis for you. Since this edition is not
-data-driven, prevalence results from a consensus among the team members.
+**Nota**: Esta abordagem não toma em consideração a probabilidade do Agente de
+Ameaça. Também não toma em consideração nenhum detalhe técnico associado à sua
+API. Qualquer um destes fatores podem ter impacto significativo na probabilidade
+de um atacante encontrar e abusar duma falha de segurança particular. Estes
+indicadores não tomam em consideração o impacto atual no seu negócio. Terá de
+ser a sua organização a decidir qual o nível de risco para a segurança das suas
+aplicações e APIs que está disposta a aceitar, baseado na cultura, indústria e
+regulação a que está sujeita. O propósito do OWASP API Security Top 10 não é
+fazer essa análise por si. Uma vez que esta edição não é baseada em dados, a 
+prevalência resulta de um consenso entre os membros da equipa.
 
-## References
+## Referências
 
 ### OWASP
 
