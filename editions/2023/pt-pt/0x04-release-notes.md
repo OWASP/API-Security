@@ -8,39 +8,39 @@ soluções de segurança para API e, claro, os atacantes desenvolveram novas
 capacidades e técnicas para comprometer APIs. Já era hora de atualizar a lista 
 dos dez riscos de segurança de API mais críticos.
 
-Com uma indústria de segurança de API mais madura, pela primeira vez, houve [um
- apelo público para dados][1]. Infelizmente, não foram fornecidos dados, mas 
- com base na experiência da equipa do projeto, numa análise cuidadosa por 
- especialistas em segurança de API e no feedback da comunidade sobre a versão 
- preliminar, construímos esta nova lista. Na [secção Metodologia e Dados][2], 
- encontrará mais detalhes sobre como esta versão foi elaborada. Para mais 
- detalhes sobre os riscos de segurança, consulte a [secção Riscos de Segurança 
- em APIs][3].
+Com uma indústria de segurança de API mais madura, pela primeira vez, houve [um 
+apelo público para dados][1]. Infelizmente, não foram fornecidos dados, mas 
+com base na experiência da equipa do projeto, numa análise cuidadosa por 
+especialistas em segurança de API e no feedback da comunidade sobre a versão 
+preliminar, construímos esta nova lista. Na [secção Metodologia e Dados][2], 
+encontrará mais detalhes sobre como esta versão foi elaborada. Para mais 
+detalhes sobre os riscos de segurança, consulte a [secção Riscos de Segurança 
+em APIs][3].
 
-The OWASP API Security Top 10 2023 is a forward-looking awareness document for
-a fast pace industry. It does not replace other TOP 10's. In this edition:
+O OWASP API Security Top 10 2023 é um documento de sensibilização prospetivo 
+para uma indústria de ritmo acelerado. Não substitui outros TOP 10. Nesta edição:
 
-* We've combined Excessive Data Exposure and Mass Assignment focusing on the
-  common root cause: object property level authorization validation failures.
-* We've put more emphasis on resource consumption, over focusing on the pace
-  they are exhausted.
-* We've created a new category "Unrestricted Access to Sensitive Business Flows"
-  to address new threats, including most of those that can be mitigated using
-  rate limiting.
-* We added "Unsafe Consumption of APIs" to address something we've started
-  seeing: attackers have started looking for a target's integrated services to
-  compromise those, instead of hitting the APIs of their target directly. This
-  is the right time to start creating awareness about this increasing risk.
+* Combinámos *Excessive Data Exposure* e *Mass Assignment*, focando na causa
+  comum: falhas na validação de autorização ao nível das propriedades do objeto.
+* Damos mais ênfase ao consumo de recursos, em vez de nos concentrarmos na rapidez
+  com que são esgotados.
+* Criámos uma nova categoria "*Unrestricted Access to Sensitive Business Flows*"
+  para abordar novas ameaças, incluindo a maioria daquelas que podem ser mitigadas
+  através de *rate limiting*.
+* Adicionámos "*Unsafe Consumption of APIs*" para abordar algo que começámos a
+  observar: os atacantes começaram a procurar serviços integrados de um alvo para
+  os comprometer, em vez de atingirem diretamente as APIs do seu alvo. Este é o
+  momento certo para começar a sensibilizar sobre este risco crescente.
 
-APIs play an increasingly important role in modern microservices architecture,
-Single Page Applications (SPAs), mobile apps, IoT, etc. The OWASP API Security
-Top 10 is a required effort to create awareness about modern API security
-issues.
+As APIs desempenham um papel cada vez mais importante na arquitetura moderna de 
+microsserviços, *Single Page Applications* (SPAs), aplicações móveis, Internet das 
+Coisas (IoT), etc. O OWASP API Security Top 10 é um esforço necessário para criar 
+sensibilização sobre os problemas de segurança modernos das APIs.
 
-This update was only possible due to the great effort of several volunteers,
-listed in the [Acknowledgments][4] section.
+Esta atualização só foi possível devido ao grande esforço de vários voluntários, 
+listados na secção de [Agradecimentos][4].
 
-Thank you!
+Obrigado!
 
 [1]: https://owasp.org/www-project-api-security/announcements/cfd/2022/
 [2]: ./0xd0-about-data.md
