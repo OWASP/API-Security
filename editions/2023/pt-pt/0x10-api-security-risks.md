@@ -30,7 +30,7 @@ prevalência resulta de um consenso entre os membros da equipa.
 * [OWASP Risk Rating Methodology][1]
 * [Article on Threat/Risk Modeling][2]
 
-### External
+### Externas
 
 * [ISO 31000: Risk Management Std][3]
 * [ISO 27001: ISMS][4]
