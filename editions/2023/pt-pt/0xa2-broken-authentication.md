@@ -74,8 +74,8 @@ POST /graphql
 
 ## Cenário #2
 
-In order to update the email address associated with a user's account, clients
-should issue an API request like the one below:
+Para atualizar o endereço de email associado à conta de um utilizador, os 
+clientes devem enviar um pedido API como o exemplo abaixo:
 
 ```
 PUT /account
@@ -84,35 +84,39 @@ Authorization: Bearer <token>
 { "email": "<new_email_address>" }
 ```
 
-Because the API does not require users to confirm their identity by providing
-their current password, bad actors able to put themselves in a position to
-steal the auth token might be able to take over the victim's account by starting
-the reset password workflow after updating the email address of the victim's
-account.
+Devido à API não exigir que os utilizadores confirmem a sua identidade 
+fornecendo a sua _password_ atual, atores maliciosos que consigam colocar-se numa 
+posição de roubar o token de autenticação podem conseguir assumir a conta da 
+vítima ao iniciar o processo de redefinição de senha após atualizar o endereço 
+de email da conta da vítima.
 
 ## Como Prevenir
 
-* Make sure you know all the possible flows to authenticate to the API
-  (mobile/ web/deep links that implement one-click authentication/etc.). Ask
-  your engineers what flows you missed.
-* Read about your authentication mechanisms. Make sure you understand what and
-  how they are used. OAuth is not authentication, and neither are API keys.
-* Don't reinvent the wheel in authentication, token generation, or password
-  storage. Use the standards.
-* Credential recovery/forgot password endpoints should be treated as login
-  endpoints in terms of brute force, rate limiting, and lockout protections.
-* Require re-authentication for sensitive operations (e.g. changing the account
-  owner email address/2FA phone number).
-* Use the [OWASP Authentication Cheatsheet][1].
-* Where possible, implement multi-factor authentication.
-* Implement anti-brute force mechanisms to mitigate credential stuffing,
-  dictionary attacks, and brute force attacks on your authentication endpoints.
-  This mechanism should be stricter than the regular rate limiting mechanisms
-  on your APIs.
-* Implement [account lockout][2]/captcha mechanisms to prevent brute force
-  attacks against specific users. Implement weak-password checks.
-* API keys should not be used for user authentication. They should only be used
-  for [API clients][3] authentication.
+* Certifique-se de que conhece todos os fluxos de autenticação possíveis (e.g.
+  móvel/web/_deeplinks_/etc.). Pergunte aos engenheiros responsáveis quais os
+  fluxos em falta/não identificados.
+* Leia sobre os mecanismos de autenticação em uso. Certifique-se que compreende
+  quais e como são usados. OAuth não é um mecanismo de autenticação, assim como
+  também não o são as API _keys_.
+* Não reinvente a roda em termos de autenticação, geração de _tokens_,
+  armazenamento de _passwords_. Opte pela utilização de standards.
+* _Endpoints_ para recuperação de _password_ devem ser tratados como os
+  _endpoints_ de _login_ no que diz respeito à proteção contra ataques de força
+  bruta, limitação do número de pedidos e bloqueio de conta.
+* Exija nova autenticação para operações sensíveis (por exemplo, alterar o
+  endereço de email do proprietário da conta/número de telefone para
+  autenticação de dois fatores).
+* Utilize a [OWASP Authentication Cheatsheet][1].
+* Sempre que possível implemente autenticação de múltiplos fatores.
+* Implemente mecanismos anti-força bruta para mitigar ataques do tipo
+  _credential stuffing_, dicionário e força bruta nos _endpoints_ de
+  autenticação. Este mecanismo deve ter configurações mais restritivas do que
+  para os demais _endpoints_ da API.
+* Implemente [mecanismos de bloqueio de conta][2] / _captcha_ para prevenir
+  ataques de força bruta contra utilizadores específicos. Implemente verificação
+  da qualidade/força das _passwords_.
+* As API _keys_ não devem ser usadas para autenticação dos utilizadores. Apenas
+  devem ser usadas para autenticação dos [clientes da API][3].
 
 ## Referências
 
