@@ -1,11 +1,11 @@
 # API2:2023 Broken Authentication
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
+| Agentes Ameaça/Vetores Ataque | Falha Segurança | Impactos |
 | - | - | - |
-| API Specific : Exploitability **Easy** | Prevalence **Common** : Detectability **Easy** | Technical **Severe** : Business Specific |
-| The authentication mechanism is an easy target for attackers since it's exposed to everyone. Although more advanced technical skills may be required to exploit some authentication issues, exploitation tools are generally available. | Software and security engineers’ misconceptions regarding authentication boundaries and inherent implementation complexity make authentication issues prevalent. Methodologies of detecting broken authentication are available and easy to create. | Attackers can gain complete control of other users’ accounts in the system, read their personal data, and perform sensitive actions on their behalf. Systems are unlikely to be able to distinguish attackers’ actions from legitimate user ones. |
+| Específico da API : Abuso **Fácil** | Prevalência **Comum** : Deteção **Fácil** | Técnico **Grave** : Específico Negócio |
+| O mecanismo de autenticação é um alvo fácil para os atacantes, uma vez que está exposto a todos. Embora possam ser necessárias competências técnicas mais avançadas para explorar alguns problemas de autenticação, geralmente existem ferramentas de exploração disponíveis. | As conceções erradas dos engenheiros de software e de segurança sobre os limites da autenticação e a complexidade inerente da implementação tornam os problemas de autenticação prevalentes. Metodologias para detetar *broken authentication* estão disponíveis e são fáceis de criar. | Os atacantes podem obter controlo total das contas de outros utilizadores no sistema, ler os seus dados pessoais e realizar ações sensíveis em seu nome. Os sistemas têm pouca probabilidade de conseguir distinguir as ações dos atacantes das ações legítimas dos utilizadores. |
 
-## Is the API Vulnerable?
+## A API é vulnerável?
 
 Authentication endpoints and flows are assets that need to be protected.
 Additionally, "Forgot password / reset password" should be treated the same way
@@ -35,7 +35,7 @@ On top of that, a microservice is vulnerable if:
 
 ## Example Attack Scenarios
 
-## Scenario #1
+## Cenário #1
 
 In order to perform user authentication the client has to issue an API request
 like the one below with the user credentials:
@@ -70,7 +70,7 @@ POST /graphql
 ]
 ```
 
-## Scenario #2
+## Cenário #2
 
 In order to update the email address associated with a user's account, clients
 should issue an API request like the one below:
@@ -88,7 +88,7 @@ steal the auth token might be able to take over the victim's account by starting
 the reset password workflow after updating the email address of the victim's
 account.
 
-## How To Prevent
+## Como Prevenir
 
 * Make sure you know all the possible flows to authenticate to the API
   (mobile/ web/deep links that implement one-click authentication/etc.). Ask
@@ -112,7 +112,7 @@ account.
 * API keys should not be used for user authentication. They should only be used
   for [API clients][3] authentication.
 
-## References
+## Referências
 
 ### OWASP
 
@@ -120,7 +120,7 @@ account.
 * [Key Management Cheat Sheet][4]
 * [Credential Stuffing][5]
 
-### External
+### Externas
 
 * [CWE-204: Observable Response Discrepancy][6]
 * [CWE-307: Improper Restriction of Excessive Authentication Attempts][7]
