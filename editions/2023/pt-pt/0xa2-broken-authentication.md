@@ -7,38 +7,39 @@
 
 ## A API é vulnerável?
 
-Authentication endpoints and flows are assets that need to be protected.
-Additionally, "Forgot password / reset password" should be treated the same way
-as authentication mechanisms.
+Os _endpoints_ e fluxos de autenticação são ativos que carecem de proteção.
+Além disso, mecanismos de recuperação de _password_ devem ser tratados da mesma 
+forma que os mecanismos de autenticação.
 
-An API is vulnerable if it:
+Uma API é vulnerável se:
 
-* Permits credential stuffing where the attacker uses brute force with a list
-  of valid usernames and passwords.
-* Permits attackers to perform a brute force attack on the same user account,
-  without presenting captcha/account lockout mechanism.
-* Permits weak passwords.
-* Sends sensitive authentication details, such as auth tokens and passwords in
-  the URL.
-* Allows users to change their email address, current password, or do any other
-  sensitive operations without asking for password confirmation.
-* Doesn't validate the authenticity of tokens.
-* Accepts unsigned/weakly signed JWT tokens (`{"alg":"none"}`)
-* Doesn't validate the JWT expiration date.
-* Uses plain text, non-encrypted, or weakly hashed passwords.
-* Uses weak encryption keys.
+* Permite ataques de _credential stuffing_, onde o atacante utiliza força bruta
+  com uma lista de nomes de utilizador e palavras-passe válidos.
+* Permite ataques de força bruta a uma conta de utilizador específica, não
+  implementando mecanismos de mitigação como _captcha_ ou bloqueio da conta por
+  excesso de tentativas de autenticação falhadas.
+* Permite a utilização de _passwords_ fracas.
+* Envia informação de autenticação, tal como _tokens_ e _passwords_, no URL.
+* Permite que os utilizadores alterem o seu endereço de email, _password_ atual ou
+  realizem outras operações sensíveis sem pedir a confirmação da _password_.
+* Não valida a autenticidade dos _tokens_ de autenticação.
+* Aceita _tokens_ JWT sem que estes sejam assinados/usando algoritmos fracos
+  `("alg":"none")`
+* Não valida a data de expiração dos _tokens_ JWT.
+* Utiliza _passwords_ em texto, não encriptadas, ou resumos fracos.
+* Utiliza chaves de encriptação fracas.
 
-On top of that, a microservice is vulnerable if:
+Além disso, um microsserviço é vulnerável se:
 
-* Other microservices can access it without authentication
-* Uses weak or predictable tokens to enforce authentication
+* Outros microsserviços podem aceder a ele sem autenticação
+* Utiliza tokens fracos ou previsíveis para impor autenticação
 
-## Example Attack Scenarios
+## Exemplos de Cenários de Ataque
 
 ## Cenário #1
 
-In order to perform user authentication the client has to issue an API request
-like the one below with the user credentials:
+Para realizar a autenticação do utilizador, o cliente tem de enviar um pedido 
+de API como o exemplo abaixo, com as credenciais do utilizador:
 
 ```
 POST /graphql
@@ -51,13 +52,14 @@ POST /graphql
 }
 ```
 
-If credentials are valid, then an auth token is returned which should be
-provided in subsequent requests to identify the user. Login attempts are
-subject to restrictive rate limiting: only three requests are allowed per
-minute.
+Se as credenciais forem válidas, é devolvido um token de autenticação que 
+deve ser fornecido em pedidos subsequentes para identificar o utilizador. 
+A quantidade de tentativas de login está sujeita a uma limitação temporal 
+restritiva: apenas três pedidos são permitidos por minuto.
 
-To brute force log in with a victim's account, bad actors leverage GraphQL
-query batching to bypass the request rate limiting, speeding up the attack:
+Para efetuar login por força bruta com a conta de uma vítima, os atores 
+maliciosos aproveitam o agrupamento de consultas GraphQL para contornar a 
+limitação temporal restritiva de pedidos, acelerando o ataque:
 
 ```
 POST /graphql
