@@ -1,17 +1,17 @@
 # API3:2023 Broken Object Property Level Authorization
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
+| Agentes Ameaça/Vetores Ataque | Falha Segurança | Impactos |
 | - | - | - |
-| API Specific : Exploitability **Easy** | Prevalence **Common** : Detectability **Easy** | Technical **Moderate** : Business Specific |
+| Específico da API : Abuso **Fácil** | Prevalência **Comum** : Deteção **Fácil** | Técnico **Moderado** : Específico Negócio |
 | APIs tend to expose endpoints that return all object’s properties. This is particularly valid for REST APIs. For other protocols such as GraphQL, it may require crafted requests to specify which properties should be returned. Identifying these additional properties that can be manipulated requires more effort, but there are a few automated tools available to assist in this task. | Inspecting API responses is enough to identify sensitive information in returned objects’ representations. Fuzzing is usually used to identify additional (hidden) properties. Whether they can be changed is a matter of crafting an API request and analyzing the response. Side-effect analysis may be required if the target property is not returned in the API response. | Unauthorized access to private/sensitive object properties may result in data disclosure, data loss, or data corruption. Under certain circumstances, unauthorized access to object properties can lead to privilege escalation or partial/full account takeover. |
 
-## Is the API Vulnerable?
+## A API é vulnerável?
 
 When allowing a user to access an object using an API endpoint, it is important
 to validate that the user has access to the specific object properties they are
 trying to access.
 
-An API endpoint is vulnerable if:
+Um _endpoint_ de uma API é vulnerável se:
 
 * The API endpoint exposes properties of an object that are considered
   sensitive and should not be read by the user. (previously named: "[Excessive
@@ -20,9 +20,9 @@ An API endpoint is vulnerable if:
   sensitive object's property which the user should not be able to access
   (previously named: "[Mass Assignment][2]")
 
-## Example Attack Scenarios
+## Exemplos de Cenários de Ataque
 
-### Scenario #1
+### Cenário #1
 
 A dating app allows a user to report other users for inappropriate behavior.
 As part of this flow, the user clicks on a "report" button, and the following
@@ -54,7 +54,7 @@ The API Endpoint is vulnerable since it allows the authenticated user to have
 access to sensitive (reported) user object properties, such as "fullName" and
 "recentLocation" that are not supposed to be accessed by other users.
 
-### Scenario #2
+### Cenário #2
 
 An online marketplace platform, that offers one type of users ("hosts") to rent
 out their apartment to another type of users ("guests"), requires the host to
@@ -85,7 +85,7 @@ The API endpoint is vulnerable because there is no validation that the host
 should have access to the internal object property - `total_stay_price`, and
 the guest will be charged more than she was supposed to be.
 
-### Scenario #3
+### Cenário #3
 
 A social network that is based on short videos, enforces restrictive content
 filtering and censorship. Even if an uploaded video is blocked, the user can
@@ -114,7 +114,7 @@ should have access to the internal object property - `blocked`, and the user
 can change the value from `true` to `false` and unlock their own blocked
 content.
 
-## How To Prevent
+## Como Prevenir
 
 * When exposing an object using an API endpoint, always make sure that the user
   should have access to the object's properties you expose.
@@ -131,7 +131,7 @@ content.
 * Keep returned data structures to the bare minimum, according to the
   business/functional requirements for the endpoint.
 
-## References
+## Referências
 
 ### OWASP
 
@@ -139,7 +139,7 @@ content.
 * [API6:2019 - Mass Assignment - OWASP API Security Top 10 2019][2]
 * [Mass Assignment Cheat Sheet][3]
 
-### External
+### Externas
 
 * [CWE-213: Exposure of Sensitive Information Due to Incompatible Policies][4]
 * [CWE-915: Improperly Controlled Modification of Dynamically-Determined Object Attributes][5]
