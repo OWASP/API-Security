@@ -34,31 +34,33 @@ através da manipulação do ID. Se um atacante conseguir aceder a um
 
 ### Cenário #1
 
-An e-commerce platform for online stores (shops) provides a listing page with
-the revenue charts for their hosted shops. Inspecting the browser requests, an
-attacker can identify the API endpoints used as a data source for those charts
-and their pattern: `/shops/{shopName}/revenue_data.json`. Using another API
-endpoint, the attacker can get the list of all hosted shop names. With a
-simple script to manipulate the names in the list, replacing `{shopName}` in
-the URL, the attacker gains access to the sales data of thousands of e-commerce
-stores.
+Uma plataforma de comércio eletrónico para criar lojas online oferece uma página
+de listagem com gráficos relativos à receita das lojas. Inspecionando os pedidos
+realizados pelo navegador um atacante identifica os _endpoints_ da API usados
+para obter os dados a partir dos quais são gerados os gráficos bem como o seu
+padrão `/shops/{shopName}/revenue_data.json`. Utilizado outro _endpoint_ da API
+o atacante obtém a lista com o nome de todas as lojas. Com recurso a um _script_
+simples para substituir `{shopName}` no URL pelos nomes que constam da lista, o
+atacante consegue acesso aos dados relativos às vendas de milhares de lojas
+online.
 
 ### Cenário #2
 
-An automobile manufacturer has enabled remote control of its vehicles via a
-mobile API for communication with the driver's mobile phone. The API enables
-the driver to remotely start and stop the engine and lock and unlock the doors.
-As part of this flow, the user sends the Vehicle Identification Number (VIN) to
-the API.
-The API fails to validate that the VIN represents a vehicle that belongs to the
-logged in user, which leads to a BOLA vulnerability. An attacker can access
-vehicles that don't belong to him.
+Um fabricante de automóveis habilitou o controlo remoto dos seus veículos 
+através de uma API para comunicação com o telemóvel do condutor. A API 
+permite ao condutor iniciar e parar o motor e trancar e destrancar as portas 
+remotamente. Como parte deste processo, o utilizador envia o Número de 
+Identificação do Veículo (VIN) para a API.
+No entanto, a API não valida se o VIN representa um veículo que pertence ao 
+utilizador autenticado, o que resulta numa vulnerabilidade de BOLA. Um atacante 
+pode aceder a veículos que não lhe pertencem.
 
 ### Cenário #3
 
-An online document storage service allows users to view, edit, store and delete
-their documents. When a user's document is deleted, a GraphQL mutation with the
-document ID is sent to the API.
+Um serviço de armazenamento de documentos online permite aos utilizadores 
+visualizar, editar, armazenar e eliminar os seus documentos. Quando um 
+documento de um utilizador é eliminado, é enviada uma mutação GraphQL com o ID 
+do documento para a API.
 
 ```
 POST /graphql
@@ -75,19 +77,23 @@ POST /graphql
 }
 ```
 
-Since the document with the given ID is deleted without any further permission
-checks, a user may be able to delete another user's document.
+Uma vez que o documento com o ID fornecido é eliminado sem quaisquer 
+verificações adicionais de permissão, um utilizador pode conseguir eliminar o 
+documento de outro utilizador.
 
 ## Como Prevenir
 
-* Implement a proper authorization mechanism that relies on the user policies
-  and hierarchy.
-* Use the authorization mechanism to check if the logged-in user has access to
-  perform the requested action on the record in every function that uses an
-  input from the client to access a record in the database.
-* Prefer the use of random and unpredictable values as GUIDs for records' IDs.
-* Write tests to evaluate the vulnerability of the authorization mechanism. Do
-  not deploy changes that make the tests fail.
+* Implementar um mecanismo de autorização baseado nas políticas de utilizador e
+  hierarquia.
+* Utilizar um mecanismo de autorização para verificar se o utilizador com sessão
+  ativa tem permissão para realizar a ação pretendida sobre o registo. Esta
+  verificação deve ser feita por todas as funções que utilizem informação
+  fornecida pelo cliente para aceder a um registo na base de dados.
+* Utilizar preferencialmente valores aleatórios e não previsíveis (e.g., GUID)
+  como identificador para os registos.
+* Escrever testes para avaliar o correto funcionamento do mecanismo de
+  autorização. Não colocar em produção alterações vulneráveis que não passem nos
+  testes.
 
 ## Referências
 
