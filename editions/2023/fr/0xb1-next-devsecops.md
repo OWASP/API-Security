@@ -1,6 +1,6 @@
 # Perspectives pour les DevSecOps
 
-En raison de leur importance dans les architectures d'applications modernes, la construction d'API sécurisées est cruciale. La sécurité ne peut être négligée et doit faire partie de tout le cycle de développement. Scanner et tester la pénétration une fois par an ne suffit plus.
+En raison de leur importance dans les architectures d'applications modernes, la construction d'API sécurisées est cruciale. La sécurité ne peut être négligée et doit faire partie de tout le cycle de développement. Scanner et réaliser des tests de pénétration une fois par an ne suffit plus.
 
 Les DevSecOps devraient rejoindre l'effort de développement, facilitant les tests de sécurité continus tout au long du cycle de vie du logiciel. Votre objectif devrait être d'améliorer le pipeline de développement avec l'automatisation de la sécurité, sans impacter la vitesse de développement.
 
