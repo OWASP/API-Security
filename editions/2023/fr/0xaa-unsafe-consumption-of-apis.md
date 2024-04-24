@@ -54,7 +54,7 @@ Maintenant, lorsqu'une intégration d'une application attaquée est effectuée a
 
 * Lors de l'évaluation des fournisseurs de services, évaluez leur posture de sécurité API.
 * Assurez-vous que toutes les interactions API se font sur un canal de communication sécurisé (TLS).
-* Validez toujours et désinfectez correctement les données reçues des API intégrées avant de les utiliser.
+* Validez toujours et épurez correctement les données reçues des API intégrées avant de les utiliser.
 * Maintenez une liste blanche des emplacements bien connus vers lesquels les API intégrées peuvent rediriger les vôtres : ne suivez pas aveuglément les redirections.
 
 
