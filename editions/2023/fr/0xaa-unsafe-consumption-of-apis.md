@@ -11,7 +11,7 @@ Les développeurs ont tendance à faire confiance aux données reçues des API t
 
 L'API peut être vulnérable si :
 * Elle interagit avec d'autres API sur un canal non chiffré ;
-* Elle ne valide pas et ne désinfecte pas correctement les données collectées auprès d'autres API avant de les traiter ou de les transmettre à des composants en aval ;
+* Elle ne valide/filtre pas correctement les données collectées auprès d'autres API avant de les traiter ou de les transmettre à des composants en aval ;
 * Elle suit aveuglément les redirections ;
 * Elle ne limite pas le nombre de ressources disponibles pour traiter les réponses des services tiers ;
 * Elle n'implémente pas de délais d'attente pour les interactions avec les services tiers.
