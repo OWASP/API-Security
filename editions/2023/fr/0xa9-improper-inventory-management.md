@@ -45,7 +45,7 @@ Une société de conseil crée une application malveillante et parvient à obten
 
 ## Comment s'en prémunir ?
 
-* Inventoriez tous les <ins>hôtes API</ins> et documentez les aspects importants de chacun d'eux, en mettant l'accent sur l'environnement de l'API (par exemple, production, staging, test, développement), qui devrait avoir accès au réseau de l'hôte (par exemple, public, interne, partenaires) et la version de l'API.
+* Inventoriez tous les <ins>hôtes API</ins> et documentez les aspects importants de chacun d'eux, en mettant l'accent sur l'environnement de l'API (par exemple, production, staging, test, développement), qui devrait avoir accès, en réseau, à l'hôte (par exemple, public, interne, partenaires) et la version d'API.
 * Inventoriez les <ins>services intégrés</ins> et documentez les aspects importants tels que leur rôle dans le système, les données échangées (flux de données) et leur sensibilité.
 * Documentez tous les aspects de votre API tels que l'authentification, les erreurs, les redirections, la limitation du taux, la politique de partage des ressources entre origines (CORS) et les points d'accès, y compris leurs paramètres, requêtes et réponses.
 * Générez automatiquement la documentation en adoptant des normes ouvertes. Incluez la génération de documentation dans votre pipeline CI/CD.
