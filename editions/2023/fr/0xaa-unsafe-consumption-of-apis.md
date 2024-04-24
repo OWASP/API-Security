@@ -7,7 +7,7 @@
 
 ## L'API est-elle vulnérable ?
 
-Les développeurs ont tendance à faire confiance aux données reçues des API tierces plus qu'aux entrées utilisateur. Cela est particulièrement vrai pour les API proposées par des entreprises bien connues. En raison de cela, les développeurs ont tendance à adopter des normes de sécurité plus faibles, par exemple en ce qui concerne la validation et la désinfection des entrées.
+Les développeurs ont tendance à faire confiance aux données reçues des API tierces plus qu'aux entrées utilisateur. Cela est particulièrement vrai pour les API proposées par des entreprises bien connues. En raison de cela, les développeurs ont tendance à adopter des normes de sécurité plus faibles, par exemple en ce qui concerne la validation des entrées et l'analyse en vu de caractères autorisés ou non en entrée (effacés ou échappés).
 
 L'API peut être vulnérable si :
 * Elle interagit avec d'autres API sur un canal non chiffré ;
