@@ -51,7 +51,7 @@ Une société de conseil crée une application malveillante et parvient à obten
 * Générez automatiquement la documentation en adoptant des normes ouvertes. Incluez la génération de documentation dans votre pipeline CI/CD.
 * Rendez la documentation de l'API disponible uniquement aux personnes autorisées à utiliser l'API.
 * Utilisez des mesures de protection externes telles que des solutions de sécurité spécifiques aux APIs pour toutes les versions exposées de vos API, pas seulement pour la version de production.
-* Évitez d'utiliser des données de production avec des déploiements d'API non productifs. Si cela est inévitable, ces points d'accès doivent bénéficier du même traitement de sécurité que les points d'accès de production.
+* Évitez d'utiliser des données de production avec des déploiements d'API hors production. Si cela est inévitable, ces points d'accès doivent bénéficier du même traitement de sécurité que les points d'accès de production.
 * Lorsque les nouvelles versions des API incluent des améliorations de sécurité, effectuez une analyse des risques pour informer des actions de mitigation requises pour les anciennes versions. Par exemple, s'il est possible de rétroporter les améliorations sans casser la compatibilité de l'API plus ancienne ou si vous devez retirer rapidement l'ancienne version et forcer tous les clients à passer à la dernière version.
 
 
