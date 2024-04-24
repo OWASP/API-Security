@@ -59,7 +59,7 @@ De plus :
   * implémenter une politique Cross-Origin Resource Sharing (CORS) appropriée
   * inclure les en-têtes de sécurité applicables
 * Restreignez les types de contenu/format de données entrants à ceux qui répondent aux exigences commerciales/fonctionnelles.
-* Assurez-vous que tous les serveurs dans la chaîne du serveur HTTP (par exemple, les équilibreurs de charge, les proxies inversés et avant, et les serveurs en aval) traitent les requêtes entrantes de manière uniforme pour éviter les problèmes de désynchronisation.
+* Assurez-vous que tous les serveurs dans la chaîne du serveur HTTP (par exemple, les équilibreurs de charge, les proxies et les proxies inverses, ainsi que les serveurs back-end) traitent les requêtes entrantes de manière uniforme pour éviter les problèmes de désynchronisation.
 * Lorsque cela est applicable, définissez et appliquez tous les schémas de charge utile de réponse API, y compris les réponses d'erreur, pour empêcher les traces d'exception et d'autres informations précieuses d'être renvoyées aux attaquants.
 
 ## Références

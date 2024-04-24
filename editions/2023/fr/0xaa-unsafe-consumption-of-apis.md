@@ -3,15 +3,15 @@
 | Facteurs de menace / Vecteurs d'attaque | Faille de sécurité | Impact |
 | - | - | - |
 | Spécifique à l'API : Exploitabilité **Facile** | Prévalence **Courante** : Détectabilité **Moyenne** | Technique **Grave** : Spécifique à l'organisation |
-| Exploiter ce problème nécessite que les attaquants identifient et compromettent potentiellement d'autres API/services avec lesquels l'API cible est intégrée. Habituellement, ces informations ne sont pas publiquement disponibles ou l'API/service intégré n'est pas facilement exploitable. | Les développeurs ont tendance à faire confiance et ne pas vérifier les points d'accès qui interagissent avec des API/services externes ou tiers, en se basant sur des exigences de sécurité plus faibles telles que celles concernant la sécurité du transport, l'authentification/l'autorisation, et la validation et la désinfection des entrées. Les attaquants doivent identifier les services avec lesquels l'API cible s'intègre (sources de données) et, éventuellement, les compromettre. | L'impact varie en fonction de ce que l'API cible fait avec les données extraites. L'exploitation réussie peut entraîner une exposition d'informations sensibles à des acteurs non autorisés, de nombreux types d'injections, ou un déni de service. |
+| Exploiter ce problème nécessite que les attaquants identifient et compromettent potentiellement d'autres APIs/services avec lesquels l'API cible est intégrée. Habituellement, ces informations ne sont pas publiquement disponibles ou l'API/service intégré n'est pas facilement exploitable. | Les développeurs ont tendance à faire confiance et ne pas vérifier les points d'accès qui interagissent avec des API/services externes ou tiers, en se basant sur des exigences de sécurité plus faibles telles que celles concernant la sécurité du transport, l'authentification/l'autorisation et la validation des entrées. Les attaquants doivent identifier les services avec lesquels l'API cible s'intègre (sources de données) et, éventuellement, les compromettre. | L'impact varie en fonction de ce que l'API cible fait avec les données extraites. L'exploitation réussie peut entraîner une exposition d'informations sensibles à des acteurs non autorisés, de nombreux types d'injections, ou un déni de service. |
 
 ## L'API est-elle vulnérable ?
 
-Les développeurs ont tendance à faire confiance aux données reçues des API tierces plus qu'aux entrées utilisateur. Cela est particulièrement vrai pour les API proposées par des entreprises bien connues. En raison de cela, les développeurs ont tendance à adopter des normes de sécurité plus faibles, par exemple en ce qui concerne la validation et la désinfection des entrées.
+Les développeurs ont tendance à faire confiance aux données reçues des API tierces plus qu'aux entrées utilisateur. Cela est particulièrement vrai pour les API proposées par des entreprises bien connues. En raison de cela, les développeurs ont tendance à adopter des normes de sécurité plus faibles, par exemple en ce qui concerne la validation des entrées et l'analyse en vu de caractères autorisés ou non en entrée (effacés ou échappés).
 
 L'API peut être vulnérable si :
 * Elle interagit avec d'autres API sur un canal non chiffré ;
-* Elle ne valide pas et ne désinfecte pas correctement les données collectées auprès d'autres API avant de les traiter ou de les transmettre à des composants en aval ;
+* Elle ne valide/filtre pas correctement les données collectées auprès d'autres API avant de les traiter ou de les transmettre à des composants en aval ;
 * Elle suit aveuglément les redirections ;
 * Elle ne limite pas le nombre de ressources disponibles pour traiter les réponses des services tiers ;
 * Elle n'implémente pas de délais d'attente pour les interactions avec les services tiers.
@@ -54,7 +54,7 @@ Maintenant, lorsqu'une intégration d'une application attaquée est effectuée a
 
 * Lors de l'évaluation des fournisseurs de services, évaluez leur posture de sécurité API.
 * Assurez-vous que toutes les interactions API se font sur un canal de communication sécurisé (TLS).
-* Validez toujours et désinfectez correctement les données reçues des API intégrées avant de les utiliser.
+* Validez toujours et épurez correctement les données reçues des API intégrées avant de les utiliser.
 * Maintenez une liste blanche des emplacements bien connus vers lesquels les API intégrées peuvent rediriger les vôtres : ne suivez pas aveuglément les redirections.
 
 
