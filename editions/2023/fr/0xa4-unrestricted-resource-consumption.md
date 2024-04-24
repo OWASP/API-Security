@@ -101,7 +101,7 @@ Quand l'un des fichiers est mis à jour, sa taille augmente à 18 Go. Tous les c
 * Mettez en place une limite sur la fréquence à laquelle un client peut interagir avec l'API dans un intervalle de temps défini (rate limiting).
 * Le "rate limiting" doit être ajustée méticuleusement en fonction des besoins de l'entreprise. Certains points d'accès API peuvent nécessiter des politiques plus strictes.
 * Limitez/ralentissez le nombre de fois ou la fréquence à laquelle un client/utilisateur API défini peut exécuter certaines opérations (par exemple, valider un OTP, ou demander une récupération de mot de passe sans visiter l'URL à usage unique).
-* Ajoutez une validation appropriée côté serveur pour les paramètres de la requête et son contenu, en particulier ceux qui contrôlent le nombre d'enregistrements à renvoyer dans la réponse.
+* Ajoutez une validation appropriée côté serveur pour les paramètres de la requête et son contenu, en particulier ceux qui contrôlent le nombre d'enregistrements à renvoyer dans la réponse (principe de pagination).
 * Configurez des limites de dépenses pour tous les fournisseurs de services/intégrations API. Lorsque cela n'est pas possible, configurez plutôt des alertes de facturation.
 
 ## Références
