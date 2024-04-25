@@ -7,26 +7,26 @@
 
 ## A API é vulnerável?
 
-When allowing a user to access an object using an API endpoint, it is important
-to validate that the user has access to the specific object properties they are
-trying to access.
+Ao permitir que um utilizador aceda a um objeto através de um _endpoint_ da 
+API, é importante validar que o utilizador tem acesso às propriedades 
+específicas do objeto que está a tentar aceder.
 
 Um _endpoint_ de uma API é vulnerável se:
 
-* The API endpoint exposes properties of an object that are considered
-  sensitive and should not be read by the user. (previously named: "[Excessive
-  Data Exposure][1]")
-* The API endpoint allows a user to change, add/or delete the value of a
-  sensitive object's property which the user should not be able to access
-  (previously named: "[Mass Assignment][2]")
+* O _endpoint_ da API expõe propriedades de um objeto que são consideradas
+  sensíveis e não devem ser lidas pelo utilizador. (anteriormente denominado:
+  "[Excessive Data Exposure][1]")
+* O _endpoint_ da API permite que um utilizador altere, adicione ou elimine o
+  valor de uma propriedade sensível de um objeto ao qual o utilizador não deve
+  ter acesso. (anteriormente denominado: "[Mass Assignment][2]")
 
 ## Exemplos de Cenários de Ataque
 
 ### Cenário #1
 
-A dating app allows a user to report other users for inappropriate behavior.
-As part of this flow, the user clicks on a "report" button, and the following
-API call is triggered:
+Uma aplicação de encontros permite a um utilizador denunciar outros utilizadores
+por comportamento inadequado. Como parte deste processo, o utilizador clica num 
+botão de 'denúncia', e é desencadeada a seguinte chamada de API:
 
 ```
 POST /graphql
@@ -50,18 +50,20 @@ POST /graphql
 }
 ```
 
-The API Endpoint is vulnerable since it allows the authenticated user to have
-access to sensitive (reported) user object properties, such as "fullName" and
-"recentLocation" that are not supposed to be accessed by other users.
+O endpoint da API é vulnerável porque permite que o utilizador autenticado 
+tenha acesso a propriedades sensíveis do utilizador denunciado, como 
+"fullName" (nome completo) e "recentLocation" (localização recente), que não 
+deveriam estar accessíveis a outros utilizadores.
 
 ### Cenário #2
 
-An online marketplace platform, that offers one type of users ("hosts") to rent
-out their apartment to another type of users ("guests"), requires the host to
-accept a booking made by a guest, before charging the guest for the stay.
+Uma plataforma de mercado online, que permite a um tipo de utilizadores 
+('anfitriões') alugar o seu apartamento a outro tipo de utilizadores 
+('hóspedes'), requer que o anfitrião aceite uma reserva feita por um 
+hóspede antes de cobrar ao hóspede pela estadia.
 
-As part of this flow, an API call is sent by the host to
-`POST /api/host/approve_booking` with the following legitimate payload:
+Como parte deste processo, é feito um pedido de API pelo anfitrião para
+`POST /api/host/approve_booking` com o seguinte conteúdo legítimo:
 
 ```
 {
@@ -70,8 +72,7 @@ As part of this flow, an API call is sent by the host to
 }
 ```
 
-The host replays the legitimate request, and adds the following malicious
-payload:
+O anfitrião reenvia o pedido legítimo e adiciona o seguinte conteúdo malicioso:
 
 ```
 {
@@ -81,9 +82,9 @@ payload:
 }
 ```
 
-The API endpoint is vulnerable because there is no validation that the host
-should have access to the internal object property - `total_stay_price`, and
-the guest will be charged more than she was supposed to be.
+O _endpoint_ da API é vulnerável porque não há validação de que o anfitrião 
+deve ter acesso à propriedade interna do objeto - `total_stay_price`, e o 
+hóspede vai ser cobrado mais do que deveria.
 
 ### Cenário #3
 
