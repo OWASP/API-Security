@@ -88,9 +88,10 @@ hóspede vai ser cobrado mais do que deveria.
 
 ### Cenário #3
 
-A social network that is based on short videos, enforces restrictive content
-filtering and censorship. Even if an uploaded video is blocked, the user can
-change the description of the video using the following API request:
+Uma rede social baseada em vídeos curtos, impõe filtros restritivos de 
+conteúdo e censura. Mesmo que um vídeo carregado seja bloqueado, o 
+utilizador pode alterar a descrição do vídeo utilizando o seguinte pedido à 
+API:
 
 ```
 PUT /api/video/update_video
@@ -100,8 +101,8 @@ PUT /api/video/update_video
 }
 ```
 
-A frustrated user can replay the legitimate request, and add the following
-malicious payload:
+Um utilizador frustrado pode reenviar o pedido legítimo e adicionar o 
+seguinte conteúdo malicioso:
 
 ```
 {
@@ -110,27 +111,27 @@ malicious payload:
 }
 ```
 
-The API endpoint is vulnerable because there is no validation if the user
-should have access to the internal object property - `blocked`, and the user
-can change the value from `true` to `false` and unlock their own blocked
-content.
+O _endpoint_ da API é vulnerável porque não há validação se o utilizador 
+deve ter acesso à propriedade interna do objeto - `blocked`, e o utilizador 
+pode alterar o valor de `true` para `false` e desbloquear o seu próprio 
+conteúdo bloqueado.
 
 ## Como Prevenir
 
-* When exposing an object using an API endpoint, always make sure that the user
-  should have access to the object's properties you expose.
-* Avoid using generic methods such as `to_json()` and `to_string()`. Instead,
-  cherry-pick specific object properties you specifically want to return.
-* If possible, avoid using functions that automatically bind a client's input
-  into code variables, internal objects, or object properties
-  ("Mass Assignment").
-* Allow changes only to the object's properties that should be updated by the
-  client.
-* Implement a schema-based response validation mechanism as an extra layer of
-  security. As part of this mechanism, define and enforce data returned by all
-  API methods.
-* Keep returned data structures to the bare minimum, according to the
-  business/functional requirements for the endpoint.
+* Ao expor um objeto através de um _endpoint_ da API, certifique-se sempre
+  de que o utilizador deve ter acesso às propriedades do objeto que expõe.
+* Evite usar métodos genéricos como `to_json()` e `to_string()`. Em vez disso,
+  selecione especificamente as propriedades do objeto que deseja retornar.
+* Se possível, evite usar funções que automaticamente vinculem os dados
+  provenientes do cliente em variáveis de código, objetos internos ou
+  propriedades de objetos ("Mass Assignment").
+* Permita alterações apenas nas propriedades do objeto que devam ser
+  atualizadas pelo cliente.
+* Implemente um mecanismo de validação de resposta baseado num esquema como
+  uma camada extra de segurança. Como parte deste mecanismo, defina e imponha
+  que dados são retornados por todos os métodos da API.
+* Mantenha as estruturas de dados retornadas ao mínimo essencial, de acordo
+  com os requisitos comerciais/funcionais para o _endpoint_.
 
 ## Referências
 
