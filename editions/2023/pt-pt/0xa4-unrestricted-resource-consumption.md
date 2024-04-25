@@ -1,11 +1,11 @@
 # API4:2023 Unrestricted Resource Consumption
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
+| Agentes Ameaça/Vetores Ataque | Falha Segurança | Impactos |
 | - | - | - |
-| API Specific : Exploitability **Average** | Prevalence **Widespread** : Detectability **Easy** | Technical **Severe** : Business Specific |
+| Específico da API : Abuso **Moderado** | Prevalência **Predominante** : Deteção **Fácil** | Técnico **Grave** : Específico Negócio |
 | Exploitation requires simple API requests. Multiple concurrent requests can be performed from a single local computer or by using cloud computing resources. Most of the automated tools available are designed to cause DoS via high loads of traffic, impacting APIs’ service rate. | It's common to find APIs that do not limit client interactions or resource consumption. Crafted API requests, such as those including parameters that control the number of resources to be returned and performing response status/time/length analysis should allow identification of the issue. The same is valid for batched operations. Although threat agents don't have visibility over costs impact, this can be inferred based on service providers’ (e.g. cloud provider) business/pricing model. | Exploitation can lead to DoS due to resource starvation, but it can also lead to operational costs increase such as those related to the infrastructure due to higher CPU demand, increasing cloud storage needs, etc. |
 
-## Is the API Vulnerable?
+## A API é vulnerável?
 
 Satisfying API requests requires resources such as network bandwidth, CPU,
 memory, and storage. Sometimes required resources are made available by service
@@ -25,9 +25,9 @@ inappropriately (e.g. too low/high):
 * Number of records per page to return in a single request-response
 * Third-party service providers' spending limit
 
-## Example Attack Scenarios
+## Exemplos de Cenários de Ataque
 
-### Scenario #1
+### Cenário #1
 
 A social network implemented a “forgot password” flow using SMS verification,
 enabling the user to receive a one time token via SMS in order to reset their
@@ -65,7 +65,7 @@ times. The back-end follows and requests Willyo to send tens of thousands of
 text messages, leading the company to lose thousands of dollars in a matter of
 minutes.
 
-### Scenario #2
+### Cenário #2
 
 A GraphQL API Endpoint allows the user to upload a profile picture.
 
@@ -108,7 +108,7 @@ Because the API does not limit the number of times the `uploadPic` operation can
 be attempted, the call will lead to exhaustion of server memory and Denial of
 Service.
 
-### Scenario #3
+### Cenário #3
 
 A service provider allows clients to download arbitrarily large files using its
 API. These files are stored in cloud object storage and they don't change that
@@ -121,7 +121,7 @@ clients immediately start pulling the new version. Because there were no
 consumption cost alerts, nor a maximum cost allowance for the cloud service,
 the next monthly bill increases from US$13, on average, to US$8k.
 
-## How To Prevent
+## Como Prevenir
 
 * Use a solution that makes it easy to limit [memory][1],
   [CPU][2], [number of restarts][3], [file descriptors, and processes][4] such
@@ -144,7 +144,7 @@ the next monthly bill increases from US$13, on average, to US$8k.
   setting spending limits is not possible, billing alerts should be configured
   instead.
 
-## References
+## Referências
 
 ### OWASP
 
@@ -152,7 +152,7 @@ the next monthly bill increases from US$13, on average, to US$8k.
 * ["DoS Prevention" - GraphQL Cheat Sheet][6]
 * ["Mitigating Batching Attacks" - GraphQL Cheat Sheet][7]
 
-### External
+### Externas
 
 * [CWE-770: Allocation of Resources Without Limits or Throttling][8]
 * [CWE-400: Uncontrolled Resource Consumption][9]
