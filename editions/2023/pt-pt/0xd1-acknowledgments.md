@@ -1,9 +1,9 @@
-# Acknowledgments
+# Agradecimentos
 
-## Acknowledgments to Contributors
+## Agradecimento ao Contribuidores
 
-We'd like to thank the following contributors who contributed publicly on
-GitHub, or via other means:
+Gostaríamos de agradecer às pessoas abaixo, as quais contribuíram publicamente 
+no GitHub ou por outros meios:
 
 247arjun, abunuwas, Alissa Knight, Arik Atar, aymenfurter, Corey J. Ball, cyn8,
 d0znpp, Dan Gordon, donge, Dor Tumarkin, faizzaidi, gavjl, guybensimhon, Inês
