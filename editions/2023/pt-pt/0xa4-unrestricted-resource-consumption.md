@@ -3,27 +3,28 @@
 | Agentes Ameaça/Vetores Ataque | Falha Segurança | Impactos |
 | - | - | - |
 | Específico da API : Abuso **Moderado** | Prevalência **Predominante** : Deteção **Fácil** | Técnico **Grave** : Específico Negócio |
-| Exploitation requires simple API requests. Multiple concurrent requests can be performed from a single local computer or by using cloud computing resources. Most of the automated tools available are designed to cause DoS via high loads of traffic, impacting APIs’ service rate. | It's common to find APIs that do not limit client interactions or resource consumption. Crafted API requests, such as those including parameters that control the number of resources to be returned and performing response status/time/length analysis should allow identification of the issue. The same is valid for batched operations. Although threat agents don't have visibility over costs impact, this can be inferred based on service providers’ (e.g. cloud provider) business/pricing model. | Exploitation can lead to DoS due to resource starvation, but it can also lead to operational costs increase such as those related to the infrastructure due to higher CPU demand, increasing cloud storage needs, etc. |
+| A exploração requer pedidos simples de API. Múltiplos pedidos concorrentes podem ser feitos a partir de um único computador local ou utilizando recursos de computação em nuvem. A maioria das ferramentas automatizadas disponíveis são projetadas para causar DoS (Negação de Serviço) através de altas cargas de tráfego, afetando a taxa de serviço das APIs. | É comum encontrar APIs que não limitam as interações do cliente ou o consumo de recursos. Pedidos de API elaborados, como aqueles que incluem parâmetros que controlam o número de recursos a serem retornados e realizam análises de estado/tempo/comprimento de resposta, devem permitir a identificação do problema. O mesmo vale para operações em quantidade. Embora os agentes maliciosos não tenham visibilidade sobre o impacto nos custos, isso pode ser inferido com base no modelo de negócios/preços dos fornecedores de serviços (por exemplo, fornecedor de nuvem). | A exploração pode levar a uma Negação de Serviço (DoS) devido à escassez de recursos, mas também pode resultar num aumento dos custos operacionais, como os relacionados à infraestrutura devido à maior exigência de CPU, aumento das necessidades de armazenamento em nuvem, etc. |
 
 ## A API é vulnerável?
 
-Satisfying API requests requires resources such as network bandwidth, CPU,
-memory, and storage. Sometimes required resources are made available by service
-providers via API integrations, and paid for per request, such as sending
-emails/SMS/phone calls, biometrics validation, etc.
+Para atender aos pedidos feitos à API, são necessários recursos como largura de 
+banda de rede, CPU, memória e armazenamento. Às vezes, os recursos necessários 
+são disponibilizados por provedores de serviços por meio de integrações de API 
+e são pagos por pedido, como o envio de emails/SMS/chamadas telefónicas, 
+validação biométrica, etc.
 
-An API is vulnerable if at least one of the following limits is missing or set
-inappropriately (e.g. too low/high):
+Uma API é vulnerável se pelo menos um dos seguintes limites estiver ausente ou 
+definido inadequadamente (por exemplo, muito baixo/alto):
 
-* Execution timeouts
-* Maximum allocable memory
-* Maximum number of file descriptors
-* Maximum number of processes
-* Maximum upload file size
-* Number of operations to perform in a single API client request (e.g. GraphQL
-  batching)
-* Number of records per page to return in a single request-response
-* Third-party service providers' spending limit
+* Tempos limite de execução
+* Memória máxima alocável
+* Número máximo de descritores de ficheiro
+* Número máximo de processos
+* Tamanho máximo de upload de ficheiro
+* Número de operações a serem realizadas num único pedido do cliente da API
+  (por exemplo, agrupamento GraphQL)
+* Número de registros por página a serem retornados num único pedido-resposta
+* Limite de gastos de provedores de serviços terceiros
 
 ## Exemplos de Cenários de Ataque
 
