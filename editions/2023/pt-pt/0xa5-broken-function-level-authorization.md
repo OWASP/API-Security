@@ -7,26 +7,26 @@
 
 ## A API é vulnerável?
 
-The best way to find broken function level authorization issues is to perform
-a deep analysis of the authorization mechanism while keeping in mind the user
-hierarchy, different roles or groups in the application, and asking the
-following questions:
+A melhor forma de identificar falhas de verificação de autorização de acesso a
+funções é através duma análise detalhada do mecanismo de autorização, devendo
+ter-se em consideração o esquema de hierarquia de utilizadores, diferentes
+perfis ou grupos e questionando continuamente:
 
-* Can a regular user access administrative endpoints?
-* Can a user perform sensitive actions (e.g. creation, modification, or
-  deletion ) that they should not have access to by simply changing the HTTP
-  method (e.g. from `GET` to `DELETE`)?
-* Can a user from group X access a function that should be exposed only to
-  users from group Y, by simply guessing the endpoint URL and parameters
-  (e.g. `/api/v1/users/export_all`)?
+* Utilizadores ordinários podem aceder aos _endpoints_ de administração?
+* Os utilizadores podem realizar ações sensíveis (e.g. criar, modificar ou
+  apagar) para as quais não deveriam ter acesso, alterando simplesmente o método
+  HTTP (e.g. alterando de `GET` para `DELETE`)?
+* Um utilizador do grupo X pode aceder a uma função reservada ao grupo Y,
+  adivinhando o URL do _endpoint_ e os parâmetros (e.g.
+  `/api/v1/users/export_all`)?
 
-Don't assume that an API endpoint is regular or administrative only based on
-the URL path.
+Nunca assuma o tipo dum _endpoint_, normal ou administrativo, apenas com base no
+URL.
 
-While developers might choose to expose most of the administrative endpoints
-under a specific relative path, like `/api/admins`, it's very common to find
-these administrative endpoints under other relative paths together with regular
-endpoints, like `/api/users`.
+Apesar dos programadores poderem ter decidido expor a maioria dos _endpoints_
+administrativos sob um mesmo prefixo, e.g. `api/admins`, é comum encontrarem-se
+_endpoints_ administrativos sob outros prefixos, misturados com _endpoints_
+ordinários e.g. `api/users`.
 
 ## Exemplos de Cenários de Ataque
 
