@@ -3,7 +3,7 @@
 | Agentes Ameaça/Vetores Ataque | Falha Segurança | Impactos |
 | - | - | - |
 | Específico da API : Abuso **Moderado** | Prevalência **Predominante** : Deteção **Fácil** | Técnico **Grave** : Específico Negócio |
-| A exploração requer pedidos simples de API. Múltiplos pedidos concorrentes podem ser feitos a partir de um único computador local ou utilizando recursos de computação em nuvem. A maioria das ferramentas automatizadas disponíveis são projetadas para causar DoS (Negação de Serviço) através de altas cargas de tráfego, afetando a taxa de serviço das APIs. | É comum encontrar APIs que não limitam as interações do cliente ou o consumo de recursos. Pedidos de API elaborados, como aqueles que incluem parâmetros que controlam o número de recursos a serem retornados e realizam análises de estado/tempo/comprimento de resposta, devem permitir a identificação do problema. O mesmo vale para operações em quantidade. Embora os agentes maliciosos não tenham visibilidade sobre o impacto nos custos, isso pode ser inferido com base no modelo de negócios/preços dos fornecedores de serviços (por exemplo, fornecedor de nuvem). | A exploração pode levar a uma Negação de Serviço (DoS) devido à escassez de recursos, mas também pode resultar num aumento dos custos operacionais, como os relacionados à infraestrutura devido à maior exigência de CPU, aumento das necessidades de armazenamento em nuvem, etc. |
+| A exploração requer pedidos simples de API. Múltiplos pedidos concorrentes podem ser feitos a partir de um único computador local ou utilizando recursos de computação em nuvem. A maioria das ferramentas automatizadas disponíveis são projetadas para causar DoS (Negação de Serviço) através de altas cargas de tráfego, afetando a taxa de serviço das APIs. | É comum encontrar APIs que não limitam as interações do cliente ou o consumo de recursos. Pedidos de API elaborados, como aqueles que incluem parâmetros que controlam o número de recursos a serem retornados e realizam análises de estado/tempo/comprimento de resposta, devem permitir a identificação do problema. O mesmo vale para operações em quantidade. Embora os agentes maliciosos não tenham visibilidade sobre o impacto nos custos, isso pode ser inferido com base no modelo de negócios/preços dos fornecedores de serviços (e.g. fornecedor de nuvem). | A exploração pode levar a uma Negação de Serviço (DoS) devido à escassez de recursos, mas também pode resultar num aumento dos custos operacionais, como os relacionados à infraestrutura devido à maior exigência de CPU, aumento das necessidades de armazenamento em nuvem, etc. |
 
 ## A API é vulnerável?
 
@@ -14,7 +14,7 @@ e são pagos por pedido, como o envio de emails/SMS/chamadas telefónicas,
 validação biométrica, etc.
 
 Uma API é vulnerável se pelo menos um dos seguintes limites estiver ausente ou 
-definido inadequadamente (por exemplo, muito baixo/alto):
+definido inadequadamente (e.g. muito baixo/alto):
 
 * Tempos limite de execução
 * Memória máxima alocável
@@ -22,7 +22,7 @@ definido inadequadamente (por exemplo, muito baixo/alto):
 * Número máximo de processos
 * Tamanho máximo de upload de ficheiro
 * Número de operações a serem realizadas num único pedido do cliente da API
-  (por exemplo, agrupamento GraphQL)
+  (e.g. agrupamento GraphQL)
 * Número de registros por página a serem retornados num único pedido-resposta
 * Limite de gastos de provedores de serviços terceiros
 
@@ -128,7 +128,7 @@ dólares.
 
 * Utilize uma solução que facilite a limitação de [memória][1], [CPU][2],
   [número de reinícios][3], [descritores de ficheiros e processos][4], como
-  Containers / Código Serverless (por exemplo, Lambdas).
+  Containers / Código Serverless (e.g. Lambdas).
 * Defina e force um tamanho máximo de dados em todos os parâmetros e conteúdos
   de entrada, como comprimento máximo para _strings_,  número máximo de elementos
   em arrays e tamanho máximo de ficheiro para _upload_ (independentemente de
@@ -138,7 +138,7 @@ dólares.
 * A limitação de pedidos deve ser ajustada com base nas necessidades do negócio.
   Alguns endpoints da API podem exigir políticas mais rigorosas.
 * Limite/controle quantas vezes ou com que frequência um único cliente/utilizador
-  da API pode executar uma única operação (por exemplo, validar um OTP ou solicitar
+  da API pode executar uma única operação (e.g. validar um OTP ou solicitar
   a recuperação de senha sem visitar o URL de uso único).
 * Add proper server-side validation for query string and request body
   parameters, specifically the one that controls the number of records to be
