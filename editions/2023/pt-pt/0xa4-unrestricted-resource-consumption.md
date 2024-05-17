@@ -30,12 +30,12 @@ definido inadequadamente (por exemplo, muito baixo/alto):
 
 ### Cenário #1
 
-A social network implemented a “forgot password” flow using SMS verification,
-enabling the user to receive a one time token via SMS in order to reset their
-password.
+Uma rede social implementou um mecanismo de "recuperar senha" através da 
+verificação por SMS, permitindo que o utilizador receba um _token_ de uso 
+único via SMS para redefinir a sua senha.
 
-Once a user clicks on "forgot password" an API call is sent from the user's
-browser to the back-end API:
+Uma vez que o utilizador clica em "recuperar senha", é feita uma chamada API 
+a partir do navegador do utilizador para a API de _back-end_:
 
 ```
 POST /initiate_forgot_password
@@ -46,8 +46,8 @@ POST /initiate_forgot_password
 }
 ```
 
-Then, behind the scenes, an API call is sent from the back-end to a 3rd party
-API that takes care of the SMS delivering:
+Em seguida, nos bastidores, é feita uma chamada API do _back-end_ para uma API 
+de terceiros que se encarrega da entrega do SMS:
 
 ```
 POST /sms/send_reset_pass_code
@@ -59,16 +59,16 @@ Host: willyo.net
 }
 ```
 
-The 3rd party provider, Willyo, charges $0.05 per this type of call.
+O fornecedor de terceiros, Willyo, cobra $0.05 por este tipo de chamada.
 
-An attacker writes a script that sends the first API call tens of thousands of
-times. The back-end follows and requests Willyo to send tens of thousands of
-text messages, leading the company to lose thousands of dollars in a matter of
-minutes.
+Um atacante escreve código que envia a primeira chamada API dezenas de milhares 
+de vezes. O _back-end_ prossegue e solicita à Willyo que envie dezenas de 
+milhares de mensagens de texto, levando a empresa a perder milhares de dólares 
+em questão de minutos.
 
 ### Cenário #2
 
-A GraphQL API Endpoint allows the user to upload a profile picture.
+Um _endpoint_ de API GraphQL permite que o utilizador carregue uma foto de perfil.
 
 ```
 POST /graphql
@@ -82,17 +82,17 @@ POST /graphql
 }
 ```
 
-Once the upload is complete, the API generates multiple thumbnails with
-different sizes based on the uploaded picture. This graphical operation takes a
-lot of memory from the server.
+Uma vez concluído o carregamento, a API gera múltiplas miniaturas com diferentes 
+tamanhos com base na imagem carregada. Esta operação gráfica consome muita 
+memória do servidor.
 
-The API implements a traditional rate limiting protection - a user can't access
-the GraphQL endpoint too many times in a short period of time. The API also
-checks for the uploaded picture's size before generating thumbnails to avoid
-processing pictures that are too large.
+A API implementa uma proteção tradicional de limitação de quantidade de pedidos 
+- um utilizador não pode aceder ao _endpoint_ GraphQL demasiadas vezes num curto
+período de tempo. A API também verifica o tamanho da imagem carregada antes de
+gerar as miniaturas para evitar o processamento de imagens demasiado grandes.
 
-An attacker can easily bypass those mechanisms, by leveraging the flexible
-nature of GraphQL:
+Um atacante pode facilmente contornar esses mecanismos, aproveitando a natureza 
+flexível do GraphQL:
 
 ```
 POST /graphql
@@ -105,45 +105,53 @@ POST /graphql
 }
 ```
 
-Because the API does not limit the number of times the `uploadPic` operation can
-be attempted, the call will lead to exhaustion of server memory and Denial of
-Service.
+Como a API não limita o número de vezes que a operação `uploadPic` pode ser 
+tentada, a chamada levará ao esgotamento da memória do servidor e à negação de 
+serviço (_Denial of Service_).
 
 ### Cenário #3
 
-A service provider allows clients to download arbitrarily large files using its
-API. These files are stored in cloud object storage and they don't change that
-often. The service provider relies on a cache service to have a better service
-rate and to keep bandwidth consumption low. The cache service only caches files
-up to 15GB.
+Um prestador de serviços permite que os clientes descarreguem ficheiros 
+arbitrariamente grandes através da sua API. Estes ficheiros são mantidos em 
+armazenamento de objetos na nuvem e não mudam com frequência. O prestador de 
+serviços depende de um serviço de _cache_ para melhorar a velocidade do serviço e 
+manter o consumo de largura de banda baixo. O serviço de _cache_ apenas armazena 
+ficheiros até 15GB.
 
-When one of the files gets updated, its size increases to 18GB. All service
-clients immediately start pulling the new version. Because there were no
-consumption cost alerts, nor a maximum cost allowance for the cloud service,
-the next monthly bill increases from US$13, on average, to US$8k.
+Quando um dos ficheiros é atualizado, o seu tamanho aumenta para 18GB. Todos os 
+clientes do serviço começam imediatamente a descarregar a nova versão. Como não 
+havia alertas de custo de consumo, nem um limite máximo de custo para o serviço 
+de nuvem, a fatura mensal seguinte aumenta de 13 dólares, em média, para 8 mil 
+dólares.
 
 ## Como Prevenir
 
-* Use a solution that makes it easy to limit [memory][1],
-  [CPU][2], [number of restarts][3], [file descriptors, and processes][4] such
-  as Containers / Serverless code (e.g. Lambdas).
-* Define and enforce a maximum size of data on all incoming parameters and
-  payloads, such as maximum length for strings, maximum number of elements in
-  arrays, and maximum upload file size (regardless of whether it is stored
-  locally or in cloud storage).
-* Implement a limit on how often a client can interact with the API within a
-  defined timeframe (rate limiting).
-* Rate limiting should be fine tuned based on the business needs. Some API
-  Endpoints might require stricter policies.
-* Limit/throttle how many times or how often a single API client/user can
-  execute a single operation (e.g. validate an OTP, or request password
-  recovery without visiting the one-time URL).
+* Utilize uma solução que facilite a limitação de [memória][1], [CPU][2],
+  [número de reinícios][3], [descritores de ficheiros e processos][4], como
+  Containers / Código Serverless (por exemplo, Lambdas).
+* Defina e force um tamanho máximo de dados em todos os parâmetros e conteúdos
+  de entrada, como comprimento máximo para _strings_,  número máximo de elementos
+  em arrays e tamanho máximo de ficheiro para _upload_ (independentemente de
+  ser armazenado localmente ou na nuvem).
+* Implemente um limite de frequência com que um cliente pode interagir com a
+  API dentro de um período temporal definido (_rate limiting_).
+* A limitação de pedidos deve ser ajustada com base nas necessidades do negócio.
+  Alguns endpoints da API podem exigir políticas mais rigorosas.
+* Limite/controle quantas vezes ou com que frequência um único cliente/utilizador
+  da API pode executar uma única operação (por exemplo, validar um OTP ou solicitar
+  a recuperação de senha sem visitar o URL de uso único).
 * Add proper server-side validation for query string and request body
   parameters, specifically the one that controls the number of records to be
   returned in the response.
+* Adicione validação adequada no lado do servidor para parâmetros da _query string_
+  e do corpo do pedido, especificamente aqueles que controlam o número de resultados
+  a serem retornados na resposta.
 * Configure spending limits for all service providers/API integrations. When
   setting spending limits is not possible, billing alerts should be configured
   instead.
+* Configure limites de gastos para todos os fornecedores de serviços/integracões de
+  API. Quando não for possível definir limites de gastos, devem ser configurados
+  alertas de faturamento.
 
 ## Referências
 
