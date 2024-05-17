@@ -103,7 +103,7 @@ de email da conta da vítima.
 * _Endpoints_ para recuperação de _password_ devem ser tratados como os
   _endpoints_ de _login_ no que diz respeito à proteção contra ataques de força
   bruta, limitação do número de pedidos e bloqueio de conta.
-* Exija nova autenticação para operações sensíveis (por exemplo, alterar o
+* Exija nova autenticação para operações sensíveis (e.g. alterar o
   endereço de email do proprietário da conta/número de telefone para
   autenticação de dois fatores).
 * Utilize a [OWASP Authentication Cheatsheet][1].
