@@ -19,7 +19,7 @@ permissões para realizar a ação solicitada sobre o objeto alvo.
 As falhas neste mecanismo geralmente conduzem à divulgação não autorizada de 
 informações, modificação ou destruição de todos os dados.
 
-Comparar o ID do utilizador da sessão atual (por exemplo, ao extraí-lo do 
+Comparar o ID do utilizador da sessão atual (e.g. ao extraí-lo do 
 token JWT) com o parâmetro de ID vulnerável não é uma solução suficiente 
 para resolver a falha de Broken Object Level Authorization (BOLA). Esta 
 abordagem pode endereçar apenas um pequeno subconjunto de casos.
