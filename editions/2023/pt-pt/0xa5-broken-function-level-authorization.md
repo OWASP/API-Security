@@ -3,9 +3,9 @@
 | Agentes Ameaça/Vetores Ataque | Falha Segurança | Impactos |
 | - | - | - |
 | Específico da API : Abuso **Fácil** | Prevalência **Comum** : Deteção **Fácil** | Técnico **Grave** : Específico Negócio |
-| Exploitation requires the attacker to send legitimate API calls to an API endpoint that they should not have access to as anonymous users or regular, non-privileged users. Exposed endpoints will be easily exploited. | Authorization checks for a function or resource are usually managed via configuration or code level. Implementing proper checks can be a confusing task since modern applications can contain many types of roles, groups, and complex user hierarchies (e.g. sub-users, or users with more than one role). It's easier to discover these flaws in APIs since APIs are more structured, and accessing different functions is more predictable. | Such flaws allow attackers to access unauthorized functionality. Administrative functions are key targets for this type of attack and may lead to data disclosure, data loss, or data corruption. Ultimately, it may lead to service disruption. |
+| Para abusar deste tipo de falha o atacante tem de realizar pedidos legítimos ao _endpoint_ da API ao qual não é suposto ter acesso como utilizadores anónimos, ordinários ou não privilegiados. _Endpoints_ expostos serão facilmente explorados. | As verificações de autorização para aceder a uma determinada função ou recurso são normalmente geridas por configuração ou ao nível da implementação. A correta implementação destes mecanismos pode tornar-se confusa, uma vez que, as aplicações modernas prevêem vários perfis ou grupos de utilizador, assim como complexos esquemas de hierarquias (e.g., sub-utilizadores, utilizadores com mais do que um perfil). É mais fácil descobrir estas falhas em APIs dado que APIs são mais estruturadas, e aceder a diferentes funções é mais previsível. | Estas falhas permitem aos atacantes aceder de forma não autorizada a certas funcionalidades. As funcionalidades administrativas são o alvo preferencial neste tipo de ataqueo que pode levar a divulgação de dados, perda de dados, ou corrupção de dados. Por último, pode dar aso a uma disrupção de serviço. |
 
-## Is the API Vulnerable?
+## A API é vulnerável?
 
 The best way to find broken function level authorization issues is to perform
 a deep analysis of the authorization mechanism while keeping in mind the user
@@ -28,9 +28,9 @@ under a specific relative path, like `/api/admins`, it's very common to find
 these administrative endpoints under other relative paths together with regular
 endpoints, like `/api/users`.
 
-## Example Attack Scenarios
+## Exemplos de Cenários de Ataque
 
-### Scenario #1
+### Cenário #1
 
 During the registration process for an application that allows only invited
 users to join, the mobile application triggers an API call to
@@ -56,7 +56,7 @@ POST /api/invites/new
 Later on, the attacker uses the maliciously crafted invite in order to create
 themselves an admin account and gain full access to the system.
 
-### Scenario #2
+### Cenário #2
 
 An API contains an endpoint that should be exposed only to administrators -
 `GET /api/admin/v1/users/all`. This endpoint returns the details of all the
@@ -65,7 +65,7 @@ checks. An attacker who learned the API structure takes an educated guess and
 manages to access this endpoint, which exposes sensitive details of the users
 of the application.
 
-## How To Prevent
+## Como Prevenir
 
 Your application should have a consistent and easy-to-analyze authorization
 module that is invoked from all your business functions. Frequently, such
@@ -82,7 +82,7 @@ code.
 * Make sure that administrative functions inside a regular controller implement
   authorization checks based on the user's group and role.
 
-## References
+## Referências
 
 ### OWASP
 
@@ -90,7 +90,7 @@ code.
 * "A7: Missing Function Level Access Control", [OWASP Top 10 2013][2]
 * [Access Control][3]
 
-### External
+### Externas
 
 * [CWE-285: Improper Authorization][4]
 
