@@ -1,11 +1,11 @@
 # API6:2023 Unrestricted Access to Sensitive Business Flows
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
+| Agentes Ameaça/Vetores Ataque | Falha Segurança | Impactos |
 | - | - | - |
-| API Specific : Exploitability **Easy** | Prevalence **Widespread** : Detectability **Average** | Technical **Moderate** : Business Specific |
+| Específico da API : Abuso **Fácil** | Prevalência **Predominante** : Deteção **Moderado** | Técnico **Moderado** : Específico Negócio |
 | Exploitation usually involves understanding the business model backed by the API, finding sensitive business flows, and automating access to these flows, causing harm to the business. | Lack of a holistic view of the API in order to fully support business requirements tends to contribute to the prevalence of this issue. Attackers manually identify what resources (e.g. endpoints) are involved in the target workflow and how they work together. If mitigation mechanisms are already in place, attackers need to find a way to bypass them. | In general technical impact is not expected. Exploitation might hurt the business in different ways, for example: prevent legitimate users from purchasing a product, or lead to inflation in the internal economy of a game. |
 
-## Is the API Vulnerable?
+## A API é vulnerável?
 
 When creating an API Endpoint, it is important to understand which business flow
 it exposes. Some business flows are more sensitive than others, in the sense
@@ -27,9 +27,9 @@ spam by one social network, but encouraged by another social network.
 An API Endpoint is vulnerable if it exposes a sensitive business flow, without
 appropriately restricting the access to it.
 
-## Example Attack Scenarios
+## Exemplos de Cenários de Ataque
 
-### Scenario #1
+### Cenário #1
 
 A technology company announces they are going to release a new gaming console on
 Thanksgiving. The product has a very high demand and the stock is limited. An
@@ -44,7 +44,7 @@ users.
 Later on, the attacker sells the product on another platform for a much higher
 price.
 
-### Scenario #2
+### Cenário #2
 
 An airline company offers online ticket purchasing with no cancellation fee. A
 user with malicious intentions books 90% of the seats of a desired flight.
@@ -56,7 +56,7 @@ the flight.
 At this point, the user buys herself a single ticket that is much cheaper than
 the original one.
 
-### Scenario #3
+### Cenário #3
 
 A ride-sharing app provides a referral program - users can invite their friends
 and gain credit for each friend who has joined the app. This credit can be later
@@ -68,7 +68,7 @@ process, with each new user adding credit to the attacker's wallet.
 The attacker can later enjoy free rides or sell the accounts with excessive
 credits for cash.
 
-## How To Prevent
+## Como Prevenir
 
 The mitigation planning should be done in two layers:
 
@@ -95,7 +95,7 @@ The mitigation planning should be done in two layers:
   as developer and B2B APIs). They tend to be an easy target for attackers
   because they often don't implement all the required protection mechanisms.
 
-## References
+## Referências
 
 ### OWASP
 
