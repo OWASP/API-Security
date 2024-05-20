@@ -32,17 +32,17 @@ ordinários e.g. `api/users`.
 
 ### Cenário #1
 
-During the registration process for an application that allows only invited
-users to join, the mobile application triggers an API call to
-`GET /api/invites/{invite_guid}`. The response contains a JSON with details
-about the invite, including the user's role and the user's email.
+Durante o processo de registo para uma aplicação que permite apenas a adesão 
+de utilizadores convidados, a aplicação móvel faz uma chamada de API para 
+`GET /api/invites/{invite_guid}`. A resposta contém um JSON com detalhes sobre 
+o convite, incluindo o perfil do utilizador e o email do utilizador.
 
-An attacker duplicates the request and manipulates the HTTP method and endpoint
-to `POST /api/invites/new`. This endpoint should only be accessed by
-administrators using the admin console. The endpoint does not implement
-function level authorization checks.
+Um atacante duplica o pedido e manipula o método HTTP e o _endpoint_ para 
+`POST /api/invites/new`. Este _endpoint_ deveria ser usado apenas por 
+administradores através da consola de administração. O _endpoint_ não implementa 
+verificações de autorização de acesso à função.
 
-The attacker exploits the issue and sends a new invite with admin privileges:
+O atacante explora a falha e envia um novo convite com privilégios de administrador:
 
 ```
 POST /api/invites/new
@@ -53,8 +53,8 @@ POST /api/invites/new
 }
 ```
 
-Later on, the attacker uses the maliciously crafted invite in order to create
-themselves an admin account and gain full access to the system.
+Mais tarde, o atacante usa o convite criado maliciosamente para criar uma conta 
+de administrador e obter acesso total ao sistema.
 
 ### Cenário #2
 
@@ -65,22 +65,31 @@ checks. An attacker who learned the API structure takes an educated guess and
 manages to access this endpoint, which exposes sensitive details of the users
 of the application.
 
+Uma API contém um _endpoint_ que deveria ser exposto apenas a administradores - 
+`GET /api/admin/v1/users/all`. Este _endpoint_ retorna os detalhes de todos os 
+utilizadores da aplicação e não implementa verificações de autorização de acesso 
+à função. Um atacante que aprendeu sobre a estrutura da API faz uma suposição 
+informada e consegue aceder a este _endpoint_, expondo detalhes sensíveis dos 
+utilizadores da aplicação.
+
 ## Como Prevenir
 
-Your application should have a consistent and easy-to-analyze authorization
-module that is invoked from all your business functions. Frequently, such
-protection is provided by one or more components external to the application
-code.
+A sua API deve usar um módulo de autorização consistente e fácil de analisar, o
+qual deve ser invocado por todas as funções de negócio. Frequentemente, este
+tipo de proteção é oferecido por um ou mais componentes externos à lógica
+aplicacional.
 
-* The enforcement mechanism(s) should deny all access by default, requiring
-  explicit grants to specific roles for access to every function.
-* Review your API endpoints against function level authorization flaws, while
-  keeping in mind the business logic of the application and groups hierarchy.
-* Make sure that all of your administrative controllers inherit from an
-  administrative abstract controller that implements authorization checks
-  based on the user's group/role.
-* Make sure that administrative functions inside a regular controller implement
-  authorization checks based on the user's group and role.
+* Por omissão todos os acesso devem ser negados, exigindo que permissões
+  específicas sejam concedidas a perfis específicos para acesso a cada função.
+* Rever todos os _endpoints_ à procura de falhas ao nível da verificação de
+  autorização de acesso a funções, tendo sempre em consideração a lógica de
+  negócio da aplicação e hierarquia dos grupos.
+* Assegurar que todos os controladores administrativos herdam de um controlador
+  administrativo base que implementa as verificações de autorização com base no
+  grupo/perfil do utilizador.
+* Assegurar que funções administrativas num controlador ordinário implementam
+  elas próprias as verificações de autorização baseadas no grupo e perfil do
+  utilizador.
 
 ## Referências
 
