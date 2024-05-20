@@ -3,29 +3,29 @@
 | Agentes Ameaça/Vetores Ataque | Falha Segurança | Impactos |
 | - | - | - |
 | Específico da API : Abuso **Fácil** | Prevalência **Predominante** : Deteção **Moderado** | Técnico **Moderado** : Específico Negócio |
-| Exploitation usually involves understanding the business model backed by the API, finding sensitive business flows, and automating access to these flows, causing harm to the business. | Lack of a holistic view of the API in order to fully support business requirements tends to contribute to the prevalence of this issue. Attackers manually identify what resources (e.g. endpoints) are involved in the target workflow and how they work together. If mitigation mechanisms are already in place, attackers need to find a way to bypass them. | In general technical impact is not expected. Exploitation might hurt the business in different ways, for example: prevent legitimate users from purchasing a product, or lead to inflation in the internal economy of a game. |
+| A exploração geralmente envolve entender o modelo de negócio suportado pela API, encontrar fluxos de negócio sensíveis e automatizar o acesso a esses fluxos, causando danos ao negócio. | A falta de uma visão holística da API para suportar plenamente os requisitos de negócio tende a contribuir para a prevalência deste problema. Os atacantes identificam manualmente quais recursos (e.g. _endpoints_) estão envolvidos no fluxo de trabalho alvo e como funcionam em conjunto. Se já existirem mecanismos de mitigação, os atacantes precisam encontrar uma maneira de os contornar. | Em geral, não se espera um impacto técnico significativo. A exploração pode prejudicar o negócio de diferentes maneiras, por exemplo: impedir que utilizadores legítimos comprem um produto ou levar a uma inflação na economia interna de um jogo. |
 
 ## A API é vulnerável?
 
-When creating an API Endpoint, it is important to understand which business flow
-it exposes. Some business flows are more sensitive than others, in the sense
-that excessive access to them may harm the business.
+Ao criar um _endpoint_ de API, é importante entender qual fluxo de negócio ele 
+expõe. Alguns fluxos de negócio são mais sensíveis do que outros, no sentido de 
+que o acesso excessivo a eles pode prejudicar o negócio.
 
-Common examples of sensitive business flows and risk of excessive access
-associated with them:
+Exemplos comuns de fluxos de negócios sensíveis e o risco de acesso excessivo 
+associado a eles:
 
-* Purchasing a product flow - an attacker can buy all the stock of a high-demand
-  item at once and resell for a higher price (scalping)
-* Creating a comment/post flow - an attacker can spam the system
-* Making a reservation - an attacker can reserve all the available time slots
-  and prevent other users from using the system
+* Fluxo de compra de um produto - um atacante pode comprar todo o stock de um
+  item de alta procura de uma só vez e revendê-lo por um preço mais alto (scalping).
+* Fluxo de criação de comentário/publicação - um atacante pode inundar o sistema com spam.
+* Realização de uma reserva - um atacante pode reservar todos os horários disponíveis
+  e impedir que outros utilizadores utilizem o sistema.
 
-The risk of excessive access might change between industries and businesses.
-For example - creation of posts by a script might be considered as a risk of
-spam by one social network, but encouraged by another social network.
+O risco de acesso excessivo pode variar entre indústrias e empresas. Por exemplo, a 
+criação de publicações através de um script pode ser considerada um risco de spam por 
+uma rede social, mas incentivada por outra rede social.
 
-An API Endpoint is vulnerable if it exposes a sensitive business flow, without
-appropriately restricting the access to it.
+Um endpoint de API está vulnerável se expõe um fluxo de negócio sensível sem restringir 
+adequadamente o acesso a ele.
 
 ## Exemplos de Cenários de Ataque
 
