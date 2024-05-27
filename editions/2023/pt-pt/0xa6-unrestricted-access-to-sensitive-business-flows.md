@@ -31,69 +31,72 @@ adequadamente o acesso a ele.
 
 ### Cenário #1
 
-A technology company announces they are going to release a new gaming console on
-Thanksgiving. The product has a very high demand and the stock is limited. An
-attacker writes code to automatically buy the new product and complete the
-transaction.
+Uma empresa de tecnologia anuncia que vai lançar uma nova consola de jogos no Dia 
+de Ação de Graças. O produto tem uma procura muito alta e o stock é limitado. Um 
+atacante escreve código para comprar automaticamente o novo produto e concluir a 
+transação.
 
-On the release day, the attacker runs the code distributed across different IP
-addresses and locations. The API doesn't implement the appropriate protection
-and allows the attacker to buy the majority of the stock before other legitimate
-users.
+No dia do lançamento, o atacante executa o código distribuído por diferentes 
+endereços IP e localizações. A API não implementa a proteção adequada e permite 
+que o atacante compre a maior parte do stock antes de outros utilizadores 
+legítimos.
 
-Later on, the attacker sells the product on another platform for a much higher
-price.
+Mais tarde, o atacante vende o produto noutra plataforma por um preço muito mais 
+alto.
 
 ### Cenário #2
 
-An airline company offers online ticket purchasing with no cancellation fee. A
-user with malicious intentions books 90% of the seats of a desired flight.
+Uma companhia aérea oferece a compra de bilhetes online sem taxa de cancelamento. 
+Um utilizador com intenções maliciosas reserva 90% dos assentos de um voo desejado.
 
-A few days before the flight the malicious user canceled all the tickets at
-once, which forced the airline to discount the ticket prices in order to fill
-the flight.
+Alguns dias antes do voo, o utilizador malicioso cancelou todos os bilhetes de uma 
+vez, o que obrigou a companhia aérea a baixar os preços dos bilhetes para preencher 
+o voo.
 
-At this point, the user buys herself a single ticket that is much cheaper than
-the original one.
+Deste modo, o utilizador consegue comprar um bilhete que está muito mais barato do 
+que o original.
 
 ### Cenário #3
 
-A ride-sharing app provides a referral program - users can invite their friends
-and gain credit for each friend who has joined the app. This credit can be later
-used as cash to book rides.
+Uma aplicação de partilha de boleias oferece um programa de referência - os 
+utilizadores podem convidar os seus amigos e ganhar crédito por cada amigo que 
+se juntar à aplicação. Este crédito pode ser posteriormente utilizado como 
+dinheiro para reservar viagens.
 
-An attacker exploits this flow by writing a script to automate the registration
-process, with each new user adding credit to the attacker's wallet.
+Um atacante explora este fluxo escrevendo um script para automatizar o processo 
+de registo, com cada novo utilizador a adicionar crédito à carteira do atacante.
 
-The attacker can later enjoy free rides or sell the accounts with excessive
-credits for cash.
+O atacante pode posteriormente usufruir de viagens gratuitas ou vender as contas 
+com créditos excessivos por dinheiro.
 
 ## Como Prevenir
 
-The mitigation planning should be done in two layers:
+O planeamento da mitigação deve ser feito em duas camadas:
 
-* Business - identify the business flows that might harm the business if they
-  are excessively used.
-* Engineering - choose the right protection mechanisms to mitigate the business
-  risk.
+* Negócio - identificar os fluxos de negócio que podem prejudicar a empresa se
+  forem utilizados em excesso.
+* Engenharia - escolher os mecanismos de proteção adequados para mitigar o risco
+  empresarial.
 
-  Some of the protection mechanisms are more simple while others are more
-  difficult to implement. The following methods are used to slow down automated
-  threats:
+  Alguns dos mecanismos de proteção são mais simples, enquanto outros são mais
+  difíceis de implementar. Os seguintes métodos são utilizados para desacelerar
+  ameaças automatizadas:
 
-  * Device fingerprinting: denying service to unexpected client devices (e.g
-    headless browsers) tends to make threat actors use more sophisticated
-    solutions, thus more costly for them
-  * Human detection: using either captcha or more advanced biometric solutions
-    (e.g. typing patterns)
-  * Non-human patterns: analyze the user flow to detect non-human patterns (e.g.
-    the user accessed the "add to cart" and "complete purchase" functions in
-    less than one second)
-  * Consider blocking IP addresses of Tor exit nodes and well-known proxies
+  * _Fingerprinting_ de dispositivos: negar serviço a dispositivos de cliente
+    inesperados (e.g. navegadores _headless_) tende a fazer com que os atacantes
+    usem soluções mais sofisticadas, tornando-as mais caras para eles.
+  * Detecção humana: utilize _captcha_ ou soluções biométricas mais avançadas
+    (e.g. padrões de digitação).
+  * Padrões não humanos: analisar o fluxo do utilizador para detectar padrões
+    não humanos (e.g. o utilizador acedeu às funções "adicionar ao carrinho" e
+    "finalizar compra" em menos de um segundo).
+  * Considere bloquear endereços IP de nós de saída da rede Tor e proxies bem
+    conhecidos.
 
-  Secure and limit access to APIs that are consumed directly by machines (such
-  as developer and B2B APIs). They tend to be an easy target for attackers
-  because they often don't implement all the required protection mechanisms.
+  Proteja e limite o acesso às APIs que são consumidas diretamente por máquinas
+  (como APIs para desenvolvedores e B2B). Elas tendem a ser um alvo fácil para
+  atacantes, pois muitas vezes não implementam todos os mecanismos de proteção
+  necessários.
 
 ## Referências
 
