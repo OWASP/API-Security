@@ -1,9 +1,9 @@
 # API7:2023 Server Side Request Forgery
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
+| Agentes Ameaça/Vetores Ataque | Falha Segurança | Impactos |
 | - | - | - |
-| API Specific : Exploitability **Easy** | Prevalence **Common** : Detectability **Easy** | Technical **Moderate** : Business Specific |
-| Exploitation requires the attacker to find an API endpoint that accesses a URI that’s provided by the client. In general, basic SSRF (when the response is returned to the attacker), is easier to exploit than Blind SSRF in which the attacker has no feedback on whether or not the attack was successful. | Modern concepts in application development encourage developers to access URIs provided by the client. Lack of or improper validation of such URIs are common issues. Regular API requests and response analysis will be required to detect the issue. When the response is not returned (Blind SSRF) detecting the vulnerability requires more effort and creativity. | Successful exploitation might lead to internal services enumeration (e.g. port scanning), information disclosure, bypassing firewalls, or other security mechanisms. In some cases, it can lead to DoS or the server being used as a proxy to hide malicious activities. |
+| Específico da API : Abuso **Fácil** | Prevalência **Comum** : Detectability **Fácil** | Técnico **Moderado** : Específico do Negócio |
+| A exploração requer que o atacante encontre um _endpoint_ da API que aceda a um URI fornecido pelo cliente. Em geral, SSRF básico (quando a resposta é retornada ao atacante) é mais fácil de explorar do que _Blind_ SSRF, em que o atacante não tem feedback sobre se o ataque foi bem sucedido ou não. | Os conceitos modernos no desenvolvimento de aplicações incentivam os desenvolvedores a aceder a URIs fornecidos pelo cliente. A falta de validação ou a validação inadequada desses URIs são problemas comuns. Será necessária a análise regular de solicitações e respostas da API para detectar o problema. Quando a resposta não é retornada (_Blind_ SSRF), a deteção da vulnerabilidade exige mais esforço e criatividade. | Successful exploitation might lead to internal services enumeration (e.g. port scanning), information disclosure, bypassing firewalls, or other security mechanisms. In some cases, it can lead to DoS or the server being used as a proxy to hide malicious activities. |
 
 ## Is the API Vulnerable?
 
