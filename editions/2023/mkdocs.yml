@@ -5,3 +5,5 @@ extra:
   alternate:
     - name: English
       lang: en
+    - name: Français
+      lang: fr
