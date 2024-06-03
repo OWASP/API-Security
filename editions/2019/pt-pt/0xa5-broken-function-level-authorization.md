@@ -24,7 +24,7 @@ Nunca assuma o tipo dum _endpoint_, normal ou administrativo, apenas com base no
 URL.
 
 Apesar dos programadores poderem ter decidido expor a maioria dos _endpoints_
-administrativos sob um mesmo prefixo, e.g. `api/admins, é comum encontrarem-se
+administrativos sob um mesmo prefixo, e.g. `api/admins`, é comum encontrarem-se
 _endpoints_ administrativos sob outros prefixos, misturados com _endpoints_
 ordinários e.g. `api/users`.
 
