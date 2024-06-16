@@ -12,10 +12,11 @@ Les API modernes sont souvent exposées à des risques de sécurité en raison d
 Faire fonctionner plusieurs versions d'une API nécessite des ressources de gestion supplémentaires de la part du fournisseur de l'API et augmente la surface d'attaque.
 
 Une API a un "<ins>angle mort de la documentation</ins>" si :
+
 * Le but de l'hôte de l'API n'est pas clair, et il n'y a pas de réponses explicites aux questions suivantes
-  * Dans quel environnement l'API fonctionne-t-elle (par exemple, production, staging, test, développement) ?
-  * Qui devrait avoir accès au réseau de l'API (par exemple, public, interne, partenaires) ?
-  * Quelle version de l'API est en cours d'exécution ?
+    * Dans quel environnement l'API fonctionne-t-elle (par exemple, production, staging, test, développement) ?
+    * Qui devrait avoir accès au réseau de l'API (par exemple, public, interne, partenaires) ?
+    * Quelle version de l'API est en cours d'exécution ?
 * Il n'y a pas de documentation ou la documentation existante n'est pas mise à jour.
 * Il n'y a pas de plan de retraite pour chaque version de l'API.
 * L'inventaire de l'hôte est manquant ou obsolète.
@@ -23,10 +24,11 @@ Une API a un "<ins>angle mort de la documentation</ins>" si :
 La visibilité et l'inventaire des flux de données sensibles jouent un rôle important dans le cadre d'un plan de réponse aux incidents, au cas où une violation se produirait du côté du tiers.
 
 Une API a un "<ins>angle mort du flux de données</ins>" si :
+
 * Il y a un "flux de données sensible" où l'API partage des données sensibles avec un tiers et
-  * Il n'y a pas de justification commerciale ou d'approbation du flux
-  * Il n'y a pas d'inventaire ou de visibilité du flux
-  * Il n'y a pas de visibilité approfondie sur le type de données sensibles partagées
+    * Il n'y a pas de justification commerciale ou d'approbation du flux
+    * Il n'y a pas d'inventaire ou de visibilité du flux
+    * Il n'y a pas de visibilité approfondie sur le type de données sensibles partagées
 
 
 ## Exemple de scénarios d'attaque
