@@ -110,9 +110,9 @@ Puisque l'application affiche la réponse de la requête de test, l'attaquant pe
 
 * Isoler le mécanisme de récupération des ressources dans votre réseau : ces fonctionnalités sont généralement destinées à récupérer des ressources distantes et non internes.
 * Chaque fois que possible, utilisez des listes d'autorisation :
-  * Les origines distantes à partir desquelles les utilisateurs sont censés télécharger des ressources (par exemple, Google Drive, Gravatar, etc.)
-  * Les schémas d'URL et les ports
-  * Les types de médias acceptés pour une fonctionnalité donnée
+    * Les origines distantes à partir desquelles les utilisateurs sont censés télécharger des ressources (par exemple, Google Drive, Gravatar, etc.)
+    * Les schémas d'URL et les ports
+    * Les types de médias acceptés pour une fonctionnalité donnée
 * Désactivez les redirections HTTP.
 * Utilisez un analyseur d'URL bien testé et maintenu pour éviter les problèmes causés par des incohérences d'analyse d'URL.
 * Validez et assainissez toutes les données d'entrée fournies par le client.
