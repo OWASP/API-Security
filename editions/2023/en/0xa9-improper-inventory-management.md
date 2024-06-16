@@ -19,10 +19,11 @@ An API has a "<ins>documentation blindspot</ins>" if:
 
 * The purpose of an API host is unclear, and there are no explicit answers to
   the following questions
-  * Which environment is the API running in (e.g. production, staging, test,
-    development)?
-  * Who should have network access to the API (e.g. public, internal, partners)?
-  * Which API version is running?
+    * Which environment is the API running in (e.g. production, staging, test,
+      development)?
+    * Who should have network access to the API (e.g. public, internal,
+      partners)?
+    * Which API version is running?
 * There is no documentation or the existing documentation is not updated.
 * There is no retirement plan for each API version.
 * The host's inventory is missing or outdated.
@@ -35,10 +36,9 @@ An API has a "<ins>data flow blindspot</ins>" if:
 
 * There is a "sensitive data flow" where the API shares sensitive data with a
   third party and
-  * There is not a business justification or approval of the flow
-  * There is no inventory or visibility of the flow
-  * There is not deep visibility of which type of sensitive data is shared
-
+    * There is not a business justification or approval of the flow
+    * There is no inventory or visibility of the flow
+    * There is not deep visibility of which type of sensitive data is shared
 
 ## Example Attack Scenarios
 
@@ -94,7 +94,6 @@ sells the information for malicious purposes.
   For example, whether it is possible to backport the improvements without
   breaking API compatibility or if you need to take the older version out
   quickly and force all clients to move to the latest version.
-
 
 ## References
 

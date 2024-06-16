@@ -81,8 +81,8 @@ Furthermore:
   HTTP verbs should be disabled (e.g. HEAD).
 * APIs expecting to be accessed from browser-based clients (e.g., WebApp
   front-end) should, at least:
-  * implement a proper Cross-Origin Resource Sharing (CORS) policy
-  * include applicable Security Headers
+    * implement a proper Cross-Origin Resource Sharing (CORS) policy
+    * include applicable Security Headers
 * Restrict incoming content types/data formats to those that meet the business/
   functional requirements.
 * Ensure all servers in the HTTP server chain (e.g. load balancers, reverse
