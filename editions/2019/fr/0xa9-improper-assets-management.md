@@ -11,13 +11,14 @@ L'API peut être vulnérable si :
 
 * L'objectif de l'hôte de l'API n'est pas clair, et il n'y a pas de réponses
   explicites aux questions suivantes :
-  * Dans quel environment tourne l'API (ex : production, staging, test,
-    développement) ?
-  * Qui doit avoir un accès réseau à l'API (ex : public, interne, partenaires) ?
-  * Quelle version de l'API tourne ?
-  * Quelles données sont collectées et traitées par l'API (ex : données
-    personnelles) ?
-  * Quel est le flux des données ?
+    * Dans quel environment tourne l'API (ex : production, staging, test,
+      développement) ?
+    * Qui doit avoir un accès réseau à l'API (ex : public, interne,
+      partenaires) ?
+    * Quelle version de l'API tourne ?
+    * Quelles données sont collectées et traitées par l'API (ex : données
+      personnelles) ?
+    * Quel est le flux des données ?
 * Il n'y a pas de documentation, ou la documentation existante n'est pas mise
   à jour.
 * Il n'y a pas de plan pour le retrait / la désactivation (des points d'accès
