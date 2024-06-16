@@ -11,12 +11,13 @@ The API might be vulnerable if:
 
 * The purpose of an API host is unclear, and there are no explicit answers to
   the following questions:
-  * Which environment is the API running in (e.g., production, staging, test,
-    development)?
-  * Who should have network access to the API (e.g., public, internal, partners)?
-  * Which API version is running?
-  * What data is gathered and processed by the API (e.g., PII)?
-  * What's the data flow?
+    * Which environment is the API running in (e.g., production, staging, test,
+      development)?
+    * Who should have network access to the API (e.g., public, internal,
+      partners)?
+    * Which API version is running?
+    * What data is gathered and processed by the API (e.g., PII)?
+    * What's the data flow?
 * There is no documentation, or the existing documentation is not updated.
 * There is no retirement plan for each API version.
 * Hosts inventory is missing or outdated.

@@ -10,11 +10,11 @@
 A API pode estar vulnerável se:
 
 * O propósito do *host* da API não for claro, e se não há respostas explícitas para as seguintes questões:
-  * Em qual ambiente está rodando à API? (Ex.: produção, *staging*, teste, desenvolvimento)?
-  * Quem deve ter acesso via rede à API (Ex.: pública, interna, parceiros)?
-  * Em qual versão está a API em execução?
-  * Que tipo de informação acessa a API (Ex.: Dados pessoais sensíveis)?
-  * Qual é o fluxo da informação?
+    * Em qual ambiente está rodando à API? (Ex.: produção, *staging*, teste, desenvolvimento)?
+    * Quem deve ter acesso via rede à API (Ex.: pública, interna, parceiros)?
+    * Em qual versão está a API em execução?
+    * Que tipo de informação acessa a API (Ex.: Dados pessoais sensíveis)?
+    * Qual é o fluxo da informação?
 * Não existe documentação, ou a documentação existente está desatualizada.
 * Não há um plano de retirada para cada versão da API.
 * Inventário de *hosts* não existe ou está desatualizado.
