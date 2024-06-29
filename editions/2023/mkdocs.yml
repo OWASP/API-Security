@@ -7,3 +7,5 @@ extra:
       lang: ba
     - name: English
       lang: en
+    - name: Français
+      lang: fr
