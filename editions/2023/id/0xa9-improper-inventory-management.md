@@ -16,10 +16,10 @@ Sebuah API memiliki "<ins>blindspot dokumentasi</ins>" jika:
 
 * Tujuan host API tidak jelas, dan tidak ada jawaban eksplisit untuk
   pertanyaan-pertanyaan berikut
-  * Lingkungan mana yang digunakan API (misalnya, produksi, staging, tes,
+    * Lingkungan mana yang digunakan API (misalnya, produksi, staging, tes,
     pengembangan)?
-  * Siapa yang seharusnya memiliki akses jaringan ke API (misalnya, publik, internal, mitra)?
-  * Versi API mana yang sedang berjalan?
+    * Siapa yang seharusnya memiliki akses jaringan ke API (misalnya, publik, internal, mitra)?
+    * Versi API mana yang sedang berjalan?
 * Tidak ada dokumentasi atau dokumentasi yang ada tidak diperbarui.
 * Tidak ada rencana pensiun untuk setiap versi API.
 * Inventaris host hilang atau sudah kadaluarsa.
@@ -30,9 +30,9 @@ bagian dari rencana respons insiden, jika terjadi pelanggaran di sisi pihak keti
 Sebuah API memiliki "<ins>blindspot aliran data</ins>" jika:
 
 * Ada "aliran data sensitif" di mana API berbagi data sensitif dengan pihak ketiga dan
-  * Tidak ada justifikasi bisnis atau persetujuan atas aliran tersebut
-  * Tidak ada inventaris atau visibilitas aliran tersebut
-  * Tidak ada visibilitas mendalam tentang jenis data sensitif yang dibagikan
+    * Tidak ada justifikasi bisnis atau persetujuan atas aliran tersebut
+    * Tidak ada inventaris atau visibilitas aliran tersebut
+    * Tidak ada visibilitas mendalam tentang jenis data sensitif yang dibagikan
 
 
 ## Contoh Skenario Serangan
@@ -76,8 +76,7 @@ menjual informasi tersebut untuk tujuan berbahaya.
 * Gunakan langkah-langkah perlindungan eksternal seperti solusi keamanan API yang spesifik untuk semua versi API Anda yang terpapar, tidak hanya untuk versi produksi saat ini.
 * Hindari menggunakan data produksi dengan implementasi API non-produksi. Jika hal ini tidak dapat dihindari, endpoint ini harus mendapatkan perlakuan keamanan yang sama dengan endpoint produksi.
 * Ketika versi API yang lebih baru mencakup perbaikan keamanan, lakukan analisis risiko untuk
-  memberi tahu tindakan mitigasi yang diperlukan untuk versi lama.
-  Misalnya, apakah memungkinkan untuk melakukan backport perbaikan tanpa merusak kompatibilitas API atau apakah Anda perlu segera menghapus versi lama dan memaksa semua klien beralih ke versi terbaru.
+  memberi tahu tindakan mitigasi yang diperlukan untuk versi lama. Misalnya, apakah memungkinkan untuk melakukan backport perbaikan tanpa merusak kompatibilitas API atau apakah Anda perlu segera menghapus versi lama dan memaksa semua klien beralih ke versi terbaru.
 
 
 ## Referensi
