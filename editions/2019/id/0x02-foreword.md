@@ -36,4 +36,4 @@ Mereka semua tercantum di bagian [Ucapan Terima Kasih][4]. Terima kasih!
 [1]: https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project
 [2]: ./0x10-api-security-risks-id.md
 [3]: ./0xd0-about-data-id.md  
-[4]: ./0xd1-acknowledgments-id.md
+[4]: ./0xd1-acknowledgments.md

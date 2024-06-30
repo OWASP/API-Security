@@ -19,5 +19,5 @@ OWASP API Security Top 10 2019 pertama kali dipresentasikan dalam acara OWASP Gl
 Daftar kontributor tersedia di bagian [Penghargaan][3].
 
 [1]: https://www.owasp.org/index.php/OWASP_Risk_Rating_Methodology
-[2]: ./0x10-api-security-risks-id.md
-[3]: ./0xd1-acknowledgments-id.md
+[2]: ./0x10-api-security-risks.md
+[3]: ./0xd1-acknowledgments.md

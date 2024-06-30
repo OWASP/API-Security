@@ -21,6 +21,6 @@ Anda dapat menemukan OWASP API Security Top 10 di sini:
 Kami ingin berterima kasih kepada semua kontributor yang membuat proyek ini terwujud dengan upaya dan kontribusi mereka. Mereka semua tercantum di bagian [Ucapan Terima Kasih][4]. Terima kasih!
 
 [1]: https://owasp.org/www-project-top-ten/
-[2]: ./0x10-api-security-risks-id.md
-[3]: ./0xd0-about-data-id.md 
-[4]: ./0xd1-acknowledgments-id.md
+[2]: ./0x10-api-security-risks.md
+[3]: ./0xd0-about-data.md 
+[4]: ./0xd1-acknowledgments.md

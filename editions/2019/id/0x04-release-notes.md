@@ -10,4 +10,4 @@ OWASP API Security Top 10 merupakan upaya yang dibutuhkan untuk menciptakan kesa
 
 [1]: ./0xd0-about-data-id.md  
 [2]: ./0x10-api-security-risks-id.md
-[3]: ./0xd1-acknowledgments-id.md
+[3]: ./0xd1-acknowledgments.md

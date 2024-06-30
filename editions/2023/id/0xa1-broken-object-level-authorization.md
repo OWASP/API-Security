@@ -72,4 +72,4 @@ Karena dokumen dengan ID yang diberikan dihapus tanpa pemeriksaan izin lebih lan
 [2]: https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Testing_Automation_Cheat_Sheet.html
 [3]: https://cwe.mitre.org/data/definitions/285.html
 [4]: https://cwe.mitre.org/data/definitions/639.html
-[5]: ./0xa5-broken-function-level-authorization-id.md
+[5]: ./0xa5-broken-function-level-authorization.md
