@@ -8,27 +8,27 @@
 ## A API é vulnerável?
 
 A autorização de acesso ao nível do objeto é um mecanismo de controlo que 
-geralmente é implementado ao nível do código para validar que um utilizador 
-só pode aceder aos objetos aos quais deveria ter permissão para aceder.
+geralmente é implementado ao nível do código para validar que um utilizador só 
+pode aceder aos objetos aos quais deveria ter permissão para aceder.
 
-Cada *endpoint* de API que recebe um ID de um objeto e realiza alguma ação 
-sobre o objeto deve implementar verificações de autorização ao nível do 
-objeto. As verificações devem validar que o utilizador autenticado tem 
-permissões para realizar a ação solicitada sobre o objeto alvo.
+Cada *endpoint* de API que recebe um ID de um objeto e realiza alguma ação sobre
+o objeto deve implementar verificações de autorização ao nível do objeto. As 
+verificações devem validar que o utilizador autenticado tem permissões para 
+realizar a ação solicitada sobre o objeto alvo.
 
 As falhas neste mecanismo geralmente conduzem à divulgação não autorizada de 
 informações, modificação ou destruição de todos os dados.
 
-Comparar o ID do utilizador da sessão atual (e.g. ao extraí-lo do 
-token JWT) com o parâmetro de ID vulnerável não é uma solução suficiente 
-para resolver a falha de Broken Object Level Authorization (BOLA). Esta 
-abordagem pode endereçar apenas um pequeno subconjunto de casos.
+Comparar o ID do utilizador da sessão atual (e.g. ao extraí-lo do token JWT) com
+o parâmetro de ID vulnerável não é uma solução suficiente para resolver a falha 
+de Broken Object Level Authorization (BOLA). Esta abordagem pode endereçar 
+apenas um pequeno subconjunto de casos.
 
-No caso de BOLA, é por design que o utilizador tem acesso ao 
-*endpoint*/função da API vulnerável. A violação ocorre ao nível do objeto, 
-através da manipulação do ID. Se um atacante conseguir aceder a um 
-*endpoint*/função da API ao qual não deveria ter acesso - este é um caso de 
-[Broken Function Level Authorization][5] (BFLA) em vez de BOLA.
+No caso de BOLA, é por design que o utilizador tem acesso ao *endpoint*/função 
+da API vulnerável. A violação ocorre ao nível do objeto, através da manipulação 
+do ID. Se um atacante conseguir aceder a um *endpoint*/função da API ao qual não
+deveria ter acesso - este é um caso de [Broken Function Level Authorization][5] 
+(BFLA) em vez de BOLA.
 
 ## Exemplos de Cenários de Ataque
 
@@ -47,20 +47,20 @@ online.
 ### Cenário #2
 
 Um fabricante de automóveis habilitou o controlo remoto dos seus veículos 
-através de uma API para comunicação com o telemóvel do condutor. A API 
-permite ao condutor iniciar e parar o motor e trancar e destrancar as portas 
+através de uma API para comunicação com o telemóvel do condutor. A API permite 
+ao condutor iniciar e parar o motor e trancar e destrancar as portas 
 remotamente. Como parte deste processo, o utilizador envia o Número de 
-Identificação do Veículo (VIN) para a API.
-No entanto, a API não valida se o VIN representa um veículo que pertence ao 
-utilizador autenticado, o que resulta numa vulnerabilidade de BOLA. Um atacante 
-pode aceder a veículos que não lhe pertencem.
+Identificação do Veículo (VIN) para a API. No entanto, a API não valida se o VIN 
+representa um veículo que pertence ao utilizador autenticado, o que resulta numa 
+vulnerabilidade de BOLA. Um atacante pode aceder a veículos que não lhe 
+pertencem.
 
 ### Cenário #3
 
 Um serviço de armazenamento de documentos online permite aos utilizadores 
-visualizar, editar, armazenar e eliminar os seus documentos. Quando um 
-documento de um utilizador é eliminado, é enviada uma mutação GraphQL com o ID 
-do documento para a API.
+visualizar, editar, armazenar e eliminar os seus documentos. Quando um documento 
+de um utilizador é eliminado, é enviada uma mutação GraphQL com o ID do 
+documento para a API.
 
 ```
 POST /graphql

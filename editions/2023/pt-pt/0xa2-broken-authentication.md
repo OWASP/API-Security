@@ -7,9 +7,9 @@
 
 ## A API é vulnerável?
 
-Os _endpoints_ e fluxos de autenticação são ativos que carecem de proteção.
-Além disso, mecanismos de recuperação de _password_ devem ser tratados da mesma 
-forma que os mecanismos de autenticação.
+Os _endpoints_ e fluxos de autenticação são ativos que carecem de proteção. Além 
+disso, mecanismos de recuperação de _password_ devem ser tratados da mesma forma 
+que os mecanismos de autenticação.
 
 Uma API é vulnerável se:
 
@@ -20,8 +20,8 @@ Uma API é vulnerável se:
   excesso de tentativas de autenticação falhadas.
 * Permite a utilização de _passwords_ fracas.
 * Envia informação de autenticação, tal como _tokens_ e _passwords_, no URL.
-* Permite que os utilizadores alterem o seu endereço de email, _password_ atual ou
-  realizem outras operações sensíveis sem pedir a confirmação da _password_.
+* Permite que os utilizadores alterem o seu endereço de email, _password_ atual 
+  ou realizem outras operações sensíveis sem pedir a confirmação da _password_.
 * Não valida a autenticidade dos _tokens_ de autenticação.
 * Aceita _tokens_ JWT sem que estes sejam assinados/usando algoritmos fracos
   `("alg":"none")`
@@ -38,8 +38,8 @@ Além disso, um microsserviço é vulnerável se:
 
 ## Cenário #1
 
-Para realizar a autenticação do utilizador, o cliente tem de enviar um pedido 
-de API como o exemplo abaixo, com as credenciais do utilizador:
+Para realizar a autenticação do utilizador, o cliente tem de enviar um pedido de 
+API como o exemplo abaixo, com as credenciais do utilizador:
 
 ```
 POST /graphql
@@ -52,9 +52,9 @@ POST /graphql
 }
 ```
 
-Se as credenciais forem válidas, é devolvido um token de autenticação que 
-deve ser fornecido em pedidos subsequentes para identificar o utilizador. 
-A quantidade de tentativas de login está sujeita a uma limitação temporal 
+Se as credenciais forem válidas, é devolvido um token de autenticação que deve 
+ser fornecido em pedidos subsequentes para identificar o utilizador. A 
+quantidade de tentativas de login está sujeita a uma limitação temporal 
 restritiva: apenas três pedidos são permitidos por minuto.
 
 Para efetuar login por força bruta com a conta de uma vítima, os atores 
@@ -85,10 +85,10 @@ Authorization: Bearer <token>
 ```
 
 Devido à API não exigir que os utilizadores confirmem a sua identidade 
-fornecendo a sua _password_ atual, atores maliciosos que consigam colocar-se numa 
-posição de roubar o token de autenticação podem conseguir assumir a conta da 
-vítima ao iniciar o processo de redefinição de senha após atualizar o endereço 
-de email da conta da vítima.
+fornecendo a sua _password_ atual, atores maliciosos que consigam colocar-se 
+numa posição de roubar o token de autenticação podem conseguir assumir a conta 
+da vítima ao iniciar o processo de redefinição de senha após atualizar o 
+endereço de email da conta da vítima.
 
 ## Como Prevenir
 

@@ -31,11 +31,11 @@ definido inadequadamente (e.g. muito baixo/alto):
 ### Cenário #1
 
 Uma rede social implementou um mecanismo de "recuperar senha" através da 
-verificação por SMS, permitindo que o utilizador receba um _token_ de uso 
-único via SMS para redefinir a sua senha.
+verificação por SMS, permitindo que o utilizador receba um _token_ de uso único 
+via SMS para redefinir a sua senha.
 
-Uma vez que o utilizador clica em "recuperar senha", é feita uma chamada API 
-a partir do navegador do utilizador para a API de _back-end_:
+Uma vez que o utilizador clica em "recuperar senha", é feita uma chamada API a 
+partir do navegador do utilizador para a API de _back-end_:
 
 ```
 POST /initiate_forgot_password
@@ -68,7 +68,8 @@ em questão de minutos.
 
 ### Cenário #2
 
-Um _endpoint_ de API GraphQL permite que o utilizador carregue uma foto de perfil.
+Um _endpoint_ de API GraphQL permite que o utilizador carregue uma foto de 
+perfil.
 
 ```
 POST /graphql
@@ -114,9 +115,9 @@ serviço (_Denial of Service_).
 Um prestador de serviços permite que os clientes descarreguem ficheiros 
 arbitrariamente grandes através da sua API. Estes ficheiros são mantidos em 
 armazenamento de objetos na nuvem e não mudam com frequência. O prestador de 
-serviços depende de um serviço de _cache_ para melhorar a velocidade do serviço e 
-manter o consumo de largura de banda baixo. O serviço de _cache_ apenas armazena 
-ficheiros até 15GB.
+serviços depende de um serviço de _cache_ para melhorar a velocidade do serviço 
+e manter o consumo de largura de banda baixo. O serviço de _cache_ apenas 
+armazena ficheiros até 15GB.
 
 Quando um dos ficheiros é atualizado, o seu tamanho aumenta para 18GB. Todos os 
 clientes do serviço começam imediatamente a descarregar a nova versão. Como não 
@@ -130,28 +131,22 @@ dólares.
   [número de reinícios][3], [descritores de ficheiros e processos][4], como
   Containers / Código Serverless (e.g. Lambdas).
 * Defina e force um tamanho máximo de dados em todos os parâmetros e conteúdos
-  de entrada, como comprimento máximo para _strings_,  número máximo de elementos
-  em arrays e tamanho máximo de ficheiro para _upload_ (independentemente de
-  ser armazenado localmente ou na nuvem).
-* Implemente um limite de frequência com que um cliente pode interagir com a
-  API dentro de um período temporal definido (_rate limiting_).
+  de entrada, como comprimento máximo para _strings_,  número máximo de 
+  elementos em arrays e tamanho máximo de ficheiro para _upload_ 
+  (independentemente de ser armazenado localmente ou na nuvem).
+* Implemente um limite de frequência com que um cliente pode interagir com a API
+  dentro de um período temporal definido (_rate limiting_).
 * A limitação de pedidos deve ser ajustada com base nas necessidades do negócio.
   Alguns endpoints da API podem exigir políticas mais rigorosas.
-* Limite/controle quantas vezes ou com que frequência um único cliente/utilizador
-  da API pode executar uma única operação (e.g. validar um OTP ou solicitar
-  a recuperação de senha sem visitar o URL de uso único).
-* Add proper server-side validation for query string and request body
-  parameters, specifically the one that controls the number of records to be
-  returned in the response.
-* Adicione validação adequada no lado do servidor para parâmetros da _query string_
-  e do corpo do pedido, especificamente aqueles que controlam o número de resultados
-  a serem retornados na resposta.
-* Configure spending limits for all service providers/API integrations. When
-  setting spending limits is not possible, billing alerts should be configured
-  instead.
-* Configure limites de gastos para todos os fornecedores de serviços/integracões de
-  API. Quando não for possível definir limites de gastos, devem ser configurados
-  alertas de faturamento.
+* Limite/controle quantas vezes ou com que frequência um único 
+  cliente/utilizador da API pode executar uma única operação (e.g. validar um 
+  OTP ou solicitar a recuperação de senha sem visitar o URL de uso único).
+* Adicione validação adequada no lado do servidor para parâmetros da 
+  _query string_ e do corpo do pedido, especificamente aqueles que controlam o 
+  número de resultados a serem retornados na resposta.
+* Configure limites de gastos para todos os fornecedores de serviços/integrações 
+  de API. Quando não for possível definir limites de gastos, devem ser 
+  configurados alertas de faturamento.
 
 ## Referências
 

@@ -42,7 +42,8 @@ Um atacante duplica o pedido e manipula o método HTTP e o _endpoint_ para
 administradores através da consola de administração. O _endpoint_ não implementa 
 verificações de autorização de acesso à função.
 
-O atacante explora a falha e envia um novo convite com privilégios de administrador:
+O atacante explora a falha e envia um novo convite com privilégios de 
+administrador:
 
 ```
 POST /api/invites/new
@@ -57,13 +58,6 @@ Mais tarde, o atacante usa o convite criado maliciosamente para criar uma conta
 de administrador e obter acesso total ao sistema.
 
 ### Cenário #2
-
-An API contains an endpoint that should be exposed only to administrators -
-`GET /api/admin/v1/users/all`. This endpoint returns the details of all the
-users of the application and does not implement function level authorization
-checks. An attacker who learned the API structure takes an educated guess and
-manages to access this endpoint, which exposes sensitive details of the users
-of the application.
 
 Uma API contém um _endpoint_ que deveria ser exposto apenas a administradores - 
 `GET /api/admin/v1/users/all`. Este _endpoint_ retorna os detalhes de todos os 

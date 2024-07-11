@@ -7,9 +7,9 @@
 
 ## A API é vulnerável?
 
-Ao permitir que um utilizador aceda a um objeto através de um _endpoint_ da 
-API, é importante validar que o utilizador tem acesso às propriedades 
-específicas do objeto que está a tentar aceder.
+Ao permitir que um utilizador aceda a um objeto através de um _endpoint_ da API, 
+é importante validar que o utilizador tem acesso às propriedades específicas do 
+objeto que está a tentar aceder.
 
 Um _endpoint_ de uma API é vulnerável se:
 
@@ -50,17 +50,17 @@ POST /graphql
 }
 ```
 
-O endpoint da API é vulnerável porque permite que o utilizador autenticado 
-tenha acesso a propriedades sensíveis do utilizador denunciado, como 
-"fullName" (nome completo) e "recentLocation" (localização recente), que não 
-deveriam estar accessíveis a outros utilizadores.
+O endpoint da API é vulnerável porque permite que o utilizador autenticado tenha 
+acesso a propriedades sensíveis do utilizador denunciado, como "fullName" (nome 
+completo) e "recentLocation" (localização recente), que não deveriam estar 
+acessíveis a outros utilizadores.
 
 ### Cenário #2
 
 Uma plataforma de mercado online, que permite a um tipo de utilizadores 
 ('anfitriões') alugar o seu apartamento a outro tipo de utilizadores 
-('hóspedes'), requer que o anfitrião aceite uma reserva feita por um 
-hóspede antes de cobrar ao hóspede pela estadia.
+('hóspedes'), requer que o anfitrião aceite uma reserva feita por um hóspede 
+antes de cobrar ao hóspede pela estadia.
 
 Como parte deste processo, é feito um pedido de API pelo anfitrião para
 `POST /api/host/approve_booking` com o seguinte conteúdo legítimo:
@@ -88,10 +88,9 @@ hóspede vai ser cobrado mais do que deveria.
 
 ### Cenário #3
 
-Uma rede social baseada em vídeos curtos, impõe filtros restritivos de 
-conteúdo e censura. Mesmo que um vídeo carregado seja bloqueado, o 
-utilizador pode alterar a descrição do vídeo utilizando o seguinte pedido à 
-API:
+Uma rede social baseada em vídeos curtos, impõe filtros restritivos de conteúdo 
+e censura. Mesmo que um vídeo carregado seja bloqueado, o utilizador pode 
+alterar a descrição do vídeo utilizando o seguinte pedido à API:
 
 ```
 PUT /api/video/update_video
@@ -101,8 +100,8 @@ PUT /api/video/update_video
 }
 ```
 
-Um utilizador frustrado pode reenviar o pedido legítimo e adicionar o 
-seguinte conteúdo malicioso:
+Um utilizador frustrado pode reenviar o pedido legítimo e adicionar o seguinte 
+conteúdo malicioso:
 
 ```
 {
@@ -111,15 +110,15 @@ seguinte conteúdo malicioso:
 }
 ```
 
-O _endpoint_ da API é vulnerável porque não há validação se o utilizador 
-deve ter acesso à propriedade interna do objeto - `blocked`, e o utilizador 
-pode alterar o valor de `true` para `false` e desbloquear o seu próprio 
-conteúdo bloqueado.
+O _endpoint_ da API é vulnerável porque não há validação se o utilizador deve 
+ter acesso à propriedade interna do objeto - `blocked`, e o utilizador pode 
+alterar o valor de `true` para `false` e desbloquear o seu próprio conteúdo 
+bloqueado.
 
 ## Como Prevenir
 
-* Ao expor um objeto através de um _endpoint_ da API, certifique-se sempre
-  de que o utilizador deve ter acesso às propriedades do objeto que expõe.
+* Ao expor um objeto através de um _endpoint_ da API, certifique-se sempre de 
+  que o utilizador deve ter acesso às propriedades do objeto que expõe.
 * Evite usar métodos genéricos como `to_json()` e `to_string()`. Em vez disso,
   selecione especificamente as propriedades do objeto que deseja retornar.
 * Se possível, evite usar funções que automaticamente vinculem os dados
@@ -127,11 +126,11 @@ conteúdo bloqueado.
   propriedades de objetos ("Mass Assignment").
 * Permita alterações apenas nas propriedades do objeto que devam ser
   atualizadas pelo cliente.
-* Implemente um mecanismo de validação de resposta baseado num esquema como
-  uma camada extra de segurança. Como parte deste mecanismo, defina e imponha
-  que dados são retornados por todos os métodos da API.
-* Mantenha as estruturas de dados retornadas ao mínimo essencial, de acordo
-  com os requisitos comerciais/funcionais para o _endpoint_.
+* Implemente um mecanismo de validação de resposta baseado num esquema como uma 
+  camada extra de segurança. Como parte deste mecanismo, defina e imponha que 
+  dados são retornados por todos os métodos da API.
+* Mantenha as estruturas de dados retornadas ao mínimo essencial, de acordo com 
+  os requisitos comerciais/funcionais para o _endpoint_.
 
 ## Referências
 

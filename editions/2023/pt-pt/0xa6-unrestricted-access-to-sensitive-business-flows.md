@@ -15,26 +15,28 @@ Exemplos comuns de fluxos de negócios sensíveis e o risco de acesso excessivo
 associado a eles:
 
 * Fluxo de compra de um produto - um atacante pode comprar todo o stock de um
-  item de alta procura de uma só vez e revendê-lo por um preço mais alto (scalping).
-* Fluxo de criação de comentário/publicação - um atacante pode inundar o sistema com spam.
-* Realização de uma reserva - um atacante pode reservar todos os horários disponíveis
-  e impedir que outros utilizadores utilizem o sistema.
+  item de alta procura de uma só vez e revendê-lo por um preço mais alto 
+  (scalping).
+* Fluxo de criação de comentário/publicação - um atacante pode inundar o sistema 
+  com spam.
+* Realização de uma reserva - um atacante pode reservar todos os horários 
+* disponíveis e impedir que outros utilizadores utilizem o sistema.
 
-O risco de acesso excessivo pode variar entre indústrias e empresas. Por exemplo, a 
-criação de publicações através de um script pode ser considerada um risco de spam por 
-uma rede social, mas incentivada por outra rede social.
+O risco de acesso excessivo pode variar entre indústrias e empresas. Por 
+exemplo, a criação de publicações através de um script pode ser considerada um 
+risco de spam por uma rede social, mas incentivada por outra rede social.
 
-Um endpoint de API está vulnerável se expõe um fluxo de negócio sensível sem restringir 
-adequadamente o acesso a ele.
+Um endpoint de API está vulnerável se expõe um fluxo de negócio sensível sem 
+restringir adequadamente o acesso a ele.
 
 ## Exemplos de Cenários de Ataque
 
 ### Cenário #1
 
-Uma empresa de tecnologia anuncia que vai lançar uma nova consola de jogos no Dia 
-de Ação de Graças. O produto tem uma procura muito alta e o stock é limitado. Um 
-atacante escreve código para comprar automaticamente o novo produto e concluir a 
-transação.
+Uma empresa de tecnologia anuncia que vai lançar uma nova consola de jogos no 
+Dia de Ação de Graças. O produto tem uma procura muito alta e o stock é 
+limitado. Um atacante escreve código para comprar automaticamente o novo produto 
+e concluir a transação.
 
 No dia do lançamento, o atacante executa o código distribuído por diferentes 
 endereços IP e localizações. A API não implementa a proteção adequada e permite 
@@ -46,15 +48,16 @@ alto.
 
 ### Cenário #2
 
-Uma companhia aérea oferece a compra de bilhetes online sem taxa de cancelamento. 
-Um utilizador com intenções maliciosas reserva 90% dos assentos de um voo desejado.
+Uma companhia aérea oferece a compra de bilhetes online sem taxa de 
+cancelamento. Um utilizador com intenções maliciosas reserva 90% dos assentos de 
+um voo desejado.
 
-Alguns dias antes do voo, o utilizador malicioso cancelou todos os bilhetes de uma 
-vez, o que obrigou a companhia aérea a baixar os preços dos bilhetes para preencher 
-o voo.
+Alguns dias antes do voo, o utilizador malicioso cancelou todos os bilhetes de 
+uma vez, o que obrigou a companhia aérea a baixar os preços dos bilhetes para 
+preencher o voo.
 
-Deste modo, o utilizador consegue comprar um bilhete que está muito mais barato do 
-que o original.
+Deste modo, o utilizador consegue comprar um bilhete que está muito mais barato 
+do que o original.
 
 ### Cenário #3
 
@@ -85,9 +88,9 @@ O planeamento da mitigação deve ser feito em duas camadas:
   * _Fingerprinting_ de dispositivos: negar serviço a dispositivos de cliente
     inesperados (e.g. navegadores _headless_) tende a fazer com que os atacantes
     usem soluções mais sofisticadas, tornando-as mais caras para eles.
-  * Detecção humana: utilize _captcha_ ou soluções biométricas mais avançadas
+  * Deteção humana: utilize _captcha_ ou soluções biométricas mais avançadas
     (e.g. padrões de digitação).
-  * Padrões não humanos: analisar o fluxo do utilizador para detectar padrões
+  * Padrões não humanos: analisar o fluxo do utilizador para detetar padrões
     não humanos (e.g. o utilizador acedeu às funções "adicionar ao carrinho" e
     "finalizar compra" em menos de um segundo).
   * Considere bloquear endereços IP de nós de saída da rede Tor e proxies bem

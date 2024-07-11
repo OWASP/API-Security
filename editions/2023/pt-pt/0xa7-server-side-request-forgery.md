@@ -3,28 +3,28 @@
 | Agentes Ameaça/Vetores Ataque | Falha Segurança | Impactos |
 | - | - | - |
 | Específico da API : Abuso **Fácil** | Prevalência **Comum** : Detectability **Fácil** | Técnico **Moderado** : Específico do Negócio |
-| A exploração requer que o atacante encontre um _endpoint_ da API que aceda a um URI fornecido pelo cliente. Em geral, SSRF básico (quando a resposta é retornada ao atacante) é mais fácil de explorar do que _Blind_ SSRF, em que o atacante não tem feedback sobre se o ataque foi bem sucedido ou não. | Os conceitos modernos no desenvolvimento de aplicações incentivam os desenvolvedores a aceder a URIs fornecidos pelo cliente. A falta de validação ou a validação inadequada desses URIs são problemas comuns. Será necessária a análise regular de solicitações e respostas da API para detectar o problema. Quando a resposta não é retornada (_Blind_ SSRF), a deteção da vulnerabilidade exige mais esforço e criatividade. | A exploração bem sucedida pode levar à enumeração de serviços internos (e.g. scan de portas), divulgação de informações, bypass de firewalls ou outros mecanismos de segurança. Em alguns casos, pode levar a DoS ou ao uso do servidor como um proxy para ocultar atividades maliciosas. |
+| A exploração requer que o atacante encontre um _endpoint_ da API que aceda a um URI fornecido pelo cliente. Em geral, SSRF básico (quando a resposta é retornada ao atacante) é mais fácil de explorar do que _Blind_ SSRF, em que o atacante não tem feedback sobre se o ataque foi bem sucedido ou não. | Os conceitos modernos no desenvolvimento de aplicações incentivam os desenvolvedores a aceder a URIs fornecidos pelo cliente. A falta de validação ou a validação inadequada desses URIs são problemas comuns. Será necessária a análise regular de solicitações e respostas da API para detetar o problema. Quando a resposta não é retornada (_Blind_ SSRF), a deteção da vulnerabilidade exige mais esforço e criatividade. | A exploração bem sucedida pode levar à enumeração de serviços internos (e.g. scan de portas), divulgação de informações, bypass de firewalls ou outros mecanismos de segurança. Em alguns casos, pode levar a DoS ou ao uso do servidor como um proxy para ocultar atividades maliciosas. |
 
 ## A API é vulnerável?
 
 Falhas de Server-Side Request Forgery (SSRF) ocorrem quando uma API pede um 
-recurso remoto sem validar o URL fornecido pelo utilizador. Isso permite que 
-um atacante force a aplicação a enviar um pedido manipulado para um destino 
+recurso remoto sem validar o URL fornecido pelo utilizador. Isso permite que um 
+atacante force a aplicação a enviar um pedido manipulado para um destino 
 inesperado, mesmo quando protegido por uma firewall ou uma VPN.
 
-Os conceitos modernos no desenvolvimento de aplicações tornam o SSRF mais 
-comum e mais perigoso.
+Os conceitos modernos no desenvolvimento de aplicações tornam o SSRF mais comum 
+e mais perigoso.
 
-Mais comum - os seguintes conceitos incentivam os desenvolvedores a aceder 
-a recursos externos com base em entradas de utilizadores: Webhooks, download 
-de ficheiros a partir de URLs, SSO personalizado e pré-visualização de URLs.
+Mais comum - os seguintes conceitos incentivam os desenvolvedores a aceder a 
+recursos externos com base em entradas de utilizadores: Webhooks, download de 
+ficheiros a partir de URLs, SSO personalizado e pré-visualização de URLs.
 
 Mais perigoso - Tecnologias modernas como provedores de nuvem, Kubernetes e 
-Docker expõem canais de gestão e controle via HTTP em caminhos previsíveis 
-e bem conhecidos. Esses canais são um alvo fácil para um ataque SSRF.
+Docker expõem canais de gestão e controle via HTTP em caminhos previsíveis e 
+bem conhecidos. Esses canais são um alvo fácil para um ataque SSRF.
 
-Também é mais desafiador limitar o tráfego de saída da sua aplicação, devido 
-à natureza conectada das aplicações modernas.
+Também é mais desafiador limitar o tráfego de saída da sua aplicação, devido à 
+natureza conectada das aplicações modernas.
 
 O risco de SSRF nem sempre pode ser completamente eliminado. Ao escolher um 
 mecanismo de proteção, é importante considerar os riscos e necessidades do 
@@ -36,8 +36,8 @@ negócio.
 
 Uma rede social permite que os utilizadores façam o upload de fotos de perfil. 
 O utilizador pode escolher entre carregar o ficheiro de imagem do seu 
-dispositivo ou fornecer o URL da imagem. Escolher a segunda opção irá acionar 
-a seguinte chamada API:
+dispositivo ou fornecer o URL da imagem. Escolher a segunda opção irá acionar a 
+seguinte chamada API:
 
 ```
 POST /api/profile/upload_picture
