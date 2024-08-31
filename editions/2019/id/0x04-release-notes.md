@@ -8,6 +8,6 @@ Penting untuk menyadari bahwa selama beberapa tahun terakhir, arsitektur aplikas
 
 OWASP API Security Top 10 merupakan upaya yang dibutuhkan untuk menciptakan kesadaran tentang masalah keamanan API modern. Hanya mungkin karena upaya besar dari beberapa sukarelawan, semuanya terdaftar di bagian [Penghargaan][3]. Terima kasih!
 
-[1]: ./0xd0-about-data-id.md  
-[2]: ./0x10-api-security-risks-id.md
+[1]: ./0xd0-about-data.md
+[2]: ./0x10-api-security-risks.md
 [3]: ./0xd1-acknowledgments.md
