@@ -65,8 +65,8 @@ Selain itu:
   (TLS), tanpa memandang apakah itu API internal atau publik.
 * Lebih spesifik tentang verba HTTP mana pun yang dapat diakses oleh setiap API: semua verba HTTP lainnya harus dinonaktifkan (misalnya, HEAD).
 * API yang diharapkan diakses dari klien berbasis browser (misalnya, front-end WebApp) harus setidaknya:
-  * mengimplementasikan kebijakan Cross-Origin Resource Sharing (CORS) yang tepat
-  * menyertakan Header Keamanan yang berlaku
+    * mengimplementasikan kebijakan Cross-Origin Resource Sharing (CORS) yang tepat
+    * menyertakan Header Keamanan yang berlaku
 * Batasi jenis konten/format data masuk hanya pada yang memenuhi persyaratan bisnis/fungsional.
 * Pastikan semua server dalam rantai server HTTP (misalnya, load balancer, reverse and forward proxy, serta server backend) memproses permintaan masuk dengan cara yang seragam untuk menghindari masalah desinkronisasi.
 * Jika memungkinkan, tentukan dan tegakkan semua skema muatan respons API, termasuk respons kesalahan, untuk mencegah pengecualian jejak dan informasi berharga lainnya dikirimkan kembali kepada pelaku serangan.
