@@ -3,6 +3,8 @@ docs_dir: .
 
 extra:
   alternate:
+    - name: Bahasa (Indonesian) 
+      lang: id
     - name: English
       lang: en
     - name: Français
