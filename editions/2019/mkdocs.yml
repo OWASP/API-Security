@@ -6,7 +6,7 @@ extra:
     - name: Arabic
       lang: ar
     - name: Bahasa (Indonesian) 
-      lang: ba
+      lang: id
     - name: German
       lang: de
     - name: English
