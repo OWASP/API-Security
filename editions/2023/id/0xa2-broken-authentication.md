@@ -1,6 +1,3 @@
-
-
-<file-attachment-contents filename="0xa2-broken-authentication.md">
 # API2:2023 Autentikasi yang Rusak  
 
 | Agen ancaman/Vektor serangan | Kelemahan Keamanan | Dampak |
