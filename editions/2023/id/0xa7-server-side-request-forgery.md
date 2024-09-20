@@ -110,9 +110,9 @@ Karena aplikasi menampilkan respons dari permintaan uji, penyerang dapat melihat
 
 * Isolasi mekanisme pengambilan sumber daya di jaringan Anda: biasanya fitur ini bertujuan untuk mengambil sumber daya jarak jauh dan bukan internal.
 * Kapan pun memungkinkan, gunakan allow list untuk:
-  * Asal lokasi sumber daya (misalnya Google Drive, Gravatar, dll.) yang diharapkan digunakan pengguna untuk mengunduh sumber daya 
-  * Skema URL dan port
-  * Jenis media yang diterima untuk fungsionalitas tertentu
+    * Asal lokasi sumber daya (misalnya Google Drive, Gravatar, dll.) yang diharapkan digunakan pengguna untuk mengunduh sumber daya
+    * Skema URL dan port
+    * Jenis media yang diterima untuk fungsionalitas tertentu
 * Nonaktifkan pengalihan HTTP. 
 * Gunakan parser URL yang diuji dan dikelola dengan baik untuk menghindari masalah yang disebabkan oleh inkonsistensi parsing URL.
 * Validasi dan bersihkan semua data input yang diberikan klien.  

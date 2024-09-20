@@ -4,7 +4,7 @@ docs_dir: .
 extra:
   alternate:
     - name: Bahasa (Indonesian) 
-      lang: ba
+      lang: id
     - name: English
       lang: en
     - name: Français

@@ -10,11 +10,11 @@
 API mungkin rentan jika:
 
 * Tujuan dari host API tidak jelas, dan tidak ada jawaban eksplisit untuk pertanyaan berikut:
-  * Lingkungan apa API berjalan (misalnya, produksi, staging, pengujian, pengembangan)?
-  * Siapa yang seharusnya memiliki akses jaringan ke API (misalnya, publik, internal, mitra)?
-  * Versi API apa yang berjalan?
-  * Data apa yang dikumpulkan dan diproses oleh API (misalnya, PII)?
-  * Bagaimana aliran datanya?  
+    * Lingkungan apa API berjalan (misalnya, produksi, staging, pengujian, pengembangan)?
+    * Siapa yang seharusnya memiliki akses jaringan ke API (misalnya, publik, internal, mitra)?
+    * Versi API apa yang berjalan?
+    * Data apa yang dikumpulkan dan diproses oleh API (misalnya, PII)?
+    * Bagaimana aliran datanya?
 * Tidak ada dokumentasi, atau dokumentasi yang ada tidak diperbarui.
 * Tidak ada rencana pensiun untuk setiap versi API.  
 * Inventarisasi host hilang atau ketinggalan zaman.

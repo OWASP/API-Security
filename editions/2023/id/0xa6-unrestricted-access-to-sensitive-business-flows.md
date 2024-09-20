@@ -52,12 +52,12 @@ Perencanaan mitigasi harus dilakukan dalam dua lapisan:
 * Bisnis - identifikasi aliran bisnis yang mungkin merugikan bisnis jika digunakan secara berlebihan.
 * Rekayasa - pilih mekanisme perlindungan yang tepat untuk memitigasi risiko bisnis.
 
-  Beberapa mekanisme perlindungan lebih sederhana sementara yang lain lebih sulit diterapkan. Metode berikut digunakan untuk memperlambat ancaman otomatis:
+    Beberapa mekanisme perlindungan lebih sederhana sementara yang lain lebih sulit diterapkan. Metode berikut digunakan untuk memperlambat ancaman otomatis:
 
-  * Fingerprinting perangkat: menolak layanan ke perangkat klien yang tidak diharapkan (misalnya headless browser) cenderung membuat aktor ancaman menggunakan solusi yang lebih canggih, sehingga lebih mahal bagi mereka
-  * Deteksi manusia: menggunakan captcha atau solusi biometrik tingkat lanjut (misalnya pola pengetikan) 
-  * Pola non-manusia: menganalisis alur pengguna untuk mendeteksi pola non-manusia (misalnya pengguna mengakses fungsi "tambah ke keranjang" dan "selesaikan pembelian" dalam waktu kurang dari satu detik)
-  * Pertimbangkan memblokir alamat IP dari node keluar Tor dan proxy terkenal
+    * Fingerprinting perangkat: menolak layanan ke perangkat klien yang tidak diharapkan (misalnya headless browser) cenderung membuat aktor ancaman menggunakan solusi yang lebih canggih, sehingga lebih mahal bagi mereka
+    * Deteksi manusia: menggunakan captcha atau solusi biometrik tingkat lanjut (misalnya pola pengetikan)
+    * Pola non-manusia: menganalisis alur pengguna untuk mendeteksi pola non-manusia (misalnya pengguna mengakses fungsi "tambah ke keranjang" dan "selesaikan pembelian" dalam waktu kurang dari satu detik)
+    * Pertimbangkan memblokir alamat IP dari node keluar Tor dan proxy terkenal
 
   Amankan dan batasi akses ke API yang dikonsumsi langsung oleh mesin (seperti API pengembang dan B2B). Mereka cenderung menjadi target yang mudah bagi penyerang karena seringkali tidak menerapkan semua mekanisme perlindungan yang diperlukan.
   
