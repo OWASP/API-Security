@@ -1,6 +1,6 @@
-<div dir="rtl" align='right'>
 
-ACK  سپاسگزاری‌ها
+# ACK  <div dir="rtl" align='right'>سپاسگزاری‌ها</div>
+
 ========
 
 ### سپاسگزاری از مشارکت کنندگان
@@ -55,4 +55,4 @@ ACK  سپاسگزاری‌ها
 ### ویراستار (Editor)
 - علیرضا مستمع (Alireza Mostame)
 
-</div>
+
