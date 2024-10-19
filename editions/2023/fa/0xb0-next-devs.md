@@ -6,27 +6,27 @@
 
 OWASP منابع آزاد و رایگان متعددی برای پاسخ به مسائل امنیتی از ابتدای پروژه ایجاد نموده است. به منظور آشنایی با لیست جامع پروژه‌‌های دردسترس، [صفحه پروژه‌‌های OWASP][1] را ملاحظه نمایید.
 
-
 | | |
 |-|-|
-| **آموزش** | برای شروع می‌توان از [پروژه مطالب آموزشی OWASP][2] بسته به علاقه و نوع حرفه آغاز نمود. برای آموزش عملیاتی،  crAPI را نیز به [نقشه راه][3] خود افزوده‌ایم. تست‌‌های مربوط به WebAppSec را می‌توان با [OWASP DevSlop Pixi Module][4]  که یک WebApp و سرویس API آزمایشگاهی آسیب‌پذیر است، انجام داد. استفاده از چنین ابزارهایی سبب یادگیری نحوه تست وب اپلیکیشن‌‌ها و APIهای مدرن از منظر مسائل امنیتی و چگونگی توسعه APIهای مدرن در آینده خواهد شد. همچنین امکان شرکت در جلسات آموزشی [کنفرانس AppSec][5] و عضویت در [شَعب محلی OWASP][6] نیز برای علاقه مندان وجود دارد.|
-| **الزامات امنیتی** | امنیت باید بعنوان بخشی تفکیک ناپذیر در تمامی پروژه‌‌ها از ابتدا درنظر گرفته شود. در هنگام استخراج الزامات امنیتی، باید معنی واژه «ایمن» برای هر پروژه مشخصا تعریف شود. OWASP استفاده از [استاندارد امنیت سنجی اپلیکیشن (ASVS)][7] را بعنوان راهنمایی برای تعیین الزامات امنیتی توصیه می‌کند. در صورت برون سپاری نیز، استفاده از [ضمیمه قرارداد نرم افزار ایمن OWASP][8] (که بایستی با قوانین و رگولاتوری‌‌های محلی انطباق یابد) می‌تواند انتخاب مناسبی باشد. |
-| **معماری امنیتی** | امنیت بایستی در تمامی مراحل توسعه پروژه‌‌ها اهمیت داشته باشد. [برگه‌‌های راهنمای پیشگیری OWASP][9] نقطه شروع مناسبی برای چگونگی طراحی ایمن در خلال فاز طراحی معماری به شمار آید. [همچنین برگه راهنمای امنیت REST][10] و [برگه راهنمای ارزیابی REST][11] نیز گزینه‌‌های مناسبی در این راستا هستند. |
-| **کنترل‌‌های امنیتی استاندارد** | بکارگیری و انطباق با کنترل‌‌های امنیتی استاندارد ریسک ایجاد ضعف‌‌های امنیتی در خلال ایجاد برنامه‌‌ها با منطق سازمانی را کاهش می‌دهد. علیرغم اینکه بسیاری از چارچوب‌های مدرن امروزی با استانداردهای توکار و موثر امنیتی توزیع می‌شوند، اما [کنترل‌‌های پیشگیرانه و فعال OWASP][12] دید خوبی از کنترل‌‌هایی که باید در پروژه‌‌ها لحاظ شوند بدست می‌دهد. OWASP کتابخانه و ابزارهای متعددی از جمله در حوزه کنترل‌‌های اعتبارسنجی در اختیار عموم قرار می‌دهد که می‌توانند مفید باشند.|
-| **چرخه حیات توسعه نرم افزار ایمن** | به منظور بهبود فرایندها در هنگام ایجاد و ساخت APIها می‌توان از [مدل ضمانت کمال نرم افزار OWASP  (SAMM)][13] بهره برد. همچنین پروژه‌‌های متعدد دیگری نیز در OWASP وجود دارند که می‌توانند در فازهای مختلف توسعه API مفید باشند که از جمله آنها می‌توان، [پروژه بازبینی کد OWASP][14] را نام برد. |
+| **آموزش** | [Application Security Wayfinder][2] باید به شما دیدگاه خوبی در مورد پروژه‌هایی که در هر مرحله/فاز از چرخه عمر توسعه نرم‌افزار (SDLC) در دسترس هستند، بدهد. برای یادگیری و آموزش عملی، می‌توانید با [OWASP **crAPI** - **C**ompletely **R**idiculous **API**][3] یا [OWASP Juice Shop][4] شروع کنید: هر دو عمداً دارای APIهای آسیب‌پذیر هستند. پروژه [OWASP Vulnerable Web Applications Directory Project][5] فهرستی گزینش‌شده از برنامه‌های کاربردی عمداً آسیب‌پذیر را ارائه می‌دهد که می‌توانید در آنجا چندین API آسیب‌پذیر دیگر نیز پیدا کنید. همچنین می‌توانید در جلسات آموزشی [کنفرانس OWASP AppSec][6] شرکت کنید، یا [به شعبه محلی خود بپیوندید][7]. |
+| **الزامات امنیتی** | امنیت باید بعنوان بخشی تفکیک ناپذیر در تمامی پروژه‌‌ها از ابتدا درنظر گرفته شود. در هنگام استخراج الزامات امنیتی، باید معنی واژه «ایمن» برای هر پروژه مشخصا تعریف شود. OWASP استفاده از [استاندارد امنیت سنجی اپلیکیشن (ASVS)][8] را بعنوان راهنمایی برای تعیین الزامات امنیتی توصیه می‌کند. در صورت برون سپاری نیز، استفاده از [ضمیمه قرارداد نرم افزار ایمن OWASP][9] (که بایستی با قوانین و رگولاتوری‌‌های محلی انطباق یابد) می‌تواند انتخاب مناسبی باشد. |
+| **معماری امنیتی** | امنیت بایستی در تمامی مراحل توسعه پروژه‌‌ها اهمیت داشته باشد. [برگه‌‌های راهنمای پیشگیری OWASP][10] نقطه شروع مناسبی برای چگونگی طراحی ایمن در خلال فاز طراحی معماری به شمار آید. همچنین [برگه راهنمای امنیت REST][11] و [برگه راهنمای ارزیابی REST][12] و همچنین [GraphQL Cheat Sheet][13] نیز گزینه‌‌های مناسبی در این راستا هستند. |
+| **کنترل‌‌های امنیتی استاندارد** | بکارگیری و انطباق با کنترل‌‌های امنیتی استاندارد ریسک ایجاد ضعف‌‌های امنیتی در خلال ایجاد برنامه‌‌ها با منطق سازمانی را کاهش می‌دهد. علیرغم اینکه بسیاری از چارچوب‌های مدرن امروزی با استانداردهای توکار و موثر امنیتی توزیع می‌شوند، اما [کنترل‌‌های پیشگیرانه و فعال OWASP][14] دید خوبی از کنترل‌‌هایی که باید در پروژه‌‌ها لحاظ شوند بدست می‌دهد. OWASP کتابخانه و ابزارهای متعددی از جمله در حوزه کنترل‌‌های اعتبارسنجی در اختیار عموم قرار می‌دهد که می‌توانند مفید باشند. |
+| **چرخه حیات توسعه نرم افزار ایمن** | به منظور بهبود فرایندها در هنگام ایجاد و ساخت APIها می‌توان از [مدل ضمانت کمال نرم افزار OWASP (SAMM)][15] بهره برد. همچنین پروژه‌‌های متعدد دیگری نیز در OWASP وجود دارند که می‌توانند در فازهای مختلف توسعه API مفید باشند که از جمله آنها می‌توان، [پروژه بازبینی کد OWASP][16] را نام برد. |
 
-
-[1]: https://www.owasp.org/index.php/Category:OWASP_Project
-[2]: https://www.owasp.org/index.php/OWASP_Education_Material_Categorized
-[3]: https://www.owasp.org/index.php/OWASP_API_Security_Project#tab=Road_Map
-[4]: https://devslop.co/Home/Pixi
-[5]: https://www.owasp.org/index.php/Category:OWASP_AppSec_Conference
-[6]: https://www.owasp.org/index.php/OWASP_Chapter
-[7]: https://www.owasp.org/index.php/Category:OWASP_Application_Security_Verification_Standard_Project
-[8]: https://www.owasp.org/index.php/OWASP_Secure_Software_Contract_Annex
-[9]: https://www.owasp.org/index.php/OWASP_Cheat_Sheet_Series
-[10]: https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/REST_Security_Cheat_Sheet.md
-[11]: https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/REST_Assessment_Cheat_Sheet.md
-[12]: https://www.owasp.org/index.php/OWASP_Proactive_Controls#tab=OWASP_Proactive_Controls_2018
-[13]: https://www.owasp.org/index.php/OWASP_SAMM_Project
-[14]: https://www.owasp.org/index.php/Category:OWASP_Code_Review_Project
+[1]: https://owasp.org/projects/
+[2]: https://owasp.org/projects/#owasp-projects-the-sdlc-and-the-security-wayfinder
+[3]: https://owasp.org/www-project-crapi/
+[4]: https://owasp.org/www-project-juice-shop/
+[5]: https://owasp.org/www-project-vulnerable-web-applications-directory/
+[6]: https://owasp.org/events/
+[7]: https://owasp.org/chapters/
+[8]: https://owasp.org/www-project-application-security-verification-standard/
+[9]: https://owasp.org/www-community/OWASP_Secure_Software_Contract_Annex
+[10]: https://cheatsheetseries.owasp.org/
+[11]: https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html
+[12]: https://cheatsheetseries.owasp.org/cheatsheets/REST_Assessment_Cheat_Sheet.html
+[13]: https://cheatsheetseries.owasp.org/cheatsheets/GraphQL_Cheat_Sheet.html
+[14]: https://owasp.org/www-project-proactive-controls/
+[15]: https://owasp.org/www-project-samm/
+[16]: https://owasp.org/www-project-code-review-guide/

