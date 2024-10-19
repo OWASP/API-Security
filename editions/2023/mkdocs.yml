@@ -2,11 +2,8 @@ site_name: editions/2023
 docs_dir: .
 
 extra:
-  i18n:
-    nav:
-      - name: English
-        lang: en
-      - name: Français
-        lang: fr
-      - name: Persian
-        lang: fa
+       lang: en
+     - name: Français
+       lang: fr
++    - name: Persian
++      lang: fa
