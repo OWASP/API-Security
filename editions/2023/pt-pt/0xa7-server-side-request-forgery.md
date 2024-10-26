@@ -47,8 +47,8 @@ POST /api/profile/upload_picture
 }
 ```
 
-An attacker can send a malicious URL and initiate port scanning within the
-internal network using the API Endpoint.
+Um atacante pode enviar um URL malicioso e iniciar um _scan_ de portas 
+dentro da rede interna usando o _endpoint_ da API.
 
 ```
 {
@@ -56,18 +56,19 @@ internal network using the API Endpoint.
 }
 ```
 
-Based on the response time, the attacker can figure out whether the port is
-open or not.
+Com base no tempo de resposta, o atacante pode descobrir se a porta está 
+aberta ou não.
 
 ### Cenário #2
 
-A security product generates events when it detects anomalies in the network.
-Some teams prefer to review the events in a broader, more generic monitoring
-system, such as a SIEM (Security Information and Event Management). For this
-purpose, the product provides integration with other systems using webhooks.
+Um produto de segurança gera eventos quando detecta anomalias na rede. 
+Algumas equipas preferem rever os eventos num sistema de monitorização mais 
+amplo e genérico, como um SIEM (Gestão de Informações e Eventos de Segurança). 
+Para este fim, o produto fornece integração com outros sistemas usando 
+_webhooks_.
 
-As part of a creation of a new webhook, a GraphQL mutation is sent with the URL
-of the SIEM API.
+Como parte da criação de um novo _webhook_, uma mutação GraphQL é enviada com o
+URL da API do SIEM.
 
 ```
 POST /graphql
@@ -95,11 +96,11 @@ POST /graphql
 
 ```
 
-During the creation process, the API back-end sends a test request to the
-provided webhook URL, and presents to the user the response.
+Durante o processo de criação, o _back-end_ da API envia um pedido de teste para o
+URL do webhook fornecido e apresenta a resposta ao utilizador. 
 
-An attacker can leverage this flow, and make the API request a sensitive
-resource, such as an internal cloud metadata service that exposes credentials:
+Um atacante pode explorar este fluxo e fazer com que a API solicite um recurso 
+sensível, como um serviço de metadados de nuvem interna que expõe credenciais:
 
 ```
 POST /graphql
@@ -126,23 +127,23 @@ POST /graphql
 ]
 ```
 
-Since the application shows the response from the test request, the attacker
-can view the credentials of the cloud environment.
+Uma vez que a aplicação mostra a resposta do pedido de teste, o atacante pode 
+visualizar as credenciais do ambiente de nuvem.
 
 ## Como Prevenir
 
-* Isolate the resource fetching mechanism in your network: usually these
-  features are aimed to retrieve remote resources and not internal ones.
-* Whenever possible, use allow lists of:
-  * Remote origins users are expected to download resources from (e.g. Google
-    Drive, Gravatar, etc.)
-  * URL schemes and ports
-  * Accepted media types for a given functionality
-* Disable HTTP redirections.
-* Use a well-tested and maintained URL parser to avoid issues caused by URL
-  parsing inconsistencies.
-* Validate and sanitize all client-supplied input data.
-* Do not send raw responses to clients.
+* Isole o mecanismo de obtenção de recursos na sua rede: geralmente, essas
+  funcionalidades são destinadas a recuperar recursos remotos e não internos.
+* Sempre que possível, utilize listas de permissões de:
+  * Origens remotas das quais se espera que os utilizadores façam download de
+    recursos (por exemplo, Google Drive, Gravatar, etc.)
+  * Esquemas de URL e portas
+  * Tipos de media aceites para uma determinada funcionalidade
+* Desative redirecionamentos HTTP.
+* Utilize um URL _parser_ bem testado e mantido para evitar problemas causados
+por inconsistências no processamento de URLs.
+* Valide e sanitize todos os dados de entrada fornecidos pelo cliente.
+* Não envie respostas não tratadas aos clientes.
 
 ## Referências
 
