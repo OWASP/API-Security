@@ -10,12 +10,12 @@ APIها ذاتا منطق اپلیکیشن و داده‌‌های حساسی ا
 
 با پرسش‌‌ها، نظرات و ایده‌‌های خود در GitHub پروژه می توانید در توسعه OWASP API Security Top 10 مشارکت کنید:
 
-* [https://owasp.org/www-project-api-security/][5]
+* [https://owasp.org/www-project-api-security][5]
 * [https://github.com/OWASP/API-Security/blob/master/CONTRIBUTING.md][6] 
 
 در اینجا می توانید OWASP API Security Top 10 را بیابید:
 
-* [https://owasp.org/www-project-api-security/][7]
+* [https://owasp.org/www-project-api-security][7]
 * [https://github.com/OWASP/API-Security][8]
 
 بدین وسیله از تمامی مشارکت کنندگان در این پروژه که با تلاش‌‌های خود در بوجود آمدن آن نقش داشته اند سپاسگزاریم. لیست تمامی آنها در قسمت [سپاسگزاری‌ها][4] قابل مشاهده است. متشکریم!
@@ -26,6 +26,6 @@ APIها ذاتا منطق اپلیکیشن و داده‌‌های حساسی ا
 [3]: ./0xd0-about-data.md
 [4]: ./0xd1-acknowledgments.md
 [5]: https://owasp.org/www-project-api-security/
-[6]:https://github.com/OWASP/API-Security/blob/master/CONTRIBUTING.md
+[6]: https://github.com/OWASP/API-Security/blob/master/CONTRIBUTING.md
 [7]: https://owasp.org/www-project-api-security/
-[8]:https://github.com/OWASP/API-Security
+[8]: https://github.com/OWASP/API-Security
