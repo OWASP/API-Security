@@ -80,8 +80,3 @@ Location: https://attacker.com/
 [7]: https://cwe.mitre.org/data/definitions/20.html
 [8]: https://cwe.mitre.org/data/definitions/200.html
 [9]: https://cwe.mitre.org/data/definitions/319.html
-
-
-
-
-

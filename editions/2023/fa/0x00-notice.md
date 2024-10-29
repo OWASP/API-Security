@@ -10,7 +10,3 @@
 * Paulo Silva
 
 [1]: https://github.com/OWASP/API-Security/blob/master/CONTRIBUTING.md
-
-
-
-

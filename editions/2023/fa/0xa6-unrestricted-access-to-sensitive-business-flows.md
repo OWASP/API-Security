@@ -56,4 +56,3 @@
 
 [1]: https://owasp.org/www-project-automated-threats-to-web-applications/
 [2]: https://owasp.org/API-Security/editions/2019/en/0xaa-insufficient-logging-monitoring/
-
