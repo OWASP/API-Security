@@ -26,23 +26,24 @@ A API pode estar vulnerável se:
 ## Exemplos de Cenários de Ataque
 
 ### Cenário #1
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-An API relies on a third-party service to enrich user provided business
-addresses. When an address is supplied to the API by the end user, it is sent
-to the third-party service and the returned data is then stored on a local
-SQL-enabled database.
 
-Bad actors use the third-party service to store an SQLi payload associated with
-a business created by them. Then they go after the vulnerable API providing
-specific input that makes it pull their "malicious business" from the
-third-party service. The SQLi payload ends up being executed by the database,
-exfiltrating data to an attacker's controlled server.
+Uma API depende de um serviço de terceiros para enriquecer os endereços 
+comerciais fornecidos pelos utilizadores. Quando um endereço é fornecido pelo 
+utilizador final à API, ele é enviado para o serviço de terceiros e os dados 
+retornados são então armazenados numa base de dados local compatível com SQL.
+
+Atacantes utilizam o serviço de terceiros para armazenar um conteúdo malicioso 
+de injeção SQL (SQLi) associado a um negócio criado por eles. Em seguida, visam 
+a API vulnerável fornecendo um conteúdo específico que faz com que esta obtenha 
+o "negócio malicioso" do serviço de terceiros. O conteúdo de SQLi acaba por ser 
+executado pela base de dados, exfiltrando dados para um servidor controlado pelo
+atacante.
 
 ### Cenário #2
 
-An API integrates with a third-party service provider to safely store sensitive
-user medical information. Data is sent over a secure connection using an HTTP
-request like the one below:
+Uma API integra-se com um fornecedor de serviços de terceiros para armazenar com
+segurança informações médicas sensíveis dos utilizadores. Os dados são enviados 
+através de uma conexão segura usando um pedido HTTP como o abaixo:
 
 ```
 POST /user/store_phr_record
@@ -51,28 +52,28 @@ POST /user/store_phr_record
 }
 ```
 
-Bad actors found a way to compromise the third-party API and it starts
-responding with a `308 Permanent Redirect` to requests like the previous one.
+Atacantes encontraram uma forma de comprometer a API de terceiros, que começa a 
+responder com um `308 Permanent Redirect` a pedidos como o anterior.
 
 ```
 HTTP/1.1 308 Permanent Redirect
 Location: https://attacker.com/
 ```
 
-Since the API blindly follows the third-party redirects, it will repeat the
-exact same request including the user's sensitive data, but this time to the
-attacker's server.
+Como a API segue cegamente os redirecionamentos do terceiro, ela repetirá 
+exatamente o mesmo pedido, incluindo os dados sensíveis do utilizador, mas desta
+vez para o servidor do atacante.
 
 ### Cenário #3
 
-An attacker can prepare a git repository named `'; drop db;--`.
+Um atacante pode preparar um repositório git chamado `'; drop db;--`.
 
-Now, when an integration from an attacked application is done with the
-malicious repository, SQL injection payload is used on an application that
-builds an SQL query believing the repository's name is safe input.
+Agora, quando uma integração de uma aplicação atacada é feita com o repositório 
+malicioso, uma carga de injeção SQL é utilizada numa aplicação que constrói uma 
+consulta SQL, acreditando que o nome do repositório é um conteúdo seguro.
 
 ## Como Prevenir
-
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 * When evaluating service providers, assess their API security posture.
 * Ensure all API interactions happen over a secure communication channel (TLS).
 * Always validate and properly sanitize data received from integrated APIs
