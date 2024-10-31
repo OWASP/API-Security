@@ -51,53 +51,58 @@ servidor controlado remotamente pelo atacante.
 
 ### Cenário #2
 
-A social network website offers a "Direct Message" feature that allows users to
-keep private conversations. To retrieve new messages for a specific
-conversation, the website issues the following API request (user interaction is
-not required):
+Um site de rede social oferece uma funcionalidade de "Mensagem Direta" que 
+permite aos utilizadores manter conversas privadas. Para recuperar novas 
+mensagens de uma conversa específica, o site emite o seguinte pedido de API (a 
+interação do utilizador não é necessária):
 
 ```
 GET /dm/user_updates.json?conversation_id=1234567&cursor=GRlFp7LCUAAAA
 ```
 
-Because the API response does not include the `Cache-Control` HTTP response
-header, private conversations end-up cached by the web browser, allowing
-malicious actors to retrieve them from the browser cache files in the
-filesystem.
+Como a resposta da API não inclui o cabeçalho de resposta HTTP `Cache-Control`, 
+as conversas privadas acabam por ser armazenadas em cache pelo navegador, 
+permitindo que agentes mal-intencionados as recuperem dos ficheiros de cache do 
+navegador no sistema de ficheiros.
 
-## How To Prevent
+## Como Prevenir
 
-The API life cycle should include:
+O ciclo de vida da API deve incluir:
 
-* A repeatable hardening process leading to fast and easy deployment of a
-  properly locked down environment
-* A task to review and update configurations across the entire API stack. The
-  review should include: orchestration files, API components, and cloud
-  services (e.g. S3 bucket permissions)
-* An automated process to continuously assess the effectiveness of the
-  configuration and settings in all environments
+* Um processo de proteção reprodutível que possa ser implantado de forma fácil
+  e rápida com vista a um ambiente de execução devidamente protegido.
+* Um processo de revisão e atualização de todas as camadas da API. A revisão
+  deve incluir: ficheiros de orquestração, componentes da API e serviços na
+  nuvem (e.g., permissões dos _buckets_ S3).
+* Um processo automatizado para verificar de forma continua as configurações e
+  definições em todos os ambientes (produção, _staging_, testes,
+  desenvolvimento).
 
-Furthermore:
+E ainda:
 
-* Ensure that all API communications from the client to the API server and any
-  downstream/upstream components happen over an encrypted communication channel
-  (TLS), regardless of whether it is an internal or public-facing API.
-* Be specific about which HTTP verbs each API can be accessed by: all other
-  HTTP verbs should be disabled (e.g. HEAD).
-* APIs expecting to be accessed from browser-based clients (e.g., WebApp
-  front-end) should, at least:
-  * implement a proper Cross-Origin Resource Sharing (CORS) policy
-  * include applicable Security Headers
-* Restrict incoming content types/data formats to those that meet the business/
-  functional requirements.
-* Ensure all servers in the HTTP server chain (e.g. load balancers, reverse
-  and forward proxies, and back-end servers) process incoming requests in a
-  uniform manner to avoid desync issues.
-* Where applicable, define and enforce all API response payload schemas,
-  including error responses, to prevent exception traces and other valuable
-  information from being sent back to attackers.
+* Assegure que todas as comunicações de API, do cliente para o servidor de API e
+  qualquer componente _downstream_/_upstream_, ocorram através de um canal de
+  comunicação encriptado (TLS), independentemente de se tratar de uma API
+  interna ou pública.
+* Seja específico sobre quais verbos HTTP cada API pode utilizar: todos os
+  outros verbos HTTP devem ser desativados (por exemplo, HEAD).
+* As APIs que esperam ser acedidas a partir de clientes baseados em navegador
+  (por exemplo, aplicação web _front-end_) devem, pelo menos:
+  * implementar uma política adequada de Partilha de Recursos entre Origens
+    (CORS).
+  * incluir os Cabeçalhos de Segurança aplicáveis.
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+* Restrinja os tipos de conteúdo/formatos de dados recebidos àqueles que cumprem
+  os requisitos funcionais/de negócio.
+* Assegure que todos os servidores na cadeia de servidores HTTP (por exemplo,
+  balanceadores de carga, proxies reversos e diretos, e servidores de
+  _back-end_) processem os pedidos de entrada de forma uniforme para evitar
+  problemas de dessincronização.
+* Quando aplicável, defina e faça cumprir todos os esquemas de dados de resposta
+  da API, incluindo respostas de erro, para evitar que informações de exceções e
+  outras informações valiosas sejam enviadas para os atacantes.
 
-## References
+## Referências
 
 ### OWASP
 
@@ -107,7 +112,7 @@ Furthermore:
 * [Testing for Error Handling - Web Security Testing Guide][3]
 * [Testing for Cross Site Request Forgery - Web Security Testing Guide][4]
 
-### External
+### Externas
 
 * [CWE-2: Environmental Security Flaws][5]
 * [CWE-16: Configuration][6]
