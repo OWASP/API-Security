@@ -7,94 +7,103 @@
 
 ## A API é vulnerável?
 
-The sprawled and connected nature of APIs and modern applications brings new
-challenges. It is important for organizations not only to have a good
-understanding and visibility of their own APIs and API endpoints, but also how
-the APIs are storing or sharing data with external third parties.
+A natureza dispersa e conectada das APIs e das aplicações modernas traz novos 
+desafios. É importante que as organizações não só tenham uma boa compreensão e 
+visibilidade das suas próprias APIs e _endpoints_, mas também de como as APIs 
+estão a armazenar ou a partilhar dados com terceiros.
 
-Running multiple versions of an API requires additional management resources
-from the API provider and expands the attack surface.
+Executar múltiplas versões de uma API requer recursos de gestão adicionais do 
+fornecedor da API e expande a superfície de ataque.
 
-An API has a "<ins>documentation blindspot</ins>" if:
+Uma API tem um "<ins>ponto cego de documentação</ins>" se:
 
-* The purpose of an API host is unclear, and there are no explicit answers to
-  the following questions
-  * Which environment is the API running in (e.g. production, staging, test,
-    development)?
-  * Who should have network access to the API (e.g. public, internal, partners)?
-  * Which API version is running?
-* There is no documentation or the existing documentation is not updated.
-* There is no retirement plan for each API version.
-* The host's inventory is missing or outdated.
+* O propósito de um _host_ da API é pouco claro e não há respostas explícitas
+  para as seguintes perguntas:
+  * Em que ambiente está a API a ser executada (por exemplo, produção,
+    _staging_, teste, desenvolvimento)?
+  * Quem deve ter acesso à rede da API (por exemplo, público, interno,
+    parceiros)?
+  * Qual versão da API está em execução?
+* Não existe documentação ou a documentação existente não está atualizada.
+* Não existe um plano de desativação para cada versão da API.
+* O inventário do _host_ está em falta ou desatualizado.
 
-The visibility and inventory of sensitive data flows play an important role as
-part of an incident response plan, in case a breach happens on the third party
-side.
+A visibilidade e o inventário dos fluxos de dados sensíveis desempenham um papel
+importante como parte de um plano de resposta a incidentes, caso ocorra uma
+violação do lado de terceiros.
 
-An API has a "<ins>data flow blindspot</ins>" if:
+Uma API tem um "<ins>ponto cego de fluxo de dados</ins>" se:
 
-* There is a "sensitive data flow" where the API shares sensitive data with a
-  third party and
-  * There is not a business justification or approval of the flow
-  * There is no inventory or visibility of the flow
-  * There is not deep visibility of which type of sensitive data is shared
+* Existe um "fluxo de dados sensíveis" onde a API compartilha dados sensíveis
+  com um terceiro e
+  * Não existe uma justificação de negócio ou aprovação do fluxo
+  * Não existe inventário ou visibilidade do fluxo
+  * Não há visibilidade detalhada sobre o tipo de dados sensíveis partilhados
 
 
 ## Exemplos de Cenários de Ataque
 
 ### Cenário #1
 
-A social network implemented a rate-limiting mechanism that blocks attackers
-from using brute force to guess reset password tokens. This mechanism wasn't
-implemented as part of the API code itself but in a separate component between
-the client and the official API (`api.socialnetwork.owasp.org`). A researcher
-found a beta API host (`beta.api.socialnetwork.owasp.org`) that runs the same
-API, including the reset password mechanism, but the rate-limiting mechanism was
-not in place. The researcher was able to reset the password of any user by using
-simple brute force to guess the 6 digit token.
+Uma rede social implementou um mecanismo de limitação de frequência de pedidos 
+que previne que atacantes possam usar força bruta para adivinhar _tokens_ de 
+redefinição de _password_. Este mecanismo não foi implementado como parte do 
+código da própria API, mas num componente separado entre o cliente e a API 
+oficial (`api.socialnetwork.owasp.org`). Um investigador encontrou um _host_ da 
+API beta (`beta.api.socialnetwork.owasp.org`) que executa a mesma API, incluindo
+o mecanismo de redefinição de _password_, mas sem o mecanismo de limitação de 
+frequência de pedidos. O investigador conseguiu redefinir a _password_ de 
+qualquer utilizador usando força bruta simples para adivinhar o _token_ de 6 
+dígitos.
 
 ### Cenário #2
 
-A social network allows developers of independent apps to integrate with it. As
-part of this process a consent is requested from the end user, so the social
-network can share the user's personal information with the independent app.
+Uma rede social permite que desenvolvedores de aplicações independentes se 
+integrem com ela. Como parte desse processo, é solicitado o consentimento do 
+utilizador final para que a rede social possa partilhar as informações pessoais 
+do utilizador com a aplicação independente.
 
-The data flow between the social network and the independent apps is not
-restrictive or monitored enough, allowing independent apps to access not only
-the user information but also the private information of all of their friends.
+O fluxo de dados entre a rede social e as aplicações independentes não é 
+suficientemente restritivo ou monitorizado, permitindo que as aplicações acedam 
+não apenas às informações do utilizador, mas também às informações privadas de 
+todos os seus amigos.
 
-A consulting firm builds a malicious app and manages to get the consent of
-270,000 users. Because of the flaw, the consulting firm manages to get access
-to the private information of 50,000,000 users. Later, the consulting firm
-sells the information for malicious purposes.
+Uma empresa de consultoria cria uma aplicação maliciosa e consegue obter o 
+consentimento de 270 mil utilizadores. Devido a essa falha, a empresa de 
+consultoria consegue aceder às informações privadas de 50 milhões de 
+utilizadores. Mais tarde, a empresa de consultoria vende as informações para 
+fins maliciosos.
 
 ## Como Prevenir
 
-* Inventory all <ins>API hosts</ins> and document important aspects of each one
-  of them, focusing on the API environment (e.g. production, staging, test,
-  development), who should have network access to the host (e.g. public,
-  internal, partners) and the API version.
-* Inventory <ins>integrated services</ins> and document important aspects such
-  as their role in the system, what data is exchanged (data flow), and their
-  sensitivity.
-* Document all aspects of your API such as authentication, errors, redirects,
-  rate limiting, cross-origin resource sharing (CORS) policy, and endpoints,
-  including their parameters, requests, and responses.
-* Generate documentation automatically by adopting open standards. Include the
-  documentation build in your CI/CD pipeline.
-* Make API documentation available only to those authorized to use the API.
-* Use external protection measures such as API security specific solutions for
-  all exposed versions of your APIs, not just for the current production
-  version.
-* Avoid using production data with non-production API deployments. If this is
-  unavoidable, these endpoints should get the same security treatment as the
-  production ones.
-* When newer versions of APIs include security improvements, perform a risk
-  analysis to inform the mitigation actions required for the older versions.
-  For example, whether it is possible to backport the improvements without
-  breaking API compatibility or if you need to take the older version out
-  quickly and force all clients to move to the latest version.
-
+* Inventarie todos os <ins>_hosts_ da API</ins> e documentar os aspectos
+  importantes de cada um deles, focando no ambiente da API (por exemplo,
+  produção, _staging_, teste, desenvolvimento), quem deve ter acesso à rede do
+  _host_ (por exemplo, público, interno, parceiros) e a versão da API.
+* Inventarie os <ins>serviços integrados</ins> e documentar aspectos
+  importantes, como o seu papel no sistema, quais dados são trocados (fluxo de
+  dados) e a sua sensibilidade.
+* Documente todos os aspectos da sua API, como autenticação, erros,
+  redirecionamentos, limitação de frequência de pedidos, política de partilha de
+  recursos entre origens (CORS) e _endpoints_, incluindo os seus parâmetros,
+  pedidos e respostas.
+* Crie documentação automaticamente adotando padrões abertos. Inclua a
+  construção da documentação no seu _pipeline_ de CI/CD.
+* Disponibilize a documentação da API apenas para aqueles autorizados a utilizar
+  a API.
+* Utilize medidas de proteção externas, como soluções específicas de segurança
+  de API, para todas as versões expostas das suas APIs, não apenas para a versão
+  de produção atual.
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+* Evite utilizar dados de produção em implementações de API que não são
+  produção. Se isso for inevitável, esses _endpoints_ devem receber o mesmo
+  tratamento de segurança que os de produção.
+* Quando versões mais recentes das APIs incluem melhorias de segurança, realize
+  uma análise de risco para informar as ações de mitigação necessárias para as
+  versões mais antigas. Por exemplo, se é possível aplicar as melhorias nessas
+  versões mais antigas sem quebrar a compatibilidade da API ou se é necessário
+  remover rapidamente a versão mais antiga e forçar todos os clientes a migrar
+  para a versão mais recente.
 
 ## Referências
 
