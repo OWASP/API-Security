@@ -3,29 +3,30 @@
 | Agentes Ameaça/Vetores Ataque | Falha Segurança | Impactos |
 | - | - | - |
 | Específico da API : Abuso **Fácil** | Prevalência **Comum** : Deteção **Moderado** | Técnico **Severo** : Específico Negócio |
-| Exploiting this issue requires attackers to identify and potentially compromise other APIs/services the target API integrated with. Usually, this information is not publicly available or the integrated API/service is not easily exploitable. | Developers tend to trust and not verify the endpoints that interact with external or third-party APIs, relying on weaker security requirements such as those regarding transport security, authentication/authorization, and input validation and sanitization. Attackers need to identify services the target API integrates with (data sources) and, eventually, compromise them. | The impact varies according to what the target API does with pulled data. Successful exploitation may lead to sensitive information exposure to unauthorized actors, many kinds of injections, or denial of service. |
+| Explorar este problema requer que os atacantes identifiquem e potencialmente comprometam outras APIs/serviços com os quais a API alvo está integrada. Normalmente, esta informação não está disponível publicamente ou a API/serviço integrado não é facilmente explorável. | Os desenvolvedores tendem a confiar e não a verificar os _endpoints_ que interagem com APIs externas ou de terceiros, dependendo de requisitos de segurança mais fracos, como aqueles relacionados à segurança do transporte, autenticação/autorização e validação e sanitização de dados. Os atacantes precisam identificar os serviços com os quais a API alvo se integra (fontes de dados) e, eventualmente, comprometer esses serviços. | O impacto varia de acordo com o que a API alvo faz com os dados extraídos. A exploração bem sucedida pode levar à exposição de informações sensíveis a atores não autorizados, a vários tipos de injeções ou à negação de serviço. |
 
 ## A API é vulnerável?
 
-Developers tend to trust data received from third-party APIs more than user
-input. This is especially true for APIs offered by well-known companies.
-Because of that, developers tend to adopt weaker security standards, for
-instance, in regards to input validation and sanitization.
+Os desenvolvedores tendem a confiar mais nos dados recebidos de APIs de 
+terceiros do que nos dados fornecidos por utilizadores. Isso é especialmente 
+verdade para APIs oferecidas por empresas bem conhecidas. Por essa razão, os 
+desenvolvedores tendem a adotar padrões de segurança mais fracos, especialmente 
+no que diz respeito à validação e sanitização de dados.
 
-The API might be vulnerable if:
+A API pode estar vulnerável se:
 
-* Interacts with other APIs over an unencrypted channel;
-* Does not properly validate and sanitize data gathered from other APIs prior
-  to processing it or passing it to downstream components;
-* Blindly follows redirections;
-* Does not limit the number of resources available to process third-party
-  services responses;
-* Does not implement timeouts for interactions with third-party services;
+* Interage com outras APIs através de um canal não encriptado;
+* Não valida e sanitiza corretamente os dados recolhidos de outras APIs antes de
+  os processar ou de os passar para componentes posteriores;
+* Segue redirecionamentos cegamente;
+* Não limita o número de recursos disponíveis para processar respostas de
+  serviços de terceiros;
+* Não implementa limites de tempo para interações com serviços de terceiros;
 
-## Example Attack Scenarios
+## Exemplos de Cenários de Ataque
 
-### Scenario #1
-
+### Cenário #1
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 An API relies on a third-party service to enrich user provided business
 addresses. When an address is supplied to the API by the end user, it is sent
 to the third-party service and the returned data is then stored on a local
@@ -37,7 +38,7 @@ specific input that makes it pull their "malicious business" from the
 third-party service. The SQLi payload ends up being executed by the database,
 exfiltrating data to an attacker's controlled server.
 
-### Scenario #2
+### Cenário #2
 
 An API integrates with a third-party service provider to safely store sensitive
 user medical information. Data is sent over a secure connection using an HTTP
@@ -62,7 +63,7 @@ Since the API blindly follows the third-party redirects, it will repeat the
 exact same request including the user's sensitive data, but this time to the
 attacker's server.
 
-### Scenario #3
+### Cenário #3
 
 An attacker can prepare a git repository named `'; drop db;--`.
 
@@ -70,7 +71,7 @@ Now, when an integration from an attacked application is done with the
 malicious repository, SQL injection payload is used on an application that
 builds an SQL query believing the repository's name is safe input.
 
-## How To Prevent
+## Como Prevenir
 
 * When evaluating service providers, assess their API security posture.
 * Ensure all API interactions happen over a secure communication channel (TLS).
@@ -80,7 +81,7 @@ builds an SQL query believing the repository's name is safe input.
   yours to: do not blindly follow redirects.
 
 
-## References
+## Referências
 
 ### OWASP
 
@@ -91,7 +92,7 @@ builds an SQL query believing the repository's name is safe input.
 * [Transport Layer Protection Cheat Sheet][5]
 * [Unvalidated Redirects and Forwards Cheat Sheet][6]
 
-### External
+### Externas
 
 * [CWE-20: Improper Input Validation][7]
 * [CWE-200: Exposure of Sensitive Information to an Unauthorized Actor][8]
