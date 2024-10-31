@@ -1,11 +1,11 @@
 # API9:2023 Improper Inventory Management
 
-| Threat agents/Attack vectors | Security Weakness | Impacts |
+| Agentes Ameaça/Vetores Ataque | Falha Segurança | Impactos |
 | - | - | - |
-| API Specific : Exploitability **Easy** | Prevalence **Widespread** : Detectability **Average** | Technical **Moderate** : Business Specific |
-| Threat agents usually get unauthorized access through old API versions or endpoints left running unpatched and using weaker security requirements. In some cases exploits are available. Alternatively, they may get access to sensitive data through a 3rd party with whom there's no reason to share data with. | Outdated documentation makes it more difficult to find and/or fix vulnerabilities. Lack of assets inventory and retirement strategies leads to running unpatched systems, resulting in leakage of sensitive data. It's common to find unnecessarily exposed API hosts because of modern concepts like microservices, which make applications easy to deploy and independent (e.g. cloud computing, K8S). Simple Google Dorking, DNS enumeration, or using specialized search engines for various types of servers (webcams, routers, servers, etc.) connected to the internet will be enough to discover targets. | Attackers can gain access to sensitive data, or even take over the server. Sometimes different API versions/deployments are connected to the same database with real data. Threat agents may exploit deprecated endpoints available in old API versions to get access to administrative functions or exploit known vulnerabilities. |
+| Específico da API : Abuso **Fácil** | Prevalência **Predominante** : Deteção **Moderado** | Técnico **Moderado** : Específico Negócio |
+| Os agentes ameaça geralmente obtêm acesso não autorizado através de versões antigas de APIs ou _endpoints_ que permanecem em execução sem atualizações e que utilizam requisitos de segurança mais fracos. Em alguns casos, os _exploits_ estão disponíveis online. Alternativamente, podem obter acesso a dados sensíveis através de um terceiro com quem não há razão para compartilhar dados. | Documentação desatualizada torna mais difícil encontrar e/ou corrigir vulnerabilidades. A falta de inventário de recursos e estratégias de desativação leva à execução de sistemas sem atualizações, resultando em vazamentos de dados sensíveis. É comum encontrar hosts de API desnecessariamente expostos devido a conceitos modernos como microserviços, que tornam as aplicações fáceis de implantar e independentes (por exemplo, computação em nuvem, K8S). Um simples Google Dorking, enumeração de DNS ou o uso de motores de busca especializados para vários tipos de servidores (webcams, routers, servidores, etc.) conectados à internet será suficiente para descobrir alvos. | Os atacantes podem obter acesso a dados sensíveis ou até mesmo tomar o controlo do servidor. Às vezes, diferentes versões/implementações da API estão conectadas à mesma base de dados com dados reais. Agentes ameaça podem explorar _endpoints_ obsoletos disponíveis em versões antigas da API para obter acesso a funções administrativas ou explorar vulnerabilidades conhecidas. |
 
-## Is the API Vulnerable?
+## A API é vulnerável?
 
 The sprawled and connected nature of APIs and modern applications brings new
 challenges. It is important for organizations not only to have a good
@@ -40,9 +40,9 @@ An API has a "<ins>data flow blindspot</ins>" if:
   * There is not deep visibility of which type of sensitive data is shared
 
 
-## Example Attack Scenarios
+## Exemplos de Cenários de Ataque
 
-### Scenario #1
+### Cenário #1
 
 A social network implemented a rate-limiting mechanism that blocks attackers
 from using brute force to guess reset password tokens. This mechanism wasn't
@@ -53,7 +53,7 @@ API, including the reset password mechanism, but the rate-limiting mechanism was
 not in place. The researcher was able to reset the password of any user by using
 simple brute force to guess the 6 digit token.
 
-### Scenario #2
+### Cenário #2
 
 A social network allows developers of independent apps to integrate with it. As
 part of this process a consent is requested from the end user, so the social
@@ -68,7 +68,7 @@ A consulting firm builds a malicious app and manages to get the consent of
 to the private information of 50,000,000 users. Later, the consulting firm
 sells the information for malicious purposes.
 
-## How To Prevent
+## Como Prevenir
 
 * Inventory all <ins>API hosts</ins> and document important aspects of each one
   of them, focusing on the API environment (e.g. production, staging, test,
@@ -96,9 +96,9 @@ sells the information for malicious purposes.
   quickly and force all clients to move to the latest version.
 
 
-## References
+## Referências
 
-### External
+### Externas
 
 * [CWE-1059: Incomplete Documentation][1]
 
