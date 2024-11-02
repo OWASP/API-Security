@@ -73,14 +73,15 @@ malicioso, uma carga de injeção SQL é utilizada numa aplicação que constró
 consulta SQL, acreditando que o nome do repositório é um conteúdo seguro.
 
 ## Como Prevenir
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-* When evaluating service providers, assess their API security posture.
-* Ensure all API interactions happen over a secure communication channel (TLS).
-* Always validate and properly sanitize data received from integrated APIs
-  before using it.
-* Maintain an allowlist of well-known locations integrated APIs may redirect
-  yours to: do not blindly follow redirects.
 
+* Ao avaliar fornecedores de serviços, analise a postura de segurança das suas
+  APIs.
+* Garanta que todas as interações com APIs ocorram através de um canal de
+  comunicação seguro (TLS).
+* Valide e sanitize sempre os dados recebidos de APIs integradas antes de os
+  utilizar.
+* Mantenha uma lista de permissões de locais conhecidos para os quais as APIs
+  integradas podem redirecionar a sua: não siga redirecionamentos cegamente.
 
 ## Referências
 
