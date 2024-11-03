@@ -19,11 +19,11 @@ Uma API tem um "<ins>ponto cego de documentação</ins>" se:
 
 * O propósito de um _host_ da API é pouco claro e não há respostas explícitas
   para as seguintes perguntas:
-  * Em que ambiente está a API a ser executada (por exemplo, produção,
-    _staging_, teste, desenvolvimento)?
-  * Quem deve ter acesso à rede da API (por exemplo, público, interno,
-    parceiros)?
-  * Qual versão da API está em execução?
+    * Em que ambiente está a API a ser executada (por exemplo, produção,
+      _staging_, teste, desenvolvimento)?
+    * Quem deve ter acesso à rede da API (por exemplo, público, interno,
+      parceiros)?
+    * Qual versão da API está em execução?
 * Não existe documentação ou a documentação existente não está atualizada.
 * Não existe um plano de desativação para cada versão da API.
 * O inventário do _host_ está em falta ou desatualizado.
@@ -36,9 +36,9 @@ Uma API tem um "<ins>ponto cego de fluxo de dados</ins>" se:
 
 * Existe um "fluxo de dados sensíveis" onde a API compartilha dados sensíveis
   com um terceiro e
-  * Não existe uma justificação de negócio ou aprovação do fluxo
-  * Não existe inventário ou visibilidade do fluxo
-  * Não há visibilidade detalhada sobre o tipo de dados sensíveis partilhados
+    * Não existe uma justificação de negócio ou aprovação do fluxo
+    * Não existe inventário ou visibilidade do fluxo
+    * Não há visibilidade detalhada sobre o tipo de dados sensíveis partilhados
 
 
 ## Exemplos de Cenários de Ataque
