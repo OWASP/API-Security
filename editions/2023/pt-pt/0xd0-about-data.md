@@ -1,68 +1,70 @@
-# Methodology and Data
+# Metodologia e Dados
 
-## Overview
+## Preâmbulo
 
-For this list update, the OWASP API Security team used the same methodology used
-for the successful and well adopted 2019 list, with the addition of a 3 month
-[public Call for Data][1]. Unfortunately, this call for data did not result in
-data that would have enabled a relevant statistical analysis of the most common
-API security issues.
+Para esta atualização da lista, a equipa de Segurança de API da OWASP utilizou a
+mesma metodologia adotada com sucesso para a lista de 2019, com a adição de um 
+[Pedido Público por Dados][1] de 3 meses. Infelizmente, este pedido não resultou
+em dados que permitissem uma análise estatística relevante sobre os problemas de
+segurança de API mais comuns.
 
-However, with a more mature API security industry capable of providing direct
-feedback and insights, the update process moved forward using the same
-methodology as before.
+Contudo, com uma indústria de segurança de API mais madura e capaz de fornecer 
+feedback e informações diretamente, o processo de atualização avançou usando a 
+mesma metodologia de antes.
 
-Arrived here, we believe to have a good forward-looking awareness document for
-the next three or four years, more focused on modern APIs-specific issues. The
-goal of this project isn't to replace other top 10 lists, but instead to cover
-the existing and upcoming top API security risks that we believe the industry
-should be aware and diligent about.
+Chegados a este ponto, acreditamos ter um bom documento de consciencialização 
+para os próximos três ou quatro anos, mais focado nas questões específicas das 
+APIs modernas. O objetivo deste projeto não é substituir outras listas de top 
+10, mas sim cobrir os principais riscos de segurança de API atuais e emergentes,
+sobre os quais acreditamos que a indústria deve estar atenta e ser diligente.
 
-## Methodology
+## Metodologia
 
-In the first phase, publicly available data about API security incidents were
-collected, reviewed, and categorized. Such data were collected from bug bounty
-platforms and publicly available reports. Only issues reported between 2019 and
-2022 were considered. This data was used to give the team a sense of in which
-direction the previous top 10 list should evolve as well as to help deal with
-possible contributed data bias.
+Na primeira fase, dados publicamente disponíveis sobre incidentes de segurança 
+em APIs foram recolhidos, revistos e categorizados. Esses dados foram obtidos de
+plataformas de _bug bounty_ e relatórios públicos. Apenas problemas reportados 
+entre 2019 e 2022 foram considerados. Esses dados ajudaram a equipa a entender 
+em que direção a lista de top 10 anterior deveria evoluir, assim como a lidar 
+com possíveis vieses dos dados contribuídos.
 
-A public [Call for Data][1] ran from September 1st and November 30th, 2022. In
-parallel the project team started the discussion about what has changed since
-2019. The discussion included the impact of the first list, feedback received
-from the community, and new trends of API security.
+Um [Pedido Público por Dados][1] foi realizado de 1 de Setembro a 30 de Novembro
+de 2022. Em paralelo, a equipa do projeto iniciou a discussão sobre o que mudou 
+desde 2019. A discussão incluiu o impacto da primeira lista, o feedback recebido
+da comunidade e novas tendências na segurança de APIs.
 
-The project team promoted meetings with specialists on relevant API security
-threats to get insights into how victims are impacted and how those threats can
-be mitigated.
+A equipa do projeto promoveu reuniões com especialistas sobre ameaças relevantes
+à segurança de APIs para obter informações sobre como as vítimas são impactadas 
+e como essas ameaças podem ser mitigadas.
 
-This effort resulted in an initial draft of what the team believes were the ten
-most critical API security risks. The [OWASP Risk Rating Methodology][2] was
-used to perform the risk analysis. Prevalence ratings were decided from a
-consensus among the project team members, based on their experience in the
-field. For considerations on these matters, please refer to the [API Security
-Risks][3] section.
+Este esforço resultou num rascunho inicial do que a equipa acredita serem os dez
+riscos mais críticos de segurança para APIs. A [Metodologia de Classificação de 
+Risco da OWASP][2] foi utilizada para realizar a análise de riscos. As 
+classificações de prevalência foram decididas por consenso entre os membros da 
+equipa do projeto, com base na sua experiência na área. Para considerações sobre
+esses temas, consulte a secção [Riscos de Segurança em APIs][3].
 
-The initial draft was then shared for review with security practitioners with
-relevant experience in the API security fields. Their comments were reviewed,
-discussed, and when applicable included in the document. The resulting document
-was [published as a Release Candidate][4] for [open discussion][5]. Several
-[community contributions][6] were included into the final document.
+O rascunho inicial foi então compartilhado para revisão com profissionais de 
+segurança com experiência relevante na área de segurança de APIs. Os seus 
+comentários foram analisados, discutidos e, quando aplicável, incluídos no 
+documento. O documento resultante foi [publicado como uma Versão Candidata][4] 
+para [discussão aberta][5]. Várias [contribuições da comunidade][6] foram 
+incorporadas no documento final.
 
-The list of contributors is available in the [Acknowledgments][7] section.
+A lista de contribuidores está disponível na secção de [Agradecimentos][7].
 
-## API Specific Risks
+## Riscos Específicos de APIs
 
-The list is built to address security risks that are more specific to APIs.
+A lista foi elaborada para abordar riscos de segurança que são mais específicos 
+para APIs.
 
-It does not imply that other generic application security risks don't exist in
-API based applications. For example, we didn't include risks such as "Vulnerable
-and Outdated Components" or "Injection", even though you might find them in API
-based applications. These risks are generic, they don't behave differently in
-APIs, nor their exploitation is different.
+Não implica que outros riscos genéricos de segurança de aplicações não existam 
+em aplicações baseadas em APIs. Por exemplo, não incluímos riscos como 
+"Componentes Vulneráveis e Desatualizados" ou "Injeção", embora você possa 
+encontrá-los em aplicações baseadas em APIs. Esses riscos são genéricos, não se 
+comportam de forma diferente em APIs, nem a sua exploração é diferente.
 
-Our goal is to increase the awareness of security risks that deserve special
-attention in APIs.
+O nosso objetivo é aumentar a conscientização sobre os riscos de segurança que 
+merecem atenção especial em APIs.
 
 [1]: https://owasp.org/www-project-api-security/announcements/cfd/2022/
 [2]: https://www.owasp.org/index.php/OWASP_Risk_Rating_Methodology
