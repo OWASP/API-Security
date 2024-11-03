@@ -135,10 +135,10 @@ visualizar as credenciais do ambiente de nuvem.
 * Isole o mecanismo de obtenção de recursos na sua rede: geralmente, essas
   funcionalidades são destinadas a recuperar recursos remotos e não internos.
 * Sempre que possível, utilize listas de permissões de:
-  * Origens remotas das quais se espera que os utilizadores façam download de
-    recursos (por exemplo, Google Drive, Gravatar, etc.)
-  * Esquemas de URL e portas
-  * Tipos de media aceites para uma determinada funcionalidade
+    * Origens remotas das quais se espera que os utilizadores façam download de
+      recursos (por exemplo, Google Drive, Gravatar, etc.)
+    * Esquemas de URL e portas
+    * Tipos de media aceites para uma determinada funcionalidade
 * Desative redirecionamentos HTTP.
 * Utilize um URL _parser_ bem testado e mantido para evitar problemas causados
 por inconsistências no processamento de URLs.
