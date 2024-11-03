@@ -88,9 +88,9 @@ E ainda:
   outros verbos HTTP devem ser desativados (por exemplo, HEAD).
 * As APIs que esperam ser acedidas a partir de clientes baseados em navegador
   (por exemplo, aplicação web _front-end_) devem, pelo menos:
-  * implementar uma política adequada de Partilha de Recursos entre Origens
-    (CORS).
-  * incluir os Cabeçalhos de Segurança aplicáveis.
+    * implementar uma política adequada de Partilha de Recursos entre Origens
+      (CORS).
+    * incluir os Cabeçalhos de Segurança aplicáveis.
 * Restrinja os tipos de conteúdo/formatos de dados recebidos àqueles que cumprem
   os requisitos funcionais/de negócio.
 * Assegure que todos os servidores na cadeia de servidores HTTP (por exemplo,
