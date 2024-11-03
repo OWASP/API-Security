@@ -1,4 +1,4 @@
-# O que Se Segue Para DevSecOps
+# O Que Se Segue Para DevSecOps
 
 Dada a sua importância na arquitetura das aplicações modernas, desenvolver APIs
 seguras é crucial. A segurança não pode ser negligenciada e deve estar presente
