@@ -81,25 +81,25 @@ O planeamento da mitigação deve ser feito em duas camadas:
 * Engenharia - escolher os mecanismos de proteção adequados para mitigar o risco
   empresarial.
 
-  Alguns dos mecanismos de proteção são mais simples, enquanto outros são mais
-  difíceis de implementar. Os seguintes métodos são utilizados para desacelerar
-  ameaças automatizadas:
+    Alguns dos mecanismos de proteção são mais simples, enquanto outros são mais
+    difíceis de implementar. Os seguintes métodos são utilizados para desacelerar
+    ameaças automatizadas:
 
-  * _Fingerprinting_ de dispositivos: negar serviço a dispositivos de cliente
-    inesperados (e.g. navegadores _headless_) tende a fazer com que os atacantes
-    usem soluções mais sofisticadas, tornando-as mais caras para eles.
-  * Deteção humana: utilize _captcha_ ou soluções biométricas mais avançadas
-    (e.g. padrões de digitação).
-  * Padrões não humanos: analisar o fluxo do utilizador para detetar padrões
-    não humanos (e.g. o utilizador acedeu às funções "adicionar ao carrinho" e
-    "finalizar compra" em menos de um segundo).
-  * Considere bloquear endereços IP de nós de saída da rede Tor e proxies bem
-    conhecidos.
+    * _Fingerprinting_ de dispositivos: negar serviço a dispositivos de cliente
+      inesperados (e.g. navegadores _headless_) tende a fazer com que os atacantes
+      usem soluções mais sofisticadas, tornando-as mais caras para eles.
+    * Deteção humana: utilize _captcha_ ou soluções biométricas mais avançadas
+      (e.g. padrões de digitação).
+    * Padrões não humanos: analisar o fluxo do utilizador para detetar padrões
+      não humanos (e.g. o utilizador acedeu às funções "adicionar ao carrinho" e
+      "finalizar compra" em menos de um segundo).
+    * Considere bloquear endereços IP de nós de saída da rede Tor e proxies bem
+      conhecidos.
 
-  Proteja e limite o acesso às APIs que são consumidas diretamente por máquinas
-  (como APIs para desenvolvedores e B2B). Elas tendem a ser um alvo fácil para
-  atacantes, pois muitas vezes não implementam todos os mecanismos de proteção
-  necessários.
+    Proteja e limite o acesso às APIs que são consumidas diretamente por máquinas
+    (como APIs para desenvolvedores e B2B). Elas tendem a ser um alvo fácil para
+    atacantes, pois muitas vezes não implementam todos os mecanismos de proteção
+    necessários.
 
 ## Referências
 
