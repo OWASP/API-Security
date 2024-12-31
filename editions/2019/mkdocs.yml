@@ -5,6 +5,8 @@ extra:
   alternate:
     - name: Arabic
       lang: ar
+    - name: Bahasa (Indonesian) 
+      lang: id
     - name: German
       lang: de
     - name: English

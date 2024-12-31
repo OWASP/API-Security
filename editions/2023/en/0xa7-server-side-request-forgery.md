@@ -132,10 +132,10 @@ can view the credentials of the cloud environment.
 * Isolate the resource fetching mechanism in your network: usually these
   features are aimed to retrieve remote resources and not internal ones.
 * Whenever possible, use allow lists of:
-  * Remote origins users are expected to download resources from (e.g. Google
-    Drive, Gravatar, etc.)
-  * URL schemes and ports
-  * Accepted media types for a given functionality
+    * Remote origins users are expected to download resources from (e.g. Google
+      Drive, Gravatar, etc.)
+    * URL schemes and ports
+    * Accepted media types for a given functionality
 * Disable HTTP redirections.
 * Use a well-tested and maintained URL parser to avoid issues caused by URL
   parsing inconsistencies.

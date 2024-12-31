@@ -77,23 +77,24 @@ The mitigation planning should be done in two layers:
 * Engineering - choose the right protection mechanisms to mitigate the business
   risk.
 
-  Some of the protection mechanisms are more simple while others are more
-  difficult to implement. The following methods are used to slow down automated
-  threats:
+    Some of the protection mechanisms are more simple while others are more
+    difficult to implement. The following methods are used to slow down
+    automated
+    threats:
 
-  * Device fingerprinting: denying service to unexpected client devices (e.g
-    headless browsers) tends to make threat actors use more sophisticated
-    solutions, thus more costly for them
-  * Human detection: using either captcha or more advanced biometric solutions
-    (e.g. typing patterns)
-  * Non-human patterns: analyze the user flow to detect non-human patterns (e.g.
-    the user accessed the "add to cart" and "complete purchase" functions in
-    less than one second)
-  * Consider blocking IP addresses of Tor exit nodes and well-known proxies
+    * Device fingerprinting: denying service to unexpected client devices (e.g
+      headless browsers) tends to make threat actors use more sophisticated
+      solutions, thus more costly for them
+    * Human detection: using either captcha or more advanced biometric solutions
+      (e.g. typing patterns)
+    * Non-human patterns: analyze the user flow to detect non-human patterns
+      (e.g. the user accessed the "add to cart" and "complete purchase"
+      functions in less than one second)
+    * Consider blocking IP addresses of Tor exit nodes and well-known proxies
 
-  Secure and limit access to APIs that are consumed directly by machines (such
-  as developer and B2B APIs). They tend to be an easy target for attackers
-  because they often don't implement all the required protection mechanisms.
+    Secure and limit access to APIs that are consumed directly by machines (such
+    as developer and B2B APIs). They tend to be an easy target for attackers
+    because they often don't implement all the required protection mechanisms.
 
 ## References
 

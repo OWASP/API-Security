@@ -10,11 +10,11 @@
 Die API könnte verwundbar sein, wenn:
 
 * Der Zweck eines API-Hosts unklar ist und es keine klaren Antworten auf folgende Fragen gibt:
-  * In welcher Umgebung wird die API ausgeführt (z. B. Produktion, Staging, Test, Entwicklung)?
-  * Wer sollte Netzwerkzugriff auf die API haben (z. B. öffentlich, intern, Partner)?
-  * Welche API-Version wird ausgeführt?
-  * Welche Daten werden von der API erfasst und verarbeitet (z. B. PII)?
-  * Wie verläuft der Datenfluss?
+    * In welcher Umgebung wird die API ausgeführt (z. B. Produktion, Staging, Test, Entwicklung)?
+    * Wer sollte Netzwerkzugriff auf die API haben (z. B. öffentlich, intern, Partner)?
+    * Welche API-Version wird ausgeführt?
+    * Welche Daten werden von der API erfasst und verarbeitet (z. B. PII)?
+    * Wie verläuft der Datenfluss?
 * Es gibt keine Dokumentation oder die vorhandene Dokumentation ist veraltet.
 * Es gibt keinen Plan zur Ausmusterung jeder API-Version.
 * Die Dienstübericht der Hosts fehlt oder ist veraltet.
