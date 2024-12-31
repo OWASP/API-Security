@@ -11,3 +11,5 @@ extra:
       lang: fr
     - name: Persian
       lang: fa
+    - name: Português (Portugal)
+      lang: pt-pt
