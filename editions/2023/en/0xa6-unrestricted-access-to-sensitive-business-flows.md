@@ -96,6 +96,30 @@ The mitigation planning should be done in two layers:
     as developer and B2B APIs). They tend to be an easy target for attackers
     because they often don't implement all the required protection mechanisms.
 
+### Asynchronous Agent Mutation & Business Flow Drift
+
+In agent-driven and workflow-automation architectures, background agents may mutate sensitive business objects after initial authorization checks. This creates a new class of business-flow abuse where state changes occur outside the original security context.
+
+#### Example Abuse Scenario
+
+1. A user submits a legitimate request to update a non-sensitive field.
+2. An autonomous background agent enriches or modifies the object asynchronously.
+3. The agent applies restricted fields such as approval flags, role attributes, or workflow states.
+4. The system commits unauthorized business-state transitions without any further user interaction.
+
+#### Why This Happens
+
+- Authorization is enforced only at the synchronous API layer.
+- Agents reuse service tokens with broader privileges.
+- Business-flow validation is bypassed in background job processing.
+
+#### Mitigations
+
+- Enforce authorization on every write boundary, including background jobs and message queues.
+- Prevent agents from reusing user authorization contexts.
+- Implement strict server-side field allow-lists for all asynchronous mutations.
+- Log and alert on cross-workflow state transitions initiated by agents.
+
 ## References
 
 ### OWASP
