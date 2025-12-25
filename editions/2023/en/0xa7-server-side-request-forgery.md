@@ -142,6 +142,28 @@ can view the credentials of the cloud environment.
 * Validate and sanitize all client-supplied input data.
 * Do not send raw responses to clients.
 
+### Agent-Driven Replay & Rebinding SSRF Risk
+
+Modern agentic systems often store or replay previously validated URLs across tasks. This creates a new SSRF risk class where:
+
+- A URL is validated once, then reused later when DNS records or routing context have changed.
+- Autonomous agents fetch resources based on historical state rather than real-time authorization context.
+- Trusted internal callbacks are rebound to attacker-controlled infrastructure after task completion.
+
+#### Example Abuse Scenario
+
+1. An agent validates a webhook URL during onboarding.
+2. The domain later expires or is repointed by an attacker.
+3. The agent replays the stored URL during a scheduled task.
+4. The backend performs a trusted internal fetch to attacker infrastructure.
+
+#### Mitigations
+
+- Re-validate all agent-stored URLs before every execution.
+- Bind allowed fetch destinations using certificate pinning or static IP allowlists.
+- Enforce short-lived trust windows for stored URLs.
+- Log and alert on changes in DNS resolution for previously trusted domains.
+
 ## References
 
 ### OWASP
