@@ -37,7 +37,7 @@ threats to get insights into how victims are impacted and how those threats can
 be mitigated.
 
 This effort resulted in an initial draft of what the team believes were the ten
-most critical API security risks.The [OWASP Risk Rating Methodology][2] was used to perform the risk analysis. The OWASP Risk Rating Methodology incorporates risk assessment concepts and references the [OWASP Risk Assessment Framework][8] project, which provides guidance on assessing and prioritizing risks.. Prevalence ratings were decided from a
+most critical API security risks.The [OWASP Risk Rating Methodology][2] was used to perform the risk analysis. The OWASP Risk Rating Methodology incorporates risk assessment concepts and references the [OWASP Risk Assessment Framework][8] project, which provides guidance on assessing and prioritizing risks. Prevalence ratings were decided from a
 consensus among the project team members, based on their experience in the
 field. For considerations on these matters, please refer to the [API Security
 Risks][3] section.
