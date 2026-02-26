@@ -17,6 +17,8 @@ extra:
       lang: fr
     - name: Greek (Greece)
       lang: el-gr
+    - name: Italiano
+      lang: it
     - name: Português (Brasil)
       lang: pt-BR
     - name: Português (Portugal)
