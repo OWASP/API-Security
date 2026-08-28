@@ -56,11 +56,11 @@ Karena dokumen dengan ID yang diberikan dihapus tanpa pemeriksaan izin lebih lan
 * Sebaiknya gunakan nilai acak dan tidak terduga sebagai GUID untuk ID catatan. 
 * Tulis tes untuk mengevaluasi kerentanan mekanisme otorisasi. Jangan terapkan perubahan yang membuat tes gagal.
 
-**Note** (translators: please translate this note; kept in English as a placeholder so it is not missed)
+**Catatan**
 
-* Using GUIDs/UUIDs instead of predictable identifiers helps mitigate object enumeration attacks. However, once a valid identifier is disclosed—whether through another endpoint, excessive data exposure, logging, or another vulnerability—it should be treated as public information.
+* Menggunakan GUID/UUID alih-alih pengidentifikasi yang mudah diprediksi membantu memitigasi serangan enumerasi obyek. Namun, setelah pengidentifikasi yang valid terungkap—baik melalui endpoint lain, pengungkapan data yang berlebihan, pencatatan log, maupun kerentanan lainnya—pengidentifikasi tersebut harus dianggap sebagai informasi publik.
 
-* Authorization decisions must never rely on the secrecy or unpredictability of object identifiers. Every request must independently verify that the authenticated user is authorized to access the requested object.
+* Keputusan otorisasi tidak boleh bergantung pada kerahasiaan atau sifat tidak terduga dari pengidentifikasi obyek. Setiap permintaan harus secara independen memverifikasi bahwa pengguna yang telah terautentikasi memiliki izin untuk mengakses obyek yang diminta.
 
 ## Referensi
 
