@@ -4,7 +4,7 @@ Bu metin, OWASP API Security Top 10 dokümanının metin sürümüdür ve web si
 
 Projeye yorum, düzeltme veya çeviri gibi katkılar bu repository üzerinden yapılmalıdır. [Nasıl Katkıda Bulunulur][1] hakkında ayrıntılı bilgi için [CONTRIBUTING.md][1] dosyasını inceleyebilirsiniz.
 
-- Erez Yallon
+- Erez Yalon
 - Inon Shkedy
 - Paulo Silva
 

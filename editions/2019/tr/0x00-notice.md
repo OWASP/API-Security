@@ -8,7 +8,7 @@ Yorum, düzeltme veya çeviri gibi projeye yapılacak katkılar burada
 yapılmalıdır. [Nasıl Katkıda Bulunulur][1] hakkında ayrıntılı bilgi için
 [CONTRIBUTING.md][1] dosyasını inceleyebilirsiniz.
 
-* Erez Yallon
+* Erez Yalon
 * Inon Shkedy
 
 [1]: ../../../CONTRIBUTING.md

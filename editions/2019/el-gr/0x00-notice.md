@@ -7,7 +7,7 @@
 θα πρέπει να γίνονται εδώ. Για περισσότερες πληροφορίες για το Πως να συνεισφέρετε, 
 παρακαλώ δείτε το CONTRIBUTING.md.
 
-* Erez Yallon
+* Erez Yalon
 * Inon Shkedy
 
 [1]: ../../CONTRIBUTING.md

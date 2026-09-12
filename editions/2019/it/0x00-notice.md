@@ -8,7 +8,7 @@ I contributi al progetto come commenti, correzioni o traduzioni devono essere
 effettuati qui. Per i dettagli su [Come Contribuire][1], fare riferimento a
 [CONTRIBUTING.md][1].
 
-* Erez Yallon
+* Erez Yalon
 * Inon Shkedy
 
 [1]: ../../../CONTRIBUTING.md

@@ -4,7 +4,7 @@ Ini adalah versi teks dari OWASP API Security Top 10, digunakan sebagai sumber u
 
 Kontribusi terhadap proyek seperti komentar, koreksi, atau terjemahan harus dilakukan di sini. Untuk perincian tentang [Cara Berkontribusi][1], harap mengacu pada [CONTRIBUTING.md][1].
 
-* Erez Yallon
+* Erez Yalon
 * Inon Shkedy
 * Paulo Silva
 
