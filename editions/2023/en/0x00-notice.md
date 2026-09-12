@@ -7,7 +7,7 @@ Contributions to the project such as comments, corrections, or translations
 should be done here. For details on [How To Contribute][1], please refer to
 [CONTRIBUTING.md][1].
 
-* Erez Yallon
+* Erez Yalon
 * Inon Shkedy
 * Paulo Silva
 
