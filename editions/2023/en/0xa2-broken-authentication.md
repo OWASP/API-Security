@@ -110,7 +110,7 @@ account.
 * Implement [account lockout][2]/captcha mechanisms to prevent brute force
   attacks against specific users. Implement weak-password checks.
 * API keys should not be used for user authentication. They should only be used
-  for [API clients][3] authentication.
+  for [API clients][3] authorization.
 
 ## References
 
