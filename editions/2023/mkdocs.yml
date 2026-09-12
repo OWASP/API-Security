@@ -11,6 +11,8 @@ extra:
       lang: en
     - name: Français
       lang: fr
+    - name: Italiano
+      lang: it
     - name: Persian
       lang: fa
     - name: Português (Portugal)
