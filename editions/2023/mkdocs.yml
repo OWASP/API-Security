@@ -17,3 +17,5 @@ extra:
       lang: pt-pt
     - name: Spanish
       lang: es
+    - name: Chinese (Simplified)
+      lang: zh-CN
