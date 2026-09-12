@@ -92,11 +92,11 @@ documento di un altro utente.
 * Scrivere test per valutare la vulnerabilità del meccanismo di autorizzazione.
   Non rilasciare modifiche che causino il fallimento dei test.
 
-**Note** (translators: please translate this note; kept in English as a placeholder so it is not missed)
+**Nota**
 
-* Using GUIDs/UUIDs instead of predictable identifiers helps mitigate object enumeration attacks. However, once a valid identifier is disclosed—whether through another endpoint, excessive data exposure, logging, or another vulnerability—it should be treated as public information.
+* Utilizzare GUID/UUID al posto di identificatori prevedibili aiuta a mitigare gli attacchi di enumerazione degli oggetti. Tuttavia, una volta che un identificatore valido viene divulgato—che sia tramite un altro endpoint, un'eccessiva esposizione dei dati, il logging o un'altra vulnerabilità—esso deve essere considerato un'informazione pubblica.
 
-* Authorization decisions must never rely on the secrecy or unpredictability of object identifiers. Every request must independently verify that the authenticated user is authorized to access the requested object.
+* Le decisioni di autorizzazione non devono mai basarsi sulla segretezza o sull'imprevedibilità degli identificatori degli oggetti. Ogni richiesta deve verificare in modo indipendente che l'utente autenticato sia autorizzato ad accedere all'oggetto richiesto.
 
 ## Riferimenti
 
