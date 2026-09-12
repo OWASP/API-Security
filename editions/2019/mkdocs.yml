@@ -23,3 +23,5 @@ extra:
       lang: pt-pt
     - name: Russian
       lang: ru
+    - name: Spanish
+      lang: es
