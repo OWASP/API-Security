@@ -59,11 +59,11 @@ POST /graphql
 - Kayıt ID'leri için GUID gibi rastgele ve tahmin edilmesi zor değerleri tercih edin. Ancak bu değerlerin tek başına bir yetkilendirme kontrolü olmadığını unutmayın.
 - Yetkilendirme mekanizmasındaki zafiyetleri tespit edecek testler yazın. Bu testlerin başarısız olmasına neden olan değişiklikleri canlı ortama dağıtmayın.
 
-**Note** (translators: please translate this note; kept in English as a placeholder so it is not missed)
+**Not**
 
-* Using GUIDs/UUIDs instead of predictable identifiers helps mitigate object enumeration attacks. However, once a valid identifier is disclosed—whether through another endpoint, excessive data exposure, logging, or another vulnerability—it should be treated as public information.
+* Tahmin edilebilir tanımlayıcılar yerine GUID'ler/UUID'ler kullanmak, nesne numaralandırma (object enumeration) saldırılarının etkisini azaltmaya yardımcı olur. Ancak geçerli bir tanımlayıcı başka bir uç nokta (endpoint), aşırı veri ifşası (excessive data exposure), loglama veya başka bir güvenlik açığı nedeniyle açığa çıktığında artık herkese açık (kamuya açık) bir bilgi olarak kabul edilmelidir.
 
-* Authorization decisions must never rely on the secrecy or unpredictability of object identifiers. Every request must independently verify that the authenticated user is authorized to access the requested object.
+* Yetkilendirme kararları asla nesne tanımlayıcılarının gizliliğine veya tahmin edilemezliğine dayanmamalıdır. Her istek, kimliği doğrulanmış kullanıcının talep edilen nesneye erişim yetkisi olduğunu bağımsız olarak doğrulamalıdır.
 
 ## Kaynaklar
 
