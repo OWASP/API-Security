@@ -131,6 +131,38 @@ content.
 * Keep returned data structures to the bare minimum, according to the
   business/functional requirements for the endpoint.
 
+  ## Agentic System Risk: Stale OAuth Scope Authorization Drift
+
+### Description
+Modern agentic systems (AI agents, autonomous workflows, and delegated service bots) frequently reuse long-lived OAuth access tokens or refresh tokens across multiple autonomous operations. Over time, authorization models evolve: scopes are narrowed, roles are removed, or privileges are deprecated. Previously issued tokens may still retain legacy permissions that are no longer intended for the actor’s current role.
+
+This creates an **authorization drift** condition where backend enforcement no longer reflects the intended security policy.
+
+### Attack Scenario
+1. An AI agent is issued an OAuth token with broad scopes during onboarding.
+2. The organization later restricts the agent’s privileges in the identity provider (IdP).
+3. The backend APIs continue accepting the previously issued token without re-evaluating scope legitimacy.
+4. The agent (or an attacker with the token) can invoke privileged API operations that should now be disallowed.
+
+### Impact
+- Unauthorized data access or modification
+- Circumvention of post-revocation authorization changes
+- Compliance and governance violations
+- Hidden persistence of privilege beyond policy intent
+
+### Testing Guidance
+- Identify autonomous/background services that use OAuth access tokens or refresh tokens.
+- Review token lifetime and refresh workflows for privilege revalidation.
+- Validate that sensitive API operations enforce authorization server-side on each request (not only via token presence).
+- Downgrade scopes in the IdP and replay existing tokens to confirm authorization changes take effect immediately.
+
+### Mitigation
+- Prefer short-lived access tokens and enforce revocation/rotation for agent tokens.
+- Use token introspection (or equivalent) at critical authorization boundaries.
+- Bind authorization to live role state rather than static token claims when feasible.
+- Invalidate agent tokens proactively after authorization model changes or role updates.
+
+
 ## References
 
 ### OWASP
