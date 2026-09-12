@@ -116,7 +116,7 @@ l'indirizzo email dell'account.
   attacchi a forza bruta su utenti specifici. Implementare controlli sulle
   password deboli.
 * Le API key non devono essere utilizzate per l'autenticazione degli utenti.
-  Devono essere utilizzate solo per l'autenticazione dei [client API][3].
+  Devono essere utilizzate solo per l'autorizzazione dei [client API][3].
 
 ## Riferimenti
 
