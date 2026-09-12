@@ -15,3 +15,5 @@ extra:
       lang: fa
     - name: Português (Portugal)
       lang: pt-pt
+    - name: Spanish
+      lang: es
