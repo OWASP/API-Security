@@ -25,3 +25,5 @@ extra:
       lang: ru
     - name: Spanish
       lang: es
+    - name: Türkçe
+      lang: tr
