@@ -55,11 +55,11 @@ L'API ne vérifie pas si l'utilisateur connecté a les autorisations pour suppri
 * Préférez l'utilisation de valeurs GUID aléatoires et imprévisibles pour les ID.
 * Écrivez des tests pour évaluer la vulnérabilité du mécanisme d'autorisation. Ne déployez pas de modifications qui feraient échouer les tests.
 
-**Note** (translators: please translate this note; kept in English as a placeholder so it is not missed)
+**Note**
 
-* Using GUIDs/UUIDs instead of predictable identifiers helps mitigate object enumeration attacks. However, once a valid identifier is disclosed—whether through another endpoint, excessive data exposure, logging, or another vulnerability—it should be treated as public information.
+* L'utilisation de GUID/UUID plutôt que d'identifiants prévisibles aide à limiter les attaques par énumération d'objets. Cependant, une fois qu'un identifiant valide est divulgué — que ce soit via un autre point d'accès (endpoint), une exposition excessive de données, la journalisation (logging) ou une autre vulnérabilité — il doit être considéré comme une information publique.
 
-* Authorization decisions must never rely on the secrecy or unpredictability of object identifiers. Every request must independently verify that the authenticated user is authorized to access the requested object.
+* Les décisions d'autorisation ne doivent jamais reposer sur le secret ou l'imprévisibilité des identifiants d'objet. Chaque requête doit vérifier de manière indépendante que l'utilisateur connecté est autorisé à accéder à l'objet demandé.
 
 ## Références
 
