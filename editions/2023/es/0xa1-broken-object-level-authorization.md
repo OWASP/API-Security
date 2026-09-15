@@ -63,11 +63,11 @@ Dado que el documento con el ID proporcionado se elimina sin verificaciones adic
 * Prefiere el uso de valores aleatorios e impredecibles, como GUIDs, para los IDs de los registros.
 * Escribe pruebas para evaluar la vulnerabilidad del mecanismo de autorización. No implementes cambios que hagan que estas pruebas fallen.
 
-**Note** (translators: please translate this note; kept in English as a placeholder so it is not missed)
+**Nota**
 
-* Using GUIDs/UUIDs instead of predictable identifiers helps mitigate object enumeration attacks. However, once a valid identifier is disclosed—whether through another endpoint, excessive data exposure, logging, or another vulnerability—it should be treated as public information.
+* Usar GUID/UUID en lugar de identificadores predecibles ayuda a mitigar los ataques de enumeración de objetos. Sin embargo, una vez que un identificador válido se divulga —ya sea a través de otro endpoint, exposición excesiva de datos, registros (logs) u otra vulnerabilidad—, debe tratarse como información pública.
 
-* Authorization decisions must never rely on the secrecy or unpredictability of object identifiers. Every request must independently verify that the authenticated user is authorized to access the requested object.
+* Las decisiones de autorización nunca deben basarse en el secreto o la impredecibilidad de los identificadores de objeto. Cada solicitud debe verificar de forma independiente que el usuario autenticado está autorizado para acceder al objeto solicitado.
 
 ## Referencias
 
