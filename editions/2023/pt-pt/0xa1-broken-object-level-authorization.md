@@ -95,6 +95,19 @@ documento de outro utilizador.
   autorização. Não colocar em produção alterações vulneráveis que não passem nos
   testes.
 
+ **Nota**
+
+* Recorrer a GUIDs/UUIDs em vez de identificadores previsíveis ajuda a mitigar
+  ataques de enumeração de objetos. No entanto, assim que um identificador
+  válido é divulgado — seja através de outro *endpoint*, exposição excessiva de
+  dados, registos (*logs*) ou outra vulnerabilidade — deve ser tratado como
+  informação pública.
+
+* As decisões de autorização nunca devem depender do sigilo ou da
+  imprevisibilidade dos identificadores de objeto. Cada pedido deve verificar
+  de forma independente que o utilizador autenticado está autorizado a aceder
+  ao objeto solicitado.
+
 ## Referências
 
 ### OWASP
