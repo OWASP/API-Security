@@ -1,0 +1,25 @@
+site_name: editions/2019
+docs_dir: .
+
+extra:
+  alternate:
+    - name: Arabic
+      lang: ar
+    - name: Bahasa (Indonesian) 
+      lang: id
+    - name: German
+      lang: de
+    - name: English
+      lang: en
+    - name: Farsi
+      lang: fa
+    - name: French
+      lang: fr
+    - name: Greek (Greece)
+      lang: el-gr
+    - name: Português (Brasil)
+      lang: pt-BR
+    - name: Português (Portugal)
+      lang: pt-pt
+    - name: Russian
+      lang: ru
