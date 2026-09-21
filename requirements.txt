@@ -1,0 +1,4 @@
+# Docs build. Pin versions / git SHAs; do not install from live branches.
+mkdocs-material==9.0.9
+pymdown-extensions==10.7.1
+mkdocs-monorepo-plugin @ git+https://github.com/PauloASilva/mkdocs-monorepo-plugin@63f18e2f87aead69883745a0a4808c275005b0f7
