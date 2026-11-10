@@ -25,7 +25,7 @@ least the following top 10 projects:
 * [OWASP Cloud-Native Application Security Top 10][2]
 * [OWASP Desktop App Security Top 10][3]
 * [OWASP Docker Top 10][4]
-* [OWASP Low-Code/No-Code Top 10][5]
+* [OWASP Citizen Development Top 10][5] (formerly the Low-Code/No-Code Top 10)
 * [OWASP Machine Learning Security Top Ten][6]
 * [OWASP Mobile Top 10][7]
 * [OWASP TOP 10][8]
@@ -48,7 +48,7 @@ questions, comments, and ideas at our [GitHub repository][14] or
 [2]: https://owasp.org/www-project-cloud-native-application-security-top-10/
 [3]: https://owasp.org/www-project-desktop-app-security-top-10/
 [4]: https://owasp.org/www-project-docker-top-10/
-[5]: https://owasp.org/www-project-top-10-low-code-no-code-security-risks/
+[5]: https://owasp.org/www-project-citizen-development-top10-security-risks/
 [6]: https://owasp.org/www-project-machine-learning-security-top-10/
 [7]: https://owasp.org/www-project-mobile-top-10/
 [8]: https://owasp.org/www-project-top-ten/

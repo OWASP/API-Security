@@ -23,7 +23,7 @@ In case of doubt, stay informed, and refer to the [DevSecOps Manifesto][1].
 [1]: https://www.devsecops.org/
 [2]: https://owasp.org/www-project-application-security-verification-standard/
 [3]: https://owasp.org/www-project-web-security-testing-guide/
-[4]: https://owasp.org/www-project-security-knowledge-framework/
+[4]: https://www.securityknowledgeframework.org/
 [5]: http://devsecops.github.io/
 [6]: https://github.com/devsecops/awesome-devsecops
 [7]: http://devsecops.org
