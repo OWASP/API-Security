@@ -78,7 +78,9 @@ Furthermore:
   downstream/upstream components happen over an encrypted communication channel
   (TLS), regardless of whether it is an internal or public-facing API.
 * Be specific about which HTTP verbs each API can be accessed by: all other
-  HTTP verbs should be disabled (e.g. HEAD).
+  HTTP verbs should be disabled (e.g. TRACE). Note that HEAD should keep working
+  wherever GET does, as [RFC 9110][14] requires general-purpose servers to
+  support both.
 * APIs expecting to be accessed from browser-based clients (e.g., WebApp
   front-end) should, at least:
     * implement a proper Cross-Origin Resource Sharing (CORS) policy
@@ -128,3 +130,4 @@ Furthermore:
 [11]: https://cwe.mitre.org/data/definitions/942.html
 [12]: https://csrc.nist.gov/publications/detail/sp/800-123/final
 [13]: https://letsencrypt.org/
+[14]: https://www.rfc-editor.org/rfc/rfc9110#section-9.1
