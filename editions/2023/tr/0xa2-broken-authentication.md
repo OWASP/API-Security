@@ -117,7 +117,7 @@ niyetli kişiler; kurbanın hesabının e-posta adresini güncelledikten sonra
   [hesap kilitleme][2]/captcha mekanizmaları uygulayın. Zayıf şifre
   kontrolleri uygulayın.
 * API anahtarları kullanıcı kimlik doğrulaması için kullanılmamalıdır.
-  Yalnızca [API istemcilerinin][3] kimlik doğrulaması için
+  Yalnızca [API istemcilerinin][3] yetkilendirilmesi için
   kullanılmalıdır.
 
 ## Kaynaklar

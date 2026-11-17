@@ -10,7 +10,7 @@ API'ler modern uygulama mimarilerinde son derece önemli bir role sahiptir. Ama 
 
 OWASP API Security Top 10'un temel amacı; API geliştirme ve yönetiminde görev alan geliştiricileri, tasarımcıları, mimarları, yöneticileri ve kuruluşları bilgilendirmek ve eğitmektir. OWASP API Security Project hakkında daha fazla bilgiye [proje sayfasından][1] ulaşabilirsiniz.
 
-OWASP Top 10 serisine aşina değilseniz, en azından aşağıdaki 10 projeye göz atmanızı öneririz:
+OWASP Top 10 serisine aşina değilseniz, en azından aşağıdaki Top 10 projelerine göz atmanızı öneririz:
 
 - [OWASP Cloud-Native Application Security Top 10][2]
 - [OWASP Desktop App Security Top 10][3]
