@@ -52,6 +52,8 @@ POST /graphql
 }
 ```
 
+Belirtilen ID'ye sahip belge, ek bir yetki kontrolü yapılmadan silindiği için bir kullanıcı başka bir kullanıcının belgesini silebilir.
+
 ## Nasıl Önlenir?
 
 - Kullanıcı politikalarını, rollerini ve yetki hiyerarşisini temel alan uygun bir yetkilendirme mekanizması uygulayın.
@@ -61,7 +63,7 @@ POST /graphql
 
 **Not**
 
-* Tahmin edilebilir tanımlayıcılar yerine GUID'ler/UUID'ler kullanmak, nesne numaralandırma (object enumeration) saldırılarının etkisini azaltmaya yardımcı olur. Ancak geçerli bir tanımlayıcı başka bir uç nokta (endpoint), aşırı veri ifşası (excessive data exposure), loglama veya başka bir güvenlik açığı nedeniyle açığa çıktığında artık herkese açık (kamuya açık) bir bilgi olarak kabul edilmelidir.
+* Tahmin edilebilir tanımlayıcılar yerine GUID'ler/UUID'ler kullanmak, nesne keşfi (object enumeration) saldırılarının etkisini azaltmaya yardımcı olur. Ancak geçerli bir tanımlayıcı başka bir uç nokta (endpoint), aşırı veri ifşası (excessive data exposure), loglama veya başka bir güvenlik açığı nedeniyle açığa çıktığında artık herkese açık (kamuya açık) bir bilgi olarak kabul edilmelidir.
 
 * Yetkilendirme kararları asla nesne tanımlayıcılarının gizliliğine veya tahmin edilemezliğine dayanmamalıdır. Her istek, kimliği doğrulanmış kullanıcının talep edilen nesneye erişim yetkisi olduğunu bağımsız olarak doğrulamalıdır.
 

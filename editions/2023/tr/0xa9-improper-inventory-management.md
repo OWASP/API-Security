@@ -3,7 +3,7 @@
 | Tehdit aktörleri / Saldırı vektörleri | Güvenlik Zayıflığı | Etkiler |
 | - | - | - |
 | API'ye Özgü · İstismar edilebilirlik: **Kolay** | Yaygınlık: **Çok yaygın** · Tespit edilebilirlik: **Orta** | Teknik etki: **Orta** · İş etkisi: **Kuruluşa özgü** |
-| Tehdit aktörleri genellikle yamalanmamış ve daha zayıf güvenlik gereksinimleriyle çalışmaya devam eden eski API sürümleri veya uç noktaları aracılığıyla yetkisiz erişim elde eder. Bazı durumlarda istismar araçları mevcuttur. Alternatif olarak, verilerin paylaşılması için hiçbir gerekçe olmayan bir üçüncü taraf aracılığıyla hassas verilere erişim elde edebilirler. | Güncel olmayan dokümantasyon, zafiyetlerin bulunmasını ve/veya düzeltilmesini zorlaştırır. Varlık envanteri ve emeklilik stratejilerinin eksikliği, yamalanmamış sistemlerin çalışmaya devam etmesine ve hassas verilerin sızmasına yol açar. Mikroservisler gibi modern yaklaşımlar uygulamaları kolayca dağıtılabilir ve bağımsız hâle getirdiğinden (örn. bulut bilişim, K8S), gereksiz yere açığa çıkmış API sunucularına sıkça rastlanır. İnternete bağlı çeşitli sunucu türleri (web kameraları, yönlendiriciler, sunucular vb.) için basit Google Dorking, DNS numaralandırma veya özel arama motorları kullanmak, hedefleri bulmak için yeterli olacaktır. | Saldırganlar hassas verilere erişim elde edebilir, hatta sunucuyu ele geçirebilir. Bazen farklı API sürümleri/dağıtımları gerçek verilerle aynı veritabanına bağlıdır. Tehdit aktörleri, yönetimsel fonksiyonlara erişmek veya bilinen zafiyetleri istismar etmek için eski API sürümlerinde bulunan kullanımdan kaldırılmış uç noktaları istismar edebilir. |
+| Tehdit aktörleri genellikle yamalanmamış ve daha zayıf güvenlik gereksinimleriyle çalışmaya devam eden eski API sürümleri veya uç noktaları aracılığıyla yetkisiz erişim elde eder. Bazı durumlarda istismar araçları mevcuttur. Alternatif olarak, verilerin paylaşılması için hiçbir gerekçe olmayan bir üçüncü taraf aracılığıyla hassas verilere erişim elde edebilirler. | Güncel olmayan dokümantasyon, zafiyetlerin bulunmasını ve/veya düzeltilmesini zorlaştırır. Varlık envanteri ve emeklilik stratejilerinin eksikliği, yamalanmamış sistemlerin çalışmaya devam etmesine ve hassas verilerin sızmasına yol açar. Mikroservisler gibi modern yaklaşımlar uygulamaları kolayca dağıtılabilir ve bağımsız hâle getirdiğinden (örn. bulut bilişim, K8S), gereksiz yere açığa çıkmış API sunucularına sıkça rastlanır. İnternete bağlı çeşitli sunucu türleri (web kameraları, yönlendiriciler, sunucular vb.) için basit Google Dorking, DNS kayıtlarının keşfi veya özel arama motorları kullanmak, hedefleri bulmak için yeterli olacaktır. | Saldırganlar hassas verilere erişim elde edebilir, hatta sunucuyu ele geçirebilir. Bazen farklı API sürümleri/dağıtımları gerçek verilerle aynı veritabanına bağlıdır. Tehdit aktörleri, yönetimsel fonksiyonlara erişmek veya bilinen zafiyetleri istismar etmek için eski API sürümlerinde bulunan kullanımdan kaldırılmış uç noktaları istismar edebilir. |
 
 ## API Bu Zafiyete Açık mı?
 
@@ -112,8 +112,16 @@ satar.
 
 ## Kaynaklar
 
+### OWASP
+
+* [REST Güvenliği Hızlı Başvuru Rehberi][2]
+
 ### Harici Kaynaklar
 
 * [CWE-1059: Eksik Dokümantasyon][1]
+* "Envanter Yönetimi" - [Mikroservis Tabanlı Uygulama Sistemleri için
+  Güvenlik Stratejileri][3], NIST
 
 [1]: https://cwe.mitre.org/data/definitions/1059.html
+[2]: https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html
+[3]: https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-204.pdf
